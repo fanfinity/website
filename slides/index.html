@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanfinity Engage — Turn Fans Into Participants</title>
+<style>
+  :root {
+    --bg: #0b1020;
+    --panel: #141b33;
+    --panel-2: #1b2444;
+    --band: #0e1428;
+    --text: #e8ecf6;
+    --muted: #9aa6c4;
+    --accent: #6c8cff;
+    --accent-2: #3ad6b0;
+    --border: #28335a;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .inner { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+  /* Slide-like bands */
+  .band { padding: 84px 0; }
+  .band.alt { background: var(--band); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .eyebrow {
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent-2); font-weight: 700; margin: 0 0 14px;
+  }
+  h2.band-title { font-size: clamp(26px, 4vw, 38px); line-height: 1.15; margin: 0 0 18px; }
+  .band p.large { font-size: clamp(17px, 2.2vw, 20px); color: var(--muted); max-width: 720px; }
+  .band p.large strong { color: var(--text); }
+
+  /* Hero */
+  header.hero {
+    padding: 96px 24px 88px;
+    text-align: center;
+    background: radial-gradient(1200px 600px at 80% -10%, #1a2348 0%, var(--bg) 55%);
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    font-size: 13px; color: var(--accent-2);
+    padding: 7px 16px; border: 1px solid var(--border); border-radius: 999px;
+    background: rgba(58,214,176,.06);
+  }
+  .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); }
+  h1 {
+    font-size: clamp(36px, 6.5vw, 60px);
+    line-height: 1.08; margin: 26px auto 18px; max-width: 880px;
+    background: linear-gradient(90deg, #fff, #b9c6ff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero .sub { font-size: clamp(18px, 2.6vw, 22px); color: var(--muted); max-width: 720px; margin: 0 auto 32px; }
+  .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    text-decoration: none; font-weight: 700; font-size: 15px;
+    padding: 13px 24px; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn.primary { background: linear-gradient(90deg, var(--accent), #8aa0ff); color: #0b1020; }
+  .btn.ghost { color: var(--text); border: 1px solid var(--border); }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* Stat / contrast row */
+  .contrast { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 36px; }
+  .contrast .col {
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 28px; background: var(--panel);
+  }
+  .contrast .col h4 { margin: 0 0 10px; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+  .contrast .before h4 { color: #ff8a8a; }
+  .contrast .after h4 { color: var(--accent-2); }
+  .contrast ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  .contrast li { margin: 6px 0; }
+
+  /* Value pillars */
+  .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+  .pillar {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 26px 26px 28px;
+  }
+  .pillar .ico {
+    width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    background: rgba(108,140,255,.12); border: 1px solid var(--border); margin-bottom: 16px;
+  }
+  .pillar .ico svg { width: 24px; height: 24px; stroke: var(--accent-2); fill: none; stroke-width: 1.8; }
+  .pillar h3 { margin: 0 0 8px; font-size: 19px; }
+  .pillar p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Engagement library */
+  .lib-intro { margin-bottom: 8px; }
+  .widget {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 28px; margin: 24px 0; scroll-margin-top: 24px;
+  }
+  .widget-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .widget-head h3 { font-size: 23px; margin: 0; }
+  .widget-head .tag {
+    font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent-2); background: rgba(58,214,176,.1);
+    border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px;
+  }
+  .widget .pitch { font-weight: 600; color: var(--text); margin: 12px 0 4px; font-size: 16px; }
+  .widget p.desc { color: var(--muted); margin: 4px 0 0; }
+  .widget-media {
+    margin-top: 22px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+    background: #0c1226; display: flex; align-items: center; justify-content: center;
+  }
+  .widget-media img { width: 100%; height: auto; display: block; }
+
+  /* Where it lives */
+  .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+  .mode { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .mode h3 { margin: 0 0 8px; font-size: 18px; }
+  .mode p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Closing CTA */
+  .closing { text-align: center; }
+  .closing h2 { font-size: clamp(28px, 5vw, 42px); margin: 0 auto 16px; max-width: 760px;
+    background: linear-gradient(90deg, #fff, #b9c6ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .closing p { color: var(--muted); font-size: 18px; max-width: 620px; margin: 0 auto 28px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 36px 24px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 720px) {
+    .contrast, .pillars, .modes { grid-template-columns: 1fr; }
+    .band { padding: 60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — HERO -->
+<header class="hero">
+  <span class="brand"><span class="dot"></span> Fanfinity Engage</span>
+  <h1>Turn your fans into participants</h1>
+  <p class="sub">Fanfinity Engage helps clubs build a deeper — and more profitable — relationship with their fans. On match day, and every day.</p>
+  <div class="cta-row">
+    <a class="btn primary" href="#value">See the value</a>
+    <a class="btn ghost" href="#library">Explore engagements</a>
+  </div>
+</header>
+
+<!-- SLIDE 2 — THE OPPORTUNITY -->
+<section class="band">
+  <div class="inner">
+    <p class="eyebrow">The opportunity</p>
+    <h2 class="band-title">Your fans are watching. But are they engaged?</h2>
+    <p class="large">Clubs have millions of passionate supporters — yet most of that passion is one-way. Fans watch, scroll, and drift to other apps while the moments that matter pass by without them taking part. Every un-played poll, un-asked question and un-sponsored moment is loyalty, data and revenue left on the table.</p>
+
+    <div class="contrast">
+      <div class="col before">
+        <h4>Passive fans</h4>
+        <ul>
+          <li>Watch in silence, attention split across other screens</li>
+          <li>No record of who they are or what they care about</li>
+          <li>Engagement ends at the final whistle</li>
+          <li>Sponsor logos that fans tune out</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <h4>Participating fans</h4>
+        <ul>
+          <li>Vote, predict, cheer and ask — in the moment</li>
+          <li>Every tap is first-party insight you own</li>
+          <li>Connected between matches and across the season</li>
+          <li>Sponsorable moments fans actually want to join</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3 — WHAT IS FANFINITY ENGAGE -->
+<section class="band alt">
+  <div class="inner">
+    <p class="eyebrow">The product</p>
+    <h2 class="band-title">What is Fanfinity Engage?</h2>
+    <p class="large"><strong>Fanfinity Engage</strong> is part of the products suite provided by <strong>Fanfinity</strong>, and the core product for engaging your fans. It turns your broadcasts, streams and pages into two-way experiences — interactive moments your fans take part in, in real time.</p>
+    <p class="large" style="margin-top:16px;">These moments are created as <strong>engagements</strong>. As this story progresses, more engagement types will be introduced — but they all share one goal: turn an audience into a community.</p>
+  </div>
+</section>
+
+<!-- SLIDE 4 — VALUE PILLARS -->
+<section class="band" id="value">
+  <div class="inner">
+    <p class="eyebrow">Why it matters for clubs</p>
+    <h2 class="band-title">Five ways Engage grows your club</h2>
+    <p class="large">Engagement isn't a gimmick — it's a direct line to loyalty, data and revenue.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 3 5.5 6.5 5.5 8.5 5.5 10 7 12 9c2-2 3.5-3.5 5.5-3.5C21 5.5 23 9 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+        <h3>Deepen fan loyalty</h3>
+        <p>Taking part creates belonging. Fans who play, predict and cheer feel like part of the club — so they stay longer and keep coming back.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <h3>Know your fans</h3>
+        <p>Every interaction is first-party data you own — opinions, preferences and behaviour that sharpen marketing, content and ticketing decisions.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 6.5C17 4.6 14.8 3.5 12 3.5S7 4.6 7 6.5 9 9.5 12 10s5 1.4 5 3.5-2.2 3.5-5 3.5-5-1.1-5-3.5"/></svg></div>
+        <h3>Open new revenue</h3>
+        <p>Turn moments into inventory. Sponsor an engagement, brand a prediction, or deep-link fans to betting and commerce partners — engagement they choose to join.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h3>Engage all year</h3>
+        <p>Connection shouldn't stop at 90 minutes. Keep fans active between matches, through the off-season and across every channel you own.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Effortless to run</h3>
+        <p>Produce engagements live during the action or schedule them ahead of kickoff. Themed to your brand, ready for web, app and stream.</p>
+      </div>
+      <div class="pillar">
+        <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>Grow the fanbase</h3>
+        <p>Shareable, social-ready moments give casual viewers a reason to join in — and a reason to bring friends with them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5 — THE ENGAGEMENT LIBRARY -->
+<section class="band alt" id="library">
+  <div class="inner">
+    <p class="eyebrow">The toolkit</p>
+    <h2 class="band-title">The engagement library</h2>
+    <p class="large lib-intro">A growing set of ready-to-use moments. Mix and match them across a match, a campaign or a season.</p>
+
+    <article class="widget" id="polls">
+      <div class="widget-head"><h3>Polls</h3><span class="tag">Loyalty &middot; Data</span></div>
+      <p class="pitch">Capture the crowd's voice.</p>
+      <p class="desc">Ask a question with no wrong answer and watch results update live, so every fan feels part of the crowd. Run text polls or image polls illustrated with player photos — and keep every opinion as insight.</p>
+      <div class="widget-media"><img src="polls.gif" alt="Text poll and image poll examples"></div>
+    </article>
+
+    <article class="widget" id="image-slider">
+      <div class="widget-head"><h3>Image Slider</h3><span class="tag">Sentiment</span></div>
+      <p class="pitch">Emotion on a scale.</p>
+      <p class="desc">Let fans react on a visual scale instead of a flat yes/no — a more expressive, emotional read on how the crowd really feels about a player, moment or decision.</p>
+      <div class="widget-media"><img src="sliders.gif" alt="Emoji slider examples"></div>
+    </article>
+
+    <article class="widget" id="quizzes">
+      <div class="widget-head"><h3>Quizzes</h3><span class="tag">Competition</span></div>
+      <p class="pitch">Reward what your fans know.</p>
+      <p class="desc">Test their knowledge and reward it with points — gamified competition that turns club history and stats into a reason to keep playing and keep coming back.</p>
+      <div class="widget-media"><img src="quizzes.gif" alt="Text quiz and image quiz examples"></div>
+    </article>
+
+    <article class="widget" id="prediction">
+      <div class="widget-head"><h3>Prediction</h3><span class="tag">Retention</span></div>
+      <p class="pitch">Create appointment moments.</p>
+      <p class="desc">Ask fans to call what happens next, then make them wait for the result. Guessing the outcome — and tuning back in to see if they were right — is a powerful reason to stay all the way to the final whistle.</p>
+      <div class="widget-media"><img src="outcome.gif" alt="Guess the outcome example"></div>
+    </article>
+
+    <article class="widget" id="number-prediction">
+      <div class="widget-head"><h3>Number Prediction</h3><span class="tag">Retention</span></div>
+      <p class="pitch">Make every stat a game.</p>
+      <p class="desc">When the answer is a number — final score, player goals, minutes to first goal — let fans predict it, then reveal who nailed it and who just missed.</p>
+      <div class="widget-media"><img src="prediction.gif" alt="Number prediction — a correct call and a missed one"></div>
+    </article>
+
+    <article class="widget" id="cheer-meter">
+      <div class="widget-head"><h3>Cheer Meter</h3><span class="tag">Rivalry &middot; Sponsorable</span></div>
+      <p class="pitch">Turn rivalry into energy.</p>
+      <p class="desc">Fans tap as fast as they can to back their side. Tribal, loud and competitive — a natural home for a sponsor to power the head-to-head.</p>
+      <div class="widget-media"><img src="cheer.gif" alt="Cheer meter example"></div>
+    </article>
+
+    <article class="widget" id="alerts">
+      <div class="widget-head"><h3>Alerts</h3><span class="tag">Revenue</span></div>
+      <p class="pitch">Own the moment — and monetize it.</p>
+      <p class="desc">Broadcast headlines, graphics, offers and commentary at exactly the right beat. Attach a link for sponsorships, ads, or a deep link into a partner app such as a betting platform.</p>
+      <div class="widget-media"><img src="alerts.gif" alt="Alert examples — goal, fantasy, sponsored, breaking"></div>
+    </article>
+
+    <article class="widget" id="ask">
+      <div class="widget-head"><h3>Ask</h3><span class="tag">Community</span></div>
+      <p class="pitch">Give fans the mic.</p>
+      <p class="desc">Collect open-ended replies and feature the best ones. Crowd-source questions for on-air talent and let supporters see their own words on screen — community that fans help create.</p>
+      <div class="widget-media"><img src="ask.gif" alt="Ask example"></div>
+    </article>
+
+    <article class="widget" id="social-embeds">
+      <div class="widget-head"><h3>Social Embeds</h3><span class="tag">Reach</span></div>
+      <p class="pitch">Bring the conversation in.</p>
+      <p class="desc">Pull live content from Twitter, Facebook or any oEmbed-supported provider straight into the experience — keeping the buzz inside your branded space instead of someone else's app.</p>
+    </article>
+  </div>
+</section>
+
+<!-- SLIDE 6 — WHERE IT LIVES -->
+<section class="band">
+  <div class="inner">
+    <p class="eyebrow">How it fits</p>
+    <h2 class="band-title">Meet your fans wherever they are</h2>
+    <p class="large">Engagements run across every channel you own — produced live or scheduled, and styled to your club's brand.</p>
+    <div class="modes">
+      <div class="mode"><h3>Popup</h3><p>One moment at a time during the action — perfect for live polls, trivia and in-play predictions.</p></div>
+      <div class="mode"><h3>Timeline</h3><p>A browsable feed fans scroll through — ideal for live blogging, commentary and pick'em games.</p></div>
+      <div class="mode"><h3>Embedded</h3><p>Drop engagements straight into your website and pages, fully on-brand.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 7 — CLOSING -->
+<section class="band alt closing">
+  <div class="inner">
+    <h2>Let's turn your fans into participants.</h2>
+    <p>See how Fanfinity Engage can deepen loyalty, unlock fan data and open new revenue for your club.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:m.abumusa@fanfinity.io?subject=Fanfinity%20Engage%20%E2%80%94%20Walkthrough%20request&amp;body=Hi%20Fanfinity%20team%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20Fanfinity%20Engage%20for%20our%20club.%0A%0AClub%2Forganisation%3A%20%0AName%3A%20%0ARole%3A%20%0ABest%20way%20to%20reach%20me%3A%20%0A%0AThanks%2C">Contact Fanfinity team</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Fanfinity Engage &middot; part of the Fanfinity products suite
+</footer>
+
+</body>
+</html>

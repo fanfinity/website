@@ -20,6 +20,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - src
+  # Internal marketing foundation docs — NOT for publication
+  - docs
+  - competitor-profiles
 
 kramdown:
   syntax_highlighter: rouge
