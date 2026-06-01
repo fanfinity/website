@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: coming-soon
 title: "Coming Soon"
 ---
 
