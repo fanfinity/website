@@ -5,7 +5,7 @@ title: "Coming Soon"
 
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">
   <div class="text-center px-6">
-    <img src="/logo.svg" alt="Fanfinity" class="h-7 mx-auto mb-8">
+    <img src="{{ '/logo.svg' | relative_url }}" alt="Fanfinity" class="h-7 mx-auto mb-8">
 
     <div class="w-24 h-1 bg-purple-500 mx-auto mb-8 rounded-full"></div>
 
