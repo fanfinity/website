@@ -20,6 +20,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - src
+  # Repo docs — not public pages
+  - README.md
+  - CLAUDE.md
   # Internal marketing foundation docs — NOT for publication
   - docs
   - competitor-profiles

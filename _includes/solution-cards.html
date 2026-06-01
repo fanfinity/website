@@ -1,0 +1,24 @@
+{%- comment -%}
+Audience solution cards, driven by the Solutions nav item's children.
+Params: eyebrow, heading, subheading
+{%- endcomment -%}
+{%- assign solutions = site.data.navigation.header | where: 'title', 'Solutions' | first -%}
+<section class="section border-y border-border bg-soft" id="solutions">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="eyebrow">{{ include.eyebrow | default: 'Built for your audience' }}</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading | default: 'Outcomes for leagues, broadcasters & brands' }}</h2>
+      <p class="mt-4 text-lg text-muted-foreground">{{ include.subheading | default: 'The same connected platform, focused on the results each team needs.' }}</p>
+    </div>
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      {%- for s in solutions.children -%}
+        <a href="{{ s.url | relative_url }}" class="card card-hover group/link flex flex-col">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm shadow-brand-700/30">{% include icon.html name=s.icon class="h-6 w-6" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">{{ s.title }}</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{{ s.desc }}.</p>
+          <span class="mt-5 link-arrow">Explore solution {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

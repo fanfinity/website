@@ -1,0 +1,37 @@
+# The five Platform pillars. Reused on the homepage and (next pass) the /platform hub.
+# Capabilities are grounded in the product epics (.agents/specs/*/_epic.md).
+
+- title: Live Interactivity
+  url: /platform/live-interactivity
+  icon: bolt
+  outcome: Make any live moment playable.
+  body: Push polls, quizzes, predictions, and cheer meters the instant a key moment happens — with spoiler-safe sync for live and on-demand.
+  capabilities: [Widgets, Programs, Reactions, Spoiler Prevention]
+
+- title: Gamification & Loyalty
+  url: /platform/gamification-loyalty
+  icon: trophy
+  outcome: Build habits that last a season.
+  body: Streaks, quests, badges, leaderboards, and status tiers turn one-off viewers into fans who come back daily, weekly, and all season long.
+  capabilities: [Quests, Streaks, Leaderboards, Badges, Status Tiers]
+
+- title: Rewards & Monetization
+  url: /platform/rewards-monetization
+  icon: gift
+  outcome: Reward what matters — and earn from it.
+  body: Run a full points-and-rewards economy, package engagement as sponsorable inventory, and open new ways to earn beyond ads and subscriptions.
+  capabilities: [Rewards, Sponsorship, Redemption Keys]
+
+- title: Fan Identity & Community
+  url: /platform/fan-identity
+  icon: identity
+  outcome: Own your fan relationship.
+  body: One persistent identity ties every interaction, reward, and score to a single fan across sessions, devices, and platforms — enriching the records you already keep.
+  capabilities: [Profiles & Identity, IDs & Attributes, Flair]
+
+- title: Insights & Operations
+  url: /platform/insights-analytics
+  icon: chart
+  outcome: Prove engagement and reach.
+  body: Built-in analytics measure participation at the program, widget, and quest level — so you can show what worked, to sponsors and to your team.
+  capabilities: [Analytics, Applications, Custom Themes]

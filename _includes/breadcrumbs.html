@@ -1,0 +1,23 @@
+{%- comment -%}
+Breadcrumbs for L2+ pages. Reads either:
+  page.breadcrumbs: [{title, url}, ...]   (explicit trail), or
+  page.breadcrumb_parent: {title, url}    (single parent; Home is prepended automatically)
+{%- endcomment -%}
+<nav class="border-b border-border bg-background" aria-label="Breadcrumb">
+  <div class="container-page py-3">
+    <ol class="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+      <li><a href="{{ '/' | relative_url }}" class="transition hover:text-foreground">Home</a></li>
+      {%- if page.breadcrumbs -%}
+        {%- for crumb in page.breadcrumbs -%}
+          <li aria-hidden="true" class="text-border">/</li>
+          <li><a href="{{ crumb.url | relative_url }}" class="transition hover:text-foreground">{{ crumb.title }}</a></li>
+        {%- endfor -%}
+      {%- elsif page.breadcrumb_parent -%}
+        <li aria-hidden="true" class="text-border">/</li>
+        <li><a href="{{ page.breadcrumb_parent.url | relative_url }}" class="transition hover:text-foreground">{{ page.breadcrumb_parent.title }}</a></li>
+      {%- endif -%}
+      <li aria-hidden="true" class="text-border">/</li>
+      <li class="font-medium text-foreground" aria-current="page">{{ page.title }}</li>
+    </ol>
+  </div>
+</nav>

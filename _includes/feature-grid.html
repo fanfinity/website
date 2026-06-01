@@ -1,0 +1,28 @@
+{%- comment -%}
+Generic feature grid. Items come from page front matter (array of {title, body, icon}).
+Params: eyebrow, heading, subheading, items (required), columns (2|3|4, default 3)
+{%- endcomment -%}
+{%- assign cols = include.columns | default: 3 -%}
+{%- case cols -%}
+  {%- when 2 -%}{%- assign grid = 'sm:grid-cols-2' -%}
+  {%- when 4 -%}{%- assign grid = 'sm:grid-cols-2 lg:grid-cols-4' -%}
+  {%- else -%}{%- assign grid = 'sm:grid-cols-2 lg:grid-cols-3' -%}
+{%- endcase -%}
+<section class="section">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
+      {%- if include.heading -%}<h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
+      {%- if include.subheading -%}<p class="mt-4 text-lg text-muted-foreground">{{ include.subheading }}</p>{%- endif -%}
+    </div>
+    <div class="mt-12 grid gap-x-8 gap-y-10 {{ grid }}">
+      {%- for item in include.items -%}
+        <div class="relative">
+          {%- if item.icon -%}<span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-foreground">{% include icon.html name=item.icon class="h-5 w-5" %}</span>{%- endif -%}
+          <h3 class="mt-4 text-base font-semibold">{{ item.title }}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ item.body }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

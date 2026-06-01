@@ -1,0 +1,114 @@
+{%- assign nav = site.data.navigation -%}
+<header class="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-md" data-header>
+  <nav class="container-page" aria-label="Primary">
+    <div class="flex h-16 items-center justify-between gap-4">
+
+      <!-- Logo -->
+      <a href="{{ '/' | relative_url }}" class="shrink-0 rounded-md" aria-label="Fanfinity home">
+        <img src="{{ '/logo-dark.svg' | relative_url }}" alt="Fanfinity" class="h-6 w-auto" width="246" height="28">
+      </a>
+
+      <!-- Desktop navigation -->
+      <ul class="hidden items-center gap-0.5 lg:flex">
+        {%- for item in nav.header -%}
+          {%- assign active = false -%}
+          {%- if item.url != '/' and page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
+          <li class="relative" {% if item.children %}data-dropdown{% endif %}>
+            {%- if item.children -%}
+              <button type="button"
+                      class="nav-trigger{% if active %} is-active{% endif %}"
+                      aria-expanded="false" aria-haspopup="true"
+                      aria-controls="menu-{{ item.title | slugify }}"
+                      data-dropdown-trigger>
+                {{ item.title }}
+                {% include icon.html name="chevron-down" class="nav-chevron" %}
+              </button>
+
+              {%- if item.mega -%}
+                <div id="menu-{{ item.title | slugify }}"
+                     class="nav-panel left-1/2 w-[44rem] max-w-[calc(100vw-2rem)] -translate-x-1/2"
+                     data-dropdown-panel hidden>
+                  <div class="grid grid-cols-2 gap-1 p-1">
+                    {%- for child in item.children -%}
+                      <a href="{{ child.url | relative_url }}" class="nav-panel-link group/link">
+                        <span class="nav-panel-icon">{% include icon.html name=child.icon class="h-5 w-5" %}</span>
+                        <span class="min-w-0">
+                          <span class="block text-sm font-semibold text-foreground">{{ child.title }}</span>
+                          <span class="block text-xs text-muted-foreground">{{ child.desc }}</span>
+                        </span>
+                      </a>
+                    {%- endfor -%}
+                  </div>
+                  <a href="{{ item.url | relative_url }}"
+                     class="mt-1 flex items-center justify-between rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-brand-50 hover:text-brand-foreground">
+                    Explore the full platform
+                    {% include icon.html name="arrow-right" class="h-4 w-4" %}
+                  </a>
+                </div>
+              {%- else -%}
+                <div id="menu-{{ item.title | slugify }}"
+                     class="nav-panel left-0 w-80"
+                     data-dropdown-panel hidden>
+                  {%- for child in item.children -%}
+                    <a href="{{ child.url | relative_url }}" class="nav-panel-link group/link">
+                      {%- if child.icon -%}<span class="nav-panel-icon">{% include icon.html name=child.icon class="h-5 w-5" %}</span>{%- endif -%}
+                      <span class="min-w-0">
+                        <span class="block text-sm font-semibold text-foreground">{{ child.title }}</span>
+                        {%- if child.desc -%}<span class="block text-xs text-muted-foreground">{{ child.desc }}</span>{%- endif -%}
+                      </span>
+                    </a>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            {%- else -%}
+              <a href="{{ item.url | relative_url }}" class="nav-link{% if active %} is-active{% endif %}">{{ item.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <!-- Right side -->
+      <div class="flex items-center gap-2">
+        <a href="{{ nav.cta.url | relative_url }}" class="btn btn-primary hidden sm:inline-flex">{{ nav.cta.title }}</a>
+        <button type="button"
+                class="grid h-10 w-10 place-items-center rounded-lg text-foreground transition hover:bg-muted lg:hidden"
+                aria-expanded="false" aria-controls="mobile-menu"
+                data-menu-toggle aria-label="Open menu">
+          <span data-menu-icon="open">{% include icon.html name="menu" class="h-6 w-6" %}</span>
+          <span data-menu-icon="close" hidden>{% include icon.html name="close" class="h-6 w-6" %}</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden" hidden data-mobile-menu>
+    <div class="container-page max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-border py-4 scrollbar-none">
+      <ul class="space-y-1">
+        {%- for item in nav.header -%}
+          <li>
+            {%- if item.children -%}
+              <details class="group rounded-xl">
+                <summary class="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-foreground hover:bg-muted">
+                  {{ item.title }}
+                  {% include icon.html name="chevron-down" class="h-5 w-5 text-muted-foreground transition-transform group-open:rotate-180" %}
+                </summary>
+                <ul class="mb-1 ml-2 space-y-0.5 border-l border-border pl-3">
+                  <li>
+                    <a href="{{ item.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm font-medium text-brand-foreground hover:bg-muted">All {{ item.title }}</a>
+                  </li>
+                  {%- for child in item.children -%}
+                    <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ child.title }}</a></li>
+                  {%- endfor -%}
+                </ul>
+              </details>
+            {%- else -%}
+              <a href="{{ item.url | relative_url }}" class="block rounded-xl px-3 py-3 text-base font-semibold text-foreground hover:bg-muted">{{ item.title }}</a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+      <a href="{{ nav.cta.url | relative_url }}" class="btn btn-primary btn-lg mt-4 w-full">{{ nav.cta.title }}</a>
+    </div>
+  </div>
+</header>

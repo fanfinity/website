@@ -1,0 +1,80 @@
+# Single source of truth for header + footer navigation.
+# URLs are root-relative (no host, no baseurl). Templates add baseurl via `relative_url`.
+# Pages marked here may not exist until a later build pass — the menu structure is intentionally complete.
+
+header:
+  - title: Solutions
+    url: /solutions
+    children:
+      - { title: Sports Leagues & Teams, url: /solutions/sports,        desc: Keep fans engaged all season, icon: whistle }
+      - { title: Broadcasters & Media,   url: /solutions/broadcasters,   desc: Grow watch time & engagement, icon: broadcast }
+      - { title: Brands,                 url: /solutions/brands,         desc: Activate fans, prove results, icon: megaphone }
+
+  - title: Platform
+    url: /platform
+    mega: true
+    children:
+      - { title: Live Interactivity,      url: /platform/live-interactivity,   desc: Widgets, programs & reactions,   icon: bolt }
+      - { title: Gamification & Loyalty,  url: /platform/gamification-loyalty, desc: Quests, streaks & leaderboards,  icon: trophy }
+      - { title: Rewards & Monetization,  url: /platform/rewards-monetization, desc: A rewards economy & sponsorship, icon: gift }
+      - { title: Fan Identity & Community, url: /platform/fan-identity,        desc: One identity across every device, icon: identity }
+      - { title: Insights & Operations,   url: /platform/insights-analytics,   desc: Built-in engagement analytics,  icon: chart }
+
+  - title: Developers
+    url: /developers
+    children:
+      - { title: API Overview,        url: /developers/api,          desc: REST API & authentication, icon: code }
+      - { title: SDKs & Platforms,    url: /developers/sdks,         desc: iOS, Android & Web,        icon: stack }
+      - { title: Integrations & Data, url: /developers/integrations, desc: Map IDs & sync data,       icon: plug }
+
+  - title: Pricing
+    url: /pricing
+
+  - title: Resources
+    url: /resources
+    children:
+      - { title: Blog,            url: /blog,             desc: Ideas on fan engagement, icon: pencil }
+      - { title: Customers,       url: /customers,        desc: How teams use Fanfinity,  icon: users }
+      - { title: Guides & eBooks, url: /resources/guides, desc: Playbooks & deep dives,   icon: book }
+      - { title: Compare,         url: /compare,          desc: Fanfinity vs. alternatives, icon: scale }
+
+cta:
+  title: Book a Demo
+  url: /demo
+
+footer_columns:
+  - heading: Platform
+    links:
+      - { title: Live Interactivity,       url: /platform/live-interactivity }
+      - { title: Gamification & Loyalty,   url: /platform/gamification-loyalty }
+      - { title: Rewards & Monetization,   url: /platform/rewards-monetization }
+      - { title: Fan Identity & Community, url: /platform/fan-identity }
+      - { title: Insights & Operations,    url: /platform/insights-analytics }
+
+  - heading: Solutions
+    links:
+      - { title: Sports Leagues & Teams, url: /solutions/sports }
+      - { title: Broadcasters & Media,   url: /solutions/broadcasters }
+      - { title: Brands,                 url: /solutions/brands }
+      - { title: Pricing,                url: /pricing }
+
+  - heading: Developers
+    links:
+      - { title: API Overview,        url: /developers/api }
+      - { title: SDKs & Platforms,    url: /developers/sdks }
+      - { title: Integrations & Data, url: /developers/integrations }
+
+  - heading: Company
+    links:
+      - { title: About,     url: /about }
+      - { title: Careers,   url: /about/careers }
+      - { title: Blog,      url: /blog }
+      - { title: Customers, url: /customers }
+      - { title: Book a Demo, url: /demo }
+
+legal:
+  - { title: Privacy,  url: /privacy }
+  - { title: Terms,    url: /terms }
+  - { title: Security, url: /security }
+
+descriptor: The fan-engagement & loyalty platform for live sports, media, and brands.

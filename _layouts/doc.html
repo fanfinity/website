@@ -1,0 +1,10 @@
+---
+layout: page
+---
+<div class="container-page section">
+  {% if page.title %}<h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ page.title }}</h1>{% endif %}
+  {% if page.updated %}<p class="mt-2 text-sm text-muted-foreground">Last updated {{ page.updated }}</p>{% endif %}
+  <article class="prose-fanfinity mt-8">
+    {{ content }}
+  </article>
+</div>

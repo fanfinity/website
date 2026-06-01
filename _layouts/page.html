@@ -1,0 +1,8 @@
+---
+layout: default
+---
+{% if page.breadcrumb_parent or page.breadcrumbs %}{% include breadcrumbs.html %}{% endif %}
+
+{{ content }}
+
+{% unless page.cta == false %}{% include cta-band.html %}{% endunless %}

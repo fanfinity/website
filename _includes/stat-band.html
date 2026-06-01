@@ -1,0 +1,19 @@
+{%- comment -%}
+Metric band. Renders ONLY if real stats are supplied via front matter.
+Never hardcode performance numbers here — pass include.stats = [{value, label}, ...].
+{%- endcomment -%}
+{%- if include.stats -%}
+<section class="section-sm">
+  <div class="container-page">
+    {%- if include.heading -%}<h2 class="mb-10 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
+    <dl class="grid gap-8 sm:grid-cols-3">
+      {%- for stat in include.stats -%}
+        <div class="rounded-3xl border border-border bg-card p-8 text-center">
+          <dt class="font-heading text-4xl font-bold text-brand-foreground">{{ stat.value }}</dt>
+          <dd class="mt-2 text-sm text-muted-foreground">{{ stat.label }}</dd>
+        </div>
+      {%- endfor -%}
+    </dl>
+  </div>
+</section>
+{%- endif -%}

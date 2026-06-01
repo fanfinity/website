@@ -6,6 +6,14 @@ module.exports = {
     './_posts/*.md',
     './*.md',
     './*.html',
+    // Nested content pages added in later passes — keep their classes from being purged.
+    './solutions/**/*.{md,html}',
+    './platform/**/*.{md,html}',
+    './developers/**/*.{md,html}',
+    './resources/**/*.{md,html}',
+    './about/**/*.{md,html}',
+    // Vanilla-JS toggles class names that must survive the purge.
+    './assets/js/**/*.js',
   ],
   darkMode: 'class',
   theme: {
