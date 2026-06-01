@@ -68,7 +68,7 @@ website/
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages when you push to the `main` branch.
+The site deploys to GitHub Pages via manual trigger only.
 
 ### GitHub Actions Workflow
 
@@ -81,9 +81,9 @@ The workflow (`.github/workflows/jekyll-gh-pages.yml`) does the following:
 5. Builds Jekyll with the correct `baseurl`
 6. Deploys to GitHub Pages
 
-### Manual Deployment
+### Triggering Deployment
 
-To trigger a manual deployment:
+To deploy:
 
 1. Go to the repository on GitHub
 2. Navigate to **Actions** > **Deploy Jekyll site to Pages**
