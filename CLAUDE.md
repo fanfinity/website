@@ -25,7 +25,7 @@ Deploy is **manual only**: GitHub → Actions → "Deploy Jekyll site to Pages" 
 ## Where things live / how to add a page
 - **Pages/content:** root `*.md` (e.g. `index.md`); layouts in `_layouts/` (`default.html`); partials in `_includes/`. Add a page by creating a `.md`/`.html` with `layout: default` front matter.
 - **Styling:** edit `src/main.css` (Tailwind source + oklch theme vars) → builds to `assets/css/main.css`. Theme/colors/fonts in `tailwind.config.js`.
-- **Brand tokens:** primary purple `#9969ff` (scale 50→950; foreground `#7c4dff`); fonts Poppins (headings) / Geist (body) / Geist Mono; dark-mode ready; logo `logo.svg`.
+- **Brand tokens:** primary purple `#9969ff` (scale 50→950; foreground `#7c4dff`); fonts **Poppins** (headings) / **Inter** (body) / **Geist Mono** (labels/code) — all via Google Fonts; icons = **Tabler** set (inline SVG in `_includes/icon.html`); dark-mode ready; logo `logo.svg`.
 - **Marketing skills:** `.agents/skills/` (43 skills; all consume `.agents/product-marketing.md`).
 - **Product specs:** `.agents/specs/*/_epic.md` — the 18 epics mirrored from engage-api (capability source of truth; cleaned of cross-repo refs). Refresh by re-copying from engage-api.
 

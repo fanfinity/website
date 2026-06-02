@@ -4,15 +4,15 @@ Params: eyebrow, heading, subheading
 {%- endcomment -%}
 <section class="section" id="platform">
   <div class="container-page">
-    <div class="max-w-2xl">
+    <div class="max-w-2xl" data-reveal>
       <p class="eyebrow">{{ include.eyebrow | default: 'The platform' }}</p>
       <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading | default: 'One connected platform, five ways to win' }}</h2>
       <p class="mt-4 text-lg text-muted-foreground">{{ include.subheading | default: 'Engagement, loyalty, rewards, identity, and analytics — built to line up by design, not by integration.' }}</p>
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {%- for pillar in site.data.pillars -%}
-        <a href="{{ pillar.url | relative_url }}" class="card card-hover group/link flex flex-col">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-brand-50 text-brand-foreground transition group-hover/link:bg-brand-100">{% include icon.html name=pillar.icon class="h-6 w-6" %}</span>
+        <a href="{{ pillar.url | relative_url }}" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 70 }}ms" class="card card-hover gradient-border group/link flex flex-col">
+          <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition group-hover/link:scale-105">{% include icon.html name=pillar.icon class="h-6 w-6" %}</span>
           <h3 class="mt-5 text-lg font-semibold">{{ pillar.title }}</h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{{ pillar.body }}</p>
           <span class="mt-5 link-arrow">Learn more {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>

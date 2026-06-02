@@ -6,7 +6,7 @@ Breadcrumbs for L2+ pages. Reads either:
 <nav class="border-b border-border bg-background" aria-label="Breadcrumb">
   <div class="container-page py-3">
     <ol class="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
-      <li><a href="{{ '/' | relative_url }}" class="transition hover:text-foreground">Home</a></li>
+      <li><a href="{{ site.data.navigation.home | relative_url }}" class="transition hover:text-foreground">Home</a></li>
       {%- if page.breadcrumbs -%}
         {%- for crumb in page.breadcrumbs -%}
           <li aria-hidden="true" class="text-border">/</li>

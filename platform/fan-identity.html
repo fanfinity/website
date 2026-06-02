@@ -1,0 +1,45 @@
+---
+layout: page
+permalink: /platform/fan-identity
+title: Fan Identity & Community
+description: One persistent fan profile ties every interaction, reward, and score to a single fan across sessions, devices, and platforms — with flair, a social graph, and mutual blocking built in.
+breadcrumb_parent: { title: Platform, url: /platform }
+features:
+  - { icon: identity, title: "One profile, every platform",  body: "A single cross-platform profile collects all of a fan's activity. Sessions start anonymous and link to the profile the moment a fan signs up or logs in — so nothing before that point is lost." }
+  - { icon: link,     title: "Profile IDs you can map",       body: "Every profile carries an immutable Profile ID, plus an optional changeable custom ID for two-way mapping with your own user IDs — connect Fanfinity to the identities you already use." }
+  - { icon: stack,    title: "Attributes, not a second database", body: "Map existing user IDs, query attributes, and attach memoized custom data to a profile. The fan record is enriched in place — no parallel database to keep in sync." }
+  - { icon: spark,    title: "Flair for status that travels",  body: "Reusable labels and scopes — VIP, verified, moderator — assigned manually or automatically. Status signals stay consistent everywhere a fan appears." }
+  - { icon: users,    title: "A directed social graph",        body: "Fans build relationships through directed connections like follow, giving your community real structure that other experiences can read from." }
+  - { icon: shield,   title: "Mutual blocking, system-enforced", body: "When a fan blocks another, the block is mutual and enforced across comments, chat, and the social graph — safety is applied consistently, not feature by feature." }
+points:
+  - "Build on one persistent profile per fan — carried across sessions, devices, and platforms."
+  - "Link anonymous activity to a known fan on signup or login, with no break in the record."
+  - "Map your existing user IDs both ways through an immutable Profile ID and a changeable custom ID."
+  - "Enrich each profile with queryable attributes and custom data — no parallel database to maintain."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="Platform · Fan Identity & Community"
+   title="Own your fan relationship"
+   subtitle="Tie every interaction, reward, and score to a single fan across sessions, devices, and platforms — one persistent profile you build on, with flair, a social graph, and safety controls in the box."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="See identity in the API"
+   secondary_url="/developers" %}
+
+{% include feature-grid.html
+   eyebrow="What's inside"
+   heading="A single identity layer underneath everything"
+   subheading="Profiles, IDs and attributes, flair, a social graph, and blocking — the foundation every other experience reads from."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Why it matters"
+   title="One fan, one record — wherever they show up"
+   body="Instead of scattered, device-bound sessions, you build a first-party relationship on one persistent profile. Anonymous activity links to a known fan on signup, and your existing IDs map both ways — so the record only gets richer."
+   points=page.points
+   cta_text="See identity in the API"
+   cta_url="/developers"
+   icon="identity" %}

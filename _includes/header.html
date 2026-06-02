@@ -1,10 +1,11 @@
 {%- assign nav = site.data.navigation -%}
+{%- assign home = nav.home | relative_url -%}
 <header class="sticky top-0 z-50 border-b border-border bg-white/80 backdrop-blur-md" data-header>
   <nav class="container-page" aria-label="Primary">
     <div class="flex h-16 items-center justify-between gap-4">
 
       <!-- Logo -->
-      <a href="{{ '/' | relative_url }}" class="shrink-0 rounded-md" aria-label="Fanfinity home">
+      <a href="{{ home }}" class="shrink-0 rounded-md" aria-label="Fanfinity home">
         <img src="{{ '/logo-dark.svg' | relative_url }}" alt="Fanfinity" class="h-6 w-auto" width="246" height="28">
       </a>
 

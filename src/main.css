@@ -39,6 +39,7 @@
 
   h1, h2, h3, h4, h5 {
     @apply font-heading font-semibold tracking-tight text-foreground;
+    text-wrap: balance;
   }
 
   ::selection {
@@ -135,6 +136,10 @@
     -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
             mask-image: linear-gradient(to bottom, #000 55%, transparent);
   }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  }
   /* Light bg with a faint brand wash (used sparingly, not a flat purple-on-white) */
   .bg-soft {
     background-color: var(--color-background);
@@ -166,11 +171,106 @@
 
   .scrollbar-none { scrollbar-width: none; }
   .scrollbar-none::-webkit-scrollbar { display: none; }
+
+  /* ── Broadcast / Stadium-energy atmosphere ─────────────────────────── */
+
+  /* Slow-drifting brand mesh for hero + key dark bands (richer than .bg-hero) */
+  .bg-mesh {
+    background-color: #0b0712;
+    background-image:
+      radial-gradient(45% 55% at 14% 12%, rgba(153, 105, 255, 0.36), transparent 60%),
+      radial-gradient(40% 50% at 86% 6%,  rgba(124, 77, 255, 0.30), transparent 62%),
+      radial-gradient(55% 62% at 78% 96%, rgba(106, 48, 224, 0.24), transparent 60%),
+      radial-gradient(42% 46% at 22% 92%, rgba(170, 128, 255, 0.16), transparent 60%);
+    background-size: 180% 180%;
+    animation: meshdrift 24s ease-in-out infinite alternate;
+  }
+  @keyframes meshdrift {
+    0%   { background-position:  0% 0%, 100% 0%, 100% 100%, 0% 100%; }
+    100% { background-position: 26% 18%, 74% 16%, 72% 82%, 28% 80%; }
+  }
+
+  /* Film-grain noise overlay — drop in as an absolute inset-0 layer */
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='200'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.85'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='200'%20height='200'%20filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+  }
+
+  /* Frosted card for dark/glass surfaces */
+  .card-glass {
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl;
+  }
+
+  /* Brand gradient hairline border (mask-composite ring, keeps border-radius) */
+  .gradient-border { position: relative; }
+  .gradient-border::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(153, 105, 255, 0.65), rgba(124, 77, 255, 0.12) 42%, transparent 72%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Soft brand glow for elevated CTAs / focal elements */
+  .glow { box-shadow: 0 14px 48px -10px rgba(124, 77, 255, 0.55); }
+
+  /* Travelling pulse along a connector track (signature stack section) */
+  @keyframes flowline { from { background-position: -40% 0; } to { background-position: 140% 0; } }
+  .flow-line {
+    background-image: linear-gradient(90deg, transparent, rgba(170, 128, 255, 0.9), transparent);
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    animation: flowline 3.2s linear infinite;
+  }
+  .flow-line-v {
+    background-image: linear-gradient(180deg, transparent, rgba(170, 128, 255, 0.9), transparent);
+    background-size: 100% 40%;
+    background-repeat: no-repeat;
+    animation: flowline-v 3.2s linear infinite;
+  }
+  @keyframes flowline-v { from { background-position: 0 -40%; } to { background-position: 0 140%; } }
+
+  /* Seamless horizontal ticker (hero capability marquee) */
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .animate-ticker { animation: ticker 32s linear infinite; }
+
+  .text-balance { text-wrap: balance; }
 }
+
+/* ── Scroll reveal — plain CSS (outside @layer so it's never treeshaken).
+   JS toggles .is-visible via IntersectionObserver. ─────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* Offset in-page anchor jumps so sections clear the sticky header. */
+section[id] { scroll-margin-top: 5rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-rise   { opacity: 1; animation: none; }
   .animate-floaty,
-  .animate-cheer  { animation: none; }
+  .animate-cheer,
+  .animate-ticker,
+  .bg-mesh,
+  .flow-line,
+  .flow-line-v   { animation: none; }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }

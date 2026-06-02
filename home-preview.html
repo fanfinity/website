@@ -25,25 +25,39 @@ flow_nodes:
   - { icon: gift,     label: Rewards,    sub: "Points & redemption" }
   - { icon: identity, label: Identity,   sub: "One fan profile" }
   - { icon: chart,    label: Insights,   sub: "Built-in analytics" }
+
+# Engagement-library widget demos (compressed GIFs in /assets/widgets/).
+# Titles/tags/pitches are Fanfinity's own (from the club pitch decks); formats map to
+# the Widgets product epic. Presented as the widget library — not a production claim.
+widgets:
+  - { icon: poll,   title: Polls,             tag: "Loyalty · Data",        file: polls,      pitch: "Capture the crowd's voice.",        alt: "Text poll and image poll examples" }
+  - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
+  - { icon: quiz,   title: Quizzes,           tag: "Competition",           file: quizzes,    pitch: "Reward what your fans know.",       alt: "Text and image quiz examples" }
+  - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
+  - { icon: hash,   title: Number Prediction, tag: "Retention",             file: prediction, pitch: "Make every stat a game.",           alt: "Number prediction example" }
+  - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
+  - { icon: bell,   title: Alerts,            tag: "Revenue",               file: alerts,     pitch: "Own the moment — and monetize it.", alt: "Sponsored and breaking alert examples" }
+  - { icon: chat,   title: Ask,               tag: "Community",             file: ask,        pitch: "Give fans the mic.",                alt: "Ask submission example" }
 ---
 
 <!-- ============================================================= HERO -->
-<section class="relative overflow-hidden bg-hero text-white">
-  <div class="absolute inset-0 dot-grid opacity-60 mask-fade-b" aria-hidden="true"></div>
+<section class="relative overflow-hidden bg-mesh text-white">
+  <div class="absolute inset-0 bg-grain opacity-[0.08] mix-blend-overlay" aria-hidden="true"></div>
+  <div class="absolute inset-0 dot-grid opacity-50 mask-fade-b" aria-hidden="true"></div>
   <div class="container-page relative">
-    <div class="grid items-center gap-14 py-20 md:py-28 lg:grid-cols-2 lg:gap-8">
+    <div class="grid items-center gap-14 pb-16 pt-20 md:pt-28 lg:grid-cols-2 lg:gap-8">
 
       <!-- Copy -->
       <div class="max-w-xl">
         <p class="eyebrow eyebrow-on-dark animate-rise">Fan engagement &amp; loyalty platform</p>
-        <h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight animate-rise [animation-delay:80ms] sm:text-5xl md:text-6xl">
+        <h1 class="mt-5 text-5xl font-bold leading-[1.02] tracking-tight text-white animate-rise [animation-delay:80ms] sm:text-6xl md:text-7xl">
           Where fans become <span class="text-gradient-light">players</span>.
         </h1>
         <p class="mt-6 max-w-lg text-lg leading-relaxed text-white/70 animate-rise [animation-delay:160ms]">
           Add interactive widgets, rewards, and loyalty to your live moments — and keep fans coming back, season after season.
         </p>
         <div class="mt-9 flex flex-wrap gap-3 animate-rise [animation-delay:240ms]">
-          <a href="{{ '/demo' | relative_url }}" class="btn btn-white btn-lg">Book a Demo</a>
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-white btn-lg glow">Book a Demo</a>
           <a href="{{ '/platform' | relative_url }}" class="btn btn-outline-light btn-lg">Explore the platform</a>
         </div>
         <p class="mt-8 flex items-center gap-2.5 text-sm text-white/55 animate-rise [animation-delay:320ms]">
@@ -106,44 +120,72 @@ flow_nodes:
 
     </div>
   </div>
+
+  <!-- Broadcast capability ticker -->
+  <div class="relative border-t border-white/10">
+    <div class="container-page">
+      <div class="flex items-center gap-5 py-5">
+        <span class="hidden shrink-0 font-mono text-[11px] uppercase tracking-[0.2em] text-white/40 sm:block">In the platform</span>
+        <div class="mask-fade-x relative flex-1 overflow-hidden">
+          <div class="flex w-max animate-ticker">
+            {%- assign caps = "Polls,Predictions,Quizzes,Cheer Meters,Reactions,Quests,Streaks,Leaderboards,Badges,Status Tiers,Rewards,Redemption,Sponsorship,Spoiler-safe Sync,Analytics" | split: "," -%}
+            {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-white/65"><span class="h-1 w-1 rounded-full bg-brand-400" aria-hidden="true"></span>{{ c }}</span>{%- endfor -%}
+            {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-white/65" aria-hidden="true"><span class="h-1 w-1 rounded-full bg-brand-400"></span>{{ c }}</span>{%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ====================================================== AUDIENCE BAND -->
 {% include logo-cloud.html %}
 
 <!-- =================================================== CONNECTED STACK -->
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-3xl text-center">
-      <p class="eyebrow justify-center">The Fanfinity difference</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">One connected platform, not stitched-together tools</h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
-        Most teams bolt a polls vendor onto a loyalty tool onto an analytics stack — then fight to make them talk. In Fanfinity every layer lines up <span class="font-semibold text-foreground">by design</span>: rewards auto-feed leaderboards, trip badges and tiers, and accrue to a single fan profile.
+<section class="relative overflow-hidden bg-mesh text-white">
+  <div class="absolute inset-0 bg-grain opacity-[0.07] mix-blend-overlay" aria-hidden="true"></div>
+  <div class="absolute inset-0 dot-grid opacity-30" aria-hidden="true"></div>
+  <div class="container-page relative section">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <p class="eyebrow eyebrow-on-dark justify-center">The Fanfinity difference</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">One connected platform, <span class="text-gradient-light">not stitched-together tools</span></h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/70">
+        Most teams bolt a polls vendor onto a loyalty tool onto an analytics stack — then fight to make them talk. In Fanfinity every layer lines up <span class="font-semibold text-white">by design</span>: rewards auto-feed leaderboards, trip badges and tiers, and accrue to a single fan profile.
       </p>
     </div>
 
-    <div class="mt-14 flex flex-col items-stretch gap-2.5 lg:flex-row lg:items-center">
-      {% for node in page.flow_nodes %}
-        <div class="flex-1 rounded-2xl border border-border bg-card p-5 text-center">
-          <span class="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-foreground">{% include icon.html name=node.icon class="h-5 w-5" %}</span>
-          <p class="mt-3 text-sm font-semibold text-foreground">{{ node.label }}</p>
-          <p class="mt-1 text-xs text-muted-foreground">{{ node.sub }}</p>
-        </div>
-        {% unless forloop.last %}
-          {% include icon.html name="arrow-right" class="mx-auto h-5 w-5 shrink-0 rotate-90 text-brand-300 lg:rotate-0" %}
-        {% endunless %}
-      {% endfor %}
+    <div class="relative mt-16">
+      <!-- horizontal connector + travelling pulse (lg+) -->
+      <div class="absolute left-[8%] right-[8%] top-9 hidden h-px bg-white/15 lg:block" aria-hidden="true">
+        <div class="flow-line h-px w-full"></div>
+      </div>
+      <!-- vertical connector (mobile / tablet) -->
+      <div class="absolute bottom-6 left-9 top-6 w-px bg-white/15 lg:hidden" aria-hidden="true">
+        <div class="flow-line-v h-full w-px"></div>
+      </div>
+
+      <ol class="relative flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-4">
+        {% for node in page.flow_nodes %}
+          {%- assign d = forloop.index0 | times: 90 -%}
+          <li data-reveal style="--reveal-delay:{{ d }}ms" class="flex items-center gap-4 lg:flex-1 lg:flex-col lg:gap-0 lg:text-center">
+            <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl border border-white/15 bg-brand-600/90 text-white shadow-lg shadow-brand-950/50 ring-4 ring-[#0b0712] backdrop-blur-xl transition duration-300 hover:scale-105">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
+            <div class="lg:mt-4">
+              <p class="font-semibold text-white">{{ node.label }}</p>
+              <p class="mt-0.5 text-sm text-white/55">{{ node.sub }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
     </div>
   </div>
 </section>
 
 <!-- ===================================================== VALUE PILLARS -->
-{% include feature-grid.html
+{% include value-pillars.html
    eyebrow="Why teams choose Fanfinity"
    heading="Outcomes, not just widgets"
    subheading="Six ways Fanfinity turns a live audience into a returning, monetizable community."
-   items=page.value_pillars
-   columns=3 %}
+   items=page.value_pillars %}
 
 <!-- ==================================================== PLATFORM CARDS -->
 {% include pillar-cards.html
@@ -151,19 +193,87 @@ flow_nodes:
    heading="Five connected areas, one system"
    subheading="Everything you need to make moments interactive, build loyalty, and prove it worked — without stitching vendors together." %}
 
+<!-- ============================================================== WIDGETS -->
+<section id="widgets" class="relative overflow-hidden bg-dark-band text-white">
+  <div class="absolute inset-0 bg-grain opacity-[0.06] mix-blend-overlay" aria-hidden="true"></div>
+  <div class="container-page relative section">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="eyebrow eyebrow-on-dark justify-center">The engagement library</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">The widgets fans actually <span class="text-gradient-light">play with</span></h2>
+      <p class="mt-4 text-lg leading-relaxed text-white/70">Drop interactive formats into any live or on-demand moment — published in real time, themed to your brand, and ready for sponsors.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for w in page.widgets -%}
+        <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
+                class="gradient-border group/w flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl">
+          <figcaption class="flex items-center gap-3 px-5 pt-5">
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
+            <span class="min-w-0">
+              <span class="block text-sm font-semibold text-white">{{ w.title }}</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-300">{{ w.tag }}</span>
+            </span>
+          </figcaption>
+          <p class="px-5 pt-3 text-sm text-white/60">{{ w.pitch }}</p>
+          <div class="mt-4 overflow-hidden border-t border-white/10 bg-black/30">
+            <img src="{{ '/assets/widgets/' | append: w.file | append: '.gif' | relative_url }}"
+                 alt="{{ w.alt }}" loading="lazy" decoding="async"
+                 class="w-full transition duration-500 group-hover/w:scale-[1.02]">
+          </div>
+        </figure>
+      {%- endfor -%}
+    </div>
+
+    <p class="mt-8 text-center text-xs text-white/40">Polls, sliders, quizzes, predictions, cheer meters, alerts &amp; more — all themeable and sponsorable.</p>
+  </div>
+</section>
+
 <!-- =================================================== SOLUTION CARDS -->
 {% include solution-cards.html %}
 
 <!-- ==================================================== DEVELOPER SPLIT -->
-{% include feature-split.html
-   reverse=true
-   eyebrow="For developers"
-   title="Built for the teams who ship it"
-   body="Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface."
-   points=page.dev_points
-   cta_text="See the developer overview"
-   cta_url="/developers"
-   icon="code" %}
+<section class="section" id="developers">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <!-- Copy -->
+      <div data-reveal>
+        <p class="eyebrow">For developers</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Built for the teams who ship it</h2>
+        <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface.</p>
+        <ul class="mt-6 space-y-3">
+          {%- for pt in page.dev_points -%}
+            <li class="flex gap-3">
+              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-3.5 w-3.5" %}</span>
+              <span class="text-sm leading-relaxed text-muted-foreground">{{ pt }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <a href="{{ '/developers' | relative_url }}" class="link-arrow mt-7">See the developer overview {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <!-- REST code mock -->
+      <div data-reveal style="--reveal-delay:120ms" class="relative">
+        <div class="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0712] shadow-2xl shadow-brand-950/40">
+          <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
+            <span class="h-3 w-3 rounded-full bg-white/15"></span>
+            <span class="h-3 w-3 rounded-full bg-white/15"></span>
+            <span class="h-3 w-3 rounded-full bg-white/15"></span>
+            <span class="ml-2 font-mono text-xs text-white/40">credit a reward</span>
+          </div>
+<pre class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> https://api.fanfinity.io/v1/rewards/credit \
+  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \
+  -d <span class="text-white/90">'{ "profile_id": "fan_8c2a…",
+        "action": "prediction_made",
+        "program_id": "wc26_final" }'</span>
+
+<span class="text-emerald-400/80"># 200 OK — balance credited, leaderboard auto-synced</span>
+<span class="text-white/45">{</span> <span class="text-brand-300">"balance"</span>: 1450, <span class="text-brand-300">"rank"</span>: 12 <span class="text-white/45">}</span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============================================================== CTA -->
 {% include cta-band.html %}

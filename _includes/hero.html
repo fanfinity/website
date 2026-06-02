@@ -11,7 +11,7 @@ Reusable page hero. Params:
   <div class="container-page relative py-24 md:py-32 {% if align == 'center' %}text-center{% endif %}">
     <div class="{% if align == 'center' %}mx-auto {% endif %}max-w-3xl">
       {%- if include.eyebrow -%}<p class="eyebrow eyebrow-on-dark {% if align == 'center' %}justify-center{% endif %}">{{ include.eyebrow }}</p>{%- endif -%}
-      <h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">{{ include.title }}</h1>
+      <h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">{{ include.title }}</h1>
       {%- if include.subtitle -%}<p class="mt-6 text-lg leading-relaxed text-white/70 {% if align == 'center' %}mx-auto max-w-2xl{% else %}max-w-xl{% endif %}">{{ include.subtitle }}</p>{%- endif -%}
       {%- if include.cta_text -%}
         <div class="mt-9 flex flex-wrap gap-3 {% if align == 'center' %}justify-center{% endif %}">

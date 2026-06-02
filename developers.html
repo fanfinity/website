@@ -1,0 +1,38 @@
+---
+layout: page
+permalink: /developers
+title: Developers
+description: Fanfinity is an API-first, multi-tenant platform — a REST API and client SDKs, with a producer surface your content team runs.
+dev_grid:
+  - { icon: code,  title: "REST API",            body: "Every capability is programmable over a REST API with OAuth 2.0 — Applications, Profiles, Programs, Widgets, Rewards, Leaderboards and more." }
+  - { icon: stack, title: "Client SDKs",         body: "Deliver interactive widgets and themes to iOS, Android, and Web through client SDKs, with a producer surface your content team runs." }
+  - { icon: plug,  title: "Integrations & data", body: "Map your existing user and content IDs with custom IDs and queryable attributes — no parallel database to maintain." }
+dev_points:
+  - "OAuth 2.0 Bearer auth — the client secret stays server-side, and profile tokens scope a single fan."
+  - "Custom IDs map your CMS, EPG, or stats systems one-to-one; queryable attributes handle one-to-many."
+  - "Programs emit start/stop status events your integrations can subscribe to."
+  - "Spoiler-safe sync ships in the client SDK, with HLS Program-Date-Time support."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="For developers"
+   title="Built for the teams who ship it"
+   subtitle="Fanfinity is a REST API and client SDKs. Engineering integrates once; your content team runs the rest from a producer surface."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="See the platform"
+   secondary_url="/platform" %}
+
+{% include feature-grid.html
+   eyebrow="The building blocks"
+   heading="An API-first platform"
+   subheading="A clean resource model — Applications → Profiles → Programs → Widgets → Rewards — that you integrate once."
+   items=page.dev_grid
+   columns=3 %}
+
+{% include feature-split.html
+   eyebrow="Integration model"
+   title="Fits the stack you already run"
+   body="Connect Fanfinity to your identity, content, and data systems without rebuilding them. Engineering owns the integration; the producer surface owns the day-to-day."
+   points=page.dev_points
+   icon="code" %}

@@ -1,0 +1,36 @@
+---
+layout: page
+permalink: /platform/
+title: Platform
+description: One connected platform — engagement, loyalty, rewards, identity, and analytics that line up by design, not by integration.
+flow_points:
+  - "Applications give you a secure, multi-tenant root with OAuth 2.0 access."
+  - "Profiles tie every interaction to one persistent, cross-platform fan identity."
+  - "Programs map a unit of content — a stream, an episode, a post — to the experiences that run on it."
+  - "Rewards earned in a program auto-feed leaderboards and trip badge and tier thresholds."
+  - "Analytics measure it all — at the application, program, widget, and quest level."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="The platform"
+   title="One connected platform, five ways to win"
+   subtitle="Engagement, loyalty, rewards, identity, and analytics — built to line up by design, not by integration."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="For developers"
+   secondary_url="/developers" %}
+
+{% include pillar-cards.html
+   eyebrow="Capabilities"
+   heading="Five connected areas, one system"
+   subheading="Each area is powerful on its own — and stronger because they share one fan profile, one rewards ledger, and one analytics layer." %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="How it fits together"
+   title="Built to connect, not to integrate"
+   body="Most stacks bolt a polls vendor onto a loyalty tool onto an analytics product, then fight to make them talk. In Fanfinity, every layer is wired to the next by design."
+   points=page.flow_points
+   cta_text="See it in the API"
+   cta_url="/developers"
+   icon="stack" %}

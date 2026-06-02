@@ -103,4 +103,28 @@
   function handleMq(ev) { if (ev.matches) { closeMobileMenu(); } else { closeAllDropdowns(null); } }
   if (mq.addEventListener) { mq.addEventListener('change', handleMq); }
   else if (mq.addListener) { mq.addListener(handleMq); }
+
+  /* ---------------------------------------------------------------- *
+   * Scroll reveal — sections fade/rise in as they enter the viewport
+   * ---------------------------------------------------------------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function revealAll() { revealEls.forEach(function (el) { el.classList.add('is-visible'); }); }
+
+  if (revealEls.length) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealAll();
+    } else {
+      var io = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    }
+  }
 })();

@@ -1,0 +1,56 @@
+---
+layout: page
+permalink: /pricing
+title: Pricing
+description: Pricing scoped to how you actually use Fanfinity — your audience, your verticals, and the capabilities you turn on. Talk to us for a quote.
+included:
+  - { icon: bolt,     title: "Live Interactivity",       body: "Widgets, programs, reactions, and spoiler-safe sync." }
+  - { icon: trophy,   title: "Gamification & Loyalty",   body: "Quests, streaks, leaderboards, badges, and status tiers." }
+  - { icon: gift,     title: "Rewards & Monetization",   body: "A full rewards economy, sponsorship, and redemption keys." }
+  - { icon: identity, title: "Fan Identity & Community", body: "One cross-platform profile, custom IDs, and flair." }
+  - { icon: chart,    title: "Insights & Operations",    body: "Standard analytics, multi-tenant applications, and custom themes." }
+  - { icon: stack,    title: "API & SDKs",               body: "Full REST API and client SDKs, with a producer surface." }
+faqs:
+  - q: "How much does Fanfinity cost?"
+    a: "Pricing is scoped to your usage and the capabilities you enable, and we put it in writing before you commit. Book a demo and we'll quote your specific use case."
+  - q: "Do you charge per active user?"
+    a: "We scope pricing with you — the goal is a model that rewards engagement rather than penalizing it as your audience grows. We'll confirm the exact basis for your contract."
+  - q: "What's included versus an add-on?"
+    a: "The core of the platform — engagement, loyalty, rewards, identity, and standard analytics — is included. Deeper analytics options are available; we'll confirm packaging for your plan."
+  - q: "Is there a free trial or self-serve sign-up?"
+    a: "Today we onboard through a guided demo so we can map the platform to your goals and verticals. Book a demo to get started."
+---
+{% include hero.html
+   variant="light"
+   eyebrow="Pricing"
+   title="Pricing that fits how you actually use it"
+   subtitle="We scope pricing to your audience, your verticals, and the capabilities you turn on — then put it in writing. Talk to us for a quote."
+   cta_text="Book a Demo"
+   cta_url="/demo" %}
+
+{% include feature-grid.html
+   eyebrow="What you get"
+   heading="The connected platform, end to end"
+   subheading="Every plan is built on the same connected system. We tailor scope and capabilities to your goals."
+   items=page.included
+   columns=3 %}
+
+<section class="section">
+  <div class="container-page">
+    <div class="mx-auto max-w-3xl">
+      <p class="eyebrow justify-center text-center">FAQ</p>
+      <h2 class="mt-4 text-center text-3xl font-bold tracking-tight sm:text-4xl">Pricing questions, answered</h2>
+      <div class="mt-10 divide-y divide-border overflow-hidden rounded-3xl border border-border bg-card">
+        {%- for item in page.faqs -%}
+          <details class="group/faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-base font-semibold text-foreground transition hover:bg-muted">
+              {{ item.q }}
+              {% include icon.html name="chevron-down" class="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open/faq:rotate-180" %}
+            </summary>
+            <p class="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{{ item.a }}</p>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+{%- comment -%}
+Bespoke bento grid for the six value pillars (home hero "outcomes" section).
+Purpose-built for exactly 6 items: cards 0 and 5 run wide, 1–4 are half-width,
+forming an asymmetric 3-row bento with no gaps. Items come from page front
+matter (array of {icon, title, body}).
+Params: eyebrow, heading, subheading, items (required)
+{%- endcomment -%}
+<section class="section">
+  <div class="container-page">
+    <div class="max-w-2xl" data-reveal>
+      {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
+      {%- if include.heading -%}<h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
+      {%- if include.subheading -%}<p class="mt-4 text-lg text-muted-foreground">{{ include.subheading }}</p>{%- endif -%}
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-6">
+      {%- for item in include.items -%}
+        {%- case forloop.index0 -%}
+          {%- when 0 -%}{%- assign span = 'md:col-span-4' -%}{%- assign wide = true -%}
+          {%- when 5 -%}{%- assign span = 'md:col-span-6' -%}{%- assign wide = true -%}
+          {%- else -%}{%- assign span = 'md:col-span-2' -%}{%- assign wide = false -%}
+        {%- endcase -%}
+        {%- assign delay = forloop.index0 | times: 70 -%}
+        <article data-reveal style="--reveal-delay:{{ delay }}ms"
+                 class="group/card gradient-border relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10 {{ span }}">
+          {%- if wide -%}
+            <div class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
+          {%- endif -%}
+          <div class="relative flex items-center justify-between">
+            <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition duration-300 group-hover/card:scale-105">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+            <span class="font-mono text-xs font-medium tracking-wide text-muted-foreground/70">{{ forloop.index | prepend: '0' }}</span>
+          </div>
+          <h3 class="relative mt-5 font-semibold {% if wide %}text-xl{% else %}text-base{% endif %}">{{ item.title }}</h3>
+          <p class="relative mt-2 text-sm leading-relaxed text-muted-foreground {% if wide %}max-w-md{% endif %}">{{ item.body }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

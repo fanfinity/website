@@ -1,0 +1,72 @@
+---
+layout: page
+permalink: /demo
+title: Book a Demo
+description: See how Fanfinity turns your live audience into active, returning, monetizable fans. Book a walkthrough with our team.
+cta: false
+expect:
+  - "A walkthrough mapped to your vertical — sports, broadcast, or brand."
+  - "A look at the connected stack: widgets, loyalty, rewards, identity, and analytics."
+  - "Straight answers on integration, timelines, and how pricing would work for you."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="Book a demo"
+   title="See Fanfinity on your content"
+   subtitle="Tell us a little about your audience and goals. We'll tailor the walkthrough to the outcomes you're measured on."
+   align="center" %}
+
+<section class="section">
+  <div class="container-page">
+    <div class="grid items-start gap-12 lg:grid-cols-2">
+
+      <!-- What to expect -->
+      <div data-reveal>
+        <p class="eyebrow">What to expect</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A working session, not a sales pitch</h2>
+        <ul class="mt-8 space-y-4">
+          {%- for point in page.expect -%}
+            <li class="flex gap-3">
+              <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-4 w-4" %}</span>
+              <span class="text-base leading-relaxed text-muted-foreground">{{ point }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <!-- Request form (UI only — submission wiring is TBD / not yet connected) -->
+      <div data-reveal style="--reveal-delay:120ms" class="card gradient-border">
+        <!-- TODO: connect this form to a backend / CRM before public launch. Button is inert for now. -->
+        <form class="grid gap-4" novalidate>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="block text-sm font-medium text-foreground">First name
+              <input type="text" name="first_name" autocomplete="given-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            </label>
+            <label class="block text-sm font-medium text-foreground">Last name
+              <input type="text" name="last_name" autocomplete="family-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            </label>
+          </div>
+          <label class="block text-sm font-medium text-foreground">Work email
+            <input type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+          </label>
+          <label class="block text-sm font-medium text-foreground">Company
+            <input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+          </label>
+          <label class="block text-sm font-medium text-foreground">I'm with a…
+            <select name="vertical" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <option>Sports league or team</option>
+              <option>Broadcaster or media company</option>
+              <option>Brand or agency</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label class="block text-sm font-medium text-foreground">What are you hoping to do?
+            <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
+          </label>
+          <button type="button" class="btn btn-primary btn-lg glow w-full">Request my demo</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
