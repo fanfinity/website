@@ -14,8 +14,8 @@
         {%- for item in nav.header -%}
           {%- assign active = false -%}
           {%- if item.url != '/' and page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
-          <li class="relative" {% if item.children %}data-dropdown{% endif %}>
-            {%- if item.children -%}
+          <li class="relative" {% if item.children or item.groups %}data-dropdown{% endif %}>
+            {%- if item.children or item.groups -%}
               <button type="button"
                       class="nav-trigger{% if active %} is-active{% endif %}"
                       aria-expanded="false" aria-haspopup="true"
@@ -25,7 +25,40 @@
                 {% include icon.html name="chevron-down" class="nav-chevron" %}
               </button>
 
-              {%- if item.mega -%}
+              {%- if item.groups -%}
+                {%- assign gc = item.groups | size -%}
+                <div id="menu-{{ item.title | slugify }}"
+                     class="nav-panel left-1/2 -translate-x-1/2 max-w-[calc(100vw-2rem)] {% if gc == 1 %}w-80{% elsif gc == 2 %}w-[48rem]{% else %}w-[56rem]{% endif %}"
+                     data-dropdown-panel hidden>
+                  <div class="flex gap-1 p-1">
+                    {%- for group in item.groups -%}
+                      <div class="min-w-0 flex-1">
+                        <p class="px-3 pb-1 pt-2 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{{ group.heading }}</p>
+                        <div class="{% if group.links.size > 5 %}grid grid-cols-2 gap-0.5{% endif %}">
+                          {%- for child in group.links -%}
+                            <a href="{{ child.url | relative_url }}" class="nav-panel-link group/link">
+                              {%- if child.icon -%}<span class="nav-panel-icon">{% include icon.html name=child.icon class="h-5 w-5" %}</span>{%- endif -%}
+                              <span class="min-w-0">
+                                <span class="flex items-center gap-1.5 text-sm font-semibold text-foreground">
+                                  {{ child.title }}
+                                  {%- if child.badge -%}<span class="rounded-full bg-brand-100 px-1.5 py-px text-[10px] font-semibold uppercase tracking-wide text-brand-700">{{ child.badge }}</span>{%- endif -%}
+                                </span>
+                                {%- if child.desc -%}<span class="block text-xs text-muted-foreground">{{ child.desc }}</span>{%- endif -%}
+                              </span>
+                            </a>
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                  <a href="{{ item.url | relative_url }}"
+                     class="mt-1 flex items-center justify-between rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-brand-50 hover:text-brand-foreground">
+                    Explore all {{ item.title }}
+                    {% include icon.html name="arrow-right" class="h-4 w-4" %}
+                  </a>
+                </div>
+
+              {%- elsif item.mega -%}
                 <div id="menu-{{ item.title | slugify }}"
                      class="nav-panel left-1/2 w-[44rem] max-w-[calc(100vw-2rem)] -translate-x-1/2"
                      data-dropdown-panel hidden>
@@ -42,7 +75,7 @@
                   </div>
                   <a href="{{ item.url | relative_url }}"
                      class="mt-1 flex items-center justify-between rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-brand-50 hover:text-brand-foreground">
-                    Explore the full platform
+                    Explore all {{ item.title }}
                     {% include icon.html name="arrow-right" class="h-4 w-4" %}
                   </a>
                 </div>
@@ -88,7 +121,7 @@
       <ul class="space-y-1">
         {%- for item in nav.header -%}
           <li>
-            {%- if item.children -%}
+            {%- if item.children or item.groups -%}
               <details class="group rounded-xl">
                 <summary class="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-foreground hover:bg-muted">
                   {{ item.title }}
@@ -98,9 +131,18 @@
                   <li>
                     <a href="{{ item.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm font-medium text-brand-foreground hover:bg-muted">All {{ item.title }}</a>
                   </li>
-                  {%- for child in item.children -%}
-                    <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ child.title }}</a></li>
-                  {%- endfor -%}
+                  {%- if item.groups -%}
+                    {%- for group in item.groups -%}
+                      <li class="px-3 pb-0.5 pt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">{{ group.heading }}</li>
+                      {%- for child in group.links -%}
+                        <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ child.title }}</a></li>
+                      {%- endfor -%}
+                    {%- endfor -%}
+                  {%- else -%}
+                    {%- for child in item.children -%}
+                      <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ child.title }}</a></li>
+                    {%- endfor -%}
+                  {%- endif -%}
                 </ul>
               </details>
             {%- else -%}

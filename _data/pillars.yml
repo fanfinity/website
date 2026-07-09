@@ -1,37 +1,31 @@
-# The five Platform pillars. Reused on the homepage and (next pass) the /platform hub.
-# Capabilities are grounded in the product epics (.agents/specs/*/_epic.md).
+# The four products that make up the Fanfinity platform. Reused on the homepage
+# ("Four products, one platform") and the /product hub. Each stands alone; together
+# they form the full loop: Identify -> Engage -> Activate -> Prove.
 
-- title: Live Interactivity
-  url: /platform/live-interactivity
-  icon: bolt
-  outcome: Make any live moment playable.
-  body: Push polls, quizzes, predictions, and cheer meters the instant a key moment happens — with spoiler-safe sync for live and on-demand.
-  capabilities: [Widgets, Programs, Reactions, Spoiler Prevention]
-
-- title: Gamification & Loyalty
-  url: /platform/gamification-loyalty
-  icon: trophy
-  outcome: Build habits that last a season.
-  body: Streaks, quests, badges, leaderboards, and status tiers turn one-off viewers into fans who come back daily, weekly, and all season long.
-  capabilities: [Quests, Streaks, Leaderboards, Badges, Status Tiers]
-
-- title: Rewards & Monetization
-  url: /platform/rewards-monetization
-  icon: gift
-  outcome: Reward what matters — and earn from it.
-  body: Run a full points-and-rewards economy, package engagement as sponsorable inventory, and open new ways to earn beyond ads and subscriptions.
-  capabilities: [Rewards, Sponsorship, Redemption Keys]
-
-- title: Fan Identity & Community
-  url: /platform/fan-identity
+- title: Fanfinity ID
+  url: /product/fanfinity-id
   icon: identity
-  outcome: Own your fan relationship.
-  body: One persistent identity ties every interaction, reward, and score to a single fan across sessions, devices, and platforms — enriching the records you already keep.
-  capabilities: [Profiles & Identity, IDs & Attributes, Flair]
+  outcome: Know every customer.
+  body: A sovereign CDP and real-time identity graph that unifies every touchpoint — ticketing, streaming, app, web, stadium, social — into one golden customer profile, with consent governance built in.
+  capabilities: [Identity Resolution, Golden Record, Consent & Governance, Real-time Profiles]
 
-- title: Insights & Operations
-  url: /platform/insights-analytics
+- title: Fanfinity Engage
+  url: /product/fanfinity-engage
+  icon: bolt
+  outcome: Turn watching into playing.
+  body: Live interactivity, gamification, and loyalty — polls, predictions, quizzes, quests, streaks, and leaderboards — that turn passive audiences into active, returning communities.
+  capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, Spoiler-safe Sync]
+
+- title: Fanfinity Activate
+  url: /product/fanfinity-activate
+  icon: megaphone
+  outcome: Reach the right person, everywhere.
+  body: Orchestrate omnichannel campaigns across WhatsApp, email, push, and paid media — segment on live behavior, build journeys that react, and personalize every message.
+  capabilities: [Segmentation, Journey Orchestration, WhatsApp & Email, Ad Audiences]
+
+- title: Fanfinity Measure
+  url: /product/fanfinity-measure
   icon: chart
-  outcome: Prove engagement and reach.
-  body: Built-in analytics measure participation at the program, widget, and quest level — so you can show what worked, to sponsors and to your team.
-  capabilities: [Analytics, Applications, Custom Themes]
+  outcome: Prove the value.
+  body: Deterministic attribution and a sponsor/partner portal — verified reach instead of impressions, exposure-to-outcome measurement, and premium audience monetization.
+  capabilities: [Verified Reach, Attribution, Sponsor Portal, Benchmarking]

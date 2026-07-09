@@ -1,0 +1,28 @@
+---
+layout: page
+permalink: /compare
+title: Compare Fanfinity
+description: How Fanfinity compares to horizontal CDPs like Meiro and Segment, and engagement-only tools like LiveLike.
+breadcrumb_parent: { title: Resources, url: /resources }
+compare:
+  - { title: "Fanfinity vs Meiro",    url: /compare/meiro,    desc: "Sovereign CDP with built-in engagement and attribution", icon: scale }
+  - { title: "Fanfinity vs Segment",  url: /compare/segment,  desc: "First-party, no-MTU pricing, activation included",       icon: scale }
+  - { title: "Fanfinity vs LiveLike", url: /compare/livelike, desc: "Engagement plus the identity and proof it is missing",    icon: scale }
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="Compare"
+   title="How Fanfinity stacks up"
+   subtitle="Horizontal CDPs unify data but can't activate. Engagement tools create activity with anonymous users. Fanfinity does both — and proves the outcome."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore the products"
+   secondary_url="/product" %}
+
+<section class="section">
+  <div class="container-page">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for link in page.compare -%}{% include link-card.html link=link %}{%- endfor -%}
+    </div>
+  </div>
+</section>

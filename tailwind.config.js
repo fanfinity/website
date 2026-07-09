@@ -9,6 +9,9 @@ module.exports = {
     // Nested content pages added in later passes — keep their classes from being purged.
     './solutions/**/*.{md,html}',
     './platform/**/*.{md,html}',
+    './product/**/*.{md,html}',
+    './use-cases/**/*.{md,html}',
+    './compare/**/*.{md,html}',
     './developers/**/*.{md,html}',
     './resources/**/*.{md,html}',
     './about/**/*.{md,html}',

@@ -1,0 +1,36 @@
+{%- comment -%}
+Renders a nav header item's children (or grouped mega-menu links) as a grid of
+clickable cards — used to build hub pages straight from the navigation.
+Params:
+  nav_title (required) — the header item title, e.g. "Product"
+  eyebrow, heading, subheading — optional section intro
+  only — optional group heading to render just one group (e.g. "By industry")
+{%- endcomment -%}
+{%- assign item = site.data.navigation.header | where: 'title', include.nav_title | first -%}
+<section class="section">
+  <div class="container-page">
+    {%- if include.eyebrow or include.heading or include.subheading -%}
+      <div class="max-w-2xl" data-reveal>
+        {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
+        {%- if include.heading -%}<h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
+        {%- if include.subheading -%}<p class="mt-4 text-lg text-muted-foreground">{{ include.subheading }}</p>{%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if item.groups -%}
+      {%- for group in item.groups -%}
+        {%- if include.only and group.heading != include.only -%}{%- continue -%}{%- endif -%}
+        <div class="mt-10">
+          <p class="eyebrow">{{ group.heading }}</p>
+          <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {%- for link in group.links -%}{% include link-card.html link=link %}{%- endfor -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {%- for link in item.children -%}{% include link-card.html link=link %}{%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
