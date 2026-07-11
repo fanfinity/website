@@ -6,8 +6,8 @@
 	// devcontainer image ships both (Ruby 3.x + Node LTS).
 	"image": "mcr.microsoft.com/devcontainers/jekyll:2-bookworm",
 	"features": {
-		"ghcr.io/devcontainer-community/devcontainer-features/github.com-cli:1": {},
-		"ghcr.io/devcontainer-config/features/dot-config:4": {}
+		// dot-config feature dropped: its installer exits 127 on the jekyll base image.
+		"ghcr.io/devcontainer-community/devcontainer-features/github.com-cli:1": {}
 	},
 
 	// Mount the host folder as the workspace inside the container.
