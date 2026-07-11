@@ -19,6 +19,10 @@
 	"workspaceFolder": "/workspaces/website",
 
 	// Jekyll dev server (npm run dev → Tailwind watch + Jekyll live-reload).
+	// appPort publishes 4000 (site) + 35729 (livereload websocket) on the host at
+	// container start, so http://localhost:4000 works from any browser — no VS Code
+	// forwarding needed. jekyll serve must bind 0.0.0.0 (see package.json dev script).
+	"appPort": [4000, 35729],
 	"forwardPorts": [4000],
 
 	// Install site dependencies after the container is created.

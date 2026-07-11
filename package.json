@@ -5,7 +5,7 @@
     "css:build": "npx tailwindcss -i ./src/main.css -o ./assets/css/main.css --minify",
     "css:watch": "npx tailwindcss -i ./src/main.css -o ./assets/css/main.css --watch",
     "build": "npm run css:build && bundle exec jekyll build",
-    "dev": "npm run css:watch & bundle exec jekyll serve --livereload"
+    "dev": "npm run css:watch & bundle exec jekyll serve --livereload --host 0.0.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
