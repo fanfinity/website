@@ -1,0 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/jekyll
+{
+	"name": "Fanfinity Website",
+	// Jekyll 4.3 + Tailwind site: needs Ruby (bundler) and Node — the official Jekyll
+	// devcontainer image ships both (Ruby 3.x + Node LTS).
+	"image": "mcr.microsoft.com/devcontainers/jekyll:2-bookworm",
+	"features": {
+		"ghcr.io/devcontainer-community/devcontainer-features/github.com-cli:1": {},
+		"ghcr.io/devcontainer-config/features/dot-config:4": {}
+	},
+
+	// Mount the host folder as the workspace inside the container.
+	"workspaceMount": "source=/home/abumusa/Desktop/fanfinity/marketing/website,target=/workspaces/website,type=bind,consistency=cached",
+	"workspaceFolder": "/workspaces/website",
+
+	// Jekyll dev server (npm run dev → Tailwind watch + Jekyll live-reload).
+	"forwardPorts": [4000],
+
+	// Install site dependencies after the container is created.
+	"postCreateCommand": "bundle install && npm install"
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
