@@ -33,15 +33,6 @@ portable:
   - { icon: stack, title: "Warehouse-friendly", body: "Point the platform at your own analytical warehouse, or deploy the full stack alongside it with a zero-copy posture. Treat it like a datamart next to your source of truth instead of a second copy of your data." }
   - { icon: identity, title: "Governed by IT, used by teams", body: "The system is designed so IT keeps control of security, access, and residency while business teams work the segment and journey surface on top. (Operability of the no-code surface: to confirm.)" }
   - { icon: code, title: "API-driven throughout", body: "Every capability is exposed through an API, so the architecture fits into the stack you already run rather than asking you to replace it. Adopt the components you need, when you need them." }
-faqs:
-  - q: "Is this one platform or a bundle of separate tools?"
-    a: "One system. Collect, resolve, activate, and prove run in the same engine on the same profile, so data is not copied, delayed, or lost moving between products. That is what lets real-time activation and honest attribution happen at the same time."
-  - q: "How does real-time activation work without a nightly batch?"
-    a: "Events are resolved to a profile as they arrive and forwarded through a real-time streaming layer to segments and journeys. Activation reacts to live behavior instead of waiting on a scheduled export, so a fan can be acted on while the moment is still current."
-  - q: "Do we have to replace our data warehouse?"
-    a: "No. The architecture is composable and warehouse-friendly. You can point it at your own analytical warehouse or deploy the full stack alongside it, keeping a zero-copy posture where you need one. Take only the components you need."
-  - q: "Who operates it, engineering or marketing?"
-    a: "Both, by design. It is API-driven for engineers, while segment and journey building is meant to be a business-team surface. IT retains control over security, access, and where data lives. (Operability of the no-code surface: to confirm as we onboard partners.)"
 ---
 {% include hero.html
    eyebrow="The platform"
@@ -93,6 +84,3 @@ faqs:
    items=page.portable
    columns=2 %}
 
-{% include faq.html
-   eyebrow="Architecture · common questions"
-   heading="How the system holds together" %}

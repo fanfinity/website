@@ -102,11 +102,6 @@
                       </div>
                     {%- endfor -%}
                   </div>
-                  <a href="{{ item.url | relative_url }}"
-                     class="mt-1 flex items-center justify-between rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-brand-50 hover:text-brand-foreground">
-                    Explore all {{ item.title }}
-                    {% include icon.html name="arrow-right" class="h-4 w-4" %}
-                  </a>
                 </div>
 
               {%- elsif item.mega -%}
@@ -124,11 +119,6 @@
                       </a>
                     {%- endfor -%}
                   </div>
-                  <a href="{{ item.url | relative_url }}"
-                     class="mt-1 flex items-center justify-between rounded-xl bg-muted px-4 py-3 text-sm font-semibold text-foreground transition hover:bg-brand-50 hover:text-brand-foreground">
-                    Explore all {{ item.title }}
-                    {% include icon.html name="arrow-right" class="h-4 w-4" %}
-                  </a>
                 </div>
               {%- else -%}
                 <div id="menu-{{ item.title | slugify }}"

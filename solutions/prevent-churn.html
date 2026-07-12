@@ -1,0 +1,52 @@
+---
+layout: page
+cta: false
+permalink: /solutions/prevent-churn
+title: Prevent Churn
+description: "Fanfinity surfaces at-risk customers before they cancel, lapse, or go cold — then triggers the right re-engagement automatically, across WhatsApp, email, and push, while there is still time to act."
+breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: gauge,    title: "See drift before it becomes departure", body: "Real-time behavioral signals — declining session frequency, shorter dwell times, skipped interactions — surface in Fanfinity ID as lapse risk scores before a customer cancels or goes cold. You act on the trend, not the cancellation." }
+  - { icon: identity, title: "Know what each at-risk fan looks like", body: "Every fan's churn risk is calculated on their individual profile history, not a population average. A lapsed sports fan looks different from a lapsed shopper, and the intervention should reflect that." }
+  - { icon: bolt,     title: "Trigger re-engagement at the right moment", body: "When a fan's profile crosses a lapse threshold, Fanfinity triggers a journey automatically — a personalized WhatsApp message, a reward top-up, a win-back offer — without waiting for a batch report or a manual export (Preview)." }
+  - { icon: repeat,   title: "Win back the ones who already left", body: "Suppressed or lapsed fans are not lost forever. Audience Builder segments them by last-active date, engagement history, and tier status so win-back campaigns reach the right people with the right incentive, not a blanket discount." }
+steps:
+  - { icon: gauge,    title: "Detect lapse risk early", body: "Declining behavioral signals — session frequency, interaction depth, content consumption — surface as at-risk flags in the fan profile before the customer formally churns." }
+  - { icon: identity, title: "Understand each fan's risk individually", body: "Churn risk is computed on the individual's profile history, not a cohort average, so every intervention is calibrated to the actual relationship." }
+  - { icon: bolt,     title: "Trigger the right intervention automatically", body: "A profile crossing a lapse threshold fires a real-time journey — reward, message, offer — without manual exports or nightly batch windows (Preview)." }
+  - { icon: repeat,   title: "Win back the already-lapsed", body: "Segmented win-back audiences let you reach former fans with personalized incentives based on their history, tier, and last-active date." }
+---
+{% include hero.html
+   eyebrow="Use Case"
+   title="Catch at-risk customers before they leave"
+   subtitle="Churn is visible in the data before it shows up in your cancellation numbers. Fanfinity surfaces the behavioral signals that precede departure, triggers the right intervention in real time, and gives you the segmentation to win back fans who already went cold."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore Fanfinity ID"
+   secondary_url="/platform/id" %}
+
+{% include feature-grid.html
+   eyebrow="From at-risk to re-engaged"
+   heading="Act on the signal, not the cancellation"
+   subheading="By the time a customer cancels, the churn has already happened. Fanfinity works upstream of that moment."
+   items=page.features
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=false
+   eyebrow="Real-time lapse detection"
+   title="The drift is visible long before the departure"
+   body="A fan who is about to churn does not go from fully engaged to cancelled overnight. They drift: sessions get shorter, interactions get sparser, content gets ignored. Fanfinity tracks these signals in the fan profile in real time, so a lapse risk score is available the moment the pattern starts — not after the cancellation email arrives."
+   cta_text="See how real-time profiles work"
+   cta_url="/platform/id"
+   icon="gauge" %}
+
+{% include value-pillars.html
+   eyebrow="How it works"
+   heading="Detect, understand, intervene, win back"
+   subheading="Four steps from churn signal to recovered fan."
+   items=page.steps %}
+
+{% include cta-band.html
+   heading="Stop churn before it starts"
+   text="See how Fanfinity surfaces at-risk customers from behavioral signals, triggers real-time re-engagement, and segments lapsed fans for win-back campaigns — all on a first-party fan graph you own." %}

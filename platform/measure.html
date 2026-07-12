@@ -32,15 +32,6 @@ availability:
   - { icon: chart,    title: "Data that is ready to use", body: "Because signals are validated, deduplicated, and resolved on the way in, the numbers you report on are already clean and consolidated. Teams spend their time interpreting results, not reshaping raw event dumps before anyone can trust them." }
   - { icon: stack,    title: "In a warehouse you own", body: "Resolved fan data lands in a columnar analytical warehouse you self-manage in-region. Business-intelligence, analytics, and data-science teams query the same governed data directly, so Measure is a view onto your owned data, not a separate silo to reconcile." }
   - { icon: shield,   title: "Governed the whole way", body: "Reach and outcome numbers inherit the consent and residency rules that live on the profile. Measurement never becomes the place where governance quietly breaks, because the number and the compliance posture come from the same record." }
-faqs:
-  - q: "Where do the numbers come from? Are these modeled estimates?"
-    a: "Every metric traces to a resolved fan profile in Fanfinity ID. Reach is a deduplicated count of real people; exposure-to-outcome is a deterministic join on the same profile, not a modeled or panel-based estimate. We publish counts we can stand behind rather than proxy figures."
-  - q: "Do you have benchmark lift or ROAS numbers we can quote?"
-    a: "Not yet. Fanfinity is early and we will not publish lift, ROAS, or match-rate figures we have not measured with a real design partner. When we have them, they will be labeled as measured results, not illustrative ones. (to confirm)"
-  - q: "Can sponsors and partners access this directly?"
-    a: "Yes. Measure includes a portal partners can log into for a live view of verified reach and outcomes, scoped to what you choose to share. It replaces the end-of-campaign PDF with accountability in the moment."
-  - q: "How is this different from the analytics in our ad platform?"
-    a: "Ad-platform analytics measure their own inventory in isolation and count impressions, not resolved people. Measure sits on your owned, in-region fan graph, so reach is deduplicated across every channel and outcomes are tied to one identity rather than each platform's siloed view."
 ---
 {% include hero.html
    variant="gradient"
@@ -92,4 +83,3 @@ faqs:
    cta_url="/platform/activate"
    icon="chart" %}
 
-{% include faq.html eyebrow="Questions" heading="Measurement questions, answered honestly" %}

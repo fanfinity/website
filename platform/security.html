@@ -26,15 +26,6 @@ how:
   - { icon: identity, title: "Constrain who reaches it", body: "Access runs on least privilege: granular roles, SSO, and scoped service permissions mean each person or system touches only the data a task requires. Every access is logged." }
   - { icon: scale, title: "Enforce consent at the core", body: "Consent and purpose are stored with the data and checked at the data layer, so a withdrawn permission actually propagates rather than lingering in a downstream copy." }
   - { icon: gauge, title: "Keep a provable record", body: "Immutable audit logs and activity monitoring show who touched what, and when, the evidence your security, legal, and partner reviews all ask to see." }
-faqs:
-  - q: "Where is fan data encrypted, and who holds the keys?"
-    a: "Fan data is encrypted in transit and at rest. When you self-host in your own cloud or on-premise, you hold the keys, so there is no plaintext copy of your fan base anywhere you don't control. In a managed deployment, key handling is set in the contract."
-  - q: "Are you SOC 2 or ISO certified?"
-    a: "We design and operate against SOC 2-aligned controls and practices, and formal certification is on the roadmap rather than complete today (to confirm). We'd rather be precise about that than claim a certificate we can't yet show. Because you can self-host, much of your control environment is also your own to certify."
-  - q: "How does a fan's deletion or consent-withdrawal request get handled?"
-    a: "Data-subject rights act on the profile itself. Consent and purpose are stored with the data and enforced at the data layer, so access, correction, and deletion propagate through the system instead of leaving stale copies behind. The change is captured in the audit trail."
-  - q: "Can our security team inspect and monitor the deployment?"
-    a: "Yes. Self-host and the platform runs inside infrastructure you govern, integrating with your own IAM, encryption, and network controls, and streaming logs and audit trails to your existing monitoring tools. Your team keeps visibility rather than trusting a closed vendor console."
 ---
 {% include hero.html
    eyebrow="The platform"
@@ -77,6 +68,3 @@ faqs:
    cta_url="/platform/deploy"
    icon="shield" %}
 
-{% include faq.html
-   eyebrow="Security · common questions"
-   heading="How we protect fan data" %}

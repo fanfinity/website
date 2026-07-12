@@ -19,15 +19,6 @@ enrich_points:
   - "Derived attributes and scored features land on the same profile that drives segmentation, so AI context and activation context stay in sync."
   - "Reverse ETL suppresses already-converted fans from ad audiences, so budget reaches people who can still move."
   - "Every enrichment step runs on data you own and control — no vendor sees the underlying fan graph."
-faqs:
-  - q: "Do we have to replace our existing data stack?"
-    a: "No. Blocks is designed to integrate around your existing sources through an open connector framework, not replace them. It ingests from the tools you already run and distributes enriched, resolved data back out to the same tools."
-  - q: "What is the difference between Blocks and Fanfinity ID?"
-    a: "Blocks is the infrastructure layer: it collects raw signals, stitches identifiers, enriches profiles, and moves governed data between systems. Fanfinity ID is the profile and segmentation layer: it holds the resolved golden record and lets marketing and data teams build audiences and act on it. Blocks feeds ID; ID feeds everything downstream."
-  - q: "Where does the enrichment happen — inside or outside our environment?"
-    a: "Enrichment runs inside your environment before data reaches any external surface. The enriched profile stays in your governed warehouse; downstream models and tools receive structured context rather than raw events."
-  - q: "Is Fanfinity Blocks available today?"
-    a: "Yes. The data collection and identity stitching layer is live. Enrichment capabilities and the reverse ETL surface are actively in use with design partners. Scope your specific integration in a demo."
 ---
 {% include hero.html
    variant="gradient"
@@ -62,4 +53,3 @@ faqs:
    cta_url="/platform/id"
    icon="spark" %}
 
-{% include faq.html eyebrow="Questions" heading="How Blocks fits your stack" %}

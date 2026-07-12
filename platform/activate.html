@@ -25,15 +25,6 @@ segment:
   - { icon: users,  title: "Build the segment without a ticket", body: "A visual audience builder lets marketing and data teams compose segments from any combination of attributes, events, and computed traits, with no SQL and no waiting on an analyst to translate the brief. The same segment definition is reusable across every channel." }
   - { icon: bolt,   title: "Membership updates in real time", body: "Segments are evaluated against the live profile, so a fan enters or leaves the moment their behavior changes rather than at the next nightly rebuild. A high-intent or lapsing audience reflects what is true now, not last night." }
   - { icon: target, title: "Sync audiences to owned and paid", body: "One audience pushes to email, push, messaging, on-site experiences, and ad platforms at once. Because it is built on the resolved first-party profile, the same fan is addressed consistently everywhere instead of as a different record per tool." }
-faqs:
-  - q: "Do marketers need engineering to build a segment?"
-    a: "No. Fanfinity Activate exposes a visual audience builder so marketing and data teams compose segments from attributes, events, and computed traits directly, then reuse them across every channel. Engineering keeps a REST API and SDKs for anything custom. The exact no-code versus code split for your setup is best scoped in a demo. (to confirm)"
-  - q: "Are segments real-time or rebuilt on a schedule?"
-    a: "Real-time. Membership is evaluated against the live, resolved profile, so a fan enters or leaves a segment the moment their behavior changes rather than at the next batch rebuild. Journeys read that same live context and route each fan as events arrive."
-  - q: "How is consent handled across channels?"
-    a: "Opt-outs and frequency limits live on the profile itself and are enforced on every channel from that one record. Activation stays compliant by construction rather than depending on each downstream tool to honor its own copy of consent."
-  - q: "Do we still need a separate email or messaging tool?"
-    a: "Activate drives WhatsApp, email, push, on-site experiences, and paid audiences from the same governed profile, so there is no separate list to sync or keep from drifting. Where you keep an existing channel tool, Activate can push the resolved audience to it rather than replace it."
 ---
 {% include hero.html
    variant="gradient"
@@ -78,4 +69,3 @@ faqs:
    cta_url="/platform/measure"
    icon="megaphone" %}
 
-{% include faq.html eyebrow="Questions" heading="Activation questions, answered" %}

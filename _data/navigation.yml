@@ -81,41 +81,45 @@ header:
     groups:
       - heading: By use case
         links:
+          - { title: "Anonymous to Known",   url: /solutions/convert-visitors, desc: "Build rich profiles from the first page load", icon: identity }
+          - { title: "Grow Lifetime Value",  url: /solutions/boost-clv,        desc: "Loyalty, journeys, and rewards that compound", icon: coins }
+          - { title: "Prevent Churn",        url: /solutions/prevent-churn,    desc: "Catch drift before it becomes departure",       icon: repeat }
+          - { title: "Sharpen Ad Targeting", url: /solutions/optimize-adspend, desc: "Real-time suppression and smarter lookalikes",  icon: target }
+      - heading: By industry
+        links:
           - { title: "Sports & Entertainment", url: /solutions/sports, desc: "Clubs, leagues, media & sponsors", icon: whistle, badge: Flagship }
           - { title: "Media & Broadcast",      url: /solutions/media,  desc: "Turn audiences into known fans",   icon: broadcast }
           - { title: "Brands & Sponsors",      url: /solutions/brands, desc: "Prove & activate sponsored reach", icon: handshake }
-      - heading: By industry
-        links:
-          - { title: "Events & Hospitality", url: /solutions/travel,  desc: "Loyalty across every touchpoint",  icon: airplane }
-          - { title: "Retail & E-commerce",  url: /solutions/retail,  desc: "Personalize the shopper journey",  icon: gift }
+          - { title: "Events & Hospitality",   url: /solutions/travel, desc: "Loyalty across every event",       icon: airplane }
+          - { title: "Retail & E-commerce",    url: /solutions/retail, desc: "Personalize the shopper journey",  icon: gift }
       - heading: By team
         links:
           - { title: "Marketing & Growth", url: /solutions/marketing,   desc: "Segment, activate, measure",  icon: megaphone }
           - { title: "Data & Engineering", url: /solutions/engineering, desc: "Own your data & pipelines",   icon: code }
           - { title: "AI & Agents",        url: /solutions/ai-agents,   desc: "Governed context for agents", icon: spark }
 
-  # ------------------------------------------------------------- WHY FANFINITY
-  - title: Why Fanfinity
-    url: /why-fanfinity
-    mega: true
-    groups:
-      - heading: Why Fanfinity
-        links:
-          - { title: "Why Fanfinity",           url: /why-fanfinity,           desc: "Real-time, in-region fan CDP",       icon: spark }
-          - { title: "The in-region fan graph", url: /why-fanfinity#residency, desc: "Consented, first-party, in-Kingdom", icon: shield }
-          - { title: "From signals to proof",   url: /why-fanfinity#flow,      desc: "Collect, resolve, activate, prove",  icon: link }
-      - heading: Compare
-        links:
-          - { title: "vs LiveLike",  url: /compare/livelike,  desc: "vs a hosted engagement suite",       icon: scale }
-          - { title: "vs Meiro",     url: /compare/meiro,     desc: "vs a horizontal CDP",                icon: scale }
-          - { title: "vs Segment",   url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",          icon: scale }
-          - { title: "vs Hightouch", url: /compare/hightouch, desc: "vs a warehouse activation layer",    icon: scale }
-
   # ---------------------------------------------------------------- RESOURCES
   - title: Resources
     url: /resources
-    children:
-      - { title: "Developers & Docs", url: /developers, desc: "REST API & SDKs",     icon: code }
+    groups:
+      - heading: Learn
+        links:
+          - { title: "Blog",             url: /blog,      desc: "Insights on fan data and sports tech",    icon: book }
+          - { title: "Use Cases",        url: /resources, desc: "Real-world activation patterns",          icon: spark }
+          - { title: "Events",           url: /resources, desc: "Conferences and meetups",                 icon: bell }
+          - { title: "Resource Library", url: /resources, desc: "Guides, reports, and whitepapers",        icon: stack }
+          - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and integration docs",  icon: code }
+      - heading: Watch
+        links:
+          - { title: "Webinars",       url: /webinars,   desc: "Live and on-demand sessions",   icon: broadcast }
+          - { title: "Product Videos", url: /resources,  desc: "Recorded product explainers",   icon: bolt }
+          - { title: "Case Studies",   url: /customers,  desc: "Customer success stories",       icon: chart }
+      - heading: Compare
+        links:
+          - { title: "vs LiveLike",  url: /compare/livelike,  desc: "vs a hosted engagement suite",    icon: scale }
+          - { title: "vs Meiro",     url: /compare/meiro,     desc: "vs a horizontal CDP",             icon: scale }
+          - { title: "vs Segment",   url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",       icon: scale }
+          - { title: "vs Hightouch", url: /compare/hightouch, desc: "vs a warehouse activation layer", icon: scale }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -129,10 +133,10 @@ footer_columns:
   - heading: Platform
     links:
       - { title: "Platform Overview",  url: /platform }
-      - { title: "Fanfinity Blocks",  url: /platform/blocks }
-      - { title: "Fanfinity ID",      url: /platform/id }
-      - { title: "Fanfinity Engage",  url: /platform/engage }
-      - { title: "Fanfinity Measure", url: /platform/measure }
+      - { title: "Fanfinity Blocks",   url: /platform/blocks }
+      - { title: "Fanfinity ID",       url: /platform/id }
+      - { title: "Fanfinity Engage",   url: /platform/engage }
+      - { title: "Fanfinity Measure",  url: /platform/measure }
 
   - heading: Deploy & Trust
     links:
@@ -142,26 +146,46 @@ footer_columns:
       - { title: "Architecture",           url: /platform/architecture }
       - { title: "Developers & APIs",      url: /developers }
 
-  - heading: Solutions
+  - heading: Use Cases
+    links:
+      - { title: "Anonymous to Known",    url: /solutions/convert-visitors }
+      - { title: "Grow Lifetime Value",   url: /solutions/boost-clv }
+      - { title: "Prevent Churn",         url: /solutions/prevent-churn }
+      - { title: "Sharpen Ad Targeting",  url: /solutions/optimize-adspend }
+
+  - heading: Industries
     links:
       - { title: "Sports & Entertainment", url: /solutions/sports }
       - { title: "Media & Broadcast",      url: /solutions/media }
       - { title: "Brands & Sponsors",      url: /solutions/brands }
-      - { title: "All industries",         url: /industries }
+      - { title: "Events & Hospitality",   url: /solutions/travel }
+      - { title: "Retail & E-commerce",    url: /solutions/retail }
       - { title: "Marketing & Growth",     url: /solutions/marketing }
+      - { title: "Data & Engineering",     url: /solutions/engineering }
+      - { title: "AI & Agents",            url: /solutions/ai-agents }
 
-  - heading: Why Fanfinity
+  - heading: Compare
     links:
-      - { title: "Why Fanfinity",       url: /why-fanfinity }
-      - { title: "Pricing",             url: /pricing }
+      - { title: "vs LiveLike",  url: /compare/livelike }
+      - { title: "vs Meiro",     url: /compare/meiro }
+      - { title: "vs Segment",   url: /compare/segment }
+      - { title: "vs Hightouch", url: /compare/hightouch }
+      - { title: "Pricing",      url: /pricing }
 
   - heading: Resources
     links:
+      - { title: "Blog",              url: /blog }
+      - { title: "Webinars",          url: /webinars }
+      - { title: "Case Studies",      url: /customers }
       - { title: "Developers & Docs", url: /developers }
+      - { title: "Why Fanfinity",     url: /why-fanfinity }
 
   - heading: Company
     links:
       - { title: "About",       url: /about }
+      - { title: "Careers",     url: /careers }
+      - { title: "Partners",    url: /partners }
+      - { title: "Newsroom",    url: /newsroom }
       - { title: "Contact",     url: /contact }
       - { title: "Book a Demo", url: /demo }
 

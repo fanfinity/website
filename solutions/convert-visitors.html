@@ -1,0 +1,52 @@
+---
+layout: page
+cta: false
+permalink: /solutions/convert-visitors
+title: Convert Anonymous Web Visitors
+description: "Fanfinity captures behavioral signals the moment someone lands on your site — before they log in or identify. Build rich anonymous profiles, then collapse them into the fan graph the instant identity is confirmed."
+breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: bolt,     title: "Capture signals before the first login", body: "Every page view, scroll depth, click, and content interaction is tracked and attached to an anonymous profile the moment a visitor arrives. You stop flying blind and start building context from the very first touchpoint." }
+  - { icon: identity, title: "Resolve identity the instant it appears", body: "When a visitor signs up, logs in, or fills a form, Fanfinity collapses all prior anonymous activity into their persistent fan profile. No history is lost — the session before the signup is as visible as every session after." }
+  - { icon: spark,    title: "Personalize before they tell you who they are", body: "Behavioral patterns — what content they read, which products they dwell on, how they navigate — let you tailor the experience in real time without waiting for a form submission. Relevance starts on visit one." }
+  - { icon: megaphone, title: "Activate across every downstream channel", body: "Anonymous and resolved profiles flow downstream to ad platforms, email tools, and personalization engines via Reverse ETL. A visitor who browses but doesn't convert is suppressible, retargetable, or nurture-eligible immediately." }
+steps:
+  - { icon: bolt,     title: "Capture every anonymous signal", body: "Page views, clicks, content engagement, and session behavior are captured from the first visit, building rich anonymous context before any login." }
+  - { icon: identity, title: "Stitch identity when it appears", body: "Sign-up, login, or form fill collapses the anonymous history into one persistent profile. No data is lost across the identity resolution moment." }
+  - { icon: spark,    title: "Personalize in real time", body: "Behavioral signals power in-session personalization and downstream audiences without waiting for declared identity or a batch update." }
+  - { icon: megaphone, title: "Activate across channels", body: "Push resolved and anonymous segments to ad platforms, email, and CRM tools via Reverse ETL so no visitor slips through the activation gap." }
+---
+{% include hero.html
+   eyebrow="Use Case"
+   title="Convert visitors before they tell you who they are"
+   subtitle="Most visitors leave without identifying. Fanfinity captures their behavioral signals from the first page load, builds anonymous profiles that personalize in real time, and collapses that history into the fan graph the instant they identify — so no interaction is ever wasted."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore Fanfinity Blocks"
+   secondary_url="/platform/blocks" %}
+
+{% include feature-grid.html
+   eyebrow="From first click to known fan"
+   heading="Behavioral context before the signup"
+   subheading="The window between a visitor's first page load and their first login is where most platforms go dark. Fanfinity keeps that window lit."
+   items=page.features
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=false
+   eyebrow="Identity resolution"
+   title="The moment of identity is not a starting line"
+   body="When a visitor finally identifies — through a signup, a login, or a form — most CDPs treat that as day one. Fanfinity treats it as a merge point. Every anonymous session, every behavioral signal, every inferred preference collapses into the persistent fan profile, so the fan graph is rich from the moment it becomes known."
+   cta_text="See how Fanfinity ID works"
+   cta_url="/platform/id"
+   icon="identity" %}
+
+{% include value-pillars.html
+   eyebrow="How it works"
+   heading="Capture, resolve, personalize, activate"
+   subheading="Four steps from anonymous visitor to activated fan profile."
+   items=page.steps %}
+
+{% include cta-band.html
+   heading="Stop losing visitors to the identity gap"
+   text="See how Fanfinity builds behavioral context from the first page load, resolves it at the identity moment, and activates it across every downstream channel — all on a first-party fan graph you own." %}

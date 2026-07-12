@@ -26,15 +26,6 @@ how:
   - { icon: identity, title: "Attach consent to the profile", body: "As signals resolve into one fan profile, the consent and purpose behind each signal travel with it. The record of what a fan agreed to lives next to the data it governs, not in a separate compliance spreadsheet." }
   - { icon: bolt, title: "Enforce as data moves", body: "When a profile is activated into a segment or a journey, its consent and residency rules are checked at the data layer. A withdrawn permission or a region restriction is honoured everywhere the profile goes." }
   - { icon: gauge, title: "Prove it on demand", body: "Audit logs and consent history give your legal and security teams a clear record of where data lives, who touched it, and on what basis, the evidence a PDPL review asks for." }
-faqs:
-  - q: "Does fan data actually stay inside the Kingdom?"
-    a: "Yes, when you deploy in-region. Residency is a deployment choice made up front: run Fanfinity in an in-Kingdom cloud region, your private network, or your own data centre, and personal data of individuals in Saudi Arabia is stored and processed inside those borders, the core of PDPL data-residency."
-  - q: "How is this different from a global SaaS with a Saudi region?"
-    a: "A multi-tenant SaaS stores your data in vendor-controlled infrastructure and offers a region as a setting. Fanfinity runs inside infrastructure you control, with your own keys and no vendor copy of your fan base. Residency and consent are governed at the data layer, not offered as a toggle on someone else's cloud."
-  - q: "What happens when a fan withdraws consent?"
-    a: "Because consent is stored with the profile and enforced at the data layer, a withdrawal propagates through the system rather than sitting in a stale export. Downstream activation respects the change, and the consent history stays available for audit."
-  - q: "Can you help us prove PDPL compliance to a regulator?"
-    a: "The platform is built to produce the evidence a review expects: in-region processing, consent and purpose logs, data-subject-rights handling, and audit trails of access. Fanfinity supports the technical side; your counsel confirms how it maps to your specific obligations. (Control mappings: to confirm.)"
 ---
 {% include hero.html
    eyebrow="The platform"
@@ -78,6 +69,3 @@ faqs:
    cta_url="/platform/security"
    icon="shield" %}
 
-{% include faq.html
-   eyebrow="Residency · common questions"
-   heading="Where your fan data lives, and why it matters" %}
