@@ -1,0 +1,82 @@
+---
+layout: page
+permalink: /platform/deploy
+title: Deploy Anywhere
+description: "Run Fanfinity in your own cloud, on-premise, or fully managed, in-Kingdom or any region. Data residency is governed at the data layer, with no vendor copy of your fan base."
+breadcrumb_parent: { title: Platform, url: /platform }
+models:
+  - { icon: stack, title: "Your cloud (bring-your-own-cloud)", body: "Deploy Fanfinity inside your own cloud account or private network, in the region you require. The platform runs on infrastructure you already govern, so it inherits your security policy instead of asking you to trust a new one." }
+  - { icon: shield, title: "On-premise", body: "Run the full stack on your own servers for maximum control. Fit it into a Kubernetes, container, or traditional server setup, and keep the most sensitive fan data behind your own perimeter." }
+  - { icon: bolt, title: "Fanfinity-managed", body: "Prefer speed over infrastructure work? Run Fanfinity as a managed deployment under contract, in a region you choose, while keeping the residency and consent guarantees intact." }
+  - { icon: link, title: "Hybrid", body: "Keep the most sensitive fan data on-premise while using the elasticity of the cloud for heavier processing and analytics. The architecture is infrastructure-agnostic, so it adapts to your IT strategy rather than dictating it." }
+how:
+  - { icon: plug, title: "Pick your infrastructure", body: "Choose where the platform runs, your cloud account, on-premise, or Fanfinity-managed. Residency is a deployment decision made once, up front, not a region flag toggled after your data already left." }
+  - { icon: identity, title: "Bring your own security", body: "The deployment integrates with the security stack you already run: your encryption keys, your identity and access management, your network controls. Fanfinity fits inside your policy instead of replacing it." }
+  - { icon: stack, title: "Compose with your warehouse", body: "Point Fanfinity at your own analytical warehouse, or deploy the full stack alongside it with a zero-copy posture. Take only the components you need, the platform is composable, not all-or-nothing." }
+  - { icon: gauge, title: "Observe and update on your terms", body: "Stream logs, metrics, and audit trails to your own monitoring tools, and take updates on a schedule that fits your change process rather than a vendor's release calendar. (Update cadence: to confirm as we onboard partners.)" }
+fit_points:
+  - "Run in your own cloud account or private network, in the region you require, no vendor copy of your fan base."
+  - "On-premise for full control, or Fanfinity-managed when you want speed over infrastructure."
+  - "In-Kingdom data residency and PDPL consent governed at the data layer, not patched on top."
+  - "Warehouse-composable, point it at your own analytical warehouse, or run the full stack alongside it with a zero-copy posture."
+region_points:
+  - "Deploy in-Kingdom to keep fan data inside Saudi Arabia, or in any region your rules require."
+  - "The same platform runs across major cloud providers and on-premise, residency is a choice, not a limitation."
+  - "New in-region cloud availability is expanding across the Kingdom; on-premise and private-network options are available today. (Provider-region availability: to confirm.)"
+  - "Because deployment is portable by design, moving regions is a configuration decision, not a re-platforming project."
+faqs:
+  - q: "Where can Fanfinity actually run?"
+    a: "In your own cloud account, on your own servers on-premise, or as a Fanfinity-managed deployment under contract. In every case you choose the region, so data can stay in-Kingdom or wherever your rules require. Deployment is portable by design rather than tied to one provider."
+  - q: "Do you get a copy of our fan data?"
+    a: "When you self-host in your own cloud or on-premise, no. The platform runs inside infrastructure you control, with your own keys, so there is no offshore vendor copy of your fan base. If you choose the managed option, residency and access terms are set in the contract."
+  - q: "Do we have to move off our existing warehouse or cloud?"
+    a: "No. The architecture is composable and infrastructure-agnostic. You can point Fanfinity at your own analytical warehouse, deploy the full stack alongside it with a zero-copy posture, and keep using the cloud you already run. Take only the components you need."
+  - q: "Who operates the deployment, us or Fanfinity?"
+    a: "Your call. Self-host and your IT team keeps full control over security, access, and residency, with the platform integrating into your existing stack. Choose managed and Fanfinity runs the infrastructure while the residency and consent guarantees stay in place."
+---
+{% include hero.html
+   eyebrow="The platform"
+   title="Deploy anywhere. Your data, your choice."
+   subtitle="Run Fanfinity in your own cloud, on-premise, or fully managed, in-Kingdom or any region. Residency and consent are governed at the data layer, so where your fan data lives is a decision you make, not one a vendor makes for you."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="For developers"
+   secondary_url="/developers"
+   icon="shield" %}
+
+{% include feature-grid.html
+   eyebrow="Deployment models"
+   heading="Four ways to run it, one platform"
+   subheading="The same system runs in your cloud, on your servers, or fully managed, so residency, control, and speed are trade-offs you choose rather than accept."
+   items=page.models
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="How deployment works"
+   heading="Fits your infrastructure, not the other way around"
+   subheading="Fanfinity adapts to the stack, security policy, and warehouse you already run. Setup is a matter of pointing the platform at infrastructure you control and keeping your own governance in place."
+   items=page.how
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Region & residency"
+   title="In-Kingdom, or wherever your rules require"
+   body="Where fan data lives is a first-class deployment choice. Keep it inside the Kingdom for PDPL, or in any region you operate in, and change it later without re-platforming."
+   points=page.region_points
+   cta_text="See in-Kingdom & residency"
+   cta_url="/platform/data-residency"
+   icon="scale" %}
+
+{% include feature-split.html
+   eyebrow="Why it matters"
+   title="Sovereignty without the trade-offs"
+   body="Most platforms make you choose between control and convenience: keep data in-region and lose capability, or get capability and give up control. Fanfinity gives you the full loop on infrastructure you govern, in-Kingdom, on-prem, or any cloud."
+   points=page.fit_points
+   cta_text="See security & compliance"
+   cta_url="/platform/security"
+   icon="shield" %}
+
+{% include faq.html
+   eyebrow="Deployment · common questions"
+   heading="How and where Fanfinity runs" %}

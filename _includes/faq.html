@@ -1,0 +1,29 @@
+{%- comment -%}
+Accessible FAQ accordion. Native <details>/<summary> — no JS needed.
+Pass items via `include.faqs` (a list of {q, a}) OR set `page.faqs` in front matter.
+Optional: include.eyebrow, include.heading.
+HONESTY: answers must not invent proof, metrics, or logos. Unproven claims get "(to confirm)".
+Source objections/answers from .agents/product-marketing.md.
+{%- endcomment -%}
+{%- assign faqs = include.faqs | default: page.faqs -%}
+{%- if faqs -%}
+<section class="section">
+  <div class="container-page">
+    <div class="mx-auto max-w-3xl">
+      {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">{{ include.heading | default: 'Common questions' }}</h2>
+      <div class="mt-10 divide-y divide-border border-t border-border">
+        {%- for f in faqs -%}
+        <details class="group py-5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+            <span>{{ f.q }}</span>
+            {% include icon.html name="chevron-down" class="h-5 w-5 shrink-0 text-brand-foreground transition-transform duration-200 group-open:rotate-180" %}
+          </summary>
+          <div class="mt-3 max-w-2xl leading-relaxed text-muted-foreground">{{ f.a }}</div>
+        </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+{%- endif -%}

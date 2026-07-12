@@ -2,26 +2,62 @@
 layout: page
 permalink: /solutions/engineering
 title: Data & Engineering
-description: "Own your data and pipelines with an API-first, composable platform."
+description: "An API-first, warehouse-composable data platform you deploy and control: connectors, a self-managed warehouse, and SDKs, in-region and governed at the source."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: plug,   title: "Ingest any source", body: "A connector framework normalizes web, app, streaming, and back-office events against typed schemas, so malformed payloads get rejected with field-level detail instead of poisoning the warehouse." }
+  - { icon: link,   title: "Deterministic identity resolution", body: "Rule-based matching stitches events, warehouse rows, and profiles on identifiers you define, with priority and merge limits you set, not a black-box model you can't audit." }
+  - { icon: stack,  title: "Warehouse-composable", body: "Map tables in your columnar analytical warehouse to the same identity graph that handles live events. Historical data joins in-place, without a copy or an extra ETL hop (to confirm)." }
+  - { icon: code,   title: "API-first, CLI-driven", body: "Every capability sits behind a REST API and SDKs, and a CLI mirrors the full API surface, so configuration is reviewable, versionable, and CI/CD-friendly." }
+  - { icon: shield, title: "Governed at the data layer", body: "Consent, access, and residency are enforced where the data lives, and every config object carries version history and soft delete, so a bad change is reverted, not mourned." }
+  - { icon: gauge,  title: "Deploy where you run", body: "Run in-region, on-premise, or on your own cloud, on your keys and your infrastructure, with no data egress you didn't authorize." }
+points:
+  - "Ingest through a connector framework, then own the pipeline end to end."
+  - "Run a self-managed columnar analytical warehouse instead of renting a black-box tenant."
+  - "Configure everything through a REST API, SDKs, and a CI/CD-compatible CLI."
+  - "Enforce consent, governance, and in-region residency at the data layer itself."
+steps:
+  - { icon: plug,   title: "Collect and validate", body: "Events land through connectors, get normalized by a transform, and are checked against a schema before anything is stored." }
+  - { icon: link,   title: "Resolve identity", body: "Identifiers you define merge events into profiles by rules you control, with priorities that decide contested merges." }
+  - { icon: stack,  title: "Model against the warehouse", body: "Warehouse tables map to the same identity graph, so batch history and live signal share one model." }
+  - { icon: code,   title: "Route and observe", body: "Enabled pipes forward events to destinations you control, with delivery history and queue health queryable end to end." }
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Team"
-   title="Data & Engineering"
-   subtitle="Own your data and pipelines with an API-first, composable platform."
+   eyebrow="Solutions · Data & Engineering"
+   title="A data platform you build on, deploy, and control"
+   subtitle="No black boxes and no lock-in on your fan data. Fanfinity is an API-first, warehouse-composable platform (connectors, a self-managed warehouse, SDKs, and a full-API CLI) that you run in-region, on-premise, or on any cloud, governed at the source."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-engineering.jpg"
+   image_alt="Source code on a developer's screen" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Data & Engineering is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-grid.html
+   eyebrow="What data teams get from Fanfinity"
+   heading="Primitives to compose, not a suite to work around"
+   subheading="The capabilities other teams consume as products are exposed to you as an API, a CLI, and infrastructure you own."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Your infrastructure, your rules"
+   title="Most CDPs ship your data to their cloud and ask you to trust the receipt"
+   body="Fanfinity runs where you do. Consent, residency, and access are enforced at the data layer rather than bolted on after activation, and because configuration lives behind an API and a CLI, your pipeline is reviewable in a pull request instead of a vendor console."
+   points=page.points
+   cta_text="Read the platform architecture"
+   cta_url="/platform/architecture"
+   icon="stack" %}
+
+{% include value-pillars.html
+   eyebrow="How an event moves through the platform"
+   heading="Collect, resolve, model, route"
+   subheading="One backend handles the full event lifecycle, and every stage is inspectable rather than a step you take on faith."
+   items=page.steps %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Evaluate it like an engineer"
+   text="Walk the API surface, the deployment model, and the identity-resolution rules with our team, and pressure-test where your fan data actually lives." %}

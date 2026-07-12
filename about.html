@@ -2,26 +2,51 @@
 layout: page
 permalink: /about
 title: About Fanfinity
-description: "The sovereign customer platform for sports and beyond — our mission and team."
-breadcrumb_parent: { title: Fanfinity, url: /home-preview }
+description: Fanfinity is a Saudi-founded, real-time fan data platform for sports and live entertainment, turning fragmented fan signals into one consented, in-region fan graph.
+breadcrumb_parent: { title: Fanfinity, url: / }
+values:
+  - { icon: spark,  title: "Fans first",             body: "Everything starts with the fan: one consented profile they control, not a data trail they never agreed to." }
+  - { icon: shield, title: "Sovereignty by default", body: "Fan data belongs in-region, under the rights holder's control. We build for residency and consent from the data layer up." }
+  - { icon: scale,  title: "Honest by design",       body: "We label what's live and what's in preview, and we don't dress benchmarks up as facts. Being straight is part of the product." }
+  - { icon: bolt,   title: "Real time, not next day", body: "Fans move in the moment. We built for live: resolve, activate, and prove while it still matters." }
+points:
+  - "Fan signals are scattered across ticketing, streaming, app, and social, and rarely joined up."
+  - "Batch CDPs unify data eventually; engagement tools create activity with anonymous users."
+  - "For rights holders in the region, fan data also has to stay in-Kingdom and consented."
+  - "Fanfinity resolves those signals into one real-time, in-region fan graph, and puts it to work."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Company"
-   title="About Fanfinity"
-   subtitle="The sovereign customer platform for sports and beyond — our mission and team."
+   eyebrow="About"
+   title="The real-time fan data platform, built in the region"
+   subtitle="Fanfinity is a Saudi-founded platform for sports and live entertainment. We turn fragmented fan signals into one consented, in-region fan graph, and help rights holders use it for engagement, sponsorship, and revenue."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/about.jpg"
+   image_alt="The Riyadh skyline at dusk" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on About Fanfinity is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/home-preview" class="link-arrow mt-6 justify-center">Back to Fanfinity {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-split.html
+   eyebrow="Why we exist"
+   title="Fans are everywhere. The data about them is scattered."
+   body="Every league, broadcaster, and brand sits on huge fan attention, spread across channels, mostly anonymous, and often leaving the region entirely. We started Fanfinity to close that gap: one fan graph, resolved in real time, kept in-Kingdom and consented, and built to be activated."
+   points=page.points
+   cta_text="See how the platform works"
+   cta_url="/platform"
+   icon="identity" %}
+
+{% include feature-grid.html
+   eyebrow="What we believe"
+   heading="The principles behind the platform"
+   subheading="A few commitments that shape what we build and how we talk about it."
+   items=page.values
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Where we focus"
+   title="Sports and live entertainment first, extensible from there"
+   body="Sports is the sharpest test of a fan platform: high emotion, live moments, and fans who show up again and again. We build for that extreme, and the same engine extends to media, brands, and beyond."
+   cta_text="See who we build for"
+   cta_url="/solutions"
+   icon="whistle" %}

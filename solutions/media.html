@@ -2,26 +2,63 @@
 layout: page
 permalink: /solutions/media
 title: Media & Publishers
-description: "Turn anonymous audiences into known, monetizable subscribers."
+description: "For publishers and broadcasters: resolve mostly-anonymous audiences into first-party subscriber profiles, time the paywall to real intent, and sell owned segments directly to advertisers, post-cookie and in-region."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: identity,  title: "Recognize the logged-out visitor", body: "Stitch anonymous sessions across site, app, and stream into one profile, so you know a reader before they ever register or subscribe." }
+  - { icon: chart,     title: "Read propensity to subscribe", body: "Watch-time, scroll depth, and return cadence are the signals that precede a subscription. Score them as they happen instead of metering on a fixed article count." }
+  - { icon: broadcast, title: "Spoiler-safe by playback position", body: "Hold results and reactions to each viewer's position in a stream, so on-demand and time-shifted audiences are never spoiled by a live moment (Engage layer, Preview)." }
+  - { icon: target,    title: "Sell segments, not cookies", body: "Package consented audience data into addressable segments advertisers buy from you directly, replacing reach you used to rent through third-party cookies (to confirm)." }
+  - { icon: bell,      title: "Catch the pre-cancel signal", body: "Watch-time decay and login gaps precede a lapse. Segment on them in real time and intervene before the renewal date, not after the churn." }
+  - { icon: slider,    title: "Program the next session", body: "Recommend the next read, watch, or episode from behavior and profile history, for known and anonymous audiences alike." }
+propensity_points:
+  - "Read session depth, watch-time, and return cadence the moment they happen, not on a metering rule set months ago."
+  - "Time the subscription prompt to the reader closest to paying, across site, app, email, and push from one profile."
+  - "Report which prompts converted to paid, so you optimize the offer instead of guessing the meter."
+ad_points:
+  - "Build addressable segments from consented first-party behavior, with no third-party cookie in the path."
+  - "Sell those segments to advertisers directly, as inventory you own rather than reach you rent."
+  - "Keep every audience profile governed in-region, so a data-residency clause never blocks a media deal."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Industry"
-   title="Media & Publishers"
-   subtitle="Turn anonymous audiences into known, monetizable subscribers."
+   eyebrow="Solutions · Media & Publishers"
+   image="/assets/img/solutions-media.jpg"
+   image_alt="A live audience in front of a lit stage"
+   title="Reach you rent is not an audience you own"
+   subtitle="Publishers and broadcasters sit on huge, mostly-anonymous audiences that live in a rented, cookie-dependent middle layer. Fanfinity resolves them into first-party subscriber profiles you own, then helps you grow paid audiences and sell them directly to advertisers, post-cookie."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Media & Publishers is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-split.html
+   eyebrow="The subscription use case"
+   title="Lift free readers to paid on the signals they already give you"
+   body="A metered paywall fires on an article count and misses the moment intent is real. Once identity is resolved, propensity to subscribe is something you read directly from watch-time, article depth, and return frequency, and the offer lands when a reader is closest to paying rather than on an arbitrary threshold."
+   points=page.propensity_points
+   cta_text="See how activation works"
+   cta_url="/platform/activate"
+   icon="chart" %}
+
+{% include feature-grid.html
+   eyebrow="What media teams do with Fanfinity"
+   heading="From rented reach to owned, monetizable audience"
+   subheading="The connected platform, tuned to the two revenue lines publishers actually run: subscriptions and advertising."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="The ad-monetization use case"
+   title="Sell first-party audiences directly, when the cookie is gone"
+   body="Third-party cookies underwrote most programmatic revenue, and they are leaving. For a publisher, the compensating asset is a consented first-party audience packaged as inventory you sell yourself. Fanfinity resolves that audience on your properties and turns it into addressable segments buyers can transact against, governed in-region so residency never stalls the deal."
+   points=page.ad_points
+   cta_text="See how identity works"
+   cta_url="/platform/id"
+   icon="target" %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Turn your audience into subscribers and inventory you own"
+   text="See how Fanfinity resolves anonymous audiences, times the paywall to real intent, and packages first-party segments advertisers buy directly. Book a walkthrough on your audience and inventory." %}

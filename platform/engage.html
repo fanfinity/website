@@ -1,0 +1,87 @@
+---
+layout: page
+permalink: /platform/engage
+title: Fanfinity Engage
+description: "The designed engagement layer that turns passive audiences into active, returning communities: live interactivity, gamification, loyalty, and rewards on top of a real fan graph. In design preview, not yet generally available."
+breadcrumb_parent: { title: Platform, url: /platform }
+designed:
+  - { icon: poll,   title: "Live interactivity", body: "Polls, predictions, quizzes, and reactions designed to turn a passive audience into active participants the instant a moment happens." }
+  - { icon: trophy, title: "Gamification", body: "Streaks, quests, badges, and leaderboards designed to build recurring habits rather than one-time spikes." }
+  - { icon: gift,   title: "Loyalty & rewards", body: "A points-and-rewards economy designed to incentivize the exact behaviors you value, then rank fans as they earn." }
+  - { icon: slider, title: "Programs & themes", body: "Sponsorable programs and on-brand theming designed to turn engagement into inventory you can monetize." }
+flow:
+  - { icon: identity, title: "Anchor to a known fan", body: "Every interaction resolves to the same persistent profile that Fanfinity ID already maintains, so engagement is tied to a real fan rather than an anonymous session." }
+  - { icon: bolt,     title: "Act on the live moment", body: "Interactive elements are designed to fire off real-time behavior as it happens, not the next day's batch, so a poll or reward lands while attention is still on the screen." }
+  - { icon: chart,    title: "Feed the record", body: "Every designed interaction writes back to the profile and the analytics layer, so participation, loyalty state, and rewards stay in sync by design instead of by integration." }
+walkthrough:
+  - { icon: identity, title: "A known fan arrives", body: "Someone opens a live stream or a page you own. Because Fanfinity ID already resolves signals into one profile, the design assumes a known fan rather than an anonymous session from the first second." }
+  - { icon: poll,     title: "A moment goes interactive", body: "At a point you author, an interactive element is designed to appear: a poll, a prediction, or a quiz, inviting participation while attention is still on the screen. This surface is a Preview mockup, not a shipped widget." }
+  - { icon: gift,     title: "Participation earns something", body: "The design ties that action into a points-and-rewards economy: streaks, quests, and status that are meant to give a reason to come back, not just react once." }
+  - { icon: chart,    title: "It writes back to the record", body: "Every interaction is designed to feed the same profile and analytics layer the rest of the platform reads, so engagement, loyalty, and reporting stay in sync by design instead of by integration." }
+live_points:
+  - "Fanfinity ID, the identity and data layer beneath Engage, is live today."
+  - "Every widget visual across this site is a design mockup, not a shipped feature."
+  - "The engagement layer is in active design and not yet generally available."
+  - "Book a demo to see the designs and help shape what ships first."
+faqs:
+  - q: "Is any of Engage available today?"
+    a: "The engagement layer itself is a design preview and not yet generally available. What is live today is the layer beneath it: the real-time identity and data platform (Fanfinity ID) that resolves fragmented signals into one owned, in-region fan profile. Engage is designed to run on top of that graph."
+  - q: "Are the widgets on this site real product screenshots?"
+    a: "No. Every interactive widget shown across the site is a design mockup that illustrates what Engage is intended to do. We label it Preview wherever it appears so nothing is mistaken for a shipped feature."
+  - q: "How does Engage relate to the rest of the platform?"
+    a: "It is designed as the activation surface on the same connected system that collects, resolves, and stores fan data. Because it is anchored to one profile rather than bolted on as a separate tool, engagement, loyalty, and rewards are intended to line up by design instead of through integration work."
+  - q: "Can we influence what ships first?"
+    a: "Yes. Engage is being designed with launch partners, and the build order is still open. A demo is the fastest way to see the current designs and tell us which capabilities would matter most to your audience."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Engage"
+   title="Turn watching into playing."
+   subtitle="Fanfinity Engage is the engagement layer designed to sit on top of your live fan graph: live interactivity, gamification, loyalty, and rewards. It is in design preview and not yet generally available."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore the platform"
+   secondary_url="/platform" %}
+
+<section class="section">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl rounded-4xl border border-border bg-soft px-6 py-8 text-center" data-reveal>
+      <p class="eyebrow justify-center">Preview</p>
+      <p class="mt-3 text-muted-foreground">The capabilities below describe what Fanfinity Engage is <em>designed</em> to do. They are not yet generally available, and the widget visuals shown across this site are mockups. What is live today is the data layer beneath Engage, <a href="/platform/id" class="font-medium text-brand-foreground underline underline-offset-2">Fanfinity ID</a>.</p>
+    </div>
+  </div>
+</section>
+
+{% include feature-grid.html
+   eyebrow="What Engage is designed to do"
+   heading="An engagement layer, grounded in identity"
+   subheading="Interactivity, gamification, loyalty, and rewards, designed to run on the same real-time profile that Fanfinity ID resolves, so engagement is always tied to a known fan."
+   items=page.designed
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="How Engage is designed to work"
+   heading="Anchored to identity, acting in real time"
+   subheading="The design principle is simple: engagement should never float free of the fan it belongs to. Every interaction is meant to attach to one known profile, act on the live moment, and feed the same record the rest of the platform reads from."
+   items=page.flow
+   columns=3 %}
+
+{% include feature-grid.html
+   eyebrow="A designed walkthrough"
+   heading="How one moment is designed to play out"
+   subheading="This is the shape of the intended experience, end to end. Everything here is a design preview built on the live fan graph, the interactive surfaces are mockups, and the identity underneath them is real."
+   items=page.walkthrough
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="What's real today"
+   title="The data layer is live. The engagement layer is in design."
+   body="We label this honestly everywhere. The fan graph that would power Engage is built and running now; the interactive layer on top of it is still being designed with our partners."
+   points=page.live_points
+   cta_text="See Fanfinity ID (live)"
+   cta_url="/platform/id"
+   icon="bolt" %}
+
+{% include faq.html
+   eyebrow="Common questions"
+   heading="What is real, and what is designed" %}

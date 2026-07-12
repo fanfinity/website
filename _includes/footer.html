@@ -28,8 +28,13 @@
       </div>
     </div>
 
-    <div class="mt-14 border-t border-white/10 pt-8">
+    <div class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
       <p class="text-xs text-white/45">&copy; {{ site.time | date: '%Y' }} Fanfinity. All rights reserved.</p>
+      <nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs" aria-label="Legal">
+        <a href="{{ '/privacy' | relative_url }}" class="text-white/55 transition hover:text-white">Privacy</a>
+        <a href="{{ '/terms' | relative_url }}" class="text-white/55 transition hover:text-white">Terms</a>
+        <button type="button" data-cookie-open class="text-white/55 transition hover:text-white">Cookie preferences</button>
+      </nav>
     </div>
   </div>
 </footer>

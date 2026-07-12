@@ -26,6 +26,28 @@ exclude:
   # Internal marketing foundation docs — NOT for publication
   - docs
   - competitor-profiles
+  # impeccable design-context files — internal, not public pages
+  - PRODUCT.md
+  - DESIGN.md
+  - .impeccable
 
 kramdown:
   syntax_highlighter: rouge
+
+# Lead-capture form endpoint. Empty = forms validate and show an honest
+# "not connected yet" message. To go live, paste a POST endpoint here — e.g. a
+# Formspree URL (https://formspree.io/f/xxxx), Netlify Forms, or Basin — and the
+# demo/contact forms will submit to it (AJAX) and show a real success state.
+# No account can be created from here; this is the single switch to flip.
+forms:
+  endpoint: ""
+
+# Social share defaults (jekyll-seo-tag). NOTE: home-hero.jpg is a stand-in —
+# replace with a branded 1200×630 og image before public launch.
+twitter:
+  card: summary_large_image
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/home-hero.jpg

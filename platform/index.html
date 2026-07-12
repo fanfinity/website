@@ -1,36 +1,91 @@
 ---
 layout: page
-permalink: /platform/
+permalink: /platform
 title: Platform
-description: Deploy Fanfinity anywhere — your cloud, on-premise, or fully managed — with in-Kingdom data residency and PDPL compliance. Your data, your choice.
-fit_points:
-  - "Self-hosted on AWS, GCP, or Azure in any region — your keys, zero data egress."
-  - "On-premise for full control, or Fanfinity-managed when you want speed over infrastructure."
-  - "In-Kingdom data residency and PDPL compliance governed at the data layer, not patched on top."
-  - "Warehouse-composable with Snowflake, BigQuery, or Databricks — or run fully independently."
+description: "The real-time fan data platform: collect, resolve, activate, and prove one consented, in-region fan graph. Fanfinity ID, Engage, Activate, and Measure in a single sovereign system."
+why:
+  - { icon: identity,  title: "Identity + engagement in one", body: "Most stacks bolt an engagement tool onto a CDP, then fight to make them talk. Fanfinity resolves identity and activates it in the same system." }
+  - { icon: chart,     title: "Deterministic proof",          body: "Verified reach and exposure-to-outcome attribution, so you answer sponsors with names, not impressions." }
+  - { icon: shield,    title: "Sovereign & compliant",        body: "Deploy in-Kingdom, on-prem, or on any cloud. PDPL-compliant and Arabic-native from the data layer up." }
+  - { icon: identity,  title: "Fan-native core, every industry", body: "Built to model fan behavior at its highest-engagement extreme, and general enough for media, brands, retail, banking, and beyond." }
+flow:
+  - { icon: plug,     title: "Collect", body: "An open connector framework ingests events from web, app, ticketing, streaming, on-site, and offline sources in real time and batch, normalizing raw payloads into typed events. No parallel database to maintain, no rip-and-replace of what you already run." }
+  - { icon: identity, title: "Resolve", body: "Events are validated, deduplicated, and stitched to one governed profile as they arrive. A graph-based model matches identifiers across devices and channels, back-stitching anonymous history the moment a fan identifies." }
+  - { icon: megaphone,title: "Activate", body: "The resolved profile drives real-time segmentation and journeys across owned and paid channels. Build the audience once and activate it everywhere, with consent and frequency enforced from the same record." }
+  - { icon: chart,    title: "Prove", body: "Exposure and outcomes land back on the profile, so reach is deduplicated to real people and attribution is deterministic. Sponsors and partners see verified results in a live portal, not a quarterly deck." }
+compose:
+  - { icon: stack,   title: "Composable, not a black box", body: "Fanfinity keeps your data in a columnar analytical warehouse you self-manage in-region. Pick the components you need and integrate the rest of your stack around them, instead of copying fan data into a vendor silo." }
+  - { icon: bolt,    title: "Real-time by design", body: "A real-time streaming layer resolves and routes signals as they happen, so profiles reflect what a fan just did rather than what a nightly batch reports tomorrow." }
+  - { icon: code,    title: "Programmable end to end", body: "A clean REST API, client SDKs, and a CLI cover anything custom. Configuration is API-driven and CI/CD-friendly, so engineering treats the platform as infrastructure, not a locked console." }
+  - { icon: shield,  title: "Governed at the data layer", body: "Consent, residency, and access control live on the profile itself. Deploy in your own cloud, on-premise, or fully managed, and keep activation decisions inside your environment." }
+manage:
+  - { icon: plug,   title: "Clean data on the way in", body: "Raw payloads are normalized, validated, and deduplicated as they arrive, in real time and batch. The profile you activate on is already consolidated and standardized, so teams act on data they can trust instead of reshaping event dumps first." }
+  - { icon: shield, title: "Least privilege by default", body: "Access is scoped to what each team and system actually needs, with consent and residency enforced on the profile. Governance is a property of the data layer, not a policy you hope every downstream tool remembers to honor." }
+  - { icon: chart,  title: "Ready for BI and data science", body: "Because resolved data lives in a warehouse you own, business-intelligence and data-science teams query the same governed source directly. There is no parallel export to reconcile and no vendor gatekeeping your own fan data." }
+faqs:
+  - q: "Is this one product or four?"
+    a: "One platform, four surfaces. Fanfinity ID, Activate, and Measure share a single resolved profile and event pipeline, so there is no ETL or sync between them. Each is coherent on its own; together they close the loop from first signal to proven outcome. The engagement layer, Fanfinity Engage, is in design Preview."
+  - q: "Do we have to replace our existing data stack?"
+    a: "No. Fanfinity is composable. It ingests from the sources you already run through an open connector framework and streams to a warehouse you self-manage, so it integrates around your stack rather than replacing it."
+  - q: "Where does our fan data live?"
+    a: "Wherever you require. You can deploy in your own cloud, on-premise, or fully managed, in-region. Data is resolved and stored in your environment, governed for residency and consent at the data layer, and activation decisions run inside that environment."
+  - q: "What is live today versus in preview?"
+    a: "The data and identity layer (collect, resolve, activate, and prove) is live. The engagement layer (Fanfinity Engage: interactive widgets and loyalty mechanics) is a design Preview and is labeled as such wherever it appears. We do not imply it ships today."
+  - q: "Can a non-engineering team operate it?"
+    a: "Marketing and data teams work from one governed source of truth, with visual segmentation and journey building. Engineering gets a REST API, SDKs, and a CLI for anything custom. The exact split of no-code versus code for your setup is best scoped in a demo. (to confirm)"
 ---
 {% include hero.html
    variant="gradient"
    eyebrow="The platform"
-   title="Deploy anywhere. Your data, your choice."
-   subtitle="Run Fanfinity in your own cloud, on-premise, or fully managed — in-Kingdom or any region. Sovereignty and compliance are built in, not bolted on."
+   title="Four products. One platform."
+   subtitle="Fanfinity ID, Engage, Activate, and Measure each stand alone. Together they form the full loop, from first signal to proven revenue. One engine, no ETL between products."
    cta_text="Book a Demo"
    cta_url="/demo"
-   secondary_text="For developers"
-   secondary_url="/developers" %}
+   secondary_text="See pricing"
+   secondary_url="/pricing" %}
+
+<div id="how" class="scroll-mt-24"></div>
+{% include pillar-cards.html
+   eyebrow="The products"
+   heading="From first signal to proven revenue"
+   subheading="Capture and resolve identity, engage across every channel, activate in real time, and prove the outcome, in one connected system." %}
+
+{% include feature-grid.html
+   eyebrow="How it works"
+   heading="Collect, resolve, activate, prove"
+   subheading="One event pipeline runs the full loop. A signal enters once and stays resolved to a single profile through activation and measurement, with no export or re-sync between stages."
+   items=page.flow
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="Under the hood"
+   heading="Composable engine an engineering team can trust"
+   subheading="The platform is API-driven and self-managed in-region, so it behaves like infrastructure you own rather than a console you rent."
+   items=page.compose
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="Data management"
+   heading="Your data, kept clean and kept yours"
+   subheading="The value of a fan graph is only as good as the data under it. Fanfinity normalizes and governs data at the point of collection and keeps it in a warehouse you own."
+   items=page.manage
+   columns=3 %}
 
 {% include link-cards.html
    nav_title="Platform"
-   eyebrow="Deployment & trust"
-   heading="One platform, deployed your way"
-   subheading="Choose where your customer data lives — and keep it compliant wherever that is." %}
+   only="Deploy & trust"
+   eyebrow="Deploy & trust"
+   heading="Run it your way, keep it compliant"
+   subheading="Deploy in-Kingdom, on-prem, or on any cloud, with residency and security governed at the data layer." %}
 
-{% include feature-split.html
-   reverse=true
-   eyebrow="Why it matters"
-   title="Sovereignty without the trade-offs"
-   body="Most platforms make you choose between control and convenience. Fanfinity gives you enterprise capabilities on infrastructure you control — in-Kingdom, on-prem, or any cloud."
-   points=page.fit_points
-   cta_text="See security & compliance"
-   cta_url="/platform/security"
-   icon="shield" %}
+<div id="why" class="scroll-mt-24"></div>
+{% include feature-grid.html
+   eyebrow="Why Fanfinity"
+   heading="What no other platform combines"
+   subheading="Identity and engagement, deterministic proof, in-region sovereignty, and a fan-native core."
+   items=page.why
+   columns=2 %}
+
+{% include faq.html eyebrow="Questions" heading="How the platform fits together" %}
+
+{% include proof.html %}

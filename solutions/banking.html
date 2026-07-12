@@ -2,26 +2,63 @@
 layout: page
 permalink: /solutions/banking
 title: Banking & Finance
-description: "Compliant, real-time engagement across the customer lifecycle."
+description: "For regulated financial-marketing teams: treat consent and residency as the permission set that governs every message, resolve one evidenced profile per member, then run next-best-offer and retention inside your rules."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+obligations:
+  - { icon: shield,   title: "Residency governed at collection", body: "Where member data lives is decided at the data layer, in-region and PDPL-ready, before a record is ever stored or activated." }
+  - { icon: scale,    title: "Consent is the permission set", body: "What you may say to whom is enforced from the profile outward, so every campaign runs inside the consent you can evidence, not around it." }
+  - { icon: identity, title: "One evidenced profile per member", body: "Resolve web, app, and account signals into a single first-party profile you own, each attribute traceable to the consent that permits its use." }
+  - { icon: chart,    title: "Deterministic measurement", body: "Tie communications to real member actions, so you report outcomes to the business and evidence to compliance from one source." }
+  - { icon: users,    title: "Marketing without the IT queue", body: "Segment by behavior and lifecycle without waiting on an engineering ticket, while governance rules stay enforced underneath." }
+  - { icon: bolt,     title: "Owned channels only", body: "Reach members on WhatsApp, email, and push from the same consented profile, with no third-party cookies in the path." }
+nbo_points:
+  - "Read product ownership and behavioral signals to find genuine affinity, not a fixed campaign-slot rotation."
+  - "Surface the next relevant product only to members whose consent permits that outreach."
+  - "Time the offer to the moment of intent across channels, from one resolved profile."
+  - "Measure which offers converted, so product teams stop competing for the same generic slot."
+retention_points:
+  - "Consolidate transactional and behavioral signals into patterns that indicate a member is likely to lapse."
+  - "Act on the early signal inside the same consent and residency rules that govern acquisition."
+  - "Reach the member on an owned channel before the relationship quietly winds down, not after."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Industry"
-   title="Banking & Finance"
-   subtitle="Compliant, real-time engagement across the customer lifecycle."
+   eyebrow="Solutions · Banking & Finance"
+   title="Consent is not overhead. It is your permission to act."
+   subtitle="Financial institutions carry the strictest data obligations of any vertical. Fanfinity treats residency and consent as the permission set that governs every message, resolves one evidenced first-party profile per member, then lets you segment, personalize, and measure inside your rules by default."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-banking.jpg"
+   image_alt="Modern glass office towers" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Banking & Finance is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include value-pillars.html
+   eyebrow="Built for regulated data"
+   heading="The obligations become the operating model"
+   subheading="For a bank, where data lives and how it is consented decides what you are allowed to do with it. Fanfinity makes those constraints the foundation rather than a bolt-on control."
+   items=page.obligations %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="The next-best-offer use case"
+   title="Offer the right product only when consent and timing agree"
+   body="In most banks, separate product teams compete for the same predefined campaign slots with little regard for relevance or timing. When affinity is read from cross-channel behavior and every profile carries its consent, next-best-offer becomes a decision about the individual member, and outreach that isn't permitted simply never fires."
+   points=page.nbo_points
+   cta_text="See how data residency works"
+   cta_url="/platform/data-residency"
+   icon="scale" %}
+
+{% include feature-split.html
+   eyebrow="The retention use case"
+   title="See the member leaving before the relationship ends"
+   body="A closing account is rarely a surprise in the data. Falling transaction frequency, a drop in logins, and a shift in product usage form the pattern that precedes a lapse. Fanfinity consolidates those signals against one profile, so retention can act early, on an owned channel, inside the consent it already holds."
+   points=page.retention_points
+   cta_text="See how identity works"
+   cta_url="/platform/id"
+   icon="bell" %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Compliant first-party data, put to work"
+   text="See how Fanfinity governs residency and consent at the data layer, then runs next-best-offer, retention, and measurement inside your rules. Book a working session on your compliance requirements." %}

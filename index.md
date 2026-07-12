@@ -1,6 +1,8 @@
 ---
 layout: coming-soon
+permalink: /coming-soon
 title: "Coming Soon"
+sitemap: false
 ---
 
 <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">

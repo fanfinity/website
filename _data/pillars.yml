@@ -1,31 +1,32 @@
 # The four products that make up the Fanfinity platform. Reused on the homepage
-# ("Four products, one platform") and the /product hub. Each stands alone; together
-# they form the full loop: Identify -> Engage -> Activate -> Prove.
+# and the /platform hub. Each stands alone; together they form the full loop:
+# Identify -> Engage -> Activate -> Prove. The data layer (ID) is LIVE; Engage is
+# a design preview — labeled honestly.
 
 - title: Fanfinity ID
-  url: /product/fanfinity-id
+  url: /platform/id
   icon: identity
-  outcome: Know every customer.
-  body: A sovereign CDP and real-time identity graph that unifies every touchpoint — ticketing, streaming, app, web, stadium, social — into one golden customer profile, with consent governance built in.
+  outcome: Know every fan.
+  body: A sovereign CDP and real-time identity graph that unifies every touchpoint (ticketing, streaming, app, web, on-site, social) into one golden fan profile, with consent governance built in.
   capabilities: [Identity Resolution, Golden Record, Consent & Governance, Real-time Profiles]
 
 - title: Fanfinity Engage
-  url: /product/fanfinity-engage
+  url: /platform/engage
   icon: bolt
-  outcome: Turn watching into playing.
-  body: Live interactivity, gamification, and loyalty — polls, predictions, quizzes, quests, streaks, and leaderboards — that turn passive audiences into active, returning communities.
+  outcome: Turn watching into playing. (Preview)
+  body: Live interactivity, gamification, and loyalty (polls, predictions, quizzes, quests, streaks, and leaderboards) that turn passive audiences into active, returning communities. In design preview; not yet generally available.
   capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, Spoiler-safe Sync]
 
 - title: Fanfinity Activate
-  url: /product/fanfinity-activate
+  url: /platform/activate
   icon: megaphone
-  outcome: Reach the right person, everywhere.
-  body: Orchestrate omnichannel campaigns across WhatsApp, email, push, and paid media — segment on live behavior, build journeys that react, and personalize every message.
+  outcome: Reach the right fan, everywhere.
+  body: "Orchestrate omnichannel campaigns across WhatsApp, email, push, and paid media: segment on live behavior, build journeys that react, and personalize every message."
   capabilities: [Segmentation, Journey Orchestration, WhatsApp & Email, Ad Audiences]
 
 - title: Fanfinity Measure
-  url: /product/fanfinity-measure
+  url: /platform/measure
   icon: chart
   outcome: Prove the value.
-  body: Deterministic attribution and a sponsor/partner portal — verified reach instead of impressions, exposure-to-outcome measurement, and premium audience monetization.
+  body: "Deterministic attribution and a sponsor/partner portal: verified reach instead of impressions, exposure-to-outcome measurement, and premium audience monetization."
   capabilities: [Verified Reach, Attribution, Sponsor Portal, Benchmarking]

@@ -2,26 +2,64 @@
 layout: page
 permalink: /solutions/telco
 title: Telco
-description: "Monetize the subscriber base with first-party engagement."
+description: "For operators: unify a large subscriber base whose signals sit siloed across billing, network, and app, catch churn before the contract ends, and package consented first-party audiences for partners, in-region."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: identity, title: "Resolve the subscriber, not the SIM", body: "Stitch web, app, and account signals into one first-party profile, so a household of lines and devices resolves to the people behind them." }
+  - { icon: stack,    title: "Unify signals from across the stack", body: "Bring scattered subscriber signals into one owned profile instead of leaving them siloed across billing, network, and app systems." }
+  - { icon: bolt,     title: "Catch churn before renewal", body: "Read usage decline and support friction as they happen, so retention acts before a contract lapses, not after the port-out." }
+  - { icon: users,    title: "Segment at base scale", body: "Build behavioral and lifecycle segments across millions of lines in real time, ready for retention, upsell, and cross-sell." }
+  - { icon: target,   title: "Package audiences for partners", body: "Turn consented first-party audiences into premium, addressable inventory for advertising and sponsor partners (to confirm)." }
+  - { icon: shield,   title: "Residency and consent governed", body: "Data residency and consent are governed at the data layer, kept in-region and PDPL-ready from collection onward." }
+churn_points:
+  - "Read declining usage, plan mismatch, and support friction as the pattern that precedes a port-out."
+  - "Segment at-risk subscribers in real time across a base of millions of lines."
+  - "Trigger the retention offer on an owned channel before the contract renewal window, not after."
+  - "Measure which interventions kept subscribers, so retention spend follows what works."
+audience_points:
+  - "Resolve a large base into consented first-party profiles you own, with no third-party cookies."
+  - "Build addressable audiences from real behavioral and account signals, governed in-region."
+  - "Package them as premium inventory partners buy directly, opening a media line beyond connectivity."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Industry"
-   title="Telco"
-   subtitle="Monetize the subscriber base with first-party engagement."
+   eyebrow="Solutions · Telco"
+   title="A base of millions is only an asset once its signals meet"
+   subtitle="Operators hold enormous subscriber bases whose signals sit siloed across billing, network, and app. Fanfinity unifies them into known first-party profiles you own, so you can catch churn before the contract ends and turn consented reach into audiences partners will pay for, all governed in-region."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-telco.jpg"
+   image_alt="People using smartphones side by side" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Telco is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-grid.html
+   eyebrow="What operators do with Fanfinity"
+   heading="From a siloed base to owned, monetizable audiences"
+   subheading="The connected platform, tuned to the scale and dual revenue lines of a modern operator: retention and media."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   eyebrow="The churn use case"
+   title="See the port-out coming while you can still stop it"
+   body="On a base of millions, churn is a slow signal buried in usage and support data, and by the time the number ports out the decision was made weeks ago. When usage, plan fit, and support friction resolve to one profile in real time, retention can reach an at-risk subscriber on an owned channel before the renewal window closes."
+   points=page.churn_points
+   cta_text="See how activation works"
+   cta_url="/platform/activate"
+   icon="bolt" %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="The audience-monetization use case"
+   title="Turn consented reach into a media line, not just connectivity"
+   body="An operator's first-party reach rivals any publisher's, but it only becomes revenue once it is resolved, consented, and packaged as inventory. Fanfinity resolves the base into owned profiles and turns consented signals into addressable audiences partners can buy directly, governed in-region so residency never blocks the deal."
+   points=page.audience_points
+   cta_text="See how identity works"
+   cta_url="/platform/id"
+   icon="target" %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Turn a subscriber base into retention and revenue"
+   text="See how Fanfinity unifies siloed subscriber signals, catches churn before renewal, and packages consented audiences for partners, in-region. Book a session on your subscriber data." %}

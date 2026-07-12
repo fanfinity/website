@@ -1,0 +1,73 @@
+---
+layout: page
+permalink: /why-fanfinity
+title: Why Fanfinity
+description: "Fanfinity is the real-time, in-region fan CDP: one consented first-party fan graph that you collect, resolve, activate, and prove. See how it compares to data platforms and engagement tools."
+flow:
+  - { icon: broadcast, title: "Collect",  body: "Capture fragmented fan signals from ticketing, streaming, app, web, on-site, and social, in real time, first-party." }
+  - { icon: identity,  title: "Resolve",  body: "Stitch those signals into one consented, in-region golden fan profile with governance built in." }
+  - { icon: megaphone, title: "Activate", body: "Reach known fans across WhatsApp, email, push, and paid media, plus, in preview, live engagement." }
+  - { icon: chart,     title: "Prove",    body: "Measure exposure to outcome with deterministic attribution: verified reach, not impressions." }
+residency_points:
+  - "One consented, first-party fan graph you own, not rented from a third party."
+  - "Resolved and stored in-Kingdom, PDPL-governed at the data layer, not patched on top."
+  - "Real-time, not batch. Fan state is current when you activate on it."
+  - "Deploy in your own cloud, on-premise, or fully managed."
+why:
+  - { icon: link,     title: "Identity + activation in one system", body: "Most stacks bolt an engagement tool onto a batch CDP, then fight to make them talk. Fanfinity resolves identity and activates it in the same real-time system. (to confirm vs each competitor)" }
+  - { icon: shield,   title: "In-region, first-party by design",    body: "A consented fan graph the customer owns, resolved and stored in-Kingdom: a posture horizontal CDPs don't lead with. (to confirm)" }
+  - { icon: chart,    title: "Built to prove sponsorship outcomes", body: "Exposure-to-outcome measurement aimed at sponsorship and ad monetization for sports & live entertainment. (to confirm)" }
+
+faqs:
+  - q: "How is this different from a horizontal CDP like Segment or Meiro?"
+    a: "Horizontal CDPs unify data in batch, then leave you to add a separate engagement tool and stitch the two together. Fanfinity resolves identity and activates it in one real-time system, first-party and in-region by design instead of assembled after the fact. (to confirm vs each competitor)"
+  - q: "Is the engagement layer live?"
+    a: "The data and identity layer is live today: collect, resolve, activate, and prove. The interactive engagement widgets are a design preview, not shipped. What's real now is the part competitors make you assemble: a consented, real-time, in-region fan graph."
+  - q: "Are you cheaper?"
+    a: "We can't quote until we scope your usage. The intent is a model that doesn't grow per active user the way metered-MAU billing does, so engagement isn't taxed. (to confirm: pricing is being defined)"
+  - q: "Can a non-engineering team run it?"
+    a: "Engineering integrates once via a REST API and SDKs; your team runs the day-to-day from a producer surface. How much runs with no engineering involved is something we'd rather show than promise. (to confirm)"
+  - q: "Do you have customers like us?"
+    a: "We're pre-revenue and building with a small group of design partners. Instead of publishing logos we can't yet stand behind, we'll introduce you to the right reference when it's real."
+  - q: "Where does our fan data live?"
+    a: "Resolved and stored in-region, in-Kingdom, PDPL-governed at the data layer rather than patched on top. You pick the deployment (your own cloud, on-premise, or fully managed), and your customer data stays in your control."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="Why Fanfinity"
+   title="The real-time, in-region fan CDP"
+   subtitle="One consented first-party fan graph: collect, resolve, activate, and prove. Horizontal CDPs unify data but can't activate live moments. Engagement tools create activity with anonymous fans. Fanfinity does both, in-region, and proves the outcome."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore the platform"
+   secondary_url="/platform" %}
+
+<div id="flow" class="scroll-mt-24"></div>
+{% include feature-grid.html
+   eyebrow="From signals to proof"
+   heading="Collect → Resolve → Activate → Prove"
+   subheading="The full loop in one system, with no ETL between the fan graph and the moment you activate it."
+   items=page.flow
+   columns=4 %}
+
+<div id="residency" class="scroll-mt-24"></div>
+{% include feature-split.html
+   reverse=true
+   eyebrow="The in-region fan graph"
+   title="A first-party fan graph you own, resolved in-Kingdom"
+   body="The data and identity layer is live today. Engagement widgets are a design preview. What's real is the thing competitors make you assemble: a consented, real-time, in-region fan graph."
+   points=page.residency_points
+   cta_text="See data residency"
+   cta_url="/platform/data-residency"
+   icon="shield" %}
+
+{% include feature-grid.html
+   eyebrow="What we believe sets us apart"
+   heading="Three wedges, each a hypothesis we're grounding"
+   subheading="We model our feature set on the incumbents, so our edge is posture, not a longer feature list. Every claim below is labeled until proven."
+   items=page.why
+   columns=3 %}
+
+{% include proof.html %}
+
+{% include faq.html eyebrow="FAQ" heading="Questions teams ask us" %}

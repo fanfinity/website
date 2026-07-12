@@ -1,0 +1,95 @@
+---
+layout: page
+permalink: /platform/measure
+title: Fanfinity Measure
+description: "Deterministic attribution and a sponsor portal: verified reach instead of impressions, exposure-to-outcome measurement, and premium first-party audiences you can monetize."
+breadcrumb_parent: { title: Platform, url: /platform }
+capabilities:
+  - { icon: users,    title: "Verified reach", body: "Deduplicated, verified reach: real people resolved to profiles, not ad impressions counted twice. The number you report is one you can stand behind." }
+  - { icon: chart,    title: "Exposure-to-outcome attribution", body: "Tie exposure to what happened next. Deterministic attribution connects a campaign to the outcome it drove, instead of a proxy metric that hopes for the best." }
+  - { icon: identity, title: "Sponsor & partner portal", body: "Give sponsors and partners a real-time dashboard they can log into themselves: accountability in the moment, not a slide deck weeks after the fact." }
+  - { icon: gift,     title: "Premium first-party audiences", body: "Package and price first-party fan audiences your partners can't get anywhere else, and open monetization paths beyond ads and subscriptions." }
+proof_points:
+  - "Report verified reach: the count is real people, deduplicated across touchpoints."
+  - "Show exposure-to-outcome, not a proxy: who was reached, and what they did next."
+  - "Turn first-party audiences into sponsorable inventory with a real number behind it."
+  - "Sponsors self-serve a live dashboard, so accountability replaces the end-of-campaign PDF."
+how:
+  - { icon: identity, title: "Resolve the audience", body: "Every impression, view, and interaction is tied back to a resolved fan profile in Fanfinity ID. A reach number is a count of real, deduplicated people, not raw device or cookie hits inflated across channels." }
+  - { icon: chart,    title: "Connect exposure to outcome", body: "Because exposure and downstream behavior land on the same profile, Measure joins the two deterministically. You see who was reached by a campaign or sponsor placement and what they did afterward, without stitching reports together by hand." }
+  - { icon: gauge,    title: "Make the number self-serve", body: "Results flow into a live portal instead of a quarterly deck. Sponsors, partners, and internal teams query the same governed data, so everyone is working from one version of the truth." }
+enrich_points:
+  - "Signals are enriched with the resolved profile before they leave your environment, so downstream platforms receive consistent identifiers instead of fragments."
+  - "First-party matching recovers reach that browser-side tracking loses to privacy controls and blockers. (match-rate figures to confirm)"
+  - "Suppress fans who have already converted, so ad budget is spent on reach that can still move."
+  - "Enrichment runs on data you own, in-region, with consent enforced at the profile."
+availability_points:
+  - "Measurement reads clean, consolidated, standardized data, not raw event dumps a team has to reshape before it can be trusted."
+  - "The same governed data sits in a warehouse you own and control, so BI, analytics, and data-science teams query it directly."
+  - "There is no separate measurement database to keep in sync; proof and activation run on one profile and one pipeline."
+  - "Sponsors, partners, and internal teams work from one version of the truth rather than reconciling exports after the fact."
+availability:
+  - { icon: chart,    title: "Data that is ready to use", body: "Because signals are validated, deduplicated, and resolved on the way in, the numbers you report on are already clean and consolidated. Teams spend their time interpreting results, not reshaping raw event dumps before anyone can trust them." }
+  - { icon: stack,    title: "In a warehouse you own", body: "Resolved fan data lands in a columnar analytical warehouse you self-manage in-region. Business-intelligence, analytics, and data-science teams query the same governed data directly, so Measure is a view onto your owned data, not a separate silo to reconcile." }
+  - { icon: shield,   title: "Governed the whole way", body: "Reach and outcome numbers inherit the consent and residency rules that live on the profile. Measurement never becomes the place where governance quietly breaks, because the number and the compliance posture come from the same record." }
+faqs:
+  - q: "Where do the numbers come from? Are these modeled estimates?"
+    a: "Every metric traces to a resolved fan profile in Fanfinity ID. Reach is a deduplicated count of real people; exposure-to-outcome is a deterministic join on the same profile, not a modeled or panel-based estimate. We publish counts we can stand behind rather than proxy figures."
+  - q: "Do you have benchmark lift or ROAS numbers we can quote?"
+    a: "Not yet. Fanfinity is early and we will not publish lift, ROAS, or match-rate figures we have not measured with a real design partner. When we have them, they will be labeled as measured results, not illustrative ones. (to confirm)"
+  - q: "Can sponsors and partners access this directly?"
+    a: "Yes. Measure includes a portal partners can log into for a live view of verified reach and outcomes, scoped to what you choose to share. It replaces the end-of-campaign PDF with accountability in the moment."
+  - q: "How is this different from the analytics in our ad platform?"
+    a: "Ad-platform analytics measure their own inventory in isolation and count impressions, not resolved people. Measure sits on your owned, in-region fan graph, so reach is deduplicated across every channel and outcomes are tied to one identity rather than each platform's siloed view."
+---
+{% include hero.html
+   variant="gradient"
+   eyebrow="Platform · Fanfinity Measure"
+   title="Prove the value."
+   subtitle="Fanfinity Measure answers the one question sponsors and partners actually ask: who saw it, and did it work? Verified reach, deterministic attribution, and a portal they can log into themselves."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore the platform"
+   secondary_url="/platform" %}
+
+{% include feature-grid.html
+   eyebrow="What Measure gives you"
+   heading="Verified reach, not impressions"
+   subheading="Every metric traces back to a resolved fan profile, so proof is deterministic, not estimated."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="How it works"
+   heading="From resolved profile to a number you can defend"
+   subheading="Measure reads the same governed fan graph that powers identity and activation, so proof is a property of the platform rather than a reporting exercise bolted on at the end."
+   items=page.how
+   columns=3 %}
+
+{% include feature-split.html
+   eyebrow="Enriched signals to ad platforms"
+   title="Recover the reach browser tracking loses"
+   body="Client-side tracking drops signals to privacy controls and ad blockers, and ad-platform conversion APIs underperform when identifiers are missing or inconsistent. Measure enriches events with the resolved profile before they leave your environment, so downstream platforms receive clean, consistent identifiers instead of fragments."
+   points=page.enrich_points
+   cta_text="See how identity resolves"
+   cta_url="/platform/id"
+   icon="target" %}
+
+{% include feature-grid.html
+   eyebrow="Data availability"
+   heading="A number your data team can defend, too"
+   subheading="Proof is only credible if the underlying data is clean and owned. Measure reads consolidated, governed data from a warehouse you control, so the reported number and the analyst's number are the same number."
+   items=page.availability
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="For sponsors & partners"
+   title="Answer sponsors with names, not impressions"
+   body="Sponsorship keeps moving toward accountability. Measure lets you report on real, resolved fans and the outcomes they drove, which is the difference between selling exposure and proving it."
+   points=page.proof_points
+   cta_text="Activate the audience first"
+   cta_url="/platform/activate"
+   icon="chart" %}
+
+{% include faq.html eyebrow="Questions" heading="Measurement questions, answered honestly" %}

@@ -2,26 +2,63 @@
 layout: page
 permalink: /solutions/retail
 title: Retail & E-commerce
-description: "Personalize the shopper journey and turn browsers into loyal buyers."
+description: "For retail and e-commerce: stitch the same shopper across web, app, and in-store so one person stops being three anonymous records, then recover carts, suppress recent buyers, and reward loyalty from data you own."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+resolution:
+  - { icon: identity, title: "One shopper, not three records", body: "Stitch online browsing, app activity, and in-store purchases into a single golden profile, so the same person stops appearing as three anonymous shoppers." }
+  - { icon: link,     title: "Web session to till receipt", body: "Connect a web session to a store purchase to a loyalty scan, closing the online-to-offline gap most retail stacks never bridge." }
+  - { icon: stack,    title: "First-party audiences, post-cookie", body: "Build durable, owned audiences from your own data instead of renting reach through third-party cookies you are about to lose." }
+  - { icon: slider,   title: "Personalize from the first visit", body: "Adapt offers and recommendations in real time for known and anonymous shoppers alike, before they have logged in." }
+  - { icon: gift,     title: "Loyalty on data you own", body: "Base tiers, points, and rewards on the resolved profile, with richer gamified loyalty experiences in Preview." }
+  - { icon: target,   title: "Stop paying to reach buyers", body: "Suppress people who just purchased and build lookalikes of your best shoppers, so paid media stops wasting spend (to confirm)." }
+basket_points:
+  - "Recognize an abandoned cart against the resolved profile, not just a browser or an email address."
+  - "Recover the sale with a reminder enriched by what that shopper has bought and browsed before."
+  - "Reach them on WhatsApp, email, or push from one profile, the moment the signal fires."
+  - "Suppress that shopper from acquisition ads once they convert, so budget goes to net-new demand."
+replenish_points:
+  - "Learn each shopper's repurchase rhythm from real purchase history, in store and online."
+  - "Time the reminder or offer to the moment a consumable is likely running low, not to a blanket send."
+  - "Recognize the same person whether the last purchase was a store visit or an app checkout."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Industry"
-   title="Retail & E-commerce"
-   subtitle="Personalize the shopper journey and turn browsers into loyal buyers."
+   eyebrow="Solutions · Retail & E-commerce"
+   title="The same shopper should not be three anonymous records"
+   subtitle="Retail signals scatter across web, app, and store, so one person shows up as a browser, an order, and a loyalty card that never meet. Fanfinity stitches them into one profile you own, then helps you recover sales, reward loyalty, and spend ad budget on the right people, post-cookie."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-retail.jpg"
+   image_alt="A shopper carrying bags through a retail store" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Retail & E-commerce is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include value-pillars.html
+   eyebrow="Identity resolution"
+   heading="Stitch the shopper across every touch"
+   subheading="The unresolved shopper is the root cause of wasted spend, weak personalization, and loyalty that forgets people. Fanfinity fixes it at the data layer."
+   items=page.resolution %}
+
+{% include feature-split.html
+   eyebrow="The cart-recovery use case"
+   title="Recover the sale, then stop paying to re-reach the buyer"
+   body="An abandoned basket is only recoverable if you can recognize the shopper behind it, and a converted shopper is only profitable if you stop buying ads to reach them again. Both depend on one resolved profile spanning browse, cart, purchase, and store, so recovery and suppression run off the same source of truth."
+   points=page.basket_points
+   cta_text="See how activation works"
+   cta_url="/platform/activate"
+   icon="target" %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="The replenishment use case"
+   title="Reach the shopper when the product runs low, not on a blanket send"
+   body="For pharmacy, grocery, and health-and-beauty retail, much of the basket is consumable and repurchased on a rhythm. When online and in-store purchases resolve to one profile, replenishment becomes a timed, per-shopper prompt rather than a mass email, and it works whether the last purchase happened at a till or in the app."
+   points=page.replenish_points
+   cta_text="See how identity works"
+   cta_url="/platform/id"
+   icon="identity" %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Know every shopper, personalize every journey"
+   text="See how Fanfinity stitches shoppers across online and offline, recovers carts, and rewards loyalty from data you own. Book a walkthrough across your online and offline data." %}

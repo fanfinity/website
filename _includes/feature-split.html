@@ -7,8 +7,7 @@ Alternating text / media row. Params:
   <div class="container-page">
     <div class="grid items-center gap-12 lg:grid-cols-2">
       <div class="{% if include.reverse %}lg:order-2{% endif %}">
-        {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.title }}</h2>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ include.title }}</h2>
         {%- if include.body -%}<p class="mt-5 text-lg leading-relaxed text-muted-foreground">{{ include.body }}</p>{%- endif -%}
         {%- if include.points -%}
           <ul class="mt-6 space-y-3">
@@ -26,10 +25,7 @@ Alternating text / media row. Params:
         {%- if include.image -%}
           <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt }}" class="w-full rounded-4xl border border-border">
         {%- else -%}
-          <div class="relative grid aspect-[4/3] place-items-center overflow-hidden rounded-4xl bg-hero text-white/80">
-            <div class="absolute inset-0 dot-grid opacity-50" aria-hidden="true"></div>
-            <span class="relative animate-floaty">{% include icon.html name=include.icon class="h-16 w-16" %}</span>
-          </div>
+          {% include brand-visual.html icon=include.icon %}
         {%- endif -%}
       </div>
     </div>

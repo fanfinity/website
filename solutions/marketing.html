@@ -2,26 +2,62 @@
 layout: page
 permalink: /solutions/marketing
 title: Marketing & Growth
-description: "Segment, activate, and measure — without waiting on engineering."
+description: "Build audiences, launch journeys, and prove what worked: self-serve, on first-party data you own, without opening an engineering ticket."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: users,     title: "Build segments without SQL", body: "Compose audiences from behavior, profile traits, and lifecycle stage in a point-and-click builder. No query language, no analyst hand-off, no Jira ticket sitting in someone else's backlog." }
+  - { icon: bolt,      title: "Launch journeys on a canvas", body: "Orchestrate multi-step, multi-channel journeys: entry conditions, waits, branches, and exits, triggered off a live signal instead of a nightly batch. (The visual drag-and-drop journey canvas is in design preview.)" }
+  - { icon: slider,    title: "Personalize per segment", body: "Tailor content, offers, and recommendations to each audience, and let the message update as new behavior arrives rather than freezing at export time." }
+  - { icon: target,    title: "Sharpen paid spend", body: "Push first-party lookalikes to ad platforms and suppress fans who already converted, so budget goes to reach you don't already own." }
+  - { icon: chart,     title: "Attribute to outcomes", body: "See which segments and journeys moved the number you report on, so you can double down on what works and retire what doesn't." }
+  - { icon: identity,  title: "One profile, post-cookie", body: "Every segment reads from one resolved first-party profile per fan, so the same person isn't three different audiences across three tools." }
+points:
+  - "Build and launch an audience on first-party data you own, without standing up a data-pipeline project first."
+  - "Trigger journeys off live behavior instead of last night's export."
+  - "Activate across WhatsApp, email, and push from one consented profile."
+  - "Attribute activation to real outcomes so you can prove and repeat what works."
+steps:
+  - { icon: identity, title: "Start from a resolved profile", body: "Fragmented touchpoints are already stitched into one first-party profile per fan, so you segment on a person, not a cookie." }
+  - { icon: users,    title: "Compose the audience", body: "Layer behavioral, demographic, and lifecycle conditions in the builder until the segment is exactly who you meant." }
+  - { icon: bolt,     title: "Orchestrate the journey", body: "Drop the segment onto the canvas, add channels and timing, and set the goal you'll measure against." }
+  - { icon: chart,    title: "Read the result and iterate", body: "Watch conversion and drop-off per step, then adjust the journey without rebuilding it from scratch." }
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Team"
-   title="Marketing & Growth"
-   subtitle="Segment, activate, and measure — without waiting on engineering."
+   eyebrow="Solutions · Marketing & Growth"
+   title="Segment, launch, and prove without waiting on engineering"
+   subtitle="Marketing teams shouldn't need a data pipeline to ship a campaign. Fanfinity gives you self-serve audiences, a real-time journey canvas, and honest attribution on first-party data you own, in-region and post-cookie."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-marketing.jpg"
+   image_alt="A growth team collaborating over laptops" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Marketing & Growth is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-grid.html
+   eyebrow="What growth teams do with Fanfinity"
+   heading="From raw signals to campaigns that prove their worth"
+   subheading="Every step lives in one tool, so the audience you build is the audience you activate and the audience you measure."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Self-serve, not a ticket queue"
+   title="The bottleneck isn't ideas, it's the hand-off"
+   body="When every segment is a request to the data team, good campaigns die waiting. Fanfinity puts audience building and real-time orchestration in the hands of the people running growth, so the loop between an idea and a live journey is measured in hours, not sprints."
+   points=page.points
+   cta_text="See how activation works"
+   cta_url="/platform/activate"
+   icon="megaphone" %}
+
+{% include value-pillars.html
+   eyebrow="How a campaign comes together"
+   heading="One loop, from profile to proof"
+   subheading="No exports between tools, no waiting on a rebuild: each step feeds the next inside the same platform."
+   items=page.steps %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Ship the next campaign yourself"
+   text="See the audience builder, the journey canvas, and attribution working on first-party data you own. Book a hands-on walkthrough with our team." %}

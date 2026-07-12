@@ -5,9 +5,8 @@ Params: eyebrow, heading, subheading
 <section class="section" id="platform">
   <div class="container-page">
     <div class="max-w-2xl" data-reveal>
-      <p class="eyebrow">{{ include.eyebrow | default: 'The platform' }}</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading | default: 'One connected platform, five ways to win' }}</h2>
-      <p class="mt-4 text-lg text-muted-foreground">{{ include.subheading | default: 'Engagement, loyalty, rewards, identity, and analytics — built to line up by design, not by integration.' }}</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading | default: 'One connected platform, five ways to win' }}</h2>
+      <p class="mt-4 text-lg text-muted-foreground">{{ include.subheading | default: 'Engagement, loyalty, rewards, identity, and analytics, built to line up by design, not by integration.' }}</p>
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {%- for pillar in site.data.pillars -%}

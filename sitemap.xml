@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- assign pages = site.html_pages | where_exp: "p", "p.sitemap != false" -%}
+{%- for page in pages -%}
+{%- comment -%} Excludes decks, assets, the internal scanner, and pages still stubbed
+    "In progress" (re-include each as it is written): compare/*, blog, webinars,
+    partners, careers, newsroom, customers. {%- endcomment -%}
+{%- unless page.url contains '404' or page.url contains '/assets/' or page.url contains '/bein/' or page.url contains '/pafos/' or page.url contains '/pyramids/' or page.url contains '/slides/' or page.url contains '/scanner' or page.url contains '/compare' or page.url == '/blog' or page.url == '/webinars' or page.url == '/partners' or page.url == '/careers' or page.url == '/newsroom' or page.url == '/customers' -%}
+  <url><loc>{{ page.url | absolute_url }}</loc></url>
+{%- endunless -%}
+{%- endfor -%}
+</urlset>

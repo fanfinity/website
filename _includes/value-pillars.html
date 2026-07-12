@@ -26,9 +26,8 @@ Params: eyebrow, heading, subheading, items (required)
           {%- if wide -%}
             <div class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
           {%- endif -%}
-          <div class="relative flex items-center justify-between">
+          <div class="relative flex items-center">
             <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition duration-300 group-hover/card:scale-105">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
-            <span class="font-mono text-xs font-medium tracking-wide text-muted-foreground/70">{{ forloop.index | prepend: '0' }}</span>
           </div>
           <h3 class="relative mt-5 font-semibold {% if wide %}text-xl{% else %}text-base{% endif %}">{{ item.title }}</h3>
           <p class="relative mt-2 text-sm leading-relaxed text-muted-foreground {% if wide %}max-w-md{% endif %}">{{ item.body }}</p>

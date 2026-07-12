@@ -5,8 +5,8 @@ title: Book a Demo
 description: See how Fanfinity turns your live audience into active, returning, monetizable fans. Book a walkthrough with our team.
 cta: false
 expect:
-  - "A walkthrough mapped to your vertical — sports, broadcast, or brand."
-  - "A look at the connected stack: widgets, loyalty, rewards, identity, and analytics."
+  - "A walkthrough mapped to your vertical: sports, broadcast, or brand."
+  - "A look at the connected stack: identity and analytics live today, with widgets, loyalty, and rewards in design preview."
   - "Straight answers on integration, timelines, and how pricing would work for you."
 ---
 {% include hero.html
@@ -34,23 +34,28 @@ expect:
         </ul>
       </div>
 
-      <!-- Request form (UI only — submission wiring is TBD / not yet connected) -->
+      <!-- Request form. Submits to site.forms.endpoint when set (see _config.yml). -->
       <div data-reveal style="--reveal-delay:120ms" class="card gradient-border">
-        <!-- TODO: connect this form to a backend / CRM before public launch. Button is inert for now. -->
-        <form class="grid gap-4" novalidate>
+        <form id="demo-form" data-lead-form action="{{ site.forms.endpoint }}" method="POST" class="grid gap-4" novalidate>
+          <input type="hidden" name="_source" value="Demo request">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="block text-sm font-medium text-foreground">First name
               <input type="text" name="first_name" autocomplete="given-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <p data-error-for="first_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
             <label class="block text-sm font-medium text-foreground">Last name
               <input type="text" name="last_name" autocomplete="family-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <p data-error-for="last_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
           </div>
           <label class="block text-sm font-medium text-foreground">Work email
             <input type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <p data-error-for="email" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">Company
             <input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <p data-error-for="company" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">I'm with a…
             <select name="vertical" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
@@ -63,7 +68,8 @@ expect:
           <label class="block text-sm font-medium text-foreground">What are you hoping to do?
             <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
           </label>
-          <button type="button" class="btn btn-primary btn-lg glow w-full">Request my demo</button>
+          <button type="submit" class="btn btn-primary btn-lg w-full">Request my demo</button>
+          <p id="demo-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>
 

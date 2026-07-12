@@ -2,26 +2,97 @@
 layout: page
 permalink: /platform/architecture
 title: Architecture
-description: "A real-time, warehouse-composable architecture built for scale."
+description: "One connected architecture: collect, resolve, activate, and prove, running as a single real-time system you can deploy in-Kingdom, on-prem, or on any cloud."
 breadcrumb_parent: { title: Platform, url: /platform }
+features:
+  - { icon: link,     title: "Collect from everywhere",   body: "A connector framework brings fragmented signals, web, app, streaming, ticketing, CRM, into one pipeline, without hand-built glue for every source." }
+  - { icon: identity, title: "Resolve to one fan",        body: "Deterministic and probabilistic identity resolution stitches those signals into one golden profile per fan, across devices and channels." }
+  - { icon: stack,    title: "Store in a columnar warehouse", body: "Resolved events land in a self-managed, columnar analytical warehouse, fast queries across the full fan history, inside your own infrastructure." }
+  - { icon: bolt,     title: "Activate in real time",     body: "A real-time event pipeline triggers segments, journeys, and audiences the moment behavior happens, not on the next day's batch." }
+  - { icon: chart,    title: "Prove the outcome",         body: "Attribution ties exposure to outcome, so activation feeds measurement and the loop closes on revenue you can actually show a sponsor." }
+  - { icon: shield,   title: "Deploy where you choose",   body: "The whole stack runs in your cloud, on-prem, or fully managed, the architecture is portable by design, residency included." }
+points:
+  - "Collect, resolve, activate, and prove run as one system, with no ETL shuttling data between tools."
+  - "Connectors bring sources in; identity resolution turns them into golden profiles."
+  - "A columnar warehouse holds the full history; a real-time pipeline acts on it live."
+  - "Portable by design: the same architecture deploys in-Kingdom, on-prem, or on any cloud."
+pipeline:
+  - { icon: plug,     title: "Ingest", body: "A signal arrives from any source through the connector framework: web, app, streaming player, ticketing, CRM, or a scheduled import. Each source normalizes its raw payload into a typed event before anything else touches it." }
+  - { icon: check,    title: "Validate", body: "Every event is checked against a defined schema and deduplicated, so malformed or repeated payloads are caught at the door rather than polluting the profile downstream." }
+  - { icon: identity, title: "Resolve", body: "Matching rules stitch each event's identifiers to the right profile, merging across devices and channels. When identifiers conflict, priority rules decide which profile wins the merge." }
+  - { icon: stack,    title: "Store", body: "Resolved events land in a self-managed, columnar analytical warehouse that holds the full fan history and answers queries across all of it fast, inside infrastructure you control." }
+  - { icon: bolt,     title: "Activate", body: "The real-time streaming layer forwards behavior to segments, journeys, and audiences the moment it happens, so activation runs on live state rather than yesterday's export." }
+  - { icon: chart,    title: "Prove", body: "Attribution ties exposure back to outcome, closing the loop so every activation feeds measurement you can show a sponsor or a board." }
+composable:
+  - "Take only the components you need; the architecture is composable, not all-or-nothing."
+  - "Run queries against your own warehouse, or deploy the whole stack next to it with no third-party copy."
+  - "Marketing teams build segments and journeys; IT keeps control of security, access, and residency."
+  - "Everything is API-driven, so the platform fits your stack rather than replacing it."
+portable:
+  - { icon: shield, title: "Runs where you deploy it", body: "The same architecture runs in your own cloud account, on-premise, or fully managed, in-Kingdom or any region. Residency is a deployment property, so the whole system inherits it rather than bolting it on." }
+  - { icon: stack, title: "Warehouse-friendly", body: "Point the platform at your own analytical warehouse, or deploy the full stack alongside it with a zero-copy posture. Treat it like a datamart next to your source of truth instead of a second copy of your data." }
+  - { icon: identity, title: "Governed by IT, used by teams", body: "The system is designed so IT keeps control of security, access, and residency while business teams work the segment and journey surface on top. (Operability of the no-code surface: to confirm.)" }
+  - { icon: code, title: "API-driven throughout", body: "Every capability is exposed through an API, so the architecture fits into the stack you already run rather than asking you to replace it. Adopt the components you need, when you need them." }
+faqs:
+  - q: "Is this one platform or a bundle of separate tools?"
+    a: "One system. Collect, resolve, activate, and prove run in the same engine on the same profile, so data is not copied, delayed, or lost moving between products. That is what lets real-time activation and honest attribution happen at the same time."
+  - q: "How does real-time activation work without a nightly batch?"
+    a: "Events are resolved to a profile as they arrive and forwarded through a real-time streaming layer to segments and journeys. Activation reacts to live behavior instead of waiting on a scheduled export, so a fan can be acted on while the moment is still current."
+  - q: "Do we have to replace our data warehouse?"
+    a: "No. The architecture is composable and warehouse-friendly. You can point it at your own analytical warehouse or deploy the full stack alongside it, keeping a zero-copy posture where you need one. Take only the components you need."
+  - q: "Who operates it, engineering or marketing?"
+    a: "Both, by design. It is API-driven for engineers, while segment and journey building is meant to be a business-team surface. IT retains control over security, access, and where data lives. (Operability of the no-code surface: to confirm as we onboard partners.)"
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Platform · How it works"
-   title="Architecture"
-   subtitle="A real-time, warehouse-composable architecture built for scale."
+   eyebrow="The platform"
+   title="One connected architecture, from first signal to proven revenue"
+   subtitle="Most stacks bolt an engagement tool onto a CDP and then fight to make them talk. Fanfinity is a single system: collect, resolve, activate, and prove, with no ETL between the products and no vendor lock on where it runs."
    cta_text="Book a Demo"
    cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_text="For developers"
+   secondary_url="/developers"
+   icon="link" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Architecture is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/platform" class="link-arrow mt-6 justify-center">Back to Platform {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-grid.html
+   eyebrow="How it fits together"
+   heading="Four stages, one engine"
+   subheading="Every stage of the fan-data loop runs in the same system, so identity, activation, and proof stay in sync by design rather than by integration."
+   items=page.features
+   columns=3 %}
+
+{% include feature-grid.html
+   eyebrow="How a signal moves through the system"
+   heading="Six stages, one pass"
+   subheading="Every signal that enters Fanfinity runs the same path, from raw event to proven outcome. The first stages happen in the request path; resolution, storage, and activation run continuously behind it, so the fan graph is always current."
+   items=page.pipeline
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="One engine, no ETL"
+   title="A single system instead of a stack you have to wire together"
+   body="When collect, resolve, activate, and prove live in one engine, data doesn't get copied, delayed, or lost between tools. That's what makes real-time activation and honest attribution possible at the same time."
+   points=page.points
+   cta_text="Explore the products"
+   cta_url="/platform"
+   icon="stack" %}
+
+{% include feature-split.html
+   eyebrow="Composable, not all-or-nothing"
+   title="Fits your stack instead of replacing it"
+   body="The architecture is composable and API-driven. You adopt the components you need, keep control of your warehouse and your governance, and let business teams work the segment and journey surface on top."
+   points=page.composable
+   cta_text="See deployment options"
+   cta_url="/platform/deploy"
+   icon="stack" %}
+
+{% include feature-grid.html
+   eyebrow="Portable by design"
+   heading="One architecture, wherever it needs to run"
+   subheading="Because the whole system is composable and infrastructure-agnostic, where and how it runs is your decision, not a limit the platform imposes."
+   items=page.portable
+   columns=2 %}
+
+{% include faq.html
+   eyebrow="Architecture · common questions"
+   heading="How the system holds together" %}

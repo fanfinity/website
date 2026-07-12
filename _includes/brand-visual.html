@@ -1,0 +1,38 @@
+{%- comment -%}
+Decorative brand visual — an abstract "scattered signals → one resolved fan graph"
+motif: faint nodes converging on a central icon chip. Purely ornamental
+(aria-hidden) — carries no data, labels, numbers, or product UI, so it stays
+honest wherever it appears. Params:
+  icon  — icon name shown in the central resolved node (optional)
+  ratio — aspect-ratio class for the panel (default aspect-[4/3])
+{%- endcomment -%}
+{%- assign ratio = include.ratio | default: 'aspect-[4/3]' -%}
+<div class="gradient-border relative grid {{ ratio }} place-items-center overflow-hidden rounded-4xl bg-soft" aria-hidden="true">
+  <div class="pointer-events-none absolute -right-12 -top-12 h-52 w-52 rounded-full bg-brand-500/10 blur-2xl"></div>
+  <div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-brand-500/5 blur-2xl"></div>
+  <svg class="absolute inset-0 h-full w-full text-foreground" viewBox="0 0 400 300" fill="none" preserveAspectRatio="xMidYMid slice">
+    <g class="stroke-current" stroke-width="1.5" opacity="0.4">
+      <line x1="60" y1="55" x2="200" y2="150"/>
+      <line x1="330" y1="70" x2="200" y2="150"/>
+      <line x1="50" y1="222" x2="200" y2="150"/>
+      <line x1="345" y1="235" x2="200" y2="150"/>
+      <line x1="200" y1="38" x2="200" y2="150"/>
+      <line x1="108" y1="150" x2="200" y2="150"/>
+      <line x1="300" y1="162" x2="200" y2="150"/>
+    </g>
+    <g class="fill-current" opacity="0.6">
+      <circle cx="60" cy="55" r="5"/>
+      <circle cx="330" cy="70" r="4"/>
+      <circle cx="50" cy="222" r="4"/>
+      <circle cx="345" cy="235" r="5"/>
+      <circle cx="200" cy="38" r="3.5"/>
+      <circle cx="108" cy="150" r="3"/>
+      <circle cx="300" cy="162" r="3.5"/>
+    </g>
+  </svg>
+  {%- if include.icon -%}
+  <span class="relative animate-floaty rounded-3xl border border-border bg-card p-6 shadow-xl shadow-brand-500/10 motion-reduce:animate-none">{% include icon.html name=include.icon class="h-14 w-14 text-brand-foreground" %}</span>
+  {%- else -%}
+  <span class="relative grid h-16 w-16 place-items-center rounded-full border border-border bg-card shadow-xl shadow-brand-500/10"><span class="h-4 w-4 rounded-full bg-brand-500"></span></span>
+  {%- endif -%}
+</div>

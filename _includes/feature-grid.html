@@ -11,8 +11,7 @@ Params: eyebrow, heading, subheading, items (required), columns (2|3|4, default 
 <section class="section">
   <div class="container-page">
     <div class="max-w-2xl">
-      {%- if include.eyebrow -%}<p class="eyebrow">{{ include.eyebrow }}</p>{%- endif -%}
-      {%- if include.heading -%}<h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
+      {%- if include.heading -%}<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">{{ include.heading }}</h2>{%- endif -%}
       {%- if include.subheading -%}<p class="mt-4 text-lg text-muted-foreground">{{ include.subheading }}</p>{%- endif -%}
     </div>
     <div class="mt-12 grid gap-x-8 gap-y-10 {{ grid }}">

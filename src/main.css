@@ -145,13 +145,6 @@
     background-color: var(--color-background);
     background-image: radial-gradient(60% 50% at 50% 0%, rgba(153, 105, 255, 0.06), transparent 70%);
   }
-  .text-gradient-light {
-    background-image: linear-gradient(180deg, #ffffff 30%, #c4aaff);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-  }
-
   /* Motion */
   @keyframes rise      { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
   @keyframes floaty    { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -218,7 +211,7 @@
   }
 
   /* Soft brand glow for elevated CTAs / focal elements */
-  .glow { box-shadow: 0 14px 48px -10px rgba(124, 77, 255, 0.55); }
+  .glow { box-shadow: 0 14px 48px -12px rgba(124, 77, 255, 0.3); }
 
   /* Travelling pulse along a connector track (signature stack section) */
   @keyframes flowline { from { background-position: -40% 0; } to { background-position: 140% 0; } }
@@ -244,8 +237,9 @@
 }
 
 /* ── Scroll reveal — plain CSS (outside @layer so it's never treeshaken).
-   JS toggles .is-visible via IntersectionObserver. ─────────────────────── */
-[data-reveal] {
+   JS toggles .is-visible via IntersectionObserver. Gated on the `.js` class so
+   that if JS never runs, content renders visible instead of staying blank. ─── */
+.js [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
   transition:

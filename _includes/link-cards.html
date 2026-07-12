@@ -5,6 +5,7 @@ Params:
   nav_title (required) — the header item title, e.g. "Product"
   eyebrow, heading, subheading — optional section intro
   only — optional group heading to render just one group (e.g. "By industry")
+  except — optional group heading to skip (e.g. "By team")
 {%- endcomment -%}
 {%- assign item = site.data.navigation.header | where: 'title', include.nav_title | first -%}
 <section class="section">
@@ -20,6 +21,7 @@ Params:
     {%- if item.groups -%}
       {%- for group in item.groups -%}
         {%- if include.only and group.heading != include.only -%}{%- continue -%}{%- endif -%}
+        {%- if include.except and group.heading == include.except -%}{%- continue -%}{%- endif -%}
         <div class="mt-10">
           <p class="eyebrow">{{ group.heading }}</p>
           <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

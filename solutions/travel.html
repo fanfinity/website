@@ -2,26 +2,63 @@
 layout: page
 permalink: /solutions/travel
 title: Travel & Hospitality
-description: "Build loyalty that spans every trip and every channel."
+description: "For travel and hospitality: unify booking, loyalty, and app signals across brands into one profile, win back travelers before a poor experience becomes churn, and recognize the same guest whether they research online or book in-branch."
 breadcrumb_parent: { title: Solutions, url: /solutions }
+features:
+  - { icon: identity, title: "One guest across every brand", body: "Unify booking, loyalty, and app signals across brands and business units into a single profile, so a returning traveler is recognized rather than treated as new." }
+  - { icon: link,     title: "Online research, offline booking", body: "Connect the trip a traveler researches online to the booking they complete in a branch or on the phone, closing a gap most travel stacks leave open." }
+  - { icon: users,    title: "Segment by how people book", body: "Tell advance planners from last-minute bookers, families from solo travelers, and act on those patterns in real time without an IT ticket." }
+  - { icon: slider,   title: "Personalize the next trip", body: "Adapt destinations, upgrades, and offers to each traveler's history and intent, from the first search onward." }
+  - { icon: gift,     title: "Loyalty across every journey", body: "Base tiers and rewards on the resolved profile you own, carrying recognition across trips, brands, and channels." }
+  - { icon: megaphone, title: "Reach travelers pre, in, and post-trip", body: "Activate on WhatsApp, email, and push from the same profile at every stage of the journey." }
+winback_points:
+  - "Connect a low satisfaction score to that traveler's booking and behavioral history under one profile."
+  - "Act on the signal early, with a relevant gesture or offer, before a poor trip becomes a lost customer."
+  - "Reach the traveler on an owned channel, timed to when re-booking intent is most likely to return."
+research_points:
+  - "Recognize the traveler who researches online and books through a branch or call center as one person."
+  - "Segment on real intent (advance versus last-minute, family versus solo) as signals arrive."
+  - "Personalize offers and retention journeys around that intent, across every brand you operate."
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Solutions · Industry"
-   title="Travel & Hospitality"
-   subtitle="Build loyalty that spans every trip and every channel."
+   eyebrow="Solutions · Travel & Hospitality"
+   title="A guest who leaves unhappy should never leave unnoticed"
+   subtitle="Travelers spread signals across brands, bookings, apps, and branches, and most systems lose them along the way. Fanfinity unifies them into one profile you own, so you can win back a disappointed traveler before they churn and recognize the same guest whether they research online or book in person."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_url="/platform"
+   image="/assets/img/solutions-travel.jpg"
+   image_alt="An aircraft at an airport boarding gate" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on Travel & Hospitality is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/solutions" class="link-arrow mt-6 justify-center">Back to Solutions {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-split.html
+   eyebrow="The win-back use case"
+   title="Turn a bad trip into a second chance, not a lost customer"
+   body="A single poor experience is where travel loyalty quietly ends, and a satisfaction score is usually the first warning. When that score is connected to a traveler's booking and behavioral history under one profile, you can act on dissatisfaction early with a relevant gesture, instead of discovering the churn a season later when they book with someone else."
+   points=page.winback_points
+   cta_text="See how activation works"
+   cta_url="/platform/activate"
+   icon="bell" %}
+
+{% include feature-grid.html
+   eyebrow="What travel teams do with Fanfinity"
+   heading="From scattered bookings to recognized, retained travelers"
+   subheading="The connected platform, tuned to multi-brand travel, where a trip is researched in one place and booked in another."
+   items=page.features
+   columns=3 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="The multi-brand identity use case"
+   title="Recognize the traveler, not just the booking"
+   body="Travel groups run many brands and sell across web, app, call center, and branch, and the same person often researches in one and books in another. Fanfinity resolves those signals into one profile you own, so segmentation, personalization, and loyalty work across the whole portfolio rather than one brand at a time."
+   points=page.research_points
+   cta_text="See how identity works"
+   cta_url="/platform/id"
+   icon="identity" %}
+
+{% include proof.html %}
+
+{% include cta-band.html
+   heading="Recognize every traveler, retain them across every trip"
+   text="See how Fanfinity unifies travelers across brands and channels, wins back disappointed guests early, and carries loyalty across every journey. Book a walkthrough mapped to your brand portfolio." %}

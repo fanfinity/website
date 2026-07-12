@@ -2,26 +2,82 @@
 layout: page
 permalink: /platform/data-residency
 title: In-Kingdom & Data Residency
-description: "Keep customer data in-Kingdom and PDPL-compliant, with zero egress."
+description: Keep fan data in-Kingdom and PDPL-compliant, with zero egress and consent enforced at the data layer. Sovereignty without the capability trade-off.
 breadcrumb_parent: { title: Platform, url: /platform }
+features:
+  - { icon: shield,   title: "In-Kingdom by default",            body: "Deploy and process fan data inside the Kingdom. Residency isn't a region toggle added later, it's where the platform actually runs." }
+  - { icon: scale,    title: "PDPL from the ground up",          body: "Built around Saudi Arabia's Personal Data Protection Law, consent, purpose, and data-subject rights modeled into the data layer, not bolted on." }
+  - { icon: stack,    title: "Your data stays yours",            body: "Self-host in your own cloud or on-prem with zero egress, Fanfinity never becomes an offshore copy of your fan base." }
+  - { icon: identity, title: "Consent travels with the data",    body: "Every profile carries its consent and purpose and enforces them wherever it moves, so residency and consent never drift out of sync." }
+  - { icon: gauge,    title: "Sovereign, not siloed",            body: "Keep data in-region without giving up real-time activation and analytics, sovereignty without the usual capability trade-off." }
+  - { icon: link,     title: "Arabic-native at the core",        body: "Arabic-first identity and data handling, built for the region you operate in rather than translated on top of it." }
+points:
+  - "Choose where fan data lives, in-Kingdom, or any region you require."
+  - "Residency and PDPL compliance governed at the data layer, not patched on top."
+  - "Self-hosted with your own keys means no third-party egress and no offshore copies."
+  - "Consent, purpose, and residency enforced together: the record regulators expect."
+pdpl:
+  - { icon: shield, title: "Data stays in the Kingdom", body: "PDPL requires personal data of individuals in Saudi Arabia to be stored inside the Kingdom. Deploy Fanfinity in-region, on your cloud, private network, or on-premise, and fan data never leaves those borders." }
+  - { icon: scale, title: "Consent and purpose logged", body: "Every profile carries the lawful basis it was collected under. Consent and purpose are stored with the data and enforced when it moves, so you can show a regulator not just what you hold but why you may hold it." }
+  - { icon: identity, title: "Data-subject rights, built in", body: "Access, correction, and deletion requests act on the profile itself. When a fan withdraws consent, that change propagates through the data layer rather than lingering in a downstream copy." }
+  - { icon: link, title: "No vendor data access", body: "Self-host and the operator of the platform never becomes a processor with a view of your fan base. Cross-border transfer stays under your control, aligned with Saudi cybersecurity guidance. (Specific control mappings: to confirm with your counsel.)" }
+how:
+  - { icon: stack, title: "Deploy in-region", body: "The platform runs where you place it, an in-Kingdom cloud region, your private network, or your own data centre. Residency is decided at deployment, so data is processed in-region from the first event rather than exported and pulled back." }
+  - { icon: identity, title: "Attach consent to the profile", body: "As signals resolve into one fan profile, the consent and purpose behind each signal travel with it. The record of what a fan agreed to lives next to the data it governs, not in a separate compliance spreadsheet." }
+  - { icon: bolt, title: "Enforce as data moves", body: "When a profile is activated into a segment or a journey, its consent and residency rules are checked at the data layer. A withdrawn permission or a region restriction is honoured everywhere the profile goes." }
+  - { icon: gauge, title: "Prove it on demand", body: "Audit logs and consent history give your legal and security teams a clear record of where data lives, who touched it, and on what basis, the evidence a PDPL review asks for." }
+faqs:
+  - q: "Does fan data actually stay inside the Kingdom?"
+    a: "Yes, when you deploy in-region. Residency is a deployment choice made up front: run Fanfinity in an in-Kingdom cloud region, your private network, or your own data centre, and personal data of individuals in Saudi Arabia is stored and processed inside those borders, the core of PDPL data-residency."
+  - q: "How is this different from a global SaaS with a Saudi region?"
+    a: "A multi-tenant SaaS stores your data in vendor-controlled infrastructure and offers a region as a setting. Fanfinity runs inside infrastructure you control, with your own keys and no vendor copy of your fan base. Residency and consent are governed at the data layer, not offered as a toggle on someone else's cloud."
+  - q: "What happens when a fan withdraws consent?"
+    a: "Because consent is stored with the profile and enforced at the data layer, a withdrawal propagates through the system rather than sitting in a stale export. Downstream activation respects the change, and the consent history stays available for audit."
+  - q: "Can you help us prove PDPL compliance to a regulator?"
+    a: "The platform is built to produce the evidence a review expects: in-region processing, consent and purpose logs, data-subject-rights handling, and audit trails of access. Fanfinity supports the technical side; your counsel confirms how it maps to your specific obligations. (Control mappings: to confirm.)"
 ---
 {% include hero.html
-   variant="gradient"
-   eyebrow="Platform · Trust"
-   title="In-Kingdom & Data Residency"
-   subtitle="Keep customer data in-Kingdom and PDPL-compliant, with zero egress."
+   eyebrow="The platform"
+   title="In-Kingdom data residency, governed at the data layer"
+   subtitle="For rights holders in the region, where fan data lives is not a detail, it's the deal. Fanfinity runs in-Kingdom, keeps data under your control, and enforces PDPL consent at the data layer."
    cta_text="Book a Demo"
    cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/product" %}
+   secondary_text="Deploy anywhere"
+   secondary_url="/platform/deploy"
+   image="/assets/img/platform-data-residency.jpg"
+   image_alt="Cooling fans in a data-center server hall" %}
 
-<section class="section">
-  <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">More on In-Kingdom & Data Residency is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Detailed content — capabilities, proof points, and use cases — lands in the next iteration.</p>
-      <a href="/platform" class="link-arrow mt-6 justify-center">Back to Platform {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-    </div>
-  </div>
-</section>
+{% include feature-grid.html
+   eyebrow="Residency & sovereignty"
+   heading="Fan data that stays where it belongs"
+   subheading="In-region processing, zero egress, and consent enforced with the data, the foundation for trusting a platform with your fan base."
+   items=page.features
+   columns=3 %}
+
+{% include feature-grid.html
+   eyebrow="PDPL, built in"
+   heading="Aligned with Saudi data protection from the ground up"
+   subheading="Saudi Arabia's Personal Data Protection Law sets clear expectations for where fan data lives and how consent is handled. Fanfinity is designed to meet them at the data layer rather than through after-the-fact process."
+   items=page.pdpl
+   columns=2 %}
+
+{% include feature-grid.html
+   eyebrow="How residency works"
+   heading="Consent and residency, enforced together"
+   subheading="Residency isn't a storage location bolted on at the end. It's a property of the deployment, and consent rides with every profile, so the two never drift out of sync."
+   items=page.how
+   columns=2 %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Why it matters"
+   title="Prove residency to a regulator without going batch"
+   body="Keeping fan data in-Kingdom usually means falling back to nightly pipelines and losing real-time activation. Fanfinity resolves, governs, and activates in-region as events arrive, so you can show a regulator exactly where data lives and still act on it live."
+   points=page.points
+   cta_text="See security & compliance"
+   cta_url="/platform/security"
+   icon="shield" %}
+
+{% include faq.html
+   eyebrow="Residency · common questions"
+   heading="Where your fan data lives, and why it matters" %}

@@ -1,54 +1,49 @@
 # Navigation — single source of truth for header + footer.
 #
-# Iteration: horizontal, Meiro-scale IA with Sports & Entertainment as the flagship
-# vertical. Six top-level items. Mega-menus use `groups: [{heading, links}]`; simple
-# dropdowns use `children`. `home` points at the preview homepage while public `/` is
-# still "Coming Soon"; at public launch set `home: /`.
+# IA: Meiro-modeled, Fanfinity-adapted. Five top-level items lead with the LIVE
+# data engine (Fanfinity ID), not widget hype. Company lives in the footer.
+# Scanner is an internal sales tool — deliberately NOT in public nav.
+# Integrations/Customers omitted until real (no invented connectors or logos).
 #
-# NOTE: title/desc are quoted because several contain commas — unquoted commas inside
-# a YAML flow mapping { ... } are parsed as field separators and break the build.
+# NOTE (2026-07-11 launch): links to still-stubbed pages are intentionally
+# removed from nav so the live site has no dead-ends — the comparison pages
+# (/compare/*), Blog, Webinars, Partners, Careers, Newsroom, and Customers.
+# The stub files still exist; re-add each link here as its page is written.
+#
+# Mega-menus use `groups: [{heading, links}]`; simple dropdowns use `children`.
+# `badge:` on a link renders a pill (Live / Preview / Flagship) — the honesty cue.
+# `home` points at the public homepage (launched 2026-07-11: the full site now
+# serves at `/`; the old Coming Soon splash is preserved at `/coming-soon`).
+#
+# NOTE: title/desc are quoted because several contain commas — unquoted commas
+# inside a YAML flow mapping { ... } are parsed as field separators and break the build.
 
-home: /home-preview
+home: /
 
 header:
-  # ------------------------------------------------------------------ PRODUCT
-  - title: Product
-    url: /product
-    mega: true
-    groups:
-      - heading: Overview
-        links:
-          - { title: "Platform Overview",     url: /product,                     desc: "Four products, one system",         icon: stack }
-          - { title: "Why Fanfinity",         url: /product#why,                 desc: "Identity + engagement + proof",     icon: spark }
-      - heading: Products
-        links:
-          - { title: "Fanfinity ID",          url: /product/fanfinity-id,        desc: "CDP & identity resolution",         icon: identity }
-          - { title: "Fanfinity Engage",      url: /product/fanfinity-engage,    desc: "Live interactivity & loyalty",      icon: bolt }
-          - { title: "Fanfinity Activate",    url: /product/fanfinity-activate,  desc: "WhatsApp, email, push & ads",       icon: megaphone }
-          - { title: "Fanfinity Measure",     url: /product/fanfinity-measure,   desc: "Attribution & monetization",        icon: chart }
-      - heading: Capabilities
-        links:
-          - { title: "Identity Resolution",   url: /product/identity-resolution, desc: "Golden record, real-time",          icon: identity }
-          - { title: "Segmentation",          url: /product/segmentation,        desc: "Build & sync audiences",            icon: target }
-          - { title: "Personalization",       url: /product/personalization,     desc: "1:1 across every channel",          icon: spark }
-          - { title: "Integrations",          url: /integrations,                desc: "100+ connectors",                   icon: plug }
-          - { title: "Developers & APIs",     url: /developers,                  desc: "REST API & SDKs",                   icon: code }
-
-  # ----------------------------------------------------------------- PLATFORM
+  # ------------------------------------------------------------------ PLATFORM
   - title: Platform
     url: /platform
     mega: true
     groups:
-      - heading: Deploy anywhere
+      - heading: The fan data engine
         links:
-          - { title: "Deploy Anywhere",       url: /platform,                    desc: "Cloud, on-prem or managed",         icon: stack }
-          - { title: "Cloud (AWS/GCP/Azure)", url: /platform/cloud,              desc: "Any provider, any region",          icon: stack }
-          - { title: "On-Premise",            url: /platform/on-premise,         desc: "Your own infrastructure",           icon: stack }
-      - heading: Trust & compliance
+          - { title: "Platform Overview", url: /platform,     desc: "Collect, resolve, activate, prove",       icon: stack }
+          - { title: "How it works",      url: /platform#how, desc: "Fragmented signals to one fan graph",     icon: link }
+          - { title: "Fanfinity ID",      url: /platform/id,  desc: "The consented first-party fan graph",     icon: identity, badge: Live }
+      - heading: Products
         links:
-          - { title: "In-Kingdom & Residency", url: /platform/data-residency,    desc: "PDPL, Saudi data residency",        icon: shield }
-          - { title: "Security & Compliance", url: /platform/security,           desc: "PDPL, GDPR, SOC 2",                 icon: shield }
-          - { title: "Architecture",          url: /platform/architecture,       desc: "How the platform works",            icon: link }
+          - { title: "Fanfinity ID",       url: /platform/id,       desc: "CDP & identity resolution",         icon: identity,  badge: Live }
+          - { title: "Fanfinity Engage",   url: /platform/engage,   desc: "Live interactivity & loyalty",      icon: bolt,      badge: Preview }
+          - { title: "Fanfinity Activate", url: /platform/activate, desc: "WhatsApp, email, push & ad audiences", icon: megaphone }
+          - { title: "Fanfinity Measure",  url: /platform/measure,  desc: "Attribution & sponsorship proof",   icon: chart }
+      - heading: Deploy & trust
+        links:
+          - { title: "In-Kingdom & Residency", url: /platform/data-residency, desc: "PDPL, Saudi data residency",       icon: shield }
+          - { title: "Security & Compliance",  url: /platform/security,       desc: "PDPL, GDPR, SOC 2 posture",        icon: shield }
+          - { title: "Deploy Anywhere",        url: /platform/deploy,         desc: "Cloud, on-prem or managed",        icon: stack }
+          - { title: "Architecture",           url: /platform/architecture,   desc: "How the platform fits together",   icon: link }
+          - { title: "Developers & APIs",      url: /developers,              desc: "REST API & SDKs",                  icon: code }
 
   # ---------------------------------------------------------------- SOLUTIONS
   - title: Solutions
@@ -57,41 +52,45 @@ header:
     groups:
       - heading: By industry
         links:
-          - { title: "Sports & Entertainment", url: /solutions/sports,   desc: "Flagship — clubs, leagues, media & sponsors", icon: whistle, badge: Flagship }
-          - { title: "Retail & E-commerce",    url: /solutions/retail,   desc: "Personalize the shopper journey",   icon: gift }
-          - { title: "Banking & Finance",      url: /solutions/banking,  desc: "Compliant, real-time engagement",   icon: scale }
-          - { title: "Media & Publishers",     url: /solutions/media,    desc: "Turn audiences into subscribers",   icon: broadcast }
-          - { title: "Travel & Hospitality",   url: /solutions/travel,   desc: "Loyalty across every trip",         icon: spark }
-          - { title: "iGaming & Betting",      url: /solutions/igaming,  desc: "Acquire & retain high-value players", icon: target }
-          - { title: "Telco",                  url: /solutions/telco,    desc: "Monetize the subscriber base",      icon: plug }
+          - { title: "Sports & Entertainment", url: /solutions/sports, desc: "Clubs, leagues, media & sponsors", icon: whistle, badge: Flagship }
+          - { title: "Media & Broadcast",      url: /solutions/media,  desc: "Turn audiences into known fans",   icon: broadcast }
+          - { title: "Brands & Sponsors",      url: /solutions/brands, desc: "Prove & activate sponsored reach", icon: megaphone }
+      - heading: More industries
+        links:
+          - { title: "Retail & E-commerce",  url: /solutions/retail,  desc: "Personalize the shopper journey",     icon: gift }
+          - { title: "Banking & Finance",    url: /solutions/banking, desc: "Compliant, real-time engagement",     icon: scale }
+          - { title: "Travel & Hospitality", url: /solutions/travel,  desc: "Loyalty across every trip",           icon: spark }
+          - { title: "iGaming & Betting",    url: /solutions/igaming, desc: "Acquire & retain high-value players", icon: target }
+          - { title: "Telco",                url: /solutions/telco,   desc: "Monetize the subscriber base",        icon: plug }
+          - { title: "All industries",       url: /industries,        desc: "See every vertical",                  icon: stack }
       - heading: By team
         links:
-          - { title: "Marketing & Growth",     url: /solutions/marketing,    desc: "Segment, activate, measure",    icon: megaphone }
-          - { title: "Data & Engineering",     url: /solutions/engineering,  desc: "Own your data & pipelines",     icon: code }
-          - { title: "AI & Agents",            url: /solutions/ai-agents,    desc: "Governed context for agents",   icon: spark }
+          - { title: "Marketing & Growth", url: /solutions/marketing,   desc: "Segment, activate, measure",  icon: megaphone }
+          - { title: "Data & Engineering", url: /solutions/engineering, desc: "Own your data & pipelines",   icon: code }
+          - { title: "AI & Agents",        url: /solutions/ai-agents,   desc: "Governed context for agents", icon: spark }
 
-  # ---------------------------------------------------------------- USE CASES
-  - title: Use Cases
-    url: /use-cases
+  # ------------------------------------------------------------- WHY FANFINITY
+  - title: Why Fanfinity
+    url: /why-fanfinity
     mega: true
     groups:
-      - heading: By capability
+      - heading: Why Fanfinity
         links:
-          - { title: "Identity",   url: /use-cases/identity,   desc: "Golden record, resolution, consent", icon: identity }
-          - { title: "Engage",     url: /use-cases/engage,     desc: "Polls, predictions, games, loyalty", icon: bolt }
-          - { title: "Activate",   url: /use-cases/activate,   desc: "WhatsApp, email, journeys, churn",   icon: megaphone }
-          - { title: "Measure",    url: /use-cases/measure,    desc: "ROI, verified reach, monetization",  icon: chart }
+          - { title: "Why Fanfinity",           url: /why-fanfinity,           desc: "Real-time, in-region fan CDP",       icon: spark }
+          - { title: "The in-region fan graph", url: /why-fanfinity#residency, desc: "Consented, first-party, in-Kingdom", icon: shield }
+          - { title: "From signals to proof",   url: /why-fanfinity#flow,      desc: "Collect, resolve, activate, prove",  icon: link }
+      - heading: Compare
+        links:
+          - { title: "vs LiveLike",  url: /compare/livelike,  desc: "vs a hosted engagement suite",       icon: scale }
+          - { title: "vs Meiro",     url: /compare/meiro,     desc: "vs a horizontal CDP",                icon: scale }
+          - { title: "vs Segment",   url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",          icon: scale }
+          - { title: "vs Hightouch", url: /compare/hightouch, desc: "vs a warehouse activation layer",    icon: scale }
 
   # ---------------------------------------------------------------- RESOURCES
   - title: Resources
     url: /resources
     children:
-      - { title: "Blog",             url: /blog,        desc: "Insights & playbooks",      icon: book }
-      - { title: "Customer Stories", url: /customers,   desc: "Case studies with metrics", icon: trophy }
-      - { title: "Digital Scanner",  url: /scanner,     desc: "Free maturity assessment",  icon: gauge }
-      - { title: "Webinars & Events", url: /webinars,   desc: "Live & on-demand",          icon: broadcast }
-      - { title: "Developers & Docs", url: /developers, desc: "REST API & SDKs",           icon: code }
-      - { title: "Compare",          url: /compare,     desc: "Fanfinity vs alternatives", icon: scale }
+      - { title: "Developers & Docs", url: /developers, desc: "REST API & SDKs",     icon: code }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -102,52 +101,43 @@ cta:
   url: /demo
 
 footer_columns:
-  - heading: Product
-    links:
-      - { title: "Platform Overview",  url: /product }
-      - { title: "Fanfinity ID",       url: /product/fanfinity-id }
-      - { title: "Fanfinity Engage",   url: /product/fanfinity-engage }
-      - { title: "Fanfinity Activate", url: /product/fanfinity-activate }
-      - { title: "Fanfinity Measure",  url: /product/fanfinity-measure }
-      - { title: "Integrations",       url: /integrations }
-
   - heading: Platform
     links:
-      - { title: "Deploy Anywhere",        url: /platform }
+      - { title: "Platform Overview",  url: /platform }
+      - { title: "Fanfinity ID",       url: /platform/id }
+      - { title: "Fanfinity Engage",   url: /platform/engage }
+      - { title: "Fanfinity Activate", url: /platform/activate }
+      - { title: "Fanfinity Measure",  url: /platform/measure }
+
+  - heading: Deploy & Trust
+    links:
       - { title: "In-Kingdom & Residency", url: /platform/data-residency }
       - { title: "Security & Compliance",  url: /platform/security }
+      - { title: "Deploy Anywhere",        url: /platform/deploy }
+      - { title: "Architecture",           url: /platform/architecture }
       - { title: "Developers & APIs",      url: /developers }
 
   - heading: Solutions
     links:
       - { title: "Sports & Entertainment", url: /solutions/sports }
-      - { title: "Retail & E-commerce",    url: /solutions/retail }
-      - { title: "Banking & Finance",      url: /solutions/banking }
-      - { title: "Media & Publishers",     url: /solutions/media }
+      - { title: "Media & Broadcast",      url: /solutions/media }
+      - { title: "Brands & Sponsors",      url: /solutions/brands }
       - { title: "All industries",         url: /industries }
+      - { title: "Marketing & Growth",     url: /solutions/marketing }
 
-  - heading: Use Cases
+  - heading: Why Fanfinity
     links:
-      - { title: "Identity", url: /use-cases/identity }
-      - { title: "Engage",   url: /use-cases/engage }
-      - { title: "Activate", url: /use-cases/activate }
-      - { title: "Measure",  url: /use-cases/measure }
+      - { title: "Why Fanfinity",       url: /why-fanfinity }
+      - { title: "Pricing",             url: /pricing }
 
   - heading: Resources
     links:
-      - { title: "Blog",            url: /blog }
-      - { title: "Customer Stories", url: /customers }
-      - { title: "Digital Scanner", url: /scanner }
-      - { title: "Compare",         url: /compare }
-      - { title: "Pricing",         url: /pricing }
+      - { title: "Developers & Docs", url: /developers }
 
   - heading: Company
     links:
       - { title: "About",       url: /about }
-      - { title: "Partners",    url: /partners }
-      - { title: "Careers",     url: /careers }
-      - { title: "Newsroom",    url: /newsroom }
       - { title: "Contact",     url: /contact }
       - { title: "Book a Demo", url: /demo }
 
-descriptor: The sovereign customer platform — identity, engagement & deterministic attribution. Built for sports & entertainment, extensible to every industry.
+descriptor: "The real-time fan data platform for sports & live entertainment: collect, resolve, activate, and prove one consented, in-region fan graph."

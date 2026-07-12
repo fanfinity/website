@@ -1,0 +1,16 @@
+{%- comment -%}
+Honest proof band — Fanfinity is pre-revenue. Design-partner / pilot framing ONLY.
+NO invented logos, customers, testimonials, or metrics. This band exists so pages
+don't feel proof-less while staying truthful. Optional: include.eyebrow, include.heading,
+include.body, include.cta_text, include.cta_url.
+{%- endcomment -%}
+<section class="section-sm">
+  <div class="container-page">
+    <div class="gradient-border rounded-4xl border border-border bg-soft p-8 text-center md:p-10" data-reveal>
+      <p class="eyebrow justify-center">{{ include.eyebrow | default: 'Where we are' }}</p>
+      <h2 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl text-balance">{{ include.heading | default: 'Built with design partners' }}</h2>
+      <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">{{ include.body | default: "Fanfinity is early, and honest about it. The data and identity layer is live; the engagement layer is in design preview. We're building alongside a small group of design partners rather than publishing logos or numbers we can't yet stand behind." }}</p>
+      <a href="{{ include.cta_url | default: '/demo' | relative_url }}" class="link-arrow mt-6 justify-center">{{ include.cta_text | default: 'Become a design partner' }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+  </div>
+</section>

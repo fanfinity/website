@@ -127,4 +127,103 @@
       revealEls.forEach(function (el) { io.observe(el); });
     }
   }
+
+  /* ---------------------------------------------------------------- *
+   * Lead-capture forms (demo + contact) — validation, then submit to
+   * the configured endpoint (site.forms.endpoint → form[action]). When
+   * no endpoint is set we say so plainly rather than fake a delivery.
+   * ---------------------------------------------------------------- */
+  var leadForms = Array.prototype.slice.call(document.querySelectorAll('[data-lead-form]'));
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  leadForms.forEach(function (form) {
+    var required = ['first_name', 'last_name', 'email', 'company'];
+    var status = form.querySelector('[data-form-status]') || document.getElementById('demo-status');
+    var btn = form.querySelector('button[type="submit"]');
+    var endpoint = (form.getAttribute('action') || '').trim();
+
+    function setError(field, msg) {
+      var input = form.elements[field];
+      if (!input) return;
+      input.classList.toggle('border-red-500', !!msg);
+      input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+      var slot = form.querySelector('[data-error-for="' + field + '"]');
+      if (slot) { slot.textContent = msg || ''; slot.classList.toggle('hidden', !msg); }
+    }
+    function setStatus(cls, html) { if (status) { status.className = cls; status.innerHTML = html; } }
+
+    required.forEach(function (f) {
+      var input = form.elements[f];
+      if (input) input.addEventListener('input', function () { setError(f, ''); });
+    });
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var ok = true;
+      required.forEach(function (f) {
+        var el = form.elements[f];
+        var val = el ? (el.value || '').trim() : '';
+        var msg = '';
+        if (!val) msg = 'This field is required.';
+        else if (f === 'email' && !emailRe.test(val)) msg = 'Enter a valid work email.';
+        if (msg) ok = false;
+        setError(f, msg);
+      });
+      if (!ok) { setStatus('mt-4 text-sm text-red-600', 'Please fix the highlighted fields and try again.'); return; }
+
+      var name = ((form.elements['first_name'] && form.elements['first_name'].value) || '').trim();
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      function done(cls, html) { setStatus(cls, html); if (btn) { btn.textContent = label; btn.disabled = false; } }
+      var okClass = 'mt-4 rounded-xl border border-brand-200 bg-brand-50 p-4 text-sm text-foreground';
+      var errClass = 'mt-4 text-sm text-red-600';
+
+      // No endpoint configured yet — honest, no fake delivery.
+      if (!endpoint) {
+        window.setTimeout(function () {
+          done(okClass, (name ? name + ', your details look good. ' : '') +
+            'This form isn’t connected to our inbox yet — please try again shortly and we’ll pick it up.');
+        }, 600);
+        return;
+      }
+
+      // Real submission — Formspree / Netlify / Basin-compatible AJAX.
+      fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (res) {
+          if (res.ok) {
+            form.reset();
+            done(okClass, (name ? 'Thanks, ' + name + '. ' : 'Thanks. ') + 'Your message is in — we’ll be in touch shortly.');
+          } else {
+            done(errClass, 'Something went wrong sending that. Please try again in a moment.');
+          }
+        })
+        .catch(function () { done(errClass, 'We couldn’t reach the server. Please check your connection and try again.'); });
+    });
+  });
+
+  /* ---------------------------------------------------------------- *
+   * Cookie consent — privacy-first (analytics is opt-in).
+   * ---------------------------------------------------------------- */
+  var consent = document.getElementById('cookie-consent');
+  if (consent) {
+    var KEY = 'ff-cookie-consent';
+    var store = {
+      get: function () { try { return window.localStorage.getItem(KEY); } catch (e) { return 'declined'; } },
+      set: function (v) { try { window.localStorage.setItem(KEY, v); } catch (e) {} }
+    };
+    function showConsent() { consent.hidden = false; }
+    function hideConsent() { consent.hidden = true; }
+    function choose(v) { store.set(v); hideConsent(); }
+
+    if (!store.get()) { showConsent(); }
+
+    var accept = consent.querySelector('[data-cookie-accept]');
+    var decline = consent.querySelector('[data-cookie-decline]');
+    if (accept) accept.addEventListener('click', function () { choose('accepted'); });
+    if (decline) decline.addEventListener('click', function () { choose('declined'); });
+
+    document.querySelectorAll('[data-cookie-open]').forEach(function (el) {
+      el.addEventListener('click', function () { showConsent(); });
+    });
+  }
 })();

@@ -1,41 +1,42 @@
 {%- comment -%}
-Reusable page hero. Params:
-  eyebrow, title, subtitle, cta_text, cta_url, secondary_text, secondary_url,
-  variant (gradient|light, default gradient), align (center|left, default center)
+Reusable page hero — light editorial surface, one restrained brand accent.
+Params: eyebrow, title, subtitle, cta_text, cta_url, secondary_text, secondary_url,
+        align (left|center, default left), image, image_alt.
+The legacy `variant` param is still accepted but no longer switches to a dark
+surface: the whole site leads light now (see docs/marketing/design-audit.md).
+Dark treatment is reserved for the CTA band and the footer.
 {%- endcomment -%}
-{%- assign variant = include.variant | default: 'gradient' -%}
-{%- assign align = include.align | default: 'center' -%}
-{%- if variant == 'gradient' -%}
-<section class="relative overflow-hidden bg-hero text-white">
-  <div class="absolute inset-0 dot-grid opacity-60 mask-fade-b" aria-hidden="true"></div>
-  <div class="container-page relative py-24 md:py-32 {% if align == 'center' %}text-center{% endif %}">
-    <div class="{% if align == 'center' %}mx-auto {% endif %}max-w-3xl">
-      {%- if include.eyebrow -%}<p class="eyebrow eyebrow-on-dark {% if align == 'center' %}justify-center{% endif %}">{{ include.eyebrow }}</p>{%- endif -%}
-      <h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">{{ include.title }}</h1>
-      {%- if include.subtitle -%}<p class="mt-6 text-lg leading-relaxed text-white/70 {% if align == 'center' %}mx-auto max-w-2xl{% else %}max-w-xl{% endif %}">{{ include.subtitle }}</p>{%- endif -%}
-      {%- if include.cta_text -%}
-        <div class="mt-9 flex flex-wrap gap-3 {% if align == 'center' %}justify-center{% endif %}">
-          <a href="{{ include.cta_url | default: '/demo' | relative_url }}" class="btn btn-white btn-lg">{{ include.cta_text }}</a>
-          {%- if include.secondary_text -%}<a href="{{ include.secondary_url | relative_url }}" class="btn btn-outline-light btn-lg">{{ include.secondary_text }}</a>{%- endif -%}
-        </div>
-      {%- endif -%}
-    </div>
-  </div>
-</section>
-{%- else -%}
-<section class="bg-soft border-b border-border">
-  <div class="container-page py-20 md:py-28 {% if align == 'center' %}text-center{% endif %}">
-    <div class="{% if align == 'center' %}mx-auto {% endif %}max-w-3xl">
-      {%- if include.eyebrow -%}<p class="eyebrow {% if align == 'center' %}justify-center{% endif %}">{{ include.eyebrow }}</p>{%- endif -%}
-      <h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">{{ include.title }}</h1>
-      {%- if include.subtitle -%}<p class="mt-6 text-lg leading-relaxed text-muted-foreground {% if align == 'center' %}mx-auto max-w-2xl{% else %}max-w-xl{% endif %}">{{ include.subtitle }}</p>{%- endif -%}
-      {%- if include.cta_text -%}
-        <div class="mt-9 flex flex-wrap gap-3 {% if align == 'center' %}justify-center{% endif %}">
-          <a href="{{ include.cta_url | default: '/demo' | relative_url }}" class="btn btn-primary btn-lg">{{ include.cta_text }}</a>
-          {%- if include.secondary_text -%}<a href="{{ include.secondary_url | relative_url }}" class="btn btn-secondary btn-lg">{{ include.secondary_text }}</a>{%- endif -%}
-        </div>
-      {%- endif -%}
-    </div>
-  </div>
-</section>
+{%- assign align = include.align | default: 'left' -%}
+{%- capture copy -%}
+{%- if include.eyebrow -%}<p class="eyebrow {% if align == 'center' %}justify-center{% endif %}">{{ include.eyebrow }}</p>{%- endif -%}
+<h1 class="mt-5 text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl text-balance">{{ include.title }}</h1>
+{%- if include.subtitle -%}<p class="mt-6 text-lg leading-relaxed text-muted-foreground {% if align == 'center' %}mx-auto max-w-2xl{% else %}max-w-xl{% endif %}">{{ include.subtitle }}</p>{%- endif -%}
+{%- if include.cta_text -%}
+<div class="mt-9 flex flex-wrap gap-3 {% if align == 'center' %}justify-center{% endif %}">
+  <a href="{{ include.cta_url | default: '/demo' | relative_url }}" class="btn btn-primary btn-lg">{{ include.cta_text }}</a>
+  {%- if include.secondary_text -%}<a href="{{ include.secondary_url | relative_url }}" class="btn btn-secondary btn-lg">{{ include.secondary_text }}</a>{%- endif -%}
+</div>
 {%- endif -%}
+{%- endcapture -%}
+<section class="relative overflow-hidden border-b border-border bg-background">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute -top-32 right-[-8rem] h-[34rem] w-[34rem] rounded-full bg-brand-500/10 blur-3xl"></div>
+  </div>
+  <div class="container-page relative py-20 md:py-28">
+    {%- if include.image -%}
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <div class="max-w-xl">{{ copy }}</div>
+      <div class="relative" data-reveal>
+        <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt }}" loading="eager" class="w-full rounded-4xl border border-border object-cover shadow-xl shadow-brand-500/10" />
+      </div>
+    </div>
+    {%- elsif include.icon -%}
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <div class="max-w-xl">{{ copy }}</div>
+      <div class="relative" data-reveal>{% include brand-visual.html icon=include.icon ratio="aspect-[5/4]" %}</div>
+    </div>
+    {%- else -%}
+    <div class="{% if align == 'center' %}mx-auto max-w-3xl text-center{% else %}max-w-3xl{% endif %}">{{ copy }}</div>
+    {%- endif -%}
+  </div>
+</section>
