@@ -17,7 +17,7 @@ Params: eyebrow, heading, subheading, items (required), columns (2|3|4, default 
     <div class="mt-12 grid gap-x-8 gap-y-10 {{ grid }}">
       {%- for item in include.items -%}
         <div class="relative">
-          {%- if item.icon -%}<span class="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-foreground">{% include icon.html name=item.icon class="h-5 w-5" %}</span>{%- endif -%}
+          {%- if item.icon -%}<span class="icon-chip">{% include icon.html name=item.icon class="h-6 w-6" %}</span>{%- endif -%}
           <h3 class="mt-4 text-base font-semibold">{{ item.title }}</h3>
           <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ item.body }}</p>
         </div>

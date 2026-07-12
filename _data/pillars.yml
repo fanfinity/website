@@ -1,7 +1,14 @@
-# The four products that make up the Fanfinity platform. Reused on the homepage
+# The five products that make up the Fanfinity platform. Reused on the homepage
 # and the /platform hub. Each stands alone; together they form the full loop:
-# Identify -> Engage -> Activate -> Prove. The data layer (ID) is LIVE; Engage is
-# a design preview — labeled honestly.
+# Collect -> Identify -> Engage -> Activate -> Prove. The CDI and CDP layers
+# (Blocks and ID) are LIVE; Engage is a design preview — labeled honestly.
+
+- title: Fanfinity Blocks
+  url: /platform/blocks
+  icon: plug
+  outcome: Connect every signal.
+  body: The CDI layer that collects events from every fan touchpoint, stitches identifiers in real time, enriches profiles for AI and activation, and distributes governed data to every tool in your stack.
+  capabilities: [Data Collection, Reverse ETL, Identity Stitching, AI Enrichment, Integrations]
 
 - title: Fanfinity ID
   url: /platform/id
@@ -13,16 +20,9 @@
 - title: Fanfinity Engage
   url: /platform/engage
   icon: bolt
-  outcome: Turn watching into playing. (Preview)
-  body: Live interactivity, gamification, and loyalty (polls, predictions, quizzes, quests, streaks, and leaderboards) that turn passive audiences into active, returning communities. In design preview; not yet generally available.
-  capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, Spoiler-safe Sync]
-
-- title: Fanfinity Activate
-  url: /platform/activate
-  icon: megaphone
-  outcome: Reach the right fan, everywhere.
-  body: "Orchestrate omnichannel campaigns across WhatsApp, email, push, and paid media: segment on live behavior, build journeys that react, and personalize every message."
-  capabilities: [Segmentation, Journey Orchestration, WhatsApp & Email, Ad Audiences]
+  outcome: Engage and activate every fan. (Preview)
+  body: "Live interactivity, gamification, and loyalty — polls, predictions, quizzes, quests, streaks, and leaderboards — combined with omnichannel activation across WhatsApp, email, push, and paid media. In design preview; not yet generally available."
+  capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, WhatsApp & Email, Journey Orchestration, Ad Audiences]
 
 - title: Fanfinity Measure
   url: /platform/measure

@@ -6,12 +6,12 @@ description: Fanfinity is the real-time, in-region fan data platform. Collect ev
 
 # Passed into reusable section includes
 value_pillars:
-  - { icon: bolt,      title: "Turn watching into playing",        body: "Push polls, predictions, and quizzes the instant a key moment happens, turning passive viewers into active participants in real time." }
-  - { icon: trophy,    title: "Build habits that stick",           body: "Streaks, quests, badges, and status tiers build the daily and weekly habits that drive retention, not one-time spikes around a single moment." }
+  - { icon: game-controller, title: "Turn watching into playing",  body: "Push polls, predictions, and quizzes the instant a key moment happens, turning passive viewers into active participants in real time." }
+  - { icon: repeat,    title: "Build habits that stick",           body: "Streaks, quests, badges, and status tiers build the daily and weekly habits that drive retention, not one-time spikes around a single moment." }
   - { icon: gift,      title: "Reward what matters to you",        body: "A full points-and-rewards economy lets you incentivize the exact behaviors you value, then rank fans on auto-updating leaderboards." }
-  - { icon: identity,  title: "Own your fan relationship",         body: "One persistent profile ties every interaction, reward, and score to a single fan across devices, enriching the records you already keep." }
-  - { icon: megaphone, title: "Make your inventory sponsorable",   body: "Brand quests, widgets, and programs for sponsors, re-skin experiences per partner, and back it all with engagement numbers." }
-  - { icon: spark,     title: "Turn engagement into revenue",      body: "Reward stores, gifting, premium tiers, and exclusive perks open monetization paths beyond ads and subscriptions." }
+  - { icon: address-book, title: "Own your fan relationship",      body: "One persistent profile ties every interaction, reward, and score to a single fan across devices, enriching the records you already keep." }
+  - { icon: storefront, title: "Make your inventory sponsorable",  body: "Brand quests, widgets, and programs for sponsors, re-skin experiences per partner, and back it all with engagement numbers." }
+  - { icon: coins,     title: "Turn engagement into revenue",      body: "Reward stores, gifting, premium tiers, and exclusive perks open monetization paths beyond ads and subscriptions." }
 
 dev_points:
   - "A clean REST API with OAuth 2.0. Every capability is programmable, not locked behind a console."
@@ -22,7 +22,7 @@ dev_points:
 flow_nodes:
   - { icon: identity,  label: Identify, sub: "Fanfinity ID" }
   - { icon: bolt,      label: Engage,   sub: "Fanfinity Engage" }
-  - { icon: megaphone, label: Activate, sub: "Fanfinity Activate" }
+  - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate" }
   - { icon: chart,     label: Prove,    sub: "Fanfinity Measure" }
 
 # Engagement-library widget demos (compressed GIFs in /assets/widgets/).
@@ -63,7 +63,7 @@ measure_points:
 usecases:
   - { icon: identity,  title: "Turn anonymous into known", body: "Resolve first-touch visitors into golden profiles across every property." }
   - { icon: bolt,      title: "Light up every live moment", body: "Polls, predictions, and quizzes that turn passive watchers into participants." }
-  - { icon: megaphone, title: "Win back lapsing fans",      body: "Trigger WhatsApp and email journeys the moment engagement starts to drop." }
+  - { icon: arrows-counter-clockwise, title: "Win back lapsing fans", body: "Trigger WhatsApp and email journeys the moment engagement starts to drop." }
   - { icon: chart,     title: "Prove sponsor ROI",          body: "Answer 'who saw it and did it convert?' with verified reach and attribution." }
 
 faqs:
@@ -111,44 +111,72 @@ faqs:
         </p>
       </div>
 
-      <!-- Real live-event photo + the live audience-segment product card (data layer, Live today) -->
+      <!-- Live-event photo with an animated audience-builder card (cycles sample segments via JS below). -->
       <div class="relative animate-rise [animation-delay:200ms]">
         <img src="{{ '/assets/img/home-hero.jpg' | relative_url }}" alt="Fans at a live event, phones raised" loading="eager"
              class="aspect-[4/3] w-full rounded-4xl border border-border object-cover shadow-xl shadow-brand-500/10 sm:aspect-[16/10] lg:aspect-[4/5]">
 
-        <!-- Live segment card, overlapping the photo -->
-        <div class="absolute -bottom-6 left-2 w-[17rem] rounded-3xl border border-border bg-card/95 p-4 shadow-xl shadow-brand-500/10 backdrop-blur sm:-left-6 sm:w-72">
-          <div class="flex items-center justify-between">
-            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-foreground">
-              <span class="relative flex h-2 w-2">
-                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span>
-                <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-500"></span>
+        <div class="absolute inset-x-4 bottom-4 z-20 sm:left-1/2 sm:right-auto sm:bottom-8 sm:w-80 sm:-translate-x-1/2">
+          <div class="rounded-3xl border border-white/40 bg-card/80 p-4 shadow-2xl shadow-brand-500/25 ring-1 ring-black/5 backdrop-blur-md">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">AI Audience</span>
+              <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+                <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-500"></span></span>Live
               </span>
-              Live segment
-            </span>
-            <span class="font-mono text-[11px] uppercase tracking-wide text-muted-foreground">Illustrative</span>
+            </div>
+            <div data-aud-body class="transition-opacity duration-500 ease-out">
+              <h3 data-aud-title class="mt-3 text-lg font-bold leading-tight text-foreground">High-value season-ticket holders</h3>
+              <div data-aud-rows class="mt-3 space-y-1.5">
+                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Region</span><span class="font-mono font-bold text-brand-foreground">=</span><span class="w-28 text-right font-semibold text-foreground">KSA</span></div>
+                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Lifetime value</span><span class="font-mono font-bold text-brand-foreground">&gt;</span><span class="w-28 text-right font-semibold text-foreground">SAR 5,000</span></div>
+                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Matches attended</span><span class="font-mono font-bold text-brand-foreground">&#8805;</span><span class="w-28 text-right font-semibold text-foreground">12</span></div>
+                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Last seen</span><span class="font-mono font-bold text-brand-foreground">&#8804;</span><span class="w-28 text-right font-semibold text-foreground">7 days</span></div>
+              </div>
+              <div class="mt-3 flex items-end justify-between">
+                <span data-aud-count class="font-heading text-2xl font-bold tabular-nums text-foreground">48,320</span>
+                <span class="text-xs text-muted-foreground">Active profiles</span>
+              </div>
+              <div data-aud-channels class="mt-3 flex flex-wrap gap-1.5">
+                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">WhatsApp</span>
+                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Email</span>
+                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Push</span>
+                <span class="rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">Paid</span>
+              </div>
+            </div>
           </div>
-          <p class="mt-3 text-sm font-semibold text-foreground">High-value fans, in-Kingdom</p>
-          <div class="mt-3 space-y-1.5 text-[13px]">
-            <div class="flex items-center justify-between rounded-lg border border-border bg-muted/50 px-2.5 py-1.5">
-              <span class="text-muted-foreground">Consent</span><span class="font-medium text-foreground">Marketing · granted</span>
-            </div>
-            <div class="flex items-center justify-between rounded-lg border border-border bg-muted/50 px-2.5 py-1.5">
-              <span class="text-muted-foreground">Residency</span><span class="font-medium text-foreground">In-Kingdom</span>
-            </div>
-            <div class="flex items-center justify-between rounded-lg border border-border bg-muted/50 px-2.5 py-1.5">
-              <span class="text-muted-foreground">Channels</span><span class="font-medium text-foreground">WhatsApp · Email</span>
-            </div>
-          </div>
-          <button type="button" class="mt-3 w-full rounded-lg bg-brand-600 py-2 text-[13px] font-semibold text-white transition hover:bg-brand-700">Activate audience</button>
-        </div>
-
-        <!-- floating: profile resolved -->
-        <div class="absolute -top-5 -right-2 animate-floaty rounded-2xl border border-border bg-card px-4 py-3 shadow-xl shadow-brand-500/10 sm:-right-5">
-          <p class="text-[11px] font-medium text-muted-foreground">Profile resolved</p>
-          <p class="text-lg font-bold leading-none text-foreground">1 golden record</p>
+          <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative view of the audience builder.</p>
         </div>
       </div>
+      <script>
+        (function () {
+          var body = document.querySelector('[data-aud-body]');
+          if (!body || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          var titleEl = body.querySelector('[data-aud-title]');
+          var rowsEl = body.querySelector('[data-aud-rows]');
+          var countEl = body.querySelector('[data-aud-count]');
+          var chEl = body.querySelector('[data-aud-channels]');
+          function row(l, op, v) { return '<div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">' + l + '</span><span class="font-mono font-bold text-brand-foreground">' + op + '</span><span class="w-28 text-right font-semibold text-foreground">' + v + '</span></div>'; }
+          function chip(n, on) { return on ? '<span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">' + n + '</span>' : '<span class="rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">' + n + '</span>'; }
+          var segs = [
+            { title: 'High-value season-ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: [['WhatsApp', 1], ['Email', 1], ['Push', 1], ['Paid', 0]] },
+            { title: 'Lapsing match-day fans', count: '22,905', rows: [['Region', '=', 'GCC'], ['Last attended', '>', '60 days'], ['Engagement', '<', '40'], ['Consent', '=', 'Marketing']], channels: [['WhatsApp', 1], ['SMS', 1], ['Email', 1]] },
+            { title: 'Sponsor-ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: [['Email', 1], ['Push', 1], ['Paid', 1], ['Meta Ads', 0]] },
+            { title: 'Streaming super-watchers', count: '37,480', rows: [['Watch time', '>', '20h / mo'], ['Live sessions', '≥', '8'], ['Device', '=', 'Mobile'], ['Region', '=', 'KSA']], channels: [['Push', 1], ['WhatsApp', 1], ['Email', 1]] }
+          ];
+          function render(s) {
+            titleEl.textContent = s.title;
+            rowsEl.innerHTML = s.rows.map(function (r) { return row(r[0], r[1], r[2]); }).join('');
+            countEl.textContent = s.count;
+            chEl.innerHTML = s.channels.map(function (c) { return chip(c[0], c[1]); }).join('');
+          }
+          var i = 0;
+          setInterval(function () {
+            i = (i + 1) % segs.length;
+            body.style.opacity = '0';
+            setTimeout(function () { render(segs[i]); body.style.opacity = '1'; }, 500);
+          }, 3600);
+        })();
+      </script>
 
     </div>
   </div>
@@ -201,7 +229,7 @@ faqs:
         {% for node in page.flow_nodes %}
           {%- assign d = forloop.index0 | times: 90 -%}
           <li data-reveal style="--reveal-delay:{{ d }}ms" class="flex items-center gap-4 lg:flex-1 lg:flex-col lg:gap-0 lg:text-center">
-            <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-lg shadow-brand-500/30 ring-4 ring-background transition duration-300 hover:scale-105">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
+            <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
             <div class="lg:mt-4">
               <p class="font-semibold text-foreground">{{ node.label }}</p>
               <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
@@ -238,9 +266,9 @@ faqs:
     <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {%- for w in page.widgets -%}
         <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
-                class="gradient-border card-hover group/w flex flex-col overflow-hidden rounded-3xl border border-border bg-card">
+                class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
           <figcaption class="flex items-center gap-3 px-5 pt-5">
-            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
+            <span class="icon-chip-sm">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
             <span class="min-w-0">
               <span class="block text-sm font-semibold text-foreground">{{ w.title }}</span>
               <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ w.tag }}</span>

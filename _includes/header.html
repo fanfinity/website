@@ -10,12 +10,12 @@
       </a>
 
       <!-- Desktop navigation -->
-      <ul class="hidden items-center gap-0.5 lg:flex">
+      <ul class="hidden relative items-center gap-0.5 lg:flex">
         {%- for item in nav.header -%}
           {%- assign active = false -%}
           {%- if item.url != '/' and page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
-          <li class="relative" {% if item.children or item.groups %}data-dropdown{% endif %}>
-            {%- if item.children or item.groups -%}
+          <li class="{% if item.product_cards %}static{% else %}relative{% endif %}" {% if item.children or item.groups or item.product_cards %}data-dropdown{% endif %}>
+            {%- if item.children or item.groups or item.product_cards -%}
               <button type="button"
                       class="nav-trigger{% if active %} is-active{% endif %}"
                       aria-expanded="false" aria-haspopup="true"
@@ -25,7 +25,57 @@
                 {% include icon.html name="chevron-down" class="nav-chevron" %}
               </button>
 
-              {%- if item.groups -%}
+              {%- if item.product_cards -%}
+                <div id="menu-{{ item.title | slugify }}"
+                     class="nav-panel left-1/2 -translate-x-1/2"
+                     style="width: 66rem; max-width: calc(100vw - 3rem)"
+                     data-dropdown-panel hidden>
+                  <div class="flex gap-2 p-1">
+                    {%- for product in item.products -%}
+                      <div class="min-w-0 flex-1 rounded-xl border border-border overflow-hidden">
+                        <a href="{{ product.url | relative_url }}" class="flex flex-col bg-muted/40 px-3 pt-3 pb-3 transition hover:bg-muted group/prod">
+                          <div class="flex items-center justify-between gap-2">
+                            {%- if product.category == "CDI" -%}
+                              <span class="shrink-0 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest" style="background:#fff7ed;color:#ea580c;border-color:#fdba74">CDI</span>
+                            {%- elsif product.category == "CDP" -%}
+                              <span class="shrink-0 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest" style="background:#eff6ff;color:#2563eb;border-color:#93c5fd">CDP</span>
+                            {%- elsif product.category == "CEP" -%}
+                              <span class="shrink-0 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest" style="background:#ecfdf5;color:#059669;border-color:#6ee7b7">CEP</span>
+                            {%- else -%}
+                              <span class="shrink-0 rounded-md border px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-widest" style="background:#f5f0ff;color:#7c3aed;border-color:#c4b5fd">{{ product.category }}</span>
+                            {%- endif -%}
+                            <span class="shrink-0 flex h-6 w-6 items-center justify-center rounded-full border border-border text-muted-foreground/30 transition group-hover/prod:text-brand-foreground">{% include icon.html name="arrow-right" class="h-3 w-3" %}</span>
+                          </div>
+                          <span class="mt-2 block text-sm font-bold text-foreground leading-tight transition group-hover/prod:text-brand-foreground">{{ product.title }}</span>
+                          <span class="mt-1 block text-xs leading-snug text-muted-foreground">{{ product.tagline }}</span>
+                        </a>
+                        <div class="border-t border-border"></div>
+                        <div class="p-1">
+                          {%- for feature in product.features -%}
+                            <a href="{{ feature.url | relative_url }}" class="block rounded-lg px-3 py-2 transition hover:bg-muted">
+                              <span class="block text-[13px] font-semibold text-foreground leading-snug">{{ feature.title }}</span>
+                              <span class="block text-xs leading-snug text-muted-foreground">{{ feature.desc }}</span>
+                            </a>
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                    <a href="{{ item.sidebar.url | relative_url }}"
+                       class="w-44 shrink-0 flex flex-col justify-center gap-4 rounded-xl bg-muted/40 p-3.5 transition hover:bg-muted group/deploy">
+                      <div>
+                        <span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/60">Deploy &amp; Trust</span>
+                        <span class="mt-1 block text-sm font-bold text-foreground leading-snug transition group-hover/deploy:text-brand-foreground">{{ item.sidebar.tagline }}</span>
+                        <span class="mt-1.5 block text-xs leading-relaxed text-muted-foreground">{{ item.sidebar.body }}</span>
+                      </div>
+                      <span class="flex items-center gap-1 text-xs font-semibold text-brand-foreground">
+                        {{ item.sidebar.link_text }}
+                        {% include icon.html name="arrow-right" class="h-3 w-3" %}
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+              {%- elsif item.groups -%}
                 {%- assign gc = item.groups | size -%}
                 <div id="menu-{{ item.title | slugify }}"
                      class="nav-panel left-1/2 -translate-x-1/2 max-w-[calc(100vw-2rem)] {% if gc == 1 %}w-80{% elsif gc == 2 %}w-[48rem]{% else %}w-[56rem]{% endif %}"
@@ -39,6 +89,7 @@
                             <a href="{{ child.url | relative_url }}" class="nav-panel-link group/link">
                               {%- if child.icon -%}<span class="nav-panel-icon">{% include icon.html name=child.icon class="h-5 w-5" %}</span>{%- endif -%}
                               <span class="min-w-0">
+                                {%- if child.category -%}<span class="block font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground/60">{{ child.category }}</span>{%- endif -%}
                                 <span class="flex items-center gap-1.5 text-sm font-semibold text-foreground">
                                   {{ child.title }}
                                   {%- if child.badge -%}<span class="rounded-full bg-brand-100 px-1.5 py-px text-[10px] font-semibold uppercase tracking-wide text-brand-700">{{ child.badge }}</span>{%- endif -%}
@@ -121,7 +172,7 @@
       <ul class="space-y-1">
         {%- for item in nav.header -%}
           <li>
-            {%- if item.children or item.groups -%}
+            {%- if item.children or item.groups or item.product_cards -%}
               <details class="group rounded-xl">
                 <summary class="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-foreground hover:bg-muted">
                   {{ item.title }}
@@ -131,11 +182,20 @@
                   <li>
                     <a href="{{ item.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm font-medium text-brand-foreground hover:bg-muted">All {{ item.title }}</a>
                   </li>
-                  {%- if item.groups -%}
+                  {%- if item.product_cards -%}
+                    {%- for product in item.products -%}
+                      <li class="px-3 pb-0.5 pt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">{{ product.category }} · {{ product.title }}</li>
+                      {%- for feature in product.features -%}
+                        <li><a href="{{ feature.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ feature.title }}</a></li>
+                      {%- endfor -%}
+                    {%- endfor -%}
+                    <li class="px-3 pb-0.5 pt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">Deploy &amp; Trust</li>
+                    <li><a href="{{ item.sidebar.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ item.sidebar.link_text }}</a></li>
+                  {%- elsif item.groups -%}
                     {%- for group in item.groups -%}
                       <li class="px-3 pb-0.5 pt-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">{{ group.heading }}</li>
                       {%- for child in group.links -%}
-                        <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{{ child.title }}</a></li>
+                        <li><a href="{{ child.url | relative_url }}" class="block rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground">{%- if child.category -%}<span class="font-mono text-[10px] font-semibold uppercase tracking-wider opacity-60 mr-1.5">{{ child.category }}</span>{%- endif -%}{{ child.title }}</a></li>
                       {%- endfor -%}
                     {%- endfor -%}
                   {%- else -%}

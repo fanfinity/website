@@ -12,8 +12,8 @@ Params: eyebrow, heading, subheading
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-3">
       {%- for s in cards limit: 6 -%}
-        <a href="{{ s.url | relative_url }}" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 90 }}ms" class="card card-hover gradient-border group/link flex flex-col">
-          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition group-hover/link:scale-105">{% include icon.html name=s.icon class="h-6 w-6" %}</span>
+        <a href="{{ s.url | relative_url }}" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 90 }}ms" class="card card-hover group/link flex flex-col">
+          <span class="icon-chip">{% include icon.html name=s.icon class="h-6 w-6" %}</span>
           <h3 class="mt-5 text-xl font-semibold">{{ s.title }}</h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{{ s.desc }}.</p>
           <span class="mt-5 link-arrow">Explore solution {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>

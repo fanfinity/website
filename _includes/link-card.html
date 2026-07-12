@@ -3,8 +3,8 @@ One clickable card for a nav link ({title, url, desc, icon, badge}).
 Usage: {% include link-card.html link=some_link %}
 {%- endcomment -%}
 {%- assign link = include.link -%}
-<a href="{{ link.url | relative_url }}" class="card card-hover gradient-border group/link flex flex-col">
-  <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition group-hover/link:scale-105">{% include icon.html name=link.icon class="h-6 w-6" %}</span>
+<a href="{{ link.url | relative_url }}" class="card card-hover group/link flex flex-col">
+  <span class="icon-chip">{% include icon.html name=link.icon class="h-6 w-6" %}</span>
   <h3 class="mt-5 flex items-center gap-2 text-lg font-semibold">
     {{ link.title }}
     {%- if link.badge -%}<span class="rounded-full bg-brand-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-700">{{ link.badge }}</span>{%- endif -%}

@@ -10,8 +10,8 @@ Params: eyebrow, heading, subheading
     </div>
     <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {%- for pillar in site.data.pillars -%}
-        <a href="{{ pillar.url | relative_url }}" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 70 }}ms" class="card card-hover gradient-border group/link flex flex-col">
-          <span class="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition group-hover/link:scale-105">{% include icon.html name=pillar.icon class="h-6 w-6" %}</span>
+        <a href="{{ pillar.url | relative_url }}" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 70 }}ms" class="card card-hover group/link flex flex-col">
+          <span class="icon-chip">{% include icon.html name=pillar.icon class="h-6 w-6" %}</span>
           <h3 class="mt-5 text-lg font-semibold">{{ pillar.title }}</h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{{ pillar.body }}</p>
           <span class="mt-5 link-arrow">Learn more {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>

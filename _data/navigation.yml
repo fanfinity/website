@@ -24,45 +24,70 @@ header:
   # ------------------------------------------------------------------ PLATFORM
   - title: Platform
     url: /platform
-    mega: true
-    groups:
-      - heading: The fan data engine
-        links:
-          - { title: "Platform Overview", url: /platform,     desc: "Collect, resolve, activate, prove",       icon: stack }
-          - { title: "How it works",      url: /platform#how, desc: "Fragmented signals to one fan graph",     icon: link }
-          - { title: "Fanfinity ID",      url: /platform/id,  desc: "The consented first-party fan graph",     icon: identity, badge: Live }
-      - heading: Products
-        links:
-          - { title: "Fanfinity ID",       url: /platform/id,       desc: "CDP & identity resolution",         icon: identity,  badge: Live }
-          - { title: "Fanfinity Engage",   url: /platform/engage,   desc: "Live interactivity & loyalty",      icon: bolt,      badge: Preview }
-          - { title: "Fanfinity Activate", url: /platform/activate, desc: "WhatsApp, email, push & ad audiences", icon: megaphone }
-          - { title: "Fanfinity Measure",  url: /platform/measure,  desc: "Attribution & sponsorship proof",   icon: chart }
-      - heading: Deploy & trust
-        links:
-          - { title: "In-Kingdom & Residency", url: /platform/data-residency, desc: "PDPL, Saudi data residency",       icon: shield }
-          - { title: "Security & Compliance",  url: /platform/security,       desc: "PDPL, GDPR, SOC 2 posture",        icon: shield }
-          - { title: "Deploy Anywhere",        url: /platform/deploy,         desc: "Cloud, on-prem or managed",        icon: stack }
-          - { title: "Architecture",           url: /platform/architecture,   desc: "How the platform fits together",   icon: link }
-          - { title: "Developers & APIs",      url: /developers,              desc: "REST API & SDKs",                  icon: code }
+    product_cards: true
+    products:
+      - title: "Fanfinity Blocks"
+        url: /platform/blocks
+        badge: Live
+        category: CDI
+        tagline: "Collect, enrich, connect"
+        features:
+          - { title: "Event Collection",   desc: "Capture signals from every fan touchpoint",    url: /platform/blocks }
+          - { title: "Reverse ETL",        desc: "Push data to your full tool stack",             url: /platform/blocks }
+          - { title: "Identity Stitching", desc: "Match identifiers across devices and channels", url: /platform/blocks }
+          - { title: "AI Enrichment",      desc: "Structured context for models and agents",      url: /platform/blocks }
+          - { title: "Integrations",       desc: "Connect your existing stack",                   url: /platform/blocks }
+      - title: "Fanfinity ID"
+        url: /platform/id
+        badge: Live
+        category: CDP
+        tagline: "Know every fan"
+        features:
+          - { title: "Single Fan View",        desc: "One governed golden profile per fan",    url: /platform/id }
+          - { title: "Audience Builder",        desc: "Segment on any attribute or behavior",  url: /platform/id }
+          - { title: "Consent & Governance",    desc: "PDPL and residency built in",           url: /platform/id }
+          - { title: "Real-time Profiles",      desc: "Resolved as events land, not overnight",url: /platform/id }
+      - title: "Fanfinity Engage"
+        url: /platform/engage
+        badge: Preview
+        category: CEP
+        tagline: "Engage and activate every fan"
+        features:
+          - { title: "Live Widgets",          desc: "Polls, predictions, quizzes and more",    url: /platform/engage }
+          - { title: "Gamification",          desc: "Streaks, quests, badges and leaderboards",url: /platform/engage }
+          - { title: "Loyalty & Rewards",     desc: "Points economy across every touchpoint",  url: /platform/engage }
+          - { title: "Journey Orchestration", desc: "Multi-step campaigns that react",         url: /platform/engage }
+          - { title: "WhatsApp & Email",      desc: "Owned-channel activation",                url: /platform/engage }
+      - title: "Fanfinity Measure"
+        url: /platform/measure
+        badge: Live
+        category: Reporting
+        tagline: "Prove the value"
+        features:
+          - { title: "Verified Reach",  desc: "Real people, not impressions",           url: /platform/measure }
+          - { title: "Attribution",     desc: "Exposure-to-outcome, deterministically", url: /platform/measure }
+          - { title: "Sponsor Portal",  desc: "Live results for partners and sponsors", url: /platform/measure }
+          - { title: "Benchmarking",    desc: "Performance context across campaigns",   url: /platform/measure }
+    sidebar:
+      url: /platform/deploy
+      tagline: "Any cloud. Any on-prem."
+      body: "Your cloud, your on-prem, or fully managed. Residency and compliance built into the data layer."
+      link_text: "Explore deployment"
 
   # ---------------------------------------------------------------- SOLUTIONS
   - title: Solutions
     url: /solutions
     mega: true
     groups:
-      - heading: By industry
+      - heading: By use case
         links:
           - { title: "Sports & Entertainment", url: /solutions/sports, desc: "Clubs, leagues, media & sponsors", icon: whistle, badge: Flagship }
           - { title: "Media & Broadcast",      url: /solutions/media,  desc: "Turn audiences into known fans",   icon: broadcast }
-          - { title: "Brands & Sponsors",      url: /solutions/brands, desc: "Prove & activate sponsored reach", icon: megaphone }
-      - heading: More industries
+          - { title: "Brands & Sponsors",      url: /solutions/brands, desc: "Prove & activate sponsored reach", icon: handshake }
+      - heading: By industry
         links:
-          - { title: "Retail & E-commerce",  url: /solutions/retail,  desc: "Personalize the shopper journey",     icon: gift }
-          - { title: "Banking & Finance",    url: /solutions/banking, desc: "Compliant, real-time engagement",     icon: scale }
-          - { title: "Travel & Hospitality", url: /solutions/travel,  desc: "Loyalty across every trip",           icon: spark }
-          - { title: "iGaming & Betting",    url: /solutions/igaming, desc: "Acquire & retain high-value players", icon: target }
-          - { title: "Telco",                url: /solutions/telco,   desc: "Monetize the subscriber base",        icon: plug }
-          - { title: "All industries",       url: /industries,        desc: "See every vertical",                  icon: stack }
+          - { title: "Events & Hospitality", url: /solutions/travel,  desc: "Loyalty across every touchpoint",  icon: airplane }
+          - { title: "Retail & E-commerce",  url: /solutions/retail,  desc: "Personalize the shopper journey",  icon: gift }
       - heading: By team
         links:
           - { title: "Marketing & Growth", url: /solutions/marketing,   desc: "Segment, activate, measure",  icon: megaphone }
@@ -104,10 +129,10 @@ footer_columns:
   - heading: Platform
     links:
       - { title: "Platform Overview",  url: /platform }
-      - { title: "Fanfinity ID",       url: /platform/id }
-      - { title: "Fanfinity Engage",   url: /platform/engage }
-      - { title: "Fanfinity Activate", url: /platform/activate }
-      - { title: "Fanfinity Measure",  url: /platform/measure }
+      - { title: "Fanfinity Blocks",  url: /platform/blocks }
+      - { title: "Fanfinity ID",      url: /platform/id }
+      - { title: "Fanfinity Engage",  url: /platform/engage }
+      - { title: "Fanfinity Measure", url: /platform/measure }
 
   - heading: Deploy & Trust
     links:

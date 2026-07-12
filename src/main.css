@@ -77,9 +77,17 @@
   .btn-white         { @apply bg-white text-brand-950 hover:bg-brand-50 hover:-translate-y-0.5 focus-visible:ring-offset-transparent; }
   .btn-outline-light { @apply border border-white/25 text-white hover:bg-white/10 focus-visible:ring-offset-transparent; }
 
-  /* Cards */
-  .card       { @apply rounded-3xl border border-border bg-card p-6; }
-  .card-hover { @apply transition duration-200 hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-500/10; }
+  /* Radius ladder (one documented scale, applied site-wide):
+     chip rounded-xl (12px) · card/figure rounded-2xl (16px) · large surface / band rounded-4xl (32px) · pill/button full */
+
+  /* Cards — tight, flat, quiet. Hover brightens the border + a faint brand-tinted shadow (no lift, no bounce). */
+  .card       { @apply rounded-2xl border border-border bg-card p-6; }
+  .card-hover { @apply transition duration-200 hover:border-brand-200 hover:shadow-md hover:shadow-brand-950/[0.06]; }
+
+  /* Icon chip — the single canonical container for a content glyph. Soft tint + hairline ring, purple glyph.
+     Replaces every ad-hoc purple gradient tile so chips are consistent in size, radius and treatment. */
+  .icon-chip    { @apply grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-foreground ring-1 ring-inset ring-brand-100; }
+  .icon-chip-sm { @apply grid h-9  w-9  shrink-0 place-items-center rounded-lg bg-brand-50 text-brand-foreground ring-1 ring-inset ring-brand-100; }
 
   /* Pills & badges */
   .pill  { @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground; }
@@ -102,7 +110,7 @@
   }
   .nav-panel-link { @apply flex items-start gap-3 rounded-xl p-3 transition hover:bg-muted; }
   .nav-panel-link .nav-panel-icon {
-    @apply grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand-foreground transition group-hover/link:bg-brand-100;
+    @apply grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-50 text-brand-foreground ring-1 ring-inset ring-brand-100 transition group-hover/link:bg-brand-100;
   }
 
   /* Long-form prose (legal / markdown pages) */

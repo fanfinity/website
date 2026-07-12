@@ -22,12 +22,9 @@ Params: eyebrow, heading, subheading, items (required)
         {%- endcase -%}
         {%- assign delay = forloop.index0 | times: 70 -%}
         <article data-reveal style="--reveal-delay:{{ delay }}ms"
-                 class="group/card gradient-border relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/10 {{ span }}">
-          {%- if wide -%}
-            <div class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
-          {%- endif -%}
+                 class="group/card relative flex flex-col overflow-hidden rounded-2xl border border-border {% if wide %}bg-soft{% else %}bg-card{% endif %} p-6 transition duration-200 hover:border-brand-200 hover:shadow-md hover:shadow-brand-950/[0.06] {{ span }}">
           <div class="relative flex items-center">
-            <span class="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30 transition duration-300 group-hover/card:scale-105">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+            <span class="icon-chip">{% include icon.html name=item.icon class="h-6 w-6" %}</span>
           </div>
           <h3 class="relative mt-5 font-semibold {% if wide %}text-xl{% else %}text-base{% endif %}">{{ item.title }}</h3>
           <p class="relative mt-2 text-sm leading-relaxed text-muted-foreground {% if wide %}max-w-md{% endif %}">{{ item.body }}</p>

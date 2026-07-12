@@ -39,7 +39,7 @@ reach:
         <ul class="mt-8 space-y-5">
           {%- for item in page.reach -%}
             <li class="flex gap-4">
-              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-sm shadow-brand-700/30">{% include icon.html name=item.icon class="h-6 w-6" %}</span>
+              <span class="icon-chip">{% include icon.html name=item.icon class="h-6 w-6" %}</span>
               <div>
                 <h3 class="font-semibold text-foreground">{{ item.title }}</h3>
                 <p class="mt-1 text-sm leading-relaxed text-muted-foreground">{{ item.body }}</p>

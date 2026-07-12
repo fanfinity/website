@@ -37,6 +37,12 @@
       "skillPath": "skills/aso/SKILL.md",
       "computedHash": "f84a1fb5cb1a8a7f7171bd60ae6850f24a82fa6af94bd5f12e5b3e9227480a34"
     },
+    "better-icons": {
+      "source": "better-auth/better-icons",
+      "sourceType": "github",
+      "skillPath": "skills/SKILL.md",
+      "computedHash": "656a618d6d5d5e9c567253eff57a06bee3be5d4fb983bdc401a46a209c5b76de"
+    },
     "churn-prevention": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
@@ -102,6 +108,12 @@
       "sourceType": "github",
       "skillPath": "skills/customer-research/SKILL.md",
       "computedHash": "cc68018a343c1a75ef9aed44b7037928795f654bdde0b28372176f686c1982be"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "6d838b246d0e35d0b53f4f23f98ba7a1dd561937e64f7d0c7553b0928e376c3e"
     },
     "directory-submissions": {
       "source": "coreyhaines31/marketingskills",
