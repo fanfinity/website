@@ -24,6 +24,33 @@ categories:
 {% include feature-grid.html
    eyebrow="By category"
    heading="Connectors across your stack"
-   subheading="An open connector framework across the categories below, with the connectors most teams need first. The full directory lands in the next iteration."
+   subheading="An open connector framework across the categories below. Browse the full directory of live sources further down."
    items=page.categories
    columns=3 %}
+
+{%- assign source_count = site.data.integrations | size -%}
+<section class="section border-t border-border">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="eyebrow">Full directory</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Every source, one fan graph</h2>
+      <p class="mt-4 text-lg text-muted-foreground">Fanfinity connects to {{ source_count }} sources out of the box — from ticketing and streaming to CRM, ad platforms, messaging, and your warehouse. Search the full catalog below.</p>
+    </div>
+
+    <div class="mt-10 max-w-md">
+      <label for="integrations-search" class="sr-only">Search sources</label>
+      <input id="integrations-search" type="search" data-integrations-filter autocomplete="off"
+             placeholder="Search {{ source_count }} sources…"
+             class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+    </div>
+
+    <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3 lg:grid-cols-4">
+      {%- for name in site.data.integrations -%}
+      <li data-integration="{{ name | downcase }}" class="py-1 text-sm text-muted-foreground">
+        <span class="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-brand-500/60 align-middle" aria-hidden="true"></span>{{ name }}
+      </li>
+      {%- endfor -%}
+    </ul>
+    <p data-integrations-empty hidden class="mt-8 text-sm text-muted-foreground">No sources match that search.</p>
+  </div>
+</section>

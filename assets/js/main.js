@@ -226,4 +226,24 @@
       el.addEventListener('click', function () { showConsent(); });
     });
   }
+
+  /* ---------------------------------------------------------------- *
+   * Integrations directory — live client-side filter over source names.
+   * Progressive enhancement: without JS every source still renders.
+   * ---------------------------------------------------------------- */
+  var integrationsFilter = document.querySelector('[data-integrations-filter]');
+  if (integrationsFilter) {
+    var integrationItems = Array.prototype.slice.call(document.querySelectorAll('[data-integration]'));
+    var integrationsEmpty = document.querySelector('[data-integrations-empty]');
+    integrationsFilter.addEventListener('input', function () {
+      var q = integrationsFilter.value.trim().toLowerCase();
+      var shown = 0;
+      integrationItems.forEach(function (el) {
+        var match = !q || el.getAttribute('data-integration').indexOf(q) !== -1;
+        el.hidden = !match;
+        if (match) shown++;
+      });
+      if (integrationsEmpty) integrationsEmpty.hidden = shown !== 0;
+    });
+  }
 })();

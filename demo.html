@@ -41,20 +41,20 @@ expect:
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="block text-sm font-medium text-foreground">First name
-              <input type="text" name="first_name" autocomplete="given-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <input type="text" name="first_name" autocomplete="given-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
               <p data-error-for="first_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
             <label class="block text-sm font-medium text-foreground">Last name
-              <input type="text" name="last_name" autocomplete="family-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <input type="text" name="last_name" autocomplete="family-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
               <p data-error-for="last_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
           </div>
           <label class="block text-sm font-medium text-foreground">Work email
-            <input type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <input type="email" name="email" autocomplete="email" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
             <p data-error-for="email" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">Company
-            <input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <input type="text" name="company" autocomplete="organization" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
             <p data-error-for="company" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">I'm with a…
@@ -65,10 +65,11 @@ expect:
               <option>Something else</option>
             </select>
           </label>
-          <label class="block text-sm font-medium text-foreground">What are you hoping to do?
+          <label class="block text-sm font-medium text-foreground">What are you hoping to do? <span class="font-normal text-muted-foreground">(optional)</span>
             <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
           </label>
           <button type="submit" class="btn btn-primary btn-lg w-full">Request my demo</button>
+          <p class="text-center text-xs leading-relaxed text-muted-foreground">No commitment. We usually reply within one business day, and your details stay with our team.</p>
           <p id="demo-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>

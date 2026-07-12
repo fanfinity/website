@@ -12,6 +12,9 @@
 
   <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
 
+  {%- comment -%}Keep unfinished "in progress" stubs out of the index while they stay linked for humans.{%- endcomment -%}
+  {%- if page.noindex -%}<meta name="robots" content="noindex, follow">{%- endif -%}
+
   {% seo %}
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

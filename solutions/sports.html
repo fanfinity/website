@@ -27,6 +27,12 @@ steps:
   - { icon: gift,     title: "Reward the participation", body: "Points, badges, and quests give every interaction a payoff, feeding leaderboards and tiers automatically rather than through a separate loyalty tool." }
   - { icon: target,   title: "Build the season habit", body: "Streaks and status tiers give fans a reason to return between matches, so attention compounds into a habit across the fixture list." }
   - { icon: identity, title: "Keep the fan you earned", body: "Every action accrues to one first-party profile you own in-region, so matchday reach becomes a season-long relationship, and inventory a sponsor can trust." }
+journey:
+  - { icon: identity,      time: "Gate",      badge: Live,    act: "Scans in at kickoff",              fx: "Recognized as the same fan across ticket, app, and stream." }
+  - { icon: target,        time: "Kickoff",   badge: Preview, act: "Predicts the first scorer",         fx: "Plays along with the match in real time, not just watches it." }
+  - { icon: gift,          time: "Half-time", badge: Preview, act: "Redeems points for a voucher",      fx: "Every interaction earns a payoff, feeding streaks and tiers automatically." }
+  - { icon: trophy,        time: "Full-time", badge: Preview, act: "Climbs the season leaderboard",     fx: "One match turns into a reason to come back next week." }
+  - { icon: rocket-launch, time: "Tuesday",   badge: Live,    act: "Gets a sponsor offer on WhatsApp", fx: "Reachable, consented, and measurable, on a fan graph you own." }
 ---
 {% include hero.html
    eyebrow="Solutions · Sports"
@@ -45,6 +51,37 @@ steps:
    subheading="The same engagement layer powers in-play play during the match and season-long loyalty between them, branded and sponsor-ready throughout. Live engagement is a design Preview; the identity and data layer is live."
    items=page.features
    columns=3 %}
+
+<!-- Illustrative matchday journey: a concrete proof scene. Honest: the interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live. -->
+<section class="relative overflow-hidden border-y border-border bg-soft">
+  <div class="container-page relative section">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <p class="eyebrow justify-center">One matchday, end to end</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">What one fan's matchday looks like on Fanfinity</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Illustrative. Today these five moments are five disconnected logs in five systems. On Fanfinity they are one profile you own, from the turnstile to Tuesday.</p>
+    </div>
+
+    <ol class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+      {%- for m in page.journey -%}
+        <li data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms" class="card-hover flex flex-col rounded-2xl border border-border bg-card p-5">
+          <div class="flex items-center justify-between">
+            <span class="icon-chip-sm">{% include icon.html name=m.icon class="h-5 w-5" %}</span>
+            {%- if m.badge == "Live" -%}
+              <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">Live</span>
+            {%- else -%}
+              <span class="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Preview</span>
+            {%- endif -%}
+          </div>
+          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ m.time }}</p>
+          <p class="mt-1 font-semibold leading-snug text-foreground">{{ m.act }}</p>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ m.fx }}</p>
+        </li>
+      {%- endfor -%}
+    </ol>
+
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-muted-foreground">One fan, one profile, every moment tied together and provable to a sponsor. The interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live today.</p>
+  </div>
+</section>
 
 {% include feature-split.html
    reverse=true

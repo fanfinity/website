@@ -2,18 +2,17 @@
 #
 # IA: Meiro-modeled, Fanfinity-adapted. Five top-level items lead with the LIVE
 # data engine (Fanfinity ID), not widget hype. Company lives in the footer.
-# Scanner is an internal sales tool — deliberately NOT in public nav.
-# Integrations/Customers omitted until real (no invented connectors or logos).
+# Integrations/Customers omitted from the header until fuller (no invented logos).
 #
-# NOTE (2026-07-11 launch): links to still-stubbed pages are intentionally
-# removed from nav so the live site has no dead-ends — the comparison pages
-# (/compare/*), Blog, Webinars, Partners, Careers, Newsroom, and Customers.
-# The stub files still exist; re-add each link here as its page is written.
+# NOTE (2026-07-12 IA pass): stub pages (Blog, Webinars, Customers, Partners,
+# Careers, Newsroom) ARE linked in nav — they're friendly "in progress" pages,
+# not dead-ends — but carry `noindex` (front matter) and are excluded from
+# sitemap.xml until their content lands. Every other nav link resolves to a
+# distinct, finished destination (no URL aliasing).
 #
 # Mega-menus use `groups: [{heading, links}]`; simple dropdowns use `children`.
 # `badge:` on a link renders a pill (Live / Preview / Flagship) — the honesty cue.
-# `home` points at the public homepage (launched 2026-07-11: the full site now
-# serves at `/`; the old Coming Soon splash is preserved at `/coming-soon`).
+# `home` points at the public homepage (the full site serves at `/`).
 #
 # NOTE: title/desc are quoted because several contain commas — unquoted commas
 # inside a YAML flow mapping { ... } are parsed as field separators and break the build.
@@ -51,13 +50,24 @@ header:
         url: /platform/engage
         badge: Preview
         category: CEP
-        tagline: "Engage and activate every fan"
+        tagline: "Engage every fan"
+        # Engagement mechanics only — channels & journeys live under Activate.
         features:
-          - { title: "Live Widgets",          desc: "Polls, predictions, quizzes and more",    url: /platform/engage }
-          - { title: "Gamification",          desc: "Streaks, quests, badges and leaderboards",url: /platform/engage }
-          - { title: "Loyalty & Rewards",     desc: "Points economy across every touchpoint",  url: /platform/engage }
-          - { title: "Journey Orchestration", desc: "Multi-step campaigns that react",         url: /platform/engage }
-          - { title: "WhatsApp & Email",      desc: "Owned-channel activation",                url: /platform/engage }
+          - { title: "Live Widgets",      desc: "Polls, predictions, quizzes and more",    url: /platform/engage }
+          - { title: "Gamification",      desc: "Streaks, quests, badges and leaderboards", url: /platform/engage }
+          - { title: "Loyalty & Rewards", desc: "Points economy across every touchpoint",  url: /platform/engage }
+          - { title: "Programs & Themes", desc: "Sponsorable programs and theming",         url: /platform/engage }
+      - title: "Fanfinity Activate"
+        url: /platform/activate
+        badge: Live
+        category: Activation
+        tagline: "Reach every fan"
+        # Owns every outbound channel + journeys — messaging (owned) vs Ad Audiences (paid).
+        features:
+          - { title: "Omnichannel Messaging", desc: "WhatsApp, email, and push",                url: /platform/activate }
+          - { title: "Audience Segmentation", desc: "Build once, activate everywhere",          url: /platform/activate }
+          - { title: "Journey Orchestration", desc: "Multi-step flows that react in real time",  url: /platform/activate }
+          - { title: "Ad Audiences",          desc: "Lookalikes and convert-suppression",       url: /platform/activate }
       - title: "Fanfinity Measure"
         url: /platform/measure
         badge: Live
@@ -102,24 +112,21 @@ header:
   - title: Resources
     url: /resources
     groups:
+      # Each link resolves to a distinct destination — no aliasing the same URL.
       - heading: Learn
         links:
-          - { title: "Blog",             url: /blog,      desc: "Insights on fan data and sports tech",    icon: book }
-          - { title: "Use Cases",        url: /resources, desc: "Real-world activation patterns",          icon: spark }
-          - { title: "Events",           url: /resources, desc: "Conferences and meetups",                 icon: bell }
-          - { title: "Resource Library", url: /resources, desc: "Guides, reports, and whitepapers",        icon: stack }
-          - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and integration docs",  icon: code }
-      - heading: Watch
-        links:
-          - { title: "Webinars",       url: /webinars,   desc: "Live and on-demand sessions",   icon: broadcast }
-          - { title: "Product Videos", url: /resources,  desc: "Recorded product explainers",   icon: bolt }
-          - { title: "Case Studies",   url: /customers,  desc: "Customer success stories",       icon: chart }
+          - { title: "Blog",             url: /blog,       desc: "Insights on fan data and sports tech",    icon: book }
+          - { title: "Resource Library", url: /resources,  desc: "Guides, reports, and whitepapers",         icon: stack }
+          - { title: "Case Studies",     url: /customers,  desc: "Customer success stories",                icon: chart }
+          - { title: "Webinars",         url: /webinars,   desc: "Live and on-demand sessions",             icon: broadcast }
+          - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and integration docs",    icon: code }
       - heading: Compare
         links:
-          - { title: "vs LiveLike",  url: /compare/livelike,  desc: "vs a hosted engagement suite",    icon: scale }
-          - { title: "vs Meiro",     url: /compare/meiro,     desc: "vs a horizontal CDP",             icon: scale }
-          - { title: "vs Segment",   url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",       icon: scale }
-          - { title: "vs Hightouch", url: /compare/hightouch, desc: "vs a warehouse activation layer", icon: scale }
+          - { title: "All comparisons", url: /compare,           desc: "How Fanfinity stacks up",         icon: scale }
+          - { title: "vs LiveLike",     url: /compare/livelike,  desc: "vs a hosted engagement suite",    icon: scale }
+          - { title: "vs Meiro",        url: /compare/meiro,     desc: "vs a horizontal CDP",             icon: scale }
+          - { title: "vs Segment",      url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",       icon: scale }
+          - { title: "vs Hightouch",    url: /compare/hightouch, desc: "vs a warehouse activation layer", icon: scale }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -136,6 +143,7 @@ footer_columns:
       - { title: "Fanfinity Blocks",   url: /platform/blocks }
       - { title: "Fanfinity ID",       url: /platform/id }
       - { title: "Fanfinity Engage",   url: /platform/engage }
+      - { title: "Fanfinity Activate", url: /platform/activate }
       - { title: "Fanfinity Measure",  url: /platform/measure }
 
   - heading: Deploy & Trust
@@ -144,28 +152,32 @@ footer_columns:
       - { title: "Security & Compliance",  url: /platform/security }
       - { title: "Deploy Anywhere",        url: /platform/deploy }
       - { title: "Architecture",           url: /platform/architecture }
+      - { title: "Integrations",           url: /integrations }
       - { title: "Developers & APIs",      url: /developers }
 
-  - heading: Use Cases
+  - heading: Solutions
     links:
+      - { title: "All Solutions",         url: /solutions }
       - { title: "Anonymous to Known",    url: /solutions/convert-visitors }
       - { title: "Grow Lifetime Value",   url: /solutions/boost-clv }
       - { title: "Prevent Churn",         url: /solutions/prevent-churn }
       - { title: "Sharpen Ad Targeting",  url: /solutions/optimize-adspend }
+      - { title: "Marketing & Growth",    url: /solutions/marketing }
+      - { title: "Data & Engineering",    url: /solutions/engineering }
+      - { title: "AI & Agents",           url: /solutions/ai-agents }
 
   - heading: Industries
     links:
+      - { title: "All Industries",         url: /industries }
       - { title: "Sports & Entertainment", url: /solutions/sports }
       - { title: "Media & Broadcast",      url: /solutions/media }
       - { title: "Brands & Sponsors",      url: /solutions/brands }
       - { title: "Events & Hospitality",   url: /solutions/travel }
       - { title: "Retail & E-commerce",    url: /solutions/retail }
-      - { title: "Marketing & Growth",     url: /solutions/marketing }
-      - { title: "Data & Engineering",     url: /solutions/engineering }
-      - { title: "AI & Agents",            url: /solutions/ai-agents }
 
   - heading: Compare
     links:
+      - { title: "All comparisons", url: /compare }
       - { title: "vs LiveLike",  url: /compare/livelike }
       - { title: "vs Meiro",     url: /compare/meiro }
       - { title: "vs Segment",   url: /compare/segment }

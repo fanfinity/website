@@ -24,6 +24,13 @@
   body: "Live interactivity, gamification, and loyalty — polls, predictions, quizzes, quests, streaks, and leaderboards — combined with omnichannel activation across WhatsApp, email, push, and paid media. In design preview; not yet generally available."
   capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, WhatsApp & Email, Journey Orchestration, Ad Audiences]
 
+- title: Fanfinity Activate
+  url: /platform/activate
+  icon: megaphone
+  outcome: Reach every fan.
+  body: "The activation layer that turns one governed profile into real-time engagement across WhatsApp, email, push, and paid media. Segment on live behavior, orchestrate journeys that react, and suppress fans who've already converted."
+  capabilities: [Omnichannel Activation, Audience Segmentation, Journey Orchestration, Ad Audiences & Suppression]
+
 - title: Fanfinity Measure
   url: /platform/measure
   icon: chart

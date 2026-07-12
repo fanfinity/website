@@ -10,7 +10,10 @@
       </a>
 
       <!-- Desktop navigation -->
-      <ul class="hidden relative items-center gap-0.5 lg:flex">
+      <!-- No `relative` here: the full-width product mega-panel (Platform) centers on the
+           sticky <header> so it stays viewport-centered and never triggers horizontal scroll.
+           Simple dropdowns position against their own `relative` <li>, unaffected. -->
+      <ul class="hidden items-center gap-0.5 lg:flex">
         {%- for item in nav.header -%}
           {%- assign active = false -%}
           {%- if item.url != '/' and page.url contains item.url -%}{%- assign active = true -%}{%- endif -%}
@@ -28,7 +31,7 @@
               {%- if item.product_cards -%}
                 <div id="menu-{{ item.title | slugify }}"
                      class="nav-panel left-1/2 -translate-x-1/2"
-                     style="width: 66rem; max-width: calc(100vw - 3rem)"
+                     style="width: 80rem; max-width: calc(100vw - 3rem)"
                      data-dropdown-panel hidden>
                   <div class="flex gap-2 p-1">
                     {%- for product in item.products -%}

@@ -20,6 +20,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - src
+  - scripts
+  # Raw source-catalog export — consumed by scripts/build-integrations.mjs into
+  # _data/integrations.json; must never be published (carries upstream vendor names).
+  - sources.json
   # Repo docs — not public pages
   - README.md
   - CLAUDE.md

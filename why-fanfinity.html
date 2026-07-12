@@ -33,14 +33,15 @@ faqs:
     a: "Resolved and stored in-region, in-Kingdom, PDPL-governed at the data layer rather than patched on top. You pick the deployment (your own cloud, on-premise, or fully managed), and your customer data stays in your control."
 ---
 {% include hero.html
-   variant="gradient"
    eyebrow="Why Fanfinity"
    title="The real-time, in-region fan CDP"
    subtitle="One consented first-party fan graph: collect, resolve, activate, and prove. Horizontal CDPs unify data but can't activate live moments. Engagement tools create activity with anonymous fans. Fanfinity does both, in-region, and proves the outcome."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
-   secondary_url="/platform" %}
+   secondary_url="/platform"
+   image="/assets/img/why-fanfinity.jpg"
+   image_alt="Aerial view of a soccer field" %}
 
 <div id="flow" class="scroll-mt-24"></div>
 {% include feature-grid.html
@@ -67,6 +68,18 @@ faqs:
    subheading="We model our feature set on the incumbents, so our edge is posture, not a longer feature list. Every claim below is labeled until proven."
    items=page.why
    columns=3 %}
+
+<section class="section pt-0">
+  <div class="container-page">
+    <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">See how Fanfinity compares, head to head</h2>
+        <p class="mt-1 text-muted-foreground">Side-by-side with horizontal CDPs, warehouse activation tools, and engagement suites.</p>
+      </div>
+      <a href="{{ '/compare' | relative_url }}" class="btn btn-secondary shrink-0">Compare Fanfinity {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+  </div>
+</section>
 
 {% include proof.html %}
 

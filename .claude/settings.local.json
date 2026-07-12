@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes impeccable skills install --providers=.claude --yes)",
+      "Bash(node .claude/skills/impeccable/scripts/context.mjs)",
+      "Bash(curl -sS http://localhost:4000/platform/)",
+      "Bash(curl -sS -o /dev/null -w \"%{http_code}\" http://localhost:4000/)",
+      "Bash(curl -sS http://localhost:4000/)",
+      "Bash(curl -sS http://localhost:4000/home-preview/)",
+      "Bash(node .claude/skills/impeccable/scripts/live-server.mjs stop)",
+      "Bash(grep -nA20 \"^exclude\" _config.yml)",
+      "Bash(node .claude/skills/impeccable/scripts/detect.mjs --json _site/index.html)",
+      "Bash(npm run *)",
+      "Read(//tmp/**)"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "awslabs.core-mcp-server",
+    "xero"
+  ]
+}

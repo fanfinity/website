@@ -10,7 +10,7 @@ web
 
 ## Users
 
-The site sells to business and product leaders at three kinds of organizations that own a live or recurring audience: (1) sports leagues, teams, and rights-holders; (2) broadcasters, streaming/OTT, and media publishers; (3) brands and sponsors running fan or loyalty campaigns. Sports & live entertainment is the proof-richest origin vertical, not the ceiling — the platform is horizontal (media, brands, retail, banking, iGaming, travel, telco all appear as verticals).
+The site sells to business and product leaders at three kinds of organizations that own a live or recurring audience: (1) sports leagues, teams, and rights-holders; (2) broadcasters, streaming/OTT, and media publishers; (3) brands and sponsors running fan or loyalty campaigns. Sports & live entertainment is the proof-richest origin vertical, not the ceiling — the platform is horizontal (media, brands, events & hospitality, and retail appear as verticals).
 
 The economic buyer is a business/product leader — VP/Director Digital, Head of Fan Engagement/Experience, Audience/Growth lead, or Brand Activation / Loyalty / CRM lead. Engineering and data teams are secondary technical evaluators, not the buyer. Exact roles are hypotheses to validate (see `docs/marketing/personas-jtbd.md`). Their context: they have reach but no owned participation data, they're asked to prove value to boards and sponsors, and every season or campaign turns into a bespoke build.
 
