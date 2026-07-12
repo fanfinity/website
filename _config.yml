@@ -27,13 +27,6 @@ exclude:
   # Repo docs — not public pages
   - README.md
   - CLAUDE.md
-  # Internal marketing foundation docs — NOT for publication
-  - docs
-  - competitor-profiles
-  # impeccable design-context files — internal, not public pages
-  - PRODUCT.md
-  - DESIGN.md
-  - .impeccable
 
 kramdown:
   syntax_highlighter: rouge

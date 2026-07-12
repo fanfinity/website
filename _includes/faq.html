@@ -3,7 +3,6 @@ Accessible FAQ accordion. Native <details>/<summary> — no JS needed.
 Pass items via `include.faqs` (a list of {q, a}) OR set `page.faqs` in front matter.
 Optional: include.eyebrow, include.heading.
 HONESTY: answers must not invent proof, metrics, or logos. Unproven claims get "(to confirm)".
-Source objections/answers from .agents/product-marketing.md.
 {%- endcomment -%}
 {%- assign faqs = include.faqs | default: page.faqs -%}
 {%- if faqs -%}
