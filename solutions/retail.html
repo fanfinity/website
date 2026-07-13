@@ -7,7 +7,7 @@ description: "For retail and e-commerce: stitch the same shopper across web, app
 breadcrumb_parent: { title: Solutions, url: /solutions }
 resolution:
   - { icon: identity, title: "One shopper, not three records", body: "Stitch online browsing, app activity, and in-store purchases into a single golden profile, so the same person stops appearing as three anonymous shoppers." }
-  - { icon: link,     title: "Web session to till receipt", body: "Connect a web session to a store purchase to a loyalty scan, closing the online-to-offline gap most retail stacks never bridge." }
+  - { icon: link,     title: "Web session to till receipt", body: "Connect a web session to a store purchase to a loyalty scan, so online and offline behavior finally meet in one record." }
   - { icon: stack,    title: "First-party audiences, post-cookie", body: "Build durable, owned audiences from your own data instead of renting reach through third-party cookies you are about to lose." }
   - { icon: slider,   title: "Personalize from the first visit", body: "Adapt offers and recommendations in real time for known and anonymous shoppers alike, before they have logged in." }
   - { icon: gift,     title: "Loyalty on data you own", body: "Base tiers, points, and rewards on the resolved profile, with richer gamified loyalty experiences in Preview." }
@@ -21,6 +21,10 @@ replenish_points:
   - "Learn each shopper's repurchase rhythm from real purchase history, in store and online."
   - "Time the reminder or offer to the moment a consumable is likely running low, not to a blanket send."
   - "Recognize the same person whether the last purchase was a store visit or an app checkout."
+media_points:
+  - "Package consented shopper segments as addressable audiences vendor brands can buy. (to confirm)"
+  - "Prove vendor campaigns with verified reach and outcomes on the same graph that ran them."
+  - "Keep every activation consent-scoped, so monetization never outruns permission."
 ---
 {% include hero.html
    eyebrow="Solutions · Retail & E-commerce"
@@ -57,6 +61,15 @@ replenish_points:
    cta_text="See how identity works"
    cta_url="/platform/id"
    icon="identity" %}
+
+{% include feature-split.html
+   eyebrow="The retail-media use case"
+   title="Your shopper data is inventory, when you can prove it"
+   body="Retail media only works if the audience is real and the outcome is measurable. Because shopper profiles are resolved, consented, and owned, you can offer vendor brands addressable segments and report exposure to outcome, the same proof loop our sports vertical gives sponsors. (Retail-media packaging: to confirm.)"
+   points=page.media_points
+   cta_text="See how measurement works"
+   cta_url="/platform/measure"
+   icon="coins" %}
 
 {% include cta-band.html
    heading="Know every shopper, personalize every journey"

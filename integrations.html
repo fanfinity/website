@@ -24,7 +24,7 @@ categories:
 {% include feature-grid.html
    eyebrow="By category"
    heading="Connectors across your stack"
-   subheading="An open connector framework across the categories below. Browse the full directory of live sources further down."
+   subheading="An open connector framework across the categories below. Browse the full connector directory further down."
    items=page.categories
    columns=3 %}
 
@@ -32,15 +32,14 @@ categories:
 <section class="section border-t border-border">
   <div class="container-page">
     <div class="max-w-2xl">
-      <p class="eyebrow">Full directory</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Every source, one fan graph</h2>
-      <p class="mt-4 text-lg text-muted-foreground">Fanfinity connects to {{ source_count }} sources out of the box — from ticketing and streaming to CRM, ad platforms, messaging, and your warehouse. Search the full catalog below.</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Every connector, one fan graph</h2>
+      <p class="mt-4 text-lg text-muted-foreground">Fanfinity connects to {{ source_count }} tools through our connector framework, spanning sources and destinations: ticketing, streaming, CRM, ad platforms, messaging, and your warehouse. Search the full catalog below.</p>
     </div>
 
     <div class="mt-10 max-w-md">
-      <label for="integrations-search" class="sr-only">Search sources</label>
+      <label for="integrations-search" class="sr-only">Search connectors</label>
       <input id="integrations-search" type="search" data-integrations-filter autocomplete="off"
-             placeholder="Search {{ source_count }} sources…"
+             placeholder="Search {{ source_count }} connectors…"
              class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
     </div>
 
@@ -51,6 +50,8 @@ categories:
       </li>
       {%- endfor -%}
     </ul>
-    <p data-integrations-empty hidden class="mt-8 text-sm text-muted-foreground">No sources match that search.</p>
+    <p data-integrations-empty hidden class="mt-8 text-sm text-muted-foreground">No connectors match that search.</p>
+
+    <p class="mt-10 text-muted-foreground">Don't see your tool? New connectors are added through the framework, and custom sources are part of scoping. <a href="{{ '/contact' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Talk to us</a>.</p>
   </div>
 </section>

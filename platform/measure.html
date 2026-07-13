@@ -15,7 +15,7 @@ proof_points:
   - "Turn first-party audiences into sponsorable inventory with a real number behind it."
   - "Sponsors self-serve a live dashboard, so accountability replaces the end-of-campaign PDF."
 how:
-  - { icon: identity, title: "Resolve the audience", body: "Every impression, view, and interaction is tied back to a resolved fan profile in Fanfinity ID. A reach number is a count of real, deduplicated people, not raw device or cookie hits inflated across channels." }
+  - { icon: identity, title: "Resolve the audience", body: "Every impression, view, and interaction is tied back to a resolved fan profile in Fanfinity ID, so reach counts people rather than devices or cookies inflated across channels." }
   - { icon: chart,    title: "Connect exposure to outcome", body: "Because exposure and downstream behavior land on the same profile, Measure joins the two deterministically. You see who was reached by a campaign or sponsor placement and what they did afterward, without stitching reports together by hand." }
   - { icon: gauge,    title: "Make the number self-serve", body: "Results flow into a live portal instead of a quarterly deck. Sponsors, partners, and internal teams query the same governed data, so everyone is working from one version of the truth." }
 enrich_points:
@@ -23,13 +23,8 @@ enrich_points:
   - "First-party matching recovers reach that browser-side tracking loses to privacy controls and blockers. (match-rate figures to confirm)"
   - "Suppress fans who have already converted, so ad budget is spent on reach that can still move."
   - "Enrichment runs on data you own, in-region, with consent enforced at the profile."
-availability_points:
-  - "Measurement reads clean, consolidated, standardized data, not raw event dumps a team has to reshape before it can be trusted."
-  - "The same governed data sits in a warehouse you own and control, so BI, analytics, and data-science teams query it directly."
-  - "There is no separate measurement database to keep in sync; proof and activation run on one profile and one pipeline."
-  - "Sponsors, partners, and internal teams work from one version of the truth rather than reconciling exports after the fact."
 availability:
-  - { icon: chart,    title: "Data that is ready to use", body: "Because signals are validated, deduplicated, and resolved on the way in, the numbers you report on are already clean and consolidated. Teams spend their time interpreting results, not reshaping raw event dumps before anyone can trust them." }
+  - { icon: chart,    title: "Data that is ready to use", body: "Because signals are validated, deduplicated, and resolved on the way in, the numbers you report on arrive reconciled and query-ready. Teams spend their time interpreting results, not reshaping raw event dumps before anyone can trust them." }
   - { icon: stack,    title: "In a warehouse you own", body: "Resolved fan data lands in a columnar analytical warehouse you self-manage in-region. Business-intelligence, analytics, and data-science teams query the same governed data directly, so Measure is a view onto your owned data, not a separate silo to reconcile." }
   - { icon: shield,   title: "Governed the whole way", body: "Reach and outcome numbers inherit the consent and residency rules that live on the profile. Measurement never becomes the place where governance quietly breaks, because the number and the compliance posture come from the same record." }
 ---

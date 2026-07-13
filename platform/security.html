@@ -8,7 +8,7 @@ features:
   - { icon: shield,   title: "Encrypted end to end",            body: "Fan data is encrypted in transit and at rest. Self-host and you hold the keys, there's no plaintext copy of your fan base sitting anywhere you don't control." }
   - { icon: identity, title: "Least-privilege access",          body: "Granular roles, SSO, and least-privilege access mean people and services reach only the data a task needs, and every access is recorded." }
   - { icon: scale,    title: "Consent enforced at the core",    body: "Consent and purpose are stored with the data and enforced at the data layer, so a withdrawn consent actually propagates rather than lingering in a copy." }
-  - { icon: gauge,    title: "Audit trails & monitoring",       body: "Immutable audit logs and activity monitoring make it clear who touched what, and when. It's the record regulators and partners expect to see." }
+  - { icon: gauge,    title: "Audit trails & monitoring",       body: "Append-only, tamper-evident audit logs (to confirm) and activity monitoring make it clear who touched what, and when. It's the record regulators and partners expect to see." }
   - { icon: stack,    title: "Data minimization & retention",   body: "Collect only what a use case needs, set retention windows, and delete on schedule. Privacy by design, not privacy by periodic cleanup." }
   - { icon: code,     title: "Secure by construction",          body: "Secure development practices, dependency scanning, and tenant isolation build security into how the platform is made, not bolted on after." }
 points:
@@ -18,19 +18,14 @@ points:
   - "You remain the controller: self-host with your own keys, or run Fanfinity-managed under contract."
 tenancy:
   - { icon: stack, title: "Single-tenant by deployment", body: "Run Fanfinity in your own cloud account or on-premise and your fan data sits in a dedicated environment, not shared multi-tenant infrastructure. That removes a whole class of noisy-neighbour and shared-platform risk before you configure anything." }
-  - { icon: shield, title: "Bring your own security stack", body: "The deployment integrates with the controls you already run, your encryption keys, your identity and access management, your network policy. Fanfinity inherits your security posture instead of asking you to adopt a new one." }
+  - { icon: shield, title: "Bring your own security stack", body: "The deployment integrates with the controls you already run: your key management, your SSO and access stack, your network rules. Fanfinity inherits your security posture instead of asking you to adopt a new one." }
   - { icon: gauge, title: "Stream to your own monitoring", body: "Logs, metrics, and audit trails flow to the monitoring and SIEM tools your security team already watches. Observability lives where your analysts work, not behind a vendor console you can't inspect." }
   - { icon: identity, title: "You stay the controller", body: "Self-host and no external operator holds a plaintext copy of your fan base or a standing view of it. You decide who and what can reach the data, and every access is recorded." }
-how:
-  - { icon: shield, title: "Protect the data itself", body: "Fan data is encrypted in transit and at rest. When you self-host, the keys are yours, so protection doesn't depend on trusting a third party with the plaintext." }
-  - { icon: identity, title: "Constrain who reaches it", body: "Access runs on least privilege: granular roles, SSO, and scoped service permissions mean each person or system touches only the data a task requires. Every access is logged." }
-  - { icon: scale, title: "Enforce consent at the core", body: "Consent and purpose are stored with the data and checked at the data layer, so a withdrawn permission actually propagates rather than lingering in a downstream copy." }
-  - { icon: gauge, title: "Keep a provable record", body: "Immutable audit logs and activity monitoring show who touched what, and when, the evidence your security, legal, and partner reviews all ask to see." }
 ---
 {% include hero.html
    eyebrow="The platform"
    title="Security and compliance, built in at the data layer"
-   subtitle="Fan data is some of the most sensitive data a rights holder holds. Fanfinity protects it with encryption, least-privilege access, consent enforcement, and full audit trails, governed where the data lives, not patched on at the edges."
+   subtitle="Fan data is some of the most sensitive data an organization holds. Fanfinity protects it with encryption, least-privilege access, consent enforcement, and full audit trails, governed where the data lives, not patched on at the edges."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="See in-Kingdom & residency"
@@ -44,13 +39,6 @@ how:
    subheading="Encryption, access, consent, and audit are enforced at the data layer, so the guarantees hold wherever and however you deploy."
    items=page.features
    columns=3 %}
-
-{% include feature-grid.html
-   eyebrow="How protection works"
-   heading="Four guarantees that hold wherever you deploy"
-   subheading="Encryption, access, consent, and audit are enforced at the data layer, so the same protections apply whether you self-host, run on-premise, or use a managed deployment."
-   items=page.how
-   columns=2 %}
 
 {% include feature-grid.html
    eyebrow="Single-tenant by design"
@@ -68,4 +56,16 @@ how:
    cta_text="See how we deploy"
    cta_url="/platform/deploy"
    icon="shield" %}
+
+<section class="section-sm">
+  <div class="container-page">
+    <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">Put these controls in front of your security team</h2>
+        <p class="mt-1 text-muted-foreground">We'll walk your reviewers through encryption, access, consent, and audit in your deployment model. See also our <a href="{{ '/privacy' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">privacy policy</a>.</p>
+      </div>
+      <a href="{{ '/demo' | relative_url }}" class="btn btn-secondary shrink-0">Book a review session {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+  </div>
+</section>
 

@@ -8,21 +8,21 @@ models:
   - { icon: stack, title: "Your cloud (bring-your-own-cloud)", body: "Deploy Fanfinity inside your own cloud account or private network, in the region you require. The platform runs on infrastructure you already govern, so it inherits your security policy instead of asking you to trust a new one." }
   - { icon: shield, title: "On-premise", body: "Run the full stack on your own servers for maximum control. Fit it into a Kubernetes, container, or traditional server setup, and keep the most sensitive fan data behind your own perimeter." }
   - { icon: bolt, title: "Fanfinity-managed", body: "Prefer speed over infrastructure work? Run Fanfinity as a managed deployment under contract, in a region you choose, while keeping the residency and consent guarantees intact." }
-  - { icon: link, title: "Hybrid", body: "Keep the most sensitive fan data on-premise while using the elasticity of the cloud for heavier processing and analytics. The architecture is infrastructure-agnostic, so it adapts to your IT strategy rather than dictating it." }
+  - { icon: link, title: "Hybrid", body: "Keep regulated records behind your own perimeter while heavier processing runs on cloud capacity you already own. The architecture doesn't care where each piece lands, so the split is yours to draw." }
 how:
   - { icon: plug, title: "Pick your infrastructure", body: "Choose where the platform runs, your cloud account, on-premise, or Fanfinity-managed. Residency is a deployment decision made once, up front, not a region flag toggled after your data already left." }
-  - { icon: identity, title: "Bring your own security", body: "The deployment integrates with the security stack you already run: your encryption keys, your identity and access management, your network controls. Fanfinity fits inside your policy instead of replacing it." }
+  - { icon: identity, title: "Bring your own security", body: "The deployment integrates with the security stack you already run: your key management, your identity provider, your network controls. Fanfinity fits inside your policy instead of replacing it." }
   - { icon: stack, title: "Compose with your warehouse", body: "Point Fanfinity at your own analytical warehouse, or deploy the full stack alongside it with a zero-copy posture. Take only the components you need, the platform is composable, not all-or-nothing." }
   - { icon: gauge, title: "Observe and update on your terms", body: "Stream logs, metrics, and audit trails to your own monitoring tools, and take updates on a schedule that fits your change process rather than a vendor's release calendar. (Update cadence: to confirm as we onboard partners.)" }
 fit_points:
   - "Run in your own cloud account or private network, in the region you require, no vendor copy of your fan base."
   - "On-premise for full control, or Fanfinity-managed when you want speed over infrastructure."
   - "In-Kingdom data residency and PDPL consent governed at the data layer, not patched on top."
-  - "Warehouse-composable, point it at your own analytical warehouse, or run the full stack alongside it with a zero-copy posture."
+  - "Warehouse-composable: point it at your own analytical warehouse and take only the components you need."
 region_points:
   - "Deploy in-Kingdom to keep fan data inside Saudi Arabia, or in any region your rules require."
   - "The same platform runs across major cloud providers and on-premise, residency is a choice, not a limitation."
-  - "New in-region cloud availability is expanding across the Kingdom; on-premise and private-network options are available today. (Provider-region availability: to confirm.)"
+  - "In-region cloud availability keeps expanding across the Kingdom; on-premise and private-network deployments are the options we scope first. (Provider-region availability: to confirm.)"
   - "Because deployment is portable by design, moving regions is a configuration decision, not a re-platforming project."
 faqs:
   - q: "Where can Fanfinity actually run?"
@@ -30,13 +30,13 @@ faqs:
   - q: "Do you get a copy of our fan data?"
     a: "When you self-host in your own cloud or on-premise, no. The platform runs inside infrastructure you control, with your own keys, so there is no offshore vendor copy of your fan base. If you choose the managed option, residency and access terms are set in the contract."
   - q: "Do we have to move off our existing warehouse or cloud?"
-    a: "No. The architecture is composable and infrastructure-agnostic. You can point Fanfinity at your own analytical warehouse, deploy the full stack alongside it with a zero-copy posture, and keep using the cloud you already run. Take only the components you need."
+    a: "No. The architecture is composable and infrastructure-agnostic: point Fanfinity at your own analytical warehouse and keep using the cloud you already run."
   - q: "Who operates the deployment, us or Fanfinity?"
     a: "Your call. Self-host and your IT team keeps full control over security, access, and residency, with the platform integrating into your existing stack. Choose managed and Fanfinity runs the infrastructure while the residency and consent guarantees stay in place."
 ---
 {% include hero.html
    eyebrow="The platform"
-   title="Deploy anywhere. Your data, your choice."
+   title="Your cloud, your servers, or ours. Your call."
    subtitle="Run Fanfinity in your own cloud, on-premise, or fully managed, in-Kingdom or any region. Residency and consent are governed at the data layer, so where your fan data lives is a decision you make, not one a vendor makes for you."
    cta_text="Book a Demo"
    cta_url="/demo"
@@ -48,14 +48,14 @@ faqs:
 {% include feature-grid.html
    eyebrow="Deployment models"
    heading="Four ways to run it, one platform"
-   subheading="The same system runs in your cloud, on your servers, or fully managed, so residency, control, and speed are trade-offs you choose rather than accept."
+   subheading="The same system runs in your cloud, on your servers, or fully managed, so residency, control, and speed are trade-offs you choose rather than accept. (Deployment options are scoped per engagement: to confirm.)"
    items=page.models
    columns=2 %}
 
 {% include feature-grid.html
    eyebrow="How deployment works"
-   heading="Fits your infrastructure, not the other way around"
-   subheading="Fanfinity adapts to the stack, security policy, and warehouse you already run. Setup is a matter of pointing the platform at infrastructure you control and keeping your own governance in place."
+   heading="Setup starts from what you already run"
+   subheading="Point the platform at infrastructure you control, keep your own governance in place, and integrate the stack, security policy, and warehouse you already operate."
    items=page.how
    columns=2 %}
 

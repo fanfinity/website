@@ -27,6 +27,8 @@ exclude:
   # Repo docs — not public pages
   - README.md
   - CLAUDE.md
+  # Image-credit notes — keep in repo, never publish as a page
+  - assets/img/CREDITS.md
 
 kramdown:
   syntax_highlighter: rouge

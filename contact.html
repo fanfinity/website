@@ -2,7 +2,7 @@
 layout: page
 permalink: /contact
 title: Contact
-description: Talk to the Fanfinity team about a demo, a pilot, partnerships, or press. Real-time, in-region fan data for sports and live entertainment.
+description: Talk to the Fanfinity team about a demo, a pilot, partnerships, or press. Real-time, in-region fan data for sports, media, brands, and beyond.
 breadcrumb_parent: { title: Fanfinity, url: / }
 cta: false
 reach:
@@ -13,7 +13,7 @@ reach:
     link_url: /demo
   - icon: megaphone
     title: Partnerships & sponsors
-    body: "Rights holders, broadcasters, and brands exploring first-party fan data and sponsorship proof."
+    body: "Rights holders, broadcasters, and brands in any industry exploring first-party fan data and sponsorship proof."
     link_text: "Start with the form"
     link_url: "#contact-form"
   - icon: shield
@@ -33,8 +33,7 @@ reach:
 
       <!-- Ways to reach us -->
       <div data-reveal>
-        <p class="eyebrow">Ways to reach us</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Pick the path that fits</h2>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Pick the path that fits</h2>
         <p class="mt-4 text-lg text-muted-foreground">Prefer to talk it through live? Book a demo. Everything else starts with the form, which reaches the team directly.</p>
         <ul class="mt-8 space-y-5">
           {%- for item in page.reach -%}
@@ -57,20 +56,20 @@ reach:
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
           <div class="grid gap-4 sm:grid-cols-2">
             <label class="block text-sm font-medium text-foreground">First name
-              <input type="text" name="first_name" autocomplete="given-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <input type="text" name="first_name" autocomplete="given-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
               <p data-error-for="first_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
             <label class="block text-sm font-medium text-foreground">Last name
-              <input type="text" name="last_name" autocomplete="family-name" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+              <input type="text" name="last_name" autocomplete="family-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
               <p data-error-for="last_name" class="mt-1 hidden text-xs text-red-600"></p>
             </label>
           </div>
           <label class="block text-sm font-medium text-foreground">Work email
-            <input type="email" name="email" autocomplete="email" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <input type="email" name="email" autocomplete="email" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
             <p data-error-for="email" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">Company
-            <input type="text" name="company" autocomplete="organization" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
+            <input type="text" name="company" autocomplete="organization" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
             <p data-error-for="company" class="mt-1 hidden text-xs text-red-600"></p>
           </label>
           <label class="block text-sm font-medium text-foreground">What's this about?
@@ -86,6 +85,7 @@ reach:
             <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
           </label>
           <button type="submit" class="btn btn-primary btn-lg w-full">Send message</button>
+          <p class="text-center text-xs leading-relaxed text-muted-foreground">We reply within one business day. Your details are handled per our <a href="{{ '/privacy' | relative_url }}" class="underline underline-offset-2">privacy policy</a>.</p>
           <p data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>

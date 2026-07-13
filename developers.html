@@ -2,22 +2,27 @@
 layout: page
 permalink: /developers
 title: Developers
-description: "Fanfinity is an API-first, multi-tenant platform: a REST API and client SDKs, with a producer surface your content team runs."
+description: "Fanfinity is API-first and deployed single-tenant in your environment: a REST API and SDKs for the live data layer, with engagement surfaces in design preview."
 dev_grid:
-  - { icon: code,  title: "REST API",            body: "Every capability is programmable over a REST API with OAuth 2.0: Applications, Profiles, Programs, Widgets, Rewards, Leaderboards and more." }
-  - { icon: stack, title: "Client SDKs",         body: "Deliver interactive widgets and themes to iOS, Android, and Web through client SDKs, with a producer surface your content team runs." }
-  - { icon: plug,  title: "Integrations & data", body: "Map your existing user and content IDs with custom IDs and queryable attributes, with no parallel database to maintain." }
+  - { icon: code,  title: "REST API (Live)",     body: "The live data layer is programmable over a REST API with OAuth 2.0: profiles, identity, events, programs, and measurement. The client secret stays server-side; profile tokens scope a single fan." }
+  - { icon: plug,  title: "Identity & data model (Live)", body: "Map your existing user, CMS, commerce, or stats IDs one-to-one with custom identifiers; queryable attributes handle one-to-many. No parallel database to maintain." }
+  - { icon: stack, title: "Client SDKs (surfaces in Preview)", body: "SDKs for iOS, Android, and Web. The data and identity calls are live; the interactive widget, rewards, and leaderboard surfaces they will render are in design preview." }
 dev_points:
   - "OAuth 2.0 Bearer auth: the client secret stays server-side, and profile tokens scope a single fan."
-  - "Custom IDs map your CMS, EPG, or stats systems one-to-one; queryable attributes handle one-to-many."
+  - "Custom IDs map your CMS, commerce, EPG, or stats systems one-to-one; queryable attributes handle one-to-many."
   - "Programs emit start/stop status events your integrations can subscribe to."
-  - "Spoiler-safe sync ships in the client SDK, with HLS Program-Date-Time support."
+  - "Spoiler-safe playback sync (HLS Program-Date-Time) is designed into the client SDK. (Design preview.)"
   - "Live today: the identity, profile, program, and data APIs. In design preview: the interactive widget, rewards, and leaderboard surfaces."
+docs_points:
+  - "The full API reference is shared under guided evaluation today; a public docs portal is on the roadmap, not promised for a date."
+  - "Evaluation is hands-on: walk the API surface, the deployment model, and the identity rules with our engineers."
+  - "Browse the connector directory to see what plugs in without custom work."
+  - "Read the architecture overview for how collect, resolve, activate, and prove fit together."
 ---
 {% include hero.html
    eyebrow="For developers"
    title="Built for the teams who ship it"
-   subtitle="Fanfinity is a REST API and client SDKs. Engineering integrates once; your content team runs the rest from a producer surface."
+   subtitle="A REST API and client SDKs on a platform you deploy in your own environment. Engineering integrates the live data layer once; the engagement surfaces on top are in design preview, and we label them that way."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="See the platform"
@@ -28,7 +33,7 @@ dev_points:
 {% include feature-grid.html
    eyebrow="The building blocks"
    heading="An API-first platform"
-   subheading="A clean resource model (Applications → Profiles → Programs → Widgets → Rewards) that you integrate once."
+   subheading="A clean resource model (Applications → Profiles → Programs, with Widget and Reward surfaces in preview) that you integrate once."
    items=page.dev_grid
    columns=3 %}
 
@@ -38,3 +43,25 @@ dev_points:
    body="Connect Fanfinity to your identity, content, and data systems without rebuilding them. Engineering owns the integration; the producer surface owns the day-to-day."
    points=page.dev_points
    icon="code" %}
+
+{% include feature-split.html
+   reverse=true
+   eyebrow="Docs & evaluation"
+   title="Evaluate it like an engineer"
+   body="There's no self-serve sandbox today, and we won't pretend otherwise. Evaluation is a guided, technical walkthrough on your use case, with the reference material to go deep."
+   points=page.docs_points
+   cta_text="Browse the connector directory"
+   cta_url="/integrations"
+   icon="stack" %}
+
+<section class="section-sm">
+  <div class="container-page">
+    <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">How the system fits together</h2>
+        <p class="mt-1 text-muted-foreground">Collect, resolve, store, activate, and prove, as one vendor-generic architecture.</p>
+      </div>
+      <a href="{{ '/platform/architecture' | relative_url }}" class="btn btn-secondary shrink-0">Read the architecture {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+  </div>
+</section>

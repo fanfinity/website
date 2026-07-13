@@ -5,9 +5,13 @@ title: Book a Demo
 description: See how Fanfinity turns your live audience into active, returning, monetizable fans. Book a walkthrough with our team.
 cta: false
 expect:
-  - "A walkthrough mapped to your vertical: sports, broadcast, or brand."
-  - "A look at the connected stack: identity and analytics live today, with widgets, loyalty, and rewards in design preview."
+  - "A walkthrough mapped to your industry: sports, media, retail, travel, or brand."
+  - "A look at the connected stack: collection, identity, activation, and measurement live today, with widgets, loyalty, and rewards in design preview."
   - "Straight answers on integration, timelines, and how pricing would work for you."
+leave_with:
+  - "An integration outline for your stack and your identifiers."
+  - "A deployment and residency recommendation for your region."
+  - "The shape of pricing for your volume, in writing."
 ---
 {% include hero.html
    variant="gradient"
@@ -22,10 +26,18 @@ expect:
 
       <!-- What to expect -->
       <div data-reveal>
-        <p class="eyebrow">What to expect</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A working session, not a sales pitch</h2>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">A working session, not a sales pitch</h2>
         <ul class="mt-8 space-y-4">
           {%- for point in page.expect -%}
+            <li class="flex gap-3">
+              <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-4 w-4" %}</span>
+              <span class="text-base leading-relaxed text-muted-foreground">{{ point }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <h3 class="mt-10 text-lg font-semibold text-foreground">What you'll leave with</h3>
+        <ul class="mt-4 space-y-4">
+          {%- for point in page.leave_with -%}
             <li class="flex gap-3">
               <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-4 w-4" %}</span>
               <span class="text-base leading-relaxed text-muted-foreground">{{ point }}</span>
@@ -62,6 +74,7 @@ expect:
               <option>Sports league or team</option>
               <option>Broadcaster or media company</option>
               <option>Brand or agency</option>
+              <option>Retail, travel, or another industry</option>
               <option>Something else</option>
             </select>
           </label>
@@ -69,7 +82,7 @@ expect:
             <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
           </label>
           <button type="submit" class="btn btn-primary btn-lg w-full">Request my demo</button>
-          <p class="text-center text-xs leading-relaxed text-muted-foreground">No commitment. We usually reply within one business day, and your details stay with our team.</p>
+          <p class="text-center text-xs leading-relaxed text-muted-foreground">No commitment. We usually reply within one business day, and your details are handled per our <a href="{{ '/privacy' | relative_url }}" class="underline underline-offset-2">privacy policy</a>. Not ready to book? <a href="{{ '/contact' | relative_url }}" class="underline underline-offset-2">Contact us</a> instead.</p>
           <p id="demo-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>

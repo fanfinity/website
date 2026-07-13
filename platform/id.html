@@ -5,11 +5,11 @@ title: Fanfinity ID
 description: "A sovereign CDP and real-time identity graph that resolves every touchpoint into one consented, governed fan profile, in-region and yours to own."
 breadcrumb_parent: { title: Platform, url: /platform }
 pillars:
-  - { icon: identity, title: "Recognize more fans, in real time", body: "Fans arrive across devices and browsers (logged in or anonymous), leaving fragmented data behind. Fanfinity ID stitches anonymous and known interactions into one profile, so you recognize the same fan across every touchpoint." }
+  - { icon: identity, title: "Recognize more fans, in real time", body: "The same fan shows up as a phone at the gate, a laptop on the stream, and an anonymous browser in between. Fanfinity ID joins those appearances into one profile, so recognition survives every device switch." }
   - { icon: bolt,     title: "Real-time stitching, not overnight batches", body: "The moment a fan acts is the moment to respond. Profiles update in real time as signals arrive, with no waiting on a nightly batch to learn what already happened." }
-  - { icon: users,    title: "Fan definitions that fit your model", body: "Track individuals, households, accounts, and multi-user organizations. Identity resolution adapts to B2C, B2B, and hybrid structures instead of forcing your fans into one shape." }
-  - { icon: link,     title: "A graph-based model across the journey", body: "Anonymous behavior is tracked from the first touch and back-stitched to the profile once a fan identifies. A real-time graph maps the relationships between signals and deduplicates as it goes." }
-  - { icon: slider,   title: "No limits on stitching rules", body: "Resolve on any number of identifiers, not one hard ID like email. Apply your own data-quality and sanitization rules (case handling, input errors, test-account exclusions) to keep identity accurate." }
+  - { icon: users,    title: "Fan definitions that fit your model", body: "Decide what a fan means for your business: one person, a family sharing a season pass, or a corporate box holder. Resolution follows your definition instead of forcing one shape." }
+  - { icon: link,     title: "One journey, read as one story", body: "Anonymous behavior is tracked from the first touch and joined to the profile once a fan identifies, so the pre-signup history and everything after it read as one relationship." }
+  - { icon: slider,   title: "Stitching rules you define", body: "Resolve on any combination of identifiers rather than one hard key, and apply your own data-quality rules so identity stays accurate as profiles merge." }
 govern_points:
   - "Consent is captured and enforced at the profile itself: governance built in, not patched on top."
   - "Fan data is resolved and stored in-Kingdom, PDPL-governed at the data layer."
@@ -21,7 +21,7 @@ connect_points:
   - "Stream to a columnar analytical warehouse you self-manage in-region, so the platform stays composable with your stack."
   - "A clean REST API and client SDKs cover anything custom, so every capability is programmable."
 resolve:
-  - { icon: hash,     title: "Identifiers, not one hard key", body: "Email, device, cookie, app ID, ticket number, custom IDs: each is a first-class identifier with its own merge rules. Resolution connects events on any of them, so you are not forced to hang identity on a single field that is often missing." }
+  - { icon: hash,     title: "Identifiers, not one hard key", body: "Email, device, app ID, ticket or order number, loyalty ID, custom IDs: each is a first-class identifier with its own merge rules. Resolution connects events on any of them, so you are not forced to hang identity on a single field that is often missing." }
   - { icon: link,     title: "A live graph that merges and splits", body: "New signals either match an existing profile, create one, or merge several into a golden record as the graph learns the relationships. Contested matches follow rules you set, rather than silently collapsing two real people into one." }
   - { icon: shield,   title: "Guardrails against false merges", body: "Per-identifier limits stop a shared device or family login from over-merging distinct fans. When a limit would be crossed, the system holds the records apart instead of guessing. Correct identity beats complete-but-wrong identity." }
 faqs:
@@ -34,7 +34,7 @@ faqs:
   - q: "Do we have to move our data to you?"
     a: "No. Fanfinity ID sits on an open connector framework and a warehouse you self-manage in-region. Bring the sources you already have, keep the data in your environment, and stay composable with the rest of your stack."
   - q: "What keeps the graph from getting polluted by dirty data?"
-    a: "Resolution runs alongside schema validation as events land, so a clean profile graph is a property of how data arrives rather than a nightly cleanup job. You apply your own data-quality rules (case handling, input-error correction, test-account exclusions), and per-identifier limits hold contested records apart instead of guessing a merge."
+    a: "Resolution runs alongside schema validation as events land, so graph hygiene is enforced on the way in rather than repaired by a nightly cleanup job. You apply your own data-quality rules (normalizing formats, catching typos, filtering internal test traffic), and per-identifier limits hold contested records apart instead of guessing a merge."
 ---
 {% include hero.html
    eyebrow="Platform · Fanfinity ID"
@@ -49,8 +49,8 @@ faqs:
 
 {% include feature-grid.html
    eyebrow="How it works"
-   heading="Five pillars of accurate fan identity"
-   subheading="From the first anonymous visit to a full unified profile, Fanfinity ID resolves identity at every stage of the journey."
+   heading="Identity that holds up under audit"
+   subheading="From the first anonymous visit to one governed profile, Fanfinity ID keeps resolution accurate, explainable, and current at every stage."
    items=page.pillars
    columns=3 %}
 
@@ -79,5 +79,17 @@ faqs:
    subheading="Resolution matches signals on any identifier, merges them into one golden record, and applies guardrails so distinct fans stay distinct."
    items=page.resolve
    columns=3 %}
+
+<section class="section-sm">
+  <div class="container-page">
+    <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">Put the profile to work</h2>
+        <p class="mt-1 text-muted-foreground">One resolved profile drives segmentation, journeys, and paid audiences in Fanfinity Activate.</p>
+      </div>
+      <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary shrink-0">See Fanfinity Activate {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+  </div>
+</section>
 
 {% include faq.html eyebrow="Questions" heading="Identity questions engineers ask" %}

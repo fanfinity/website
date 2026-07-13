@@ -1,7 +1,7 @@
 # The five products that make up the Fanfinity platform. Reused on the homepage
 # and the /platform hub. Each stands alone; together they form the full loop:
-# Collect -> Identify -> Engage -> Activate -> Prove. The CDI and CDP layers
-# (Blocks and ID) are LIVE; Engage is a design preview — labeled honestly.
+# Collect -> Resolve -> Engage -> Activate -> Prove. The CDI and CDP layers
+# Blocks, ID, Activate, and Measure are LIVE; Engage is a design preview, labeled honestly.
 
 - title: Fanfinity Blocks
   url: /platform/blocks
@@ -20,9 +20,9 @@
 - title: Fanfinity Engage
   url: /platform/engage
   icon: bolt
-  outcome: Engage and activate every fan. (Preview)
-  body: "Live interactivity, gamification, and loyalty — polls, predictions, quizzes, quests, streaks, and leaderboards — combined with omnichannel activation across WhatsApp, email, push, and paid media. In design preview; not yet generally available."
-  capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, WhatsApp & Email, Journey Orchestration, Ad Audiences]
+  outcome: Engage every fan. (Preview)
+  body: "Live interactivity, gamification, and loyalty: polls, predictions, quizzes, quests, streaks, leaderboards, and sponsorable programs, all anchored to the same resolved fan profile. In design preview; not yet generally available."
+  capabilities: [Widgets & Programs, Gamification, Loyalty & Rewards, Custom Themes]
 
 - title: Fanfinity Activate
   url: /platform/activate
@@ -36,4 +36,4 @@
   icon: chart
   outcome: Prove the value.
   body: "Deterministic attribution and a sponsor/partner portal: verified reach instead of impressions, exposure-to-outcome measurement, and premium audience monetization."
-  capabilities: [Verified Reach, Attribution, Sponsor Portal, Benchmarking]
+  capabilities: [Verified Reach, Attribution, Sponsor Portal]

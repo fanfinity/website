@@ -1,15 +1,15 @@
 ---
 layout: page
+cta: false
 permalink: /compare/rudderstack
 title: Fanfinity vs RudderStack
-description: "How Fanfinity compares to RudderStack for real-time, in-region fan data."
+description: "Fanfinity is the real-time, in-region fan CDP: collect, resolve, activate, and prove one first-party fan graph. RudderStack is warehouse-first event infrastructure. See where a resolved graph and in-Kingdom residency change the decision."
 breadcrumb_parent: { title: Compare, url: /compare }
 ---
 {% include hero.html
-   variant="gradient"
    eyebrow="Compare · Data platforms"
    title="Fanfinity vs RudderStack"
-   subtitle="How Fanfinity compares to RudderStack for real-time, in-region fan data."
+   subtitle="RudderStack is warehouse-first customer data infrastructure: pipelines that move events into the warehouse you already run, with activation built back out of it. Fanfinity is a fan CDP that resolves one consented, in-region fan graph and activates it live. The two agree on ownership; they diverge on how much of the stack arrives assembled."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
@@ -17,11 +17,84 @@ breadcrumb_parent: { title: Compare, url: /compare }
 
 <section class="section">
   <div class="container-page">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">In progress</p>
-      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">This comparison is coming soon</h2>
-      <p class="mt-4 text-muted-foreground">This page is scaffolded so you can walk the full navigation. Every competitive claim will be grounded and labeled "(to confirm)" before it ships.</p>
-      <a href="/why-fanfinity" class="link-arrow mt-6 justify-center">Back to Why Fanfinity {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    <div class="mx-auto max-w-3xl" data-reveal>
+      <p class="eyebrow">The honest read</p>
+      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Pipelines you assemble vs a graph that arrives resolved</h2>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">RudderStack's ownership story is real and we respect it: events land in your warehouse, an open-source core exists for teams that want to run the pipes themselves, and the data never has to live in a vendor silo. For an engineering team that wants to assemble its own customer data stack around the warehouse, that is a credible, popular path.</p>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Fanfinity makes a different bet: that most fan businesses want the stack to arrive already connected. Collection, real-time identity resolution, activation, and measurement ship as one system, resolved to one consented profile per fan, deployable in-Kingdom under PDPL. You get the composability without owning the assembly project.</p>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">The practical difference shows up at identity and at proof. With pipeline infrastructure, resolving one person across ticketing, streaming, app, and store, and then proving what a campaign or sponsor placement drove, is modeling work your team owns. With Fanfinity, the resolved graph and the exposure-to-outcome loop are the product.</p>
     </div>
   </div>
 </section>
+
+<section class="section-sm">
+  <div class="container-page">
+    <div class="mx-auto max-w-5xl" data-reveal>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Posture comparison</h2>
+      <p class="mt-3 text-muted-foreground">Both keep first-party data under customer control. The decision sits in what each platform does with it.</p>
+      <div class="mt-8 overflow-x-auto rounded-4xl border border-border">
+        <table class="w-full border-collapse text-left text-sm">
+          <thead>
+            <tr class="border-b border-border bg-soft">
+              <th class="px-5 py-4 font-semibold text-foreground">Posture</th>
+              <th class="px-5 py-4 font-semibold text-foreground">Fanfinity</th>
+              <th class="px-5 py-4 font-semibold text-muted-foreground">RudderStack</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-border">
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Data ownership</td>
+              <td class="px-5 py-4 text-muted-foreground">One consented first-party fan graph the customer owns.</td>
+              <td class="px-5 py-4 text-muted-foreground">Warehouse-first: events land in infrastructure you own.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">In-region / PDPL residency</td>
+              <td class="px-5 py-4 text-muted-foreground">Resolved and stored in-Kingdom, PDPL-governed at the data layer.</td>
+              <td class="px-5 py-4 text-muted-foreground">Open-source core can self-host; the managed product is cloud SaaS with regional options.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Identity resolution</td>
+              <td class="px-5 py-4 text-muted-foreground">Built in and real-time: one governed profile per fan, with merge rules and guardrails.</td>
+              <td class="px-5 py-4 text-muted-foreground">Identity tooling exists, with stitching and modeling largely owned by your data team.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Activation</td>
+              <td class="px-5 py-4 text-muted-foreground">Segments, journeys, and paid audiences from the live profile, in one system.</td>
+              <td class="px-5 py-4 text-muted-foreground">Reverse ETL and event streaming to destinations, driven from warehouse models.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Cost model</td>
+              <td class="px-5 py-4 text-muted-foreground">A model that does not grow per active fan. (to confirm; pricing TBD)</td>
+              <td class="px-5 py-4 text-muted-foreground">Usage-based on event volume; warehouse and modeling costs sit alongside it.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Sponsorship &amp; exposure-to-outcome proof</td>
+              <td class="px-5 py-4 text-muted-foreground">Built to tie sponsored exposure to resolved outcomes. (to confirm)</td>
+              <td class="px-5 py-4 text-muted-foreground">Not a focus; analytics happen in the tools downstream of the pipelines.</td>
+            </tr>
+            <tr>
+              <td class="px-5 py-4 font-medium text-foreground">Fan / live-moment specialization</td>
+              <td class="px-5 py-4 text-muted-foreground">Fan-first by design: sports and live entertainment first, extensible to any audience business.</td>
+              <td class="px-5 py-4 text-muted-foreground">General-purpose, industry-agnostic infrastructure.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-muted-foreground">RudderStack observations reflect its published positioning as warehouse-first customer data infrastructure. Fanfinity rows marked "(to confirm)" are posture hypotheses, not stated facts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-sm">
+  <div class="container-page">
+    <div class="mx-auto max-w-3xl" data-reveal>
+      <p class="eyebrow">When RudderStack is the better fit</p>
+      <h2 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">The honest boundary</h2>
+      <p class="mt-5 leading-relaxed text-muted-foreground">If you have a strong data-engineering team, a warehouse at the center of your stack, and the appetite to own identity modeling and activation logic yourself, RudderStack is a credible, well-adopted way to build that. Fanfinity earns its place when you want the fan graph resolved for you in real time, activation and sponsor-grade proof included, and the whole system running in-Kingdom without an assembly project in front of it.</p>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="The resolved graph, not just the pipes"
+   text="If identity, activation, and proof are the work you'd rather not assemble, book a walkthrough and we will map it honestly against your stack." %}

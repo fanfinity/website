@@ -6,21 +6,22 @@ description: Fanfinity is the real-time, in-region fan data platform. Collect ev
 
 # Passed into reusable section includes
 value_pillars:
-  - { icon: game-controller, title: "Turn watching into playing",  body: "Push polls, predictions, and quizzes the instant a key moment happens, turning passive viewers into active participants in real time." }
-  - { icon: repeat,    title: "Build habits that stick",           body: "Streaks, quests, badges, and status tiers build the daily and weekly habits that drive retention, not one-time spikes around a single moment." }
-  - { icon: gift,      title: "Reward what matters to you",        body: "A full points-and-rewards economy lets you incentivize the exact behaviors you value, then rank fans on auto-updating leaderboards." }
   - { icon: address-book, title: "Own your fan relationship",      body: "One persistent profile ties every interaction, reward, and score to a single fan across devices, enriching the records you already keep." }
-  - { icon: storefront, title: "Make your inventory sponsorable",  body: "Brand quests, widgets, and programs for sponsors, re-skin experiences per partner, and back it all with engagement numbers." }
-  - { icon: coins,     title: "Turn engagement into revenue",      body: "Reward stores, gifting, premium tiers, and exclusive perks open monetization paths beyond ads and subscriptions." }
+  - { icon: bolt,      title: "React in real time, not in batch",  body: "Profiles update as events land, so journeys, suppression, and personalization fire while the moment is live, not after tonight's sync." }
+  - { icon: chart,     title: "Prove the outcome",                 body: "Verified reach and exposure-to-outcome attribution answer the question sponsors and CFOs actually ask: did it work?" }
+  - { icon: game-controller, title: "Turn watching into playing (Preview)",  body: "Push polls, predictions, and quizzes the instant a key moment happens, turning passive viewers into active participants in real time." }
+  - { icon: repeat,    title: "Build habits that stick (Preview)", body: "Streaks, quests, badges, and status tiers build the daily and weekly habits that drive retention, not one-time spikes around a single moment." }
+  - { icon: storefront, title: "Make your inventory sponsorable (Preview)",  body: "Brand quests, widgets, and programs for sponsors, re-skin experiences per partner, and back it all with verified engagement numbers." }
 
 dev_points:
   - "A clean REST API with OAuth 2.0. Every capability is programmable, not locked behind a console."
   - "Client SDKs for iOS, Android, and Web, plus a producer/CMS surface your content team can run."
   - "Map your existing user IDs with custom IDs and attributes, with no parallel database to maintain."
-  - "Real-time, playback-aware delivery is built in, with HLS Program-Date-Time support out of the box."
+  - "Playback-aware delivery (HLS Program-Date-Time) is designed into the client SDK. (Design preview.)"
 
 flow_nodes:
-  - { icon: identity,  label: Identify, sub: "Fanfinity ID" }
+  - { icon: plug,      label: Collect,  sub: "Fanfinity Blocks" }
+  - { icon: identity,  label: Resolve,  sub: "Fanfinity ID" }
   - { icon: bolt,      label: Engage,   sub: "Fanfinity Engage" }
   - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate" }
   - { icon: chart,     label: Prove,    sub: "Fanfinity Measure" }
@@ -47,7 +48,7 @@ platform_stats:
 deploy_stats:
   - { value: "Any cloud", label: "AWS, Google Cloud, or Azure, in any region" }
   - { value: "On-premise", label: "Inside your own infrastructure" }
-  - { value: "Zero egress", label: "Your customer data never leaves your control" }
+  - { value: "Nothing leaves", label: "Customer data stays inside the environment you control" }
 
 teams:
   - { icon: megaphone, title: "Marketing & Growth", body: "Segment on live behavior, launch journeys, and prove ROI, without waiting on engineering." }
@@ -62,21 +63,17 @@ measure_points:
 
 usecases:
   - { icon: identity,  title: "Turn anonymous into known", body: "Resolve first-touch visitors into golden profiles across every property." }
-  - { icon: bolt,      title: "Light up every live moment", body: "Polls, predictions, and quizzes that turn passive watchers into participants." }
+  - { icon: bolt,      title: "Light up every live moment (Preview)", body: "Polls, predictions, and quizzes that turn passive watchers into participants." }
   - { icon: arrows-counter-clockwise, title: "Win back lapsing fans", body: "Trigger WhatsApp and email journeys the moment engagement starts to drop." }
   - { icon: chart,     title: "Prove sponsor ROI",          body: "Answer 'who saw it and did it convert?' with verified reach and attribution." }
 
 faqs:
-  - q: "How is this different from a horizontal CDP like Segment or Meiro?"
-    a: "Those unify data in batch, then leave you to bolt on a separate engagement tool and make the two talk. Fanfinity resolves fan identity and activates it in the same real-time system, and it's first-party and in-region by design rather than patched on top. (to confirm vs each competitor)"
   - q: "Is the engagement layer live?"
-    a: "The data and identity layer is live today: collect, resolve, activate across channels, and prove the outcome. The interactive engagement widgets are a design preview, not a shipped product. We label that honestly everywhere so you know exactly what you can run now."
+    a: "The data layer is live today: collect, resolve, activate across channels, and prove the outcome. The interactive engagement widgets are a design preview, not a shipped product. We label that honestly everywhere so you know exactly what you can run now."
   - q: "Are you cheaper?"
     a: "We can't quote a number until we scope your usage. What we can say is the model isn't built to grow per active user the way metered-MAU billing does, so success shouldn't be penalized with a bigger bill. (to confirm: pricing is being defined)"
-  - q: "Can a non-engineering team run it?"
-    a: "Engineering integrates once through a REST API and SDKs, and your content team runs day-to-day from a producer surface. How far that goes without engineering support is something we'd rather demonstrate than overclaim. (to confirm)"
   - q: "Do you have customers like us?"
-    a: "We're pre-revenue and building alongside a small group of design partners. Rather than name-drop logos we can't yet stand behind, we'll connect you with the right reference when it's real."
+    a: "We're pre-revenue and building alongside a small group of design partners. Rather than name-drop logos we can't yet stand behind, we'll connect you with the right reference when it's real. For how we stack up against the platforms you're evaluating, see Why Fanfinity and the comparison pages."
   - q: "Where does our fan data live?"
     a: "Resolved and stored in-region, in-Kingdom, PDPL-governed at the data layer. You choose the deployment (your own cloud, on-premise, or fully managed), and customer data never has to leave your control."
 ---
@@ -159,7 +156,7 @@ faqs:
           function chip(n, on) { return on ? '<span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">' + n + '</span>' : '<span class="rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">' + n + '</span>'; }
           var segs = [
             { title: 'High-value season-ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: [['WhatsApp', 1], ['Email', 1], ['Push', 1], ['Paid', 0]] },
-            { title: 'Lapsing match-day fans', count: '22,905', rows: [['Region', '=', 'GCC'], ['Last attended', '>', '60 days'], ['Engagement', '<', '40'], ['Consent', '=', 'Marketing']], channels: [['WhatsApp', 1], ['SMS', 1], ['Email', 1]] },
+            { title: 'Lapsing loyalty shoppers', count: '22,905', rows: [['Region', '=', 'GCC'], ['Last purchase', '>', '60 days'], ['Loyalty tier', '=', 'Gold'], ['Consent', '=', 'Marketing']], channels: [['WhatsApp', 1], ['SMS', 1], ['Email', 1]] },
             { title: 'Sponsor-ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: [['Email', 1], ['Push', 1], ['Paid', 1], ['Meta Ads', 0]] },
             { title: 'Streaming super-watchers', count: '37,480', rows: [['Watch time', '>', '20h / mo'], ['Live sessions', '≥', '8'], ['Device', '=', 'Mobile'], ['Region', '=', 'KSA']], channels: [['Push', 1], ['WhatsApp', 1], ['Email', 1]] }
           ];
@@ -185,10 +182,10 @@ faqs:
   <div class="relative border-t border-border">
     <div class="container-page">
       <div class="flex items-center gap-5 py-5">
-        <span class="hidden shrink-0 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:block">In the platform</span>
+        <span class="hidden shrink-0 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:block">Live layer + preview</span>
         <div class="mask-fade-x relative flex-1 overflow-hidden">
           <div class="flex w-max animate-ticker">
-            {%- assign caps = "Polls,Predictions,Quizzes,Cheer Meters,Reactions,Quests,Streaks,Leaderboards,Badges,Status Tiers,Rewards,Redemption,Sponsorship,Spoiler-safe Sync,Analytics" | split: "," -%}
+            {%- assign caps = "Identity Resolution,Real-time Profiles,Consent & Governance,Reverse ETL,Audiences,Attribution,Verified Reach,Polls,Predictions,Quizzes,Quests,Streaks,Leaderboards,Rewards,Sponsorship" | split: "," -%}
             {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-muted-foreground"><span class="h-1 w-1 rounded-full bg-brand-500" aria-hidden="true"></span>{{ c }}</span>{%- endfor -%}
             {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-muted-foreground" aria-hidden="true"><span class="h-1 w-1 rounded-full bg-brand-500"></span>{{ c }}</span>{%- endfor -%}
           </div>
@@ -208,10 +205,9 @@ faqs:
 <section class="relative overflow-hidden border-y border-border bg-soft">
   <div class="container-page relative section">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
-      <p class="eyebrow justify-center">Four products, one architecture</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
       <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
-        Identify, Engage, Activate, Prove. Each product stands alone; together they form the full loop: one engine, one fan profile, <span class="font-semibold text-foreground">no ETL between products</span>.
+        Collect, Resolve, Engage, Activate, Prove. Five products that stand alone but run as one loop, <span class="font-semibold text-foreground">on one fan profile, with nothing exported between steps</span>.
       </p>
     </div>
 
@@ -251,15 +247,14 @@ faqs:
 <!-- ==================================================== PLATFORM CARDS -->
 {% include pillar-cards.html
    eyebrow="The products"
-   heading="Four products, one platform"
-   subheading="Fanfinity ID, Engage, Activate, and Measure: capture and resolve identity, engage across every channel, activate in real time, and prove the outcome." %}
+   heading="Five products, one platform"
+   subheading="Fanfinity Blocks, ID, Engage, Activate, and Measure: collect and resolve identity, engage across every surface, activate in real time, and prove the outcome." %}
 
 <!-- ============================================================== WIDGETS -->
 <section id="widgets" class="relative overflow-hidden bg-background">
   <div class="container-page relative section">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <p class="eyebrow justify-center">The engagement library · Preview</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
       <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. This engagement layer is in design preview.</p>
     </div>
 
@@ -310,7 +305,7 @@ faqs:
    icon="chart" %}
 
 <!-- ======================================================= DEPLOY ANYWHERE -->
-{% include stat-band.html heading="Deploy anywhere. Your data, your choice." stats=page.deploy_stats %}
+{% include stat-band.html heading="Runs where your rules require: your cloud, your on-prem, or ours." stats=page.deploy_stats %}
 
 <!-- ==================================================== DEVELOPER SPLIT -->
 <section class="section" id="developers">
@@ -318,8 +313,7 @@ faqs:
     <div class="grid items-center gap-12 lg:grid-cols-2">
       <!-- Copy -->
       <div data-reveal>
-        <p class="eyebrow">For developers</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Built for the teams who ship it</h2>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Built for the teams who ship it</h2>
         <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface.</p>
         <ul class="mt-6 space-y-3">
           {%- for pt in page.dev_points -%}
@@ -340,16 +334,16 @@ faqs:
             <span class="h-3 w-3 rounded-full bg-white/15"></span>
             <span class="h-3 w-3 rounded-full bg-white/15"></span>
             <span class="h-3 w-3 rounded-full bg-white/15"></span>
-            <span class="ml-2 font-mono text-xs text-white/40">credit a reward</span>
+            <span class="ml-2 font-mono text-xs text-white/40">track an event</span>
           </div>
-<pre class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> https://api.fanfinity.io/v1/rewards/credit \
+<pre class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> https://api.fanfinity.io/v1/events \
   -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \
   -d <span class="text-white/90">'{ "profile_id": "fan_8c2a…",
-        "action": "prediction_made",
-        "program_id": "wc26_final" }'</span>
+        "event": "stream_started",
+        "channel": "web" }'</span>
 
-<span class="text-emerald-400/80"># 200 OK: balance credited, leaderboard auto-synced</span>
-<span class="text-white/45">{</span> <span class="text-brand-300">"balance"</span>: 1450, <span class="text-brand-300">"rank"</span>: 12 <span class="text-white/45">}</span></pre>
+<span class="text-emerald-400/80"># 202 Accepted: profile updated, segments re-evaluated</span>
+<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"segments"</span>: 3 <span class="text-white/45">}</span></pre>
         </div>
       </div>
     </div>
@@ -360,7 +354,7 @@ faqs:
 {% include feature-grid.html
    eyebrow="Use cases"
    heading="What teams do with Fanfinity"
-   subheading="A few of the outcomes the platform delivers. Explore the full library by capability."
+   subheading="A few of the outcomes the platform is built for. Explore the full library by capability."
    items=page.usecases
    columns=4 %}
 
@@ -369,9 +363,8 @@ faqs:
   <div class="container-page">
     <div class="gradient-border flex flex-col items-start justify-between gap-6 rounded-4xl border border-border bg-soft p-8 md:flex-row md:items-center md:p-10" data-reveal>
       <div class="max-w-xl">
-        <p class="eyebrow">Integrations</p>
-        <h2 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">Connect everything you already run</h2>
-        <p class="mt-3 text-muted-foreground">Ticketing, streaming, CRM, messaging, ad platforms, and your warehouse: 100+ connectors, with zero data egress.</p>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Connect everything you already run</h2>
+        <p class="mt-3 text-muted-foreground">Ticketing, streaming, CRM, messaging, ad platforms, and your warehouse: 600+ connectors that run where your data lives.</p>
       </div>
       <a href="{{ '/integrations' | relative_url }}" class="btn btn-secondary btn-lg shrink-0">Browse integrations</a>
     </div>
@@ -386,5 +379,5 @@ faqs:
 
 <!-- ============================================================== CTA -->
 {% include cta-band.html
-   heading="Turn customer data into revenue that's provably yours."
+   heading="Own the fan relationship. Prove the revenue it drives."
    text="See how Fanfinity unifies fan identity, activates it across every channel, and proves the outcome. Book a walkthrough with our team." %}

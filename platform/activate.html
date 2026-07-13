@@ -5,22 +5,22 @@ title: Fanfinity Activate
 description: "Reach known fans across WhatsApp, email, push, and paid media. Segment on live behavior and orchestrate journeys that react in real time, all from one governed profile."
 breadcrumb_parent: { title: Platform, url: /platform }
 channels:
-  - { icon: chat,      title: "WhatsApp", body: "The leading messenger across the region. Trigger personalized conversations from real-time fan behavior, with consent and message templates managed for you." }
-  - { icon: megaphone, title: "Email", body: "Triggered flows and lifecycle campaigns powered by the same governed profile that drives every other channel, with no separate ESP sync and no stale segments." }
-  - { icon: bell,      title: "Push & mobile", body: "High-impact push timed to in-app behavior and lifecycle triggers, across iOS, Android, and web, with frequency capping built in." }
+  - { icon: chat,      title: "WhatsApp", body: "The leading messenger across the region. Trigger personalized conversations from real-time fan behavior, with consent enforced from the same governed profile." }
+  - { icon: megaphone, title: "Email", body: "Triggered flows and lifecycle campaigns that read the live profile at send time, so the segment an email targets is the segment that exists right now." }
+  - { icon: bell,      title: "Push & mobile", body: "Push that lands when it's relevant: fired off behavior the moment it happens on iOS, Android, or web, with frequency rules enforced from the profile." }
   - { icon: target,    title: "Paid media & ad audiences", body: "Build audiences and lookalikes from your first-party fan graph, and suppress fans who've already converted so budget goes where it counts." }
-  - { icon: slider,    title: "Web experiences", body: "Personalize overlays and on-site messages in real time, for known and anonymous fans alike, triggered by live profile signals." }
+  - { icon: slider,    title: "Web experiences", body: "Personalize overlays and on-site messages in real time for known and anonymous fans alike, driven by what the profile shows right now." }
   - { icon: shield,    title: "Consent & frequency", body: "Opt-outs and frequency limits are honored across every channel from one profile, so activation stays compliant by construction." }
 data_points:
   - "One identity-resolved profile drives every channel, with no per-tool fan lists that quietly drift out of sync."
   - "Campaigns fire in real time from the live profile, not from a nightly export."
   - "Data is validated before activation, so messages don't go out on broken or missing fields."
-  - "Marketing and data teams work from one source of truth, with full auditability across the stack."
+  - "Marketing and data teams read the same governed profile, with delivery history you can query."
 journey_points:
-  - "A visual journey canvas for multi-step, multi-channel flows: branch on any attribute, event, or score."
-  - "Real-time decisioning routes each fan on live events, with no batch schedule between action and response."
-  - "Segment on live behavior and attributes: build the audience once, activate it everywhere."
-  - "Every message is shaped by the complete, governed profile, with nothing silently missing or out of date."
+  - "Multi-step, multi-channel journeys triggered off live events and attributes. (The visual drag-and-drop canvas is in design preview.)"
+  - "Each fan is routed on what they just did, not on where a batch schedule left them."
+  - "Journeys and one-off sends draw from the same segment definitions, so nothing is rebuilt per channel."
+  - "Messages draw on the whole governed profile at send time, so gaps and stale fields don't quietly creep in."
 segment:
   - { icon: users,  title: "Build the segment without a ticket", body: "A visual audience builder lets marketing and data teams compose segments from any combination of attributes, events, and computed traits, with no SQL and no waiting on an analyst to translate the brief. The same segment definition is reusable across every channel." }
   - { icon: bolt,   title: "Membership updates in real time", body: "Segments are evaluated against the live profile, so a fan enters or leaves the moment their behavior changes rather than at the next nightly rebuild. A high-intent or lapsing audience reflects what is true now, not last night." }
@@ -39,8 +39,8 @@ segment:
 
 {% include feature-split.html
    eyebrow="Why it works"
-   title="Your campaigns are only as good as your data layer"
-   body="Most underperformance isn't a campaign problem. It's a data problem. Stale segments, dropped fields, and unresolved identities are invisible upstream and show up as poor results downstream. Activate runs on the live, resolved profile instead."
+   title="Activation inherits the quality of the profile under it"
+   body="When campaigns underperform, the cause usually sits upstream, in audiences built on yesterday's exports and identities that never got resolved. Activate reads the live profile at the moment of send, so what reaches the fan reflects what is actually true."
    points=page.data_points
    cta_text="See Fanfinity ID"
    cta_url="/platform/id"
@@ -63,8 +63,8 @@ segment:
 {% include feature-split.html
    reverse=true
    eyebrow="Journeys"
-   title="Smarter journeys, real-time decisions"
-   body="Full journey orchestration, not just messaging. It reads live fan context and adapts at every step. Build the flow once; it responds to each fan as their behavior changes."
+   title="Journeys that keep up with the fan"
+   body="Sequence messages across channels off live profile state: build the flow once and let each fan's behavior steer their own path through it. The visual canvas for composing these flows is in design preview."
    points=page.journey_points
    cta_text="Prove the outcome with Measure"
    cta_url="/platform/measure"

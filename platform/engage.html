@@ -9,20 +9,16 @@ designed:
   - { icon: trophy, title: "Gamification", body: "Streaks, quests, badges, and leaderboards designed to build recurring habits rather than one-time spikes." }
   - { icon: gift,   title: "Loyalty & rewards", body: "A points-and-rewards economy designed to incentivize the exact behaviors you value, then rank fans as they earn." }
   - { icon: slider, title: "Programs & themes", body: "Sponsorable programs and on-brand theming designed to turn engagement into inventory you can monetize." }
-flow:
-  - { icon: identity, title: "Anchor to a known fan", body: "Every interaction resolves to the same persistent profile that Fanfinity ID already maintains, so engagement is tied to a real fan rather than an anonymous session." }
-  - { icon: bolt,     title: "Act on the live moment", body: "Interactive elements are designed to fire off real-time behavior as it happens, not the next day's batch, so a poll or reward lands while attention is still on the screen." }
-  - { icon: chart,    title: "Feed the record", body: "Every designed interaction writes back to the profile and the analytics layer, so participation, loyalty state, and rewards stay in sync by design instead of by integration." }
 walkthrough:
   - { icon: identity, title: "A known fan arrives", body: "Someone opens a live stream or a page you own. Because Fanfinity ID already resolves signals into one profile, the design assumes a known fan rather than an anonymous session from the first second." }
   - { icon: poll,     title: "A moment goes interactive", body: "At a point you author, an interactive element is designed to appear: a poll, a prediction, or a quiz, inviting participation while attention is still on the screen. This surface is a Preview mockup, not a shipped widget." }
   - { icon: gift,     title: "Participation earns something", body: "The design ties that action into a points-and-rewards economy: streaks, quests, and status that are meant to give a reason to come back, not just react once." }
   - { icon: chart,    title: "It writes back to the record", body: "Every interaction is designed to feed the same profile and analytics layer the rest of the platform reads, so engagement, loyalty, and reporting stay in sync by design instead of by integration." }
 live_points:
-  - "Fanfinity ID, the identity and data layer beneath Engage, is live today."
+  - "The layers beneath Engage (Fanfinity Blocks, ID, Activate, and Measure) are live today."
   - "Every widget visual across this site is a design mockup, not a shipped feature."
   - "The engagement layer is in active design and not yet generally available."
-  - "Book a demo to see the designs and help shape what ships first."
+  - "Book a demo to see the designs; design partners get a real say in what ships first."
 ---
 {% include hero.html
    eyebrow="Platform · Fanfinity Engage"
@@ -38,8 +34,8 @@ live_points:
 <section class="section">
   <div class="container-page">
     <div class="mx-auto max-w-2xl rounded-4xl border border-border bg-soft px-6 py-8 text-center" data-reveal>
-      <p class="eyebrow justify-center">Preview</p>
-      <p class="mt-3 text-muted-foreground">The capabilities below describe what Fanfinity Engage is <em>designed</em> to do. They are not yet generally available, and the widget visuals shown across this site are mockups. What is live today is the data layer beneath Engage, <a href="/platform/id" class="font-medium text-brand-foreground underline underline-offset-2">Fanfinity ID</a>.</p>
+      <span class="badge">Preview</span>
+      <p class="mt-3 text-muted-foreground">The capabilities below describe what Fanfinity Engage is <em>designed</em> to do. They are not yet generally available, and the widget visuals shown across this site are mockups. What is live today is the platform beneath Engage: <a href="{{ '/platform' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Blocks, ID, Activate, and Measure</a>.</p>
     </div>
   </div>
 </section>
@@ -52,16 +48,9 @@ live_points:
    columns=2 %}
 
 {% include feature-grid.html
-   eyebrow="How Engage is designed to work"
-   heading="Anchored to identity, acting in real time"
-   subheading="The design principle is simple: engagement should never float free of the fan it belongs to. Every interaction is meant to attach to one known profile, act on the live moment, and feed the same record the rest of the platform reads from."
-   items=page.flow
-   columns=3 %}
-
-{% include feature-grid.html
    eyebrow="A designed walkthrough"
    heading="How one moment is designed to play out"
-   subheading="This is the shape of the intended experience, end to end. Everything here is a design preview built on the live fan graph, the interactive surfaces are mockups, and the identity underneath them is real."
+   subheading="The design principle is simple: engagement should never float free of the fan it belongs to. This is the intended experience end to end; the interactive surfaces are mockups, and the identity underneath them is real."
    items=page.walkthrough
    columns=2 %}
 

@@ -21,12 +21,12 @@ sponsor_points:
   - "Attach a sponsor's identity to programs, quests, and rewards, turning attention into branded inventory."
   - "Measure sponsored exposure against the fan actions that followed, not against impressions."
   - "Reskin every widget to the club or the sponsor, so each activation is on-brand and consistent (Preview)."
-  - "Renew sponsorships on evidence from a fan graph you own, in-region and consented."
+  - "Renew sponsorships on evidence, in-region and consented."
 steps:
-  - { icon: bolt,     title: "Win the live moment (Preview)", body: "In-play widgets and predictions turn a match into something fans play along with, not just watch. This engagement layer is a design Preview today." }
-  - { icon: gift,     title: "Reward the participation", body: "Points, badges, and quests give every interaction a payoff, feeding leaderboards and tiers automatically rather than through a separate loyalty tool." }
-  - { icon: target,   title: "Build the season habit", body: "Streaks and status tiers give fans a reason to return between matches, so attention compounds into a habit across the fixture list." }
-  - { icon: identity, title: "Keep the fan you earned", body: "Every action accrues to one first-party profile you own in-region, so matchday reach becomes a season-long relationship, and inventory a sponsor can trust." }
+  - { icon: bolt,     title: "Win the live moment (Preview)", body: "In-play widgets make the match something fans play, not just watch. (Design Preview today.)" }
+  - { icon: gift,     title: "Reward the participation", body: "Every interaction earns a payoff that feeds leaderboards and tiers automatically." }
+  - { icon: target,   title: "Build the season habit", body: "Streaks and tiers carry attention across the fixture list and the off-season." }
+  - { icon: identity, title: "Keep the fan you earned", body: "Everything accrues to one first-party profile the club owns, in-region." }
 journey:
   - { icon: identity,      time: "Gate",      badge: Live,    act: "Scans in at kickoff",              fx: "Recognized as the same fan across ticket, app, and stream." }
   - { icon: target,        time: "Kickoff",   badge: Preview, act: "Predicts the first scorer",         fx: "Plays along with the match in real time, not just watches it." }
@@ -56,9 +56,8 @@ journey:
 <section class="relative overflow-hidden border-y border-border bg-soft">
   <div class="container-page relative section">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
-      <p class="eyebrow justify-center">One matchday, end to end</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">What one fan's matchday looks like on Fanfinity</h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Illustrative. Today these five moments are five disconnected logs in five systems. On Fanfinity they are one profile you own, from the turnstile to Tuesday.</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">What one fan's matchday looks like on Fanfinity</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Illustrative. Today these five moments are five disconnected logs in five systems. On Fanfinity they are one profile, from the turnstile to Tuesday.</p>
     </div>
 
     <ol class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
@@ -79,7 +78,7 @@ journey:
       {%- endfor -%}
     </ol>
 
-    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-muted-foreground">One fan, one profile, every moment tied together and provable to a sponsor. The interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live today.</p>
+    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-muted-foreground">One fan, one profile, every moment tied together and provable to a sponsor. The interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live today, kept <a href="{{ '/platform/data-residency' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">in-Kingdom and PDPL-governed</a>.</p>
   </div>
 </section>
 
@@ -101,6 +100,12 @@ journey:
    cta_text="See how measurement works"
    cta_url="/platform/measure"
    icon="megaphone" %}
+
+<section class="section-sm pt-0">
+  <div class="container-page">
+    <p class="text-muted-foreground" data-reveal>On the sponsor side of this story? Start from the <a href="{{ '/solutions/brands' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Brands &amp; Sponsors playbook</a>.</p>
+  </div>
+</section>
 
 {% include value-pillars.html
    eyebrow="How matchday becomes a season"

@@ -5,25 +5,25 @@ title: Fanfinity Blocks
 description: "The CDI layer that collects every fan signal, stitches identifiers in real time, enriches profiles for AI and activation, and distributes governed data to every tool in your stack."
 breadcrumb_parent: { title: Platform, url: /platform }
 capabilities:
-  - { icon: plug,     title: "Data collection",    body: "Ingest events from every fan touchpoint — web, app, ticketing, streaming, on-site, and offline sources — through an open connector framework. Raw payloads are normalized and validated as they arrive, so the data feeding your profiles is already clean before it reaches Fanfinity ID." }
+  - { icon: plug,     title: "Data collection",    body: "Ingest events from every fan touchpoint (web, app, ticketing, streaming, on-site, and offline sources) through an open connector framework. Raw payloads are normalized and validated as they arrive, so the data feeding your profiles is already clean before it reaches Fanfinity ID." }
   - { icon: stack,    title: "Reverse ETL",         body: "Push governed fan data from your warehouse back to every operational tool in your stack. CRM, ad platforms, email, and support systems all receive the same resolved profile rather than a different export pieced together from each source." }
-  - { icon: identity, title: "Identity stitching",  body: "Match identifiers across devices, channels, and sessions using a graph-based model. Anonymous history is back-stitched the moment a fan identifies, so resolution runs in real time as events land, not as a nightly batch job that is already stale by morning." }
-  - { icon: spark,    title: "AI-ready enrichment", body: "Enrich every fan profile with first-party signals, derived attributes, and scored features before they leave your environment. Downstream models and agents receive governed, structured context, not raw event logs with inconsistent identifiers." }
+  - { icon: identity, title: "Identity stitching",  body: "Match identifiers across devices, channels, and sessions as events land, so stitching runs in real time rather than as a nightly batch job. The resulting graph, its merge rules, and the governed profile live one layer up, in Fanfinity ID." }
+  - { icon: spark,    title: "AI-ready enrichment", body: "Enrich every fan profile with first-party signals and derived attributes before they leave your environment, so downstream models and agents receive governed, structured context instead of raw event logs. (Model-scored features: to confirm.)" }
   - { icon: link,     title: "Integrations",        body: "Connect your existing marketing, analytics, and data-science tooling through a programmable integration layer. Configuration is API-driven and version-controlled, so integrations behave like infrastructure you own, not a vendor console you depend on." }
 how:
   - { icon: plug,     title: "Collect every signal",            body: "Client-side SDKs and server-side connectors capture events across every touchpoint and deliver them into a typed, normalized event stream. No custom ETL to write, no parallel database to maintain alongside the sources you already run." }
   - { icon: identity, title: "Stitch and resolve in real time", body: "Events are deduplicated and matched across identifiers as they arrive. The fan graph grows with every new signal, and every new resolution back-fills history across all linked identifiers, so profiles are always as complete as the data allows." }
-  - { icon: stack,    title: "Distribute to the full stack",    body: "Resolved, enriched profiles flow forward to Fanfinity ID for segmentation and downstream to every operational tool through reverse ETL. One governed source of truth — no re-syncing exports between systems." }
+  - { icon: stack,    title: "Distribute to the full stack",    body: "Resolved, enriched profiles flow forward to Fanfinity ID for segmentation and downstream to every operational tool through reverse ETL. One governed source of truth, with no exports to re-sync between systems." }
 enrich_points:
   - "Profiles are enriched inside your environment before they reach any external surface, so governance and residency rules are honored end to end."
   - "Derived attributes and scored features land on the same profile that drives segmentation, so AI context and activation context stay in sync."
   - "Reverse ETL suppresses already-converted fans from ad audiences, so budget reaches people who can still move."
-  - "Every enrichment step runs on data you own and control — no vendor sees the underlying fan graph."
+  - "Every enrichment step runs on data you own and control; no vendor sees the underlying fan graph."
 ---
 {% include hero.html
    eyebrow="Platform · Fanfinity Blocks"
    title="Connect everything. Enrich every signal."
-   subtitle="Fanfinity Blocks is the CDI layer that brings every fan signal in, stitches it to one identity, enriches it for AI and activation, and distributes governed data to every tool — without rip-and-replace."
+   subtitle="Fanfinity Blocks is the CDI layer that brings every fan signal in, stitches it to one identity, enriches it for AI and activation, and distributes governed data to every tool, without rip-and-replace."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Explore the platform"
@@ -48,7 +48,7 @@ enrich_points:
 {% include feature-split.html
    eyebrow="AI enablement"
    title="Structured context, not raw events"
-   body="Models and agents perform best when they receive governed, structured input — not raw event streams with inconsistent identifiers and missing attributes. Blocks enriches and structures fan data before it reaches any AI surface, so every downstream agent starts from a profile that is already resolved, governed, and enriched."
+   body="Models and agents perform best when they receive governed, structured input, not raw event streams with inconsistent identifiers and missing attributes. Blocks enriches and structures fan data before it reaches any AI surface, so every downstream agent starts from a profile that is already resolved, governed, and enriched."
    points=page.enrich_points
    cta_text="See how profiles are segmented"
    cta_url="/platform/id"

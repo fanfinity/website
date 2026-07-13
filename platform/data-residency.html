@@ -2,25 +2,25 @@
 layout: page
 permalink: /platform/data-residency
 title: In-Kingdom & Data Residency
-description: Keep fan data in-Kingdom and PDPL-compliant, with zero egress and consent enforced at the data layer. Sovereignty without the capability trade-off.
+description: "Keep fan data in-Kingdom and PDPL-compliant: self-host with no data egress, and consent enforced at the data layer. Sovereignty without the capability trade-off."
 breadcrumb_parent: { title: Platform, url: /platform }
 features:
   - { icon: shield,   title: "In-Kingdom by default",            body: "Deploy and process fan data inside the Kingdom. Residency isn't a region toggle added later, it's where the platform actually runs." }
   - { icon: scale,    title: "PDPL from the ground up",          body: "Built around Saudi Arabia's Personal Data Protection Law, consent, purpose, and data-subject rights modeled into the data layer, not bolted on." }
-  - { icon: stack,    title: "Your data stays yours",            body: "Self-host in your own cloud or on-prem with zero egress, Fanfinity never becomes an offshore copy of your fan base." }
+  - { icon: stack,    title: "Your data stays yours",            body: "Self-host in your own cloud or on-prem with no data egress; Fanfinity never becomes an offshore copy of your fan base." }
   - { icon: identity, title: "Consent travels with the data",    body: "Every profile carries its consent and purpose and enforces them wherever it moves, so residency and consent never drift out of sync." }
   - { icon: gauge,    title: "Sovereign, not siloed",            body: "Keep data in-region without giving up real-time activation and analytics, sovereignty without the usual capability trade-off." }
-  - { icon: link,     title: "Arabic-native at the core",        body: "Arabic-first identity and data handling, built for the region you operate in rather than translated on top of it." }
+  - { icon: link,     title: "Arabic-native at the core",        body: "Arabic-first identity and data handling, built for the region you operate in rather than translated on top of it. (to confirm)" }
 points:
   - "Choose where fan data lives, in-Kingdom, or any region you require."
   - "Residency and PDPL compliance governed at the data layer, not patched on top."
   - "Self-hosted with your own keys means no third-party egress and no offshore copies."
   - "Consent, purpose, and residency enforced together: the record regulators expect."
 pdpl:
-  - { icon: shield, title: "Data stays in the Kingdom", body: "PDPL requires personal data of individuals in Saudi Arabia to be stored inside the Kingdom. Deploy Fanfinity in-region, on your cloud, private network, or on-premise, and fan data never leaves those borders." }
+  - { icon: shield, title: "Data stays in the Kingdom", body: "PDPL tightly restricts moving personal data of individuals in Saudi Arabia outside the Kingdom. Deploy Fanfinity in-region, on your cloud, private network, or on-premise, and the cross-border question never has to arise. (Confirm specifics with your counsel.)" }
   - { icon: scale, title: "Consent and purpose logged", body: "Every profile carries the lawful basis it was collected under. Consent and purpose are stored with the data and enforced when it moves, so you can show a regulator not just what you hold but why you may hold it." }
   - { icon: identity, title: "Data-subject rights, built in", body: "Access, correction, and deletion requests act on the profile itself. When a fan withdraws consent, that change propagates through the data layer rather than lingering in a downstream copy." }
-  - { icon: link, title: "No vendor data access", body: "Self-host and the operator of the platform never becomes a processor with a view of your fan base. Cross-border transfer stays under your control, aligned with Saudi cybersecurity guidance. (Specific control mappings: to confirm with your counsel.)" }
+  - { icon: link, title: "Your operator never sees the data", body: "Self-host and no external operator holds a standing view of your fan base. Whether data ever crosses a border is a decision you make under your own controls, not a vendor default. (Specific control mappings: to confirm with your counsel.)" }
 how:
   - { icon: stack, title: "Deploy in-region", body: "The platform runs where you place it, an in-Kingdom cloud region, your private network, or your own data centre. Residency is decided at deployment, so data is processed in-region from the first event rather than exported and pulled back." }
   - { icon: identity, title: "Attach consent to the profile", body: "As signals resolve into one fan profile, the consent and purpose behind each signal travel with it. The record of what a fan agreed to lives next to the data it governs, not in a separate compliance spreadsheet." }
@@ -30,7 +30,7 @@ how:
 {% include hero.html
    eyebrow="The platform"
    title="In-Kingdom data residency, governed at the data layer"
-   subtitle="For rights holders in the region, where fan data lives is not a detail, it's the deal. Fanfinity runs in-Kingdom, keeps data under your control, and enforces PDPL consent at the data layer."
+   subtitle="For rights holders in the region, where fan data lives is not a detail, it's the deal. Fanfinity is Saudi-founded and built in-region: it runs in-Kingdom, keeps data under your control, and enforces PDPL consent at the data layer."
    cta_text="Book a Demo"
    cta_url="/demo"
    secondary_text="Deploy anywhere"
@@ -41,14 +41,14 @@ how:
 {% include feature-grid.html
    eyebrow="Residency & sovereignty"
    heading="Fan data that stays where it belongs"
-   subheading="In-region processing, zero egress, and consent enforced with the data, the foundation for trusting a platform with your fan base."
+   subheading="In-region processing, no data leaving your control, and consent enforced with the data: the foundation for trusting a platform with your fan base."
    items=page.features
    columns=3 %}
 
 {% include feature-grid.html
    eyebrow="PDPL, built in"
    heading="Aligned with Saudi data protection from the ground up"
-   subheading="Saudi Arabia's Personal Data Protection Law sets clear expectations for where fan data lives and how consent is handled. Fanfinity is designed to meet them at the data layer rather than through after-the-fact process."
+   subheading="Saudi Arabia's Personal Data Protection Law, in force with regulator oversight since September 2024, sets clear expectations for where fan data lives and how consent is handled. Fanfinity is designed to meet them at the data layer rather than through after-the-fact process."
    items=page.pdpl
    columns=2 %}
 

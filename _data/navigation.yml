@@ -77,7 +77,6 @@ header:
           - { title: "Verified Reach",  desc: "Real people, not impressions",           url: /platform/measure }
           - { title: "Attribution",     desc: "Exposure-to-outcome, deterministically", url: /platform/measure }
           - { title: "Sponsor Portal",  desc: "Live results for partners and sponsors", url: /platform/measure }
-          - { title: "Benchmarking",    desc: "Performance context across campaigns",   url: /platform/measure }
     sidebar:
       url: /platform/deploy
       tagline: "Any cloud. Any on-prem."
@@ -98,9 +97,9 @@ header:
       - heading: By industry
         links:
           - { title: "Sports & Entertainment", url: /solutions/sports, desc: "Clubs, leagues, media & sponsors", icon: whistle, badge: Flagship }
-          - { title: "Media & Broadcast",      url: /solutions/media,  desc: "Turn audiences into known fans",   icon: broadcast }
+          - { title: "Media & Publishers",     url: /solutions/media,  desc: "Turn audiences into known fans",   icon: broadcast }
           - { title: "Brands & Sponsors",      url: /solutions/brands, desc: "Prove & activate sponsored reach", icon: handshake }
-          - { title: "Events & Hospitality",   url: /solutions/travel, desc: "Loyalty across every event",       icon: airplane }
+          - { title: "Travel & Hospitality",   url: /solutions/travel, desc: "One guest across every trip",      icon: airplane }
           - { title: "Retail & E-commerce",    url: /solutions/retail, desc: "Personalize the shopper journey",  icon: gift }
       - heading: By team
         links:
@@ -119,14 +118,17 @@ header:
           - { title: "Resource Library", url: /resources,  desc: "Guides, reports, and whitepapers",         icon: stack }
           - { title: "Case Studies",     url: /customers,  desc: "Customer success stories",                icon: chart }
           - { title: "Webinars",         url: /webinars,   desc: "Live and on-demand sessions",             icon: broadcast }
-          - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and integration docs",    icon: code }
+          - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and the data model",      icon: code }
       - heading: Compare
         links:
-          - { title: "All comparisons", url: /compare,           desc: "How Fanfinity stacks up",         icon: scale }
-          - { title: "vs LiveLike",     url: /compare/livelike,  desc: "vs a hosted engagement suite",    icon: scale }
-          - { title: "vs Meiro",        url: /compare/meiro,     desc: "vs a horizontal CDP",             icon: scale }
-          - { title: "vs Segment",      url: /compare/segment,   desc: "vs a cloud-first SaaS CDP",       icon: scale }
-          - { title: "vs Hightouch",    url: /compare/hightouch, desc: "vs a warehouse activation layer", icon: scale }
+          - { title: "All comparisons", url: /compare,             desc: "How Fanfinity stacks up",           icon: scale }
+          - { title: "vs LiveLike",     url: /compare/livelike,    desc: "vs a hosted engagement suite",      icon: scale }
+          - { title: "vs Monterosa",    url: /compare/monterosa,   desc: "vs a broadcast engagement suite",   icon: scale }
+          - { title: "vs Meiro",        url: /compare/meiro,       desc: "vs a horizontal CDP",               icon: scale }
+          - { title: "vs Segment",      url: /compare/segment,     desc: "vs a cloud-first SaaS CDP",         icon: scale }
+          - { title: "vs RudderStack",  url: /compare/rudderstack, desc: "vs warehouse-first pipelines",      icon: scale }
+          - { title: "vs Snowplow",     url: /compare/snowplow,    desc: "vs behavioral event infrastructure", icon: scale }
+          - { title: "vs Hightouch",    url: /compare/hightouch,   desc: "vs a warehouse activation layer",   icon: scale }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -170,19 +172,22 @@ footer_columns:
     links:
       - { title: "All Industries",         url: /industries }
       - { title: "Sports & Entertainment", url: /solutions/sports }
-      - { title: "Media & Broadcast",      url: /solutions/media }
+      - { title: "Media & Publishers",     url: /solutions/media }
       - { title: "Brands & Sponsors",      url: /solutions/brands }
-      - { title: "Events & Hospitality",   url: /solutions/travel }
+      - { title: "Travel & Hospitality",   url: /solutions/travel }
       - { title: "Retail & E-commerce",    url: /solutions/retail }
 
   - heading: Compare
     links:
       - { title: "All comparisons", url: /compare }
-      - { title: "vs LiveLike",  url: /compare/livelike }
-      - { title: "vs Meiro",     url: /compare/meiro }
-      - { title: "vs Segment",   url: /compare/segment }
-      - { title: "vs Hightouch", url: /compare/hightouch }
-      - { title: "Pricing",      url: /pricing }
+      - { title: "vs LiveLike",    url: /compare/livelike }
+      - { title: "vs Monterosa",   url: /compare/monterosa }
+      - { title: "vs Meiro",       url: /compare/meiro }
+      - { title: "vs Segment",     url: /compare/segment }
+      - { title: "vs RudderStack", url: /compare/rudderstack }
+      - { title: "vs Snowplow",    url: /compare/snowplow }
+      - { title: "vs Hightouch",   url: /compare/hightouch }
+      - { title: "Pricing",        url: /pricing }
 
   - heading: Resources
     links:
@@ -201,4 +206,4 @@ footer_columns:
       - { title: "Contact",     url: /contact }
       - { title: "Book a Demo", url: /demo }
 
-descriptor: "The real-time fan data platform for sports & live entertainment: collect, resolve, activate, and prove one consented, in-region fan graph."
+descriptor: "The real-time fan data platform: collect, resolve, activate, and prove one consented, in-region fan graph. Sports-first, built for any audience business."
