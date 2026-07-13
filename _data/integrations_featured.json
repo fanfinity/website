@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "logo": "assets/integrations/salesforce.svg",
+    "category": "Ticketing & CRM"
+  },
+  {
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "logo": "assets/integrations/hubspot.svg",
+    "category": "Ticketing & CRM"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "logo": "assets/integrations/stripe.svg",
+    "category": "Ticketing & CRM"
+  },
+  {
+    "name": "Facebook Marketing",
+    "slug": "facebook-marketing",
+    "logo": "assets/integrations/facebook-marketing.svg",
+    "category": "Ad platforms"
+  },
+  {
+    "name": "Google Ads",
+    "slug": "google-ads",
+    "logo": "assets/integrations/google-ads.svg",
+    "category": "Ad platforms"
+  },
+  {
+    "name": "TikTok Marketing",
+    "slug": "tiktok-marketing",
+    "logo": "assets/integrations/tiktok-marketing.svg",
+    "category": "Ad platforms"
+  },
+  {
+    "name": "Snapchat Marketing",
+    "slug": "snapchat-marketing",
+    "logo": "assets/integrations/snapchat-marketing.svg",
+    "category": "Ad platforms"
+  },
+  {
+    "name": "Instagram",
+    "slug": "instagram",
+    "logo": "assets/integrations/instagram.svg",
+    "category": "Ad platforms"
+  },
+  {
+    "name": "Snowflake",
+    "slug": "snowflake",
+    "logo": "assets/integrations/snowflake.svg",
+    "category": "Data warehouses"
+  },
+  {
+    "name": "BigQuery",
+    "slug": "bigquery",
+    "logo": "assets/integrations/bigquery.svg",
+    "category": "Data warehouses"
+  },
+  {
+    "name": "Google Analytics 4 (GA4)",
+    "slug": "google-analytics-4-ga4",
+    "logo": "assets/integrations/google-analytics-4-ga4.svg",
+    "category": "Analytics & BI"
+  },
+  {
+    "name": "Amplitude",
+    "slug": "amplitude",
+    "logo": "assets/integrations/amplitude.svg",
+    "category": "Analytics & BI"
+  },
+  {
+    "name": "Mixpanel",
+    "slug": "mixpanel",
+    "logo": "assets/integrations/mixpanel.svg",
+    "category": "Analytics & BI"
+  },
+  {
+    "name": "Segment",
+    "slug": "segment",
+    "logo": "assets/integrations/segment.svg",
+    "category": "Analytics & BI"
+  },
+  {
+    "name": "Twilio",
+    "slug": "twilio",
+    "logo": "assets/integrations/twilio.svg",
+    "category": "Messaging"
+  },
+  {
+    "name": "Mailchimp",
+    "slug": "mailchimp",
+    "logo": "assets/integrations/mailchimp.svg",
+    "category": "Messaging"
+  },
+  {
+    "name": "Braze",
+    "slug": "braze",
+    "logo": "assets/integrations/braze.svg",
+    "category": "Messaging"
+  },
+  {
+    "name": "Klaviyo",
+    "slug": "klaviyo",
+    "logo": "assets/integrations/klaviyo.svg",
+    "category": "Messaging"
+  }
+]

@@ -137,7 +137,11 @@
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   leadForms.forEach(function (form) {
-    var required = ['first_name', 'last_name', 'email', 'company'];
+    // Validate only the fields this form actually has — so a full lead form
+    // (name/company/email) and an email-only newsletter box share one handler.
+    var required = ['first_name', 'last_name', 'email', 'company'].filter(function (f) {
+      return form.elements[f];
+    });
     var status = form.querySelector('[data-form-status]') || document.getElementById('demo-status');
     var btn = form.querySelector('button[type="submit"]');
     var endpoint = (form.getAttribute('action') || '').trim();
@@ -312,6 +316,7 @@
   if (integrationsFilter) {
     var integrationItems = Array.prototype.slice.call(document.querySelectorAll('[data-integration]'));
     var integrationsEmpty = document.querySelector('[data-integrations-empty]');
+    var integrationsCount = document.querySelector('[data-integrations-count]');
     integrationsFilter.addEventListener('input', function () {
       var q = integrationsFilter.value.trim().toLowerCase();
       var shown = 0;
@@ -321,6 +326,7 @@
         if (match) shown++;
       });
       if (integrationsEmpty) integrationsEmpty.hidden = shown !== 0;
+      if (integrationsCount) integrationsCount.textContent = shown;
     });
   }
 })();

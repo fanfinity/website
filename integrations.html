@@ -29,6 +29,29 @@ categories:
    columns=3 %}
 
 {%- assign source_count = site.data.integrations | size -%}
+{%- if site.data.integrations_featured and site.data.integrations_featured.size > 0 -%}
+<section class="section border-t border-border">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <p class="font-mono text-xs uppercase tracking-widest text-brand-foreground">Popular connectors</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">The tools fan teams run on</h2>
+      <p class="mt-4 text-lg text-muted-foreground">A snapshot of the most-used connectors across CRM, ad platforms, warehouses, analytics, and messaging. The full catalog of {{ source_count }} is below.</p>
+    </div>
+
+    <ul class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
+      {%- for item in site.data.integrations_featured -%}
+      <li class="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 text-center transition hover:border-brand-500/50 hover:shadow-md">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-border/40">
+          <img src="{{ item.logo | relative_url }}" alt="{{ item.name }} logo" loading="lazy" width="32" height="32" class="h-8 w-8 object-contain" />
+        </span>
+        <span class="text-sm font-medium leading-tight">{{ item.name }}</span>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{%- endif -%}
+
 <section class="section border-t border-border">
   <div class="container-page">
     <div class="max-w-2xl">
@@ -36,21 +59,35 @@ categories:
       <p class="mt-4 text-lg text-muted-foreground">Fanfinity connects to {{ source_count }} tools through our connector framework, spanning sources and destinations: ticketing, streaming, CRM, ad platforms, messaging, and your warehouse. Search the full catalog below.</p>
     </div>
 
-    <div class="mt-10 max-w-md">
-      <label for="integrations-search" class="sr-only">Search connectors</label>
-      <input id="integrations-search" type="search" data-integrations-filter autocomplete="off"
-             placeholder="Search {{ source_count }} connectors…"
-             class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div class="w-full max-w-md">
+        <label for="integrations-search" class="sr-only">Search connectors</label>
+        <input id="integrations-search" type="search" data-integrations-filter autocomplete="off"
+               placeholder="Search {{ source_count }} connectors…"
+               class="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/30" />
+      </div>
+      <p class="shrink-0 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+        <span data-integrations-count>{{ source_count }}</span> of {{ source_count }}
+      </p>
     </div>
 
-    <ul class="mt-8 grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3 lg:grid-cols-4">
-      {%- for name in site.data.integrations -%}
-      <li data-integration="{{ name | downcase }}" class="py-1 text-sm text-muted-foreground">
-        <span class="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-brand-500/60 align-middle" aria-hidden="true"></span>{{ name }}
-      </li>
-      {%- endfor -%}
-    </ul>
-    <p data-integrations-empty hidden class="mt-8 text-sm text-muted-foreground">No connectors match that search.</p>
+    <div class="mt-6 max-h-[32rem] overflow-y-auto rounded-2xl border border-border bg-card/40 p-4 sm:p-5">
+      <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        {%- for item in site.data.integrations -%}
+        <li data-integration="{{ item.name | downcase }}" class="group flex flex-col items-center gap-2.5 rounded-xl border border-border bg-card p-4 text-center transition hover:border-brand-500/50 hover:shadow-sm">
+          {%- if item.logo -%}
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-border/40">
+            <img src="{{ item.logo | relative_url }}" alt="" loading="lazy" width="28" height="28" class="h-7 w-7 object-contain" />
+          </span>
+          {%- else -%}
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-sm font-semibold uppercase text-brand-foreground" aria-hidden="true">{{ item.name | slice: 0, 1 }}</span>
+          {%- endif -%}
+          <span class="line-clamp-2 text-xs font-medium leading-tight text-foreground/90">{{ item.name }}</span>
+        </li>
+        {%- endfor -%}
+      </ul>
+      <p data-integrations-empty hidden class="py-6 text-center text-sm text-muted-foreground">No connectors match that search.</p>
+    </div>
 
     <p class="mt-10 text-muted-foreground">Don't see your tool? New connectors are added through the framework, and custom sources are part of scoping. <a href="{{ '/contact' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Talk to us</a>.</p>
   </div>

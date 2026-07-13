@@ -1,604 +1,3012 @@
 [
-  "100ms",
-  "7shifts",
-  "ActiveCampaign",
-  "Acuity Scheduling",
-  "Adjust",
-  "Adobe Commerce (Magento)",
-  "AgileCRM",
-  "Aha",
-  "Aircall",
-  "Airtable",
-  "Akeneo",
-  "Algolia",
-  "AlloyDB for PostgreSQL",
-  "Alpaca Broker API",
-  "Alpha Vantage",
-  "Amazon Ads",
-  "Amazon Seller Partner",
-  "Amazon SQS",
-  "Amplitude",
-  "Apify Dataset",
-  "Appcues",
-  "Appfigures",
-  "Appfollow",
-  "Apple Ads",
-  "AppsFlyer",
-  "Appstore",
-  "Apptivo",
-  "Asana",
-  "Ashby",
-  "AssemblyAI",
-  "Attio",
-  "Auth0",
-  "Aviationstack",
-  "Avni",
-  "AWIN Advertiser",
-  "Aws Cloudtrail",
-  "Azure Blob Storage",
-  "Azure Table Storage",
-  "Babelforce",
-  "BambooHR",
-  "Basecamp",
-  "Beamer",
-  "Bigcommerce",
-  "BigMailer",
-  "BigQuery",
-  "Bing Ads",
-  "Bitly",
-  "Blogger",
-  "Bluetally",
-  "BoldSign",
-  "Box",
-  "Box Data Extract",
-  "Braintree",
-  "Braze",
-  "Breezometer",
-  "Breezy HR",
-  "Brevo",
-  "Brex",
-  "Bugsnag",
-  "Buildkite",
-  "Bunny, Inc.",
-  "Buzzsprout",
-  "Cal.com",
-  "Calendly",
-  "CallRail",
-  "Campaign Monitor",
-  "Campayn",
-  "Canny",
-  "Capsule CRM",
-  "Captain Data",
-  "Care Quality Commission",
-  "Cart.com",
-  "Castor EDC",
-  "Chameleon",
-  "Chargebee",
-  "Chargedesk",
-  "Chargify",
-  "Chartmogul",
-  "Chift",
-  "churnkey",
-  "cimis",
-  "Cin7",
-  "Circa",
-  "Circleci",
-  "Cisco Meraki",
-  "Clarif-ai",
-  "Clazar",
-  "ClickUp",
-  "Clockify",
-  "Clockodo",
-  "Close.com",
-  "Cloudbeds",
-  "Coassemble",
-  "Cockroachdb",
-  "Coda",
-  "Codefresh",
-  "Coin API",
-  "CoinGecko Coins",
-  "CoinMarketCap",
-  "Commcare",
-  "Commercetools",
-  "Concord",
-  "ConfigCat",
-  "Confluence",
-  "ConvertKit",
-  "Convex",
-  "Copper",
-  "Couchbase",
-  "Countercyclical",
-  "Courier",
-  "Criteo Marketing",
-  "Curve",
-  "Customer.io",
-  "Customerly",
-  "Datadog",
-  "Datascope",
-  "DBT",
-  "Delighted",
-  "Deputy",
-  "Devin AI",
-  "Ding Connect",
-  "Dixa",
-  "Dockerhub",
-  "Docuseal",
-  "Dolibarr",
-  "Dremio",
-  "Drift",
-  "Drip",
-  "Dropbox Sign",
-  "DV 360",
-  "Dwolla",
-  "DynamoDB",
-  "e-conomic",
-  "Easypost",
-  "Easypromos",
-  "Ebay Finance",
-  "Ebay Fulfillment",
-  "Elasticemail",
-  "Elasticsearch",
-  "EmailOctopus",
-  "Employment-Hero",
-  "Encharge",
-  "End-to-End Testing (datagen)",
-  "Eventbrite",
-  "Eventee",
-  "Eventzilla",
-  "Everhour",
-  "Exchange Rates Api",
-  "EZOfficeInventory",
-  "Facebook Marketing",
-  "Facebook Pages",
-  "Factorial",
-  "Fastbill",
-  "Fastly",
-  "Fauna",
-  "Feishu",
-  "File (CSV, JSON, Excel, Feather, Parquet)",
-  "Fillout",
-  "Finage",
-  "Financial Modelling",
-  "Finnhub",
-  "Finnworlds",
-  "Firebase",
-  "Firebase Realtime Database",
-  "Firebolt",
-  "FireHydrant",
-  "Fleetio",
-  "Flexmail",
-  "Flexport",
-  "float",
-  "Flowlu",
-  "Formbricks",
-  "FreeAgent",
-  "Freightview",
-  "FreshBooks",
-  "Freshcaller",
-  "Freshchat",
-  "Freshdesk",
-  "Freshsales",
-  "Freshservice",
-  "Front",
-  "Fulcrum",
-  "Fullstory",
-  "Gainsight Px",
-  "Genesys",
-  "GetGist",
-  "Giphy",
-  "GitBook",
-  "GitHub",
-  "Gitlab",
-  "Glassfrog",
-  "Gmail",
-  "GNews",
-  "GoCardless",
-  "Goldcast",
-  "GoLogin",
-  "Gong",
-  "Google Ads",
-  "Google Analytics (Universal Analytics)",
-  "Google Analytics 4 (GA4)",
-  "Google Calendar",
-  "Google Classroom",
-  "Google Cloud Storage (GCS)",
-  "Google Directory",
-  "Google Drive",
-  "Google Forms",
-  "Google PageSpeed Insights",
-  "Google Search Console",
-  "Google Sheets",
-  "Google Tasks",
-  "Google Webfonts",
-  "Google Workspace Admin Reports",
-  "Gorgias",
-  "Grafana",
-  "Granola",
-  "Greenhouse",
-  "GreytHr",
-  "Gridly",
-  "Guru",
-  "Gutendex",
-  "Hardcoded Records",
-  "Harness",
-  "Harvest",
-  "Height",
-  "Hellobaton",
-  "Help Scout",
-  "Hibob",
-  "High Level",
-  "HoorayHR",
-  "Hubplanner",
-  "HubSpot",
-  "Hugging Face - Datasets",
-  "Humanitix",
-  "Huntr",
-  "IBM Db2",
-  "Illumina Basespace",
-  "Imagga",
-  "Incident.io",
-  "Inflowinventory",
-  "Infor Nexus",
-  "Insightful",
-  "Insightly",
-  "Instagram",
-  "Instatus",
-  "Intercom",
-  "Interzoid",
-  "Intruder",
-  "Invoiced",
-  "Invoiceninja",
-  "IP2Whois",
-  "Iterable",
-  "Jamf Pro",
-  "Jina AI Reader",
-  "Jira",
-  "JobNimbus",
-  "Jotform",
-  "Judge.me Reviews",
-  "JustCall",
-  "JustSift",
-  "K6 Cloud",
-  "Kafka",
-  "Katana",
-  "Keka",
-  "Kisi",
-  "Kissmetrics",
-  "Klarna",
-  "Klaus Api",
-  "Klaviyo",
-  "Kustomer",
-  "Kyriba",
-  "KYVE",
-  "Lago",
-  "LaunchDarkly",
-  "Leadfeeder",
-  "Lemlist",
-  "Less Annoying CRM",
-  "Lever Hiring",
-  "Lightspeed Retail",
-  "Linear",
-  "LinkedIn Ads",
-  "Linkedin Pages",
-  "Linkrunner",
-  "Linnworks",
-  "Lob",
-  "Lokalise",
-  "Looker",
-  "Low-Code Source",
-  "lu.ma",
-  "Mailchimp",
-  "MailerLite",
-  "MailerSend",
-  "Mailgun",
-  "Mailjet Mail",
-  "Mailjet SMS",
-  "Mailosaur",
-  "Mailtrap",
-  "Mantle",
-  "Marketo",
-  "Marketstack",
-  "Mendeley",
-  "Mention",
-  "Mercado Ads",
-  "Merge",
-  "Metabase",
-  "Metricool",
-  "Microsoft Dataverse",
-  "Microsoft Entra Id",
-  "Microsoft Lists",
-  "Microsoft OneDrive",
-  "Microsoft SharePoint",
-  "Microsoft SQL Server (MSSQL)",
-  "Microsoft Teams",
-  "Miro",
-  "Missive",
-  "MixMax",
-  "Mixpanel",
-  "Mode",
-  "Monday",
-  "MongoDb",
-  "MongoDb (alternative version)",
-  "MongoDb POC",
-  "Mux",
-  "My Hours",
-  "MySQL",
-  "Mysqlv2 Source",
-  "n8n",
-  "Nasa",
-  "Navan",
-  "Nebius AI",
-  "Netsuite",
-  "New York Times",
-  "News Api",
-  "Newsdata",
-  "NewsData.io",
-  "Nexiopay",
-  "NinjaOne RMM",
-  "NoCRM",
-  "Northpass LMS",
-  "Notion",
-  "Nutshell",
-  "Nylas",
-  "Okta",
-  "Omnisend",
-  "Oncehub",
-  "Onepagecrm",
-  "OneSignal",
-  "Onfleet",
-  "Open Data DC",
-  "Open Exchange Rates",
-  "OpenAQ",
-  "OpenFDA",
-  "Openweather",
-  "Opinion Stage",
-  "Opsgenie",
-  "OPUSWatch",
-  "Oracle DB",
-  "Orb",
-  "Orbit",
-  "Oura",
-  "Outbrain Amplify",
-  "Outlook",
-  "Outreach",
-  "Oveit",
-  "Pabbly Subscriptions Billing",
-  "Paddle",
-  "Pagerduty",
-  "PandaDoc",
-  "Paperform",
-  "Papersign",
-  "Pardot",
-  "Partnerize",
-  "PartnerStack",
-  "PayFit",
-  "Paypal Transaction",
-  "Paystack",
-  "Pendo",
-  "Pennylane",
-  "Perigon",
-  "Perk",
-  "PersistIq",
-  "Persona",
-  "Pexels API",
-  "Phyllo",
-  "Picqer",
-  "Pingdom",
-  "Pinterest",
-  "Pipedrive",
-  "Pipeliner",
-  "Pivotal Tracker",
-  "Piwik",
-  "Plaid",
-  "Planhat",
-  "Plausible",
-  "Pocket",
-  "PokeAPI",
-  "Polygon Stock API",
-  "Poplar",
-  "Postgres",
-  "PostHog",
-  "Postmark App",
-  "PrestaShop",
-  "Pretix",
-  "Primetric",
-  "Printify",
-  "Productboard",
-  "Productive",
-  "Public Apis",
-  "Punk API",
-  "Pylon",
-  "PyPI",
-  "Qonto My",
-  "Qualaroo",
-  "QuickBooks",
-  "Railz",
-  "RD Station Marketing",
-  "Recharge",
-  "Recreation",
-  "Recruitee",
-  "Recurly",
-  "Reddit",
-  "Redshift",
-  "referralhero",
-  "RentCast",
-  "Repairshopr",
-  "Reply.io",
-  "Retail Express by Maropost",
-  "Retently",
-  "RevenueCat",
-  "Revolut Merchant",
-  "Ringcentral",
-  "RKI Covid",
-  "Rocket.chat",
-  "Rocketlane",
-  "Rollbar",
-  "Rootly",
-  "Rss",
-  "Ruddr",
-  "S3",
-  "SafetyCulture",
-  "Sage HR",
-  "Salesflare",
-  "Salesforce",
-  "Salesforce (Singer)",
-  "Salesloft",
-  "Sample Data",
-  "SAP Fieldglass",
-  "SavvyCal",
-  "Scaffold Java Jdbc",
-  "Scaffold Source Http",
-  "Scaffold Source Python",
-  "Scryfall",
-  "SearchMetrics",
-  "Secoda",
-  "Segment",
-  "Sendgrid",
-  "Sendinblue",
-  "Sendowl",
-  "SendPulse",
-  "Senseforce",
-  "Sentry",
-  "Serpstat",
-  "SFTP",
-  "SFTP Bulk",
-  "Sharetribe",
-  "Shippo",
-  "Shipstation",
-  "Shopify",
-  "ShopWired",
-  "Shortcut",
-  "Shortio",
-  "Shutterstock",
-  "Sigma Computing",
-  "SignNow",
-  "SimFin",
-  "SimpleCast",
-  "Simplesat",
-  "SingleStore",
-  "Slack",
-  "Smaily",
-  "SmartEngage",
-  "Smartreach",
-  "Smartsheets",
-  "Smartwaiver",
-  "Smoke Test",
-  "Snapchat Marketing",
-  "Snowflake",
-  "Solarwinds Service Desk",
-  "Sonar Cloud",
-  "SpaceX API",
-  "SparkPost",
-  "Split-io",
-  "Spotify Ads",
-  "SpotlerCRM",
-  "Square",
-  "Squarespace",
-  "Statsig",
-  "Statuspage",
-  "Stigg",
-  "StockData",
-  "Strava",
-  "Stripe",
-  "SurveyCTO",
-  "SurveyMonkey",
-  "SurveySparrow",
-  "Survicate",
-  "Svix",
-  "Systeme",
-  "Taboola",
-  "TalkDesk Explore",
-  "Tavus",
-  "Teamtailor",
-  "Teamwork",
-  "Tempo",
-  "Teradata",
-  "Testrail",
-  "The Guardian API",
-  "Thinkific",
-  "Thinkific Courses",
-  "Thrive Learning",
-  "Ticketmaster",
-  "TicketTailor",
-  "ticktick",
-  "TiDB",
-  "TikTok Marketing",
-  "Timely",
-  "Tinyemail",
-  "TMDb",
-  "Todoist",
-  "Toggl",
-  "TPLcentral",
-  "Track PMS",
-  "Trello",
-  "Tremendous",
-  "TrustPilot",
-  "TVMaze Schedule",
-  "Twelve Data",
-  "Twilio",
-  "Twilio Taskrouter",
-  "Twitter",
-  "Tyntec SMS",
-  "Typeform",
-  "Ubidots",
-  "Unleash",
-  "UpPromote",
-  "Uptick",
-  "US Census",
-  "Uservoice",
-  "Vantage",
-  "Veeqo",
-  "Vercel",
-  "Visma Economic",
-  "Vitally",
-  "VWO",
-  "Waiteraid",
-  "Wasabi",
-  "Watchmode",
-  "Weatherstack",
-  "Web Scrapper",
-  "Webflow",
-  "When_i_work",
-  "Whisky Hunter",
-  "Wikipedia Pageviews",
-  "WooCommerce",
-  "Wordpress",
-  "Workable",
-  "Workflowmax",
-  "Workramp",
-  "Wrike",
-  "Wufoo",
-  "Xero",
-  "Xkcd",
-  "Xsolla",
-  "Yahoo Finance Price",
-  "Yandex Metrica",
-  "Yotpo",
-  "You Need A Budget (YNAB)",
-  "Younium",
-  "YouSign",
-  "YouTube Analytics",
-  "Youtube Data",
-  "Zapier Supported Storage",
-  "ZapSign",
-  "Zendesk Chat",
-  "Zendesk Sell",
-  "Zendesk Sunshine",
-  "Zendesk Support",
-  "Zendesk Talk",
-  "Zenefits",
-  "Zenloop",
-  "Zoho Analytics metadata api",
-  "Zoho Bigin",
-  "Zoho Billing",
-  "Zoho Books",
-  "Zoho Campaign",
-  "Zoho Desk",
-  "Zoho Expense",
-  "Zoho Inventory",
-  "Zoho Invoice",
-  "ZohoCRM",
-  "Zonka Feedback",
-  "Zoom",
-  "Zuora"
+  {
+    "name": "100ms",
+    "slug": "100ms",
+    "logo": "assets/integrations/100ms.svg"
+  },
+  {
+    "name": "7shifts",
+    "slug": "7shifts",
+    "logo": "assets/integrations/7shifts.svg"
+  },
+  {
+    "name": "ActiveCampaign",
+    "slug": "activecampaign",
+    "logo": "assets/integrations/activecampaign.svg"
+  },
+  {
+    "name": "Acuity Scheduling",
+    "slug": "acuity-scheduling",
+    "logo": "assets/integrations/acuity-scheduling.svg"
+  },
+  {
+    "name": "Adjust",
+    "slug": "adjust",
+    "logo": "assets/integrations/adjust.svg"
+  },
+  {
+    "name": "Adobe Commerce (Magento)",
+    "slug": "adobe-commerce-magento",
+    "logo": "assets/integrations/adobe-commerce-magento.svg"
+  },
+  {
+    "name": "AgileCRM",
+    "slug": "agilecrm",
+    "logo": "assets/integrations/agilecrm.svg"
+  },
+  {
+    "name": "Aha",
+    "slug": "aha",
+    "logo": "assets/integrations/aha.svg"
+  },
+  {
+    "name": "Aircall",
+    "slug": "aircall",
+    "logo": "assets/integrations/aircall.svg"
+  },
+  {
+    "name": "Airtable",
+    "slug": "airtable",
+    "logo": "assets/integrations/airtable.svg"
+  },
+  {
+    "name": "Akeneo",
+    "slug": "akeneo",
+    "logo": "assets/integrations/akeneo.svg"
+  },
+  {
+    "name": "Algolia",
+    "slug": "algolia",
+    "logo": "assets/integrations/algolia.svg"
+  },
+  {
+    "name": "AlloyDB for PostgreSQL",
+    "slug": "alloydb-for-postgresql",
+    "logo": null
+  },
+  {
+    "name": "Alpaca Broker API",
+    "slug": "alpaca-broker-api",
+    "logo": "assets/integrations/alpaca-broker-api.svg"
+  },
+  {
+    "name": "Alpha Vantage",
+    "slug": "alpha-vantage",
+    "logo": "assets/integrations/alpha-vantage.svg"
+  },
+  {
+    "name": "Amazon Ads",
+    "slug": "amazon-ads",
+    "logo": "assets/integrations/amazon-ads.svg"
+  },
+  {
+    "name": "Amazon Seller Partner",
+    "slug": "amazon-seller-partner",
+    "logo": "assets/integrations/amazon-seller-partner.svg"
+  },
+  {
+    "name": "Amazon SQS",
+    "slug": "amazon-sqs",
+    "logo": "assets/integrations/amazon-sqs.svg"
+  },
+  {
+    "name": "Amplitude",
+    "slug": "amplitude",
+    "logo": "assets/integrations/amplitude.svg"
+  },
+  {
+    "name": "Apify Dataset",
+    "slug": "apify-dataset",
+    "logo": "assets/integrations/apify-dataset.svg"
+  },
+  {
+    "name": "Appcues",
+    "slug": "appcues",
+    "logo": "assets/integrations/appcues.svg"
+  },
+  {
+    "name": "Appfigures",
+    "slug": "appfigures",
+    "logo": "assets/integrations/appfigures.svg"
+  },
+  {
+    "name": "Appfollow",
+    "slug": "appfollow",
+    "logo": "assets/integrations/appfollow.svg"
+  },
+  {
+    "name": "Apple Ads",
+    "slug": "apple-ads",
+    "logo": "assets/integrations/apple-ads.svg"
+  },
+  {
+    "name": "AppsFlyer",
+    "slug": "appsflyer",
+    "logo": "assets/integrations/appsflyer.svg"
+  },
+  {
+    "name": "Appstore",
+    "slug": "appstore",
+    "logo": "assets/integrations/appstore.svg"
+  },
+  {
+    "name": "Apptivo",
+    "slug": "apptivo",
+    "logo": "assets/integrations/apptivo.svg"
+  },
+  {
+    "name": "Asana",
+    "slug": "asana",
+    "logo": "assets/integrations/asana.svg"
+  },
+  {
+    "name": "Ashby",
+    "slug": "ashby",
+    "logo": "assets/integrations/ashby.svg"
+  },
+  {
+    "name": "AssemblyAI",
+    "slug": "assemblyai",
+    "logo": "assets/integrations/assemblyai.svg"
+  },
+  {
+    "name": "Attio",
+    "slug": "attio",
+    "logo": "assets/integrations/attio.svg"
+  },
+  {
+    "name": "Auth0",
+    "slug": "auth0",
+    "logo": "assets/integrations/auth0.svg"
+  },
+  {
+    "name": "Aviationstack",
+    "slug": "aviationstack",
+    "logo": "assets/integrations/aviationstack.svg"
+  },
+  {
+    "name": "Avni",
+    "slug": "avni",
+    "logo": "assets/integrations/avni.svg"
+  },
+  {
+    "name": "AWIN Advertiser",
+    "slug": "awin-advertiser",
+    "logo": "assets/integrations/awin-advertiser.svg"
+  },
+  {
+    "name": "Aws Cloudtrail",
+    "slug": "aws-cloudtrail",
+    "logo": "assets/integrations/aws-cloudtrail.svg"
+  },
+  {
+    "name": "Azure Blob Storage",
+    "slug": "azure-blob-storage",
+    "logo": "assets/integrations/azure-blob-storage.svg"
+  },
+  {
+    "name": "Azure Table Storage",
+    "slug": "azure-table-storage",
+    "logo": "assets/integrations/azure-table-storage.svg"
+  },
+  {
+    "name": "Babelforce",
+    "slug": "babelforce",
+    "logo": "assets/integrations/babelforce.svg"
+  },
+  {
+    "name": "BambooHR",
+    "slug": "bamboohr",
+    "logo": "assets/integrations/bamboohr.svg"
+  },
+  {
+    "name": "Basecamp",
+    "slug": "basecamp",
+    "logo": "assets/integrations/basecamp.svg"
+  },
+  {
+    "name": "Beamer",
+    "slug": "beamer",
+    "logo": "assets/integrations/beamer.svg"
+  },
+  {
+    "name": "Bigcommerce",
+    "slug": "bigcommerce",
+    "logo": "assets/integrations/bigcommerce.svg"
+  },
+  {
+    "name": "BigMailer",
+    "slug": "bigmailer",
+    "logo": "assets/integrations/bigmailer.svg"
+  },
+  {
+    "name": "BigQuery",
+    "slug": "bigquery",
+    "logo": "assets/integrations/bigquery.svg"
+  },
+  {
+    "name": "Bing Ads",
+    "slug": "bing-ads",
+    "logo": "assets/integrations/bing-ads.svg"
+  },
+  {
+    "name": "Bitly",
+    "slug": "bitly",
+    "logo": "assets/integrations/bitly.svg"
+  },
+  {
+    "name": "Blogger",
+    "slug": "blogger",
+    "logo": "assets/integrations/blogger.svg"
+  },
+  {
+    "name": "Bluetally",
+    "slug": "bluetally",
+    "logo": "assets/integrations/bluetally.svg"
+  },
+  {
+    "name": "BoldSign",
+    "slug": "boldsign",
+    "logo": "assets/integrations/boldsign.svg"
+  },
+  {
+    "name": "Box",
+    "slug": "box",
+    "logo": "assets/integrations/box.svg"
+  },
+  {
+    "name": "Box Data Extract",
+    "slug": "box-data-extract",
+    "logo": "assets/integrations/box-data-extract.svg"
+  },
+  {
+    "name": "Braintree",
+    "slug": "braintree",
+    "logo": "assets/integrations/braintree.svg"
+  },
+  {
+    "name": "Braze",
+    "slug": "braze",
+    "logo": "assets/integrations/braze.svg"
+  },
+  {
+    "name": "Breezometer",
+    "slug": "breezometer",
+    "logo": "assets/integrations/breezometer.svg"
+  },
+  {
+    "name": "Breezy HR",
+    "slug": "breezy-hr",
+    "logo": "assets/integrations/breezy-hr.svg"
+  },
+  {
+    "name": "Brevo",
+    "slug": "brevo",
+    "logo": "assets/integrations/brevo.svg"
+  },
+  {
+    "name": "Brex",
+    "slug": "brex",
+    "logo": "assets/integrations/brex.svg"
+  },
+  {
+    "name": "Bugsnag",
+    "slug": "bugsnag",
+    "logo": "assets/integrations/bugsnag.svg"
+  },
+  {
+    "name": "Buildkite",
+    "slug": "buildkite",
+    "logo": "assets/integrations/buildkite.svg"
+  },
+  {
+    "name": "Bunny, Inc.",
+    "slug": "bunny-inc",
+    "logo": "assets/integrations/bunny-inc.svg"
+  },
+  {
+    "name": "Buzzsprout",
+    "slug": "buzzsprout",
+    "logo": "assets/integrations/buzzsprout.svg"
+  },
+  {
+    "name": "Cal.com",
+    "slug": "cal-com",
+    "logo": "assets/integrations/cal-com.svg"
+  },
+  {
+    "name": "Calendly",
+    "slug": "calendly",
+    "logo": "assets/integrations/calendly.svg"
+  },
+  {
+    "name": "CallRail",
+    "slug": "callrail",
+    "logo": "assets/integrations/callrail.svg"
+  },
+  {
+    "name": "Campaign Monitor",
+    "slug": "campaign-monitor",
+    "logo": "assets/integrations/campaign-monitor.svg"
+  },
+  {
+    "name": "Campayn",
+    "slug": "campayn",
+    "logo": "assets/integrations/campayn.svg"
+  },
+  {
+    "name": "Canny",
+    "slug": "canny",
+    "logo": "assets/integrations/canny.svg"
+  },
+  {
+    "name": "Capsule CRM",
+    "slug": "capsule-crm",
+    "logo": "assets/integrations/capsule-crm.svg"
+  },
+  {
+    "name": "Captain Data",
+    "slug": "captain-data",
+    "logo": "assets/integrations/captain-data.svg"
+  },
+  {
+    "name": "Care Quality Commission",
+    "slug": "care-quality-commission",
+    "logo": "assets/integrations/care-quality-commission.svg"
+  },
+  {
+    "name": "Cart.com",
+    "slug": "cart-com",
+    "logo": "assets/integrations/cart-com.svg"
+  },
+  {
+    "name": "Castor EDC",
+    "slug": "castor-edc",
+    "logo": "assets/integrations/castor-edc.svg"
+  },
+  {
+    "name": "Chameleon",
+    "slug": "chameleon",
+    "logo": "assets/integrations/chameleon.svg"
+  },
+  {
+    "name": "Chargebee",
+    "slug": "chargebee",
+    "logo": "assets/integrations/chargebee.svg"
+  },
+  {
+    "name": "Chargedesk",
+    "slug": "chargedesk",
+    "logo": "assets/integrations/chargedesk.svg"
+  },
+  {
+    "name": "Chargify",
+    "slug": "chargify",
+    "logo": "assets/integrations/chargify.svg"
+  },
+  {
+    "name": "Chartmogul",
+    "slug": "chartmogul",
+    "logo": "assets/integrations/chartmogul.svg"
+  },
+  {
+    "name": "Chift",
+    "slug": "chift",
+    "logo": "assets/integrations/chift.svg"
+  },
+  {
+    "name": "churnkey",
+    "slug": "churnkey",
+    "logo": "assets/integrations/churnkey.svg"
+  },
+  {
+    "name": "cimis",
+    "slug": "cimis",
+    "logo": "assets/integrations/cimis.svg"
+  },
+  {
+    "name": "Cin7",
+    "slug": "cin7",
+    "logo": "assets/integrations/cin7.svg"
+  },
+  {
+    "name": "Circa",
+    "slug": "circa",
+    "logo": "assets/integrations/circa.svg"
+  },
+  {
+    "name": "Circleci",
+    "slug": "circleci",
+    "logo": "assets/integrations/circleci.svg"
+  },
+  {
+    "name": "Cisco Meraki",
+    "slug": "cisco-meraki",
+    "logo": "assets/integrations/cisco-meraki.svg"
+  },
+  {
+    "name": "Clarif-ai",
+    "slug": "clarif-ai",
+    "logo": "assets/integrations/clarif-ai.svg"
+  },
+  {
+    "name": "Clazar",
+    "slug": "clazar",
+    "logo": "assets/integrations/clazar.svg"
+  },
+  {
+    "name": "ClickUp",
+    "slug": "clickup",
+    "logo": "assets/integrations/clickup.svg"
+  },
+  {
+    "name": "Clockify",
+    "slug": "clockify",
+    "logo": "assets/integrations/clockify.svg"
+  },
+  {
+    "name": "Clockodo",
+    "slug": "clockodo",
+    "logo": "assets/integrations/clockodo.svg"
+  },
+  {
+    "name": "Close.com",
+    "slug": "close-com",
+    "logo": "assets/integrations/close-com.svg"
+  },
+  {
+    "name": "Cloudbeds",
+    "slug": "cloudbeds",
+    "logo": "assets/integrations/cloudbeds.svg"
+  },
+  {
+    "name": "Coassemble",
+    "slug": "coassemble",
+    "logo": "assets/integrations/coassemble.svg"
+  },
+  {
+    "name": "Cockroachdb",
+    "slug": "cockroachdb",
+    "logo": null
+  },
+  {
+    "name": "Coda",
+    "slug": "coda",
+    "logo": "assets/integrations/coda.svg"
+  },
+  {
+    "name": "Codefresh",
+    "slug": "codefresh",
+    "logo": "assets/integrations/codefresh.svg"
+  },
+  {
+    "name": "Coin API",
+    "slug": "coin-api",
+    "logo": "assets/integrations/coin-api.svg"
+  },
+  {
+    "name": "CoinGecko Coins",
+    "slug": "coingecko-coins",
+    "logo": "assets/integrations/coingecko-coins.svg"
+  },
+  {
+    "name": "CoinMarketCap",
+    "slug": "coinmarketcap",
+    "logo": "assets/integrations/coinmarketcap.svg"
+  },
+  {
+    "name": "Commcare",
+    "slug": "commcare",
+    "logo": "assets/integrations/commcare.svg"
+  },
+  {
+    "name": "Commercetools",
+    "slug": "commercetools",
+    "logo": "assets/integrations/commercetools.svg"
+  },
+  {
+    "name": "Concord",
+    "slug": "concord",
+    "logo": "assets/integrations/concord.svg"
+  },
+  {
+    "name": "ConfigCat",
+    "slug": "configcat",
+    "logo": "assets/integrations/configcat.svg"
+  },
+  {
+    "name": "Confluence",
+    "slug": "confluence",
+    "logo": "assets/integrations/confluence.svg"
+  },
+  {
+    "name": "ConvertKit",
+    "slug": "convertkit",
+    "logo": "assets/integrations/convertkit.svg"
+  },
+  {
+    "name": "Convex",
+    "slug": "convex",
+    "logo": "assets/integrations/convex.svg"
+  },
+  {
+    "name": "Copper",
+    "slug": "copper",
+    "logo": "assets/integrations/copper.svg"
+  },
+  {
+    "name": "Couchbase",
+    "slug": "couchbase",
+    "logo": "assets/integrations/couchbase.svg"
+  },
+  {
+    "name": "Countercyclical",
+    "slug": "countercyclical",
+    "logo": "assets/integrations/countercyclical.svg"
+  },
+  {
+    "name": "Courier",
+    "slug": "courier",
+    "logo": "assets/integrations/courier.svg"
+  },
+  {
+    "name": "Criteo Marketing",
+    "slug": "criteo-marketing",
+    "logo": "assets/integrations/criteo-marketing.svg"
+  },
+  {
+    "name": "Curve",
+    "slug": "curve",
+    "logo": "assets/integrations/curve.svg"
+  },
+  {
+    "name": "Customer.io",
+    "slug": "customer-io",
+    "logo": "assets/integrations/customer-io.svg"
+  },
+  {
+    "name": "Customerly",
+    "slug": "customerly",
+    "logo": "assets/integrations/customerly.svg"
+  },
+  {
+    "name": "Datadog",
+    "slug": "datadog",
+    "logo": "assets/integrations/datadog.svg"
+  },
+  {
+    "name": "Datascope",
+    "slug": "datascope",
+    "logo": "assets/integrations/datascope.svg"
+  },
+  {
+    "name": "DBT",
+    "slug": "dbt",
+    "logo": "assets/integrations/dbt.svg"
+  },
+  {
+    "name": "Delighted",
+    "slug": "delighted",
+    "logo": "assets/integrations/delighted.svg"
+  },
+  {
+    "name": "Deputy",
+    "slug": "deputy",
+    "logo": "assets/integrations/deputy.svg"
+  },
+  {
+    "name": "Devin AI",
+    "slug": "devin-ai",
+    "logo": "assets/integrations/devin-ai.svg"
+  },
+  {
+    "name": "Ding Connect",
+    "slug": "ding-connect",
+    "logo": "assets/integrations/ding-connect.svg"
+  },
+  {
+    "name": "Dixa",
+    "slug": "dixa",
+    "logo": "assets/integrations/dixa.svg"
+  },
+  {
+    "name": "Dockerhub",
+    "slug": "dockerhub",
+    "logo": "assets/integrations/dockerhub.svg"
+  },
+  {
+    "name": "Docuseal",
+    "slug": "docuseal",
+    "logo": "assets/integrations/docuseal.svg"
+  },
+  {
+    "name": "Dolibarr",
+    "slug": "dolibarr",
+    "logo": "assets/integrations/dolibarr.svg"
+  },
+  {
+    "name": "Dremio",
+    "slug": "dremio",
+    "logo": "assets/integrations/dremio.svg"
+  },
+  {
+    "name": "Drift",
+    "slug": "drift",
+    "logo": "assets/integrations/drift.svg"
+  },
+  {
+    "name": "Drip",
+    "slug": "drip",
+    "logo": "assets/integrations/drip.svg"
+  },
+  {
+    "name": "Dropbox Sign",
+    "slug": "dropbox-sign",
+    "logo": "assets/integrations/dropbox-sign.svg"
+  },
+  {
+    "name": "DV 360",
+    "slug": "dv-360",
+    "logo": "assets/integrations/dv-360.svg"
+  },
+  {
+    "name": "Dwolla",
+    "slug": "dwolla",
+    "logo": "assets/integrations/dwolla.svg"
+  },
+  {
+    "name": "DynamoDB",
+    "slug": "dynamodb",
+    "logo": "assets/integrations/dynamodb.svg"
+  },
+  {
+    "name": "e-conomic",
+    "slug": "e-conomic",
+    "logo": "assets/integrations/e-conomic.svg"
+  },
+  {
+    "name": "Easypost",
+    "slug": "easypost",
+    "logo": "assets/integrations/easypost.svg"
+  },
+  {
+    "name": "Easypromos",
+    "slug": "easypromos",
+    "logo": "assets/integrations/easypromos.svg"
+  },
+  {
+    "name": "Ebay Finance",
+    "slug": "ebay-finance",
+    "logo": "assets/integrations/ebay-finance.svg"
+  },
+  {
+    "name": "Ebay Fulfillment",
+    "slug": "ebay-fulfillment",
+    "logo": "assets/integrations/ebay-fulfillment.svg"
+  },
+  {
+    "name": "Elasticemail",
+    "slug": "elasticemail",
+    "logo": "assets/integrations/elasticemail.svg"
+  },
+  {
+    "name": "Elasticsearch",
+    "slug": "elasticsearch",
+    "logo": "assets/integrations/elasticsearch.svg"
+  },
+  {
+    "name": "EmailOctopus",
+    "slug": "emailoctopus",
+    "logo": "assets/integrations/emailoctopus.svg"
+  },
+  {
+    "name": "Employment-Hero",
+    "slug": "employment-hero",
+    "logo": "assets/integrations/employment-hero.svg"
+  },
+  {
+    "name": "Encharge",
+    "slug": "encharge",
+    "logo": "assets/integrations/encharge.svg"
+  },
+  {
+    "name": "End-to-End Testing (datagen)",
+    "slug": "end-to-end-testing-datagen",
+    "logo": "assets/integrations/end-to-end-testing-datagen.svg"
+  },
+  {
+    "name": "Eventbrite",
+    "slug": "eventbrite",
+    "logo": "assets/integrations/eventbrite.svg"
+  },
+  {
+    "name": "Eventee",
+    "slug": "eventee",
+    "logo": "assets/integrations/eventee.svg"
+  },
+  {
+    "name": "Eventzilla",
+    "slug": "eventzilla",
+    "logo": "assets/integrations/eventzilla.svg"
+  },
+  {
+    "name": "Everhour",
+    "slug": "everhour",
+    "logo": "assets/integrations/everhour.svg"
+  },
+  {
+    "name": "Exchange Rates Api",
+    "slug": "exchange-rates-api",
+    "logo": "assets/integrations/exchange-rates-api.svg"
+  },
+  {
+    "name": "EZOfficeInventory",
+    "slug": "ezofficeinventory",
+    "logo": "assets/integrations/ezofficeinventory.svg"
+  },
+  {
+    "name": "Facebook Marketing",
+    "slug": "facebook-marketing",
+    "logo": "assets/integrations/facebook-marketing.svg"
+  },
+  {
+    "name": "Facebook Pages",
+    "slug": "facebook-pages",
+    "logo": "assets/integrations/facebook-pages.svg"
+  },
+  {
+    "name": "Factorial",
+    "slug": "factorial",
+    "logo": "assets/integrations/factorial.svg"
+  },
+  {
+    "name": "Fastbill",
+    "slug": "fastbill",
+    "logo": "assets/integrations/fastbill.svg"
+  },
+  {
+    "name": "Fastly",
+    "slug": "fastly",
+    "logo": "assets/integrations/fastly.svg"
+  },
+  {
+    "name": "Fauna",
+    "slug": "fauna",
+    "logo": "assets/integrations/fauna.svg"
+  },
+  {
+    "name": "Feishu",
+    "slug": "feishu",
+    "logo": "assets/integrations/feishu.svg"
+  },
+  {
+    "name": "File (CSV, JSON, Excel, Feather, Parquet)",
+    "slug": "file-csv-json-excel-feather-parquet",
+    "logo": "assets/integrations/file-csv-json-excel-feather-parquet.svg"
+  },
+  {
+    "name": "Fillout",
+    "slug": "fillout",
+    "logo": "assets/integrations/fillout.svg"
+  },
+  {
+    "name": "Finage",
+    "slug": "finage",
+    "logo": "assets/integrations/finage.svg"
+  },
+  {
+    "name": "Financial Modelling",
+    "slug": "financial-modelling",
+    "logo": "assets/integrations/financial-modelling.svg"
+  },
+  {
+    "name": "Finnhub",
+    "slug": "finnhub",
+    "logo": "assets/integrations/finnhub.svg"
+  },
+  {
+    "name": "Finnworlds",
+    "slug": "finnworlds",
+    "logo": "assets/integrations/finnworlds.svg"
+  },
+  {
+    "name": "Firebase",
+    "slug": "firebase",
+    "logo": "assets/integrations/firebase.svg"
+  },
+  {
+    "name": "Firebase Realtime Database",
+    "slug": "firebase-realtime-database",
+    "logo": null
+  },
+  {
+    "name": "Firebolt",
+    "slug": "firebolt",
+    "logo": "assets/integrations/firebolt.svg"
+  },
+  {
+    "name": "FireHydrant",
+    "slug": "firehydrant",
+    "logo": "assets/integrations/firehydrant.svg"
+  },
+  {
+    "name": "Fleetio",
+    "slug": "fleetio",
+    "logo": "assets/integrations/fleetio.svg"
+  },
+  {
+    "name": "Flexmail",
+    "slug": "flexmail",
+    "logo": "assets/integrations/flexmail.svg"
+  },
+  {
+    "name": "Flexport",
+    "slug": "flexport",
+    "logo": "assets/integrations/flexport.svg"
+  },
+  {
+    "name": "float",
+    "slug": "float",
+    "logo": "assets/integrations/float.svg"
+  },
+  {
+    "name": "Flowlu",
+    "slug": "flowlu",
+    "logo": "assets/integrations/flowlu.svg"
+  },
+  {
+    "name": "Formbricks",
+    "slug": "formbricks",
+    "logo": "assets/integrations/formbricks.svg"
+  },
+  {
+    "name": "FreeAgent",
+    "slug": "freeagent",
+    "logo": "assets/integrations/freeagent.svg"
+  },
+  {
+    "name": "Freightview",
+    "slug": "freightview",
+    "logo": "assets/integrations/freightview.svg"
+  },
+  {
+    "name": "FreshBooks",
+    "slug": "freshbooks",
+    "logo": "assets/integrations/freshbooks.svg"
+  },
+  {
+    "name": "Freshcaller",
+    "slug": "freshcaller",
+    "logo": "assets/integrations/freshcaller.svg"
+  },
+  {
+    "name": "Freshchat",
+    "slug": "freshchat",
+    "logo": "assets/integrations/freshchat.svg"
+  },
+  {
+    "name": "Freshdesk",
+    "slug": "freshdesk",
+    "logo": "assets/integrations/freshdesk.svg"
+  },
+  {
+    "name": "Freshsales",
+    "slug": "freshsales",
+    "logo": "assets/integrations/freshsales.svg"
+  },
+  {
+    "name": "Freshservice",
+    "slug": "freshservice",
+    "logo": "assets/integrations/freshservice.svg"
+  },
+  {
+    "name": "Front",
+    "slug": "front",
+    "logo": "assets/integrations/front.svg"
+  },
+  {
+    "name": "Fulcrum",
+    "slug": "fulcrum",
+    "logo": "assets/integrations/fulcrum.svg"
+  },
+  {
+    "name": "Fullstory",
+    "slug": "fullstory",
+    "logo": "assets/integrations/fullstory.svg"
+  },
+  {
+    "name": "Gainsight Px",
+    "slug": "gainsight-px",
+    "logo": "assets/integrations/gainsight-px.svg"
+  },
+  {
+    "name": "Genesys",
+    "slug": "genesys",
+    "logo": "assets/integrations/genesys.svg"
+  },
+  {
+    "name": "GetGist",
+    "slug": "getgist",
+    "logo": "assets/integrations/getgist.svg"
+  },
+  {
+    "name": "Giphy",
+    "slug": "giphy",
+    "logo": "assets/integrations/giphy.svg"
+  },
+  {
+    "name": "GitBook",
+    "slug": "gitbook",
+    "logo": "assets/integrations/gitbook.svg"
+  },
+  {
+    "name": "GitHub",
+    "slug": "github",
+    "logo": "assets/integrations/github.svg"
+  },
+  {
+    "name": "Gitlab",
+    "slug": "gitlab",
+    "logo": "assets/integrations/gitlab.svg"
+  },
+  {
+    "name": "Glassfrog",
+    "slug": "glassfrog",
+    "logo": "assets/integrations/glassfrog.svg"
+  },
+  {
+    "name": "Gmail",
+    "slug": "gmail",
+    "logo": "assets/integrations/gmail.svg"
+  },
+  {
+    "name": "GNews",
+    "slug": "gnews",
+    "logo": "assets/integrations/gnews.svg"
+  },
+  {
+    "name": "GoCardless",
+    "slug": "gocardless",
+    "logo": "assets/integrations/gocardless.svg"
+  },
+  {
+    "name": "Goldcast",
+    "slug": "goldcast",
+    "logo": "assets/integrations/goldcast.svg"
+  },
+  {
+    "name": "GoLogin",
+    "slug": "gologin",
+    "logo": "assets/integrations/gologin.svg"
+  },
+  {
+    "name": "Gong",
+    "slug": "gong",
+    "logo": "assets/integrations/gong.svg"
+  },
+  {
+    "name": "Google Ads",
+    "slug": "google-ads",
+    "logo": "assets/integrations/google-ads.svg"
+  },
+  {
+    "name": "Google Analytics (Universal Analytics)",
+    "slug": "google-analytics-universal-analytics",
+    "logo": "assets/integrations/google-analytics-universal-analytics.svg"
+  },
+  {
+    "name": "Google Analytics 4 (GA4)",
+    "slug": "google-analytics-4-ga4",
+    "logo": "assets/integrations/google-analytics-4-ga4.svg"
+  },
+  {
+    "name": "Google Calendar",
+    "slug": "google-calendar",
+    "logo": "assets/integrations/google-calendar.svg"
+  },
+  {
+    "name": "Google Classroom",
+    "slug": "google-classroom",
+    "logo": "assets/integrations/google-classroom.svg"
+  },
+  {
+    "name": "Google Cloud Storage (GCS)",
+    "slug": "google-cloud-storage-gcs",
+    "logo": "assets/integrations/google-cloud-storage-gcs.svg"
+  },
+  {
+    "name": "Google Directory",
+    "slug": "google-directory",
+    "logo": "assets/integrations/google-directory.svg"
+  },
+  {
+    "name": "Google Drive",
+    "slug": "google-drive",
+    "logo": "assets/integrations/google-drive.svg"
+  },
+  {
+    "name": "Google Forms",
+    "slug": "google-forms",
+    "logo": "assets/integrations/google-forms.svg"
+  },
+  {
+    "name": "Google PageSpeed Insights",
+    "slug": "google-pagespeed-insights",
+    "logo": "assets/integrations/google-pagespeed-insights.svg"
+  },
+  {
+    "name": "Google Search Console",
+    "slug": "google-search-console",
+    "logo": "assets/integrations/google-search-console.svg"
+  },
+  {
+    "name": "Google Sheets",
+    "slug": "google-sheets",
+    "logo": "assets/integrations/google-sheets.svg"
+  },
+  {
+    "name": "Google Tasks",
+    "slug": "google-tasks",
+    "logo": "assets/integrations/google-tasks.svg"
+  },
+  {
+    "name": "Google Webfonts",
+    "slug": "google-webfonts",
+    "logo": "assets/integrations/google-webfonts.svg"
+  },
+  {
+    "name": "Google Workspace Admin Reports",
+    "slug": "google-workspace-admin-reports",
+    "logo": "assets/integrations/google-workspace-admin-reports.svg"
+  },
+  {
+    "name": "Gorgias",
+    "slug": "gorgias",
+    "logo": "assets/integrations/gorgias.svg"
+  },
+  {
+    "name": "Grafana",
+    "slug": "grafana",
+    "logo": "assets/integrations/grafana.svg"
+  },
+  {
+    "name": "Granola",
+    "slug": "granola",
+    "logo": null
+  },
+  {
+    "name": "Greenhouse",
+    "slug": "greenhouse",
+    "logo": "assets/integrations/greenhouse.svg"
+  },
+  {
+    "name": "GreytHr",
+    "slug": "greythr",
+    "logo": "assets/integrations/greythr.svg"
+  },
+  {
+    "name": "Gridly",
+    "slug": "gridly",
+    "logo": "assets/integrations/gridly.svg"
+  },
+  {
+    "name": "Guru",
+    "slug": "guru",
+    "logo": "assets/integrations/guru.svg"
+  },
+  {
+    "name": "Gutendex",
+    "slug": "gutendex",
+    "logo": null
+  },
+  {
+    "name": "Hardcoded Records",
+    "slug": "hardcoded-records",
+    "logo": "assets/integrations/hardcoded-records.svg"
+  },
+  {
+    "name": "Harness",
+    "slug": "harness",
+    "logo": "assets/integrations/harness.svg"
+  },
+  {
+    "name": "Harvest",
+    "slug": "harvest",
+    "logo": "assets/integrations/harvest.svg"
+  },
+  {
+    "name": "Height",
+    "slug": "height",
+    "logo": "assets/integrations/height.svg"
+  },
+  {
+    "name": "Hellobaton",
+    "slug": "hellobaton",
+    "logo": "assets/integrations/hellobaton.svg"
+  },
+  {
+    "name": "Help Scout",
+    "slug": "help-scout",
+    "logo": "assets/integrations/help-scout.svg"
+  },
+  {
+    "name": "Hibob",
+    "slug": "hibob",
+    "logo": "assets/integrations/hibob.svg"
+  },
+  {
+    "name": "High Level",
+    "slug": "high-level",
+    "logo": "assets/integrations/high-level.svg"
+  },
+  {
+    "name": "HoorayHR",
+    "slug": "hoorayhr",
+    "logo": "assets/integrations/hoorayhr.svg"
+  },
+  {
+    "name": "Hubplanner",
+    "slug": "hubplanner",
+    "logo": "assets/integrations/hubplanner.svg"
+  },
+  {
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "logo": "assets/integrations/hubspot.svg"
+  },
+  {
+    "name": "Hugging Face - Datasets",
+    "slug": "hugging-face-datasets",
+    "logo": "assets/integrations/hugging-face-datasets.svg"
+  },
+  {
+    "name": "Humanitix",
+    "slug": "humanitix",
+    "logo": "assets/integrations/humanitix.svg"
+  },
+  {
+    "name": "Huntr",
+    "slug": "huntr",
+    "logo": "assets/integrations/huntr.svg"
+  },
+  {
+    "name": "IBM Db2",
+    "slug": "ibm-db2",
+    "logo": "assets/integrations/ibm-db2.svg"
+  },
+  {
+    "name": "Illumina Basespace",
+    "slug": "illumina-basespace",
+    "logo": "assets/integrations/illumina-basespace.svg"
+  },
+  {
+    "name": "Imagga",
+    "slug": "imagga",
+    "logo": "assets/integrations/imagga.svg"
+  },
+  {
+    "name": "Incident.io",
+    "slug": "incident-io",
+    "logo": "assets/integrations/incident-io.svg"
+  },
+  {
+    "name": "Inflowinventory",
+    "slug": "inflowinventory",
+    "logo": "assets/integrations/inflowinventory.svg"
+  },
+  {
+    "name": "Infor Nexus",
+    "slug": "infor-nexus",
+    "logo": "assets/integrations/infor-nexus.svg"
+  },
+  {
+    "name": "Insightful",
+    "slug": "insightful",
+    "logo": "assets/integrations/insightful.svg"
+  },
+  {
+    "name": "Insightly",
+    "slug": "insightly",
+    "logo": "assets/integrations/insightly.svg"
+  },
+  {
+    "name": "Instagram",
+    "slug": "instagram",
+    "logo": "assets/integrations/instagram.svg"
+  },
+  {
+    "name": "Instatus",
+    "slug": "instatus",
+    "logo": "assets/integrations/instatus.svg"
+  },
+  {
+    "name": "Intercom",
+    "slug": "intercom",
+    "logo": "assets/integrations/intercom.svg"
+  },
+  {
+    "name": "Interzoid",
+    "slug": "interzoid",
+    "logo": "assets/integrations/interzoid.svg"
+  },
+  {
+    "name": "Intruder",
+    "slug": "intruder",
+    "logo": "assets/integrations/intruder.svg"
+  },
+  {
+    "name": "Invoiced",
+    "slug": "invoiced",
+    "logo": "assets/integrations/invoiced.svg"
+  },
+  {
+    "name": "Invoiceninja",
+    "slug": "invoiceninja",
+    "logo": "assets/integrations/invoiceninja.svg"
+  },
+  {
+    "name": "IP2Whois",
+    "slug": "ip2whois",
+    "logo": "assets/integrations/ip2whois.svg"
+  },
+  {
+    "name": "Iterable",
+    "slug": "iterable",
+    "logo": "assets/integrations/iterable.svg"
+  },
+  {
+    "name": "Jamf Pro",
+    "slug": "jamf-pro",
+    "logo": "assets/integrations/jamf-pro.svg"
+  },
+  {
+    "name": "Jina AI Reader",
+    "slug": "jina-ai-reader",
+    "logo": "assets/integrations/jina-ai-reader.svg"
+  },
+  {
+    "name": "Jira",
+    "slug": "jira",
+    "logo": "assets/integrations/jira.svg"
+  },
+  {
+    "name": "JobNimbus",
+    "slug": "jobnimbus",
+    "logo": "assets/integrations/jobnimbus.svg"
+  },
+  {
+    "name": "Jotform",
+    "slug": "jotform",
+    "logo": "assets/integrations/jotform.svg"
+  },
+  {
+    "name": "Judge.me Reviews",
+    "slug": "judge-me-reviews",
+    "logo": "assets/integrations/judge-me-reviews.svg"
+  },
+  {
+    "name": "JustCall",
+    "slug": "justcall",
+    "logo": "assets/integrations/justcall.svg"
+  },
+  {
+    "name": "JustSift",
+    "slug": "justsift",
+    "logo": "assets/integrations/justsift.svg"
+  },
+  {
+    "name": "K6 Cloud",
+    "slug": "k6-cloud",
+    "logo": "assets/integrations/k6-cloud.svg"
+  },
+  {
+    "name": "Kafka",
+    "slug": "kafka",
+    "logo": "assets/integrations/kafka.svg"
+  },
+  {
+    "name": "Katana",
+    "slug": "katana",
+    "logo": "assets/integrations/katana.svg"
+  },
+  {
+    "name": "Keka",
+    "slug": "keka",
+    "logo": "assets/integrations/keka.svg"
+  },
+  {
+    "name": "Kisi",
+    "slug": "kisi",
+    "logo": "assets/integrations/kisi.svg"
+  },
+  {
+    "name": "Kissmetrics",
+    "slug": "kissmetrics",
+    "logo": "assets/integrations/kissmetrics.svg"
+  },
+  {
+    "name": "Klarna",
+    "slug": "klarna",
+    "logo": "assets/integrations/klarna.svg"
+  },
+  {
+    "name": "Klaus Api",
+    "slug": "klaus-api",
+    "logo": "assets/integrations/klaus-api.svg"
+  },
+  {
+    "name": "Klaviyo",
+    "slug": "klaviyo",
+    "logo": "assets/integrations/klaviyo.svg"
+  },
+  {
+    "name": "Kustomer",
+    "slug": "kustomer",
+    "logo": "assets/integrations/kustomer.svg"
+  },
+  {
+    "name": "Kyriba",
+    "slug": "kyriba",
+    "logo": "assets/integrations/kyriba.svg"
+  },
+  {
+    "name": "KYVE",
+    "slug": "kyve",
+    "logo": "assets/integrations/kyve.svg"
+  },
+  {
+    "name": "Lago",
+    "slug": "lago",
+    "logo": "assets/integrations/lago.svg"
+  },
+  {
+    "name": "LaunchDarkly",
+    "slug": "launchdarkly",
+    "logo": "assets/integrations/launchdarkly.svg"
+  },
+  {
+    "name": "Leadfeeder",
+    "slug": "leadfeeder",
+    "logo": "assets/integrations/leadfeeder.svg"
+  },
+  {
+    "name": "Lemlist",
+    "slug": "lemlist",
+    "logo": "assets/integrations/lemlist.svg"
+  },
+  {
+    "name": "Less Annoying CRM",
+    "slug": "less-annoying-crm",
+    "logo": "assets/integrations/less-annoying-crm.svg"
+  },
+  {
+    "name": "Lever Hiring",
+    "slug": "lever-hiring",
+    "logo": "assets/integrations/lever-hiring.svg"
+  },
+  {
+    "name": "Lightspeed Retail",
+    "slug": "lightspeed-retail",
+    "logo": "assets/integrations/lightspeed-retail.svg"
+  },
+  {
+    "name": "Linear",
+    "slug": "linear",
+    "logo": "assets/integrations/linear.svg"
+  },
+  {
+    "name": "LinkedIn Ads",
+    "slug": "linkedin-ads",
+    "logo": "assets/integrations/linkedin-ads.svg"
+  },
+  {
+    "name": "Linkedin Pages",
+    "slug": "linkedin-pages",
+    "logo": "assets/integrations/linkedin-pages.svg"
+  },
+  {
+    "name": "Linkrunner",
+    "slug": "linkrunner",
+    "logo": "assets/integrations/linkrunner.svg"
+  },
+  {
+    "name": "Linnworks",
+    "slug": "linnworks",
+    "logo": "assets/integrations/linnworks.svg"
+  },
+  {
+    "name": "Lob",
+    "slug": "lob",
+    "logo": "assets/integrations/lob.svg"
+  },
+  {
+    "name": "Lokalise",
+    "slug": "lokalise",
+    "logo": "assets/integrations/lokalise.svg"
+  },
+  {
+    "name": "Looker",
+    "slug": "looker",
+    "logo": "assets/integrations/looker.svg"
+  },
+  {
+    "name": "Low-Code Source",
+    "slug": "low-code-source",
+    "logo": null
+  },
+  {
+    "name": "lu.ma",
+    "slug": "lu-ma",
+    "logo": "assets/integrations/lu-ma.svg"
+  },
+  {
+    "name": "Mailchimp",
+    "slug": "mailchimp",
+    "logo": "assets/integrations/mailchimp.svg"
+  },
+  {
+    "name": "MailerLite",
+    "slug": "mailerlite",
+    "logo": "assets/integrations/mailerlite.svg"
+  },
+  {
+    "name": "MailerSend",
+    "slug": "mailersend",
+    "logo": "assets/integrations/mailersend.svg"
+  },
+  {
+    "name": "Mailgun",
+    "slug": "mailgun",
+    "logo": "assets/integrations/mailgun.svg"
+  },
+  {
+    "name": "Mailjet Mail",
+    "slug": "mailjet-mail",
+    "logo": "assets/integrations/mailjet-mail.svg"
+  },
+  {
+    "name": "Mailjet SMS",
+    "slug": "mailjet-sms",
+    "logo": "assets/integrations/mailjet-sms.svg"
+  },
+  {
+    "name": "Mailosaur",
+    "slug": "mailosaur",
+    "logo": "assets/integrations/mailosaur.svg"
+  },
+  {
+    "name": "Mailtrap",
+    "slug": "mailtrap",
+    "logo": "assets/integrations/mailtrap.svg"
+  },
+  {
+    "name": "Mantle",
+    "slug": "mantle",
+    "logo": "assets/integrations/mantle.svg"
+  },
+  {
+    "name": "Marketo",
+    "slug": "marketo",
+    "logo": "assets/integrations/marketo.svg"
+  },
+  {
+    "name": "Marketstack",
+    "slug": "marketstack",
+    "logo": "assets/integrations/marketstack.svg"
+  },
+  {
+    "name": "Mendeley",
+    "slug": "mendeley",
+    "logo": "assets/integrations/mendeley.svg"
+  },
+  {
+    "name": "Mention",
+    "slug": "mention",
+    "logo": "assets/integrations/mention.svg"
+  },
+  {
+    "name": "Mercado Ads",
+    "slug": "mercado-ads",
+    "logo": "assets/integrations/mercado-ads.svg"
+  },
+  {
+    "name": "Merge",
+    "slug": "merge",
+    "logo": "assets/integrations/merge.svg"
+  },
+  {
+    "name": "Metabase",
+    "slug": "metabase",
+    "logo": "assets/integrations/metabase.svg"
+  },
+  {
+    "name": "Metricool",
+    "slug": "metricool",
+    "logo": "assets/integrations/metricool.svg"
+  },
+  {
+    "name": "Microsoft Dataverse",
+    "slug": "microsoft-dataverse",
+    "logo": "assets/integrations/microsoft-dataverse.svg"
+  },
+  {
+    "name": "Microsoft Entra Id",
+    "slug": "microsoft-entra-id",
+    "logo": "assets/integrations/microsoft-entra-id.svg"
+  },
+  {
+    "name": "Microsoft Lists",
+    "slug": "microsoft-lists",
+    "logo": "assets/integrations/microsoft-lists.svg"
+  },
+  {
+    "name": "Microsoft OneDrive",
+    "slug": "microsoft-onedrive",
+    "logo": "assets/integrations/microsoft-onedrive.svg"
+  },
+  {
+    "name": "Microsoft SharePoint",
+    "slug": "microsoft-sharepoint",
+    "logo": "assets/integrations/microsoft-sharepoint.svg"
+  },
+  {
+    "name": "Microsoft SQL Server (MSSQL)",
+    "slug": "microsoft-sql-server-mssql",
+    "logo": null
+  },
+  {
+    "name": "Microsoft Teams",
+    "slug": "microsoft-teams",
+    "logo": "assets/integrations/microsoft-teams.svg"
+  },
+  {
+    "name": "Miro",
+    "slug": "miro",
+    "logo": "assets/integrations/miro.svg"
+  },
+  {
+    "name": "Missive",
+    "slug": "missive",
+    "logo": "assets/integrations/missive.svg"
+  },
+  {
+    "name": "MixMax",
+    "slug": "mixmax",
+    "logo": "assets/integrations/mixmax.svg"
+  },
+  {
+    "name": "Mixpanel",
+    "slug": "mixpanel",
+    "logo": "assets/integrations/mixpanel.svg"
+  },
+  {
+    "name": "Mode",
+    "slug": "mode",
+    "logo": "assets/integrations/mode.svg"
+  },
+  {
+    "name": "Monday",
+    "slug": "monday",
+    "logo": "assets/integrations/monday.svg"
+  },
+  {
+    "name": "MongoDb",
+    "slug": "mongodb",
+    "logo": "assets/integrations/mongodb.svg"
+  },
+  {
+    "name": "MongoDb (alternative version)",
+    "slug": "mongodb-alternative-version",
+    "logo": "assets/integrations/mongodb-alternative-version.svg"
+  },
+  {
+    "name": "MongoDb POC",
+    "slug": "mongodb-poc",
+    "logo": null
+  },
+  {
+    "name": "Mux",
+    "slug": "mux",
+    "logo": "assets/integrations/mux.svg"
+  },
+  {
+    "name": "My Hours",
+    "slug": "my-hours",
+    "logo": "assets/integrations/my-hours.svg"
+  },
+  {
+    "name": "MySQL",
+    "slug": "mysql",
+    "logo": "assets/integrations/mysql.svg"
+  },
+  {
+    "name": "Mysqlv2 Source",
+    "slug": "mysqlv2-source",
+    "logo": "assets/integrations/mysqlv2-source.svg"
+  },
+  {
+    "name": "n8n",
+    "slug": "n8n",
+    "logo": "assets/integrations/n8n.svg"
+  },
+  {
+    "name": "Nasa",
+    "slug": "nasa",
+    "logo": "assets/integrations/nasa.svg"
+  },
+  {
+    "name": "Navan",
+    "slug": "navan",
+    "logo": "assets/integrations/navan.svg"
+  },
+  {
+    "name": "Nebius AI",
+    "slug": "nebius-ai",
+    "logo": "assets/integrations/nebius-ai.svg"
+  },
+  {
+    "name": "Netsuite",
+    "slug": "netsuite",
+    "logo": "assets/integrations/netsuite.svg"
+  },
+  {
+    "name": "New York Times",
+    "slug": "new-york-times",
+    "logo": "assets/integrations/new-york-times.svg"
+  },
+  {
+    "name": "News Api",
+    "slug": "news-api",
+    "logo": "assets/integrations/news-api.svg"
+  },
+  {
+    "name": "Newsdata",
+    "slug": "newsdata",
+    "logo": null
+  },
+  {
+    "name": "NewsData.io",
+    "slug": "newsdata-io",
+    "logo": "assets/integrations/newsdata-io.svg"
+  },
+  {
+    "name": "Nexiopay",
+    "slug": "nexiopay",
+    "logo": "assets/integrations/nexiopay.svg"
+  },
+  {
+    "name": "NinjaOne RMM",
+    "slug": "ninjaone-rmm",
+    "logo": "assets/integrations/ninjaone-rmm.svg"
+  },
+  {
+    "name": "NoCRM",
+    "slug": "nocrm",
+    "logo": "assets/integrations/nocrm.svg"
+  },
+  {
+    "name": "Northpass LMS",
+    "slug": "northpass-lms",
+    "logo": "assets/integrations/northpass-lms.svg"
+  },
+  {
+    "name": "Notion",
+    "slug": "notion",
+    "logo": "assets/integrations/notion.svg"
+  },
+  {
+    "name": "Nutshell",
+    "slug": "nutshell",
+    "logo": "assets/integrations/nutshell.svg"
+  },
+  {
+    "name": "Nylas",
+    "slug": "nylas",
+    "logo": "assets/integrations/nylas.svg"
+  },
+  {
+    "name": "Okta",
+    "slug": "okta",
+    "logo": "assets/integrations/okta.svg"
+  },
+  {
+    "name": "Omnisend",
+    "slug": "omnisend",
+    "logo": "assets/integrations/omnisend.svg"
+  },
+  {
+    "name": "Oncehub",
+    "slug": "oncehub",
+    "logo": "assets/integrations/oncehub.svg"
+  },
+  {
+    "name": "Onepagecrm",
+    "slug": "onepagecrm",
+    "logo": "assets/integrations/onepagecrm.svg"
+  },
+  {
+    "name": "OneSignal",
+    "slug": "onesignal",
+    "logo": "assets/integrations/onesignal.svg"
+  },
+  {
+    "name": "Onfleet",
+    "slug": "onfleet",
+    "logo": "assets/integrations/onfleet.svg"
+  },
+  {
+    "name": "Open Data DC",
+    "slug": "open-data-dc",
+    "logo": "assets/integrations/open-data-dc.svg"
+  },
+  {
+    "name": "Open Exchange Rates",
+    "slug": "open-exchange-rates",
+    "logo": "assets/integrations/open-exchange-rates.svg"
+  },
+  {
+    "name": "OpenAQ",
+    "slug": "openaq",
+    "logo": "assets/integrations/openaq.svg"
+  },
+  {
+    "name": "OpenFDA",
+    "slug": "openfda",
+    "logo": "assets/integrations/openfda.svg"
+  },
+  {
+    "name": "Openweather",
+    "slug": "openweather",
+    "logo": "assets/integrations/openweather.svg"
+  },
+  {
+    "name": "Opinion Stage",
+    "slug": "opinion-stage",
+    "logo": "assets/integrations/opinion-stage.svg"
+  },
+  {
+    "name": "Opsgenie",
+    "slug": "opsgenie",
+    "logo": null
+  },
+  {
+    "name": "OPUSWatch",
+    "slug": "opuswatch",
+    "logo": "assets/integrations/opuswatch.svg"
+  },
+  {
+    "name": "Oracle DB",
+    "slug": "oracle-db",
+    "logo": "assets/integrations/oracle-db.svg"
+  },
+  {
+    "name": "Orb",
+    "slug": "orb",
+    "logo": "assets/integrations/orb.svg"
+  },
+  {
+    "name": "Orbit",
+    "slug": "orbit",
+    "logo": "assets/integrations/orbit.svg"
+  },
+  {
+    "name": "Oura",
+    "slug": "oura",
+    "logo": "assets/integrations/oura.svg"
+  },
+  {
+    "name": "Outbrain Amplify",
+    "slug": "outbrain-amplify",
+    "logo": "assets/integrations/outbrain-amplify.svg"
+  },
+  {
+    "name": "Outlook",
+    "slug": "outlook",
+    "logo": "assets/integrations/outlook.svg"
+  },
+  {
+    "name": "Outreach",
+    "slug": "outreach",
+    "logo": "assets/integrations/outreach.svg"
+  },
+  {
+    "name": "Oveit",
+    "slug": "oveit",
+    "logo": "assets/integrations/oveit.svg"
+  },
+  {
+    "name": "Pabbly Subscriptions Billing",
+    "slug": "pabbly-subscriptions-billing",
+    "logo": "assets/integrations/pabbly-subscriptions-billing.svg"
+  },
+  {
+    "name": "Paddle",
+    "slug": "paddle",
+    "logo": "assets/integrations/paddle.svg"
+  },
+  {
+    "name": "Pagerduty",
+    "slug": "pagerduty",
+    "logo": "assets/integrations/pagerduty.svg"
+  },
+  {
+    "name": "PandaDoc",
+    "slug": "pandadoc",
+    "logo": "assets/integrations/pandadoc.svg"
+  },
+  {
+    "name": "Paperform",
+    "slug": "paperform",
+    "logo": "assets/integrations/paperform.svg"
+  },
+  {
+    "name": "Papersign",
+    "slug": "papersign",
+    "logo": "assets/integrations/papersign.svg"
+  },
+  {
+    "name": "Pardot",
+    "slug": "pardot",
+    "logo": "assets/integrations/pardot.svg"
+  },
+  {
+    "name": "Partnerize",
+    "slug": "partnerize",
+    "logo": "assets/integrations/partnerize.svg"
+  },
+  {
+    "name": "PartnerStack",
+    "slug": "partnerstack",
+    "logo": "assets/integrations/partnerstack.svg"
+  },
+  {
+    "name": "PayFit",
+    "slug": "payfit",
+    "logo": "assets/integrations/payfit.svg"
+  },
+  {
+    "name": "Paypal Transaction",
+    "slug": "paypal-transaction",
+    "logo": "assets/integrations/paypal-transaction.svg"
+  },
+  {
+    "name": "Paystack",
+    "slug": "paystack",
+    "logo": "assets/integrations/paystack.svg"
+  },
+  {
+    "name": "Pendo",
+    "slug": "pendo",
+    "logo": "assets/integrations/pendo.svg"
+  },
+  {
+    "name": "Pennylane",
+    "slug": "pennylane",
+    "logo": "assets/integrations/pennylane.svg"
+  },
+  {
+    "name": "Perigon",
+    "slug": "perigon",
+    "logo": "assets/integrations/perigon.svg"
+  },
+  {
+    "name": "Perk",
+    "slug": "perk",
+    "logo": "assets/integrations/perk.svg"
+  },
+  {
+    "name": "PersistIq",
+    "slug": "persistiq",
+    "logo": "assets/integrations/persistiq.svg"
+  },
+  {
+    "name": "Persona",
+    "slug": "persona",
+    "logo": "assets/integrations/persona.svg"
+  },
+  {
+    "name": "Pexels API",
+    "slug": "pexels-api",
+    "logo": "assets/integrations/pexels-api.svg"
+  },
+  {
+    "name": "Phyllo",
+    "slug": "phyllo",
+    "logo": "assets/integrations/phyllo.svg"
+  },
+  {
+    "name": "Picqer",
+    "slug": "picqer",
+    "logo": "assets/integrations/picqer.svg"
+  },
+  {
+    "name": "Pingdom",
+    "slug": "pingdom",
+    "logo": "assets/integrations/pingdom.svg"
+  },
+  {
+    "name": "Pinterest",
+    "slug": "pinterest",
+    "logo": "assets/integrations/pinterest.svg"
+  },
+  {
+    "name": "Pipedrive",
+    "slug": "pipedrive",
+    "logo": "assets/integrations/pipedrive.svg"
+  },
+  {
+    "name": "Pipeliner",
+    "slug": "pipeliner",
+    "logo": "assets/integrations/pipeliner.svg"
+  },
+  {
+    "name": "Pivotal Tracker",
+    "slug": "pivotal-tracker",
+    "logo": "assets/integrations/pivotal-tracker.svg"
+  },
+  {
+    "name": "Piwik",
+    "slug": "piwik",
+    "logo": "assets/integrations/piwik.svg"
+  },
+  {
+    "name": "Plaid",
+    "slug": "plaid",
+    "logo": "assets/integrations/plaid.svg"
+  },
+  {
+    "name": "Planhat",
+    "slug": "planhat",
+    "logo": "assets/integrations/planhat.svg"
+  },
+  {
+    "name": "Plausible",
+    "slug": "plausible",
+    "logo": "assets/integrations/plausible.svg"
+  },
+  {
+    "name": "Pocket",
+    "slug": "pocket",
+    "logo": "assets/integrations/pocket.svg"
+  },
+  {
+    "name": "PokeAPI",
+    "slug": "pokeapi",
+    "logo": "assets/integrations/pokeapi.svg"
+  },
+  {
+    "name": "Polygon Stock API",
+    "slug": "polygon-stock-api",
+    "logo": "assets/integrations/polygon-stock-api.svg"
+  },
+  {
+    "name": "Poplar",
+    "slug": "poplar",
+    "logo": "assets/integrations/poplar.svg"
+  },
+  {
+    "name": "Postgres",
+    "slug": "postgres",
+    "logo": "assets/integrations/postgres.svg"
+  },
+  {
+    "name": "PostHog",
+    "slug": "posthog",
+    "logo": "assets/integrations/posthog.svg"
+  },
+  {
+    "name": "Postmark App",
+    "slug": "postmark-app",
+    "logo": "assets/integrations/postmark-app.svg"
+  },
+  {
+    "name": "PrestaShop",
+    "slug": "prestashop",
+    "logo": "assets/integrations/prestashop.svg"
+  },
+  {
+    "name": "Pretix",
+    "slug": "pretix",
+    "logo": "assets/integrations/pretix.svg"
+  },
+  {
+    "name": "Primetric",
+    "slug": "primetric",
+    "logo": "assets/integrations/primetric.svg"
+  },
+  {
+    "name": "Printify",
+    "slug": "printify",
+    "logo": "assets/integrations/printify.svg"
+  },
+  {
+    "name": "Productboard",
+    "slug": "productboard",
+    "logo": "assets/integrations/productboard.svg"
+  },
+  {
+    "name": "Productive",
+    "slug": "productive",
+    "logo": "assets/integrations/productive.svg"
+  },
+  {
+    "name": "Public Apis",
+    "slug": "public-apis",
+    "logo": "assets/integrations/public-apis.svg"
+  },
+  {
+    "name": "Punk API",
+    "slug": "punk-api",
+    "logo": "assets/integrations/punk-api.svg"
+  },
+  {
+    "name": "Pylon",
+    "slug": "pylon",
+    "logo": "assets/integrations/pylon.svg"
+  },
+  {
+    "name": "PyPI",
+    "slug": "pypi",
+    "logo": "assets/integrations/pypi.svg"
+  },
+  {
+    "name": "Qonto My",
+    "slug": "qonto-my",
+    "logo": "assets/integrations/qonto-my.svg"
+  },
+  {
+    "name": "Qualaroo",
+    "slug": "qualaroo",
+    "logo": "assets/integrations/qualaroo.svg"
+  },
+  {
+    "name": "QuickBooks",
+    "slug": "quickbooks",
+    "logo": "assets/integrations/quickbooks.svg"
+  },
+  {
+    "name": "Railz",
+    "slug": "railz",
+    "logo": "assets/integrations/railz.svg"
+  },
+  {
+    "name": "RD Station Marketing",
+    "slug": "rd-station-marketing",
+    "logo": "assets/integrations/rd-station-marketing.svg"
+  },
+  {
+    "name": "Recharge",
+    "slug": "recharge",
+    "logo": "assets/integrations/recharge.svg"
+  },
+  {
+    "name": "Recreation",
+    "slug": "recreation",
+    "logo": "assets/integrations/recreation.svg"
+  },
+  {
+    "name": "Recruitee",
+    "slug": "recruitee",
+    "logo": "assets/integrations/recruitee.svg"
+  },
+  {
+    "name": "Recurly",
+    "slug": "recurly",
+    "logo": "assets/integrations/recurly.svg"
+  },
+  {
+    "name": "Reddit",
+    "slug": "reddit",
+    "logo": "assets/integrations/reddit.svg"
+  },
+  {
+    "name": "Redshift",
+    "slug": "redshift",
+    "logo": "assets/integrations/redshift.svg"
+  },
+  {
+    "name": "referralhero",
+    "slug": "referralhero",
+    "logo": "assets/integrations/referralhero.svg"
+  },
+  {
+    "name": "RentCast",
+    "slug": "rentcast",
+    "logo": "assets/integrations/rentcast.svg"
+  },
+  {
+    "name": "Repairshopr",
+    "slug": "repairshopr",
+    "logo": "assets/integrations/repairshopr.svg"
+  },
+  {
+    "name": "Reply.io",
+    "slug": "reply-io",
+    "logo": "assets/integrations/reply-io.svg"
+  },
+  {
+    "name": "Retail Express by Maropost",
+    "slug": "retail-express-by-maropost",
+    "logo": "assets/integrations/retail-express-by-maropost.svg"
+  },
+  {
+    "name": "Retently",
+    "slug": "retently",
+    "logo": "assets/integrations/retently.svg"
+  },
+  {
+    "name": "RevenueCat",
+    "slug": "revenuecat",
+    "logo": "assets/integrations/revenuecat.svg"
+  },
+  {
+    "name": "Revolut Merchant",
+    "slug": "revolut-merchant",
+    "logo": "assets/integrations/revolut-merchant.svg"
+  },
+  {
+    "name": "Ringcentral",
+    "slug": "ringcentral",
+    "logo": "assets/integrations/ringcentral.svg"
+  },
+  {
+    "name": "RKI Covid",
+    "slug": "rki-covid",
+    "logo": "assets/integrations/rki-covid.svg"
+  },
+  {
+    "name": "Rocket.chat",
+    "slug": "rocket-chat",
+    "logo": "assets/integrations/rocket-chat.svg"
+  },
+  {
+    "name": "Rocketlane",
+    "slug": "rocketlane",
+    "logo": "assets/integrations/rocketlane.svg"
+  },
+  {
+    "name": "Rollbar",
+    "slug": "rollbar",
+    "logo": "assets/integrations/rollbar.svg"
+  },
+  {
+    "name": "Rootly",
+    "slug": "rootly",
+    "logo": "assets/integrations/rootly.svg"
+  },
+  {
+    "name": "Rss",
+    "slug": "rss",
+    "logo": "assets/integrations/rss.svg"
+  },
+  {
+    "name": "Ruddr",
+    "slug": "ruddr",
+    "logo": "assets/integrations/ruddr.svg"
+  },
+  {
+    "name": "S3",
+    "slug": "s3",
+    "logo": "assets/integrations/s3.svg"
+  },
+  {
+    "name": "SafetyCulture",
+    "slug": "safetyculture",
+    "logo": "assets/integrations/safetyculture.svg"
+  },
+  {
+    "name": "Sage HR",
+    "slug": "sage-hr",
+    "logo": "assets/integrations/sage-hr.svg"
+  },
+  {
+    "name": "Salesflare",
+    "slug": "salesflare",
+    "logo": "assets/integrations/salesflare.svg"
+  },
+  {
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "logo": "assets/integrations/salesforce.svg"
+  },
+  {
+    "name": "Salesforce (Singer)",
+    "slug": "salesforce-singer",
+    "logo": null
+  },
+  {
+    "name": "Salesloft",
+    "slug": "salesloft",
+    "logo": "assets/integrations/salesloft.svg"
+  },
+  {
+    "name": "Sample Data",
+    "slug": "sample-data",
+    "logo": "assets/integrations/sample-data.svg"
+  },
+  {
+    "name": "SAP Fieldglass",
+    "slug": "sap-fieldglass",
+    "logo": "assets/integrations/sap-fieldglass.svg"
+  },
+  {
+    "name": "SavvyCal",
+    "slug": "savvycal",
+    "logo": "assets/integrations/savvycal.svg"
+  },
+  {
+    "name": "Scaffold Java Jdbc",
+    "slug": "scaffold-java-jdbc",
+    "logo": null
+  },
+  {
+    "name": "Scaffold Source Http",
+    "slug": "scaffold-source-http",
+    "logo": null
+  },
+  {
+    "name": "Scaffold Source Python",
+    "slug": "scaffold-source-python",
+    "logo": null
+  },
+  {
+    "name": "Scryfall",
+    "slug": "scryfall",
+    "logo": "assets/integrations/scryfall.svg"
+  },
+  {
+    "name": "SearchMetrics",
+    "slug": "searchmetrics",
+    "logo": "assets/integrations/searchmetrics.svg"
+  },
+  {
+    "name": "Secoda",
+    "slug": "secoda",
+    "logo": "assets/integrations/secoda.svg"
+  },
+  {
+    "name": "Segment",
+    "slug": "segment",
+    "logo": "assets/integrations/segment.svg"
+  },
+  {
+    "name": "Sendgrid",
+    "slug": "sendgrid",
+    "logo": "assets/integrations/sendgrid.svg"
+  },
+  {
+    "name": "Sendinblue",
+    "slug": "sendinblue",
+    "logo": "assets/integrations/sendinblue.svg"
+  },
+  {
+    "name": "Sendowl",
+    "slug": "sendowl",
+    "logo": "assets/integrations/sendowl.svg"
+  },
+  {
+    "name": "SendPulse",
+    "slug": "sendpulse",
+    "logo": "assets/integrations/sendpulse.svg"
+  },
+  {
+    "name": "Senseforce",
+    "slug": "senseforce",
+    "logo": "assets/integrations/senseforce.svg"
+  },
+  {
+    "name": "Sentry",
+    "slug": "sentry",
+    "logo": "assets/integrations/sentry.svg"
+  },
+  {
+    "name": "Serpstat",
+    "slug": "serpstat",
+    "logo": "assets/integrations/serpstat.svg"
+  },
+  {
+    "name": "SFTP",
+    "slug": "sftp",
+    "logo": "assets/integrations/sftp.svg"
+  },
+  {
+    "name": "SFTP Bulk",
+    "slug": "sftp-bulk",
+    "logo": "assets/integrations/sftp-bulk.svg"
+  },
+  {
+    "name": "Sharetribe",
+    "slug": "sharetribe",
+    "logo": "assets/integrations/sharetribe.svg"
+  },
+  {
+    "name": "Shippo",
+    "slug": "shippo",
+    "logo": "assets/integrations/shippo.svg"
+  },
+  {
+    "name": "Shipstation",
+    "slug": "shipstation",
+    "logo": "assets/integrations/shipstation.svg"
+  },
+  {
+    "name": "Shopify",
+    "slug": "shopify",
+    "logo": null
+  },
+  {
+    "name": "ShopWired",
+    "slug": "shopwired",
+    "logo": "assets/integrations/shopwired.svg"
+  },
+  {
+    "name": "Shortcut",
+    "slug": "shortcut",
+    "logo": "assets/integrations/shortcut.svg"
+  },
+  {
+    "name": "Shortio",
+    "slug": "shortio",
+    "logo": "assets/integrations/shortio.svg"
+  },
+  {
+    "name": "Shutterstock",
+    "slug": "shutterstock",
+    "logo": "assets/integrations/shutterstock.svg"
+  },
+  {
+    "name": "Sigma Computing",
+    "slug": "sigma-computing",
+    "logo": "assets/integrations/sigma-computing.svg"
+  },
+  {
+    "name": "SignNow",
+    "slug": "signnow",
+    "logo": "assets/integrations/signnow.svg"
+  },
+  {
+    "name": "SimFin",
+    "slug": "simfin",
+    "logo": "assets/integrations/simfin.svg"
+  },
+  {
+    "name": "SimpleCast",
+    "slug": "simplecast",
+    "logo": "assets/integrations/simplecast.svg"
+  },
+  {
+    "name": "Simplesat",
+    "slug": "simplesat",
+    "logo": "assets/integrations/simplesat.svg"
+  },
+  {
+    "name": "SingleStore",
+    "slug": "singlestore",
+    "logo": "assets/integrations/singlestore.svg"
+  },
+  {
+    "name": "Slack",
+    "slug": "slack",
+    "logo": "assets/integrations/slack.svg"
+  },
+  {
+    "name": "Smaily",
+    "slug": "smaily",
+    "logo": "assets/integrations/smaily.svg"
+  },
+  {
+    "name": "SmartEngage",
+    "slug": "smartengage",
+    "logo": "assets/integrations/smartengage.svg"
+  },
+  {
+    "name": "Smartreach",
+    "slug": "smartreach",
+    "logo": "assets/integrations/smartreach.svg"
+  },
+  {
+    "name": "Smartsheets",
+    "slug": "smartsheets",
+    "logo": "assets/integrations/smartsheets.svg"
+  },
+  {
+    "name": "Smartwaiver",
+    "slug": "smartwaiver",
+    "logo": "assets/integrations/smartwaiver.svg"
+  },
+  {
+    "name": "Smoke Test",
+    "slug": "smoke-test",
+    "logo": "assets/integrations/smoke-test.svg"
+  },
+  {
+    "name": "Snapchat Marketing",
+    "slug": "snapchat-marketing",
+    "logo": "assets/integrations/snapchat-marketing.svg"
+  },
+  {
+    "name": "Snowflake",
+    "slug": "snowflake",
+    "logo": "assets/integrations/snowflake.svg"
+  },
+  {
+    "name": "Solarwinds Service Desk",
+    "slug": "solarwinds-service-desk",
+    "logo": "assets/integrations/solarwinds-service-desk.svg"
+  },
+  {
+    "name": "Sonar Cloud",
+    "slug": "sonar-cloud",
+    "logo": "assets/integrations/sonar-cloud.svg"
+  },
+  {
+    "name": "SpaceX API",
+    "slug": "spacex-api",
+    "logo": "assets/integrations/spacex-api.svg"
+  },
+  {
+    "name": "SparkPost",
+    "slug": "sparkpost",
+    "logo": "assets/integrations/sparkpost.svg"
+  },
+  {
+    "name": "Split-io",
+    "slug": "split-io",
+    "logo": "assets/integrations/split-io.svg"
+  },
+  {
+    "name": "Spotify Ads",
+    "slug": "spotify-ads",
+    "logo": "assets/integrations/spotify-ads.svg"
+  },
+  {
+    "name": "SpotlerCRM",
+    "slug": "spotlercrm",
+    "logo": "assets/integrations/spotlercrm.svg"
+  },
+  {
+    "name": "Square",
+    "slug": "square",
+    "logo": "assets/integrations/square.svg"
+  },
+  {
+    "name": "Squarespace",
+    "slug": "squarespace",
+    "logo": "assets/integrations/squarespace.svg"
+  },
+  {
+    "name": "Statsig",
+    "slug": "statsig",
+    "logo": "assets/integrations/statsig.svg"
+  },
+  {
+    "name": "Statuspage",
+    "slug": "statuspage",
+    "logo": "assets/integrations/statuspage.svg"
+  },
+  {
+    "name": "Stigg",
+    "slug": "stigg",
+    "logo": "assets/integrations/stigg.svg"
+  },
+  {
+    "name": "StockData",
+    "slug": "stockdata",
+    "logo": "assets/integrations/stockdata.svg"
+  },
+  {
+    "name": "Strava",
+    "slug": "strava",
+    "logo": "assets/integrations/strava.svg"
+  },
+  {
+    "name": "Stripe",
+    "slug": "stripe",
+    "logo": "assets/integrations/stripe.svg"
+  },
+  {
+    "name": "SurveyCTO",
+    "slug": "surveycto",
+    "logo": "assets/integrations/surveycto.svg"
+  },
+  {
+    "name": "SurveyMonkey",
+    "slug": "surveymonkey",
+    "logo": "assets/integrations/surveymonkey.svg"
+  },
+  {
+    "name": "SurveySparrow",
+    "slug": "surveysparrow",
+    "logo": "assets/integrations/surveysparrow.svg"
+  },
+  {
+    "name": "Survicate",
+    "slug": "survicate",
+    "logo": "assets/integrations/survicate.svg"
+  },
+  {
+    "name": "Svix",
+    "slug": "svix",
+    "logo": "assets/integrations/svix.svg"
+  },
+  {
+    "name": "Systeme",
+    "slug": "systeme",
+    "logo": "assets/integrations/systeme.svg"
+  },
+  {
+    "name": "Taboola",
+    "slug": "taboola",
+    "logo": "assets/integrations/taboola.svg"
+  },
+  {
+    "name": "TalkDesk Explore",
+    "slug": "talkdesk-explore",
+    "logo": "assets/integrations/talkdesk-explore.svg"
+  },
+  {
+    "name": "Tavus",
+    "slug": "tavus",
+    "logo": "assets/integrations/tavus.svg"
+  },
+  {
+    "name": "Teamtailor",
+    "slug": "teamtailor",
+    "logo": "assets/integrations/teamtailor.svg"
+  },
+  {
+    "name": "Teamwork",
+    "slug": "teamwork",
+    "logo": "assets/integrations/teamwork.svg"
+  },
+  {
+    "name": "Tempo",
+    "slug": "tempo",
+    "logo": "assets/integrations/tempo.svg"
+  },
+  {
+    "name": "Teradata",
+    "slug": "teradata",
+    "logo": "assets/integrations/teradata.svg"
+  },
+  {
+    "name": "Testrail",
+    "slug": "testrail",
+    "logo": "assets/integrations/testrail.svg"
+  },
+  {
+    "name": "The Guardian API",
+    "slug": "the-guardian-api",
+    "logo": "assets/integrations/the-guardian-api.svg"
+  },
+  {
+    "name": "Thinkific",
+    "slug": "thinkific",
+    "logo": "assets/integrations/thinkific.svg"
+  },
+  {
+    "name": "Thinkific Courses",
+    "slug": "thinkific-courses",
+    "logo": "assets/integrations/thinkific-courses.svg"
+  },
+  {
+    "name": "Thrive Learning",
+    "slug": "thrive-learning",
+    "logo": "assets/integrations/thrive-learning.svg"
+  },
+  {
+    "name": "Ticketmaster",
+    "slug": "ticketmaster",
+    "logo": "assets/integrations/ticketmaster.svg"
+  },
+  {
+    "name": "TicketTailor",
+    "slug": "tickettailor",
+    "logo": "assets/integrations/tickettailor.svg"
+  },
+  {
+    "name": "ticktick",
+    "slug": "ticktick",
+    "logo": "assets/integrations/ticktick.svg"
+  },
+  {
+    "name": "TiDB",
+    "slug": "tidb",
+    "logo": "assets/integrations/tidb.svg"
+  },
+  {
+    "name": "TikTok Marketing",
+    "slug": "tiktok-marketing",
+    "logo": "assets/integrations/tiktok-marketing.svg"
+  },
+  {
+    "name": "Timely",
+    "slug": "timely",
+    "logo": "assets/integrations/timely.svg"
+  },
+  {
+    "name": "Tinyemail",
+    "slug": "tinyemail",
+    "logo": "assets/integrations/tinyemail.svg"
+  },
+  {
+    "name": "TMDb",
+    "slug": "tmdb",
+    "logo": "assets/integrations/tmdb.svg"
+  },
+  {
+    "name": "Todoist",
+    "slug": "todoist",
+    "logo": "assets/integrations/todoist.svg"
+  },
+  {
+    "name": "Toggl",
+    "slug": "toggl",
+    "logo": "assets/integrations/toggl.svg"
+  },
+  {
+    "name": "TPLcentral",
+    "slug": "tplcentral",
+    "logo": "assets/integrations/tplcentral.svg"
+  },
+  {
+    "name": "Track PMS",
+    "slug": "track-pms",
+    "logo": "assets/integrations/track-pms.svg"
+  },
+  {
+    "name": "Trello",
+    "slug": "trello",
+    "logo": "assets/integrations/trello.svg"
+  },
+  {
+    "name": "Tremendous",
+    "slug": "tremendous",
+    "logo": "assets/integrations/tremendous.svg"
+  },
+  {
+    "name": "TrustPilot",
+    "slug": "trustpilot",
+    "logo": "assets/integrations/trustpilot.svg"
+  },
+  {
+    "name": "TVMaze Schedule",
+    "slug": "tvmaze-schedule",
+    "logo": "assets/integrations/tvmaze-schedule.svg"
+  },
+  {
+    "name": "Twelve Data",
+    "slug": "twelve-data",
+    "logo": "assets/integrations/twelve-data.svg"
+  },
+  {
+    "name": "Twilio",
+    "slug": "twilio",
+    "logo": "assets/integrations/twilio.svg"
+  },
+  {
+    "name": "Twilio Taskrouter",
+    "slug": "twilio-taskrouter",
+    "logo": "assets/integrations/twilio-taskrouter.svg"
+  },
+  {
+    "name": "Twitter",
+    "slug": "twitter",
+    "logo": "assets/integrations/twitter.svg"
+  },
+  {
+    "name": "Tyntec SMS",
+    "slug": "tyntec-sms",
+    "logo": "assets/integrations/tyntec-sms.svg"
+  },
+  {
+    "name": "Typeform",
+    "slug": "typeform",
+    "logo": "assets/integrations/typeform.svg"
+  },
+  {
+    "name": "Ubidots",
+    "slug": "ubidots",
+    "logo": "assets/integrations/ubidots.svg"
+  },
+  {
+    "name": "Unleash",
+    "slug": "unleash",
+    "logo": "assets/integrations/unleash.svg"
+  },
+  {
+    "name": "UpPromote",
+    "slug": "uppromote",
+    "logo": "assets/integrations/uppromote.svg"
+  },
+  {
+    "name": "Uptick",
+    "slug": "uptick",
+    "logo": "assets/integrations/uptick.svg"
+  },
+  {
+    "name": "US Census",
+    "slug": "us-census",
+    "logo": "assets/integrations/us-census.svg"
+  },
+  {
+    "name": "Uservoice",
+    "slug": "uservoice",
+    "logo": "assets/integrations/uservoice.svg"
+  },
+  {
+    "name": "Vantage",
+    "slug": "vantage",
+    "logo": "assets/integrations/vantage.svg"
+  },
+  {
+    "name": "Veeqo",
+    "slug": "veeqo",
+    "logo": "assets/integrations/veeqo.svg"
+  },
+  {
+    "name": "Vercel",
+    "slug": "vercel",
+    "logo": "assets/integrations/vercel.svg"
+  },
+  {
+    "name": "Visma Economic",
+    "slug": "visma-economic",
+    "logo": "assets/integrations/visma-economic.svg"
+  },
+  {
+    "name": "Vitally",
+    "slug": "vitally",
+    "logo": "assets/integrations/vitally.svg"
+  },
+  {
+    "name": "VWO",
+    "slug": "vwo",
+    "logo": "assets/integrations/vwo.svg"
+  },
+  {
+    "name": "Waiteraid",
+    "slug": "waiteraid",
+    "logo": "assets/integrations/waiteraid.svg"
+  },
+  {
+    "name": "Wasabi",
+    "slug": "wasabi",
+    "logo": "assets/integrations/wasabi.svg"
+  },
+  {
+    "name": "Watchmode",
+    "slug": "watchmode",
+    "logo": "assets/integrations/watchmode.svg"
+  },
+  {
+    "name": "Weatherstack",
+    "slug": "weatherstack",
+    "logo": "assets/integrations/weatherstack.svg"
+  },
+  {
+    "name": "Web Scrapper",
+    "slug": "web-scrapper",
+    "logo": "assets/integrations/web-scrapper.svg"
+  },
+  {
+    "name": "Webflow",
+    "slug": "webflow",
+    "logo": "assets/integrations/webflow.svg"
+  },
+  {
+    "name": "When_i_work",
+    "slug": "when-i-work",
+    "logo": "assets/integrations/when-i-work.svg"
+  },
+  {
+    "name": "Whisky Hunter",
+    "slug": "whisky-hunter",
+    "logo": "assets/integrations/whisky-hunter.svg"
+  },
+  {
+    "name": "Wikipedia Pageviews",
+    "slug": "wikipedia-pageviews",
+    "logo": "assets/integrations/wikipedia-pageviews.svg"
+  },
+  {
+    "name": "WooCommerce",
+    "slug": "woocommerce",
+    "logo": "assets/integrations/woocommerce.svg"
+  },
+  {
+    "name": "Wordpress",
+    "slug": "wordpress",
+    "logo": "assets/integrations/wordpress.svg"
+  },
+  {
+    "name": "Workable",
+    "slug": "workable",
+    "logo": "assets/integrations/workable.svg"
+  },
+  {
+    "name": "Workflowmax",
+    "slug": "workflowmax",
+    "logo": "assets/integrations/workflowmax.svg"
+  },
+  {
+    "name": "Workramp",
+    "slug": "workramp",
+    "logo": "assets/integrations/workramp.svg"
+  },
+  {
+    "name": "Wrike",
+    "slug": "wrike",
+    "logo": "assets/integrations/wrike.svg"
+  },
+  {
+    "name": "Wufoo",
+    "slug": "wufoo",
+    "logo": "assets/integrations/wufoo.svg"
+  },
+  {
+    "name": "Xero",
+    "slug": "xero",
+    "logo": "assets/integrations/xero.svg"
+  },
+  {
+    "name": "Xkcd",
+    "slug": "xkcd",
+    "logo": "assets/integrations/xkcd.svg"
+  },
+  {
+    "name": "Xsolla",
+    "slug": "xsolla",
+    "logo": "assets/integrations/xsolla.svg"
+  },
+  {
+    "name": "Yahoo Finance Price",
+    "slug": "yahoo-finance-price",
+    "logo": "assets/integrations/yahoo-finance-price.svg"
+  },
+  {
+    "name": "Yandex Metrica",
+    "slug": "yandex-metrica",
+    "logo": "assets/integrations/yandex-metrica.svg"
+  },
+  {
+    "name": "Yotpo",
+    "slug": "yotpo",
+    "logo": "assets/integrations/yotpo.svg"
+  },
+  {
+    "name": "You Need A Budget (YNAB)",
+    "slug": "you-need-a-budget-ynab",
+    "logo": "assets/integrations/you-need-a-budget-ynab.svg"
+  },
+  {
+    "name": "Younium",
+    "slug": "younium",
+    "logo": "assets/integrations/younium.svg"
+  },
+  {
+    "name": "YouSign",
+    "slug": "yousign",
+    "logo": "assets/integrations/yousign.svg"
+  },
+  {
+    "name": "YouTube Analytics",
+    "slug": "youtube-analytics",
+    "logo": "assets/integrations/youtube-analytics.svg"
+  },
+  {
+    "name": "Youtube Data",
+    "slug": "youtube-data",
+    "logo": "assets/integrations/youtube-data.svg"
+  },
+  {
+    "name": "Zapier Supported Storage",
+    "slug": "zapier-supported-storage",
+    "logo": "assets/integrations/zapier-supported-storage.svg"
+  },
+  {
+    "name": "ZapSign",
+    "slug": "zapsign",
+    "logo": "assets/integrations/zapsign.svg"
+  },
+  {
+    "name": "Zendesk Chat",
+    "slug": "zendesk-chat",
+    "logo": "assets/integrations/zendesk-chat.svg"
+  },
+  {
+    "name": "Zendesk Sell",
+    "slug": "zendesk-sell",
+    "logo": "assets/integrations/zendesk-sell.svg"
+  },
+  {
+    "name": "Zendesk Sunshine",
+    "slug": "zendesk-sunshine",
+    "logo": "assets/integrations/zendesk-sunshine.svg"
+  },
+  {
+    "name": "Zendesk Support",
+    "slug": "zendesk-support",
+    "logo": "assets/integrations/zendesk-support.svg"
+  },
+  {
+    "name": "Zendesk Talk",
+    "slug": "zendesk-talk",
+    "logo": "assets/integrations/zendesk-talk.svg"
+  },
+  {
+    "name": "Zenefits",
+    "slug": "zenefits",
+    "logo": "assets/integrations/zenefits.svg"
+  },
+  {
+    "name": "Zenloop",
+    "slug": "zenloop",
+    "logo": "assets/integrations/zenloop.svg"
+  },
+  {
+    "name": "Zoho Analytics metadata api",
+    "slug": "zoho-analytics-metadata-api",
+    "logo": "assets/integrations/zoho-analytics-metadata-api.svg"
+  },
+  {
+    "name": "Zoho Bigin",
+    "slug": "zoho-bigin",
+    "logo": "assets/integrations/zoho-bigin.svg"
+  },
+  {
+    "name": "Zoho Billing",
+    "slug": "zoho-billing",
+    "logo": "assets/integrations/zoho-billing.svg"
+  },
+  {
+    "name": "Zoho Books",
+    "slug": "zoho-books",
+    "logo": "assets/integrations/zoho-books.svg"
+  },
+  {
+    "name": "Zoho Campaign",
+    "slug": "zoho-campaign",
+    "logo": "assets/integrations/zoho-campaign.svg"
+  },
+  {
+    "name": "Zoho Desk",
+    "slug": "zoho-desk",
+    "logo": "assets/integrations/zoho-desk.svg"
+  },
+  {
+    "name": "Zoho Expense",
+    "slug": "zoho-expense",
+    "logo": "assets/integrations/zoho-expense.svg"
+  },
+  {
+    "name": "Zoho Inventory",
+    "slug": "zoho-inventory",
+    "logo": "assets/integrations/zoho-inventory.svg"
+  },
+  {
+    "name": "Zoho Invoice",
+    "slug": "zoho-invoice",
+    "logo": "assets/integrations/zoho-invoice.svg"
+  },
+  {
+    "name": "ZohoCRM",
+    "slug": "zohocrm",
+    "logo": "assets/integrations/zohocrm.svg"
+  },
+  {
+    "name": "Zonka Feedback",
+    "slug": "zonka-feedback",
+    "logo": "assets/integrations/zonka-feedback.svg"
+  },
+  {
+    "name": "Zoom",
+    "slug": "zoom",
+    "logo": "assets/integrations/zoom.svg"
+  },
+  {
+    "name": "Zuora",
+    "slug": "zuora",
+    "logo": "assets/integrations/zuora.svg"
+  }
 ]

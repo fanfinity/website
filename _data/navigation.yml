@@ -121,13 +121,6 @@ header:
           - { title: "Case Studies",     url: /customers,  desc: "Customer success stories",                icon: chart }
           - { title: "Webinars",         url: /webinars,   desc: "Live and on-demand sessions",             icon: broadcast }
           - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and the data model",      icon: code }
-      # Trimmed to 3 flagship rivals + the hub — the full 8-way matrix lives on /compare.
-      - heading: Compare
-        links:
-          - { title: "All comparisons", url: /compare,          desc: "How Fanfinity stacks up",      icon: scale }
-          - { title: "vs Meiro",        url: /compare/meiro,    desc: "vs a horizontal CDP",          icon: scale }
-          - { title: "vs LiveLike",     url: /compare/livelike, desc: "vs a hosted engagement suite", icon: scale }
-          - { title: "vs Segment",      url: /compare/segment,  desc: "vs a cloud-first SaaS CDP",    icon: scale }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -181,7 +174,6 @@ footer_columns:
       - { title: "Case Studies",     url: /customers }
       - { title: "Webinars",         url: /webinars }
       - { title: "All comparisons",  url: /compare }
-      - { title: "vs Meiro",         url: /compare/meiro }
       - { title: "vs LiveLike",      url: /compare/livelike }
       - { title: "vs Segment",       url: /compare/segment }
 
