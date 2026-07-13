@@ -6,12 +6,9 @@ description: Fanfinity is the real-time, in-region fan data platform. Collect ev
 
 # Passed into reusable section includes
 value_pillars:
-  - { icon: address-book, title: "Own your fan relationship",      body: "One persistent profile ties every interaction, reward, and score to a single fan across devices, enriching the records you already keep." }
-  - { icon: bolt,      title: "React in real time, not in batch",  body: "Profiles update as events land, so journeys, suppression, and personalization fire while the moment is live, not after tonight's sync." }
+  - { icon: address-book, title: "Own your fan relationship",      body: "One persistent profile ties every interaction, reward, and score to a single fan across devices." }
+  - { icon: bolt,      title: "React in real time, not in batch",  body: "Profiles update as events land, so journeys and personalization fire while the moment is live." }
   - { icon: chart,     title: "Prove the outcome",                 body: "Verified reach and exposure-to-outcome attribution answer the question sponsors and CFOs actually ask: did it work?" }
-  - { icon: game-controller, title: "Turn watching into playing (Preview)",  body: "Push polls, predictions, and quizzes the instant a key moment happens, turning passive viewers into active participants in real time." }
-  - { icon: repeat,    title: "Build habits that stick (Preview)", body: "Streaks, quests, badges, and status tiers build the daily and weekly habits that drive retention, not one-time spikes around a single moment." }
-  - { icon: storefront, title: "Make your inventory sponsorable (Preview)",  body: "Brand quests, widgets, and programs for sponsors, re-skin experiences per partner, and back it all with verified engagement numbers." }
 
 dev_points:
   - "A clean REST API with OAuth 2.0. Every capability is programmable, not locked behind a console."
@@ -20,20 +17,20 @@ dev_points:
   - "Playback-aware delivery (HLS Program-Date-Time) is designed into the client SDK. (Design preview.)"
 
 flow_nodes:
-  - { icon: plug,      label: Collect,  sub: "Fanfinity Blocks" }
-  - { icon: identity,  label: Resolve,  sub: "Fanfinity ID" }
-  - { icon: bolt,      label: Engage,   sub: "Fanfinity Engage" }
-  - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate" }
-  - { icon: chart,     label: Prove,    sub: "Fanfinity Measure" }
+  - { icon: plug,      label: Collect,  sub: "Fanfinity Blocks",   url: /platform/blocks }
+  - { icon: identity,  label: Resolve,  sub: "Fanfinity ID",       url: /platform/id }
+  - { icon: bolt,      label: Engage,   sub: "Fanfinity Engage",   url: /platform/engage }
+  - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate", url: /platform/activate }
+  - { icon: chart,     label: Prove,    sub: "Fanfinity Measure",  url: /platform/measure }
 
 # Engagement-library widget demos (compressed GIFs in /assets/widgets/).
 # Titles/tags/pitches are Fanfinity's own (from internal decks); formats map to
 # the Widgets product epic. Presented as the widget library, not a production claim.
 widgets:
   - { icon: poll,   title: Polls,             tag: "Loyalty · Data",        file: polls,      pitch: "Capture the crowd's voice.",        alt: "Text poll and image poll examples" }
-  - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
   - { icon: quiz,   title: Quizzes,           tag: "Competition",           file: quizzes,    pitch: "Reward what your fans know.",       alt: "Text and image quiz examples" }
   - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
+  - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
   - { icon: hash,   title: Number Prediction, tag: "Retention",             file: prediction, pitch: "Make every stat a game.",           alt: "Number prediction example" }
   - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
   - { icon: bell,   title: Alerts,            tag: "Revenue",               file: alerts,     pitch: "Own the moment, then monetize it.", alt: "Sponsored and breaking alert examples" }
@@ -41,41 +38,20 @@ widgets:
 
 # Capability stats (NOT performance claims; Fanfinity is pre-revenue with design partners).
 platform_stats:
-  - { value: "One profile", label: "Every signal (ticketing, streaming, app, on-site & social) resolved into a single fan" }
-  - { value: "Real-time", label: "Identity resolved in milliseconds, across sessions and devices" }
-  - { value: "In-Kingdom", label: "PDPL-compliant residency: your cloud, on-prem, or fully managed" }
+  - { value: "One profile", label: "every signal resolved into one fan" }
+  - { value: "Real-time", label: "identity resolved in milliseconds" }
+  - { value: "In-Kingdom", label: "PDPL residency you control" }
 
 deploy_stats:
   - { value: "Any cloud", label: "AWS, Google Cloud, or Azure, in any region" }
   - { value: "On-premise", label: "Inside your own infrastructure" }
   - { value: "Nothing leaves", label: "Customer data stays inside the environment you control" }
 
-teams:
-  - { icon: megaphone, title: "Marketing & Growth", body: "Segment on live behavior, launch journeys, and prove ROI, without waiting on engineering." }
-  - { icon: code,      title: "Data & Engineering", body: "An API-first, warehouse-composable platform you deploy and fully control." }
-  - { icon: spark,     title: "AI & Agents",        body: "Governed, real-time access to unified customer context for your agents." }
-
 measure_points:
   - "Deduplicated, verified reach: real people, not ad impressions."
   - "Exposure-to-outcome attribution ties a campaign to the purchase it drove."
   - "Package and price premium first-party audiences your sponsors can't get anywhere else."
   - "Real-time dashboards a sponsor or partner can log into themselves."
-
-usecases:
-  - { icon: identity,  title: "Turn anonymous into known", body: "Resolve first-touch visitors into golden profiles across every property." }
-  - { icon: bolt,      title: "Light up every live moment (Preview)", body: "Polls, predictions, and quizzes that turn passive watchers into participants." }
-  - { icon: arrows-counter-clockwise, title: "Win back lapsing fans", body: "Trigger WhatsApp and email journeys the moment engagement starts to drop." }
-  - { icon: chart,     title: "Prove sponsor ROI",          body: "Answer 'who saw it and did it convert?' with verified reach and attribution." }
-
-faqs:
-  - q: "Is the engagement layer live?"
-    a: "The data layer is live today: collect, resolve, activate across channels, and prove the outcome. The interactive engagement widgets are a design preview, not a shipped product. We label that honestly everywhere so you know exactly what you can run now."
-  - q: "Are you cheaper?"
-    a: "We can't quote a number until we scope your usage. What we can say is the model isn't built to grow per active user the way metered-MAU billing does, so success shouldn't be penalized with a bigger bill. (to confirm: pricing is being defined)"
-  - q: "Do you have customers like us?"
-    a: "We're pre-revenue and building alongside a small group of design partners. Rather than name-drop logos we can't yet stand behind, we'll connect you with the right reference when it's real. For how we stack up against the platforms you're evaluating, see Why Fanfinity and the comparison pages."
-  - q: "Where does our fan data live?"
-    a: "Resolved and stored in-region, in-Kingdom, PDPL-governed at the data layer. You choose the deployment (your own cloud, on-premise, or fully managed), and customer data never has to leave your control."
 ---
 
 <!-- ============================================================= HERO -->
@@ -84,16 +60,16 @@ faqs:
     <div class="absolute -top-40 right-[-10rem] h-[40rem] w-[40rem] rounded-full bg-brand-500/10 blur-3xl"></div>
   </div>
   <div class="container-page relative">
-    <div class="grid items-center gap-14 pb-16 pt-16 md:pt-24 lg:grid-cols-5 lg:gap-14">
+    <div class="grid grid-cols-1 items-center gap-14 pb-16 pt-16 md:pt-24 lg:grid-cols-2 lg:gap-14">
 
       <!-- Copy -->
-      <div class="max-w-2xl lg:col-span-3">
+      <div class="max-w-2xl">
         <p class="eyebrow animate-rise">Turn Raw Fan Signals Into Sovereign Enterprise Value</p>
         <h1 class="mt-5 text-5xl font-bold leading-[1.05] tracking-tight animate-rise [animation-delay:80ms] sm:text-6xl md:text-6xl lg:text-7xl text-balance">
           From fan data to proven outcomes.
         </h1>
         <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground animate-rise [animation-delay:160ms]">
-          Stop guessing what your audience wants. Turn real-time fan behavior into actionable context and guaranteed ROI, kept entirely in-region and under your control.
+          Stop guessing what your audience wants. Turn real-time fan behavior into actionable context and ROI you can prove, kept entirely in-region and under your control.
         </p>
         <div class="mt-9 flex flex-wrap gap-3 animate-rise [animation-delay:240ms]">
           <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
@@ -109,9 +85,9 @@ faqs:
       </div>
 
       <!-- Live-event photo with an animated audience-builder card (cycles sample segments via JS below). -->
-      <div class="relative animate-rise [animation-delay:200ms] max-w-md mx-auto lg:col-span-2 lg:ml-auto lg:mr-0">
+      <div class="relative animate-rise [animation-delay:200ms] max-w-md mx-auto lg:ml-auto lg:mr-0">
         <img src="{{ '/assets/img/home-hero.jpg' | relative_url }}" alt="Fans at a live event, phones raised" loading="eager"
-             class="aspect-[4/3] w-full rounded-4xl border border-border object-cover shadow-xl shadow-brand-500/10 sm:aspect-[4/5]">
+             class="aspect-[4/3] w-full rounded-4xl border border-border object-cover shadow-xl shadow-brand-500/10 lg:aspect-[4/5]">
 
         <div class="absolute inset-x-4 bottom-4 z-20 sm:left-1/2 sm:right-auto sm:bottom-8 sm:w-80 sm:-translate-x-1/2">
           <div class="rounded-3xl border border-white/40 bg-card/80 p-4 shadow-2xl shadow-brand-500/25 ring-1 ring-black/5 backdrop-blur-md">
@@ -198,9 +174,6 @@ faqs:
 <!-- ====================================================== AUDIENCE BAND -->
 {% include logo-cloud.html %}
 
-<!-- ============================================ PLATFORM CAPABILITY STATS -->
-{% include stat-band.html stats=page.platform_stats %}
-
 <!-- =================================================== CONNECTED STACK -->
 <section class="relative overflow-hidden border-y border-border bg-soft">
   <div class="container-page relative section">
@@ -224,16 +197,29 @@ faqs:
       <ol class="relative flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-4">
         {% for node in page.flow_nodes %}
           {%- assign d = forloop.index0 | times: 90 -%}
-          <li data-reveal style="--reveal-delay:{{ d }}ms" class="flex items-center gap-4 lg:flex-1 lg:flex-col lg:gap-0 lg:text-center">
-            <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
-            <div class="lg:mt-4">
-              <p class="font-semibold text-foreground">{{ node.label }}</p>
-              <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
-            </div>
+          <li data-reveal style="--reveal-delay:{{ d }}ms" class="lg:flex-1">
+            <a href="{{ node.url | relative_url }}" class="group/node flex items-center gap-4 lg:flex-col lg:gap-0 lg:text-center">
+              <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
+              <div class="lg:mt-4">
+                <p class="font-semibold text-foreground group-hover/node:text-brand-foreground">{{ node.label }}</p>
+                <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
+              </div>
+            </a>
           </li>
         {% endfor %}
       </ol>
     </div>
+
+    <!-- Platform capability claims (folded in from the old stat band) -->
+    <ul class="mt-14 flex flex-wrap items-center justify-center gap-3" data-reveal>
+      {%- for stat in page.platform_stats -%}
+        <li class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm">
+          <span class="h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true"></span>
+          <span class="font-semibold text-foreground">{{ stat.value }}</span>
+          <span class="text-muted-foreground">{{ stat.label }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
   </div>
 </section>
 
@@ -241,58 +227,14 @@ faqs:
 {% include value-pillars.html
    eyebrow="Why teams choose Fanfinity"
    heading="Outcomes, not just widgets"
-   subheading="Six ways Fanfinity turns a live audience into a returning, monetizable community."
+   subheading="Turn a live audience into a returning, monetizable community you own."
    items=page.value_pillars %}
 
-<!-- ==================================================== PLATFORM CARDS -->
-{% include pillar-cards.html
-   eyebrow="The products"
-   heading="Five products, one platform"
-   subheading="Fanfinity Blocks, ID, Engage, Activate, and Measure: collect and resolve identity, engage across every surface, activate in real time, and prove the outcome." %}
+<!-- =============================================== INDUSTRIES (interactive switcher) -->
+{% include audience-switcher.html %}
 
-<!-- ============================================================== WIDGETS -->
-<section id="widgets" class="relative overflow-hidden bg-background">
-  <div class="container-page relative section">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. This engagement layer is in design preview.</p>
-    </div>
-
-    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {%- for w in page.widgets -%}
-        <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
-                class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-          <figcaption class="flex items-center gap-3 px-5 pt-5">
-            <span class="icon-chip-sm">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">{{ w.title }}</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ w.tag }}</span>
-            </span>
-          </figcaption>
-          <p class="px-5 pt-3 text-sm text-muted-foreground">{{ w.pitch }}</p>
-          <div class="mt-4 overflow-hidden border-t border-border bg-muted">
-            <img src="{{ '/assets/widgets/' | append: w.file | append: '.gif' | relative_url }}"
-                 alt="{{ w.alt }}" loading="lazy" decoding="async"
-                 class="w-full transition duration-500 group-hover/w:scale-[1.02]">
-          </div>
-        </figure>
-      {%- endfor -%}
-    </div>
-
-    <p class="mt-8 text-center text-xs text-muted-foreground">Polls, sliders, quizzes, predictions, cheer meters, alerts &amp; more, all themeable and sponsorable.</p>
-  </div>
-</section>
-
-<!-- =================================================== SOLUTION CARDS -->
-{% include solution-cards.html %}
-
-<!-- ======================================================= FOR EVERY TEAM -->
-{% include feature-grid.html
-   eyebrow="For every team"
-   heading="One platform, three ways in"
-   subheading="Marketing moves fast without engineering, data teams keep control, and AI agents get governed context, all on the same system."
-   items=page.teams
-   columns=3 %}
+<!-- ============================================ WHERE WE ARE (design partners) -->
+{% include proof.html %}
 
 <!-- ===================================================== MEASURE SPOTLIGHT -->
 {% include feature-split.html
@@ -302,10 +244,7 @@ faqs:
    points=page.measure_points
    cta_text="Explore Fanfinity Measure"
    cta_url="/platform/measure"
-   icon="chart" %}
-
-<!-- ======================================================= DEPLOY ANYWHERE -->
-{% include stat-band.html heading="Runs where your rules require: your cloud, your on-prem, or ours." stats=page.deploy_stats %}
+   media="measure-visual" %}
 
 <!-- ==================================================== DEVELOPER SPLIT -->
 <section class="section" id="developers">
@@ -347,16 +286,54 @@ faqs:
         </div>
       </div>
     </div>
+
+    <!-- Sovereignty sub-row (folded in from the old deploy stat band) -->
+    <div class="mt-16 border-t border-border pt-10" data-reveal>
+      <p class="text-sm font-semibold text-foreground">Runs where your rules require: your cloud, your on-prem, or ours.</p>
+      <dl class="mt-6 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
+        {%- for stat in page.deploy_stats -%}
+          <div class="sm:px-8">
+            <dt class="font-heading text-2xl font-bold text-brand-foreground">{{ stat.value }}</dt>
+            <dd class="mt-1.5 text-sm text-muted-foreground">{{ stat.label }}</dd>
+          </div>
+        {%- endfor -%}
+      </dl>
+    </div>
   </div>
 </section>
 
-<!-- ==================================================== FEATURED USE CASES -->
-{% include feature-grid.html
-   eyebrow="Use cases"
-   heading="What teams do with Fanfinity"
-   subheading="A few of the outcomes the platform is built for. Explore the full library by capability."
-   items=page.usecases
-   columns=4 %}
+<!-- ======================================= WIDGETS (engagement preview) -->
+<section id="widgets" class="relative overflow-hidden bg-background">
+  <div class="container-page relative section">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. This engagement layer is in design preview.</p>
+    </div>
+
+    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {%- for w in page.widgets limit: 3 -%}
+        <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
+                class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+          <figcaption class="flex items-center gap-3 px-5 pt-5">
+            <span class="icon-chip-sm">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
+            <span class="min-w-0">
+              <span class="block text-sm font-semibold text-foreground">{{ w.title }}</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ w.tag }}</span>
+            </span>
+          </figcaption>
+          <p class="px-5 pt-3 text-sm text-muted-foreground">{{ w.pitch }}</p>
+          <div class="mt-4 overflow-hidden border-t border-border bg-muted">
+            <img src="{{ '/assets/widgets/' | append: w.file | append: '.gif' | relative_url }}"
+                 alt="{{ w.alt }}" loading="lazy" decoding="async"
+                 class="w-full transition duration-500 group-hover/w:scale-[1.02]">
+          </div>
+        </figure>
+      {%- endfor -%}
+    </div>
+
+    <p class="mt-8 text-center text-xs text-muted-foreground">Polls, sliders, quizzes, predictions, cheer meters, alerts &amp; more, all themeable and sponsorable.</p>
+  </div>
+</section>
 
 <!-- ========================================================= INTEGRATIONS -->
 <section class="section-sm">
@@ -371,13 +348,9 @@ faqs:
   </div>
 </section>
 
-<!-- ============================================================== PROOF -->
-{% include proof.html %}
-
-<!-- ================================================================ FAQ -->
-{% include faq.html eyebrow="FAQ" heading="Questions teams ask us" %}
-
 <!-- ============================================================== CTA -->
 {% include cta-band.html
    heading="Own the fan relationship. Prove the revenue it drives."
-   text="See how Fanfinity unifies fan identity, activates it across every channel, and proves the outcome. Book a walkthrough with our team." %}
+   text="See how Fanfinity unifies fan identity, activates it across every channel, and proves the outcome. Book a walkthrough with our team."
+   secondary_text="Talk to the team"
+   secondary_url="/contact" %}

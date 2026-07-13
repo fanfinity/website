@@ -123,7 +123,7 @@
             obs.unobserve(entry.target);
           }
         });
-      }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+      }, { rootMargin: '0px 0px 12% 0px', threshold: 0.01 });
       revealEls.forEach(function (el) { io.observe(el); });
     }
   }
@@ -224,6 +224,83 @@
 
     document.querySelectorAll('[data-cookie-open]').forEach(function (el) {
       el.addEventListener('click', function () { showConsent(); });
+    });
+  }
+
+  /* ---------------------------------------------------------------- *
+   * Industry switcher — tabs swap an illustrative sample audience card.
+   * Progressive enhancement: without JS the first (Sports) card shows.
+   * ---------------------------------------------------------------- */
+  var indTabsWrap = document.querySelector('[data-industry-tabs]');
+  if (indTabsWrap) {
+    var indBase = 'rounded-full px-4 py-2 text-sm font-semibold transition';
+    var indActive = indBase + ' bg-brand-600 text-white';
+    var indInactive = indBase + ' border border-border bg-card text-muted-foreground hover:text-foreground';
+    var indTabs = Array.prototype.slice.call(indTabsWrap.querySelectorAll('[data-industry-tab]'));
+    var indBody = document.querySelector('[data-industry-body]');
+    var indTitle = document.querySelector('[data-industry-title]');
+    var indRows = document.querySelector('[data-industry-rows]');
+    var indCount = document.querySelector('[data-industry-count]');
+    var indChannels = document.querySelector('[data-industry-channels]');
+    var indLink = document.querySelector('[data-industry-link]');
+
+    // keyed by the industry's icon (whistle/broadcast/handshake/airplane/gift)
+    var INDUSTRIES = {
+      whistle:   { title: 'High-value season-ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: ['WhatsApp', 'Email', 'Push'] },
+      broadcast: { title: 'Streaming super-watchers', count: '37,480', rows: [['Watch time', '>', '20h / mo'], ['Live sessions', '≥', '8'], ['Device', '=', 'Mobile'], ['Consent', '=', 'Marketing']], channels: ['Push', 'Email', 'WhatsApp'] },
+      handshake: { title: 'Sponsor-ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: ['Email', 'Push', 'Paid'] },
+      airplane:  { title: 'Lapsing high-value travellers', count: '22,410', rows: [['Last trip', '>', '4 months'], ['Lifetime value', '>', 'SAR 8,000'], ['Loyalty tier', '=', 'Gold'], ['Region', '=', 'GCC']], channels: ['Email', 'SMS', 'WhatsApp'] },
+      gift:      { title: 'Lapsing loyalty shoppers', count: '29,905', rows: [['Last purchase', '>', '60 days'], ['Loyalty tier', '=', 'Gold'], ['Consent', '=', 'Marketing'], ['Region', '=', 'GCC']], channels: ['WhatsApp', 'SMS', 'Email'] }
+    };
+
+    function indRow(l, op, v) { return '<div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">' + l + '</span><span class="font-mono font-bold text-brand-foreground">' + op + '</span><span class="w-28 text-right font-semibold text-foreground">' + v + '</span></div>'; }
+    function indChip(n) { return '<span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">' + n + '</span>'; }
+
+    function indRender(key) {
+      var s = INDUSTRIES[key];
+      if (!s || !indBody) return;
+      indBody.style.opacity = '0';
+      setTimeout(function () {
+        if (indTitle) indTitle.textContent = s.title;
+        if (indRows) indRows.innerHTML = s.rows.map(function (r) { return indRow(r[0], r[1], r[2]); }).join('');
+        if (indCount) indCount.textContent = s.count;
+        if (indChannels) indChannels.innerHTML = s.channels.map(indChip).join('');
+        indBody.style.opacity = '1';
+      }, 200);
+    }
+
+    indTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        indTabs.forEach(function (t) { t.className = indInactive; t.setAttribute('aria-selected', 'false'); });
+        tab.className = indActive;
+        tab.setAttribute('aria-selected', 'true');
+        if (indLink) {
+          indLink.setAttribute('href', tab.getAttribute('data-industry-url') || '#');
+          var label = tab.getAttribute('data-industry-label') || '';
+          indLink.childNodes[0].nodeValue = 'Explore ' + label + ' ';
+        }
+        indRender(tab.getAttribute('data-industry-tab'));
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------- *
+   * Measure visual — two tabs (verified reach / attribution) toggle panels.
+   * Progressive enhancement: without JS the reach panel shows.
+   * ---------------------------------------------------------------- */
+  var measureTabsWrap = document.querySelector('[data-measure-tabs]');
+  if (measureTabsWrap) {
+    var mBase = 'rounded-full px-4 py-2 text-sm font-semibold transition';
+    var mActive = mBase + ' bg-brand-600 text-white';
+    var mInactive = mBase + ' bg-muted text-muted-foreground hover:text-foreground';
+    var mTabs = Array.prototype.slice.call(measureTabsWrap.querySelectorAll('[data-measure-tab]'));
+    var mPanels = Array.prototype.slice.call(document.querySelectorAll('[data-measure-panel]'));
+    mTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var key = tab.getAttribute('data-measure-tab');
+        mTabs.forEach(function (t) { t.className = t === tab ? mActive : mInactive; t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+        mPanels.forEach(function (p) { p.hidden = p.getAttribute('data-measure-panel') !== key; });
+      });
     });
   }
 

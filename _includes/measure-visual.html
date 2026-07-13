@@ -1,0 +1,74 @@
+{%- comment -%}
+Interactive Measure visual (home Measure spotlight). Two tabs — Verified reach
+and Attribution — mock the deterministic proof Fanfinity Measure produces:
+deduplicated real-people reach, and exposure-to-outcome attribution. ILLUSTRATIVE
+data only, labelled as such (no real metrics/customers). Tabs swap via JS class/hidden
+toggles in assets/js/main.js. Without JS the Verified-reach panel shows.
+{%- endcomment -%}
+<div class="relative">
+  <div class="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
+  <div class="rounded-3xl border border-border bg-card p-5 shadow-xl shadow-brand-500/10">
+
+    <div class="flex gap-2" data-measure-tabs role="tablist" aria-label="Measure views">
+      <button type="button" role="tab" data-measure-tab="reach"
+              class="rounded-full px-4 py-2 text-sm font-semibold transition bg-brand-600 text-white">Verified reach</button>
+      <button type="button" role="tab" data-measure-tab="attribution"
+              class="rounded-full px-4 py-2 text-sm font-semibold transition bg-muted text-muted-foreground hover:text-foreground">Attribution</button>
+    </div>
+
+    <!-- Panel: verified reach -->
+    <div data-measure-panel="reach" class="mt-6">
+      <div class="space-y-4">
+        <div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-foreground">Verified reach</span>
+            <span class="font-heading font-bold tabular-nums text-foreground">128,400</span>
+          </div>
+          <div class="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-muted"><div class="h-2.5 rounded-full bg-brand-600" style="width:100%"></div></div>
+          <p class="mt-1 text-xs text-muted-foreground">Real, deduplicated people. Not ad impressions.</p>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-foreground">Exposed to sponsor</span>
+            <span class="font-heading font-bold tabular-nums text-foreground">96,200</span>
+          </div>
+          <div class="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-muted"><div class="h-2.5 rounded-full bg-brand-600" style="width:75%"></div></div>
+        </div>
+        <div>
+          <div class="flex items-center justify-between text-sm">
+            <span class="font-semibold text-foreground">Converted</span>
+            <span class="font-heading font-bold tabular-nums text-foreground">18,940</span>
+          </div>
+          <div class="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-muted"><div class="h-2.5 rounded-full bg-brand-600" style="width:34%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel: attribution -->
+    <div data-measure-panel="attribution" class="mt-6" hidden>
+      <ol class="space-y-2">
+        <li class="flex items-center gap-3 rounded-lg bg-muted px-3 py-2.5 text-[13px]">
+          <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Campaign</span>
+          <span class="flex-1 font-semibold text-foreground">Matchday sponsor takeover</span>
+        </li>
+        <li class="flex items-center gap-3 rounded-lg bg-muted px-3 py-2.5 text-[13px]">
+          <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Exposure</span>
+          <span class="flex-1 text-muted-foreground">Verified impressions</span>
+          <span class="font-heading font-bold tabular-nums text-foreground">96,200</span>
+        </li>
+        <li class="flex items-center gap-3 rounded-lg bg-muted px-3 py-2.5 text-[13px]">
+          <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Outcome</span>
+          <span class="flex-1 text-muted-foreground">Attributed conversions</span>
+          <span class="font-heading font-bold tabular-nums text-foreground">18,940</span>
+        </li>
+      </ol>
+      <div class="mt-4 flex items-end justify-between rounded-xl border border-brand-200 bg-brand-50 px-4 py-3">
+        <span class="text-sm font-semibold text-foreground">Attributed revenue</span>
+        <span class="font-heading text-2xl font-bold tabular-nums text-brand-foreground">SAR 2.4M</span>
+      </div>
+      <p class="mt-2 text-xs text-muted-foreground">Exposure-to-outcome, tied to real purchases.</p>
+    </div>
+
+  </div>
+  <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative view of Fanfinity Measure.</p>
+</div>

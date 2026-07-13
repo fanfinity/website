@@ -4,11 +4,13 @@ Params: heading
 {%- endcomment -%}
 <section class="border-y border-border bg-card">
   <div class="container-page py-10" data-reveal>
-    <p class="text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{{ include.heading | default: 'Built for live sports, media &amp; brands' }}</p>
+    <p class="text-center font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">{{ include.heading | default: 'Built for live sports, media, events &amp; brands' }}</p>
     <div class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm font-medium text-foreground">
       <span class="inline-flex items-center gap-2">{% include icon.html name="whistle" class="h-5 w-5 text-brand-foreground" %} Sports leagues &amp; teams</span>
       <span class="hidden h-4 w-px bg-border sm:block" aria-hidden="true"></span>
       <span class="inline-flex items-center gap-2">{% include icon.html name="broadcast" class="h-5 w-5 text-brand-foreground" %} Broadcasters &amp; media</span>
+      <span class="hidden h-4 w-px bg-border sm:block" aria-hidden="true"></span>
+      <span class="inline-flex items-center gap-2">{% include icon.html name="users" class="h-5 w-5 text-brand-foreground" %} Live events &amp; venues</span>
       <span class="hidden h-4 w-px bg-border sm:block" aria-hidden="true"></span>
       <span class="inline-flex items-center gap-2">{% include icon.html name="handshake" class="h-5 w-5 text-brand-foreground" %} Brands &amp; sponsors</span>
     </div>

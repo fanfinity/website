@@ -1,0 +1,72 @@
+{%- comment -%}
+Interactive industry switcher (home "Industries" section). Tabs across the five
+fan-driven industries; each swaps an ILLUSTRATIVE sample audience — segment rows,
+a reachable count, and channels — reusing the hero audience-card pattern. No real
+metrics or customers: the card is labelled "Illustrative sample audience".
+Serves the horizontal buyer: a media / retail / travel exec sees their own audience,
+not a sports one. Progressive enhancement: without JS the first (Sports) card shows.
+Tab metadata (label / key / url) is rendered server-side; sample data lives in JS.
+{%- endcomment -%}
+{%- assign group = site.data.navigation.header | where: 'title', 'Solutions' | first -%}
+{%- assign inds = group.groups | where: 'heading', 'By industry' | first -%}
+<section class="section border-y border-border bg-soft" id="industries">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+
+      <!-- Copy + tabs -->
+      <div data-reveal>
+        <p class="eyebrow">By industry</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">One platform, every fan-driven industry</h2>
+        <p class="mt-4 text-lg text-muted-foreground">The same connected platform, tuned to the audience each industry needs to reach.</p>
+
+        <div class="mt-8 flex flex-wrap gap-2" data-industry-tabs role="tablist" aria-label="Industries">
+          {%- for ind in inds.links -%}
+            {%- assign key = ind.icon -%}
+            <button type="button" role="tab"
+                    data-industry-tab="{{ key }}"
+                    data-industry-url="{{ ind.url | relative_url }}"
+                    data-industry-label="{{ ind.title }}"
+                    class="rounded-full px-4 py-2 text-sm font-semibold transition {% if forloop.first %}bg-brand-600 text-white{% else %}border border-border bg-card text-muted-foreground hover:text-foreground{% endif %}">
+              {{ ind.title }}
+            </button>
+          {%- endfor -%}
+        </div>
+
+        <a href="{{ inds.links[0].url | relative_url }}" data-industry-link class="link-arrow mt-7">Explore {{ inds.links[0].title }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <!-- Sample audience card (mirrors the hero audience builder) -->
+      <div data-reveal style="--reveal-delay:120ms" class="relative">
+        <div class="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
+        <div class="rounded-3xl border border-border bg-card p-5 shadow-xl shadow-brand-500/10">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">AI Audience</span>
+            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+              <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-500"></span></span>Live
+            </span>
+          </div>
+          <div data-industry-body class="transition-opacity duration-500 ease-out">
+            <h3 data-industry-title class="mt-4 text-lg font-bold leading-tight text-foreground">High-value season-ticket holders</h3>
+            <div data-industry-rows class="mt-3 space-y-1.5">
+              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Region</span><span class="font-mono font-bold text-brand-foreground">=</span><span class="w-28 text-right font-semibold text-foreground">KSA</span></div>
+              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Lifetime value</span><span class="font-mono font-bold text-brand-foreground">&gt;</span><span class="w-28 text-right font-semibold text-foreground">SAR 5,000</span></div>
+              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Matches attended</span><span class="font-mono font-bold text-brand-foreground">&#8805;</span><span class="w-28 text-right font-semibold text-foreground">12</span></div>
+              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Last seen</span><span class="font-mono font-bold text-brand-foreground">&#8804;</span><span class="w-28 text-right font-semibold text-foreground">7 days</span></div>
+            </div>
+            <div class="mt-4 flex items-end justify-between">
+              <span data-industry-count class="font-heading text-2xl font-bold tabular-nums text-foreground">48,320</span>
+              <span class="text-xs text-muted-foreground">Reachable profiles</span>
+            </div>
+            <div data-industry-channels class="mt-3 flex flex-wrap gap-1.5">
+              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">WhatsApp</span>
+              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Email</span>
+              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Push</span>
+            </div>
+          </div>
+        </div>
+        <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative sample audience.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

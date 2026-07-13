@@ -112,23 +112,22 @@ header:
     url: /resources
     groups:
       # Each link resolves to a distinct destination — no aliasing the same URL.
+      # "Resource Library" is the only desktop path to the /resources hub (the
+      # top-level Resources button is a dropdown trigger, not a link).
       - heading: Learn
         links:
-          - { title: "Blog",             url: /blog,       desc: "Insights on fan data and sports tech",    icon: book }
           - { title: "Resource Library", url: /resources,  desc: "Guides, reports, and whitepapers",         icon: stack }
+          - { title: "Blog",             url: /blog,       desc: "Insights on fan data and sports tech",    icon: book }
           - { title: "Case Studies",     url: /customers,  desc: "Customer success stories",                icon: chart }
           - { title: "Webinars",         url: /webinars,   desc: "Live and on-demand sessions",             icon: broadcast }
           - { title: "Developers",       url: /developers, desc: "REST API, SDKs, and the data model",      icon: code }
+      # Trimmed to 3 flagship rivals + the hub — the full 8-way matrix lives on /compare.
       - heading: Compare
         links:
-          - { title: "All comparisons", url: /compare,             desc: "How Fanfinity stacks up",           icon: scale }
-          - { title: "vs LiveLike",     url: /compare/livelike,    desc: "vs a hosted engagement suite",      icon: scale }
-          - { title: "vs Monterosa",    url: /compare/monterosa,   desc: "vs a broadcast engagement suite",   icon: scale }
-          - { title: "vs Meiro",        url: /compare/meiro,       desc: "vs a horizontal CDP",               icon: scale }
-          - { title: "vs Segment",      url: /compare/segment,     desc: "vs a cloud-first SaaS CDP",         icon: scale }
-          - { title: "vs RudderStack",  url: /compare/rudderstack, desc: "vs warehouse-first pipelines",      icon: scale }
-          - { title: "vs Snowplow",     url: /compare/snowplow,    desc: "vs behavioral event infrastructure", icon: scale }
-          - { title: "vs Hightouch",    url: /compare/hightouch,   desc: "vs a warehouse activation layer",   icon: scale }
+          - { title: "All comparisons", url: /compare,          desc: "How Fanfinity stacks up",      icon: scale }
+          - { title: "vs Meiro",        url: /compare/meiro,    desc: "vs a horizontal CDP",          icon: scale }
+          - { title: "vs LiveLike",     url: /compare/livelike, desc: "vs a hosted engagement suite", icon: scale }
+          - { title: "vs Segment",      url: /compare/segment,  desc: "vs a cloud-first SaaS CDP",    icon: scale }
 
   # ------------------------------------------------------------------ PRICING
   - title: Pricing
@@ -138,6 +137,9 @@ cta:
   title: Book a Demo
   url: /demo
 
+# Five columns (consolidated 2026-07-13 from 7): Industries merged into Solutions,
+# the Compare column trimmed into Resources, Pricing moved under Platform, and
+# Why Fanfinity moved to Company. Footer grid is lg:grid-cols-5 in footer.html.
 footer_columns:
   - heading: Platform
     links:
@@ -147,6 +149,7 @@ footer_columns:
       - { title: "Fanfinity Engage",   url: /platform/engage }
       - { title: "Fanfinity Activate", url: /platform/activate }
       - { title: "Fanfinity Measure",  url: /platform/measure }
+      - { title: "Pricing",            url: /pricing }
 
   - heading: Deploy & Trust
     links:
@@ -159,17 +162,11 @@ footer_columns:
 
   - heading: Solutions
     links:
-      - { title: "All Solutions",         url: /solutions }
-      - { title: "Anonymous to Known",    url: /solutions/convert-visitors }
-      - { title: "Grow Lifetime Value",   url: /solutions/boost-clv }
-      - { title: "Prevent Churn",         url: /solutions/prevent-churn }
-      - { title: "Sharpen Ad Targeting",  url: /solutions/optimize-adspend }
-      - { title: "Marketing & Growth",    url: /solutions/marketing }
-      - { title: "Data & Engineering",    url: /solutions/engineering }
-      - { title: "AI & Agents",           url: /solutions/ai-agents }
-
-  - heading: Industries
-    links:
+      - { title: "All Solutions",          url: /solutions }
+      - { title: "Anonymous to Known",     url: /solutions/convert-visitors }
+      - { title: "Grow Lifetime Value",    url: /solutions/boost-clv }
+      - { title: "Prevent Churn",          url: /solutions/prevent-churn }
+      - { title: "Sharpen Ad Targeting",   url: /solutions/optimize-adspend }
       - { title: "All Industries",         url: /industries }
       - { title: "Sports & Entertainment", url: /solutions/sports }
       - { title: "Media & Publishers",     url: /solutions/media }
@@ -177,33 +174,25 @@ footer_columns:
       - { title: "Travel & Hospitality",   url: /solutions/travel }
       - { title: "Retail & E-commerce",    url: /solutions/retail }
 
-  - heading: Compare
-    links:
-      - { title: "All comparisons", url: /compare }
-      - { title: "vs LiveLike",    url: /compare/livelike }
-      - { title: "vs Monterosa",   url: /compare/monterosa }
-      - { title: "vs Meiro",       url: /compare/meiro }
-      - { title: "vs Segment",     url: /compare/segment }
-      - { title: "vs RudderStack", url: /compare/rudderstack }
-      - { title: "vs Snowplow",    url: /compare/snowplow }
-      - { title: "vs Hightouch",   url: /compare/hightouch }
-      - { title: "Pricing",        url: /pricing }
-
   - heading: Resources
     links:
-      - { title: "Blog",              url: /blog }
-      - { title: "Webinars",          url: /webinars }
-      - { title: "Case Studies",      url: /customers }
-      - { title: "Developers & Docs", url: /developers }
-      - { title: "Why Fanfinity",     url: /why-fanfinity }
+      - { title: "Resource Library", url: /resources }
+      - { title: "Blog",             url: /blog }
+      - { title: "Case Studies",     url: /customers }
+      - { title: "Webinars",         url: /webinars }
+      - { title: "All comparisons",  url: /compare }
+      - { title: "vs Meiro",         url: /compare/meiro }
+      - { title: "vs LiveLike",      url: /compare/livelike }
+      - { title: "vs Segment",       url: /compare/segment }
 
   - heading: Company
     links:
-      - { title: "About",       url: /about }
-      - { title: "Careers",     url: /careers }
-      - { title: "Partners",    url: /partners }
-      - { title: "Newsroom",    url: /newsroom }
-      - { title: "Contact",     url: /contact }
-      - { title: "Book a Demo", url: /demo }
+      - { title: "About",         url: /about }
+      - { title: "Why Fanfinity", url: /why-fanfinity }
+      - { title: "Careers",       url: /careers }
+      - { title: "Partners",      url: /partners }
+      - { title: "Newsroom",      url: /newsroom }
+      - { title: "Contact",       url: /contact }
+      - { title: "Book a Demo",   url: /demo }
 
 descriptor: "The real-time fan data platform: collect, resolve, activate, and prove one consented, in-region fan graph. Sports-first, built for any audience business."

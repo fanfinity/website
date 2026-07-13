@@ -1,7 +1,8 @@
 {%- comment -%}
 Alternating text / media row. Params:
   eyebrow, title, body, points (array of strings), cta_text, cta_url,
-  image (path) + image_alt, OR icon (fallback decorative panel), reverse (bool)
+  media (include filename for a custom visual), image (path) + image_alt,
+  OR icon (fallback decorative panel), reverse (bool)
 {%- endcomment -%}
 <section class="section">
   <div class="container-page">
@@ -22,7 +23,9 @@ Alternating text / media row. Params:
         {%- if include.cta_text -%}<a href="{{ include.cta_url | relative_url }}" class="link-arrow mt-7">{{ include.cta_text }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>{%- endif -%}
       </div>
       <div class="{% if include.reverse %}lg:order-1{% endif %}">
-        {%- if include.image -%}
+        {%- if include.media == 'measure-visual' -%}
+          {% include measure-visual.html %}
+        {%- elsif include.image -%}
           <img src="{{ include.image | relative_url }}" alt="{{ include.image_alt }}" class="w-full rounded-4xl border border-border">
         {%- else -%}
           {% include brand-visual.html icon=include.icon %}

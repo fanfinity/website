@@ -1,9 +1,13 @@
 {%- comment -%}
-Audience solution cards, driven by the Solutions nav item's children.
-Params: eyebrow, heading, subheading
+Audience solution cards, driven by the Solutions nav item's groups.
+Params: eyebrow, heading, subheading, group_heading (which nav group to render,
+e.g. "By industry" / "By use case"; defaults to the first group), link_text.
 {%- endcomment -%}
 {%- assign solutions = site.data.navigation.header | where: 'title', 'Solutions' | first -%}
-{%- if solutions.groups -%}{%- assign cards = solutions.groups[0].links -%}{%- else -%}{%- assign cards = solutions.children -%}{%- endif -%}
+{%- if solutions.groups -%}
+  {%- if include.group_heading -%}{%- assign group = solutions.groups | where: 'heading', include.group_heading | first -%}{%- else -%}{%- assign group = solutions.groups[0] -%}{%- endif -%}
+  {%- assign cards = group.links -%}
+{%- else -%}{%- assign cards = solutions.children -%}{%- endif -%}
 <section class="section border-y border-border bg-soft" id="solutions">
   <div class="container-page">
     <div class="max-w-2xl" data-reveal>
@@ -16,7 +20,7 @@ Params: eyebrow, heading, subheading
           <span class="icon-chip">{% include icon.html name=s.icon class="h-6 w-6" %}</span>
           <h3 class="mt-5 text-xl font-semibold">{{ s.title }}</h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{{ s.desc }}.</p>
-          <span class="mt-5 link-arrow">Explore solution {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          <span class="mt-5 link-arrow">{{ include.link_text | default: 'Explore solution' }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
         </a>
       {%- endfor -%}
     </div>
