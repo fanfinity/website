@@ -43,12 +43,12 @@ forms:
 
 # Marketing / GTM integration switches. Each stays empty until you provision the
 # account and paste the ID/URL — nothing renders or fires while a value is blank,
-# so this is safe to commit. Ad pixels + visitor-ID must fire only under the
-# (to-be-added) "marketing" consent category. See the GTM stack plan.
+# so this is safe to commit. The only ad channel is LinkedIn: the Insight Tag
+# fires ONLY under the "marketing" consent category (opt-in). No Meta/Google ads.
 integrations:
-  gtm_id: ''               # Google Tag Manager container, e.g. GTM-XXXXXXX
-  linkedin_partner_id: ''  # LinkedIn Insight Tag partner ID (marketing consent)
-  meta_pixel_id: ''        # Meta Pixel ID (marketing consent)
+  gtm_id: ''               # Google Tag Manager container, e.g. GTM-XXXXXXX (optional; conversion router)
+  linkedin_partner_id: '10520825'  # LinkedIn Insight Tag partner ID — the one ad pixel (marketing consent)
+  linkedin_conversion_id: '29391945'  # LinkedIn "Demo & Contact form submit" (Lead, event-specific) — fires on Pipedrive form submit
   pipedrive:
     demo_form_url: 'https://webforms.pipedrive.com/f/cecyeyYFa9OYFkd3KiwyXbtU7j7OQor6aGeV6DkRZWWwZlBll2LdsUD3dq6085jOwP'      # "Fanfinity — Request a demo" web form
     contact_form_url: 'https://webforms.pipedrive.com/f/6zflfKUfwLlsbZF4vaZOEhlzO4lqngs534EuxOp04VjQAzsfYFzD9LXWOf80zah7Q7'   # "Fanfinity — Contact us" web form

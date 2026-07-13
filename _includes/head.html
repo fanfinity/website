@@ -29,7 +29,8 @@
     CookieConsent.run({
       categories: {
         necessary: { enabled: true, readOnly: true },
-        analytics: {}
+        analytics: {},
+        marketing: {}
       },
       language: {
         default: 'en',
@@ -37,7 +38,7 @@
           en: {
             consentModal: {
               title: 'We use cookies',
-              description: 'We use analytics cookies (Google Analytics, Microsoft Clarity) to understand how visitors use our site. You can accept or decline below.',
+              description: 'We use cookies for analytics and, with your consent, LinkedIn ad measurement. Accept, decline, or manage below.',
               acceptAllBtn: 'Accept all',
               acceptNecessaryBtn: 'Reject all',
               showPreferencesBtn: 'Manage preferences'
@@ -57,6 +58,11 @@
                   title: 'Analytics',
                   description: 'Google Analytics and Microsoft Clarity help us understand how visitors interact with our site.',
                   linkedCategory: 'analytics'
+                },
+                {
+                  title: 'Marketing',
+                  description: 'The LinkedIn Insight Tag measures our LinkedIn advertising. No other ad networks.',
+                  linkedCategory: 'marketing'
                 }
               ]
             }
@@ -83,4 +89,39 @@
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xlwzjpz4m4");
   </script>
+
+  {%- if site.integrations.gtm_id != '' -%}
+  <!-- Google Tag Manager (optional conversion router; fires only after analytics consent) -->
+  <script type="text/plain" data-category="analytics">
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+    j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','{{ site.integrations.gtm_id }}');
+  </script>
+  {%- endif -%}
+
+  {%- if site.integrations.linkedin_conversion_id != '' -%}
+  <!-- LinkedIn conversion id (not a tracker — just a value main.js reads to fire the
+       form-submit conversion; the actual lintrk call only runs if the Insight Tag
+       loaded, i.e. marketing consent was given). -->
+  <script>window.ffLinkedInConversionId = '{{ site.integrations.linkedin_conversion_id }}';</script>
+  {%- endif -%}
+
+  {%- if site.integrations.linkedin_partner_id != '' -%}
+  <!-- LinkedIn Insight Tag — the only ad pixel; fires ONLY after marketing consent -->
+  <script type="text/plain" data-category="marketing">
+    window._linkedin_partner_id = "{{ site.integrations.linkedin_partner_id }}";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+  </script>
+  <script type="text/plain" data-category="marketing">
+    (function(l){
+      if (!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[];}
+      var s=document.getElementsByTagName("script")[0];
+      var b=document.createElement("script");b.type="text/javascript";b.async=true;
+      b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);
+    })(window.lintrk);
+  </script>
+  {%- endif -%}
 </head>

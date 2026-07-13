@@ -138,7 +138,8 @@
    * window.ffAttribution so a Pipedrive Web Form embed or GTM can read it.
    * ---------------------------------------------------------------- */
   (function captureAttribution() {
-    var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'li_fat_id'];
+    // LinkedIn is our only ad channel — keep the UTM set + LinkedIn's click id.
+    var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'li_fat_id'];
     var params = new URLSearchParams(window.location.search);
     var current = {};
     KEYS.forEach(function (k) { var v = params.get(k); if (v) current[k] = v; });
@@ -170,6 +171,68 @@
         if (el && !el.value) el.value = first[k];
       });
     });
+  })();
+
+  /* ---------------------------------------------------------------- *
+   * Pipedrive Web Forms — the demo/contact forms are cross-origin
+   * iframes, so (a) we append captured UTMs to the embed URL before the
+   * iframe is built so campaign source travels into the CRM, and
+   * (b) we inject the Pipedrive loader ourselves (rather than inline) so
+   * the append happens first. Requires matching hidden fields on the
+   * Pipedrive form for the params to be stored on the Lead.
+   * ---------------------------------------------------------------- */
+  (function pipedriveWebForms() {
+    var mounts = Array.prototype.slice.call(document.querySelectorAll('.pipedriveWebForms[data-pd-webforms]'));
+    if (!mounts.length) return;
+
+    var last = (window.ffAttribution && window.ffAttribution.last) || {};
+    var pairs = [];
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'li_fat_id'].forEach(function (k) {
+      if (last[k]) pairs.push(encodeURIComponent(k) + '=' + encodeURIComponent(last[k]));
+    });
+
+    mounts.forEach(function (el) {
+      var url = el.getAttribute('data-pd-webforms') || '';
+      if (pairs.length && url.indexOf('utm_') === -1) {
+        el.setAttribute('data-pd-webforms', url + (url.indexOf('?') > -1 ? '&' : '?') + pairs.join('&'));
+      }
+    });
+
+    var s = document.createElement('script');
+    s.src = 'https://webforms.pipedrive.com/f/loader';
+    s.async = true;
+    document.body.appendChild(s);
+  })();
+
+  /* ---------------------------------------------------------------- *
+   * Pipedrive submit → conversion signal. The iframe posts a message on
+   * successful submit; Pipedrive doesn't document the payload, so we match
+   * defensively (own origin + a "submit" marker) and fire once. Feeds GA4
+   * directly (if consented) and dataLayer for GTM. Recent Pipedrive-origin
+   * messages are stashed on window.ffPipedriveMessages so the exact payload
+   * can be inspected on the live site and the match tightened if needed.
+   * ---------------------------------------------------------------- */
+  (function pipedriveConversion() {
+    if (!document.querySelector('.pipedriveWebForms[data-pd-webforms]')) return;
+    var fired = false;
+    window.ffPipedriveMessages = [];
+    window.addEventListener('message', function (ev) {
+      if (ev.origin !== 'https://webforms.pipedrive.com') return;
+      var data;
+      try { data = typeof ev.data === 'string' ? ev.data : JSON.stringify(ev.data); } catch (e) { return; }
+      if (!data) return;
+      if (window.ffPipedriveMessages.length < 20) window.ffPipedriveMessages.push(ev.data);
+      if (fired || data.toLowerCase().indexOf('submit') === -1) return;
+      fired = true;
+      var source = window.location.pathname.indexOf('/demo') === 0 ? 'demo_form' : 'contact_form';
+      if (typeof window.gtag === 'function') { window.gtag('event', 'generate_lead', { form_source: source }); }
+      (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_source: source, channel: 'pipedrive' });
+      // LinkedIn conversion — only fires if the Insight Tag loaded (marketing consent
+      // given) and a conversion id is configured. Silent no-op otherwise.
+      if (typeof window.lintrk === 'function' && window.ffLinkedInConversionId) {
+        window.lintrk('track', { conversion_id: window.ffLinkedInConversionId });
+      }
+    }, false);
   })();
 
   /* ---------------------------------------------------------------- *
