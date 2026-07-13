@@ -317,30 +317,18 @@
   });
 
   /* ---------------------------------------------------------------- *
-   * Cookie consent — privacy-first (analytics is opt-in).
+   * Cookie preferences — the consent banner and script gating are owned
+   * by CookieConsent (orestbida) in head.html. Here we only wire the
+   * footer "Cookie preferences" button to reopen its preferences modal.
    * ---------------------------------------------------------------- */
-  var consent = document.getElementById('cookie-consent');
-  if (consent) {
-    var KEY = 'ff-cookie-consent';
-    var store = {
-      get: function () { try { return window.localStorage.getItem(KEY); } catch (e) { return 'declined'; } },
-      set: function (v) { try { window.localStorage.setItem(KEY, v); } catch (e) {} }
-    };
-    function showConsent() { consent.hidden = false; }
-    function hideConsent() { consent.hidden = true; }
-    function choose(v) { store.set(v); hideConsent(); }
-
-    if (!store.get()) { showConsent(); }
-
-    var accept = consent.querySelector('[data-cookie-accept]');
-    var decline = consent.querySelector('[data-cookie-decline]');
-    if (accept) accept.addEventListener('click', function () { choose('accepted'); });
-    if (decline) decline.addEventListener('click', function () { choose('declined'); });
-
-    document.querySelectorAll('[data-cookie-open]').forEach(function (el) {
-      el.addEventListener('click', function () { showConsent(); });
+  document.querySelectorAll('[data-cookie-open]').forEach(function (el) {
+    el.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      if (window.CookieConsent && typeof window.CookieConsent.showPreferences === 'function') {
+        window.CookieConsent.showPreferences();
+      }
     });
-  }
+  });
 
   /* ---------------------------------------------------------------- *
    * Industry switcher — tabs swap an illustrative sample audience card.

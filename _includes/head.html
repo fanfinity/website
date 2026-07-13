@@ -25,7 +25,10 @@
     #cc-main { --cc-btn-primary-bg: #9969ff; --cc-btn-primary-hover-bg: #7c4dff; --cc-toggle-on-bg: #9969ff; }
   </style>
   <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
-  <script defer>
+  <!-- `defer` is ignored on inline scripts, so this must wait for DOMContentLoaded
+       (deferred external scripts run before it) or CookieConsent is undefined. -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
     CookieConsent.run({
       categories: {
         necessary: { enabled: true, readOnly: true },
@@ -69,6 +72,7 @@
           }
         }
       }
+    });
     });
   </script>
 
