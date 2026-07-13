@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/id/audience-builder
+title: Audience Builder
+description: "Segment fans on any attribute or behavior and activate them across channels with Fanfinity ID Audience Builder."
+breadcrumb_parent: { title: Fanfinity ID, url: /platform/id }
+capabilities:
+  - { icon: filter,   title: "Segment on anything",           body: "Build audiences on any attribute—demographic, behavioral, predictive, custom—without waiting on engineers. Drag-and-drop or SQL, your choice." }
+  - { icon: repeat,   title: "Real-time audience updates",    body: "Segments update as signals arrive, so fans move in and out of audiences instantly. Activation systems see the current state, not yesterday's snapshot from a batch job." }
+  - { icon: users,    title: "Nested and complex logic",      body: "Combine attributes with AND, OR, NOT logic to create sophisticated cohorts. One segment can depend on another, so you can layer strategy instead of building from scratch each time." }
+  - { icon: megaphone, title: "Activate once, reach everywhere", body: "Define a segment once and activate it across email, push, SMS, ads, and CRM without re-segmenting in each tool. One audience definition, multiple channels." }
+benefits:
+  - "Speed campaign launch by building segments in minutes, not waiting on data team sprint cycles."
+  - "Improve targeting accuracy by segmenting on real-time signals instead of stale batch data."
+  - "Reduce operational overhead by defining segments once and distributing them to all channels."
+  - "Increase conversion by activating audiences while behavior is fresh, not days after signals arrive."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity ID"
+   title="Segment any way you want"
+   subtitle="Fanfinity ID Audience Builder lets you create, test, and activate fan segments on any attribute—demographic, behavioral, predictive—in real time. Build once, activate everywhere."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity ID"
+   secondary_url="/platform/id"
+   icon="filter" %}
+
+{% include feature-grid.html
+   eyebrow="How audience builder works"
+   heading="Flexible segmentation, real-time activation"
+   subheading="Define audiences on any profile attribute or behavior, combine them with complex logic, and activate them across all channels. Segments update in real time as fans match or leave criteria."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From profile data to activated audiences"
+   body="A clean fan profile is only valuable if you can act on it. Fanfinity ID Audience Builder makes segmentation fast and flexible, so you can respond to fan behavior in real time, test new strategies constantly, and activate consistently across all channels."
+   points=page.benefits
+   cta_text="See how to reach fans"
+   cta_url="/platform/activate"
+   icon="filter" %}

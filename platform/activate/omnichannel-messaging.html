@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/activate/omnichannel-messaging
+title: Omnichannel Messaging
+description: "Reach fans on WhatsApp, email, and push with Fanfinity Activate."
+breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
+capabilities:
+  - { icon: msgcircle, title: "WhatsApp, email, push",         body: "Send messages across every channel fans prefer: WhatsApp for urgency, email for rich content, push for timely alerts. One platform drives all three." }
+  - { icon: person,   title: "Personalized at scale",         body: "Every message is personalized to the fan: their name, history, preferences, and real-time signals. Bulk messaging that feels one-to-one." }
+  - { icon: zap,      title: "Real-time message delivery",    body: "Send immediately when conditions are met (fan checks out of retention, scores high on propensity). Response happens at the right moment, not days later." }
+  - { icon: bar,      title: "Detailed engagement metrics",   body: "Track opens, clicks, unsubscribes, and conversions per fan per message. See which channels and templates drive the most value for different cohorts." }
+benefits:
+  - "Reach fans where they are: different channels for different preferences, one orchestration engine."
+  - "Improve deliverability by respecting fan channel preferences and frequency caps."
+  - "Increase response by sending the right message at the right moment through the right channel."
+  - "Reduce cost per conversion by A/B testing templates, channels, and timing across thousands of fans."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Activate"
+   title="Reach fans on their channel of choice"
+   subtitle="Fanfinity Activate Omnichannel Messaging sends personalized campaigns across WhatsApp, email, and push. Every fan gets the message they want, on the channel they prefer, at the moment that matters most."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity Activate"
+   secondary_url="/platform/activate"
+   icon="msgcircle" %}
+
+{% include feature-grid.html
+   eyebrow="How omnichannel messaging works"
+   heading="One orchestration engine, multiple channels"
+   subheading="Define a journey once. Fanfinity routes each fan to the right channel based on their preferences, history, and behavior. WhatsApp for high-urgency, email for rich content, push for real-time moments."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="Deliver the right message through the right channel"
+   body="Fan preferences vary: some want WhatsApp urgency, others prefer email depth. Omnichannel Messaging respects these preferences while ensuring no fan falls through the cracks. Send once, reach everywhere, with the channel and cadence that works for each person."
+   points=page.benefits
+   cta_text="See journey orchestration"
+   cta_url="/platform/activate/journey-orchestration"
+   icon="msgcircle" %}

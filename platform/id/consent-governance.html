@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/id/consent-governance
+title: Consent & Governance
+description: "Manage consent and data residency at the profile layer with Fanfinity ID for PDPL compliance."
+breadcrumb_parent: { title: Fanfinity ID, url: /platform/id }
+capabilities:
+  - { icon: shield,   title: "Consent at the profile layer",   body: "Consent is captured and enforced on the fan profile itself, not patched onto downstream systems. The same record that powers activation keeps you compliant." }
+  - { icon: lock,     title: "In-Kingdom data residency",      body: "Fan data is resolved and stored in-region, fully governed at the data layer. No vendor holds your data hostage—it stays in your jurisdiction, on your terms." }
+  - { icon: check,    title: "Real-time consent enforcement",  body: "Consent changes are reflected immediately in audience eligibility and activation rules. Fans who withdraw consent are removed from segments and campaigns instantly." }
+  - { icon: settings, title: "Flexible deployment options",    body: "Deploy in your own cloud, on-premise, or fully managed. Your data, your environment, your choice—PDPL compliance built in at every layer." }
+benefits:
+  - "Stay compliant with PDPL by building consent and residency into the profile, not bolting them on later."
+  - "Build fan trust by giving them control over their data and honoring their consent preferences in real time."
+  - "Reduce legal and compliance overhead by making governance automatic and auditable."
+  - "Keep data sovereign by choosing your deployment and keeping profiles in your environment."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity ID"
+   title="Compliance built in, not bolted on"
+   subtitle="Fanfinity ID enforces consent and data residency at the profile layer. PDPL governance, in-Kingdom deployment, and real-time consent enforcement are built into the data architecture, not patched on top."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity ID"
+   secondary_url="/platform/id"
+   icon="shield" %}
+
+{% include feature-grid.html
+   eyebrow="How governance works"
+   heading="Consent and residency at the core"
+   subheading="Fan profiles are captured, resolved, and stored in-region with consent baked into the data layer. Every activation, every segment, every query respects the fan's consent choices in real time."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="The foundation of responsible fan engagement"
+   body="Building fan trust requires real consent and real control. Fanfinity ID makes governance a feature, not a compliance burden, so you can activate confidently, fans stay in control, and your business operates within the law."
+   points=page.benefits
+   cta_text="See deployment options"
+   cta_url="/platform/data-residency"
+   icon="shield" %}

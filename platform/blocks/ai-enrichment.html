@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/blocks/ai-enrichment
+title: AI Enrichment
+description: "Enrich fan profiles with structured context for AI models and agents within your environment."
+breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
+capabilities:
+  - { icon: spark,    title: "Structured context, not raw events", body: "Fan profiles are enriched with first-party signals and derived attributes before they leave your environment, so AI models and agents receive governed, structured input instead of raw event logs with missing fields." }
+  - { icon: shield,   title: "Privacy-preserving enrichment",      body: "Enrichment runs inside your environment on data you own and control. No vendor sees the underlying fan graph, and consent rules are enforced at every enrichment step." }
+  - { icon: link,     title: "Context stays in sync",             body: "Enriched attributes land on the same profile that drives segmentation and activation, so AI context and activation context never diverge." }
+  - { icon: code,     title: "Custom and standard attributes",    body: "Apply off-the-shelf derived attributes (predicted churn, propensity to spend, lifecycle stage) or build your own using the API, so context fits your specific models and strategies." }
+benefits:
+  - "Accelerate AI model performance by feeding clean, structured input instead of raw event streams."
+  - "Reduce model training complexity by providing governed, first-party features instead of trying to infer intent from fragmented logs."
+  - "Stay compliant by enriching with consented data in your environment, not a third-party vendor platform."
+  - "Keep profiles fresh by updating enriched attributes in real time as new signals arrive."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Blocks"
+   title="Structured context for every AI model"
+   subtitle="Fanfinity Blocks enriches fan profiles with first-party signals and derived attributes inside your environment, so AI models and agents receive governed, structured context instead of raw events and missing fields."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Blocks"
+   secondary_url="/platform/blocks"
+   icon="spark" %}
+
+{% include feature-grid.html
+   eyebrow="How AI enrichment works"
+   heading="Prepare profiles for intelligent activation"
+   subheading="Fanfinity Blocks enriches profiles with derived attributes, predicted scores, and custom features inside your environment, so every downstream AI model and agent starts from a clean, governed, structured signal."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="Transform raw signals into AI-ready intelligence"
+   body="Raw events are noisy and fragmented. Fanfinity Blocks transforms them into clean, structured attributes—predicted churn, propensity to spend, lifecycle stage, custom features—so your AI systems can focus on intelligence, not data cleaning. All enrichment happens inside your environment."
+   points=page.benefits
+   cta_text="See how models use enriched profiles"
+   cta_url="/solutions/ai-agents"
+   icon="spark" %}

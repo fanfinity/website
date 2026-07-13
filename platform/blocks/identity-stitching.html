@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/blocks/identity-stitching
+title: Identity Stitching
+description: "Match identifiers across devices, channels, and sessions in real time with Fanfinity Blocks."
+breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
+capabilities:
+  - { icon: link,     title: "Real-time graph building",      body: "As events arrive, identifiers are matched and profiles are merged in real time, so the fan graph grows and evolves with every new signal, not overnight in a batch job." }
+  - { icon: users,    title: "Multi-identifier matching",     body: "Match on email, device ID, app ID, ticket number, loyalty ID, custom identifiers, or any combination. Resolution connects events across devices and channels instead of forcing identity on one hard key that is often missing." }
+  - { icon: repeat,   title: "Automatic history backfill",    body: "When profiles merge, new resolutions backfill history across all linked identifiers, so the complete relationship read as one story from first touch to present." }
+  - { icon: shield,   title: "Guardrails against false merges", body: "Per-identifier limits stop a shared device from over-merging distinct fans. When a limit would be crossed, records hold apart instead of guessing, so correct identity beats complete-but-wrong identity." }
+benefits:
+  - "Recognize fans instantly across all touchpoints, not after a nightly batch matches yesterday's events."
+  - "Reduce abandoned profiles by matching on multiple identifier types instead of one hard key."
+  - "Improve targeting accuracy by preserving distinct identities and preventing false merges."
+  - "Accelerate response by updating profiles in real time as fans switch devices or channels."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Blocks"
+   title="One fan, recognized across every device"
+   subtitle="Fanfinity Blocks stitches identifiers across devices, channels, and sessions in real time. The same fan shows up as a phone at the gate, a laptop on the stream, and an anonymous browser—and Blocks joins them into one profile instantly."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Blocks"
+   secondary_url="/platform/blocks"
+   icon="link" %}
+
+{% include feature-grid.html
+   eyebrow="How identity stitching works"
+   heading="Real-time graph resolution"
+   subheading="As signals arrive, Blocks matches identifiers, merges profiles, and backfills history across all linked IDs. The fan graph evolves in real time, not overnight, and guardrails prevent false merges across distinct fans."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From fragmented signals to one unified identity"
+   body="Fans shift between devices and channels constantly. Fanfinity Blocks stitches these appearances together in real time, so one person across multiple devices, channels, and sessions reads as one relationship from first touch to now, and activation can target them wherever they appear next."
+   points=page.benefits
+   cta_text="See how resolution works"
+   cta_url="/platform/id"
+   icon="link" %}

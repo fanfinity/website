@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/id/real-time-profiles
+title: Real-time Profiles
+description: "Fan profiles that update in real time as events arrive with Fanfinity ID."
+breadcrumb_parent: { title: Fanfinity ID, url: /platform/id }
+capabilities:
+  - { icon: zap,      title: "Instant profile updates",         body: "The moment a fan acts is the moment you learn about it. Profiles resolve and update in real time as signals arrive, not overnight in a batch job." }
+  - { icon: chart,    title: "Current state, always",           body: "Activation systems always see the current profile state. No more campaign confusion caused by targeting old data that's already out of date by the time the campaign runs." }
+  - { icon: repeat,   title: "History and real-time together",  body: "Historical data and real-time events work from the same profile. Batch context is not lost—it's combined with live signals for complete intelligence." }
+  - { icon: target,   title: "Faster response windows",         body: "When a fan shows interest or intent, you have seconds to respond, not hours. Real-time profiles enable real-time activation, which improves conversion and reduces churn." }
+benefits:
+  - "Catch fans in the moment of interest, when they're most likely to convert."
+  - "Reduce churn by responding to early warning signals before they become dropoffs."
+  - "Improve ad performance by suppressing fans who've already converted before the campaign runs."
+  - "Simplify operations by eliminating batch schedules and relying on real-time data flow."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity ID"
+   title="Profiles that move at fan speed"
+   subtitle="Fanfinity ID updates profiles in real time as events arrive, so you see fan behavior as it happens. Activation systems always work from the current state, not a batch snapshot from hours ago."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity ID"
+   secondary_url="/platform/id"
+   icon="zap" %}
+
+{% include feature-grid.html
+   eyebrow="How real-time profiles work"
+   heading="From event to intelligence to action, in seconds"
+   subheading="As signals arrive, profiles are updated instantly and distributed to every downstream system. Activation sees the current state and can respond in real time."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="Urgency meets timing in real-time engagement"
+   body="Fan behavior is time-sensitive. Interest fades, intent changes, and opportunities close. Real-time profiles let you see fans as they act and respond instantly, so your activation systems work at the speed of fan behavior, not batch schedules."
+   points=page.benefits
+   cta_text="See real-time activation"
+   cta_url="/platform/activate"
+   icon="zap" %}

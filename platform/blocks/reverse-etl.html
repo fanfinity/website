@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/blocks/reverse-etl
+title: Reverse ETL
+description: "Push governed fan data from your warehouse to every operational tool in your stack with Fanfinity Blocks Reverse ETL."
+breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
+capabilities:
+  - { icon: arrow-right, title: "Push to any platform",       body: "Deliver resolved, enriched fan profiles to CRM, email, ad platforms, support systems, and custom APIs. Every tool receives the same governed profile, not a different export stitched together from each source." }
+  - { icon: sync,        title: "Always in sync",             body: "Changes to fan profiles flow downstream automatically, so activation systems stay current as new signals arrive. No manual syncs or overnight batch jobs to coordinate." }
+  - { icon: lock,        title: "Governed distribution",      body: "Consent and data residency rules are enforced at the data layer, so every downstream system receives only the data the fan has consented to share." }
+  - { icon: settings,    title: "API-driven configuration",   body: "Define destinations, mappings, and transformations through version-controlled APIs, so integrations behave like infrastructure you own, not a vendor console you depend on." }
+benefits:
+  - "Eliminate manual exports by automatically pushing profiles to all downstream tools."
+  - "Reduce sync complexity by distributing one governed profile instead of managing separate exports per system."
+  - "Accelerate campaign speed by activating as soon as signals resolve, not waiting on batch syncs."
+  - "Maintain compliance by enforcing consent at distribution, ensuring only consented data flows downstream."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Blocks"
+   title="Distribute governed profiles everywhere"
+   subtitle="Fanfinity Blocks Reverse ETL pushes resolved, enriched fan profiles from your warehouse to every operational tool in your stack—CRM, email, ad platforms, support systems, and custom APIs—automatically and in sync."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Blocks"
+   secondary_url="/platform/blocks"
+   icon="arrow-right" %}
+
+{% include feature-grid.html
+   eyebrow="How reverse ETL works"
+   heading="One profile, distributed everywhere"
+   subheading="Fanfinity ID resolves fan profiles, Blocks distributes them to every downstream tool through reverse ETL, so your CRM, email, ad platforms, and support systems all work from the same governed golden record."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From one source of truth to many channels"
+   body="Manual exports and sync delays create gaps between systems. Reverse ETL pushes profiles from Fanfinity ID to every activation channel automatically, so new signals reach your CRM, ad platforms, and engagement tools in seconds, not hours or days."
+   points=page.benefits
+   cta_text="See activation in action"
+   cta_url="/platform/activate"
+   icon="arrow-right" %}

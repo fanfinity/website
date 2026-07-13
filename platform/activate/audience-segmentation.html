@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/activate/audience-segmentation
+title: Audience Segmentation
+description: "Build targeted audiences once and activate them everywhere with Fanfinity Activate."
+breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
+capabilities:
+  - { icon: people,   title: "Build once, activate everywhere", body: "Define a segment in Fanfinity ID. Activate it through messaging, ads, CRM, and custom APIs without re-building per tool. One source of truth, unlimited activation channels." }
+  - { icon: shuffle,  title: "Sync across all channels",       body: "Changes to segment membership flow instantly to all destination systems. New fans entering a segment start seeing campaigns the same day, not after overnight syncs." }
+  - { icon: filter,   title: "Complex, nested logic",         body: "Combine attributes with AND, OR, NOT logic. Create sophisticated cohorts based on multiple conditions, and nest segments so advanced logic is reusable." }
+  - { icon: monitor,  title: "Real-time segmentation status",  body: "See segment size, churn, and composition in real time. Monitor which cohorts are growing or shrinking, so you stay aligned with actual fan behavior." }
+benefits:
+  - "Speed activation by defining segments once instead of recreating per tool."
+  - "Improve consistency by ensuring all channels target the same audience definition."
+  - "Reduce lift-and-shift cost by syncing seamlessly to CRM, ad platforms, and email systems."
+  - "Stay agile by updating segments in real time and seeing changes propagate instantly."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Activate"
+   title="Build once. Activate everywhere."
+   subtitle="Fanfinity Activate Audience Segmentation makes one segment definition reach every channel: messaging, ads, CRM, custom APIs. Update it in Fanfinity, watch changes propagate in real time."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity Activate"
+   secondary_url="/platform/activate"
+   icon="people" %}
+
+{% include feature-grid.html
+   eyebrow="How audience segmentation works"
+   heading="Single source of truth for targeting"
+   subheading="Define audiences in Fanfinity ID with any logic. Audience Segmentation syncs them to all downstream systems instantly, so every campaign, every email, every ad targets the same people."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From concept to activated audience, in minutes"
+   body="One audience definition that powers messaging, ads, CRM, and custom workflows. Changes propagate instantly, so new targeting logic reaches all channels the same day. Faster activation, fewer errors, and one source of truth."
+   points=page.benefits
+   cta_text="See audience builder"
+   cta_url="/platform/id/audience-builder"
+   icon="people" %}

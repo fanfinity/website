@@ -1,0 +1,44 @@
+---
+layout: page
+permalink: /platform/engage/live-widgets
+title: Live Widgets
+description: "Interactive polls, predictions, quizzes, and more to engage fans in real time. (Design Preview)"
+breadcrumb_parent: { title: Fanfinity Engage, url: /platform/engage }
+capabilities:
+  - { icon: bolt,     title: "Real-time interactivity",        body: "Polls, predictions, quizzes, and voting widgets update in real time as fans interact, so you see engagement happen live and can react immediately." }
+  - { icon: msgquare, title: "Boost engagement metrics",        body: "Interactive widgets drive fan participation and time-on-site. Predictions and quizzes create psychological commitment, increasing retention and loyalty." }
+  - { icon: award,    title: "Multiple widget types",          body: "Polls for feedback, predictions for stakes, quizzes for education, leaderboards for competition. Choose the widget that fits the moment." }
+  - { icon: settings, title: "Fully customizable",             body: "Brand widgets with colors, fonts, and themes. Configure behavior, scoring, and outcomes without code." }
+notes:
+  - "This feature is in Design Preview — not yet in production."
+  - "Final form, timing, and API surface are subject to change based on partner feedback."
+benefits:
+  - "Increase fan interaction by giving them a reason to engage beyond passive consumption."
+  - "Gather real-time feedback through polls and surveys during live events."
+  - "Create memorable moments by letting fans predict outcomes and compete on leaderboards."
+  - "Build data through participation, so profiles enrich with behavior signals as fans engage."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Engage — Design Preview"
+   title="Interactive widgets that captivate"
+   subtitle="Fanfinity Engage Live Widgets bring real-time polls, predictions, quizzes, and voting to every fan touchpoint. Fans stay engaged, you gather data and feedback, and sponsorships become memorable moments."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity Engage"
+   secondary_url="/platform/engage"
+   icon="bolt" %}
+
+{% include feature-grid.html
+   eyebrow="How live widgets work"
+   heading="From passive viewing to active engagement"
+   subheading="Live Widgets turn spectators into participants. Polls, predictions, and quizzes give fans a stake in the action, increase time-on-app, and give you real-time signals about what they care about."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="The next generation of fan engagement (Coming soon)"
+   body="These features are in Design Preview and not yet in production. We're working with design partners to finalize the widget types, APIs, and deployment patterns. Final timing and form are subject to change based on feedback. Interested? Book a demo to see the concepts and timeline."
+   points=page.notes
+   cta_text="Schedule a design walkthrough"
+   cta_url="/demo"
+   icon="bolt" %}

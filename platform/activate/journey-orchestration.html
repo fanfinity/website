@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/activate/journey-orchestration
+title: Journey Orchestration
+description: "Multi-step workflows that react to fan behavior in real time with Fanfinity Activate."
+breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
+capabilities:
+  - { icon: zap,      title: "Real-time decision logic",       body: "Workflows react instantly to fan behavior: if they watch a match, send a follow-up; if they abandon a purchase, trigger a recovery campaign. No batch jobs, pure real-time reaction." }
+  - { icon: repeat,   title: "Multi-step journeys",           body: "Chain actions together: send email → wait 3 days → check behavior → branch to different path based on response. Complex workflows expressed as drag-and-drop flows." }
+  - { icon: split,    title: "A/B test every step",           body: "Test subject lines, send times, channels, and message sequences. Routes split and merge based on fan response, so every journey learns as it runs." }
+  - { icon: undo,     title: "Failsafe and suppression",      body: "Prevent message fatigue with frequency caps. Suppress already-converted fans, opted-out fans, and anyone you don't want to reach. Journeys respect all governance rules." }
+benefits:
+  - "Increase conversion by reaching fans at the exact moment their behavior matters."
+  - "Reduce churn by detecting drift early and triggering retention campaigns automatically."
+  - "Simplify operations by automating complex multi-step flows instead of manual ticket handoff."
+  - "Optimize endlessly by A/B testing each step and letting successful patterns compound."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Activate"
+   title="Workflows that react in real time"
+   subtitle="Fanfinity Activate Journey Orchestration creates multi-step workflows that respond instantly to fan behavior. Fans move through journeys based on what they do, not on schedules. A/B test, suppress, and optimize at every step."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity Activate"
+   secondary_url="/platform/activate"
+   icon="zap" %}
+
+{% include feature-grid.html
+   eyebrow="How journey orchestration works"
+   heading="Automation that reacts, not just executes"
+   subheading="Build workflows where every branch reacts to real behavior: engagement triggers retention, churn signals trigger recovery, conversion triggers next-step upsell. Journeys split and merge based on what fans do."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From reactive campaigns to orchestrated strategy"
+   body="Manual campaign management is slow and error-prone. Journey orchestration turns one-off campaigns into living, reactive systems. Fans flow through paths based on their behavior, A/B tests run continuously, and the system learns what works best for each cohort."
+   points=page.benefits
+   cta_text="See omnichannel messaging"
+   cta_url="/platform/activate/omnichannel-messaging"
+   icon="zap" %}

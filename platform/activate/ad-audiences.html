@@ -1,0 +1,41 @@
+---
+layout: page
+permalink: /platform/activate/ad-audiences
+title: Ad Audiences
+description: "Lookalikes and convert-suppression for paid ads with Fanfinity Activate."
+breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
+capabilities:
+  - { icon: target,   title: "Custom lookalike audiences",     body: "Build lookalike audiences from your best fans. Fanfinity learns patterns from high-lifetime-value cohorts and finds similar audiences at scale across ad platforms." }
+  - { icon: not,      title: "Smart suppression",             body: "Suppress fans who've already converted, are at risk of churn (better to retain than acquire), or fall outside your target profile. Avoid wasted spend on wrong audiences." }
+  - { icon: bar,      title: "Real-time audience updates",     body: "Lookalikes and suppression audiences update as fan behavior changes. New converters are suppressed immediately, new high-value fans generate fresh lookalikes." }
+  - { icon: trending, title: "Multi-platform distribution",    body: "Sync the same audience to Meta, Google, TikTok, and other ad platforms. Update once in Fanfinity, reach all channels. Consistent targeting, one source of truth." }
+benefits:
+  - "Improve ad ROI by targeting lookalikes of your best customers instead of broad demographic buckets."
+  - "Reduce wasted spend by suppressing fans who've already converted or are better served by retention."
+  - "Accelerate growth by reaching new fans who match your best existing cohorts at scale."
+  - "Simplify operations by syncing one audience definition to all ad platforms instead of recreating per tool."
+---
+{% include hero.html
+   eyebrow="Platform · Fanfinity Activate"
+   title="Ad audiences built on real fan value"
+   subtitle="Fanfinity Activate Ad Audiences turns your best fans into lookalikes and builds smart suppression lists. Every ad dollar reaches high-potential fans, not wasted on already-converted or low-fit audiences."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Back to Fanfinity Activate"
+   secondary_url="/platform/activate"
+   icon="target" %}
+
+{% include feature-grid.html
+   eyebrow="How ad audiences work"
+   heading="Smarter targeting, better ROI"
+   subheading="Lookalikes find fans similar to your converters. Suppression prevents wasted spend on wrong-fit audiences. Both update in real time as behavior changes."
+   items=page.capabilities
+   columns=2 %}
+
+{% include feature-split.html
+   title="From spend to smarter spend"
+   body="Lookalike audiences outperform broad demographic targeting because they're built on real fan value. Suppression lists eliminate wasted impressions on fans who can't convert. Together, they shift budget toward fans most likely to engage, retain, and spend."
+   points=page.benefits
+   cta_text="See audience segmentation"
+   cta_url="/platform/activate/audience-segmentation"
+   icon="target" %}

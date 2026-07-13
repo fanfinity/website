@@ -31,21 +31,21 @@ header:
         category: CDI
         tagline: "Collect, enrich, connect"
         features:
-          - { title: "Event Collection",   desc: "Capture signals from every fan touchpoint",    url: /platform/blocks }
-          - { title: "Reverse ETL",        desc: "Push data to your full tool stack",             url: /platform/blocks }
-          - { title: "Identity Stitching", desc: "Match identifiers across devices and channels", url: /platform/blocks }
-          - { title: "AI Enrichment",      desc: "Structured context for models and agents",      url: /platform/blocks }
-          - { title: "Integrations",       desc: "Connect your existing stack",                   url: /platform/blocks }
+          - { title: "Event Collection",   desc: "Capture signals from every fan touchpoint",    url: /platform/blocks/event-collection }
+          - { title: "Reverse ETL",        desc: "Push data to your full tool stack",             url: /platform/blocks/reverse-etl }
+          - { title: "Identity Stitching", desc: "Match identifiers across devices and channels", url: /platform/blocks/identity-stitching }
+          - { title: "AI Enrichment",      desc: "Structured context for models and agents",      url: /platform/blocks/ai-enrichment }
+          - { title: "Integrations",       desc: "Connect your existing stack",                   url: /integrations }
       - title: "Fanfinity ID"
         url: /platform/id
         badge: Live
         category: CDP
         tagline: "Know every fan"
         features:
-          - { title: "Single Fan View",        desc: "One governed golden profile per fan",    url: /platform/id }
-          - { title: "Audience Builder",        desc: "Segment on any attribute or behavior",  url: /platform/id }
-          - { title: "Consent & Governance",    desc: "PDPL and residency built in",           url: /platform/id }
-          - { title: "Real-time Profiles",      desc: "Resolved as events land, not overnight",url: /platform/id }
+          - { title: "Single Fan View",        desc: "One governed golden profile per fan",    url: /platform/id/single-fan-view }
+          - { title: "Audience Builder",        desc: "Segment on any attribute or behavior",  url: /platform/id/audience-builder }
+          - { title: "Consent & Governance",    desc: "PDPL and residency built in",           url: /platform/id/consent-governance }
+          - { title: "Real-time Profiles",      desc: "Resolved as events land, not overnight",url: /platform/id/real-time-profiles }
       - title: "Fanfinity Engage"
         url: /platform/engage
         badge: Preview
@@ -53,10 +53,10 @@ header:
         tagline: "Engage every fan"
         # Engagement mechanics only — channels & journeys live under Activate.
         features:
-          - { title: "Live Widgets",      desc: "Polls, predictions, quizzes and more",    url: /platform/engage }
-          - { title: "Gamification",      desc: "Streaks, quests, badges and leaderboards", url: /platform/engage }
-          - { title: "Loyalty & Rewards", desc: "Points economy across every touchpoint",  url: /platform/engage }
-          - { title: "Programs & Themes", desc: "Sponsorable programs and theming",         url: /platform/engage }
+          - { title: "Live Widgets",      desc: "Polls, predictions, quizzes and more",    url: /platform/engage/live-widgets }
+          - { title: "Gamification",      desc: "Streaks, quests, badges and leaderboards", url: /platform/engage/gamification }
+          - { title: "Loyalty & Rewards", desc: "Points economy across every touchpoint",  url: /platform/engage/loyalty-rewards }
+          - { title: "Programs & Themes", desc: "Sponsorable programs and theming",         url: /platform/engage/programs-themes }
       - title: "Fanfinity Activate"
         url: /platform/activate
         badge: Live
@@ -64,19 +64,19 @@ header:
         tagline: "Reach every fan"
         # Owns every outbound channel + journeys — messaging (owned) vs Ad Audiences (paid).
         features:
-          - { title: "Omnichannel Messaging", desc: "WhatsApp, email, and push",                url: /platform/activate }
-          - { title: "Audience Segmentation", desc: "Build once, activate everywhere",          url: /platform/activate }
-          - { title: "Journey Orchestration", desc: "Multi-step flows that react in real time",  url: /platform/activate }
-          - { title: "Ad Audiences",          desc: "Lookalikes and convert-suppression",       url: /platform/activate }
+          - { title: "Omnichannel Messaging", desc: "WhatsApp, email, and push",                url: /platform/activate/omnichannel-messaging }
+          - { title: "Audience Segmentation", desc: "Build once, activate everywhere",          url: /platform/activate/audience-segmentation }
+          - { title: "Journey Orchestration", desc: "Multi-step flows that react in real time",  url: /platform/activate/journey-orchestration }
+          - { title: "Ad Audiences",          desc: "Lookalikes and convert-suppression",       url: /platform/activate/ad-audiences }
       - title: "Fanfinity Measure"
         url: /platform/measure
         badge: Live
         category: Reporting
         tagline: "Prove the value"
         features:
-          - { title: "Verified Reach",  desc: "Real people, not impressions",           url: /platform/measure }
-          - { title: "Attribution",     desc: "Exposure-to-outcome, deterministically", url: /platform/measure }
-          - { title: "Sponsor Portal",  desc: "Live results for partners and sponsors", url: /platform/measure }
+          - { title: "Verified Reach",  desc: "Real people, not impressions",           url: /platform/measure/verified-reach }
+          - { title: "Attribution",     desc: "Exposure-to-outcome, deterministically", url: /platform/measure/attribution }
+          - { title: "Sponsor Portal",  desc: "Live results for partners and sponsors", url: /platform/measure/sponsor-portal }
     sidebar:
       url: /platform/deploy
       tagline: "Any cloud. Any on-prem."
