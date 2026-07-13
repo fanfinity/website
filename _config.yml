@@ -41,6 +41,19 @@ kramdown:
 forms:
   endpoint: ""
 
+# Marketing / GTM integration switches. Each stays empty until you provision the
+# account and paste the ID/URL — nothing renders or fires while a value is blank,
+# so this is safe to commit. Ad pixels + visitor-ID must fire only under the
+# (to-be-added) "marketing" consent category. See the GTM stack plan.
+integrations:
+  gtm_id: ''               # Google Tag Manager container, e.g. GTM-XXXXXXX
+  linkedin_partner_id: ''  # LinkedIn Insight Tag partner ID (marketing consent)
+  meta_pixel_id: ''        # Meta Pixel ID (marketing consent)
+  pipedrive:
+    demo_form_url: 'https://webforms.pipedrive.com/f/cecyeyYFa9OYFkd3KiwyXbtU7j7OQor6aGeV6DkRZWWwZlBll2LdsUD3dq6085jOwP'      # "Fanfinity — Request a demo" web form
+    contact_form_url: 'https://webforms.pipedrive.com/f/6zflfKUfwLlsbZF4vaZOEhlzO4lqngs534EuxOp04VjQAzsfYFzD9LXWOf80zah7Q7'   # "Fanfinity — Contact us" web form
+    scheduler_url: ''      # Pipedrive Scheduler booking link for /demo (not set up yet)
+
 # Social share defaults (jekyll-seo-tag). NOTE: home-hero.jpg is a stand-in —
 # replace with a branded 1200×630 og image before public launch.
 twitter:

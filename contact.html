@@ -49,45 +49,10 @@ reach:
         </ul>
       </div>
 
-      <!-- Contact form -->
-      <div data-reveal style="--reveal-delay:120ms" class="card gradient-border" id="contact-form">
-        <form id="contact-form-el" data-lead-form action="{{ site.forms.endpoint }}" method="POST" class="grid gap-4" novalidate>
-          <input type="hidden" name="_source" value="Contact form">
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <label class="block text-sm font-medium text-foreground">First name
-              <input type="text" name="first_name" autocomplete="given-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
-              <p data-error-for="first_name" class="mt-1 hidden text-xs text-red-600"></p>
-            </label>
-            <label class="block text-sm font-medium text-foreground">Last name
-              <input type="text" name="last_name" autocomplete="family-name" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
-              <p data-error-for="last_name" class="mt-1 hidden text-xs text-red-600"></p>
-            </label>
-          </div>
-          <label class="block text-sm font-medium text-foreground">Work email
-            <input type="email" name="email" autocomplete="email" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
-            <p data-error-for="email" class="mt-1 hidden text-xs text-red-600"></p>
-          </label>
-          <label class="block text-sm font-medium text-foreground">Company
-            <input type="text" name="company" autocomplete="organization" required class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
-            <p data-error-for="company" class="mt-1 hidden text-xs text-red-600"></p>
-          </label>
-          <label class="block text-sm font-medium text-foreground">What's this about?
-            <select name="topic" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30">
-              <option>A demo or pilot</option>
-              <option>Partnership or sponsorship</option>
-              <option>Press or analyst</option>
-              <option>Careers</option>
-              <option>Something else</option>
-            </select>
-          </label>
-          <label class="block text-sm font-medium text-foreground">How can we help?
-            <textarea name="message" rows="3" class="mt-1.5 w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-500/30"></textarea>
-          </label>
-          <button type="submit" class="btn btn-primary btn-lg w-full">Send message</button>
-          <p class="text-center text-xs leading-relaxed text-muted-foreground">We reply within one business day. Your details are handled per our <a href="{{ '/privacy' | relative_url }}" class="underline underline-offset-2">privacy policy</a>.</p>
-          <p data-form-status role="status" aria-live="polite"></p>
-        </form>
+      <!-- Contact form — embedded Pipedrive Web Form (URL in _config.yml integrations.pipedrive). -->
+      <div data-reveal style="--reveal-delay:120ms" class="grid gap-4" id="contact-form">
+        <div class="pipedriveWebForms" data-pd-webforms="{{ site.integrations.pipedrive.contact_form_url }}"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
+        <p class="text-center text-xs leading-relaxed text-muted-foreground">We reply within one business day. Your details are handled per our <a href="{{ '/privacy' | relative_url }}" class="underline underline-offset-2">privacy policy</a>.</p>
       </div>
 
     </div>

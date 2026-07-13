@@ -129,6 +129,50 @@
   }
 
   /* ---------------------------------------------------------------- *
+   * Attribution capture — record where a lead came from so source /
+   * campaign travels with them into the CRM. Reads UTM + ad-click params
+   * from the URL, keeps first-touch (persisted) and last-touch, and fills
+   * matching hidden fields on any lead form. These are campaign labels the
+   * visitor arrived with (not tracking cookies), and only leave the browser
+   * if the visitor chooses to submit a form. Also exposed on
+   * window.ffAttribution so a Pipedrive Web Form embed or GTM can read it.
+   * ---------------------------------------------------------------- */
+  (function captureAttribution() {
+    var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'li_fat_id'];
+    var params = new URLSearchParams(window.location.search);
+    var current = {};
+    KEYS.forEach(function (k) { var v = params.get(k); if (v) current[k] = v; });
+
+    function read(key) { try { return JSON.parse(window.localStorage.getItem(key) || '{}'); } catch (e) { return {}; } }
+    function write(key, val) { try { window.localStorage.setItem(key, JSON.stringify(val)); } catch (e) {} }
+
+    if (Object.keys(current).length) {
+      current.landing_page = window.location.pathname;
+      current.referrer = document.referrer || '';
+      // First touch is written once and never overwritten; last touch always updates.
+      if (!window.localStorage.getItem('ff_attr_first')) write('ff_attr_first', current);
+      write('ff_attr_last', current);
+    }
+
+    var first = read('ff_attr_first');
+    var last = read('ff_attr_last');
+    window.ffAttribution = { first: first, last: last };
+
+    // Fill hidden fields on same-origin lead forms: last-touch as utm_*,
+    // first-touch as first_utm_* — only when the field exists and is empty.
+    Array.prototype.slice.call(document.querySelectorAll('[data-lead-form]')).forEach(function (form) {
+      Object.keys(last).forEach(function (k) {
+        var el = form.elements[k];
+        if (el && !el.value) el.value = last[k];
+      });
+      Object.keys(first).forEach(function (k) {
+        var el = form.elements['first_' + k];
+        if (el && !el.value) el.value = first[k];
+      });
+    });
+  })();
+
+  /* ---------------------------------------------------------------- *
    * Lead-capture forms (demo + contact) — validation, then submit to
    * the configured endpoint (site.forms.endpoint → form[action]). When
    * no endpoint is set we say so plainly rather than fake a delivery.
@@ -195,6 +239,10 @@
       fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function (res) {
           if (res.ok) {
+            // Conversion signal — GA4 directly (if consented) and dataLayer for GTM later.
+            var source = (form.elements['_source'] && form.elements['_source'].value) || form.id || 'lead_form';
+            if (typeof window.gtag === 'function') { window.gtag('event', 'generate_lead', { form_source: source }); }
+            (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_source: source });
             form.reset();
             done(okClass, (name ? 'Thanks, ' + name + '. ' : 'Thanks. ') + 'Your message is in — we’ll be in touch shortly.');
           } else {
