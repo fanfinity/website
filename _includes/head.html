@@ -19,17 +19,64 @@
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CVYGF0ZQTT"></script>
-  <script>
+  <!-- Cookie Consent -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+  <style>
+    #cc-main { --cc-btn-primary-bg: #9969ff; --cc-btn-primary-hover-bg: #7c4dff; --cc-toggle-on-bg: #9969ff; }
+  </style>
+  <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+  <script defer>
+    CookieConsent.run({
+      categories: {
+        necessary: { enabled: true, readOnly: true },
+        analytics: {}
+      },
+      language: {
+        default: 'en',
+        translations: {
+          en: {
+            consentModal: {
+              title: 'We use cookies',
+              description: 'We use analytics cookies (Google Analytics, Microsoft Clarity) to understand how visitors use our site. You can accept or decline below.',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Reject all',
+              showPreferencesBtn: 'Manage preferences'
+            },
+            preferencesModal: {
+              title: 'Cookie preferences',
+              acceptAllBtn: 'Accept all',
+              acceptNecessaryBtn: 'Reject all',
+              savePreferencesBtn: 'Save preferences',
+              sections: [
+                {
+                  title: 'Strictly necessary',
+                  description: 'Required for the site to function. Cannot be disabled.',
+                  linkedCategory: 'necessary'
+                },
+                {
+                  title: 'Analytics',
+                  description: 'Google Analytics and Microsoft Clarity help us understand how visitors interact with our site.',
+                  linkedCategory: 'analytics'
+                }
+              ]
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <!-- Google Analytics (fires only after analytics consent) -->
+  <script type="text/plain" data-category="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-CVYGF0ZQTT"></script>
+  <script type="text/plain" data-category="analytics">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CVYGF0ZQTT');
   </script>
 
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
+  <!-- Microsoft Clarity (fires only after analytics consent) -->
+  <script type="text/plain" data-category="analytics">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;

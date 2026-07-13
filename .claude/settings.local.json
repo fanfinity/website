@@ -11,7 +11,9 @@
       "Bash(grep -nA20 \"^exclude\" _config.yml)",
       "Bash(node .claude/skills/impeccable/scripts/detect.mjs --json _site/index.html)",
       "Bash(npm run *)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(gh repo *)",
+      "WebFetch(domain:github.com)"
     ]
   },
   "disabledMcpjsonServers": [
