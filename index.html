@@ -824,138 +824,175 @@ flow_nodes:
   </script>
 </section>
 
-<!-- ======================================= WIDGET ARCADE (all playable) -->
+<!-- ================================== ENGAGE · MATCH NIGHT (playable)
+     "Don't watch the widgets. Play them." — the widgets live inside a
+     match that is happening: a broadcast frame with a running clock,
+     three playable second-screen moments, and participation counters
+     that keep climbing like the crowd is playing along. All simulated
+     and labeled Illustrative; the engagement layer is Design Preview.
+     Clock and ambient counters stop under reduced motion. -->
 <section id="widgets" class="relative overflow-hidden bg-background">
-  <div class="container-page relative section">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Don&rsquo;t watch the widgets. <span class="text-brand-foreground">Play them.</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">No videos, no mockups &mdash; all three below are running right now, and every tap you make is the kind of signal that lands on a fan profile. The engagement layer is in Design Preview.</p>
+  <div class="container-page section">
+
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Don&rsquo;t watch the widgets. <span class="text-brand-foreground">Play them.</span></h2>
+        <p class="mt-3 text-lg leading-relaxed text-muted-foreground">Tonight&rsquo;s match is live below, and so are all three widgets. Every tap you make is the kind of signal that lands on a fan profile.</p>
+      </div>
+      <p class="text-xs text-muted-foreground/80 lg:pb-1">Design Preview &middot; Illustrative match</p>
     </div>
 
-    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- The match frame -->
+    <div class="mt-10 overflow-hidden rounded-3xl bg-[#0b0712] shadow-2xl shadow-brand-950/40 ring-1 ring-inset ring-white/[0.07]" data-match>
 
-      <!-- 1 · LIVE POLL -->
-      <figure data-reveal class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
-          <span class="flex min-w-0 items-center gap-3">
-            <span class="icon-chip-sm">{% include icon.html name="poll" class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">Live Poll</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Loyalty &middot; Data</span>
-            </span>
-          </span>
-          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
-        </figcaption>
-        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-poll>
-          <p class="text-sm font-semibold text-foreground">Who scores first tonight?</p>
-          <p class="mt-0.5 text-xs text-muted-foreground" lang="ar" dir="rtl">من يسجل أولاً الليلة؟</p>
+      <!-- Scoreboard -->
+      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-white/10 px-5 py-4 sm:px-7">
+        <p class="flex items-center gap-2.5 font-heading text-sm font-bold tracking-wide text-white sm:text-base">
+          AL NAKHLA
+          <span class="rounded-md bg-white/10 px-2 py-0.5 tabular-nums" data-score-home>1</span>
+          <span class="font-normal text-white/40">&ndash;</span>
+          <span class="rounded-md bg-white/10 px-2 py-0.5 tabular-nums">1</span>
+          AL SAHIL
+        </p>
+        <p class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-300/90"><span class="h-1.5 w-1.5 rounded-full bg-emerald-300/90"></span>Live</span>
+          <span class="font-mono text-sm font-semibold tabular-nums text-white" data-match-clock>78:24</span>
+          <span class="text-[11px] text-white/40">second screen</span>
+        </p>
+      </div>
+
+      <!-- The three moments -->
+      <div class="grid grid-cols-1 gap-3 p-3 sm:p-4 lg:grid-cols-[1.15fr_1fr_1fr]">
+
+        <!-- 1 · LIVE POLL -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.06]" data-poll>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Live Poll</p>
+            <span class="text-[11px] text-white/40">sponsorable</span>
+          </div>
+          <p class="mt-4 text-[15px] font-semibold text-white">Who scores next?</p>
+          <p class="mt-0.5 text-xs text-white/50" lang="ar" dir="rtl">من يسجل الهدف القادم؟</p>
           <div class="mt-4 space-y-2">
-            <button type="button" data-poll-option data-pct="54" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
-              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
-              <span class="relative flex items-center justify-between gap-2"><span>S. Al&#8209;Harbi</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            <button type="button" data-poll-option data-pct="54" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>S. Al&#8209;Harbi</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
             </button>
-            <button type="button" data-poll-option data-pct="31" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
-              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
-              <span class="relative flex items-center justify-between gap-2"><span>K. Mendes</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            <button type="button" data-poll-option data-pct="31" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>K. Mendes</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
             </button>
-            <button type="button" data-poll-option data-pct="15" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
-              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
-              <span class="relative flex items-center justify-between gap-2"><span>T. Okafor</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            <button type="button" data-poll-option data-pct="15" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>T. Okafor</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
             </button>
           </div>
-          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
-            <span data-poll-votes>12,482 votes</span>
-            <span class="font-mono uppercase tracking-[0.14em]">Your sponsor here</span>
-          </p>
+          <div class="mt-auto flex items-center justify-between gap-3 pt-4">
+            <p class="text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="12482">12,482</span> playing<span data-poll-you></span></p>
+            <span class="rounded-md bg-white/[0.07] px-2 py-1 text-[10px] font-semibold text-white/50 ring-1 ring-inset ring-white/10">YOUR SPONSOR HERE</span>
+          </div>
         </div>
-        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Every answer becomes profile data.</p>
-      </figure>
 
-      <!-- 2 · NUMBER PREDICTION -->
-      <figure data-reveal style="--reveal-delay:60ms" class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
-          <span class="flex min-w-0 items-center gap-3">
-            <span class="icon-chip-sm">{% include icon.html name="hash" class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">Number Prediction</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Retention &middot; Points</span>
-            </span>
-          </span>
-          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
-        </figcaption>
-        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-predict>
-          <p class="text-sm font-semibold text-foreground">Total goals tonight?</p>
-          <div class="mt-5 flex items-center justify-center gap-5">
-            <button type="button" data-predict-minus aria-label="Fewer goals" class="grid h-10 w-10 place-items-center rounded-full border border-border text-lg font-semibold text-foreground transition hover:border-brand-300">&minus;</button>
-            <span class="w-16 text-center font-heading text-5xl font-bold tabular-nums text-foreground" data-predict-value>3</span>
-            <button type="button" data-predict-plus aria-label="More goals" class="grid h-10 w-10 place-items-center rounded-full border border-border text-lg font-semibold text-foreground transition hover:border-brand-300">+</button>
+        <!-- 2 · PREDICTION -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.06]" data-predict>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Prediction</p>
+            <span class="text-[11px] text-white/40">+120 pts if exact</span>
           </div>
-          <button type="button" data-predict-lock class="btn btn-primary mt-5 w-full">Lock it in</button>
-          <p class="mt-3 hidden text-center text-xs text-muted-foreground" data-predict-result></p>
-          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
-            <span>8,207 predictions</span>
-            <span class="font-semibold text-brand-foreground">+120 pts if exact</span>
-          </p>
+          <p class="mt-4 text-[15px] font-semibold text-white">Final total goals?</p>
+          <div class="mt-6 flex items-center justify-center gap-6">
+            <button type="button" data-predict-minus aria-label="Fewer goals" class="grid h-10 w-10 place-items-center rounded-full text-lg font-semibold text-white ring-1 ring-inset ring-white/25 transition hover:ring-brand-400/70">&minus;</button>
+            <span class="w-14 text-center font-heading text-5xl font-bold tabular-nums text-white" data-predict-value>3</span>
+            <button type="button" data-predict-plus aria-label="More goals" class="grid h-10 w-10 place-items-center rounded-full text-lg font-semibold text-white ring-1 ring-inset ring-white/25 transition hover:ring-brand-400/70">+</button>
+          </div>
+          <button type="button" data-predict-lock class="btn btn-white mt-6 w-full">Lock it in</button>
+          <p class="mt-3 hidden text-center text-xs text-white/55" data-predict-result></p>
+          <p class="mt-auto pt-4 text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="8207">8,207</span> predictions locked<span data-predict-you></span></p>
         </div>
-        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Appointment moments before kickoff.</p>
-      </figure>
 
-      <!-- 3 · CHEER METER -->
-      <figure data-reveal style="--reveal-delay:120ms" class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card sm:col-span-2 lg:col-span-1">
-        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
-          <span class="flex min-w-0 items-center gap-3">
-            <span class="icon-chip-sm">{% include icon.html name="gauge" class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">Cheer Meter</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Rivalry &middot; Sponsorable</span>
-            </span>
-          </span>
-          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
-        </figcaption>
-        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-cheer>
-          <p class="text-sm font-semibold text-foreground">Whose night is it? Tap to cheer.</p>
-          <div class="mt-5 flex h-3 overflow-hidden rounded-full border border-border" aria-hidden="true">
-            <span class="bg-brand-600 transition-all duration-300" data-cheer-bar-a style="width:52%"></span>
-            <span class="bg-brand-200 transition-all duration-300" data-cheer-bar-b style="width:48%"></span>
+        <!-- 3 · CHEER METER -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.06]" data-cheer>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Cheer Meter</p>
+            <span class="text-[11px] text-white/40">sponsorable</span>
           </div>
-          <div class="mt-2 flex justify-between font-mono text-[11px] text-muted-foreground">
-            <span><span class="font-semibold text-brand-700 tabular-nums" data-cheer-pct-a>52%</span> Home end</span>
-            <span>Away end <span class="font-semibold tabular-nums text-foreground" data-cheer-pct-b>48%</span></span>
+          <p class="mt-4 text-[15px] font-semibold text-white">Whose night is it?</p>
+          <div class="mt-5 flex h-3 overflow-hidden rounded-full ring-1 ring-inset ring-white/15" aria-hidden="true">
+            <span class="bg-brand-500 transition-all duration-300" data-cheer-bar-a style="width:52%"></span>
+            <span class="bg-white/30 transition-all duration-300" data-cheer-bar-b style="width:48%"></span>
+          </div>
+          <div class="mt-2 flex justify-between font-mono text-[11px] text-white/55">
+            <span><span class="font-semibold tabular-nums text-brand-200" data-cheer-pct-a>52%</span> Al Nakhla</span>
+            <span>Al Sahil <span class="font-semibold tabular-nums text-white/85" data-cheer-pct-b>48%</span></span>
           </div>
           <div class="mt-5 grid grid-cols-2 gap-3">
-            <button type="button" data-cheer-a class="rounded-xl bg-brand-600 px-3 py-3 text-sm font-bold text-white transition active:scale-95 hover:bg-brand-700">CHEER HOME</button>
-            <button type="button" data-cheer-b class="rounded-xl border border-border px-3 py-3 text-sm font-bold text-foreground transition active:scale-95 hover:border-brand-300">CHEER AWAY</button>
+            <button type="button" data-cheer-a class="rounded-xl bg-brand-600 px-3 py-3 text-sm font-bold text-white transition hover:bg-brand-500 active:scale-95">CHEER</button>
+            <button type="button" data-cheer-b class="rounded-xl bg-white/15 px-3 py-3 text-sm font-bold text-white transition hover:bg-white/25 active:scale-95">CHEER</button>
           </div>
-          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
-            <span data-cheer-total>26,914 cheers</span>
-            <span class="font-mono uppercase tracking-[0.14em]">Your sponsor here</span>
-          </p>
+          <p class="mt-auto pt-4 text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="26914">26,914</span> cheers tonight<span data-cheer-you></span></p>
         </div>
-        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Rivalry, measured live.</p>
-      </figure>
 
+      </div>
     </div>
 
-    <p class="mt-8 text-center text-xs text-muted-foreground">Also in the library: quizzes, image sliders, guess the outcome, alerts &amp; Ask &mdash; all themeable, all sponsorable.</p>
+    <div class="mt-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+      <p class="text-xs text-muted-foreground">Also in the library: quizzes, image sliders, guess the outcome, alerts &amp; Ask. All themeable, all sponsorable, all landing on the profile.</p>
+      <a href="{{ '/platform/engage' | relative_url }}" class="link-arrow shrink-0">Explore Fanfinity Engage {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
 
     <script>
-      /* Widget arcade — client-side demos, nothing recorded. */
+      /* Match night — the clock runs, the crowd keeps playing, and the
+         three widgets are real. Client-side only, nothing recorded. */
       (function () {
-        /* Poll */
-        var poll = document.querySelector('[data-poll]');
+        var root = document.querySelector('[data-match]');
+        if (!root) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var fmt = function (n) { return n.toLocaleString('en-US'); };
+
+        /* the clock */
+        var clockEl = root.querySelector('[data-match-clock]');
+        if (clockEl && !reduce) {
+          var mins = 78, secs = 24;
+          setInterval(function () {
+            secs++;
+            if (secs > 59) { secs = 0; mins++; }
+            if (mins > 90) { mins = 78; secs = 24; }
+            clockEl.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+          }, 1000);
+        }
+
+        /* the crowd keeps playing */
+        var plays = Array.prototype.slice.call(root.querySelectorAll('[data-plays]'));
+        if (plays.length && !reduce) {
+          var pi = 0;
+          setInterval(function () {
+            var el = plays[pi % plays.length]; pi++;
+            var n = parseInt(el.getAttribute('data-count'), 10) + 1 + (pi % 3);
+            el.setAttribute('data-count', n);
+            el.textContent = fmt(n);
+          }, 3200);
+        }
+        function bump(el, extraSel) {
+          var n = parseInt(el.getAttribute('data-count'), 10) + 1;
+          el.setAttribute('data-count', n);
+          el.textContent = fmt(n);
+          var you = root.querySelector(extraSel);
+          if (you) you.textContent = ' · including you';
+        }
+
+        /* poll */
+        var poll = root.querySelector('[data-poll]');
         if (poll) {
           var opts = Array.prototype.slice.call(poll.querySelectorAll('[data-poll-option]'));
-          var votesEl = poll.querySelector('[data-poll-votes]');
           var voted = false;
           opts.forEach(function (btn) {
             btn.addEventListener('click', function () {
               if (voted) return;
               voted = true;
-              votesEl.textContent = '12,483 votes · thanks for playing';
+              bump(poll.querySelector('[data-plays]'), '[data-poll-you]');
               opts.forEach(function (b) {
                 var pct = parseInt(b.getAttribute('data-pct'), 10);
-                if (b === btn) { pct += 1; b.classList.add('border-brand-500'); b.setAttribute('aria-pressed', 'true'); }
-                else { b.classList.add('opacity-80'); b.setAttribute('aria-pressed', 'false'); }
+                if (b === btn) { pct += 1; b.classList.add('ring-brand-400'); b.setAttribute('aria-pressed', 'true'); }
+                else { b.classList.add('opacity-75'); b.setAttribute('aria-pressed', 'false'); }
                 b.querySelector('[data-poll-bar]').style.width = pct + '%';
                 var pctEl = b.querySelector('[data-poll-pct]');
                 pctEl.textContent = pct + '%';
@@ -966,43 +1003,46 @@ flow_nodes:
           });
         }
 
-        /* Number prediction */
-        var pr = document.querySelector('[data-predict]');
+        /* prediction */
+        var pr = root.querySelector('[data-predict]');
         if (pr) {
-          var val = 3;
+          var val = 3, locked = false;
           var valEl = pr.querySelector('[data-predict-value]');
           var lock = pr.querySelector('[data-predict-lock]');
           var res = pr.querySelector('[data-predict-result]');
-          var locked = false;
           var splits = { 0: 2, 1: 7, 2: 19, 3: 27, 4: 21, 5: 12, 6: 7 };
-          pr.querySelector('[data-predict-minus]').addEventListener('click', function () { if (!locked && val > 0) { val--; valEl.textContent = val; } });
+          pr.querySelector('[data-predict-minus]').addEventListener('click', function () { if (!locked && val > 2) { val--; valEl.textContent = val; } });
           pr.querySelector('[data-predict-plus]').addEventListener('click', function () { if (!locked && val < 9) { val++; valEl.textContent = val; } });
           lock.addEventListener('click', function () {
             if (locked) return;
             locked = true;
             lock.textContent = 'Locked in';
             lock.classList.add('opacity-70', 'cursor-default');
-            var share = splits[val] || 3;
-            res.textContent = 'You and ' + share + '% of fans say ' + val + '. Good luck.';
+            res.textContent = 'You and ' + (splits[val] || 3) + '% of fans say ' + val + '. Good luck.';
             res.classList.remove('hidden');
+            bump(pr.querySelector('[data-plays]'), '[data-predict-you]');
           });
         }
 
-        /* Cheer meter */
-        var ch = document.querySelector('[data-cheer]');
+        /* cheer */
+        var ch = root.querySelector('[data-cheer]');
         if (ch) {
-          var a = 13932, b = 12982;
+          var a = 13932, b = 12982, cheered = false;
           var barA = ch.querySelector('[data-cheer-bar-a]'), barB = ch.querySelector('[data-cheer-bar-b]');
           var pctA = ch.querySelector('[data-cheer-pct-a]'), pctB = ch.querySelector('[data-cheer-pct-b]');
-          var total = ch.querySelector('[data-cheer-total]');
+          var counter = ch.querySelector('[data-plays]');
           function paint() {
             var pa = Math.round(100 * a / (a + b));
             barA.style.width = pa + '%'; barB.style.width = (100 - pa) + '%';
             pctA.textContent = pa + '%'; pctB.textContent = (100 - pa) + '%';
-            total.textContent = (a + b).toLocaleString('en-US') + ' cheers';
+            counter.setAttribute('data-count', a + b);
+            counter.textContent = fmt(a + b);
           }
-          ch.querySelector('[data-cheer-a]').addEventListener('click', function () { a += 25; paint(); });
-          ch.querySelector('[data-cheer-b]').addEventListener('click', function () { b += 25; paint(); });
+          function cheerYou() {
+            if (!cheered) { cheered = true; var you = ch.querySelector('[data-cheer-you]'); if (you) you.textContent = ' · including you'; }
+          }
+          ch.querySelector('[data-cheer-a]').addEventListener('click', function () { a += 25; paint(); cheerYou(); });
+          ch.querySelector('[data-cheer-b]').addEventListener('click', function () { b += 25; paint(); cheerYou(); });
         }
       })();
     </script>
