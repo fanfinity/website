@@ -193,67 +193,73 @@ measure_points:
       </p>
     </div>
 
-    <div class="relative mt-16" data-sim>
-      <!-- horizontal connector + travelling signal (lg+) -->
-      <div class="absolute left-[8%] right-[8%] top-9 hidden h-px bg-border lg:block" aria-hidden="true">
-        <div class="flow-line h-px w-full"></div>
-        <span data-sim-dot class="absolute -top-[5px] h-2.5 w-2.5 rounded-full bg-brand-500 opacity-0 shadow-[0_0_14px_rgba(153,105,255,0.95)] transition-all duration-700 ease-out" style="left:0%"></span>
-      </div>
-      <!-- vertical connector (mobile / tablet) -->
-      <div class="absolute bottom-6 left-9 top-6 w-px bg-border lg:hidden" aria-hidden="true">
-        <div class="flow-line-v h-full w-px"></div>
-      </div>
+    <!-- Broadcast replay panel — same dark machine language as the hero pipeline -->
+    <div class="relative mt-14" data-sim data-reveal>
+      <div class="overflow-hidden rounded-3xl bg-dark-band ring-1 ring-white/10 shadow-2xl shadow-brand-950/30">
 
-      <ol class="relative flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-4">
-        {% for node in page.flow_nodes %}
-          <li data-sim-stage class="lg:flex-1">
-            <a href="{{ node.url | relative_url }}" class="group/node flex items-center gap-4 lg:flex-col lg:gap-0 lg:text-center">
-              <span data-sim-chip class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15 transition-all duration-500">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
-              <div class="lg:mt-4">
-                <p class="font-semibold text-foreground group-hover/node:text-brand-foreground">{{ node.label }}</p>
-                <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
-                <p data-sim-caption class="mt-1.5 min-h-[1.05rem] font-mono text-[11px] text-brand-foreground transition-opacity duration-500"></p>
-              </div>
-            </a>
-          </li>
-        {% endfor %}
-      </ol>
-
-      <!-- Outcome + replay controls -->
-      <div class="mx-auto mt-12 max-w-xl">
-        <div data-sim-result class="rounded-2xl border border-border bg-card p-5 text-center transition-all duration-700">
-          <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">The outcome &middot; Illustrative</p>
-          <p data-sim-result-text class="mt-2 font-heading text-xl font-bold text-foreground text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
-          <div class="mt-3 flex flex-wrap justify-center gap-1.5">
-            <span class="pill">+1 sponsor-ready fan</span>
-            <span class="pill">verified reach +1</span>
-            <span class="pill">consent enforced</span>
+        <!-- Panel header: replay label + signal source switcher -->
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-4 sm:px-7">
+          <p class="inline-flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
+            <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/90"></span>Signal replay &middot; Illustrative
+          </p>
+          <div class="inline-flex rounded-full border border-white/15 bg-white/5 p-0.5" role="tablist" aria-label="Signal type">
+            <button type="button" role="tab" data-sim-run="scan" aria-selected="true" class="rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold text-white transition">Ticket scan</button>
+            <button type="button" role="tab" data-sim-run="stream" aria-selected="false" class="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/55 transition hover:text-white">Stream start</button>
+            <button type="button" role="tab" data-sim-run="purchase" aria-selected="false" class="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/55 transition hover:text-white">Shop purchase</button>
           </div>
         </div>
-        <div class="mt-5 flex flex-wrap items-center justify-center gap-2">
-          <span class="text-xs text-muted-foreground">Run another signal:</span>
-          <button type="button" data-sim-run="scan" class="pill transition hover:border-brand-300 hover:text-foreground">Ticket scan</button>
-          <button type="button" data-sim-run="stream" class="pill transition hover:border-brand-300 hover:text-foreground">Stream start</button>
-          <button type="button" data-sim-run="purchase" class="pill transition hover:border-brand-300 hover:text-foreground">Shop purchase</button>
+
+        <!-- Stage tiles + advancing signal trail -->
+        <div class="px-5 py-7 sm:px-7">
+          <div class="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.5rem_1fr_1.5rem_1fr_1.5rem_1fr_1.5rem_1fr] lg:items-stretch">
+            {% for node in page.flow_nodes %}
+              {%- unless forloop.first -%}
+              <div class="relative hidden self-center lg:block" aria-hidden="true">
+                <div class="h-px w-full bg-white/10"></div>
+                <span data-sim-seg class="absolute inset-y-0 left-0 block h-px w-0 bg-brand-400 shadow-[0_0_10px_rgba(153,105,255,0.9)] transition-all duration-500 ease-out"></span>
+              </div>
+              {%- endunless -%}
+              <a href="{{ node.url | relative_url }}" data-sim-tile class="group/node rounded-2xl bg-white/[0.04] p-4 ring-1 ring-inset ring-white/10 transition-all duration-500">
+                <span data-sim-icon class="grid h-10 w-10 place-items-center rounded-lg bg-brand-500/15 text-brand-300 ring-1 ring-inset ring-brand-400/20 transition-all duration-500">{% include icon.html name=node.icon class="h-5 w-5" %}</span>
+                <p class="mt-3 font-heading text-sm font-bold text-white group-hover/node:text-brand-300">{{ node.label }}</p>
+                <p class="mt-0.5 text-xs text-white/45">{{ node.sub }}</p>
+                <p data-sim-caption class="mt-2.5 min-h-[2rem] border-t border-white/10 pt-2 font-mono text-[11px] leading-snug text-brand-300 transition-opacity duration-500"></p>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Outcome bar -->
+        <div data-sim-result class="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-black/25 px-5 py-4 transition-all duration-700 sm:px-7">
+          <p class="min-w-0">
+            <span class="block font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">The outcome</span>
+            <span data-sim-result-text class="mt-0.5 block font-heading text-lg font-bold text-white sm:text-xl">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</span>
+          </p>
+          <span class="flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>+1 sponsor-ready fan</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>verified reach +1</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>consent enforced</span>
+          </span>
         </div>
       </div>
+      <p class="mt-3 text-center text-xs text-muted-foreground">Each stage links to its product. Pick a signal type to replay the loop.</p>
     </div>
 
     <script>
-      /* Signal simulator — scroll-triggered, replayable, illustrative. */
+      /* Signal replay — scroll-triggered, auto-rotates through signal types
+         like broadcast replays until the visitor takes over the switcher. */
       (function () {
         var sim = document.querySelector('[data-sim]');
         if (!sim) return;
-        var chips = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-chip]'));
+        var tiles = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-tile]'));
+        var icons = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-icon]'));
         var caps = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-caption]'));
-        var dot = sim.querySelector('[data-sim-dot]');
+        var segs = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-seg]'));
+        var tabs = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-run]'));
         var result = sim.querySelector('[data-sim-result]');
         var resultText = sim.querySelector('[data-sim-result-text]');
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var lgUp = window.matchMedia('(min-width: 1024px)');
-        var positions = ['0%', '25%', '50%', '75%', '100%'];
-        var LIT = ['bg-brand-600', 'text-white', 'shadow-sm', 'ring-1', 'ring-brand-700/15'];
-        var DIM = ['bg-card', 'text-muted-foreground', 'border', 'border-border'];
+        var ORDER = ['scan', 'stream', 'purchase'];
         var variants = {
           scan:     { caps: ['ticket_scan · gate B', 'anon → fan_8c2a', 'matchday quiz · +25 pts', 'WhatsApp offer sent', 'SAR 180 attributed'],
                       result: '1 scan → 1 known fan → SAR 180 attributed' },
@@ -262,64 +268,89 @@ measure_points:
           purchase: { caps: ['purchase · club store', 'receipt → fan_02e7', 'loyalty · +250 pts', 'email · thank-you offer', 'campaign → SAR 349'],
                       result: '1 purchase → 1 loyal fan → SAR 349 attributed' }
         };
-        var running = false;
+        var running = false, userLock = false, rotateTimer = null;
 
-        function swap(el, from, to) {
-          from.forEach(function (c) { el.classList.remove(c); });
-          to.forEach(function (c) { el.classList.add(c); });
+        function setTab(key) {
+          tabs.forEach(function (t) {
+            var on = t.getAttribute('data-sim-run') === key;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.classList.toggle('bg-white/15', on);
+            t.classList.toggle('text-white', on);
+            t.classList.toggle('text-white/55', !on);
+          });
         }
         function setCaps(v) { caps.forEach(function (c, i) { c.textContent = v.caps[i]; }); }
-        function reset() {
-          chips.forEach(function (ch) { swap(ch, LIT, DIM); });
+        function dimAll() {
+          tiles.forEach(function (t) { t.classList.add('opacity-40'); t.classList.remove('bg-white/[0.09]', 'ring-brand-400/60'); });
+          icons.forEach(function (ic) { ic.classList.remove('bg-brand-500/30', 'text-white'); });
           caps.forEach(function (c) { c.classList.add('opacity-0'); });
-          result.classList.add('opacity-0', 'translate-y-3');
-          if (dot) { dot.classList.add('opacity-0'); dot.style.left = '0%'; }
+          segs.forEach(function (s) { s.style.width = '0%'; });
+          result.classList.add('opacity-0', 'translate-y-2');
+        }
+        function lightTile(i) {
+          tiles[i].classList.remove('opacity-40');
+          tiles[i].classList.add('bg-white/[0.09]', 'ring-brand-400/60');
+          icons[i].classList.add('bg-brand-500/30', 'text-white');
+          caps[i].classList.remove('opacity-0');
         }
         function finalState(v) {
           setCaps(v); resultText.textContent = v.result;
-          chips.forEach(function (ch) { swap(ch, DIM, LIT); });
-          caps.forEach(function (c) { c.classList.remove('opacity-0'); });
-          result.classList.remove('opacity-0', 'translate-y-3');
+          tiles.forEach(function (t, i) { lightTile(i); });
+          segs.forEach(function (s) { s.style.width = '100%'; });
+          result.classList.remove('opacity-0', 'translate-y-2');
+        }
+        function scheduleRotate(key) {
+          if (userLock || reduce) return;
+          clearTimeout(rotateTimer);
+          rotateTimer = setTimeout(function () {
+            if (userLock) return;
+            var next = ORDER[(ORDER.indexOf(key) + 1) % ORDER.length];
+            run(next);
+          }, 7000);
         }
         function run(key) {
           if (running) return;
           running = true;
+          setTab(key);
           var v = variants[key];
           if (reduce) { finalState(v); running = false; return; }
-          reset(); setCaps(v); resultText.textContent = v.result;
-          if (dot && lgUp.matches) setTimeout(function () { dot.classList.remove('opacity-0'); }, 150);
+          dimAll(); setCaps(v); resultText.textContent = v.result;
           var i = 0;
           function step() {
-            if (i >= chips.length) {
-              result.classList.remove('opacity-0', 'translate-y-3');
+            if (i >= tiles.length) {
+              result.classList.remove('opacity-0', 'translate-y-2');
               running = false;
+              scheduleRotate(key);
               return;
             }
-            if (dot && lgUp.matches) dot.style.left = positions[i];
-            setTimeout(function () {
-              swap(chips[i], DIM, LIT);
-              caps[i].classList.remove('opacity-0');
-              i++;
-              setTimeout(step, 280);
-            }, i === 0 ? 200 : 720);
+            lightTile(i);
+            var seg = segs[i];
+            if (seg) setTimeout(function () { seg.style.width = '100%'; }, 240);
+            i++;
+            setTimeout(step, 640);
           }
           step();
         }
 
-        reset();
+        dimAll();
         var fired = false;
         if (!reduce && 'IntersectionObserver' in window) {
           var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
               if (e.isIntersecting && !fired) { fired = true; io.disconnect(); run('scan'); }
             });
-          }, { threshold: 0.35 });
+          }, { threshold: 0.3 });
           io.observe(sim);
         } else {
           finalState(variants.scan);
+          setTab('scan');
         }
-        Array.prototype.slice.call(sim.querySelectorAll('[data-sim-run]')).forEach(function (b) {
-          b.addEventListener('click', function () { fired = true; run(b.getAttribute('data-sim-run')); });
+        tabs.forEach(function (b) {
+          b.addEventListener('click', function () {
+            userLock = true; fired = true;
+            clearTimeout(rotateTimer);
+            run(b.getAttribute('data-sim-run'));
+          });
         });
       })();
     </script>
