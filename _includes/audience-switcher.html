@@ -1,73 +1,153 @@
 {%- comment -%}
-Interactive industry switcher (home "Industries" section). Tabs across the five
-fan-driven industries; each swaps an ILLUSTRATIVE sample audience — segment rows,
-a reachable count, and channels — reusing the hero audience-card pattern. No real
-metrics or customers: the card is labelled "Illustrative sample audience".
-Serves the horizontal buyer: a media / retail / travel exec sees their own audience,
-not a sports one. Progressive enhancement: without JS the first (Sports) card shows.
-Tab metadata (label / key / url) is rendered server-side; sample data lives in JS.
+Industries section — "the same Salem in every industry". Five display-size
+industry words are the switcher (typography as UI, no pills); the profile
+card keeps a FIXED identity spine (Salem A. · fan_8c2a) while role, traits,
+count and vocabulary morph per industry: the section demonstrates one
+persistent profile across contexts. ILLUSTRATIVE only — no real metrics or
+customers. Progressive enhancement: words are real links to the industry
+pages; JS upgrades them to in-place switching. Sports renders server-side.
 {%- endcomment -%}
-{%- assign group = site.data.navigation.header | where: 'title', 'Solutions' | first -%}
-{%- assign inds = group.groups | where: 'heading', 'By industry' | first -%}
 <section class="section border-y border-border bg-soft" id="industries">
   <div class="container-page">
-    <div class="grid items-center gap-12 lg:grid-cols-2">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">One platform, every audience business</h2>
+      <p class="mt-3 text-lg leading-relaxed text-muted-foreground">The same person is a fan on matchday, a viewer at night, a shopper on Friday. One profile follows them through all of it.</p>
+    </div>
 
-      <!-- Copy + tabs -->
-      <div data-reveal>
-        <p class="eyebrow">By industry</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">One platform, every audience business</h2>
-        <p class="mt-4 text-lg text-muted-foreground">The same connected platform, tuned to the audience each industry needs to reach.</p>
+    <div class="mt-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
-        <div class="mt-8 flex flex-wrap gap-2" data-industry-tabs role="tablist" aria-label="Industries">
-          {%- for ind in inds.links -%}
-            {%- assign key = ind.icon -%}
-            <button type="button" role="tab"
-                    data-industry-tab="{{ key }}"
-                    data-industry-url="{{ ind.url | relative_url }}"
-                    data-industry-label="{{ ind.title }}"
-                    class="rounded-full px-4 py-2 text-sm font-semibold transition {% if forloop.first %}bg-brand-600 text-white{% else %}border border-border bg-card text-muted-foreground hover:text-foreground{% endif %}">
-              {{ ind.title }}
-            </button>
-          {%- endfor -%}
+      <!-- The switcher is the type -->
+      <div>
+        <div class="flex flex-col items-start gap-1" role="tablist" aria-label="Industries">
+          <a href="{{ '/solutions/sports' | relative_url }}" role="tab" aria-selected="true" data-ind-word="sports"
+             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground transition-colors sm:text-5xl">
+            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 bg-brand-500 transition"></span>Sports
+          </a>
+          <a href="{{ '/solutions/media' | relative_url }}" role="tab" aria-selected="false" data-ind-word="media"
+             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
+            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Media
+          </a>
+          <a href="{{ '/solutions/retail' | relative_url }}" role="tab" aria-selected="false" data-ind-word="retail"
+             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
+            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Retail
+          </a>
+          <a href="{{ '/solutions/travel' | relative_url }}" role="tab" aria-selected="false" data-ind-word="travel"
+             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
+            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Travel
+          </a>
+          <a href="{{ '/solutions/brands' | relative_url }}" role="tab" aria-selected="false" data-ind-word="brands"
+             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
+            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Brands
+          </a>
         </div>
-
-        <a href="{{ inds.links[0].url | relative_url }}" data-industry-link class="link-arrow mt-7">Explore {{ inds.links[0].title }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+        <p data-ind-line class="mt-7 max-w-sm leading-relaxed text-muted-foreground">Matchday, broadcast, and sponsorship on one fan graph.</p>
+        <a data-ind-link href="{{ '/solutions/sports' | relative_url }}" class="link-arrow mt-4">Explore Sports &amp; Entertainment {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
       </div>
 
-      <!-- Sample audience card — a resolved-audience summary (distinct from the hero's query builder) -->
-      <div data-reveal style="--reveal-delay:120ms" class="relative">
-        <div class="rounded-3xl border border-border bg-card p-6 shadow-xl shadow-brand-500/10">
-          <div class="flex items-center justify-between">
-            <span data-industry-tag class="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700">Sports &amp; Entertainment</span>
-            <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
+      <!-- One profile, re-dressed per industry: the identity spine never changes -->
+      <div>
+        <div class="rounded-2xl bg-card p-6 shadow-[0_14px_36px_-14px_rgba(32,30,38,0.28)]">
+          <div class="flex items-center justify-between gap-3">
+            <p class="text-xs text-muted-foreground">One profile &middot; <span data-ind-tag>Sports &amp; Entertainment</span></p>
+            <span class="text-[11px] text-muted-foreground">Illustrative</span>
           </div>
-          <div data-industry-body class="transition-opacity duration-500 ease-out">
+
+          <div class="mt-5 flex items-center gap-3">
+            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
+            <div class="min-w-0">
+              <p class="truncate font-heading text-lg font-bold leading-tight text-foreground">Salem A.</p>
+              <p class="truncate font-mono text-[11px] text-muted-foreground">fan_8c2a &middot; one profile, every context</p>
+            </div>
+          </div>
+
+          <div data-ind-vary class="transition-opacity duration-300">
+            <p data-ind-role class="mt-5 text-sm font-semibold text-brand-foreground">Season-ticket holder</p>
+            <div data-ind-rows class="mt-2 divide-y divide-border border-t border-border">
+              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
+              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
+              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">Just now</span></div>
+            </div>
             <div class="mt-5 flex items-baseline gap-2">
-              <span data-industry-count class="font-heading text-4xl font-bold tabular-nums text-foreground">48,320</span>
-              <span class="text-sm text-muted-foreground">reachable profiles</span>
-            </div>
-            <h3 data-industry-title class="mt-1 text-sm font-semibold text-brand-foreground">High-value season-ticket holders</h3>
-            <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Defining traits</p>
-            <div data-industry-rows class="mt-1 divide-y divide-border">
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Region</span><span class="font-semibold text-foreground">KSA</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold text-foreground">&gt; SAR 5,000</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold text-foreground">&#8805; 12</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">&#8804; 7 days</span></div>
-            </div>
-            <div class="mt-5 flex flex-wrap items-center gap-2">
-              <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Ready on</span>
-              <div data-industry-channels class="flex flex-wrap gap-1.5">
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>WhatsApp</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Email</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Push</span>
-              </div>
+              <span data-ind-count class="font-heading text-3xl font-bold tabular-nums text-foreground">48,320</span>
+              <span data-ind-noun class="text-sm text-muted-foreground">fans like Salem, reachable now</span>
             </div>
           </div>
         </div>
-        <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative sample audience.</p>
+        <p class="mt-2.5 text-center text-xs text-muted-foreground/70">Same profile, different context.</p>
       </div>
 
     </div>
   </div>
+
+  <script>
+    /* Industry switcher — the words swap the card's context in place;
+       without JS they are plain links to the industry pages. */
+    (function () {
+      var root = document.getElementById('industries');
+      if (!root) return;
+      var words = Array.prototype.slice.call(root.querySelectorAll('[data-ind-word]'));
+      var vary = root.querySelector('[data-ind-vary]');
+      var tag = root.querySelector('[data-ind-tag]');
+      var role = root.querySelector('[data-ind-role]');
+      var rows = root.querySelector('[data-ind-rows]');
+      var count = root.querySelector('[data-ind-count]');
+      var noun = root.querySelector('[data-ind-noun]');
+      var line = root.querySelector('[data-ind-line]');
+      var link = root.querySelector('[data-ind-link]');
+      var arrowSvg = link && link.querySelector('svg') ? link.querySelector('svg').outerHTML : '';
+      var variants = {
+        sports: { tag: 'Sports & Entertainment', role: 'Season-ticket holder', count: '48,320', noun: 'fans like Salem, reachable now',
+                  rows: [['Matches attended', '14'], ['Lifetime value', 'SAR 7,420'], ['Last seen', 'Just now']],
+                  line: 'Matchday, broadcast, and sponsorship on one fan graph.', label: 'Sports & Entertainment' },
+        media:  { tag: 'Media & Publishers', role: 'Prime-time viewer', count: '37,480', noun: 'viewers like Salem, addressable now',
+                  rows: [['Watch time', '21 h / mo'], ['Live sessions', '8 / wk'], ['Push opt-in', 'Yes']],
+                  line: 'Turn anonymous reach into known, addressable viewers.', label: 'Media & Publishers' },
+        retail: { tag: 'Retail & E-commerce', role: 'Gold-tier shopper', count: '22,905', noun: 'shoppers like Salem, reachable now',
+                  rows: [['Last purchase', '6 days ago'], ['Loyalty points', '2,450'], ['Average basket', 'SAR 240']],
+                  line: 'Personalize every journey from first visit to repeat basket.', label: 'Retail & E-commerce' },
+        travel: { tag: 'Travel & Hospitality', role: 'Returning guest', count: '12,730', noun: 'guests like Salem, reachable now',
+                  rows: [['Trips this year', '5'], ['Next stay', 'Riyadh · Nov'], ['Loyalty tier', 'Gold']],
+                  line: 'One guest profile across every property and every trip.', label: 'Travel & Hospitality' },
+        brands: { tag: 'Brands & Sponsors', role: 'Verified audience', count: '61,140', noun: 'people like Salem, verified',
+                  rows: [['Campaigns seen', '3'], ['Exposure', 'Verified'], ['Consent', 'Marketing ✓']],
+                  line: 'Prove sponsored reach with names, not impressions.', label: 'Brands & Sponsors' }
+      };
+      function row(l, v) {
+        return '<div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">' + l + '</span><span class="font-semibold tabular-nums text-foreground">' + v + '</span></div>';
+      }
+      function activate(key) {
+        var v = variants[key];
+        if (!v) return;
+        words.forEach(function (w) {
+          var on = w.getAttribute('data-ind-word') === key;
+          w.setAttribute('aria-selected', on ? 'true' : 'false');
+          w.classList.toggle('text-foreground', on);
+          w.classList.toggle('text-foreground/25', !on);
+          w.classList.toggle('hover:text-foreground/60', !on);
+          var m = w.querySelector('[data-ind-mark]');
+          m.classList.toggle('bg-brand-500', on);
+          m.classList.toggle('border', !on);
+          m.classList.toggle('border-border', !on);
+        });
+        vary.style.opacity = '0.35';
+        setTimeout(function () {
+          tag.textContent = v.tag;
+          role.textContent = v.role;
+          rows.innerHTML = v.rows.map(function (r) { return row(r[0], r[1]); }).join('');
+          count.textContent = v.count;
+          noun.textContent = v.noun;
+          line.textContent = v.line;
+          link.href = words.filter(function (w) { return w.getAttribute('data-ind-word') === key; })[0].href;
+          link.innerHTML = 'Explore ' + v.label + ' ' + arrowSvg;
+          vary.style.opacity = '1';
+        }, 160);
+      }
+      words.forEach(function (w) {
+        w.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          activate(w.getAttribute('data-ind-word'));
+        });
+      });
+    })();
+  </script>
 </section>
