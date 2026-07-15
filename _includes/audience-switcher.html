@@ -35,32 +35,33 @@ Tab metadata (label / key / url) is rendered server-side; sample data lives in J
         <a href="{{ inds.links[0].url | relative_url }}" data-industry-link class="link-arrow mt-7">Explore {{ inds.links[0].title }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
       </div>
 
-      <!-- Sample audience card (mirrors the hero audience builder) -->
+      <!-- Sample audience card — a resolved-audience summary (distinct from the hero's query builder) -->
       <div data-reveal style="--reveal-delay:120ms" class="relative">
-        <div class="pointer-events-none absolute -inset-4 -z-10 rounded-[2.5rem] bg-brand-500/10 blur-2xl" aria-hidden="true"></div>
-        <div class="rounded-3xl border border-border bg-card p-5 shadow-xl shadow-brand-500/10">
+        <div class="rounded-3xl border border-border bg-card p-6 shadow-xl shadow-brand-500/10">
           <div class="flex items-center justify-between">
-            <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">AI Audience</span>
-            <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-              <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-500"></span></span>Live
-            </span>
+            <span data-industry-tag class="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700">Sports &amp; Entertainment</span>
+            <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
           </div>
           <div data-industry-body class="transition-opacity duration-500 ease-out">
-            <h3 data-industry-title class="mt-4 text-lg font-bold leading-tight text-foreground">High-value season-ticket holders</h3>
-            <div data-industry-rows class="mt-3 space-y-1.5">
-              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Region</span><span class="font-mono font-bold text-brand-foreground">=</span><span class="w-28 text-right font-semibold text-foreground">KSA</span></div>
-              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Lifetime value</span><span class="font-mono font-bold text-brand-foreground">&gt;</span><span class="w-28 text-right font-semibold text-foreground">SAR 5,000</span></div>
-              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Matches attended</span><span class="font-mono font-bold text-brand-foreground">&#8805;</span><span class="w-28 text-right font-semibold text-foreground">12</span></div>
-              <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Last seen</span><span class="font-mono font-bold text-brand-foreground">&#8804;</span><span class="w-28 text-right font-semibold text-foreground">7 days</span></div>
+            <div class="mt-5 flex items-baseline gap-2">
+              <span data-industry-count class="font-heading text-4xl font-bold tabular-nums text-foreground">48,320</span>
+              <span class="text-sm text-muted-foreground">reachable profiles</span>
             </div>
-            <div class="mt-4 flex items-end justify-between">
-              <span data-industry-count class="font-heading text-2xl font-bold tabular-nums text-foreground">48,320</span>
-              <span class="text-xs text-muted-foreground">Reachable profiles</span>
+            <h3 data-industry-title class="mt-1 text-sm font-semibold text-brand-foreground">High-value season-ticket holders</h3>
+            <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Defining traits</p>
+            <div data-industry-rows class="mt-1 divide-y divide-border">
+              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Region</span><span class="font-semibold text-foreground">KSA</span></div>
+              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold text-foreground">&gt; SAR 5,000</span></div>
+              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold text-foreground">&#8805; 12</span></div>
+              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">&#8804; 7 days</span></div>
             </div>
-            <div data-industry-channels class="mt-3 flex flex-wrap gap-1.5">
-              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">WhatsApp</span>
-              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Email</span>
-              <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Push</span>
+            <div class="mt-5 flex flex-wrap items-center gap-2">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Ready on</span>
+              <div data-industry-channels class="flex flex-wrap gap-1.5">
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>WhatsApp</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Email</span>
+                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Push</span>
+              </div>
             </div>
           </div>
         </div>

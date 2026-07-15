@@ -70,11 +70,11 @@
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .btn-lg            { @apply px-6 py-3 text-base; }
-  .btn-primary       { @apply bg-brand-600 text-white shadow-sm shadow-brand-700/30 hover:bg-brand-700 hover:-translate-y-0.5 active:translate-y-0; }
+  .btn-primary       { @apply bg-brand-600 text-white shadow-sm shadow-brand-700/30 hover:bg-brand-700; }
   .btn-secondary     { @apply border border-border bg-card text-foreground hover:border-brand-300 hover:text-brand-foreground; }
   .btn-ghost         { @apply text-foreground hover:bg-muted; }
   /* Variants for dark sections */
-  .btn-white         { @apply bg-white text-brand-950 hover:bg-brand-50 hover:-translate-y-0.5 focus-visible:ring-offset-transparent; }
+  .btn-white         { @apply bg-white text-brand-950 hover:bg-brand-50 focus-visible:ring-offset-transparent; }
   .btn-outline-light { @apply border border-white/25 text-white hover:bg-white/10 focus-visible:ring-offset-transparent; }
 
   /* Radius ladder (one documented scale, applied site-wide):
@@ -155,7 +155,6 @@
   }
   /* Motion */
   @keyframes rise      { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-  @keyframes floaty    { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
   @keyframes pulsering { 0% { transform: scale(0.85); opacity: 0.7; } 70% { transform: scale(2); opacity: 0; } 100% { opacity: 0; } }
   @keyframes cheer     { 0%, 100% { height: 28%; } 50% { height: 92%; } }
 
@@ -167,7 +166,6 @@
     animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
     animation-fill-mode: forwards;
   }
-  .animate-floaty { animation: floaty 7s ease-in-out infinite; }
   .animate-cheer  { animation: cheer 1.6s ease-in-out infinite; }
 
   .scrollbar-none { scrollbar-width: none; }
@@ -175,20 +173,14 @@
 
   /* ── Broadcast / Stadium-energy atmosphere ─────────────────────────── */
 
-  /* Slow-drifting brand mesh for hero + key dark bands (richer than .bg-hero) */
+  /* Deep near-ink surface for the single dark CTA band. Static, desaturated:
+     a quiet ink base with one restrained purple bloom from the top — not an
+     animated four-colour purple mesh (the textbook "AI SaaS hero" tell). */
   .bg-mesh {
-    background-color: #0b0712;
+    background-color: #0a0710;
     background-image:
-      radial-gradient(45% 55% at 14% 12%, rgba(153, 105, 255, 0.36), transparent 60%),
-      radial-gradient(40% 50% at 86% 6%,  rgba(124, 77, 255, 0.30), transparent 62%),
-      radial-gradient(55% 62% at 78% 96%, rgba(106, 48, 224, 0.24), transparent 60%),
-      radial-gradient(42% 46% at 22% 92%, rgba(170, 128, 255, 0.16), transparent 60%);
-    background-size: 180% 180%;
-    animation: meshdrift 24s ease-in-out infinite alternate;
-  }
-  @keyframes meshdrift {
-    0%   { background-position:  0% 0%, 100% 0%, 100% 100%, 0% 100%; }
-    100% { background-position: 26% 18%, 74% 16%, 72% 82%, 28% 80%; }
+      radial-gradient(72% 92% at 50% -4%, rgba(124, 77, 255, 0.20), transparent 60%),
+      radial-gradient(50% 60% at 90% 110%, rgba(106, 48, 224, 0.12), transparent 58%);
   }
 
   /* Film-grain noise overlay — drop in as an absolute inset-0 layer */
@@ -237,7 +229,7 @@
   }
   @keyframes flowline-v { from { background-position: 0 -40%; } to { background-position: 0 140%; } }
 
-  /* Seamless horizontal ticker (hero capability marquee) */
+  /* Continuous horizontal ticker (hero capability marquee) */
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .animate-ticker { animation: ticker 32s linear infinite; }
 
@@ -264,10 +256,8 @@ section[id] { scroll-margin-top: 5rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .animate-rise   { opacity: 1; animation: none; }
-  .animate-floaty,
   .animate-cheer,
   .animate-ticker,
-  .bg-mesh,
   .flow-line,
   .flow-line-v   { animation: none; }
   [data-reveal] {

@@ -28,7 +28,7 @@ faqs:
   - q: "Is resolution real-time or a nightly batch?"
     a: "Real-time. Profiles update as signals arrive, so the fan you recognize reflects what just happened rather than what a batch job will report tomorrow. Historical and warehouse data map into the same graph so batch context is not lost."
   - q: "Deterministic or probabilistic matching?"
-    a: "The model is graph-based and rule-driven: it connects events on shared identifiers you define, with per-identifier merge limits and priorities you control. That keeps resolution explainable and auditable rather than a black-box score. (probabilistic enrichment: to confirm)"
+    a: "The model is graph-based and rule-driven: it connects events on shared identifiers you define, with per-identifier merge limits and priorities you control. That keeps resolution explainable and auditable rather than a black-box score."
   - q: "How does consent fit in?"
     a: "Consent is captured and enforced at the profile itself, not patched on downstream. The same governed record that powers activation is the one that keeps you compliant, and it is resolved and stored in-region, PDPL-governed at the data layer."
   - q: "Do we have to move our data to you?"
@@ -48,7 +48,6 @@ faqs:
    image_alt="Black metal turnstiles in a building lobby" %}
 
 {% include feature-grid.html
-   eyebrow="How it works"
    heading="Identity that holds up under audit"
    subheading="From the first anonymous visit to one governed profile, Fanfinity ID keeps resolution accurate, explainable, and current at every stage."
    items=page.pillars
@@ -56,7 +55,6 @@ faqs:
 
 {% include feature-split.html
    reverse=true
-   eyebrow="Consent & residency"
    title="Governed at the data layer, not bolted on"
    body="The hardest part of a fan graph isn't collecting data; it's owning it responsibly. Consent, residency, and deployment are built into Fanfinity ID from the profile up, so the same record that powers activation is also the one that keeps you compliant."
    points=page.govern_points
@@ -65,7 +63,6 @@ faqs:
    icon="shield" %}
 
 {% include feature-split.html
-   eyebrow="Connect your data"
    title="Connect every source, keep it yours"
    body="Fanfinity ID sits on an open connector framework and a warehouse you self-manage. Bring the touchpoints you already have, with no rip-and-replace and no vendor holding your fan data hostage."
    points=page.connect_points
@@ -74,7 +71,6 @@ faqs:
    icon="stack" %}
 
 {% include feature-grid.html
-   eyebrow="How resolution works"
    heading="A graph that gets identity right, not just complete"
    subheading="Resolution matches signals on any identifier, merges them into one golden record, and applies guardrails so distinct fans stay distinct."
    items=page.resolve
@@ -92,4 +88,4 @@ faqs:
   </div>
 </section>
 
-{% include faq.html eyebrow="Questions" heading="Identity questions engineers ask" %}
+{% include faq.html heading="Identity questions engineers ask" %}

@@ -8,13 +8,13 @@ features:
   - { icon: shield,   title: "Encrypted end to end",            body: "Fan data is encrypted in transit and at rest. Self-host and you hold the keys, there's no plaintext copy of your fan base sitting anywhere you don't control." }
   - { icon: identity, title: "Least-privilege access",          body: "Granular roles, SSO, and least-privilege access mean people and services reach only the data a task needs, and every access is recorded." }
   - { icon: scale,    title: "Consent enforced at the core",    body: "Consent and purpose are stored with the data and enforced at the data layer, so a withdrawn consent actually propagates rather than lingering in a copy." }
-  - { icon: gauge,    title: "Audit trails & monitoring",       body: "Append-only, tamper-evident audit logs (to confirm) and activity monitoring make it clear who touched what, and when. It's the record regulators and partners expect to see." }
+  - { icon: gauge,    title: "Audit trails & monitoring",       body: "Append-only, tamper-evident audit logs and activity monitoring are designed to make it clear who touched what, and when. It's the record regulators and partners expect to see." }
   - { icon: stack,    title: "Data minimization & retention",   body: "Collect only what a use case needs, set retention windows, and delete on schedule. Privacy by design, not privacy by periodic cleanup." }
   - { icon: code,     title: "Secure by construction",          body: "Secure development practices, dependency scanning, and tenant isolation build security into how the platform is made, not bolted on after." }
 points:
   - "PDPL-aligned by design, with in-Kingdom residency governed at the data layer."
   - "GDPR principles, lawful basis, data-subject rights, and minimization, supported across the platform."
-  - "SOC 2-aligned controls and practices; formal certification is on the roadmap (to confirm)."
+  - "SOC 2-aligned controls and practices; formal certification is on the roadmap."
   - "You remain the controller: self-host with your own keys, or run Fanfinity-managed under contract."
 tenancy:
   - { icon: stack, title: "Single-tenant by deployment", body: "Run Fanfinity in your own cloud account or on-premise and your fan data sits in a dedicated environment, not shared multi-tenant infrastructure. That removes a whole class of noisy-neighbour and shared-platform risk before you configure anything." }
@@ -34,14 +34,12 @@ tenancy:
    image_alt="A padlock securing a door" %}
 
 {% include feature-grid.html
-   eyebrow="How we protect fan data"
    heading="Protection that lives with the data"
    subheading="Encryption, access, consent, and audit are enforced at the data layer, so the guarantees hold wherever and however you deploy."
    items=page.features
    columns=3 %}
 
 {% include feature-grid.html
-   eyebrow="Single-tenant by design"
    heading="Your environment, your controls"
    subheading="A dedicated, self-hosted deployment removes the shared-platform risks of multi-tenant SaaS and lets you run fan data inside the security posture you already trust."
    items=page.tenancy
@@ -49,7 +47,6 @@ tenancy:
 
 {% include feature-split.html
    reverse=true
-   eyebrow="Compliance posture"
    title="Aligned to the standards your legal and security teams ask about"
    body="Regulators, partners, and sponsors all want the same thing: proof that fan data is handled lawfully and kept where it should be. Fanfinity is built to give them that answer."
    points=page.points
