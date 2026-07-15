@@ -171,6 +171,10 @@
   }
   .animate-cheer  { animation: cheer 1.6s ease-in-out infinite; }
 
+  /* Rack LED blink — slow, rare, gated behind reduced motion below */
+  @keyframes ledblink { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.6; } }
+  .led-blink { animation: ledblink 4.2s ease-in-out infinite; }
+
   .scrollbar-none { scrollbar-width: none; }
   .scrollbar-none::-webkit-scrollbar { display: none; }
 
@@ -260,6 +264,7 @@ section[id] { scroll-margin-top: 5rem; }
   html { scroll-behavior: auto; }
   .animate-rise   { opacity: 1; animation: none; }
   .animate-cheer,
+  .led-blink,
   .animate-ticker,
   .flow-line,
   .flow-line-v   { animation: none; }
