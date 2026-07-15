@@ -175,6 +175,25 @@
   @keyframes ledblink { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.6; } }
   .led-blink { animation: ledblink 4.2s ease-in-out infinite; }
 
+  /* Rack activity — irregular data-light flicker, like a switch port */
+  @keyframes ledactivity {
+    0%, 100% { opacity: 0.25; }
+    7% { opacity: 0.85; } 11% { opacity: 0.3; }
+    26% { opacity: 0.7; } 31% { opacity: 0.25; }
+    52% { opacity: 0.9; } 55% { opacity: 0.35; }
+    58% { opacity: 0.8; } 63% { opacity: 0.25; }
+    81% { opacity: 0.6; } 86% { opacity: 0.3; }
+  }
+  .led-activity { animation: ledactivity 3.6s linear infinite; }
+
+  /* The machine's own light pooling into the room, breathing */
+  @keyframes rackbreathe { 0%, 100% { opacity: 0.55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+  .rack-breathe { animation: rackbreathe 6.5s ease-in-out infinite; }
+
+  /* A slow beam of light crossing the server room, then resting */
+  @keyframes roomsweep { 0% { transform: translateX(0); } 60% { transform: translateX(340%); } 100% { transform: translateX(340%); } }
+  .room-sweep { animation: roomsweep 17s ease-in-out infinite; }
+
   .scrollbar-none { scrollbar-width: none; }
   .scrollbar-none::-webkit-scrollbar { display: none; }
 
@@ -265,6 +284,9 @@ section[id] { scroll-margin-top: 5rem; }
   .animate-rise   { opacity: 1; animation: none; }
   .animate-cheer,
   .led-blink,
+  .led-activity,
+  .rack-breathe,
+  .room-sweep,
   .animate-ticker,
   .flow-line,
   .flow-line-v   { animation: none; }
