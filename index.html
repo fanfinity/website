@@ -179,20 +179,25 @@ measure_points:
 <!-- ====================================================== AUDIENCE BAND -->
 {% include logo-cloud.html %}
 
-<!-- =================================================== CONNECTED STACK -->
+<!-- ============================== CONNECTED STACK · SIGNAL SIMULATOR
+     Scroll-triggered: when the section enters view, one signal makes the
+     full trip — each product lights as the signal reaches it, a dot rides
+     the connector, and the outcome lands in a result card. Replayable
+     with other signal types. Reduced motion / no-JS: fully lit static. -->
 <section class="relative overflow-hidden border-y border-border bg-soft">
   <div class="container-page relative section">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
       <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
-        Collect, Resolve, Engage, Activate, Prove. Five products that stand alone but run as one loop, <span class="font-semibold text-foreground">on one fan profile, with nothing exported between steps</span>.
+        Collect, Resolve, Engage, Activate, Prove: five products that run as one loop on one fan profile. Here&rsquo;s a single signal making the full trip.
       </p>
     </div>
 
-    <div class="relative mt-16">
-      <!-- horizontal connector + travelling pulse (lg+) -->
+    <div class="relative mt-16" data-sim>
+      <!-- horizontal connector + travelling signal (lg+) -->
       <div class="absolute left-[8%] right-[8%] top-9 hidden h-px bg-border lg:block" aria-hidden="true">
         <div class="flow-line h-px w-full"></div>
+        <span data-sim-dot class="absolute -top-[5px] h-2.5 w-2.5 rounded-full bg-brand-500 opacity-0 shadow-[0_0_14px_rgba(153,105,255,0.95)] transition-all duration-700 ease-out" style="left:0%"></span>
       </div>
       <!-- vertical connector (mobile / tablet) -->
       <div class="absolute bottom-6 left-9 top-6 w-px bg-border lg:hidden" aria-hidden="true">
@@ -201,19 +206,123 @@ measure_points:
 
       <ol class="relative flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-4">
         {% for node in page.flow_nodes %}
-          {%- assign d = forloop.index0 | times: 90 -%}
-          <li data-reveal style="--reveal-delay:{{ d }}ms" class="lg:flex-1">
+          <li data-sim-stage class="lg:flex-1">
             <a href="{{ node.url | relative_url }}" class="group/node flex items-center gap-4 lg:flex-col lg:gap-0 lg:text-center">
-              <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
+              <span data-sim-chip class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15 transition-all duration-500">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
               <div class="lg:mt-4">
                 <p class="font-semibold text-foreground group-hover/node:text-brand-foreground">{{ node.label }}</p>
                 <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
+                <p data-sim-caption class="mt-1.5 min-h-[1.05rem] font-mono text-[11px] text-brand-foreground transition-opacity duration-500"></p>
               </div>
             </a>
           </li>
         {% endfor %}
       </ol>
+
+      <!-- Outcome + replay controls -->
+      <div class="mx-auto mt-12 max-w-xl">
+        <div data-sim-result class="rounded-2xl border border-border bg-card p-5 text-center transition-all duration-700">
+          <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">The outcome &middot; Illustrative</p>
+          <p data-sim-result-text class="mt-2 font-heading text-xl font-bold text-foreground text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
+          <div class="mt-3 flex flex-wrap justify-center gap-1.5">
+            <span class="pill">+1 sponsor-ready fan</span>
+            <span class="pill">verified reach +1</span>
+            <span class="pill">consent enforced</span>
+          </div>
+        </div>
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-2">
+          <span class="text-xs text-muted-foreground">Run another signal:</span>
+          <button type="button" data-sim-run="scan" class="pill transition hover:border-brand-300 hover:text-foreground">Ticket scan</button>
+          <button type="button" data-sim-run="stream" class="pill transition hover:border-brand-300 hover:text-foreground">Stream start</button>
+          <button type="button" data-sim-run="purchase" class="pill transition hover:border-brand-300 hover:text-foreground">Shop purchase</button>
+        </div>
+      </div>
     </div>
+
+    <script>
+      /* Signal simulator — scroll-triggered, replayable, illustrative. */
+      (function () {
+        var sim = document.querySelector('[data-sim]');
+        if (!sim) return;
+        var chips = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-chip]'));
+        var caps = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-caption]'));
+        var dot = sim.querySelector('[data-sim-dot]');
+        var result = sim.querySelector('[data-sim-result]');
+        var resultText = sim.querySelector('[data-sim-result-text]');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var lgUp = window.matchMedia('(min-width: 1024px)');
+        var positions = ['0%', '25%', '50%', '75%', '100%'];
+        var LIT = ['bg-brand-600', 'text-white', 'shadow-sm', 'ring-1', 'ring-brand-700/15'];
+        var DIM = ['bg-card', 'text-muted-foreground', 'border', 'border-border'];
+        var variants = {
+          scan:     { caps: ['ticket_scan · gate B', 'anon → fan_8c2a', 'matchday quiz · +25 pts', 'WhatsApp offer sent', 'SAR 180 attributed'],
+                      result: '1 scan → 1 known fan → SAR 180 attributed' },
+          stream:   { caps: ['stream_start · web', 'device stitched → fan_44d1', 'live poll answered', 'push · second-half alert', '38 proven watch minutes'],
+                      result: '1 stream → 1 engaged viewer → 38 proven minutes' },
+          purchase: { caps: ['purchase · club store', 'receipt → fan_02e7', 'loyalty · +250 pts', 'email · thank-you offer', 'campaign → SAR 349'],
+                      result: '1 purchase → 1 loyal fan → SAR 349 attributed' }
+        };
+        var running = false;
+
+        function swap(el, from, to) {
+          from.forEach(function (c) { el.classList.remove(c); });
+          to.forEach(function (c) { el.classList.add(c); });
+        }
+        function setCaps(v) { caps.forEach(function (c, i) { c.textContent = v.caps[i]; }); }
+        function reset() {
+          chips.forEach(function (ch) { swap(ch, LIT, DIM); });
+          caps.forEach(function (c) { c.classList.add('opacity-0'); });
+          result.classList.add('opacity-0', 'translate-y-3');
+          if (dot) { dot.classList.add('opacity-0'); dot.style.left = '0%'; }
+        }
+        function finalState(v) {
+          setCaps(v); resultText.textContent = v.result;
+          chips.forEach(function (ch) { swap(ch, DIM, LIT); });
+          caps.forEach(function (c) { c.classList.remove('opacity-0'); });
+          result.classList.remove('opacity-0', 'translate-y-3');
+        }
+        function run(key) {
+          if (running) return;
+          running = true;
+          var v = variants[key];
+          if (reduce) { finalState(v); running = false; return; }
+          reset(); setCaps(v); resultText.textContent = v.result;
+          if (dot && lgUp.matches) setTimeout(function () { dot.classList.remove('opacity-0'); }, 150);
+          var i = 0;
+          function step() {
+            if (i >= chips.length) {
+              result.classList.remove('opacity-0', 'translate-y-3');
+              running = false;
+              return;
+            }
+            if (dot && lgUp.matches) dot.style.left = positions[i];
+            setTimeout(function () {
+              swap(chips[i], DIM, LIT);
+              caps[i].classList.remove('opacity-0');
+              i++;
+              setTimeout(step, 280);
+            }, i === 0 ? 200 : 720);
+          }
+          step();
+        }
+
+        reset();
+        var fired = false;
+        if (!reduce && 'IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting && !fired) { fired = true; io.disconnect(); run('scan'); }
+            });
+          }, { threshold: 0.35 });
+          io.observe(sim);
+        } else {
+          finalState(variants.scan);
+        }
+        Array.prototype.slice.call(sim.querySelectorAll('[data-sim-run]')).forEach(function (b) {
+          b.addEventListener('click', function () { fired = true; run(b.getAttribute('data-sim-run')); });
+        });
+      })();
+    </script>
   </div>
 </section>
 
