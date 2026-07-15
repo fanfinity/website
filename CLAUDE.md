@@ -5,6 +5,17 @@ Marketing/landing-page site for **Fanfinity**, a fan-engagement & loyalty platfo
 ## 📌 Grounding rules (read before writing any copy)
 The marketing foundation docs (`docs/`, `competitor-profiles/`) were removed 2026-07-12 — the copy they produced now lives in the pages themselves. When writing or auditing content: never invent customers, logos, testimonials, metrics, or pricing. Every competitive differentiator is a hypothesis labeled "(to confirm)". ⚠️ The performance numbers (≈1000 req/s, sub-200ms, Kafka, zero-data-loss) are from a *separate* analytics-microservice brief — **not** product facts.
 
+## ✍️ Voice & language rules (2026-07-15 — apply to ALL rendered copy)
+**Umbrella message (reuse verbatim when a one-liner is needed):** "Fanfinity resolves every audience signal into one governed, in-region fan profile, activates it in real time, and proves the outcome."
+
+- **Voice:** confident, concrete, procurement-grade. State what the product does, label availability, never apologize.
+- **Availability tiers are the ONLY hedging vocabulary:** **Live** (present tense), **Design Preview** (exact capitalization; label once per section), **Planned**. Never "not yet generally available", "coming soon", "we do not imply it ships today".
+- **Unverified claims:** write as intent ("designed to", "scoped in your contract", "scoped in a demo") — never render "(to confirm)", "TBD", or "being finalized". Verification notes live in Liquid/YAML comments only.
+- **Banned in rendered copy:** "pre-revenue", "early" (as self-description), "honest/honesty" (as self-description), "posture", "we won't pretend", "sovereign" as a value adjective ("sovereign enterprise value"). "Data sovereignty" / "sovereign deployment" is allowed only in deploy, residency, and trust contexts.
+- **Buyer nouns:** audience (umbrella/home), fan (sports), viewer (media), shopper (retail), guest (travel), customer (brands). Umbrella phrase: "any audience business" — never "every fan-driven industry".
+- **Region terms:** in-Kingdom on KSA/residency pages, in-region elsewhere. Primary CTA is always "Book a Demo".
+- **Rhythm:** vary sentence length; not every heading a three-beat; not every section a 3-card grid. One concrete detail beats two adjectives.
+
 ## Build & develop
 ```bash
 bundle install && npm install   # one-time setup (Ruby 3.x + Node 20.x)
