@@ -17,10 +17,6 @@ flow_nodes:
   - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate", url: /platform/activate }
   - { icon: chart,     label: Prove,    sub: "Fanfinity Measure",  url: /platform/measure }
 
-deploy_stats:
-  - { value: "Any cloud", label: "AWS, Google Cloud, or Azure, in any region" }
-  - { value: "On-premise", label: "Inside your own infrastructure" }
-  - { value: "Nothing leaves", label: "Customer data stays inside the environment you control" }
 
 ---
 
@@ -699,17 +695,81 @@ deploy_stats:
       </div>
     </div>
 
-    <!-- Deployment sub-row -->
-    <div class="mt-16 border-t border-border pt-10">
-      <p class="text-sm font-semibold text-foreground">Runs where your rules require: your cloud, your on-prem, or ours.</p>
-      <dl class="mt-6 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
-        {%- for stat in page.deploy_stats -%}
-          <div class="sm:px-8">
-            <dt class="font-heading text-2xl font-bold text-brand-foreground">{{ stat.value }}</dt>
-            <dd class="mt-1.5 text-sm text-muted-foreground">{{ stat.label }}</dd>
+    <!-- Deployment: the boundary, drawn -->
+    <div class="mt-16 border-t border-border pt-12" data-deploy>
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <p class="max-w-md text-lg font-semibold leading-snug text-foreground">Runs where your rules require: your cloud, your on-prem, or ours.</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2" role="tablist" aria-label="Deployment mode">
+          <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="true" data-deploy-mode="cloud" data-home="Your cloud" data-detail="AWS, Google Cloud or Azure · any region" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-foreground transition-opacity">
+            <span data-deploy-mark class="h-1.5 w-1.5 rotate-45 border border-brand-500 bg-brand-500 transition"></span>Your cloud
+          </a>
+          <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="false" data-deploy-mode="onprem" data-home="Your racks" data-detail="on-premise · inside your own infrastructure" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-muted-foreground transition-opacity hover:text-foreground">
+            <span data-deploy-mark class="h-1.5 w-1.5 rotate-45 border border-border transition"></span>On-premise
+          </a>
+          <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="false" data-deploy-mode="managed" data-home="Fanfinity managed" data-detail="run for you · in-region, in-Kingdom" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-muted-foreground transition-opacity hover:text-foreground">
+            <span data-deploy-mark class="h-1.5 w-1.5 rotate-45 border border-border transition"></span>Fully managed
+          </a>
+        </div>
+      </div>
+
+      <!-- The boundary -->
+      <div class="relative mt-10">
+        <div class="relative rounded-[1.25rem] border border-brand-400/50 px-6 pb-12 pt-8 sm:px-10">
+          <!-- corner marks -->
+          <span class="absolute -left-1 -top-1 h-2 w-2 rotate-45 bg-brand-500" aria-hidden="true"></span>
+          <span class="absolute -right-1 -top-1 h-2 w-2 rotate-45 bg-brand-500" aria-hidden="true"></span>
+          <span class="absolute -bottom-1 -left-1 h-2 w-2 rotate-45 bg-brand-500" aria-hidden="true"></span>
+          <span class="absolute -bottom-1 -right-1 h-2 w-2 rotate-45 bg-brand-500" aria-hidden="true"></span>
+
+          <!-- boundary label, sitting on the border line -->
+          <p class="absolute -top-3 left-6 bg-background px-2 text-xs font-semibold text-foreground sm:left-10">
+            Your environment <span class="ml-1.5 font-mono text-[11px] font-normal text-muted-foreground" data-deploy-detail>AWS, Google Cloud or Azure · any region</span>
+          </p>
+
+          <!-- the platform, at home inside -->
+          <div class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-5">
+            <div class="flex flex-col items-center gap-2 text-center"><span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span><p class="text-xs font-semibold text-foreground">Blocks</p></div>
+            <div class="flex flex-col items-center gap-2 text-center"><span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span><p class="text-xs font-semibold text-foreground">ID</p></div>
+            <div class="flex flex-col items-center gap-2 text-center"><span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span><p class="text-xs font-semibold text-foreground">Engage</p></div>
+            <div class="flex flex-col items-center gap-2 text-center"><span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span><p class="text-xs font-semibold text-foreground">Activate</p></div>
+            <div class="flex flex-col items-center gap-2 text-center"><span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span><p class="text-xs font-semibold text-foreground">Measure</p></div>
           </div>
-        {%- endfor -%}
-      </dl>
+          <p class="mt-6 text-center font-mono text-[11px] text-muted-foreground">one profile &middot; one warehouse &middot; your keys &middot; consent enforced at the data layer</p>
+
+          <!-- the seal on the bottom border -->
+          <p class="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-background px-2.5 text-xs font-semibold text-foreground">
+            <span class="mr-1.5 inline-block h-2 w-2 rotate-45 bg-brand-500 align-middle" aria-hidden="true"></span>Nothing leaves
+          </p>
+        </div>
+        <p class="mt-6 text-center text-xs text-muted-foreground/70">Outside: no vendor silo, no cross-border copies, no rented audience.</p>
+      </div>
+
+      <script>
+        /* Deployment switch - relabels the same boundary; the platform
+           never changes, only its home does. Links without JS. */
+        (function () {
+          var root = document.querySelector('[data-deploy]');
+          if (!root) return;
+          var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-deploy-mode]'));
+          var detail = root.querySelector('[data-deploy-detail]');
+          tabs.forEach(function (tab) {
+            tab.addEventListener('click', function (ev) {
+              ev.preventDefault();
+              tabs.forEach(function (o) {
+                var on = o === tab;
+                o.setAttribute('aria-selected', on ? 'true' : 'false');
+                o.classList.toggle('text-foreground', on);
+                o.classList.toggle('text-muted-foreground', !on);
+                var m = o.querySelector('[data-deploy-mark]');
+                m.classList.toggle('bg-brand-500', on);
+                m.classList.toggle('border-brand-500', on);
+                m.classList.toggle('border-border', !on);
+              });
+              detail.textContent = tab.getAttribute('data-detail');
+            });
+          });
+        })();
+      </script>
     </div>
   </div>
 </section>
