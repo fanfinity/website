@@ -70,11 +70,11 @@
            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .btn-lg            { @apply px-6 py-3 text-base; }
-  .btn-primary       { @apply bg-brand-600 text-white shadow-sm shadow-brand-700/30 hover:bg-brand-700 hover:-translate-y-0.5 active:translate-y-0; }
+  .btn-primary       { @apply bg-brand-600 text-white shadow-sm shadow-brand-700/30 hover:bg-brand-700; }
   .btn-secondary     { @apply border border-border bg-card text-foreground hover:border-brand-300 hover:text-brand-foreground; }
   .btn-ghost         { @apply text-foreground hover:bg-muted; }
   /* Variants for dark sections */
-  .btn-white         { @apply bg-white text-brand-950 hover:bg-brand-50 hover:-translate-y-0.5 focus-visible:ring-offset-transparent; }
+  .btn-white         { @apply bg-white text-brand-950 hover:bg-brand-50 focus-visible:ring-offset-transparent; }
   .btn-outline-light { @apply border border-white/25 text-white hover:bg-white/10 focus-visible:ring-offset-transparent; }
 
   /* Radius ladder (one documented scale, applied site-wide):
@@ -229,7 +229,7 @@
   }
   @keyframes flowline-v { from { background-position: 0 -40%; } to { background-position: 0 140%; } }
 
-  /* Seamless horizontal ticker (hero capability marquee) */
+  /* Continuous horizontal ticker (hero capability marquee) */
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   .animate-ticker { animation: ticker 32s linear infinite; }
 
