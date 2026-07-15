@@ -1,179 +1,88 @@
 {%- comment -%}
-Industries — "the same Salem in every industry", staged as one composition:
-a giant industry watermark bleeding off the right edge (background layer),
-bare data fragments floating in the space (midground), and the one profile
-card with a fixed identity spine (foreground). Five display words switch
-the whole stage; buyer nouns shift per vertical. ILLUSTRATIVE only.
-Progressive enhancement: the words are real links to the industry pages;
-JS upgrades them to in-place morphing. Sports renders server-side.
+Industries — an expanding photo gallery. Five doors, one per industry,
+using the site's own industry photography under one consistent ink
+treatment (grayscale + ink gradient; color blooms on the open panel).
+Hover/focus expands a panel and reveals the industry's story with the
+Salem thread ("the same profile in every context"); click navigates to
+the industry page, so everything works without JS. Mobile stacks the
+panels as banners with the content always visible. ILLUSTRATIVE counts.
 {%- endcomment -%}
 <section class="relative overflow-hidden border-y border-border bg-soft" id="industries">
   <div class="container-page section">
 
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">One platform, every audience business</h2>
-      <p class="mt-3 text-lg leading-relaxed text-muted-foreground">The same person is a fan on matchday, a viewer at night, a shopper on Friday. One profile follows them through all of it.</p>
-    </div>
-
-    <!-- The switcher is the type -->
-    <div class="mt-10 flex flex-wrap items-baseline gap-x-9 gap-y-2" role="tablist" aria-label="Industries">
-      <a href="{{ '/solutions/sports' | relative_url }}" role="tab" aria-selected="true" data-ind-word="sports"
-         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground transition-opacity sm:text-4xl">
-        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 bg-brand-500 transition"></span>Sports
-      </a>
-      <a href="{{ '/solutions/media' | relative_url }}" role="tab" aria-selected="false" data-ind-word="media"
-         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
-        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Media
-      </a>
-      <a href="{{ '/solutions/retail' | relative_url }}" role="tab" aria-selected="false" data-ind-word="retail"
-         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
-        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Retail
-      </a>
-      <a href="{{ '/solutions/travel' | relative_url }}" role="tab" aria-selected="false" data-ind-word="travel"
-         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
-        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Travel
-      </a>
-      <a href="{{ '/solutions/brands' | relative_url }}" role="tab" aria-selected="false" data-ind-word="brands"
-         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
-        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Brands
-      </a>
-    </div>
-
-    <!-- The stage: watermark behind, data fragments around, one card in front -->
-    <div class="relative mt-4 lg:min-h-[34rem]">
-
-      <span data-ind-water aria-hidden="true"
-            class="pointer-events-none absolute -right-8 top-2 hidden select-none whitespace-nowrap font-heading text-[8rem] font-bold leading-none tracking-tight text-foreground opacity-[0.06] lg:block lg:text-[11.5rem]">SPORTS</span>
-
-      <p data-ind-fact="0" aria-hidden="true" class="pointer-events-none absolute left-[4%] top-[22%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
-        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>ticket_scan &middot; gate B &middot; 19:42</span>
-      </p>
-      <p data-ind-fact="1" aria-hidden="true" class="pointer-events-none absolute bottom-[24%] left-[11%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
-        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>cheer meter &middot; home end &middot; 92%</span>
-      </p>
-      <p data-ind-fact="2" aria-hidden="true" class="pointer-events-none absolute right-[7%] top-[58%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
-        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>sponsor slot &middot; SAR 180 attributed</span>
-      </p>
-
-      <!-- The one card -->
-      <div class="relative z-10 mx-auto max-w-sm pt-10 lg:pt-16">
-        <div class="rounded-2xl bg-card p-6 shadow-[0_18px_44px_-18px_rgba(32,30,38,0.35)]">
-          <div class="flex items-center justify-between gap-3">
-            <p class="text-xs text-muted-foreground">One profile &middot; <span data-ind-tag>Sports &amp; Entertainment</span></p>
-            <span class="text-[11px] text-muted-foreground">Illustrative</span>
-          </div>
-
-          <div class="mt-5 flex items-center gap-3">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
-            <div class="min-w-0">
-              <p class="truncate font-heading text-lg font-bold leading-tight text-foreground">Salem A.</p>
-              <p class="truncate font-mono text-[11px] text-muted-foreground">fan_8c2a &middot; one profile, every context</p>
-            </div>
-          </div>
-
-          <div data-ind-vary class="transition-opacity duration-300">
-            <p data-ind-role class="mt-5 text-sm font-semibold text-brand-foreground">Season-ticket holder</p>
-            <div data-ind-rows class="mt-2 divide-y divide-border border-t border-border">
-              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
-              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
-              <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">Just now</span></div>
-            </div>
-            <div class="mt-5 flex items-baseline gap-2">
-              <span data-ind-count class="font-heading text-3xl font-bold tabular-nums text-foreground">48,320</span>
-              <span data-ind-noun class="text-sm text-muted-foreground">fans like Salem, reachable now</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-5 text-center">
-          <p data-ind-line class="text-sm leading-relaxed text-muted-foreground">Matchday, broadcast, and sponsorship on one fan graph.</p>
-          <a data-ind-link href="{{ '/solutions/sports' | relative_url }}" class="link-arrow mt-2.5 justify-center">Explore Sports &amp; Entertainment {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-        </div>
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">One platform, every audience business</h2>
+        <p class="mt-3 text-lg leading-relaxed text-muted-foreground">The same person is a fan on matchday, a viewer at night, a shopper on Friday. One profile follows them through all of it.</p>
       </div>
+      <p class="text-xs text-muted-foreground/80 lg:pb-1">Illustrative &middot; hover to open, click to explore</p>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2.5 lg:h-[32rem] lg:flex-row" data-gallery>
+
+      {%- assign inds = "sports|Sports|solutions-sports|Season-ticket holder|48,320 fans like Salem|Matchday, broadcast, and sponsorship on one fan graph.|Fans at a stadium during a match
+media|Media|solutions-media|Prime-time viewer|37,480 viewers like Salem|Turn anonymous reach into known, addressable viewers.|A live audience facing a lit stage
+retail|Retail|solutions-retail|Gold-tier shopper|22,905 shoppers like Salem|Personalize every journey from visit to repeat basket.|A shopper carrying bags in a store
+travel|Travel|solutions-travel|Returning guest|12,730 guests like Salem|One guest profile across every property and trip.|An aircraft at an airport gate
+brands|Brands|solutions-brands|Verified audience|61,140 people like Salem|Prove sponsored reach with names, not impressions.|A crowd at a live sponsored event" | newline_to_br | split: '<br />' -%}
+
+      {%- for row in inds -%}
+        {%- assign f = row | strip | split: '|' -%}
+        <a href="{{ '/solutions/' | append: f[0] | relative_url }}"
+           data-panel {% if forloop.first %}data-open{% endif %}
+           class="group panel-anim relative block h-44 overflow-hidden rounded-2xl lg:h-auto lg:min-w-0 lg:flex-1"
+           style="background-color:#17151d;flex-grow:{% if forloop.first %}3.2{% else %}1{% endif %}">
+          <img src="{{ '/assets/img/' | append: f[2] | append: '.jpg' | relative_url }}" alt="{{ f[6] }}" loading="lazy" decoding="async"
+               class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {% unless forloop.first %}lg:grayscale{% endunless %}" data-panel-img>
+          <span class="absolute inset-0 bg-gradient-to-t from-[#0b0712]/95 via-[#0b0712]/40 to-[#0b0712]/25" aria-hidden="true"></span>
+
+          <!-- Collapsed spine (lg): vertical word -->
+          <span data-panel-spine class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-3 transition-opacity duration-300 lg:flex {% if forloop.first %}lg:opacity-0{% endif %}" style="writing-mode: vertical-rl;">
+            <span class="h-2 w-2 rotate-45 border border-white/60" aria-hidden="true"></span>
+            <span class="font-heading text-2xl font-bold tracking-tight text-white">{{ f[1] }}</span>
+          </span>
+
+          <!-- Story (always visible on mobile; revealed when open on lg) -->
+          <span data-panel-story class="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 p-5 transition-opacity duration-500 sm:p-6 {% unless forloop.first %}lg:opacity-0{% endunless %}">
+            <span class="flex items-center gap-2.5">
+              <span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>
+              <span class="font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl">{{ f[1] }}</span>
+            </span>
+            <span class="text-sm text-white/70 lg:max-w-sm">{{ f[5] }}</span>
+            <span class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px]">
+              <span class="inline-flex items-center gap-2 text-white/85">
+                <span class="grid h-6 w-6 place-items-center rounded-full bg-brand-100 font-heading text-[10px] font-bold text-brand-700">SA</span>
+                Salem here: {{ f[3] }}
+              </span>
+              <span class="font-semibold tabular-nums text-white">{{ f[4] }}</span>
+            </span>
+            <span class="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-200">Explore {{ f[1] }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </span>
+        </a>
+      {%- endfor -%}
     </div>
   </div>
 
   <script>
-    /* Industry stage — the words re-dress the whole scene; the identity
-       spine never changes. Words are plain links without JS. */
+    /* Gallery — hover/focus expands a door on desktop; click always
+       navigates, so the section is fully functional without JS. */
     (function () {
-      var root = document.getElementById('industries');
-      if (!root) return;
-      var words = Array.prototype.slice.call(root.querySelectorAll('[data-ind-word]'));
-      var vary = root.querySelector('[data-ind-vary]');
-      var water = root.querySelector('[data-ind-water]');
-      var facts = Array.prototype.slice.call(root.querySelectorAll('[data-ind-fact]'));
-      var tag = root.querySelector('[data-ind-tag]');
-      var role = root.querySelector('[data-ind-role]');
-      var rows = root.querySelector('[data-ind-rows]');
-      var count = root.querySelector('[data-ind-count]');
-      var noun = root.querySelector('[data-ind-noun]');
-      var line = root.querySelector('[data-ind-line]');
-      var link = root.querySelector('[data-ind-link]');
-      var arrowSvg = link && link.querySelector('svg') ? link.querySelector('svg').outerHTML : '';
-      var variants = {
-        sports: { word: 'SPORTS', tag: 'Sports & Entertainment', role: 'Season-ticket holder', count: '48,320', noun: 'fans like Salem, reachable now',
-                  rows: [['Matches attended', '14'], ['Lifetime value', 'SAR 7,420'], ['Last seen', 'Just now']],
-                  facts: ['ticket_scan · gate B · 19:42', 'cheer meter · home end · 92%', 'sponsor slot · SAR 180 attributed'],
-                  line: 'Matchday, broadcast, and sponsorship on one fan graph.', label: 'Sports & Entertainment' },
-        media:  { word: 'MEDIA', tag: 'Media & Publishers', role: 'Prime-time viewer', count: '37,480', noun: 'viewers like Salem, addressable now',
-                  rows: [['Watch time', '21 h / mo'], ['Live sessions', '8 / wk'], ['Push opt-in', 'Yes']],
-                  facts: ['stream_start · web · 21:04', 'poll · «من يسجل أولاً؟»', '38 proven watch minutes'],
-                  line: 'Turn anonymous reach into known, addressable viewers.', label: 'Media & Publishers' },
-        retail: { word: 'RETAIL', tag: 'Retail & E-commerce', role: 'Gold-tier shopper', count: '22,905', noun: 'shoppers like Salem, reachable now',
-                  rows: [['Last purchase', '6 days ago'], ['Loyalty points', '2,450'], ['Average basket', 'SAR 240']],
-                  facts: ['purchase · club store · SAR 240', 'loyalty · +250 pts', 'email · thank-you offer sent'],
-                  line: 'Personalize every journey from first visit to repeat basket.', label: 'Retail & E-commerce' },
-        travel: { word: 'TRAVEL', tag: 'Travel & Hospitality', role: 'Returning guest', count: '12,730', noun: 'guests like Salem, reachable now',
-                  rows: [['Trips this year', '5'], ['Next stay', 'Riyadh · Nov'], ['Loyalty tier', 'Gold']],
-                  facts: ['checkin · king suite · 14:02', 'upgrade offer · accepted', 'guest profile · 3 properties merged'],
-                  line: 'One guest profile across every property and every trip.', label: 'Travel & Hospitality' },
-        brands: { word: 'BRANDS', tag: 'Brands & Sponsors', role: 'Verified audience', count: '61,140', noun: 'people like Salem, verified',
-                  rows: [['Campaigns seen', '3'], ['Exposure', 'Verified'], ['Consent', 'Marketing ✓']],
-                  facts: ['exposure logged · halftime board', 'verified reach · 31,842', 'attribution · deterministic'],
-                  line: 'Prove sponsored reach with names, not impressions.', label: 'Brands & Sponsors' }
-      };
-      function row(l, v) {
-        return '<div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">' + l + '</span><span class="font-semibold tabular-nums text-foreground">' + v + '</span></div>';
-      }
-      function activate(key) {
-        var v = variants[key];
-        if (!v) return;
-        words.forEach(function (w) {
-          var on = w.getAttribute('data-ind-word') === key;
-          w.setAttribute('aria-selected', on ? 'true' : 'false');
-          w.classList.toggle('opacity-25', !on);
-          w.classList.toggle('hover:opacity-60', !on);
-          var m = w.querySelector('[data-ind-mark]');
-          m.classList.toggle('bg-brand-500', on);
-          m.classList.toggle('border', !on);
-          m.classList.toggle('border-border', !on);
+      var gallery = document.querySelector('[data-gallery]');
+      if (!gallery) return;
+      var lgUp = window.matchMedia('(min-width: 1024px)');
+      var panels = Array.prototype.slice.call(gallery.querySelectorAll('[data-panel]'));
+      function open(target) {
+        panels.forEach(function (p) {
+          var on = p === target;
+          p.style.flexGrow = on ? '3.2' : '1';
+          p.querySelector('[data-panel-img]').classList.toggle('lg:grayscale', !on);
+          p.querySelector('[data-panel-spine]').classList.toggle('lg:opacity-0', on);
+          p.querySelector('[data-panel-story]').classList.toggle('lg:opacity-0', !on);
         });
-        vary.style.opacity = '0.3';
-        if (water) water.style.opacity = '0';
-        facts.forEach(function (f) { f.style.opacity = '0'; f.style.transform = 'translateY(5px)'; });
-        setTimeout(function () {
-          tag.textContent = v.tag;
-          role.textContent = v.role;
-          rows.innerHTML = v.rows.map(function (r) { return row(r[0], r[1]); }).join('');
-          count.textContent = v.count;
-          noun.textContent = v.noun;
-          line.textContent = v.line;
-          link.href = words.filter(function (w) { return w.getAttribute('data-ind-word') === key; })[0].href;
-          link.innerHTML = 'Explore ' + v.label + ' ' + arrowSvg;
-          if (water) { water.textContent = v.word; water.style.opacity = ''; }
-          facts.forEach(function (f, i) {
-            f.querySelector('[data-ind-fact-text]').textContent = v.facts[i];
-            setTimeout(function () { f.style.opacity = ''; f.style.transform = ''; }, 90 * i);
-          });
-          vary.style.opacity = '1';
-        }, 170);
       }
-      words.forEach(function (w) {
-        w.addEventListener('click', function (ev) {
-          ev.preventDefault();
-          activate(w.getAttribute('data-ind-word'));
-        });
+      panels.forEach(function (p) {
+        p.addEventListener('mouseenter', function () { if (lgUp.matches) open(p); });
+        p.addEventListener('focus', function () { if (lgUp.matches) open(p); });
       });
     })();
   </script>

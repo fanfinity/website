@@ -80,6 +80,9 @@
   /* Radius ladder (one documented scale, applied site-wide):
      chip rounded-xl (12px) · card/figure rounded-2xl (16px) · large surface / band rounded-4xl (32px) · pill/button full */
 
+  /* Industry gallery panel — animates its flex share (set inline by JS). */
+  .panel-anim { transition: flex-grow 0.55s cubic-bezier(0.2, 0.7, 0.2, 1); }
+
   /* Cards — tight, flat, quiet. Hover brightens the border + a faint brand-tinted shadow (no lift, no bounce). */
   .card       { @apply rounded-2xl border border-border bg-card p-6; }
   .card-hover { @apply transition duration-200 hover:border-brand-200 hover:shadow-md hover:shadow-brand-950/[0.06]; }
