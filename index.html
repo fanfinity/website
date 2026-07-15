@@ -4,12 +4,6 @@ permalink: /
 title: The Real-Time Fan Data Platform
 description: Fanfinity is the real-time, in-region fan data platform. Every signal resolved into one consented profile per fan, activated across every channel, and proven with verified reach.
 
-# Hero proof row (capability posture, not performance claims)
-hero_stats:
-  - { value: "One profile", label: "per fan, across every device and channel" }
-  - { value: "Milliseconds", label: "from signal to resolved identity" }
-  - { value: "In-Kingdom", label: "PDPL residency you control" }
-
 dev_points:
   - "A clean REST API with OAuth 2.0. Every capability is programmable, not locked behind a console."
   - "Client SDKs for iOS, Android, and Web, plus a producer/CMS surface your content team can run."
@@ -22,19 +16,6 @@ flow_nodes:
   - { icon: bolt,      label: Engage,   sub: "Fanfinity Engage",   url: /platform/engage }
   - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate", url: /platform/activate }
   - { icon: chart,     label: Prove,    sub: "Fanfinity Measure",  url: /platform/measure }
-
-# Engagement-library widget demos (compressed GIFs in /assets/widgets/).
-# Titles/tags/pitches are Fanfinity's own (from internal decks); formats map to
-# the Widgets product epic. Presented as the widget library, not a production claim.
-widgets:
-  - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
-  - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
-  - { icon: poll,   title: Polls,             tag: "Loyalty · Data",        file: polls,      pitch: "Capture the crowd's voice.",        alt: "Text poll and image poll examples" }
-  - { icon: quiz,   title: Quizzes,           tag: "Competition",           file: quizzes,    pitch: "Reward what your fans know.",       alt: "Text and image quiz examples" }
-  - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
-  - { icon: hash,   title: Number Prediction, tag: "Retention",             file: prediction, pitch: "Make every stat a game.",           alt: "Number prediction example" }
-  - { icon: bell,   title: Alerts,            tag: "Revenue",               file: alerts,     pitch: "Own the moment, then monetize it.", alt: "Sponsored and breaking alert examples" }
-  - { icon: chat,   title: Ask,               tag: "Community",             file: ask,        pitch: "Give fans the mic.",                alt: "Ask submission example" }
 
 deploy_stats:
   - { value: "Any cloud", label: "AWS, Google Cloud, or Azure, in any region" }
@@ -49,146 +30,149 @@ measure_points:
 ---
 
 <!-- ============================================================= HERO
-     Dark broadcast surface (site's own .bg-hero token). The visual is the
-     product story drawn in code — raw events (Blocks) resolving into one
-     fan profile (ID) — not a stock photo. Static by design: no cycling JS. -->
+     Full-width live pipeline. The platform runs in front of the visitor:
+     signals stream in (Blocks) → resolve onto the one lit profile (ID) →
+     feed reachable counts and channels (Activate + Measure). Ambient,
+     calm, honest: labelled illustrative, static under reduced motion. -->
 <section class="relative overflow-hidden bg-hero">
   <div class="pointer-events-none absolute inset-0 bg-grain opacity-[0.14]" aria-hidden="true"></div>
-  <div class="container-page relative">
-    <div class="grid grid-cols-1 items-center gap-14 pb-20 pt-16 md:pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24">
+  <div class="container-page relative pb-16 pt-16 md:pt-24 lg:pb-20">
 
-      <!-- Copy -->
-      <div class="max-w-2xl">
-        <p class="eyebrow eyebrow-on-dark animate-rise">Real-time fan data platform &middot; Built in-region</p>
-        <h1 class="mt-5 text-5xl font-bold leading-[1.04] tracking-tight text-white animate-rise [animation-delay:80ms] sm:text-6xl lg:text-7xl text-balance">
-          Know every fan. Prove every outcome.
-        </h1>
-        <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/70 animate-rise [animation-delay:160ms]">
-          Every signal a fan gives you &mdash; a ticket scan, a stream, a purchase &mdash; resolved into one consented profile you own, activated across every channel while the moment is live, and proven with verified reach.
-        </p>
-        <div class="mt-9 flex flex-wrap gap-3 animate-rise [animation-delay:240ms]">
-          <a href="{{ '/demo' | relative_url }}" class="btn btn-white btn-lg">Book a Demo</a>
-          <a href="{{ '/platform' | relative_url }}" class="btn btn-outline-light btn-lg">Explore the platform</a>
-        </div>
-        <dl class="mt-12 grid grid-cols-3 gap-6 border-t border-white/10 pt-7 animate-rise [animation-delay:320ms]">
-          {%- for stat in page.hero_stats -%}
-          <div>
-            <dt class="font-heading text-lg font-bold text-white sm:text-xl">{{ stat.value }}</dt>
-            <dd class="mt-1 text-xs leading-snug text-white/55 sm:text-[13px]">{{ stat.label }}</dd>
-          </div>
-          {%- endfor -%}
-        </dl>
+    <!-- Copy -->
+    <div class="mx-auto max-w-3xl text-center">
+      <p class="eyebrow eyebrow-on-dark justify-center animate-rise">Real-time fan data platform &middot; Built in-region</p>
+      <h1 class="mt-5 text-5xl font-bold leading-[1.04] tracking-tight text-white animate-rise [animation-delay:80ms] sm:text-6xl lg:text-7xl text-balance">
+        Know every fan. Prove every outcome.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70 animate-rise [animation-delay:160ms]">
+        Every signal a fan gives you &mdash; a ticket scan, a stream, a purchase &mdash; resolved into one consented profile you own, activated while the moment is live, and proven with verified reach.
+      </p>
+      <div class="mt-9 flex flex-wrap justify-center gap-3 animate-rise [animation-delay:240ms]">
+        <a href="{{ '/demo' | relative_url }}" class="btn btn-white btn-lg">Book a Demo</a>
+        <a href="{{ '/platform' | relative_url }}" class="btn btn-outline-light btn-lg">Explore the platform</a>
       </div>
+    </div>
 
-      <!-- Product composition: event stream (Blocks) resolving into a single fan view (ID) -->
-      <div class="relative mx-auto w-full max-w-md animate-rise [animation-delay:200ms] lg:mr-0">
+    <!-- Live pipeline -->
+    <div class="relative mt-16 animate-rise [animation-delay:320ms]" data-pipeline>
+      <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-2.5 backdrop-blur-xl sm:p-3">
+        <div class="grid grid-cols-1 gap-2.5 sm:gap-3 lg:grid-cols-[1.15fr_2.25rem_1fr_2.25rem_1.15fr]">
 
-        <!-- Event stream — behind, glass on dark -->
-        <div class="card-glass absolute -top-6 left-0 z-0 hidden w-[19rem] rounded-2xl p-4 sm:block" aria-hidden="true">
-          <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/50">Fanfinity Blocks &middot; Event stream</p>
-          <div class="mt-3 space-y-2 font-mono text-[11px] leading-relaxed" data-stream-rows>
-            <p class="text-white/75"><span class="text-brand-300">ticket_scan</span> &middot; gate B &middot; fan_8c2a <span class="text-emerald-400/90">resolved</span></p>
-            <p class="text-white/75"><span class="text-brand-300">poll_answer</span> &middot; <bdi lang="ar">&laquo;من يسجل أولاً؟&raquo;</bdi> &middot; fan_44d1 <span class="text-emerald-400/90">resolved</span></p>
-            <p class="text-white/75"><span class="text-brand-300">stream_start</span> &middot; web &middot; fan_44d1 <span class="text-emerald-400/90">resolved</span></p>
-            <p class="text-white/75"><span class="text-brand-300">purchase</span> &middot; store &middot; fan_8c2a <span class="text-white/45">segments +2</span></p>
-          </div>
-        </div>
-
-        <!-- Single fan view — front, solid card for maximum contrast -->
-        <div class="relative z-10 rounded-2xl border border-border bg-card p-6 shadow-2xl shadow-black/40 transition-shadow duration-500 sm:ml-14 sm:mt-20" data-profile-card>
-          <div class="flex items-center justify-between gap-3">
-            <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Fanfinity ID &middot; Single fan view</p>
-            <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
-          </div>
-
-          <div class="mt-5 flex items-center gap-3">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
-            <div class="min-w-0">
-              <p class="truncate font-heading text-lg font-bold leading-tight text-foreground">Salem A.</p>
-              <p class="truncate font-mono text-[11px] text-muted-foreground" data-sources>fan_8c2a &middot; 3 sources merged</p>
+          <!-- SIGNALS · Blocks -->
+          <div class="rounded-2xl bg-black/30 p-4 ring-1 ring-inset ring-white/10 sm:p-5">
+            <div class="flex items-center justify-between gap-2">
+              <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/50">Signals &middot; Fanfinity Blocks</p>
+              <span class="inline-flex items-center gap-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-emerald-400/90"><span class="h-1.5 w-1.5 rounded-full bg-emerald-400/90"></span>Live</span>
+            </div>
+            <div class="mt-3.5 space-y-2 font-mono text-[11px] leading-relaxed" data-feed>
+              <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">ticket_scan</span> &middot; gate B &middot; fan_8c2a</p>
+              <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">poll_answer</span> &middot; <bdi lang="ar">&laquo;من يسجل أولاً؟&raquo;</bdi> &middot; fan_44d1</p>
+              <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">stream_start</span> &middot; web &middot; fan_44d1</p>
+              <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">purchase</span> &middot; store &middot; fan_8c2a</p>
             </div>
           </div>
 
-          <div class="mt-5 divide-y divide-border border-t border-border">
-            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
-            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
-            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground transition-colors duration-300" data-last-seen>2h ago</span></div>
-            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Consent</span><span class="font-semibold text-foreground">Marketing &check;</span></div>
+          <!-- connector 1 -->
+          <div class="relative hidden items-center lg:flex" aria-hidden="true">
+            <div class="h-px w-full bg-white/15"><div class="flow-line h-px w-full"></div></div>
           </div>
 
-          <div class="mt-5 flex flex-wrap items-center gap-2" data-segments>
-            <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Segments</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Season-ticket holders</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Sponsor-ready</span>
+          <!-- ONE PROFILE · ID — the single lit surface at the center of the machine -->
+          <div class="relative z-10 rounded-2xl border border-border bg-card p-4 shadow-2xl shadow-black/50 transition-shadow duration-500 sm:p-5" data-profile-card>
+            <div class="flex items-center justify-between gap-2">
+              <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">One profile &middot; Fanfinity ID</p>
+              <span class="text-[9px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
+            </div>
+            <div class="mt-4 flex items-center gap-3">
+              <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
+              <div class="min-w-0">
+                <p class="truncate font-heading text-base font-bold leading-tight text-foreground">Salem A.</p>
+                <p class="truncate font-mono text-[10.5px] text-muted-foreground" data-sources>fan_8c2a &middot; 4 sources merged</p>
+              </div>
+            </div>
+            <div class="mt-4 divide-y divide-border border-t border-border">
+              <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
+              <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
+              <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground transition-colors duration-300" data-last-seen>Just now</span></div>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10.5px] font-semibold text-foreground"><span class="h-1 w-1 rounded-full bg-brand-500"></span>Season-ticket holders</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10.5px] font-semibold text-foreground"><span class="h-1 w-1 rounded-full bg-brand-500"></span>Sponsor-ready</span>
+            </div>
           </div>
+
+          <!-- connector 2 -->
+          <div class="relative hidden items-center lg:flex" aria-hidden="true">
+            <div class="h-px w-full bg-white/15"><div class="flow-line h-px w-full"></div></div>
+          </div>
+
+          <!-- ACTIVATE & PROVE -->
+          <div class="rounded-2xl bg-black/30 p-4 ring-1 ring-inset ring-white/10 sm:p-5">
+            <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/50">Activate &amp; prove &middot; Activate + Measure</p>
+            <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-white/45">Sponsor-ready fans</p>
+            <p class="mt-1 font-heading text-3xl font-bold tabular-nums text-white sm:text-4xl" data-seg-count>48,320</p>
+            <p class="text-[11px] text-white/45">consented &amp; reachable right now</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/80 transition-colors duration-300" data-channel>WhatsApp</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/80 transition-colors duration-300" data-channel>Email</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/80 transition-colors duration-300" data-channel>Push</span>
+            </div>
+            <p class="mt-4 border-t border-white/10 pt-3 text-[11px] text-white/50">Verified reach this match <span class="float-right font-semibold tabular-nums text-white/85">31,842</span></p>
+          </div>
+
         </div>
-
-        <p class="mt-3 text-center text-[11px] text-white/45">Illustrative product views.</p>
-
-        <script>
-          /* Hero resolve moment — one anonymous event arrives, stitches to the profile,
-             the card updates. Runs once; skipped (final state rendered) on mobile and
-             prefers-reduced-motion. */
-          (function () {
-            var stream = document.querySelector('[data-stream-rows]');
-            var card = document.querySelector('[data-profile-card]');
-            if (!stream || !card) return;
-            var lastSeen = card.querySelector('[data-last-seen]');
-            var sources = card.querySelector('[data-sources]');
-            var segs = card.querySelector('[data-segments]');
-            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            var smUp = window.matchMedia('(min-width: 640px)').matches;
-
-            function makeRow() {
-              var p = document.createElement('p');
-              p.className = 'text-white/75 transition-all duration-500';
-              p.innerHTML = '<span class="text-brand-300">quiz_answer</span> · anon_9f13 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_8c2a</span>';
-              return p;
-            }
-            function makeChip() {
-              var s = document.createElement('span');
-              s.className = 'inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700 transition-all duration-500';
-              s.innerHTML = '<span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Matchday actives';
-              return s;
-            }
-            function resolveCard() {
-              lastSeen.textContent = 'Just now';
-              lastSeen.classList.add('text-brand-foreground');
-              sources.textContent = 'fan_8c2a · 4 sources merged';
-              segs.appendChild(makeChip());
-            }
-
-            if (reduce || !smUp) { resolveCard(); if (smUp) stream.appendChild(makeRow()); return; }
-
-            setTimeout(function () {
-              var row = makeRow();
-              row.style.opacity = '0';
-              row.style.transform = 'translateY(6px)';
-              stream.appendChild(row);
-              requestAnimationFrame(function () {
-                requestAnimationFrame(function () { row.style.opacity = ''; row.style.transform = ''; });
-              });
-            }, 1600);
-
-            setTimeout(function () {
-              var chip = makeChip();
-              chip.style.opacity = '0';
-              chip.style.transform = 'scale(0.9)';
-              card.classList.add('ring-2', 'ring-brand-500/60');
-              lastSeen.textContent = 'Just now';
-              lastSeen.classList.add('text-brand-foreground');
-              sources.textContent = 'fan_8c2a · 4 sources merged';
-              segs.appendChild(chip);
-              requestAnimationFrame(function () {
-                requestAnimationFrame(function () { chip.style.opacity = ''; chip.style.transform = ''; });
-              });
-              setTimeout(function () { card.classList.remove('ring-2', 'ring-brand-500/60'); }, 1200);
-            }, 2500);
-          })();
-        </script>
       </div>
-
+      <p class="mt-3.5 text-center font-mono text-[10.5px] uppercase tracking-[0.14em] text-white/40">Illustrative live view &middot; collect &rarr; resolve &rarr; activate &rarr; prove</p>
     </div>
+
+    <script>
+      /* Hero pipeline — ambient choreography. Every few seconds one event
+         arrives, the profile reacts, the reachable count ticks, a channel
+         lights. Static under prefers-reduced-motion. */
+      (function () {
+        var feed = document.querySelector('[data-feed]');
+        var card = document.querySelector('[data-profile-card]');
+        if (!feed || !card) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var lastSeen = card.querySelector('[data-last-seen]');
+        var countEl = document.querySelector('[data-seg-count]');
+        var channels = Array.prototype.slice.call(document.querySelectorAll('[data-channel]'));
+        var count = 48320;
+        var pool = [
+          { html: '<span class="text-brand-300">quiz_answer</span> · anon_9f13 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_8c2a</span>', stitch: true },
+          { html: '<span class="text-brand-300">stream_start</span> · app · fan_02e7', stitch: false },
+          { html: '<span class="text-brand-300">ticket_scan</span> · gate D · fan_77aa', stitch: false },
+          { html: '<span class="text-brand-300">poll_answer</span> · <bdi lang="ar">«من يسجل أولاً؟»</bdi> · fan_8c2a', stitch: true },
+          { html: '<span class="text-brand-300">purchase</span> · shop · fan_44d1 <span class="text-white/45">segments +1</span>', stitch: false },
+          { html: '<span class="text-brand-300">push_open</span> · matchday offer · fan_02e7', stitch: false },
+          { html: '<span class="text-brand-300">checkin</span> · fan zone · anon_c418 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_77aa</span>', stitch: true }
+        ];
+        var i = 0, chan = 0;
+        setInterval(function () {
+          var ev = pool[i % pool.length]; i++;
+          var p = document.createElement('p');
+          p.className = 'text-white/75 transition-all duration-500';
+          p.innerHTML = ev.html;
+          p.style.opacity = '0'; p.style.transform = 'translateY(6px)';
+          feed.appendChild(p);
+          while (feed.children.length > 4) feed.removeChild(feed.firstElementChild);
+          requestAnimationFrame(function () { requestAnimationFrame(function () { p.style.opacity = ''; p.style.transform = ''; }); });
+
+          if (ev.stitch) {
+            card.classList.add('ring-2', 'ring-brand-500/60');
+            lastSeen.textContent = 'Just now';
+            lastSeen.classList.add('text-brand-foreground');
+            setTimeout(function () { card.classList.remove('ring-2', 'ring-brand-500/60'); lastSeen.classList.remove('text-brand-foreground'); }, 1100);
+          }
+          count += 1 + Math.floor(i % 3);
+          countEl.textContent = count.toLocaleString('en-US');
+          var c = channels[chan % channels.length]; chan++;
+          c.classList.add('border-brand-400', 'text-white');
+          setTimeout(function () { c.classList.remove('border-brand-400', 'text-white'); }, 900);
+        }, 3600);
+      })();
+    </script>
+
   </div>
 </section>
 
@@ -325,24 +309,24 @@ measure_points:
   </div>
 </section>
 
-<!-- ======================================= WIDGETS (engagement preview) -->
+<!-- ======================================= WIDGET ARCADE (all playable) -->
 <section id="widgets" class="relative overflow-hidden bg-background">
   <div class="container-page relative section">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. The engagement layer is in Design Preview &mdash; the first card is live, try it.</p>
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Don&rsquo;t watch the widgets. <span class="text-brand-foreground">Play them.</span></h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">No videos, no mockups &mdash; all three below are running right now, and every tap you make is the kind of signal that lands on a fan profile. The engagement layer is in Design Preview.</p>
     </div>
 
     <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
-      <!-- Live poll — a real, working widget, not a recording -->
+      <!-- 1 · LIVE POLL -->
       <figure data-reveal class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
         <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
           <span class="flex min-w-0 items-center gap-3">
             <span class="icon-chip-sm">{% include icon.html name="poll" class="h-5 w-5" %}</span>
             <span class="min-w-0">
               <span class="block text-sm font-semibold text-foreground">Live Poll</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Sponsorable &middot; Try it</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Loyalty &middot; Data</span>
             </span>
           </span>
           <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
@@ -369,14 +353,84 @@ measure_points:
             <span class="font-mono uppercase tracking-[0.14em]">Your sponsor here</span>
           </p>
         </div>
+        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Every answer becomes profile data.</p>
       </figure>
-      <script>
-        /* Live poll demo — client-side only, nothing recorded. */
-        (function () {
-          var root = document.querySelector('[data-poll]');
-          if (!root) return;
-          var opts = Array.prototype.slice.call(root.querySelectorAll('[data-poll-option]'));
-          var votesEl = root.querySelector('[data-poll-votes]');
+
+      <!-- 2 · NUMBER PREDICTION -->
+      <figure data-reveal style="--reveal-delay:60ms" class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
+          <span class="flex min-w-0 items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="hash" class="h-5 w-5" %}</span>
+            <span class="min-w-0">
+              <span class="block text-sm font-semibold text-foreground">Number Prediction</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Retention &middot; Points</span>
+            </span>
+          </span>
+          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
+        </figcaption>
+        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-predict>
+          <p class="text-sm font-semibold text-foreground">Total goals tonight?</p>
+          <div class="mt-5 flex items-center justify-center gap-5">
+            <button type="button" data-predict-minus aria-label="Fewer goals" class="grid h-10 w-10 place-items-center rounded-full border border-border text-lg font-semibold text-foreground transition hover:border-brand-300">&minus;</button>
+            <span class="w-16 text-center font-heading text-5xl font-bold tabular-nums text-foreground" data-predict-value>3</span>
+            <button type="button" data-predict-plus aria-label="More goals" class="grid h-10 w-10 place-items-center rounded-full border border-border text-lg font-semibold text-foreground transition hover:border-brand-300">+</button>
+          </div>
+          <button type="button" data-predict-lock class="btn btn-primary mt-5 w-full">Lock it in</button>
+          <p class="mt-3 hidden text-center text-xs text-muted-foreground" data-predict-result></p>
+          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
+            <span>8,207 predictions</span>
+            <span class="font-semibold text-brand-foreground">+120 pts if exact</span>
+          </p>
+        </div>
+        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Appointment moments before kickoff.</p>
+      </figure>
+
+      <!-- 3 · CHEER METER -->
+      <figure data-reveal style="--reveal-delay:120ms" class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card sm:col-span-2 lg:col-span-1">
+        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
+          <span class="flex min-w-0 items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="gauge" class="h-5 w-5" %}</span>
+            <span class="min-w-0">
+              <span class="block text-sm font-semibold text-foreground">Cheer Meter</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Rivalry &middot; Sponsorable</span>
+            </span>
+          </span>
+          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
+        </figcaption>
+        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-cheer>
+          <p class="text-sm font-semibold text-foreground">Whose night is it? Tap to cheer.</p>
+          <div class="mt-5 flex h-3 overflow-hidden rounded-full border border-border" aria-hidden="true">
+            <span class="bg-brand-600 transition-all duration-300" data-cheer-bar-a style="width:52%"></span>
+            <span class="bg-brand-200 transition-all duration-300" data-cheer-bar-b style="width:48%"></span>
+          </div>
+          <div class="mt-2 flex justify-between font-mono text-[11px] text-muted-foreground">
+            <span><span class="font-semibold text-brand-700 tabular-nums" data-cheer-pct-a>52%</span> Home end</span>
+            <span>Away end <span class="font-semibold tabular-nums text-foreground" data-cheer-pct-b>48%</span></span>
+          </div>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <button type="button" data-cheer-a class="rounded-xl bg-brand-600 px-3 py-3 text-sm font-bold text-white transition active:scale-95 hover:bg-brand-700">CHEER HOME</button>
+            <button type="button" data-cheer-b class="rounded-xl border border-border px-3 py-3 text-sm font-bold text-foreground transition active:scale-95 hover:border-brand-300">CHEER AWAY</button>
+          </div>
+          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
+            <span data-cheer-total>26,914 cheers</span>
+            <span class="font-mono uppercase tracking-[0.14em]">Your sponsor here</span>
+          </p>
+        </div>
+        <p class="border-t border-border bg-muted px-5 py-3 text-xs text-muted-foreground">Rivalry, measured live.</p>
+      </figure>
+
+    </div>
+
+    <p class="mt-8 text-center text-xs text-muted-foreground">Also in the library: quizzes, image sliders, guess-the-outcome, alerts &amp; Ask &mdash; all themeable, all sponsorable.</p>
+
+    <script>
+      /* Widget arcade — client-side demos, nothing recorded. */
+      (function () {
+        /* Poll */
+        var poll = document.querySelector('[data-poll]');
+        if (poll) {
+          var opts = Array.prototype.slice.call(poll.querySelectorAll('[data-poll-option]'));
+          var votesEl = poll.querySelector('[data-poll-votes]');
           var voted = false;
           opts.forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -395,30 +449,48 @@ measure_points:
               });
             });
           });
-        })();
-      </script>
+        }
 
-      {%- for w in page.widgets limit: 2 -%}
-        <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
-                class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-          <figcaption class="flex items-center gap-3 px-5 pt-5">
-            <span class="icon-chip-sm">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">{{ w.title }}</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ w.tag }}</span>
-            </span>
-          </figcaption>
-          <p class="px-5 pt-3 text-sm text-muted-foreground">{{ w.pitch }}</p>
-          <div class="mt-4 overflow-hidden border-t border-border bg-muted">
-            <img src="{{ '/assets/widgets/' | append: w.file | append: '.gif' | relative_url }}"
-                 alt="{{ w.alt }}" loading="lazy" decoding="async"
-                 class="w-full transition duration-500 group-hover/w:scale-[1.02]">
-          </div>
-        </figure>
-      {%- endfor -%}
-    </div>
+        /* Number prediction */
+        var pr = document.querySelector('[data-predict]');
+        if (pr) {
+          var val = 3;
+          var valEl = pr.querySelector('[data-predict-value]');
+          var lock = pr.querySelector('[data-predict-lock]');
+          var res = pr.querySelector('[data-predict-result]');
+          var locked = false;
+          var splits = { 0: 2, 1: 7, 2: 19, 3: 27, 4: 21, 5: 12, 6: 7 };
+          pr.querySelector('[data-predict-minus]').addEventListener('click', function () { if (!locked && val > 0) { val--; valEl.textContent = val; } });
+          pr.querySelector('[data-predict-plus]').addEventListener('click', function () { if (!locked && val < 9) { val++; valEl.textContent = val; } });
+          lock.addEventListener('click', function () {
+            if (locked) return;
+            locked = true;
+            lock.textContent = 'Locked in';
+            lock.classList.add('opacity-70', 'cursor-default');
+            var share = splits[val] || 3;
+            res.textContent = 'You and ' + share + '% of fans say ' + val + '. Good luck.';
+            res.classList.remove('hidden');
+          });
+        }
 
-    <p class="mt-8 text-center text-xs text-muted-foreground">Polls, sliders, quizzes, predictions, cheer meters, alerts &amp; more, all themeable and sponsorable.</p>
+        /* Cheer meter */
+        var ch = document.querySelector('[data-cheer]');
+        if (ch) {
+          var a = 13932, b = 12982;
+          var barA = ch.querySelector('[data-cheer-bar-a]'), barB = ch.querySelector('[data-cheer-bar-b]');
+          var pctA = ch.querySelector('[data-cheer-pct-a]'), pctB = ch.querySelector('[data-cheer-pct-b]');
+          var total = ch.querySelector('[data-cheer-total]');
+          function paint() {
+            var pa = Math.round(100 * a / (a + b));
+            barA.style.width = pa + '%'; barB.style.width = (100 - pa) + '%';
+            pctA.textContent = pa + '%'; pctB.textContent = (100 - pa) + '%';
+            total.textContent = (a + b).toLocaleString('en-US') + ' cheers';
+          }
+          ch.querySelector('[data-cheer-a]').addEventListener('click', function () { a += 25; paint(); });
+          ch.querySelector('[data-cheer-b]').addEventListener('click', function () { b += 25; paint(); });
+        }
+      })();
+    </script>
   </div>
 </section>
 
