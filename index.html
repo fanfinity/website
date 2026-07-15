@@ -425,25 +425,58 @@ measure_points:
   </div>
 </section>
 
-<!-- ======================================================== OUTCOMES -->
+<!-- ================================================= THE CHANGE
+     "Why teams choose Fanfinity" as a shown transformation, not three
+     icon columns: renting reach on the left, owning the fan on the
+     right, the house diamond marking the change on a rounded spine.
+     Pairs sit on one row grid so the comparison never goes ragged.
+     Static by design; the machines above and below carry the motion. -->
 <section class="section">
   <div class="container-page">
-    <div class="max-w-2xl" data-reveal>
-      <p class="eyebrow">Why teams choose Fanfinity</p>
-      <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">What changes when the profile is yours</h2>
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">What changes when the profile is yours</h2>
     </div>
-    <div class="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
-      <div class="border-t border-border pt-6" data-reveal>
-        <h3 class="font-heading text-xl font-bold">Own the relationship</h3>
-        <p class="mt-3 leading-relaxed text-muted-foreground">One persistent profile ties every interaction, reward, and purchase to a fan you can reach directly, instead of renting your own audience back from ad platforms.</p>
+
+    <!-- Desktop: aligned pair rows across the diamond spine -->
+    <div class="mt-14 hidden lg:block">
+      <div class="grid grid-cols-[1fr_4rem_1fr] items-center gap-y-2">
+        <p class="pr-2 text-right text-sm font-semibold text-muted-foreground/70">Renting reach</p>
+        <span></span>
+        <p class="pl-2 text-sm font-semibold text-brand-foreground">Owning the fan</p>
+
+        <p class="border-t border-border/70 py-6 pr-2 text-right text-lg text-muted-foreground">Impressions rented back from ad platforms</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border/70">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border/70 py-6 pl-2 text-lg font-semibold text-foreground">Fans you can name, and reach directly</p>
+
+        <p class="border-t border-border/70 py-6 pr-2 text-right text-lg text-muted-foreground">Overnight batches acting on yesterday&rsquo;s fan</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border/70">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border/70 py-6 pl-2 text-lg font-semibold text-foreground">Journeys that fire mid-match</p>
+
+        <p class="border-t border-border/70 py-6 pr-2 text-right text-lg text-muted-foreground">Quarterly decks sponsors politely doubt</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border/70">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border/70 py-6 pl-2 text-lg font-semibold text-foreground">Verified reach sponsors log into themselves</p>
       </div>
-      <div class="border-t border-border pt-6" data-reveal style="--reveal-delay:90ms">
-        <h3 class="font-heading text-xl font-bold">React in the moment</h3>
-        <p class="mt-3 leading-relaxed text-muted-foreground">Profiles update as events land. Journeys, offers, and personalization fire while the fan is still watching, not in tomorrow&rsquo;s batch.</p>
+    </div>
+
+    <!-- Mobile: stacked pairs, diamond marking each turn -->
+    <div class="mt-10 space-y-8 lg:hidden">
+      <div>
+        <p class="text-muted-foreground">Impressions rented back from ad platforms</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Fans you can name, and reach directly</p>
       </div>
-      <div class="border-t border-border pt-6" data-reveal style="--reveal-delay:180ms">
-        <h3 class="font-heading text-xl font-bold">Prove the revenue</h3>
-        <p class="mt-3 leading-relaxed text-muted-foreground">Verified reach and exposure-to-outcome attribution answer the question sponsors and CFOs actually ask: did it work?</p>
+      <div>
+        <p class="text-muted-foreground">Overnight batches acting on yesterday&rsquo;s fan</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Journeys that fire mid-match</p>
+      </div>
+      <div>
+        <p class="text-muted-foreground">Quarterly decks sponsors politely doubt</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Verified reach sponsors log into themselves</p>
       </div>
     </div>
   </div>
