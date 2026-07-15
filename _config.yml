@@ -54,12 +54,12 @@ integrations:
     contact_form_url: 'https://webforms.pipedrive.com/f/6zflfKUfwLlsbZF4vaZOEhlzO4lqngs534EuxOp04VjQAzsfYFzD9LXWOf80zah7Q7'   # "Fanfinity — Contact us" web form
     scheduler_url: ''      # Pipedrive Scheduler booking link for /demo (not set up yet)
 
-# Social share defaults (jekyll-seo-tag). NOTE: home-hero.jpg is a stand-in —
-# replace with a branded 1200×630 og image before public launch.
+# Social share defaults (jekyll-seo-tag). og-card.png is the branded 1200×630
+# card (regenerate via a 1200×630 headless-Chrome screenshot if the tagline changes).
 twitter:
   card: summary_large_image
 defaults:
   - scope:
       path: ""
     values:
-      image: /assets/img/home-hero.jpg
+      image: /assets/img/og-card.png

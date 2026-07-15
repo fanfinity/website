@@ -27,12 +27,12 @@ flow_nodes:
 # Titles/tags/pitches are Fanfinity's own (from internal decks); formats map to
 # the Widgets product epic. Presented as the widget library, not a production claim.
 widgets:
+  - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
+  - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
   - { icon: poll,   title: Polls,             tag: "Loyalty · Data",        file: polls,      pitch: "Capture the crowd's voice.",        alt: "Text poll and image poll examples" }
   - { icon: quiz,   title: Quizzes,           tag: "Competition",           file: quizzes,    pitch: "Reward what your fans know.",       alt: "Text and image quiz examples" }
-  - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
   - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
   - { icon: hash,   title: Number Prediction, tag: "Retention",             file: prediction, pitch: "Make every stat a game.",           alt: "Number prediction example" }
-  - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
   - { icon: bell,   title: Alerts,            tag: "Revenue",               file: alerts,     pitch: "Own the moment, then monetize it.", alt: "Sponsored and breaking alert examples" }
   - { icon: chat,   title: Ask,               tag: "Community",             file: ask,        pitch: "Give fans the mic.",                alt: "Ask submission example" }
 
@@ -86,16 +86,16 @@ measure_points:
         <!-- Event stream — behind, glass on dark -->
         <div class="card-glass absolute -top-6 left-0 z-0 hidden w-[19rem] rounded-2xl p-4 sm:block" aria-hidden="true">
           <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/50">Fanfinity Blocks &middot; Event stream</p>
-          <div class="mt-3 space-y-2 font-mono text-[11px] leading-relaxed">
+          <div class="mt-3 space-y-2 font-mono text-[11px] leading-relaxed" data-stream-rows>
             <p class="text-white/75"><span class="text-brand-300">ticket_scan</span> &middot; gate B &middot; fan_8c2a <span class="text-emerald-400/90">resolved</span></p>
+            <p class="text-white/75"><span class="text-brand-300">poll_answer</span> &middot; <bdi lang="ar">&laquo;من يسجل أولاً؟&raquo;</bdi> &middot; fan_44d1 <span class="text-emerald-400/90">resolved</span></p>
             <p class="text-white/75"><span class="text-brand-300">stream_start</span> &middot; web &middot; fan_44d1 <span class="text-emerald-400/90">resolved</span></p>
-            <p class="text-white/75"><span class="text-brand-300">poll_answer</span> &middot; anon_9f13 <span class="text-white/45">&rarr;</span> <span class="text-emerald-400/90">stitched fan_02e7</span></p>
             <p class="text-white/75"><span class="text-brand-300">purchase</span> &middot; store &middot; fan_8c2a <span class="text-white/45">segments +2</span></p>
           </div>
         </div>
 
         <!-- Single fan view — front, solid card for maximum contrast -->
-        <div class="relative z-10 rounded-2xl border border-border bg-card p-6 shadow-2xl shadow-black/40 sm:ml-14 sm:mt-20">
+        <div class="relative z-10 rounded-2xl border border-border bg-card p-6 shadow-2xl shadow-black/40 transition-shadow duration-500 sm:ml-14 sm:mt-20" data-profile-card>
           <div class="flex items-center justify-between gap-3">
             <p class="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">Fanfinity ID &middot; Single fan view</p>
             <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
@@ -105,18 +105,18 @@ measure_points:
             <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
             <div class="min-w-0">
               <p class="truncate font-heading text-lg font-bold leading-tight text-foreground">Salem A.</p>
-              <p class="truncate font-mono text-[11px] text-muted-foreground">fan_8c2a &middot; web, app &amp; ticketing merged</p>
+              <p class="truncate font-mono text-[11px] text-muted-foreground" data-sources>fan_8c2a &middot; 3 sources merged</p>
             </div>
           </div>
 
           <div class="mt-5 divide-y divide-border border-t border-border">
             <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
             <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
-            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">2h ago</span></div>
+            <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground transition-colors duration-300" data-last-seen>2h ago</span></div>
             <div class="flex items-center justify-between py-2.5 text-[13px]"><span class="text-muted-foreground">Consent</span><span class="font-semibold text-foreground">Marketing &check;</span></div>
           </div>
 
-          <div class="mt-5 flex flex-wrap items-center gap-2">
+          <div class="mt-5 flex flex-wrap items-center gap-2" data-segments>
             <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Segments</span>
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Season-ticket holders</span>
             <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Sponsor-ready</span>
@@ -124,6 +124,68 @@ measure_points:
         </div>
 
         <p class="mt-3 text-center text-[11px] text-white/45">Illustrative product views.</p>
+
+        <script>
+          /* Hero resolve moment — one anonymous event arrives, stitches to the profile,
+             the card updates. Runs once; skipped (final state rendered) on mobile and
+             prefers-reduced-motion. */
+          (function () {
+            var stream = document.querySelector('[data-stream-rows]');
+            var card = document.querySelector('[data-profile-card]');
+            if (!stream || !card) return;
+            var lastSeen = card.querySelector('[data-last-seen]');
+            var sources = card.querySelector('[data-sources]');
+            var segs = card.querySelector('[data-segments]');
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var smUp = window.matchMedia('(min-width: 640px)').matches;
+
+            function makeRow() {
+              var p = document.createElement('p');
+              p.className = 'text-white/75 transition-all duration-500';
+              p.innerHTML = '<span class="text-brand-300">quiz_answer</span> · anon_9f13 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_8c2a</span>';
+              return p;
+            }
+            function makeChip() {
+              var s = document.createElement('span');
+              s.className = 'inline-flex items-center gap-1.5 rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700 transition-all duration-500';
+              s.innerHTML = '<span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Matchday actives';
+              return s;
+            }
+            function resolveCard() {
+              lastSeen.textContent = 'Just now';
+              lastSeen.classList.add('text-brand-foreground');
+              sources.textContent = 'fan_8c2a · 4 sources merged';
+              segs.appendChild(makeChip());
+            }
+
+            if (reduce || !smUp) { resolveCard(); if (smUp) stream.appendChild(makeRow()); return; }
+
+            setTimeout(function () {
+              var row = makeRow();
+              row.style.opacity = '0';
+              row.style.transform = 'translateY(6px)';
+              stream.appendChild(row);
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () { row.style.opacity = ''; row.style.transform = ''; });
+              });
+            }, 1600);
+
+            setTimeout(function () {
+              var chip = makeChip();
+              chip.style.opacity = '0';
+              chip.style.transform = 'scale(0.9)';
+              card.classList.add('ring-2', 'ring-brand-500/60');
+              lastSeen.textContent = 'Just now';
+              lastSeen.classList.add('text-brand-foreground');
+              sources.textContent = 'fan_8c2a · 4 sources merged';
+              segs.appendChild(chip);
+              requestAnimationFrame(function () {
+                requestAnimationFrame(function () { chip.style.opacity = ''; chip.style.transform = ''; });
+              });
+              setTimeout(function () { card.classList.remove('ring-2', 'ring-brand-500/60'); }, 1200);
+            }, 2500);
+          })();
+        </script>
       </div>
 
     </div>
@@ -268,11 +330,75 @@ measure_points:
   <div class="container-page relative section">
     <div class="mx-auto max-w-2xl text-center" data-reveal>
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. The engagement layer is in Design Preview.</p>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. The engagement layer is in Design Preview &mdash; the first card is live, try it.</p>
     </div>
 
     <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {%- for w in page.widgets limit: 3 -%}
+
+      <!-- Live poll — a real, working widget, not a recording -->
+      <figure data-reveal class="card-hover flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+        <figcaption class="flex items-center justify-between gap-3 px-5 pt-5">
+          <span class="flex min-w-0 items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="poll" class="h-5 w-5" %}</span>
+            <span class="min-w-0">
+              <span class="block text-sm font-semibold text-foreground">Live Poll</span>
+              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Sponsorable &middot; Try it</span>
+            </span>
+          </span>
+          <span class="shrink-0 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
+        </figcaption>
+        <div class="flex flex-1 flex-col px-5 pb-5 pt-4" data-poll>
+          <p class="text-sm font-semibold text-foreground">Who scores first tonight?</p>
+          <p class="mt-0.5 text-xs text-muted-foreground" lang="ar" dir="rtl">من يسجل أولاً الليلة؟</p>
+          <div class="mt-4 space-y-2">
+            <button type="button" data-poll-option data-pct="54" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>S. Al&#8209;Harbi</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            </button>
+            <button type="button" data-poll-option data-pct="31" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>K. Mendes</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            </button>
+            <button type="button" data-poll-option data-pct="15" class="relative w-full overflow-hidden rounded-xl border border-border px-3.5 py-2.5 text-left text-sm font-medium text-foreground transition hover:border-brand-300">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-100 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>T. Okafor</span><span class="hidden font-semibold tabular-nums text-brand-700" data-poll-pct></span></span>
+            </button>
+          </div>
+          <p class="mt-auto flex items-center justify-between pt-4 text-[11px] text-muted-foreground">
+            <span data-poll-votes>12,482 votes</span>
+            <span class="font-mono uppercase tracking-[0.14em]">Your sponsor here</span>
+          </p>
+        </div>
+      </figure>
+      <script>
+        /* Live poll demo — client-side only, nothing recorded. */
+        (function () {
+          var root = document.querySelector('[data-poll]');
+          if (!root) return;
+          var opts = Array.prototype.slice.call(root.querySelectorAll('[data-poll-option]'));
+          var votesEl = root.querySelector('[data-poll-votes]');
+          var voted = false;
+          opts.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              if (voted) return;
+              voted = true;
+              votesEl.textContent = '12,483 votes · thanks for playing';
+              opts.forEach(function (b) {
+                var pct = parseInt(b.getAttribute('data-pct'), 10);
+                if (b === btn) { pct += 1; b.classList.add('border-brand-500'); b.setAttribute('aria-pressed', 'true'); }
+                else { b.classList.add('opacity-80'); b.setAttribute('aria-pressed', 'false'); }
+                b.querySelector('[data-poll-bar]').style.width = pct + '%';
+                var pctEl = b.querySelector('[data-poll-pct]');
+                pctEl.textContent = pct + '%';
+                pctEl.classList.remove('hidden');
+                b.classList.add('cursor-default');
+              });
+            });
+          });
+        })();
+      </script>
+
+      {%- for w in page.widgets limit: 2 -%}
         <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
                 class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
           <figcaption class="flex items-center gap-3 px-5 pt-5">
