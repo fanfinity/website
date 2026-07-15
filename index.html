@@ -603,45 +603,104 @@ deploy_stats:
   </script>
 </section>
 
-<!-- ==================================================== DEVELOPER SPLIT -->
+<!-- ============================================ DEVELOPERS · LIVE CALL
+     "Built for the teams who ship it" with a terminal that runs: the
+     request fires on scroll, the response streams in, and Send test
+     event replays it with rotating payloads - including the anonymous
+     visitor stitching to fan_8c2a, the page's running story told in
+     API language. Simulated and labeled; full request + response are
+     rendered server-side so no-JS and reduced motion read everything. -->
 <section class="section" id="developers">
   <div class="container-page">
     <div class="grid items-center gap-12 lg:grid-cols-2">
+
       <!-- Copy -->
-      <div data-reveal>
+      <div>
         <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Built for the teams who ship it</h2>
         <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface.</p>
-        <ul class="mt-6 space-y-3">
+        <ul class="mt-7 space-y-3">
           {%- for pt in page.dev_points -%}
-            <li class="flex gap-3">
-              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-3.5 w-3.5" %}</span>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span>
               <span class="text-sm leading-relaxed text-muted-foreground">{{ pt }}</span>
             </li>
           {%- endfor -%}
         </ul>
-        <a href="{{ '/developers' | relative_url }}" class="link-arrow mt-7">See the developer overview {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+        <a href="{{ '/developers' | relative_url }}" class="link-arrow mt-8">See the developer overview {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
       </div>
 
-      <!-- REST code mock -->
-      <div data-reveal style="--reveal-delay:120ms" class="relative">
-        <div class="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0712] shadow-2xl shadow-brand-950/40">
-          <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-            <span class="font-mono text-xs text-white/40">track an event</span>
+      <!-- The terminal that runs -->
+      <div class="relative" data-api>
+        <div class="overflow-hidden rounded-3xl bg-[#0b0712] shadow-2xl shadow-brand-950/40 ring-1 ring-inset ring-white/[0.06]">
+          <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-2.5">
+            <span class="font-mono text-xs text-white/40">api.fanfinity.io</span>
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-[10px] text-white/35" data-api-note>simulated</span>
+              <button type="button" data-api-send class="btn btn-outline-light px-3.5 py-1.5 text-xs">Send test event</button>
+            </span>
           </div>
-<pre class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> https://api.fanfinity.io/v1/events \
+<pre class="min-h-[17.5rem] overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span data-api-req><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \
   -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \
-  -d <span class="text-white/90">'{ "profile_id": "fan_8c2a&hellip;",
-        "event": "stream_started",
-        "channel": "web" }'</span>
+  -d <span class="text-white/90">'{ "event": "stream_started",
+        "profile_id": "fan_8c2a",
+        "channel": "web" }'</span></span>
 
-<span class="text-emerald-400/80"># 202 Accepted: profile updated, segments re-evaluated</span>
-<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"segments"</span>: 3 <span class="text-white/45">}</span></pre>
+<span data-api-res><span class="text-emerald-400/90">HTTP/2 202 Accepted</span>
+<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"profile"</span>: <span class="text-white/90">"fan_8c2a"</span>, <span class="text-brand-300">"segments"</span>: 4 <span class="text-white/45">}</span>
+<span class="text-white/40"># profile updated · journeys re-evaluated while the stream is live</span></span></pre>
         </div>
+        <p class="mt-2.5 text-center text-xs text-muted-foreground/80">A simulated call: this is the whole integration surface.</p>
+
+        <script>
+          /* Terminal demo - response replays on scroll and on Send,
+             rotating through three payloads. Markup ships fully
+             rendered; JS only re-enacts it. */
+          (function () {
+            var root = document.querySelector('[data-api]');
+            if (!root) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var req = root.querySelector('[data-api-req]');
+            var res = root.querySelector('[data-api-res]');
+            var btn = root.querySelector('[data-api-send]');
+            var variants = [
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "stream_started",\n        "profile_id": "fan_8c2a",\n        "channel": "web" }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"profile"</span>: <span class="text-white/90">"fan_8c2a"</span>, <span class="text-brand-300">"segments"</span>: 4 <span class="text-white/45">}</span>\n<span class="text-white/40"># profile updated · journeys re-evaluated while the stream is live</span>' },
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "quiz_answer",\n        "anonymous_id": "anon_9f13",\n        "channel": "match hub" }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"identity"</span>: <span class="text-white/90">"stitched → fan_8c2a"</span> <span class="text-white/45">}</span>\n<span class="text-white/40"># the anonymous visitor was Salem all along</span>' },
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "purchase",\n        "profile_id": "fan_8c2a",\n        "value_sar": 240 }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"attributed_to"</span>: <span class="text-white/90">"matchday_offer"</span> <span class="text-white/45">}</span>\n<span class="text-white/40"># exposure → outcome, settled deterministically</span>' }
+            ];
+            var i = 0, running = false;
+            function play(idx) {
+              if (running || reduce) return;
+              running = true;
+              var v = variants[idx];
+              req.innerHTML = v.req;
+              res.style.opacity = '0';
+              setTimeout(function () {
+                res.innerHTML = v.res;
+                res.style.transition = 'opacity .45s ease-out';
+                res.style.opacity = '1';
+                running = false;
+              }, 520);
+            }
+            if (btn) btn.addEventListener('click', function () { i = (i + 1) % variants.length; play(i); });
+            if (!reduce && 'IntersectionObserver' in window) {
+              var fired = false;
+              var io = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                  if (e.isIntersecting && !fired) { fired = true; io.disconnect(); play(0); }
+                });
+              }, { threshold: 0.4 });
+              io.observe(root);
+            }
+          })();
+        </script>
       </div>
     </div>
 
     <!-- Deployment sub-row -->
-    <div class="mt-16 border-t border-border pt-10" data-reveal>
+    <div class="mt-16 border-t border-border pt-10">
       <p class="text-sm font-semibold text-foreground">Runs where your rules require: your cloud, your on-prem, or ours.</p>
       <dl class="mt-6 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
         {%- for stat in page.deploy_stats -%}
