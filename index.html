@@ -179,133 +179,193 @@ measure_points:
 <!-- ====================================================== AUDIENCE BAND -->
 {% include logo-cloud.html %}
 
-<!-- ============================== CONNECTED STACK · SIGNAL SIMULATOR
-     Scroll-triggered: when the section enters view, one signal makes the
-     full trip — each product lights as the signal reaches it, a dot rides
-     the connector, and the outcome lands in a result card. Replayable
-     with other signal types. Reduced motion / no-JS: fully lit static. -->
-<section class="relative overflow-hidden border-y border-border bg-soft">
-  <div class="container-page relative section">
-    <div class="mx-auto max-w-3xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
-        Collect, Resolve, Engage, Activate, Prove: five products that run as one loop on one fan profile. Here&rsquo;s a single signal making the full trip.
-      </p>
+<!-- ==================== CONNECTED STACK · THE SIGNAL TRACE
+     One signature artifact, per the anti-slop law: no tiles, no icon
+     chips, no hairline-ringed boxes, no pills. A drawn signal trace —
+     a stepped mountain profile with diamond stations — carries the
+     five-product loop. Stations are bare type on the surface; captions
+     are mono because they are data. The trace fills on scroll, a
+     diamond rides the path, stations brighten as it passes. Stations
+     stay readable at all times (dim, never hidden); reduced-motion and
+     no-JS get the fully lit state. -->
+<section class="relative overflow-hidden bg-[#0b0712]">
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute inset-0" style="background-image: linear-gradient(115deg, rgba(153,105,255,0.14) 0%, rgba(153,105,255,0.05) 30%, transparent 55%);"></div>
+    <div class="absolute inset-0 bg-grain opacity-[0.13]"></div>
+  </div>
+  <div class="container-page relative section" data-sig>
+
+    <!-- Head row: statement left, source switcher right. No kicker, no pills. -->
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-balance">From first signal to <span class="text-brand-200">proven revenue</span></h2>
+        <p class="mt-3 text-lg leading-relaxed text-white/55">Five products, one loop, one profile: watch one signal make the whole trip.</p>
+      </div>
+      <div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2" role="tablist" aria-label="Signal type">
+          <button type="button" role="tab" data-sig-run="scan" aria-selected="true" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white transition">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-brand-300 bg-brand-300 transition"></span>Ticket scan
+          </button>
+          <button type="button" role="tab" data-sig-run="stream" aria-selected="false" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/45 transition hover:text-white/80">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-white/40 transition"></span>Stream start
+          </button>
+          <button type="button" role="tab" data-sig-run="purchase" aria-selected="false" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/45 transition hover:text-white/80">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-white/40 transition"></span>Shop purchase
+          </button>
+        </div>
+        <p class="mt-2 text-xs text-white/30 lg:text-right">Illustrative replay</p>
+      </div>
     </div>
 
-    <!-- Broadcast replay panel — same dark machine language as the hero pipeline -->
-    <div class="relative mt-14" data-sim data-reveal>
-      <div class="overflow-hidden rounded-3xl bg-dark-band ring-1 ring-white/10 shadow-2xl shadow-brand-950/30">
+    <!-- The trace (lg+): drawn path, HTML stations pinned to its vertices -->
+    <div class="relative mt-16 hidden h-64 lg:block" data-sig-diagram>
+      <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+        <path data-sig-base d="M 40 170 H 140 L 260 105 H 340 L 460 40 H 540 L 660 105 H 740 L 860 170 H 960"
+              fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+        <path data-sig-fill d="M 40 170 H 140 L 260 105 H 340 L 460 40 H 540 L 660 105 H 740 L 860 170 H 960"
+              fill="none" stroke="rgba(170,128,255,0.95)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
+      </svg>
+      <span data-sig-dot class="absolute z-10 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-brand-300 shadow-[0_1px_6px_rgba(170,128,255,0.55)]" style="left:4%; top:77.3%"></span>
+      {% assign xs = "9,30,50,70,91" | split: "," %}
+      {% assign ys = "77.3,47.7,18.2,47.7,77.3" | split: "," %}
+      {% for node in page.flow_nodes %}
+        {%- assign i = forloop.index0 -%}
+        <div class="absolute w-44 -translate-x-1/2" style="left:{{ xs[i] }}%; top:{{ ys[i] }}%">
+          <span data-sig-node="{{ i }}" class="mx-auto block h-3 w-3 -translate-y-1/2 rotate-45 border border-white/40 bg-[#0b0712] transition-all duration-500"></span>
+          <a href="{{ node.url | relative_url }}" class="mt-2.5 block text-center">
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-white/45 transition-colors duration-500 hover:text-brand-200">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-white/25 transition-colors duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1.5 block font-mono text-[11px] leading-snug text-brand-200/40 transition-all duration-500"></span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
 
-        <!-- Panel header: replay label + signal source switcher -->
-        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-4 sm:px-7">
-          <p class="inline-flex items-center gap-2 font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/55">
-            <span class="inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400/90"></span>Signal replay &middot; Illustrative
-          </p>
-          <div class="inline-flex rounded-full border border-white/15 bg-white/5 p-0.5" role="tablist" aria-label="Signal type">
-            <button type="button" role="tab" data-sim-run="scan" aria-selected="true" class="rounded-full bg-white/15 px-3.5 py-1.5 text-xs font-semibold text-white transition">Ticket scan</button>
-            <button type="button" role="tab" data-sim-run="stream" aria-selected="false" class="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/55 transition hover:text-white">Stream start</button>
-            <button type="button" role="tab" data-sim-run="purchase" aria-selected="false" class="rounded-full px-3.5 py-1.5 text-xs font-semibold text-white/55 transition hover:text-white">Shop purchase</button>
+    <!-- The trace (mobile): vertical, same states, no hidden content -->
+    <div class="mt-12 space-y-0 lg:hidden">
+      {% for node in page.flow_nodes %}
+        {%- assign i = forloop.index0 -%}
+        <div class="flex gap-4">
+          <div class="flex w-4 flex-col items-center">
+            <span data-sig-node="{{ i }}" class="mt-1.5 block h-3 w-3 shrink-0 rotate-45 border border-white/40 bg-[#0b0712] transition-all duration-500"></span>
+            {% unless forloop.last %}<span class="mt-1.5 w-0.5 flex-1 rounded-full bg-white/10"></span>{% endunless %}
           </div>
+          <a href="{{ node.url | relative_url }}" class="block pb-7">
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-white/45 transition-colors duration-500">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-white/25 transition-colors duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1 block font-mono text-[11px] text-brand-200/40 transition-all duration-500"></span>
+          </a>
         </div>
+      {% endfor %}
+    </div>
 
-        <!-- Stage tiles + advancing signal trail -->
-        <div class="px-5 py-7 sm:px-7">
-          <div class="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_1.5rem_1fr_1.5rem_1fr_1.5rem_1fr_1.5rem_1fr] lg:items-stretch">
-            {% for node in page.flow_nodes %}
-              {%- unless forloop.first -%}
-              <div class="relative hidden self-center lg:block" aria-hidden="true">
-                <div class="h-px w-full bg-white/10"></div>
-                <span data-sim-seg class="absolute inset-y-0 left-0 block h-px w-0 bg-brand-400 shadow-[0_0_10px_rgba(153,105,255,0.9)] transition-all duration-500 ease-out"></span>
-              </div>
-              {%- endunless -%}
-              <a href="{{ node.url | relative_url }}" data-sim-tile class="group/node rounded-2xl bg-white/[0.04] p-4 ring-1 ring-inset ring-white/10 transition-all duration-500">
-                <span data-sim-icon class="grid h-10 w-10 place-items-center rounded-lg bg-brand-500/15 text-brand-300 ring-1 ring-inset ring-brand-400/20 transition-all duration-500">{% include icon.html name=node.icon class="h-5 w-5" %}</span>
-                <p class="mt-3 font-heading text-sm font-bold text-white group-hover/node:text-brand-300">{{ node.label }}</p>
-                <p class="mt-0.5 text-xs text-white/45">{{ node.sub }}</p>
-                <p data-sim-caption class="mt-2.5 min-h-[2rem] border-t border-white/10 pt-2 font-mono text-[11px] leading-snug text-brand-300 transition-opacity duration-500"></p>
-              </a>
-            {% endfor %}
-          </div>
-        </div>
-
-        <!-- Outcome bar -->
-        <div data-sim-result class="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-black/25 px-5 py-4 transition-all duration-700 sm:px-7">
-          <p class="min-w-0">
-            <span class="block font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">The outcome</span>
-            <span data-sim-result-text class="mt-0.5 block font-heading text-lg font-bold text-white sm:text-xl">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</span>
-          </p>
-          <span class="flex flex-wrap gap-1.5">
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>+1 sponsor-ready fan</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>verified reach +1</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-semibold text-white/75"><span class="h-1 w-1 rounded-full bg-brand-400"></span>consent enforced</span>
-          </span>
-        </div>
-      </div>
-      <p class="mt-3 text-center text-xs text-muted-foreground">Each stage links to its product. Pick a signal type to replay the loop.</p>
+    <!-- The outcome: type on the surface, no card -->
+    <div class="mt-14 text-center lg:mt-16" data-sig-outcome>
+      <p data-sig-result class="font-heading text-2xl font-bold text-white/45 transition-colors duration-700 sm:text-3xl text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
+      <p data-sig-facts class="mt-2.5 text-sm text-white/30 transition-colors duration-700">+1 sponsor-ready fan &middot; verified reach +1 &middot; consent enforced</p>
     </div>
 
     <script>
-      /* Signal replay — scroll-triggered, auto-rotates through signal types
-         like broadcast replays until the visitor takes over the switcher. */
+      /* The signal trace — scroll-triggered, rotates sources until the
+         visitor takes over. Stations dim but never hide. */
       (function () {
-        var sim = document.querySelector('[data-sim]');
-        if (!sim) return;
-        var tiles = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-tile]'));
-        var icons = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-icon]'));
-        var caps = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-caption]'));
-        var segs = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-seg]'));
-        var tabs = Array.prototype.slice.call(sim.querySelectorAll('[data-sim-run]'));
-        var result = sim.querySelector('[data-sim-result]');
-        var resultText = sim.querySelector('[data-sim-result-text]');
+        var root = document.querySelector('[data-sig]');
+        if (!root) return;
+        var q = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+        var names = [], prods = [], caps2 = [], nodes = [];
+        for (var i = 0; i < 5; i++) {
+          names.push(q('[data-sig-name="' + i + '"]'));
+          prods.push(q('[data-sig-prod="' + i + '"]'));
+          caps2.push(q('[data-sig-cap="' + i + '"]'));
+          nodes.push(q('[data-sig-node="' + i + '"]'));
+        }
+        var fill = root.querySelector('[data-sig-fill]');
+        var dot = root.querySelector('[data-sig-dot]');
+        var resultEl = root.querySelector('[data-sig-result]');
+        var factsEl = root.querySelector('[data-sig-facts]');
+        var tabs = q('[data-sig-run]');
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var lgUp = window.matchMedia('(min-width: 1024px)');
         var ORDER = ['scan', 'stream', 'purchase'];
         var variants = {
           scan:     { caps: ['ticket_scan · gate B', 'anon → fan_8c2a', 'matchday quiz · +25 pts', 'WhatsApp offer sent', 'SAR 180 attributed'],
-                      result: '1 scan → 1 known fan → SAR 180 attributed' },
+                      result: '1 scan → 1 known fan → SAR 180 attributed',
+                      facts: '+1 sponsor-ready fan · verified reach +1 · consent enforced' },
           stream:   { caps: ['stream_start · web', 'device stitched → fan_44d1', 'live poll answered', 'push · second-half alert', '38 proven watch minutes'],
-                      result: '1 stream → 1 engaged viewer → 38 proven minutes' },
+                      result: '1 stream → 1 engaged viewer → 38 proven minutes',
+                      facts: 'watch time on the profile · reachable on push · consent enforced' },
           purchase: { caps: ['purchase · club store', 'receipt → fan_02e7', 'loyalty · +250 pts', 'email · thank-you offer', 'campaign → SAR 349'],
-                      result: '1 purchase → 1 loyal fan → SAR 349 attributed' }
+                      result: '1 purchase → 1 loyal fan → SAR 349 attributed',
+                      facts: 'attributed deterministically · loyalty tier up · consent enforced' },
         };
-        var running = false, userLock = false, rotateTimer = null;
+        var STATION_X = [90, 300, 500, 700, 910];
+        var running = false, userLock = false, rotateTimer = null, len = 0, marks = [];
 
-        function setTab(key) {
-          tabs.forEach(function (t) {
-            var on = t.getAttribute('data-sim-run') === key;
-            t.setAttribute('aria-selected', on ? 'true' : 'false');
-            t.classList.toggle('bg-white/15', on);
-            t.classList.toggle('text-white', on);
-            t.classList.toggle('text-white/55', !on);
+        if (fill) {
+          len = fill.getTotalLength();
+          for (var s = 0; s < STATION_X.length; s++) {
+            var lo = 0, hi = len;
+            for (var it = 0; it < 24; it++) {
+              var mid = (lo + hi) / 2;
+              if (fill.getPointAtLength(mid).x < STATION_X[s]) lo = mid; else hi = mid;
+            }
+            marks.push((lo + hi) / 2);
+          }
+          fill.style.strokeDasharray = len + ' ' + len;
+        }
+
+        function setCaps(v) { for (var i = 0; i < 5; i++) caps2[i].forEach(function (c) { c.textContent = v.caps[i]; }); }
+        function station(i, lit) {
+          names[i].forEach(function (e) { e.classList.toggle('text-white/45', !lit); e.classList.toggle('text-white', lit); });
+          prods[i].forEach(function (e) { e.classList.toggle('text-white/25', !lit); e.classList.toggle('text-white/50', lit); });
+          caps2[i].forEach(function (e) { e.classList.toggle('text-brand-200/40', !lit); e.classList.toggle('text-brand-200', lit); });
+          nodes[i].forEach(function (e) {
+            e.classList.toggle('border-white/40', !lit);
+            e.classList.toggle('border-brand-300', lit);
+            e.classList.toggle('bg-[#0b0712]', !lit);
+            e.classList.toggle('bg-brand-300', lit);
           });
         }
-        function setCaps(v) { caps.forEach(function (c, i) { c.textContent = v.caps[i]; }); }
-        function dimAll() {
-          tiles.forEach(function (t) { t.classList.add('opacity-40'); t.classList.remove('bg-white/[0.09]', 'ring-brand-400/60'); });
-          icons.forEach(function (ic) { ic.classList.remove('bg-brand-500/30', 'text-white'); });
-          caps.forEach(function (c) { c.classList.add('opacity-0'); });
-          segs.forEach(function (s) { s.style.width = '0%'; });
-          result.classList.add('opacity-0', 'translate-y-2');
+        function outcome(lit) {
+          resultEl.classList.toggle('text-white/45', !lit);
+          resultEl.classList.toggle('text-white', lit);
+          factsEl.classList.toggle('text-white/30', !lit);
+          factsEl.classList.toggle('text-white/55', lit);
         }
-        function lightTile(i) {
-          tiles[i].classList.remove('opacity-40');
-          tiles[i].classList.add('bg-white/[0.09]', 'ring-brand-400/60');
-          icons[i].classList.add('bg-brand-500/30', 'text-white');
-          caps[i].classList.remove('opacity-0');
+        function setTab(key) {
+          tabs.forEach(function (t) {
+            var on = t.getAttribute('data-sig-run') === key;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.classList.toggle('text-white', on);
+            t.classList.toggle('text-white/45', !on);
+            var m = t.querySelector('[data-sig-tabmark]');
+            m.classList.toggle('bg-brand-300', on);
+            m.classList.toggle('border-brand-300', on);
+            m.classList.toggle('border-white/40', !on);
+          });
         }
+        function placeDot(l) {
+          if (!dot || !fill) return;
+          var p = fill.getPointAtLength(l);
+          dot.style.left = (p.x / 10) + '%';
+          dot.style.top = (p.y / 220 * 100) + '%';
+        }
+        function drawFill(l) { if (fill) fill.style.strokeDashoffset = (len - l); }
         function finalState(v) {
-          setCaps(v); resultText.textContent = v.result;
-          tiles.forEach(function (t, i) { lightTile(i); });
-          segs.forEach(function (s) { s.style.width = '100%'; });
-          result.classList.remove('opacity-0', 'translate-y-2');
+          setCaps(v);
+          resultEl.textContent = v.result; factsEl.textContent = v.facts;
+          for (var i = 0; i < 5; i++) station(i, true);
+          drawFill(len); placeDot(len); outcome(true);
+        }
+        function dimAll() {
+          for (var i = 0; i < 5; i++) station(i, false);
+          drawFill(0); placeDot(0); outcome(false);
         }
         function scheduleRotate(key) {
           if (userLock || reduce) return;
           clearTimeout(rotateTimer);
           rotateTimer = setTimeout(function () {
-            if (userLock) return;
-            var next = ORDER[(ORDER.indexOf(key) + 1) % ORDER.length];
-            run(next);
+            if (!userLock) run(ORDER[(ORDER.indexOf(key) + 1) % ORDER.length]);
           }, 7000);
         }
         function run(key) {
@@ -314,42 +374,47 @@ measure_points:
           setTab(key);
           var v = variants[key];
           if (reduce) { finalState(v); running = false; return; }
-          dimAll(); setCaps(v); resultText.textContent = v.result;
-          var i = 0;
-          function step() {
-            if (i >= tiles.length) {
-              result.classList.remove('opacity-0', 'translate-y-2');
-              running = false;
-              scheduleRotate(key);
-              return;
+          dimAll(); setCaps(v);
+          resultEl.textContent = v.result; factsEl.textContent = v.facts;
+          var desktop = lgUp.matches && fill;
+          var seg = 0;
+          station(0, true);
+          function nextSeg() {
+            if (seg >= 4) { outcome(true); running = false; scheduleRotate(key); return; }
+            var from = desktop ? marks[seg] : 0, to = desktop ? marks[seg + 1] : 0, t0 = null, DUR = 620;
+            function frame(ts) {
+              if (t0 === null) t0 = ts;
+              var t = Math.min(1, (ts - t0) / DUR);
+              var e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+              if (desktop) { var l = from + (to - from) * e; drawFill(l); placeDot(l); }
+              if (t < 1) { requestAnimationFrame(frame); }
+              else { seg++; station(seg, true); setTimeout(nextSeg, 140); }
             }
-            lightTile(i);
-            var seg = segs[i];
-            if (seg) setTimeout(function () { seg.style.width = '100%'; }, 240);
-            i++;
-            setTimeout(step, 640);
+            if (desktop) requestAnimationFrame(frame);
+            else setTimeout(function () { seg++; station(seg, true); nextSeg(); }, DUR);
           }
-          step();
+          if (desktop) { drawFill(marks[0]); placeDot(marks[0]); }
+          setTimeout(nextSeg, 350);
         }
 
-        dimAll();
+        setCaps(variants.scan);
         var fired = false;
         if (!reduce && 'IntersectionObserver' in window) {
+          dimAll();
           var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
               if (e.isIntersecting && !fired) { fired = true; io.disconnect(); run('scan'); }
             });
           }, { threshold: 0.3 });
-          io.observe(sim);
+          io.observe(root);
         } else {
           finalState(variants.scan);
-          setTab('scan');
         }
         tabs.forEach(function (b) {
           b.addEventListener('click', function () {
             userLock = true; fired = true;
             clearTimeout(rotateTimer);
-            run(b.getAttribute('data-sim-run'));
+            run(b.getAttribute('data-sig-run'));
           });
         });
       })();
