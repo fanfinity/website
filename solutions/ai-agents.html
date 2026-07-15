@@ -9,19 +9,19 @@ features:
   - { icon: identity,  title: "One resolved profile to read", body: "An agent reads context from a single first-party profile per fan instead of reconciling three systems that disagree about who someone is. The fan graph is the retrieval surface, already stitched." }
   - { icon: bolt,      title: "Current signals, not last night's", body: "Ground a model in what a fan is doing now. A real-time event layer keeps context fresh to the moment, so an agent reasons over the present instead of a snapshot that expired at export time." }
   - { icon: scale,     title: "Consent enforced at the source", body: "An agent only ever sees data a fan has consented to. Permissions live at the data layer, not in prompt instructions the model can drift from, so automation stays inside the lines by construction." }
-  - { icon: shield,    title: "Residency the model can't leak", body: "In-region residency means fan context never leaves the jurisdiction it is governed in. The boundary is enforced where the data sits, not left to where an agent happens to run (to confirm)." }
+  - { icon: shield,    title: "Residency the model can't leak", body: "In-region residency means fan context never leaves the jurisdiction it is governed in. The boundary is enforced where the data sits, not left to where an agent happens to run." }
   - { icon: hash,      title: "Attributes an agent can filter on", body: "Typed identifiers and attributes give an agent structured fields to condition on, so retrieval is a query against governed data rather than a scrape of whatever a fan once typed." }
-  - { icon: code,      title: "Composable through the API", body: "Reach the fan graph over a REST API and SDKs. Agents, models, and next-best-action logic plug into governed context without a bespoke data project standing in the way (to confirm)." }
+  - { icon: code,      title: "Composable through the API", body: "Reach the fan graph over a REST API and SDKs. Agents, models, and next-best-action logic plug into governed context without a bespoke data project standing in the way." }
 context_points:
   - "Retrieve from one consented, first-party profile per fan instead of fragmented, conflicting sources."
   - "Serve signals in real time so an agent's decision reflects the current moment, not a stale batch."
   - "Enforce consent and in-region residency at the data layer, so automation acts only on permitted data."
-  - "Expose the graph through an API and SDKs for agents and models to compose against (to confirm)."
+  - "Expose the graph through an API and SDKs for agents and models to compose against."
 steps:
   - { icon: identity, title: "Resolve the fan", body: "Fragmented touchpoints are already stitched into one first-party profile, so an agent asks about a person, not a device or a cookie." }
   - { icon: scale,    title: "Check what's permitted", body: "Consent and residency are evaluated where the data lives, so the context returned is already scoped to what a fan allowed." }
   - { icon: bolt,     title: "Serve fresh context", body: "The profile carries current signals from a real-time layer, so the agent grounds on now rather than a snapshot from last night." }
-  - { icon: code,     title: "Act through the API", body: "The agent reads governed context over the API and drives the next action, with the data trail queryable rather than opaque (to confirm)." }
+  - { icon: code,     title: "Act through the API", body: "The agent reads governed context over the API and drives the next action, with the data trail queryable rather than opaque." }
 ---
 {% include hero.html
    eyebrow="Solutions · AI & Agents"
