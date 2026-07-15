@@ -22,11 +22,6 @@ deploy_stats:
   - { value: "On-premise", label: "Inside your own infrastructure" }
   - { value: "Nothing leaves", label: "Customer data stays inside the environment you control" }
 
-measure_points:
-  - "Deduplicated, verified reach: real people, not ad impressions."
-  - "Exposure-to-outcome attribution ties a campaign to the purchase it drove."
-  - "Package and price premium first-party audiences your sponsors can't get anywhere else."
-  - "Real-time dashboards a sponsor or partner can log into themselves."
 ---
 
 <!-- ============================================================= HERO
@@ -486,15 +481,61 @@ measure_points:
 <!-- ============================================ WHERE WE ARE (design partners) -->
 {% include proof.html %}
 
-<!-- ===================================================== MEASURE SPOTLIGHT -->
-{% include feature-split.html
-   eyebrow="Prove it"
-   title="Answer sponsors with names, not impressions"
-   body="Fanfinity Measure turns engagement into deterministic proof: verified reach, exposure-to-outcome attribution, and a portal your sponsors and partners can log into themselves."
-   points=page.measure_points
-   cta_text="Explore Fanfinity Measure"
-   cta_url="/platform/measure"
-   media="measure-visual" %}
+<!-- ============================================== MEASURE · THE RECEIPT
+     The sponsor's answer shown as the artifact it actually is: a
+     verified reach statement, drawn as a settlement receipt with a
+     perforated sawtooth bottom edge (the section's one bespoke
+     silhouette). Mono only on figures; numbers labeled Illustrative. -->
+<section class="relative overflow-hidden border-y border-border bg-soft">
+  <div class="container-page section">
+    <div class="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+
+      <!-- The claim -->
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Answer sponsors with names, not impressions</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Fanfinity Measure turns engagement into deterministic proof, and gives your sponsors a portal they can log into themselves.</p>
+        <ul class="mt-7 space-y-3">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">Verified reach:</span> real people, deduplicated, consent enforced.</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">Exposure to outcome:</span> the campaign tied to the purchase it drove.</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">A live portal:</span> results your partners watch for themselves, not a quarterly deck.</span></li>
+        </ul>
+        <a href="{{ '/platform/measure' | relative_url }}" class="link-arrow mt-8">Explore Fanfinity Measure {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <!-- The receipt -->
+      <div class="mx-auto w-full max-w-sm">
+        <div class="relative">
+          <div class="rounded-t-2xl bg-card px-6 pb-7 pt-6 shadow-[0_18px_44px_-18px_rgba(32,30,38,0.35)]">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-xs text-muted-foreground">Verified reach statement</p>
+              <span class="text-[11px] text-muted-foreground">Illustrative</span>
+            </div>
+            <p class="mt-1 font-mono text-[11px] text-muted-foreground">Matchday 14 &middot; North Stand sponsorship</p>
+
+            <p class="mt-6 font-heading text-5xl font-bold tabular-nums text-foreground">31,842</p>
+            <p class="mt-1 text-sm text-muted-foreground">real people reached, verified and deduplicated</p>
+
+            <div class="mt-6 divide-y divide-border border-t border-border font-mono text-[12px]">
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Exposures logged</span><span class="font-semibold tabular-nums text-foreground">214,502</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Deduplicated reach</span><span class="font-semibold tabular-nums text-foreground">31,842</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Consented &amp; reachable</span><span class="font-semibold tabular-nums text-foreground">29,170</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Attributed revenue</span><span class="font-semibold tabular-nums text-foreground">SAR 412,090</span></div>
+            </div>
+
+            <p class="mt-5 flex items-center justify-between text-[11px] text-muted-foreground">
+              <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rotate-45 bg-brand-500" aria-hidden="true"></span>Sponsor portal &middot; live since kickoff</span>
+              <span>deterministic</span>
+            </p>
+          </div>
+          <svg class="block w-full text-card" viewBox="0 0 384 10" preserveAspectRatio="none" aria-hidden="true" style="filter: drop-shadow(0 14px 20px rgba(32,30,38,0.16));">
+            <path fill="currentColor" d="M0 0 h384 v2 l-8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -4 4 v-6 z"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ==================================================== DEVELOPER SPLIT -->
 <section class="section" id="developers">
