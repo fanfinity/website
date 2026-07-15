@@ -1,16 +1,26 @@
 {%- comment -%}
 Decorative brand visual — an abstract "scattered signals → one resolved fan graph"
-motif: faint nodes converging on a central icon chip. Purely ornamental
-(aria-hidden) — carries no data, labels, numbers, or product UI, so it stays
-honest wherever it appears. Params:
+motif behind a central icon chip. Purely ornamental (aria-hidden) — carries no data,
+labels, numbers or product UI, so it stays honest wherever it appears.
+
+Three interchangeable motifs (all say "many signals in → one resolved profile") so the
+~20 icon-heroes don't all render the identical panel. The motif is picked per page from
+the icon name (deterministic, stable across builds) unless `motif` is passed explicitly.
+
+Params:
   icon  — icon name shown in the central resolved node (optional)
   ratio — aspect-ratio class for the panel (default aspect-[4/3])
+  motif — graph | orbit | waveform (optional; default = hashed from icon)
 {%- endcomment -%}
 {%- assign ratio = include.ratio | default: 'aspect-[4/3]' -%}
+{%- assign motif = include.motif -%}
+{%- unless motif -%}
+  {%- assign seed = include.icon | default: 'node' | size | modulo: 3 -%}
+  {%- case seed -%}{%- when 0 -%}{%- assign motif = 'graph' -%}{%- when 1 -%}{%- assign motif = 'orbit' -%}{%- else -%}{%- assign motif = 'waveform' -%}{%- endcase -%}
+{%- endunless -%}
 <div class="gradient-border relative grid {{ ratio }} place-items-center overflow-hidden rounded-4xl bg-soft" aria-hidden="true">
-  <div class="pointer-events-none absolute -right-12 -top-12 h-52 w-52 rounded-full bg-brand-500/10 blur-2xl"></div>
-  <div class="pointer-events-none absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-brand-500/5 blur-2xl"></div>
   <svg class="absolute inset-0 h-full w-full text-foreground" viewBox="0 0 400 300" fill="none" preserveAspectRatio="xMidYMid slice">
+    {%- if motif == 'graph' -%}
     <g class="stroke-current" stroke-width="1.5" opacity="0.4">
       <line x1="60" y1="55" x2="200" y2="150"/>
       <line x1="330" y1="70" x2="200" y2="150"/>
@@ -29,6 +39,38 @@ honest wherever it appears. Params:
       <circle cx="108" cy="150" r="3"/>
       <circle cx="300" cy="162" r="3.5"/>
     </g>
+    {%- elsif motif == 'orbit' -%}
+    <g class="stroke-current" stroke-width="1.5" opacity="0.3">
+      <circle cx="200" cy="150" r="58"/>
+      <circle cx="200" cy="150" r="100"/>
+      <circle cx="200" cy="150" r="142"/>
+    </g>
+    <g class="fill-current" opacity="0.6">
+      <circle cx="258" cy="150" r="4.5"/>
+      <circle cx="200" cy="50" r="4"/>
+      <circle cx="123" cy="204" r="3.5"/>
+      <circle cx="342" cy="150" r="5"/>
+      <circle cx="118" cy="88" r="3"/>
+      <circle cx="286" cy="252" r="3.5"/>
+    </g>
+    {%- else -%}
+    <g class="stroke-current" stroke-width="1.5" opacity="0.32">
+      <line x1="34" y1="84"  x2="150" y2="84"/>
+      <line x1="34" y1="122" x2="150" y2="122"/>
+      <line x1="34" y1="160" x2="150" y2="160"/>
+      <line x1="34" y1="198" x2="150" y2="198"/>
+      <line x1="34" y1="236" x2="150" y2="236"/>
+      <line x1="250" y1="150" x2="368" y2="150"/>
+    </g>
+    <g class="fill-current" opacity="0.55">
+      <circle cx="34" cy="84"  r="3"/>
+      <circle cx="34" cy="122" r="3"/>
+      <circle cx="34" cy="160" r="3"/>
+      <circle cx="34" cy="198" r="3"/>
+      <circle cx="34" cy="236" r="3"/>
+      <circle cx="368" cy="150" r="4.5"/>
+    </g>
+    {%- endif -%}
   </svg>
   {%- if include.icon -%}
   <span class="relative rounded-3xl border border-border bg-card p-6 shadow-md shadow-brand-950/[0.06]">{% include icon.html name=include.icon class="h-14 w-14 text-brand-foreground" %}</span>

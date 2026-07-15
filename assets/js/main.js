@@ -345,6 +345,7 @@
     var indRows = document.querySelector('[data-industry-rows]');
     var indCount = document.querySelector('[data-industry-count]');
     var indChannels = document.querySelector('[data-industry-channels]');
+    var indTag = document.querySelector('[data-industry-tag]');
     var indLink = document.querySelector('[data-industry-link]');
 
     // keyed by the industry's icon (whistle/broadcast/handshake/airplane/gift)
@@ -356,8 +357,9 @@
       gift:      { title: 'Lapsing loyalty shoppers', count: '29,905', rows: [['Last purchase', '>', '60 days'], ['Loyalty tier', '=', 'Gold'], ['Consent', '=', 'Marketing'], ['Region', '=', 'GCC']], channels: ['WhatsApp', 'SMS', 'Email'] }
     };
 
-    function indRow(l, op, v) { return '<div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">' + l + '</span><span class="font-mono font-bold text-brand-foreground">' + op + '</span><span class="w-28 text-right font-semibold text-foreground">' + v + '</span></div>'; }
-    function indChip(n) { return '<span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">' + n + '</span>'; }
+    function indVal(op, v) { return op === '=' ? v : op + ' ' + v; }
+    function indRow(l, op, v) { return '<div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">' + l + '</span><span class="font-semibold text-foreground">' + indVal(op, v) + '</span></div>'; }
+    function indChip(n) { return '<span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>' + n + '</span>'; }
 
     function indRender(key) {
       var s = INDUSTRIES[key];
@@ -377,9 +379,10 @@
         indTabs.forEach(function (t) { t.className = indInactive; t.setAttribute('aria-selected', 'false'); });
         tab.className = indActive;
         tab.setAttribute('aria-selected', 'true');
+        var label = tab.getAttribute('data-industry-label') || '';
+        if (indTag) indTag.textContent = label;
         if (indLink) {
           indLink.setAttribute('href', tab.getAttribute('data-industry-url') || '#');
-          var label = tab.getAttribute('data-industry-label') || '';
           indLink.childNodes[0].nodeValue = 'Explore ' + label + ' ';
         }
         indRender(tab.getAttribute('data-industry-tab'));

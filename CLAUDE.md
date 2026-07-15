@@ -17,7 +17,7 @@ Deploy is **manual only**: GitHub → Actions → "Deploy Jekyll site to Pages" 
 ## Where things live / how to add a page
 - **Pages/content:** root `*.html`/`*.md` (e.g. `index.html`); layouts in `_layouts/` (`default.html`); partials in `_includes/`. Add a page by creating a `.md`/`.html` with `layout: default` front matter.
 - **Styling:** edit `src/main.css` (Tailwind source + oklch theme vars) → builds to `assets/css/main.css`. Theme/colors/fonts in `tailwind.config.js`.
-- **Brand tokens:** primary purple `#9969ff` (scale 50→950; foreground `#7c4dff`); fonts **Poppins** (headings) / **Inter** (body) / **Geist Mono** (labels/code) — all via Google Fonts; icons = **Tabler** set (inline SVG in `_includes/icon.html`); dark-mode ready; logo `logo.svg`.
+- **Brand tokens:** primary purple `#9969ff` (scale 50→950; foreground `#7c4dff`); fonts **Bricolage Grotesque** (headings; distinctive editorial grotesque, replaced Poppins 2026-07-15) / **Inter** (body) / **Geist Mono** (labels/code) — all via Google Fonts; icons = **Tabler** set (inline SVG in `_includes/icon.html`); dark-mode ready; logo `logo.svg`.
 
 ## Conventions / gotchas
 - `.claude/` is a dot-dir and is ignored by Jekyll automatically.
