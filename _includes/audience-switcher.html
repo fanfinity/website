@@ -1,52 +1,63 @@
 {%- comment -%}
-Industries section — "the same Salem in every industry". Five display-size
-industry words are the switcher (typography as UI, no pills); the profile
-card keeps a FIXED identity spine (Salem A. · fan_8c2a) while role, traits,
-count and vocabulary morph per industry: the section demonstrates one
-persistent profile across contexts. ILLUSTRATIVE only — no real metrics or
-customers. Progressive enhancement: words are real links to the industry
-pages; JS upgrades them to in-place switching. Sports renders server-side.
+Industries — "the same Salem in every industry", staged as one composition:
+a giant industry watermark bleeding off the right edge (background layer),
+bare data fragments floating in the space (midground), and the one profile
+card with a fixed identity spine (foreground). Five display words switch
+the whole stage; buyer nouns shift per vertical. ILLUSTRATIVE only.
+Progressive enhancement: the words are real links to the industry pages;
+JS upgrades them to in-place morphing. Sports renders server-side.
 {%- endcomment -%}
-<section class="section border-y border-border bg-soft" id="industries">
-  <div class="container-page">
+<section class="relative overflow-hidden border-y border-border bg-soft" id="industries">
+  <div class="container-page section">
+
     <div class="max-w-2xl">
       <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">One platform, every audience business</h2>
       <p class="mt-3 text-lg leading-relaxed text-muted-foreground">The same person is a fan on matchday, a viewer at night, a shopper on Friday. One profile follows them through all of it.</p>
     </div>
 
-    <div class="mt-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <!-- The switcher is the type -->
+    <div class="mt-10 flex flex-wrap items-baseline gap-x-9 gap-y-2" role="tablist" aria-label="Industries">
+      <a href="{{ '/solutions/sports' | relative_url }}" role="tab" aria-selected="true" data-ind-word="sports"
+         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground transition-opacity sm:text-4xl">
+        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 bg-brand-500 transition"></span>Sports
+      </a>
+      <a href="{{ '/solutions/media' | relative_url }}" role="tab" aria-selected="false" data-ind-word="media"
+         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
+        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Media
+      </a>
+      <a href="{{ '/solutions/retail' | relative_url }}" role="tab" aria-selected="false" data-ind-word="retail"
+         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
+        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Retail
+      </a>
+      <a href="{{ '/solutions/travel' | relative_url }}" role="tab" aria-selected="false" data-ind-word="travel"
+         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
+        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Travel
+      </a>
+      <a href="{{ '/solutions/brands' | relative_url }}" role="tab" aria-selected="false" data-ind-word="brands"
+         class="group inline-flex items-baseline gap-2.5 font-heading text-3xl font-bold tracking-tight text-foreground opacity-25 transition-opacity hover:opacity-60 sm:text-4xl">
+        <span data-ind-mark class="h-2 w-2 shrink-0 rotate-45 border border-border transition"></span>Brands
+      </a>
+    </div>
 
-      <!-- The switcher is the type -->
-      <div>
-        <div class="flex flex-col items-start gap-1" role="tablist" aria-label="Industries">
-          <a href="{{ '/solutions/sports' | relative_url }}" role="tab" aria-selected="true" data-ind-word="sports"
-             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground transition-colors sm:text-5xl">
-            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 bg-brand-500 transition"></span>Sports
-          </a>
-          <a href="{{ '/solutions/media' | relative_url }}" role="tab" aria-selected="false" data-ind-word="media"
-             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
-            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Media
-          </a>
-          <a href="{{ '/solutions/retail' | relative_url }}" role="tab" aria-selected="false" data-ind-word="retail"
-             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
-            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Retail
-          </a>
-          <a href="{{ '/solutions/travel' | relative_url }}" role="tab" aria-selected="false" data-ind-word="travel"
-             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
-            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Travel
-          </a>
-          <a href="{{ '/solutions/brands' | relative_url }}" role="tab" aria-selected="false" data-ind-word="brands"
-             class="group inline-flex items-baseline gap-3 py-1 font-heading text-4xl font-bold tracking-tight text-foreground/25 transition-colors hover:text-foreground/60 sm:text-5xl">
-            <span data-ind-mark class="h-2.5 w-2.5 shrink-0 rotate-45 border border-border transition"></span>Brands
-          </a>
-        </div>
-        <p data-ind-line class="mt-7 max-w-sm leading-relaxed text-muted-foreground">Matchday, broadcast, and sponsorship on one fan graph.</p>
-        <a data-ind-link href="{{ '/solutions/sports' | relative_url }}" class="link-arrow mt-4">Explore Sports &amp; Entertainment {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
-      </div>
+    <!-- The stage: watermark behind, data fragments around, one card in front -->
+    <div class="relative mt-4 lg:min-h-[34rem]">
 
-      <!-- One profile, re-dressed per industry: the identity spine never changes -->
-      <div>
-        <div class="rounded-2xl bg-card p-6 shadow-[0_14px_36px_-14px_rgba(32,30,38,0.28)]">
+      <span data-ind-water aria-hidden="true"
+            class="pointer-events-none absolute -right-8 top-2 hidden select-none whitespace-nowrap font-heading text-[8rem] font-bold leading-none tracking-tight text-foreground opacity-[0.06] lg:block lg:text-[11.5rem]">SPORTS</span>
+
+      <p data-ind-fact="0" aria-hidden="true" class="pointer-events-none absolute left-[4%] top-[22%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
+        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>ticket_scan &middot; gate B &middot; 19:42</span>
+      </p>
+      <p data-ind-fact="1" aria-hidden="true" class="pointer-events-none absolute bottom-[24%] left-[11%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
+        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>cheer meter &middot; home end &middot; 92%</span>
+      </p>
+      <p data-ind-fact="2" aria-hidden="true" class="pointer-events-none absolute right-[7%] top-[58%] hidden items-center gap-2 font-mono text-[11px] text-muted-foreground transition-all duration-500 lg:flex">
+        <span class="h-1.5 w-1.5 rotate-45 bg-brand-500/70"></span><span data-ind-fact-text>sponsor slot &middot; SAR 180 attributed</span>
+      </p>
+
+      <!-- The one card -->
+      <div class="relative z-10 mx-auto max-w-sm pt-10 lg:pt-16">
+        <div class="rounded-2xl bg-card p-6 shadow-[0_18px_44px_-18px_rgba(32,30,38,0.35)]">
           <div class="flex items-center justify-between gap-3">
             <p class="text-xs text-muted-foreground">One profile &middot; <span data-ind-tag>Sports &amp; Entertainment</span></p>
             <span class="text-[11px] text-muted-foreground">Illustrative</span>
@@ -73,20 +84,25 @@ pages; JS upgrades them to in-place switching. Sports renders server-side.
             </div>
           </div>
         </div>
-        <p class="mt-2.5 text-center text-xs text-muted-foreground/70">Same profile, different context.</p>
-      </div>
 
+        <div class="mt-5 text-center">
+          <p data-ind-line class="text-sm leading-relaxed text-muted-foreground">Matchday, broadcast, and sponsorship on one fan graph.</p>
+          <a data-ind-link href="{{ '/solutions/sports' | relative_url }}" class="link-arrow mt-2.5 justify-center">Explore Sports &amp; Entertainment {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    /* Industry switcher — the words swap the card's context in place;
-       without JS they are plain links to the industry pages. */
+    /* Industry stage — the words re-dress the whole scene; the identity
+       spine never changes. Words are plain links without JS. */
     (function () {
       var root = document.getElementById('industries');
       if (!root) return;
       var words = Array.prototype.slice.call(root.querySelectorAll('[data-ind-word]'));
       var vary = root.querySelector('[data-ind-vary]');
+      var water = root.querySelector('[data-ind-water]');
+      var facts = Array.prototype.slice.call(root.querySelectorAll('[data-ind-fact]'));
       var tag = root.querySelector('[data-ind-tag]');
       var role = root.querySelector('[data-ind-role]');
       var rows = root.querySelector('[data-ind-rows]');
@@ -96,20 +112,25 @@ pages; JS upgrades them to in-place switching. Sports renders server-side.
       var link = root.querySelector('[data-ind-link]');
       var arrowSvg = link && link.querySelector('svg') ? link.querySelector('svg').outerHTML : '';
       var variants = {
-        sports: { tag: 'Sports & Entertainment', role: 'Season-ticket holder', count: '48,320', noun: 'fans like Salem, reachable now',
+        sports: { word: 'SPORTS', tag: 'Sports & Entertainment', role: 'Season-ticket holder', count: '48,320', noun: 'fans like Salem, reachable now',
                   rows: [['Matches attended', '14'], ['Lifetime value', 'SAR 7,420'], ['Last seen', 'Just now']],
+                  facts: ['ticket_scan · gate B · 19:42', 'cheer meter · home end · 92%', 'sponsor slot · SAR 180 attributed'],
                   line: 'Matchday, broadcast, and sponsorship on one fan graph.', label: 'Sports & Entertainment' },
-        media:  { tag: 'Media & Publishers', role: 'Prime-time viewer', count: '37,480', noun: 'viewers like Salem, addressable now',
+        media:  { word: 'MEDIA', tag: 'Media & Publishers', role: 'Prime-time viewer', count: '37,480', noun: 'viewers like Salem, addressable now',
                   rows: [['Watch time', '21 h / mo'], ['Live sessions', '8 / wk'], ['Push opt-in', 'Yes']],
+                  facts: ['stream_start · web · 21:04', 'poll · «من يسجل أولاً؟»', '38 proven watch minutes'],
                   line: 'Turn anonymous reach into known, addressable viewers.', label: 'Media & Publishers' },
-        retail: { tag: 'Retail & E-commerce', role: 'Gold-tier shopper', count: '22,905', noun: 'shoppers like Salem, reachable now',
+        retail: { word: 'RETAIL', tag: 'Retail & E-commerce', role: 'Gold-tier shopper', count: '22,905', noun: 'shoppers like Salem, reachable now',
                   rows: [['Last purchase', '6 days ago'], ['Loyalty points', '2,450'], ['Average basket', 'SAR 240']],
+                  facts: ['purchase · club store · SAR 240', 'loyalty · +250 pts', 'email · thank-you offer sent'],
                   line: 'Personalize every journey from first visit to repeat basket.', label: 'Retail & E-commerce' },
-        travel: { tag: 'Travel & Hospitality', role: 'Returning guest', count: '12,730', noun: 'guests like Salem, reachable now',
+        travel: { word: 'TRAVEL', tag: 'Travel & Hospitality', role: 'Returning guest', count: '12,730', noun: 'guests like Salem, reachable now',
                   rows: [['Trips this year', '5'], ['Next stay', 'Riyadh · Nov'], ['Loyalty tier', 'Gold']],
+                  facts: ['checkin · king suite · 14:02', 'upgrade offer · accepted', 'guest profile · 3 properties merged'],
                   line: 'One guest profile across every property and every trip.', label: 'Travel & Hospitality' },
-        brands: { tag: 'Brands & Sponsors', role: 'Verified audience', count: '61,140', noun: 'people like Salem, verified',
+        brands: { word: 'BRANDS', tag: 'Brands & Sponsors', role: 'Verified audience', count: '61,140', noun: 'people like Salem, verified',
                   rows: [['Campaigns seen', '3'], ['Exposure', 'Verified'], ['Consent', 'Marketing ✓']],
+                  facts: ['exposure logged · halftime board', 'verified reach · 31,842', 'attribution · deterministic'],
                   line: 'Prove sponsored reach with names, not impressions.', label: 'Brands & Sponsors' }
       };
       function row(l, v) {
@@ -121,15 +142,16 @@ pages; JS upgrades them to in-place switching. Sports renders server-side.
         words.forEach(function (w) {
           var on = w.getAttribute('data-ind-word') === key;
           w.setAttribute('aria-selected', on ? 'true' : 'false');
-          w.classList.toggle('text-foreground', on);
-          w.classList.toggle('text-foreground/25', !on);
-          w.classList.toggle('hover:text-foreground/60', !on);
+          w.classList.toggle('opacity-25', !on);
+          w.classList.toggle('hover:opacity-60', !on);
           var m = w.querySelector('[data-ind-mark]');
           m.classList.toggle('bg-brand-500', on);
           m.classList.toggle('border', !on);
           m.classList.toggle('border-border', !on);
         });
-        vary.style.opacity = '0.35';
+        vary.style.opacity = '0.3';
+        if (water) water.style.opacity = '0';
+        facts.forEach(function (f) { f.style.opacity = '0'; f.style.transform = 'translateY(5px)'; });
         setTimeout(function () {
           tag.textContent = v.tag;
           role.textContent = v.role;
@@ -139,8 +161,13 @@ pages; JS upgrades them to in-place switching. Sports renders server-side.
           line.textContent = v.line;
           link.href = words.filter(function (w) { return w.getAttribute('data-ind-word') === key; })[0].href;
           link.innerHTML = 'Explore ' + v.label + ' ' + arrowSvg;
+          if (water) { water.textContent = v.word; water.style.opacity = ''; }
+          facts.forEach(function (f, i) {
+            f.querySelector('[data-ind-fact-text]').textContent = v.facts[i];
+            setTimeout(function () { f.style.opacity = ''; f.style.transform = ''; }, 90 * i);
+          });
           vary.style.opacity = '1';
-        }, 160);
+        }, 170);
       }
       words.forEach(function (w) {
         w.addEventListener('click', function (ev) {

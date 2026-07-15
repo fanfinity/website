@@ -236,9 +236,9 @@ measure_points:
         <div class="absolute w-44 -translate-x-1/2" style="left:{{ xs[i] }}%; top:{{ ys[i] }}%">
           <span data-sig-node="{{ i }}" class="mx-auto block h-3 w-3 -translate-y-1/2 rotate-45 border border-brand-500 bg-brand-500 transition-all duration-500"></span>
           <a href="{{ node.url | relative_url }}" class="mt-2.5 block text-center">
-            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-colors duration-500 hover:text-brand-foreground">{{ node.label }}</span>
-            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-colors duration-500">{{ node.sub }}</span>
-            <span data-sig-cap="{{ i }}" class="mt-1.5 block font-mono text-[11px] leading-snug text-brand-700 transition-all duration-500"></span>
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-opacity duration-500 hover:text-brand-foreground">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-opacity duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1.5 block font-mono text-[11px] leading-snug text-brand-700 transition-opacity duration-500"></span>
           </a>
         </div>
       {% endfor %}
@@ -254,9 +254,9 @@ measure_points:
             {% unless forloop.last %}<span class="mt-1.5 w-0.5 flex-1 rounded-full bg-border"></span>{% endunless %}
           </div>
           <a href="{{ node.url | relative_url }}" class="block pb-7">
-            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-colors duration-500">{{ node.label }}</span>
-            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-colors duration-500">{{ node.sub }}</span>
-            <span data-sig-cap="{{ i }}" class="mt-1 block font-mono text-[11px] text-brand-700 transition-all duration-500"></span>
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-opacity duration-500">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-opacity duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1 block font-mono text-[11px] text-brand-700 transition-opacity duration-500"></span>
           </a>
         </div>
       {% endfor %}
@@ -264,8 +264,8 @@ measure_points:
 
     <!-- The outcome: type on the surface, no card -->
     <div class="mt-14 text-center lg:mt-16" data-sig-outcome>
-      <p data-sig-result class="font-heading text-2xl font-bold text-foreground transition-colors duration-700 sm:text-3xl text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
-      <p data-sig-facts class="mt-2.5 text-sm text-muted-foreground transition-colors duration-700">+1 sponsor-ready fan &middot; verified reach +1 &middot; consent enforced</p>
+      <p data-sig-result class="font-heading text-2xl font-bold text-foreground transition-opacity duration-700 sm:text-3xl text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
+      <p data-sig-facts class="mt-2.5 text-sm text-muted-foreground transition-opacity duration-700">+1 sponsor-ready fan &middot; verified reach +1 &middot; consent enforced</p>
     </div>
 
     <script>
@@ -319,9 +319,9 @@ measure_points:
 
         function setCaps(v) { for (var i = 0; i < 5; i++) caps2[i].forEach(function (c) { c.textContent = v.caps[i]; }); }
         function station(i, lit) {
-          names[i].forEach(function (e) { e.classList.toggle('text-foreground/40', !lit); e.classList.toggle('text-foreground', lit); });
-          prods[i].forEach(function (e) { e.classList.toggle('text-muted-foreground/50', !lit); e.classList.toggle('text-muted-foreground', lit); });
-          caps2[i].forEach(function (e) { e.classList.toggle('text-brand-600/40', !lit); e.classList.toggle('text-brand-700', lit); });
+          names[i].forEach(function (e) { e.classList.toggle('opacity-40', !lit); });
+          prods[i].forEach(function (e) { e.classList.toggle('opacity-50', !lit); });
+          caps2[i].forEach(function (e) { e.classList.toggle('opacity-45', !lit); });
           nodes[i].forEach(function (e) {
             e.classList.toggle('border-border', !lit);
             e.classList.toggle('border-brand-500', lit);
@@ -330,10 +330,8 @@ measure_points:
           });
         }
         function outcome(lit) {
-          resultEl.classList.toggle('text-foreground/40', !lit);
-          resultEl.classList.toggle('text-foreground', lit);
-          factsEl.classList.toggle('text-muted-foreground/60', !lit);
-          factsEl.classList.toggle('text-muted-foreground', lit);
+          resultEl.classList.toggle('opacity-40', !lit);
+          factsEl.classList.toggle('opacity-60', !lit);
         }
         function setTab(key) {
           tabs.forEach(function (t) {
