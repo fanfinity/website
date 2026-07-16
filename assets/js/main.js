@@ -350,10 +350,10 @@
 
     // keyed by the industry's icon (whistle/broadcast/handshake/airplane/gift)
     var INDUSTRIES = {
-      whistle:   { title: 'High-value season-ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: ['WhatsApp', 'Email', 'Push'] },
+      whistle:   { title: 'High value season ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: ['WhatsApp', 'Email', 'Push'] },
       broadcast: { title: 'Streaming super-watchers', count: '37,480', rows: [['Watch time', '>', '20h / mo'], ['Live sessions', '≥', '8'], ['Device', '=', 'Mobile'], ['Consent', '=', 'Marketing']], channels: ['Push', 'Email', 'WhatsApp'] },
-      handshake: { title: 'Sponsor-ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: ['Email', 'Push', 'Paid'] },
-      airplane:  { title: 'Lapsing high-value travellers', count: '22,410', rows: [['Last trip', '>', '4 months'], ['Lifetime value', '>', 'SAR 8,000'], ['Loyalty tier', '=', 'Gold'], ['Region', '=', 'GCC']], channels: ['Email', 'SMS', 'WhatsApp'] },
+      handshake: { title: 'Sponsor ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: ['Email', 'Push', 'Paid'] },
+      airplane:  { title: 'Lapsing high value travellers', count: '22,410', rows: [['Last trip', '>', '4 months'], ['Lifetime value', '>', 'SAR 8,000'], ['Loyalty tier', '=', 'Gold'], ['Region', '=', 'GCC']], channels: ['Email', 'SMS', 'WhatsApp'] },
       gift:      { title: 'Lapsing loyalty shoppers', count: '29,905', rows: [['Last purchase', '>', '60 days'], ['Loyalty tier', '=', 'Gold'], ['Consent', '=', 'Marketing'], ['Region', '=', 'GCC']], channels: ['WhatsApp', 'SMS', 'Email'] }
     };
 

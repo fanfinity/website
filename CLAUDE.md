@@ -15,6 +15,7 @@ The marketing foundation docs (`docs/`, `competitor-profiles/`) were removed 202
 - **Buyer nouns:** audience (umbrella/home), fan (sports), viewer (media), shopper (retail), guest (travel), customer (brands). Umbrella phrase: "any audience business" — never "every fan-driven industry".
 - **Region terms:** in-Kingdom on KSA/residency pages, in-region elsewhere. Primary CTA is always "Book a Demo".
 - **Rhythm:** vary sentence length; not every heading a three-beat; not every section a 3-card grid. One concrete detail beats two adjectives.
+- **No hyphenated compound labels** in copy: write "Season ticket holder", "Prime time viewer", "Gold tier shopper", "sponsor ready" — never "Season-ticket holder", "Prime-time viewer", etc. Hyphens stay only in established technical terms (real-time, in-region, in-Kingdom, e-commerce, on-premise, first-party, no-code) and transliterated names (Al-Harbi).
 
 ## Build & develop
 ```bash

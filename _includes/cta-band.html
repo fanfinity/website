@@ -1,23 +1,29 @@
 {%- comment -%}
 Universal closing call-to-action band. Bare `{% include cta-band.html %}` works.
 Params: heading, text, cta_text, cta_url, secondary_text, secondary_url
+Light closing band: the dark mass at the end of every page belongs to the
+footer alone (its newsletter row already reads as a dark conversion band, so
+a dark CTA above it doubles the footer). Statement left, one primary action
+right, secondary as a diamond text link.
 {%- endcomment -%}
 {%- assign heading = include.heading | default: 'Where fans become players.' -%}
 {%- assign text = include.text | default: 'See how Fanfinity turns your live audience into active, returning, monetizable fans. Book a walkthrough with our team.' -%}
 {%- assign cta_text = include.cta_text | default: site.data.navigation.cta.title -%}
 {%- assign cta_url = include.cta_url | default: site.data.navigation.cta.url -%}
-<section class="section">
-  <div class="container-page">
-    <div class="gradient-border relative overflow-hidden rounded-4xl bg-mesh px-6 py-16 text-center text-white md:px-16 md:py-20">
-      <div class="absolute inset-0 bg-grain opacity-[0.07] mix-blend-overlay" aria-hidden="true"></div>
-      <div class="absolute inset-0 dot-grid opacity-40" aria-hidden="true"></div>
-      <div class="relative mx-auto max-w-2xl" data-reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">{{ heading }}</h2>
-        <p class="mt-4 text-lg text-white/70">{{ text }}</p>
-        <div class="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="{{ cta_url | relative_url }}" class="btn btn-white btn-lg glow">{{ cta_text }}</a>
-          {%- if include.secondary_text -%}<a href="{{ include.secondary_url | relative_url }}" class="btn btn-outline-light btn-lg">{{ include.secondary_text }}</a>{%- endif -%}
-        </div>
+<section class="border-t border-border bg-soft">
+  <div class="container-page section">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">{{ heading }}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">{{ text }}</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-7 lg:shrink-0 lg:pb-1">
+        <a href="{{ cta_url | relative_url }}" class="btn btn-primary btn-lg">{{ cta_text }}</a>
+        {%- if include.secondary_text -%}
+        <a href="{{ include.secondary_url | relative_url }}" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-muted-foreground transition hover:text-foreground">
+          <span class="h-1.5 w-1.5 rotate-45 border border-brand-500 transition group-hover:bg-brand-500"></span>{{ include.secondary_text }}
+        </a>
+        {%- endif -%}
       </div>
     </div>
   </div>

@@ -1,14 +1,8 @@
 ---
 layout: home
 permalink: /
-title: Where fans become players
-description: Fanfinity is the real-time, in-region fan data platform. Collect every fan signal, resolve it into one consented first-party profile you own, activate it across every channel, and prove the outcome.
-
-# Passed into reusable section includes
-value_pillars:
-  - { icon: address-book, title: "Own your fan relationship",      body: "One persistent profile ties every interaction, reward, and score to a single fan across devices." }
-  - { icon: bolt,      title: "React in real time, not in batch",  body: "Profiles update as events land, so journeys and personalization fire while the moment is live." }
-  - { icon: chart,     title: "Prove the outcome",                 body: "Verified reach and exposure-to-outcome attribution answer the question sponsors and CFOs actually ask: did it work?" }
+title: The Real-Time Fan Data Platform
+description: Fanfinity is the real-time, in-region fan data platform. Every signal resolved into one consented profile per fan, activated across every channel, and proven with verified reach.
 
 dev_points:
   - "A clean REST API with OAuth 2.0. Every capability is programmable, not locked behind a console."
@@ -23,209 +17,433 @@ flow_nodes:
   - { icon: rocket-launch, label: Activate, sub: "Fanfinity Activate", url: /platform/activate }
   - { icon: chart,     label: Prove,    sub: "Fanfinity Measure",  url: /platform/measure }
 
-# Engagement-library widget demos (compressed GIFs in /assets/widgets/).
-# Titles/tags/pitches are Fanfinity's own (from internal decks); formats map to
-# the Widgets product epic. Presented as the widget library, not a production claim.
-widgets:
-  - { icon: poll,   title: Polls,             tag: "Loyalty · Data",        file: polls,      pitch: "Capture the crowd's voice.",        alt: "Text poll and image poll examples" }
-  - { icon: quiz,   title: Quizzes,           tag: "Competition",           file: quizzes,    pitch: "Reward what your fans know.",       alt: "Text and image quiz examples" }
-  - { icon: target, title: Prediction,        tag: "Retention",             file: outcome,    pitch: "Create appointment moments.",       alt: "Guess-the-outcome prediction example" }
-  - { icon: slider, title: Image Slider,      tag: "Sentiment",             file: sliders,    pitch: "Emotion on a scale.",               alt: "Emoji sentiment slider examples" }
-  - { icon: hash,   title: Number Prediction, tag: "Retention",             file: prediction, pitch: "Make every stat a game.",           alt: "Number prediction example" }
-  - { icon: gauge,  title: Cheer Meter,       tag: "Rivalry · Sponsorable", file: cheer,      pitch: "Turn rivalry into energy.",         alt: "Cheer meter example" }
-  - { icon: bell,   title: Alerts,            tag: "Revenue",               file: alerts,     pitch: "Own the moment, then monetize it.", alt: "Sponsored and breaking alert examples" }
-  - { icon: chat,   title: Ask,               tag: "Community",             file: ask,        pitch: "Give fans the mic.",                alt: "Ask submission example" }
 
-# Capability stats (NOT performance claims; Fanfinity is pre-revenue with design partners).
-platform_stats:
-  - { value: "One profile", label: "every signal resolved into one fan" }
-  - { value: "Real-time", label: "identity resolved in milliseconds" }
-  - { value: "In-Kingdom", label: "PDPL residency you control" }
-
-deploy_stats:
-  - { value: "Any cloud", label: "AWS, Google Cloud, or Azure, in any region" }
-  - { value: "On-premise", label: "Inside your own infrastructure" }
-  - { value: "Nothing leaves", label: "Customer data stays inside the environment you control" }
-
-measure_points:
-  - "Deduplicated, verified reach: real people, not ad impressions."
-  - "Exposure-to-outcome attribution ties a campaign to the purchase it drove."
-  - "Package and price premium first-party audiences your sponsors can't get anywhere else."
-  - "Real-time dashboards a sponsor or partner can log into themselves."
 ---
 
-<!-- ============================================================= HERO -->
-<section class="relative overflow-hidden border-b border-border bg-background">
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <div class="absolute -top-40 right-[-10rem] h-[40rem] w-[40rem] rounded-full bg-brand-500/10 blur-3xl"></div>
+<!-- ============================================================= HERO
+     The moment itself: a stadium at night (the site's own photo of
+     fans under lights), graded into the brand ink with a left scrim
+     for copy contrast and a bottom dissolve into the page surface.
+     Over it, the platform quietly works: the one lit profile card and
+     a glass signal feed beneath it, stitching the crowd into names.
+     Static under reduced motion; copy never gated on animation. -->
+<section class="relative overflow-hidden bg-[#0b0712]">
+  <div class="absolute inset-0" aria-hidden="true">
+    <img src="{{ '/assets/img/platform-engage.jpg' | relative_url }}" alt="" loading="eager" fetchpriority="high"
+         class="h-full w-full object-cover object-center" style="filter: saturate(0.65) brightness(0.52) contrast(1.06);">
+    <div class="absolute inset-0" style="background-image: linear-gradient(90deg, rgba(11,7,18,0.95) 0%, rgba(11,7,18,0.78) 34%, rgba(11,7,18,0.35) 68%, rgba(11,7,18,0.55) 100%);"></div>
+    <div class="absolute inset-x-0 bottom-0 h-44" style="background-image: linear-gradient(180deg, transparent 0%, rgba(11,7,18,0.6) 45%, #0b0712 92%);"></div>
+    <div class="absolute inset-0" style="background-image: linear-gradient(115deg, rgba(153,105,255,0.13) 0%, transparent 50%);"></div>
+    <div class="absolute inset-0 bg-grain opacity-[0.12]"></div>
   </div>
+
   <div class="container-page relative">
-    <div class="grid grid-cols-1 items-center gap-14 pb-16 pt-16 md:pt-24 lg:grid-cols-2 lg:gap-14">
+    <div class="grid grid-cols-1 items-center gap-14 pb-20 pt-16 md:pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-24 lg:pt-28">
 
       <!-- Copy -->
       <div class="max-w-2xl">
-        <p class="eyebrow animate-rise">The real-time fan data platform, built in-region</p>
-        <h1 class="mt-5 text-5xl font-bold leading-[1.05] tracking-tight animate-rise [animation-delay:80ms] sm:text-6xl md:text-6xl lg:text-7xl text-balance">
-          From fan data to proven outcomes.
+        <h1 class="text-5xl font-bold leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          Know every fan.<br>Prove every outcome.
         </h1>
-        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground animate-rise [animation-delay:160ms]">
-          Stop guessing what your audience wants. Turn real-time fan behavior into context you can act on and ROI you can prove, kept entirely in-region and under your control.
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
+          Every ticket scan, stream, and purchase becomes one consented profile you own: activated while the moment is live, proven with verified reach, in-region from day one.
         </p>
-        <div class="mt-9 flex flex-wrap gap-3 animate-rise [animation-delay:240ms]">
-          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
-          <a href="{{ '/platform' | relative_url }}" class="btn btn-secondary btn-lg">Explore the platform</a>
+        <div class="mt-9 flex flex-wrap items-center gap-7">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-white btn-lg">Book a Demo</a>
+          <a href="{{ '/platform' | relative_url }}" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/70 transition hover:text-white">
+            <span class="h-1.5 w-1.5 rotate-45 border border-white/50 transition group-hover:border-brand-300 group-hover:bg-brand-300"></span>Explore the platform
+          </a>
         </div>
-        <p class="mt-8 flex items-center gap-2.5 text-sm text-muted-foreground animate-rise [animation-delay:320ms]">
-          <span class="inline-flex h-2 w-2 rounded-full bg-brand-500"></span>
-          Identity, engagement, activation &amp; attribution, in one sovereign system.
+        <p class="mt-14 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-white/50">
+          <span>One profile per fan</span>
+          <span class="h-1 w-1 rotate-45 bg-brand-400/80" aria-hidden="true"></span>
+          <span>Milliseconds to resolve</span>
+          <span class="h-1 w-1 rotate-45 bg-brand-400/80" aria-hidden="true"></span>
+          <span>In-Kingdom PDPL</span>
         </p>
       </div>
 
-      <!-- Live-event photo with an animated audience-builder card (cycles sample segments via JS below). -->
-      <div class="relative animate-rise [animation-delay:200ms] max-w-md mx-auto lg:ml-auto lg:mr-0">
-        <img src="{{ '/assets/img/home-hero.jpg' | relative_url }}" alt="Fans at a live event, phones raised" loading="eager"
-             class="aspect-[4/3] w-full rounded-4xl border border-border object-cover shadow-xl shadow-brand-500/10 lg:aspect-[4/5]">
-
-        <div class="relative z-20 mx-4 -mt-16 sm:absolute sm:mx-0 sm:mt-0 sm:inset-x-4 sm:bottom-8 sm:left-1/2 sm:right-auto sm:w-80 sm:-translate-x-1/2">
-          <div class="rounded-3xl border border-white/40 bg-card/80 p-4 shadow-2xl shadow-brand-500/25 ring-1 ring-black/5 backdrop-blur-md">
-            <div class="flex items-center justify-between">
-              <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">AI Audience</span>
-              <span class="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
-                <span class="inline-flex h-1.5 w-1.5 rounded-full bg-brand-500"></span>Live
-              </span>
-            </div>
-            <div data-aud-body class="transition-opacity duration-500 ease-out">
-              <h3 data-aud-title class="mt-3 text-lg font-bold leading-tight text-foreground">High-value season-ticket holders</h3>
-              <div data-aud-rows class="mt-3 space-y-1.5">
-                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Region</span><span class="font-mono font-bold text-brand-foreground">=</span><span class="w-28 text-right font-semibold text-foreground">KSA</span></div>
-                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Lifetime value</span><span class="font-mono font-bold text-brand-foreground">&gt;</span><span class="w-28 text-right font-semibold text-foreground">SAR 5,000</span></div>
-                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Matches attended</span><span class="font-mono font-bold text-brand-foreground">&#8805;</span><span class="w-28 text-right font-semibold text-foreground">12</span></div>
-                <div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">Last seen</span><span class="font-mono font-bold text-brand-foreground">&#8804;</span><span class="w-28 text-right font-semibold text-foreground">7 days</span></div>
-              </div>
-              <div class="mt-3 flex items-end justify-between">
-                <span data-aud-count class="font-heading text-2xl font-bold tabular-nums text-foreground">48,320</span>
-                <span class="text-xs text-muted-foreground">Active profiles</span>
-              </div>
-              <div data-aud-channels class="mt-3 flex flex-wrap gap-1.5">
-                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">WhatsApp</span>
-                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Email</span>
-                <span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">Push</span>
-                <span class="rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">Paid</span>
-              </div>
+      <!-- The platform, watching the crowd -->
+      <div class="mx-auto w-full max-w-md lg:mr-0">
+        <div class="relative z-10 rounded-2xl bg-card p-5 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)] transition-shadow duration-500" data-profile-card>
+          <div class="flex items-center justify-between gap-2">
+            <p class="text-xs text-muted-foreground">One profile &middot; Fanfinity ID</p>
+            <span class="text-[11px] text-muted-foreground">Illustrative</span>
+          </div>
+          <div class="mt-4 flex items-center gap-3">
+            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-100 font-heading text-sm font-bold text-brand-700">SA</span>
+            <div class="min-w-0">
+              <p class="truncate font-heading text-base font-bold leading-tight text-foreground">Salem A.</p>
+              <p class="truncate font-mono text-[10.5px] text-muted-foreground" data-sources>fan_8c2a &middot; 4 sources merged</p>
             </div>
           </div>
-          <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative view of the audience builder.</p>
+          <div class="mt-4 divide-y divide-border border-t border-border">
+            <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold tabular-nums text-foreground">SAR 7,420</span></div>
+            <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold tabular-nums text-foreground">14</span></div>
+            <div class="flex items-center justify-between py-2 text-[12.5px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground transition-colors duration-300" data-last-seen>Just now</span></div>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10.5px] font-semibold text-foreground"><span class="h-1 w-1 rounded-full bg-brand-500"></span>Season ticket holders</span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2 py-0.5 text-[10.5px] font-semibold text-foreground"><span class="h-1 w-1 rounded-full bg-brand-500"></span>Sponsor ready</span>
+          </div>
         </div>
+
+        <!-- the crowd, becoming signals -->
+        <div class="relative -mt-1 rounded-b-2xl bg-black/50 px-5 pb-4 pt-5 ring-1 ring-inset ring-white/10 backdrop-blur-md sm:mx-3">
+          <div class="flex items-center justify-between gap-2">
+            <p class="text-xs text-white/50">Live signals &middot; Fanfinity Blocks</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-300/90"><span class="h-1.5 w-1.5 rounded-full bg-emerald-300/90"></span>Live</span>
+          </div>
+          <div class="mt-3 space-y-1.5 font-mono text-[11px] leading-relaxed" data-feed>
+            <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">ticket_scan</span> &middot; gate B &middot; fan_8c2a</p>
+            <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">poll_answer</span> &middot; <bdi lang="ar">&laquo;من يسجل أولاً؟&raquo;</bdi> &middot; fan_44d1</p>
+            <p class="text-white/75 transition-all duration-500"><span class="text-brand-300">purchase</span> &middot; store &middot; fan_8c2a</p>
+          </div>
+          <p class="mt-3.5 border-t border-white/10 pt-3 text-[11px] text-white/50">Sponsor ready <span class="font-semibold tabular-nums text-white/85" data-seg-count>48,320</span> <span class="text-white/40">&middot; reachable right now</span></p>
+        </div>
+        <p class="mt-3 text-center text-[11px] text-white/40 lg:text-right">Illustrative product view.</p>
       </div>
-      <script>
-        (function () {
-          var body = document.querySelector('[data-aud-body]');
-          if (!body || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-          var titleEl = body.querySelector('[data-aud-title]');
-          var rowsEl = body.querySelector('[data-aud-rows]');
-          var countEl = body.querySelector('[data-aud-count]');
-          var chEl = body.querySelector('[data-aud-channels]');
-          function row(l, op, v) { return '<div class="flex items-center gap-2 rounded-lg bg-muted px-3 py-1.5 text-[13px]"><span class="flex-1 text-muted-foreground">' + l + '</span><span class="font-mono font-bold text-brand-foreground">' + op + '</span><span class="w-28 text-right font-semibold text-foreground">' + v + '</span></div>'; }
-          function chip(n, on) { return on ? '<span class="rounded-full bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">' + n + '</span>' : '<span class="rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-muted-foreground">' + n + '</span>'; }
-          var segs = [
-            { title: 'High-value season-ticket holders', count: '48,320', rows: [['Region', '=', 'KSA'], ['Lifetime value', '>', 'SAR 5,000'], ['Matches attended', '≥', '12'], ['Last seen', '≤', '7 days']], channels: [['WhatsApp', 1], ['Email', 1], ['Push', 1], ['Paid', 0]] },
-            { title: 'Lapsing loyalty shoppers', count: '22,905', rows: [['Region', '=', 'GCC'], ['Last purchase', '>', '60 days'], ['Loyalty tier', '=', 'Gold'], ['Consent', '=', 'Marketing']], channels: [['WhatsApp', 1], ['SMS', 1], ['Email', 1]] },
-            { title: 'Sponsor-ready reachable fans', count: '61,140', rows: [['Residency', '=', 'In-Kingdom'], ['Consent', '=', 'Granted'], ['Channels', '≥', '2'], ['Region', '=', 'MENA']], channels: [['Email', 1], ['Push', 1], ['Paid', 1], ['Meta Ads', 0]] },
-            { title: 'Streaming super-watchers', count: '37,480', rows: [['Watch time', '>', '20h / mo'], ['Live sessions', '≥', '8'], ['Device', '=', 'Mobile'], ['Region', '=', 'KSA']], channels: [['Push', 1], ['WhatsApp', 1], ['Email', 1]] }
-          ];
-          function render(s) {
-            titleEl.textContent = s.title;
-            rowsEl.innerHTML = s.rows.map(function (r) { return row(r[0], r[1], r[2]); }).join('');
-            countEl.textContent = s.count;
-            chEl.innerHTML = s.channels.map(function (c) { return chip(c[0], c[1]); }).join('');
-          }
-          var i = 0;
-          setInterval(function () {
-            i = (i + 1) % segs.length;
-            body.style.opacity = '0';
-            setTimeout(function () { render(segs[i]); body.style.opacity = '1'; }, 500);
-          }, 3600);
-        })();
-      </script>
 
     </div>
   </div>
 
-  <!-- Broadcast capability ticker -->
-  <div class="relative border-t border-border">
-    <div class="container-page">
-      <div class="flex items-center gap-5 py-5">
-        <span class="hidden shrink-0 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:block">Live + Design Preview</span>
-        <div class="mask-fade-x relative flex-1 overflow-hidden">
-          <div class="flex w-max animate-ticker">
-            {%- assign caps = "Identity Resolution,Real-time Profiles,Consent & Governance,Reverse ETL,Audiences,Attribution,Verified Reach,Polls,Predictions,Quizzes,Quests,Streaks,Leaderboards,Rewards,Sponsorship" | split: "," -%}
-            {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-muted-foreground"><span class="h-1 w-1 rounded-full bg-brand-500" aria-hidden="true"></span>{{ c }}</span>{%- endfor -%}
-            {%- for c in caps -%}<span class="mr-8 inline-flex items-center gap-2 whitespace-nowrap text-sm text-muted-foreground" aria-hidden="true"><span class="h-1 w-1 rounded-full bg-brand-500"></span>{{ c }}</span>{%- endfor -%}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script>
+    /* The crowd becomes signals: events land in the feed, stitches
+       flash the profile, the reachable count climbs. Static under
+       reduced motion. */
+    (function () {
+      var feed = document.querySelector('[data-feed]');
+      var card = document.querySelector('[data-profile-card]');
+      if (!feed || !card) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var lastSeen = card.querySelector('[data-last-seen]');
+      var countEl = document.querySelector('[data-seg-count]');
+      var count = 48320;
+      var pool = [
+        { html: '<span class="text-brand-300">quiz_answer</span> · anon_9f13 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_8c2a</span>', stitch: true },
+        { html: '<span class="text-brand-300">stream_start</span> · app · fan_02e7', stitch: false },
+        { html: '<span class="text-brand-300">ticket_scan</span> · gate D · fan_77aa', stitch: false },
+        { html: '<span class="text-brand-300">poll_answer</span> · <bdi lang="ar">«من يسجل أولاً؟»</bdi> · fan_8c2a', stitch: true },
+        { html: '<span class="text-brand-300">purchase</span> · shop · fan_44d1 <span class="text-white/45">segments +1</span>', stitch: false },
+        { html: '<span class="text-brand-300">checkin</span> · fan zone · anon_c418 <span class="text-white/45">→</span> <span class="text-emerald-400/90">stitched fan_77aa</span>', stitch: true }
+      ];
+      var i = 0;
+      setInterval(function () {
+        var ev = pool[i % pool.length]; i++;
+        var row = document.createElement('p');
+        row.className = 'text-white/75 transition-all duration-500';
+        row.innerHTML = ev.html;
+        row.style.opacity = '0'; row.style.transform = 'translateY(6px)';
+        feed.appendChild(row);
+        while (feed.children.length > 3) feed.removeChild(feed.firstElementChild);
+        requestAnimationFrame(function () { requestAnimationFrame(function () { row.style.opacity = ''; row.style.transform = ''; }); });
+        if (ev.stitch) {
+          card.classList.add('ring-2', 'ring-brand-500/60');
+          lastSeen.textContent = 'Just now';
+          lastSeen.classList.add('text-brand-foreground');
+          setTimeout(function () { card.classList.remove('ring-2', 'ring-brand-500/60'); lastSeen.classList.remove('text-brand-foreground'); }, 1100);
+        }
+        count += 1 + (i % 3);
+        if (countEl) countEl.textContent = count.toLocaleString('en-US');
+      }, 3800);
+    })();
+  </script>
 </section>
 
-<!-- ====================================================== AUDIENCE BAND -->
 {% include logo-cloud.html %}
 
-<!-- =================================================== CONNECTED STACK -->
+<!-- ==================== CONNECTED STACK · THE SIGNAL TRACE
+     One signature artifact: a drawn stepped signal trace with diamond
+     stations, bare type on the surface, mono only on data captions.
+     Light surface — the dark broadcast world belongs to the hero alone;
+     the page steps into daylight here and stays there until the CTA.
+     The trace fills on scroll, a diamond rides the path, stations
+     brighten as it passes; always readable, never hidden. Reduced-
+     motion and no-JS get the fully lit state. -->
 <section class="relative overflow-hidden border-y border-border bg-soft">
-  <div class="container-page relative section">
-    <div class="mx-auto max-w-3xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
-        Collect, Resolve, Engage, Activate, Prove. Five products that stand alone but run as one loop, <span class="font-semibold text-foreground">on one fan profile, with nothing exported between steps</span>.
-      </p>
+  <div class="container-page relative section" data-sig>
+
+    <!-- Head row: statement left, source switcher right. No kicker, no pills. -->
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">From first signal to <span class="text-brand-foreground">proven revenue</span></h2>
+        <p class="mt-3 text-lg leading-relaxed text-muted-foreground">Five products, one loop, one profile: watch one signal make the whole trip.</p>
+      </div>
+      <div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2" role="tablist" aria-label="Signal type">
+          <button type="button" role="tab" data-sig-run="scan" aria-selected="true" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-foreground transition">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-brand-500 bg-brand-500 transition"></span>Ticket scan
+          </button>
+          <button type="button" role="tab" data-sig-run="stream" aria-selected="false" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-muted-foreground transition hover:text-foreground">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-border transition"></span>Stream start
+          </button>
+          <button type="button" role="tab" data-sig-run="purchase" aria-selected="false" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-muted-foreground transition hover:text-foreground">
+            <span data-sig-tabmark class="h-1.5 w-1.5 rotate-45 border border-border transition"></span>Shop purchase
+          </button>
+        </div>
+        <p class="mt-2 text-xs text-muted-foreground lg:text-right">Illustrative replay</p>
+      </div>
     </div>
 
-    <div class="relative mt-16">
-      <!-- horizontal connector + travelling pulse (lg+) -->
-      <div class="absolute left-[8%] right-[8%] top-9 hidden h-px bg-border lg:block" aria-hidden="true">
-        <div class="flow-line h-px w-full"></div>
-      </div>
-      <!-- vertical connector (mobile / tablet) -->
-      <div class="absolute bottom-6 left-9 top-6 w-px bg-border lg:hidden" aria-hidden="true">
-        <div class="flow-line-v h-full w-px"></div>
-      </div>
-
-      <ol class="relative flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-4">
-        {% for node in page.flow_nodes %}
-          {%- assign d = forloop.index0 | times: 90 -%}
-          <li data-reveal style="--reveal-delay:{{ d }}ms" class="lg:flex-1">
-            <a href="{{ node.url | relative_url }}" class="group/node flex items-center gap-4 lg:flex-col lg:gap-0 lg:text-center">
-              <span class="grid h-[4.5rem] w-[4.5rem] shrink-0 place-items-center rounded-2xl bg-brand-600 text-white shadow-sm ring-1 ring-brand-700/15">{% include icon.html name=node.icon class="h-7 w-7" %}</span>
-              <div class="lg:mt-4">
-                <p class="font-semibold text-foreground group-hover/node:text-brand-foreground">{{ node.label }}</p>
-                <p class="mt-0.5 text-sm text-muted-foreground">{{ node.sub }}</p>
-              </div>
-            </a>
-          </li>
-        {% endfor %}
-      </ol>
+    <!-- The trace (lg+): drawn path, HTML stations pinned to its vertices -->
+    <div class="relative mt-16 hidden h-64 lg:block" data-sig-diagram>
+      <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1000 220" preserveAspectRatio="none" aria-hidden="true">
+        <path data-sig-base d="M 40 170 H 140 L 260 105 H 340 L 460 40 H 540 L 660 105 H 740 L 860 170 H 960"
+              fill="none" stroke="rgba(32,30,38,0.14)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path data-sig-fill d="M 40 170 H 140 L 260 105 H 340 L 460 40 H 540 L 660 105 H 740 L 860 170 H 960"
+              fill="none" stroke="rgba(124,77,255,0.9)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <span data-sig-dot class="absolute z-10 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-brand-500 shadow-[0_1px_6px_rgba(124,77,255,0.5)]" style="left:4%; top:77.3%"></span>
+      {% assign xs = "9,30,50,70,91" | split: "," %}
+      {% assign ys = "77.3,47.7,18.2,47.7,77.3" | split: "," %}
+      {% for node in page.flow_nodes %}
+        {%- assign i = forloop.index0 -%}
+        <div class="absolute w-44 -translate-x-1/2" style="left:{{ xs[i] }}%; top:{{ ys[i] }}%">
+          <span data-sig-node="{{ i }}" class="mx-auto block h-3 w-3 -translate-y-1/2 rotate-45 border border-brand-500 bg-brand-500 transition-all duration-500"></span>
+          <a href="{{ node.url | relative_url }}" class="mt-2.5 block text-center">
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-opacity duration-500 hover:text-brand-foreground">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-opacity duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1.5 block font-mono text-[11px] leading-snug text-brand-700 transition-opacity duration-500"></span>
+          </a>
+        </div>
+      {% endfor %}
     </div>
 
-    <!-- Platform capability claims (folded in from the old stat band) -->
-    <ul class="mt-14 flex flex-wrap items-center justify-center gap-3" data-reveal>
-      {%- for stat in page.platform_stats -%}
-        <li class="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-500" aria-hidden="true"></span>
-          <span class="font-semibold text-foreground">{{ stat.value }}</span>
-          <span class="text-muted-foreground">{{ stat.label }}</span>
-        </li>
-      {%- endfor -%}
-    </ul>
+    <!-- The trace (mobile): vertical, same states, no hidden content -->
+    <div class="mt-12 space-y-0 lg:hidden">
+      {% for node in page.flow_nodes %}
+        {%- assign i = forloop.index0 -%}
+        <div class="flex gap-4">
+          <div class="flex w-4 flex-col items-center">
+            <span data-sig-node="{{ i }}" class="mt-1.5 block h-3 w-3 shrink-0 rotate-45 border border-brand-500 bg-brand-500 transition-all duration-500"></span>
+            {% unless forloop.last %}<span class="mt-1.5 w-0.5 flex-1 rounded-full bg-border"></span>{% endunless %}
+          </div>
+          <a href="{{ node.url | relative_url }}" class="block pb-7">
+            <span data-sig-name="{{ i }}" class="block font-heading text-base font-bold text-foreground transition-opacity duration-500">{{ node.label }}</span>
+            <span data-sig-prod="{{ i }}" class="mt-0.5 block text-xs text-muted-foreground transition-opacity duration-500">{{ node.sub }}</span>
+            <span data-sig-cap="{{ i }}" class="mt-1 block font-mono text-[11px] text-brand-700 transition-opacity duration-500"></span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- The outcome: type on the surface, no card -->
+    <div class="mt-14 text-center lg:mt-16">
+      <p data-sig-result class="font-heading text-2xl font-bold text-foreground transition-opacity duration-700 sm:text-3xl text-balance">1 scan &rarr; 1 known fan &rarr; SAR 180 attributed</p>
+      <p data-sig-facts class="mt-2.5 text-sm text-muted-foreground transition-opacity duration-700">+1 sponsor ready fan &middot; verified reach +1 &middot; consent enforced</p>
+    </div>
+
+    <script>
+      /* The signal trace — scroll-triggered, rotates sources until the
+         visitor takes over. Stations dim but never hide. */
+      (function () {
+        var root = document.querySelector('[data-sig]');
+        if (!root) return;
+        var q = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+        var names = [], prods = [], caps2 = [], nodes = [];
+        for (var i = 0; i < 5; i++) {
+          names.push(q('[data-sig-name="' + i + '"]'));
+          prods.push(q('[data-sig-prod="' + i + '"]'));
+          caps2.push(q('[data-sig-cap="' + i + '"]'));
+          nodes.push(q('[data-sig-node="' + i + '"]'));
+        }
+        var fill = root.querySelector('[data-sig-fill]');
+        var dot = root.querySelector('[data-sig-dot]');
+        var resultEl = root.querySelector('[data-sig-result]');
+        var factsEl = root.querySelector('[data-sig-facts]');
+        var tabs = q('[data-sig-run]');
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var lgUp = window.matchMedia('(min-width: 1024px)');
+        var ORDER = ['scan', 'stream', 'purchase'];
+        var variants = {
+          scan:     { caps: ['ticket_scan · gate B', 'anon → fan_8c2a', 'matchday quiz · +25 pts', 'WhatsApp offer sent', 'SAR 180 attributed'],
+                      result: '1 scan → 1 known fan → SAR 180 attributed',
+                      facts: '+1 sponsor ready fan · verified reach +1 · consent enforced' },
+          stream:   { caps: ['stream_start · web', 'device stitched → fan_44d1', 'live poll answered', 'push · second half alert', '38 proven watch minutes'],
+                      result: '1 stream → 1 engaged viewer → 38 proven minutes',
+                      facts: 'watch time on the profile · reachable on push · consent enforced' },
+          purchase: { caps: ['purchase · club store', 'receipt → fan_02e7', 'loyalty · +250 pts', 'email · thank you offer', 'campaign → SAR 349'],
+                      result: '1 purchase → 1 loyal fan → SAR 349 attributed',
+                      facts: 'attributed deterministically · loyalty tier up · consent enforced' },
+        };
+        var STATION_X = [90, 300, 500, 700, 910];
+        var running = false, userLock = false, rotateTimer = null, len = 0, marks = [];
+
+        if (fill) {
+          len = fill.getTotalLength();
+          for (var s = 0; s < STATION_X.length; s++) {
+            var lo = 0, hi = len;
+            for (var it = 0; it < 24; it++) {
+              var mid = (lo + hi) / 2;
+              if (fill.getPointAtLength(mid).x < STATION_X[s]) lo = mid; else hi = mid;
+            }
+            marks.push((lo + hi) / 2);
+          }
+          fill.style.strokeDasharray = len + ' ' + len;
+        }
+
+        function setCaps(v) { for (var i = 0; i < 5; i++) caps2[i].forEach(function (c) { c.textContent = v.caps[i]; }); }
+        function station(i, lit) {
+          names[i].forEach(function (e) { e.classList.toggle('opacity-40', !lit); });
+          prods[i].forEach(function (e) { e.classList.toggle('opacity-50', !lit); });
+          caps2[i].forEach(function (e) { e.classList.toggle('opacity-45', !lit); });
+          nodes[i].forEach(function (e) {
+            e.classList.toggle('border-border', !lit);
+            e.classList.toggle('border-brand-500', lit);
+            e.classList.toggle('bg-card', !lit);
+            e.classList.toggle('bg-brand-500', lit);
+          });
+        }
+        function outcome(lit) {
+          resultEl.classList.toggle('opacity-40', !lit);
+          factsEl.classList.toggle('opacity-60', !lit);
+        }
+        function setTab(key) {
+          tabs.forEach(function (t) {
+            var on = t.getAttribute('data-sig-run') === key;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.classList.toggle('text-foreground', on);
+            t.classList.toggle('text-muted-foreground', !on);
+            var m = t.querySelector('[data-sig-tabmark]');
+            m.classList.toggle('bg-brand-500', on);
+            m.classList.toggle('border-brand-500', on);
+            m.classList.toggle('border-border', !on);
+          });
+        }
+        function placeDot(l) {
+          if (!dot || !fill) return;
+          var p = fill.getPointAtLength(l);
+          dot.style.left = (p.x / 10) + '%';
+          dot.style.top = (p.y / 220 * 100) + '%';
+        }
+        function drawFill(l) { if (fill) fill.style.strokeDashoffset = (len - l); }
+        function finalState(v) {
+          setCaps(v);
+          resultEl.textContent = v.result; factsEl.textContent = v.facts;
+          for (var i = 0; i < 5; i++) station(i, true);
+          drawFill(len); placeDot(len); outcome(true);
+        }
+        function dimAll() {
+          for (var i = 0; i < 5; i++) station(i, false);
+          drawFill(0); placeDot(0); outcome(false);
+        }
+        function scheduleRotate(key) {
+          if (userLock || reduce) return;
+          clearTimeout(rotateTimer);
+          rotateTimer = setTimeout(function () {
+            if (!userLock) run(ORDER[(ORDER.indexOf(key) + 1) % ORDER.length]);
+          }, 7000);
+        }
+        function run(key) {
+          if (running) return;
+          running = true;
+          setTab(key);
+          var v = variants[key];
+          if (reduce) { finalState(v); running = false; return; }
+          dimAll(); setCaps(v);
+          resultEl.textContent = v.result; factsEl.textContent = v.facts;
+          var desktop = lgUp.matches && fill;
+          var seg = 0;
+          station(0, true);
+          function nextSeg() {
+            if (seg >= 4) { outcome(true); running = false; scheduleRotate(key); return; }
+            var from = desktop ? marks[seg] : 0, to = desktop ? marks[seg + 1] : 0, t0 = null, DUR = 620;
+            function frame(ts) {
+              if (t0 === null) t0 = ts;
+              var t = Math.min(1, (ts - t0) / DUR);
+              var e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+              if (desktop) { var l = from + (to - from) * e; drawFill(l); placeDot(l); }
+              if (t < 1) { requestAnimationFrame(frame); }
+              else { seg++; station(seg, true); setTimeout(nextSeg, 140); }
+            }
+            if (desktop) requestAnimationFrame(frame);
+            else setTimeout(function () { seg++; station(seg, true); nextSeg(); }, DUR);
+          }
+          if (desktop) { drawFill(marks[0]); placeDot(marks[0]); }
+          setTimeout(nextSeg, 350);
+        }
+
+        setCaps(variants.scan);
+        var fired = false;
+        if (!reduce && 'IntersectionObserver' in window) {
+          dimAll();
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting && !fired) { fired = true; io.disconnect(); run('scan'); }
+            });
+          }, { threshold: 0.3 });
+          io.observe(root);
+        } else {
+          finalState(variants.scan);
+        }
+        tabs.forEach(function (b) {
+          b.addEventListener('click', function () {
+            userLock = true; fired = true;
+            clearTimeout(rotateTimer);
+            run(b.getAttribute('data-sig-run'));
+          });
+        });
+      })();
+    </script>
   </div>
 </section>
 
-<!-- ===================================================== VALUE PILLARS -->
-{% include value-pillars.html
-   eyebrow="Why teams choose Fanfinity"
-   heading="Outcomes, not just widgets"
-   subheading="Turn a live audience into a returning, monetizable community you own."
-   items=page.value_pillars %}
+<!-- ================================================= THE CHANGE
+     "Why teams choose Fanfinity" as a shown transformation, not three
+     icon columns: renting reach on the left, owning the fan on the
+     right, the house diamond marking the change on a rounded spine.
+     Pairs sit on one row grid so the comparison never goes ragged.
+     Static by design; the machines above and below carry the motion. -->
+<section class="section">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">What changes when the profile is yours</h2>
+    </div>
+
+    <!-- Desktop: aligned pair rows across the diamond spine -->
+    <div class="mt-14 hidden lg:block">
+      <div class="grid grid-cols-[1fr_4rem_1fr] items-center gap-y-2">
+        <p class="pr-2 text-right text-sm font-semibold text-muted-foreground">Renting reach</p>
+        <span></span>
+        <p class="pl-2 text-sm font-semibold text-brand-foreground">Owning the fan</p>
+
+        <p class="border-t border-border py-6 pr-2 text-right text-lg text-muted-foreground">Impressions rented back from ad platforms</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border py-6 pl-2 text-lg font-semibold text-foreground">Fans you can name, and reach directly</p>
+
+        <p class="border-t border-border py-6 pr-2 text-right text-lg text-muted-foreground">Overnight batches acting on yesterday&rsquo;s fan</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border py-6 pl-2 text-lg font-semibold text-foreground">Journeys that fire mid-match</p>
+
+        <p class="border-t border-border py-6 pr-2 text-right text-lg text-muted-foreground">Quarterly decks sponsors politely doubt</p>
+        <span class="relative flex h-full items-center justify-center border-t border-border">
+          <span class="h-2 w-2 rotate-45 bg-brand-500"></span>
+        </span>
+        <p class="border-t border-border py-6 pl-2 text-lg font-semibold text-foreground">Verified reach sponsors log into themselves</p>
+      </div>
+    </div>
+
+    <!-- Mobile: stacked pairs, diamond marking each turn -->
+    <div class="mt-10 space-y-8 lg:hidden">
+      <div>
+        <p class="text-muted-foreground">Impressions rented back from ad platforms</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Fans you can name, and reach directly</p>
+      </div>
+      <div>
+        <p class="text-muted-foreground">Overnight batches acting on yesterday&rsquo;s fan</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Journeys that fire mid-match</p>
+      </div>
+      <div>
+        <p class="text-muted-foreground">Quarterly decks sponsors politely doubt</p>
+        <p class="mt-2 flex items-start gap-2.5 font-semibold text-foreground"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500"></span>Verified reach sponsors log into themselves</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- =============================================== INDUSTRIES (interactive switcher) -->
 {% include audience-switcher.html %}
@@ -233,109 +451,584 @@ measure_points:
 <!-- ============================================ WHERE WE ARE (design partners) -->
 {% include proof.html %}
 
-<!-- ===================================================== MEASURE SPOTLIGHT -->
-{% include feature-split.html
-   title="Answer sponsors with names, not impressions"
-   body="Fanfinity Measure turns engagement into deterministic proof: verified reach, exposure-to-outcome attribution, and a portal your sponsors and partners can log into themselves."
-   points=page.measure_points
-   cta_text="Explore Fanfinity Measure"
-   cta_url="/platform/measure"
-   media="measure-visual" %}
+<!-- ============================================== MEASURE · THE RECEIPT
+     The sponsor's answer shown as the artifact it actually is: a
+     verified reach statement, drawn as a settlement receipt with a
+     perforated sawtooth bottom edge (the section's one bespoke
+     silhouette). Mono only on figures; numbers labeled Illustrative. -->
+<section class="relative overflow-hidden border-y border-border bg-soft">
+  <div class="container-page section">
+    <div class="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
 
-<!-- ==================================================== DEVELOPER SPLIT -->
+      <!-- The claim -->
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Answer sponsors with names, not impressions</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Fanfinity Measure turns engagement into deterministic proof, and gives your sponsors a portal they can log into themselves.</p>
+        <ul class="mt-7 space-y-3">
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">Verified reach:</span> real people, deduplicated, consent enforced.</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">Exposure to outcome:</span> the campaign tied to the purchase it drove.</span></li>
+          <li class="flex items-start gap-3"><span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="leading-relaxed text-muted-foreground"><span class="font-semibold text-foreground">A live portal:</span> results your partners watch for themselves, not a quarterly deck.</span></li>
+        </ul>
+        <a href="{{ '/platform/measure' | relative_url }}" class="link-arrow mt-8">Explore Fanfinity Measure {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <!-- The receipt: prints out of the sponsor portal on scroll -->
+      <div class="mx-auto w-full max-w-sm" data-receipt>
+        <!-- The device -->
+        <div class="relative z-10 flex items-center justify-between rounded-2xl bg-[#17151d] px-5 py-3.5 shadow-[0_10px_24px_-10px_rgba(11,7,18,0.5)]">
+          <p class="text-xs font-semibold text-white/80">Sponsor portal</p>
+          <p class="inline-flex items-center gap-2 text-[11px] text-white/50"><span class="h-1.5 w-1.5 rotate-45 bg-brand-300" aria-hidden="true"></span><span data-receipt-status>printed &middot; matchday 14</span></p>
+        </div>
+        <!-- The slot: paper emerges beneath the device -->
+        <div class="relative -mt-2 overflow-hidden px-2 pt-2">
+          <div class="relative transition-transform duration-[1400ms] ease-out" data-receipt-paper>
+          <div class="bg-card px-6 pb-7 pt-6 shadow-[0_18px_44px_-18px_rgba(32,30,38,0.35)]">
+            <div class="flex items-start justify-between gap-3">
+              <p class="text-xs text-muted-foreground">Verified reach statement</p>
+              <span class="text-[11px] text-muted-foreground">Illustrative</span>
+            </div>
+            <p class="mt-1 font-mono text-[11px] text-muted-foreground">Matchday 14 &middot; North Stand sponsorship</p>
+
+            <p class="mt-6 font-heading text-5xl font-bold tabular-nums text-foreground" data-receipt-count>31,842</p>
+            <p class="mt-1 text-sm text-muted-foreground">real people reached, verified and deduplicated</p>
+
+            <div class="mt-6 divide-y divide-border border-t border-border font-mono text-[12px]">
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Exposures logged</span><span class="font-semibold tabular-nums text-foreground">214,502</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Deduplicated reach</span><span class="font-semibold tabular-nums text-foreground">31,842</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Consented &amp; reachable</span><span class="font-semibold tabular-nums text-foreground">29,170</span></div>
+              <div class="flex items-center justify-between py-2.5"><span class="text-muted-foreground">Attributed revenue</span><span class="font-semibold tabular-nums text-foreground">SAR 412,090</span></div>
+            </div>
+
+            <p class="mt-5 flex items-center justify-between text-[11px] text-muted-foreground">
+              <span class="inline-flex items-center gap-2"><span class="h-1.5 w-1.5 rotate-45 bg-brand-500" aria-hidden="true"></span>Sponsor portal &middot; live since kickoff</span>
+              <span>deterministic</span>
+            </p>
+          </div>
+          <svg class="block w-full text-card" viewBox="0 0 384 10" preserveAspectRatio="none" aria-hidden="true" style="filter: drop-shadow(0 14px 20px rgba(32,30,38,0.16));">
+            <path fill="currentColor" d="M0 0 h384 v2 l-8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -8 8 -8 -8 -4 4 v-6 z"/>
+          </svg>
+
+          <!-- The stamp -->
+          <div data-receipt-stamp class="absolute right-1 top-16 grid h-24 w-24 rotate-[-9deg] place-items-center rounded-full border-[3px] border-brand-500/70 bg-brand-50/60 text-center transition-all duration-300" aria-hidden="true">
+            <div class="leading-tight">
+              <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-700">Verified</p>
+              <p class="mt-0.5 text-[9px] font-semibold text-brand-600">real people</p>
+              <p class="mt-1 flex justify-center gap-1"><span class="h-1 w-1 rotate-45 bg-brand-500"></span><span class="h-1 w-1 rotate-45 bg-brand-500"></span><span class="h-1 w-1 rotate-45 bg-brand-500"></span></p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    /* The receipt prints when the section scrolls into view: paper slides
+       out of the portal, the headline number counts, the stamp lands.
+       No-JS and reduced motion see it fully printed. */
+    (function () {
+      var root = document.querySelector('[data-receipt]');
+      if (!root) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      if (!('IntersectionObserver' in window)) return;
+      var paper = root.querySelector('[data-receipt-paper]');
+      var stamp = root.querySelector('[data-receipt-stamp]');
+      var status = root.querySelector('[data-receipt-status]');
+      var counter = root.querySelector('[data-receipt-count]');
+      var TARGET = 31842;
+      paper.style.transform = 'translateY(-104%)';
+      stamp.style.opacity = '0';
+      stamp.style.transform = 'rotate(-9deg) scale(1.25)';
+      status.textContent = 'awaiting matchday close';
+      if (counter) counter.textContent = '0';
+      var fired = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting || fired) return;
+          fired = true;
+          io.disconnect();
+          status.textContent = 'printing verified reach';
+          paper.style.transform = 'translateY(0)';
+          if (counter) {
+            var t0 = null;
+            var tick = function (ts) {
+              if (t0 === null) t0 = ts;
+              var k = Math.min(1, (ts - t0) / 1100);
+              var eased = 1 - Math.pow(1 - k, 3);
+              counter.textContent = Math.round(TARGET * eased).toLocaleString('en-US');
+              if (k < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+          }
+          setTimeout(function () {
+            stamp.style.opacity = '1';
+            stamp.style.transform = 'rotate(-9deg) scale(1)';
+            status.textContent = 'printed · matchday 14';
+          }, 1450);
+        });
+      }, { threshold: 0.4 });
+      io.observe(root);
+    })();
+  </script>
+</section>
+
+<!-- ============================================ DEVELOPERS · LIVE CALL
+     "Built for the teams who ship it" with a terminal that runs: the
+     request fires on scroll, the response streams in, and Send test
+     event replays it with rotating payloads - including the anonymous
+     visitor stitching to fan_8c2a, the page's running story told in
+     API language. Simulated and labeled; full request + response are
+     rendered server-side so no-JS and reduced motion read everything. -->
 <section class="section" id="developers">
   <div class="container-page">
     <div class="grid items-center gap-12 lg:grid-cols-2">
+
       <!-- Copy -->
-      <div data-reveal>
-        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Built for the teams who ship it</h2>
-        <p class="mt-5 text-lg leading-relaxed text-muted-foreground">Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface.</p>
-        <ul class="mt-6 space-y-3">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Built for the teams who ship it</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Fanfinity is delivered as a REST API and client SDKs, so engineering integrates once and your content team runs the rest from a producer surface.</p>
+        <ul class="mt-7 space-y-3">
           {%- for pt in page.dev_points -%}
-            <li class="flex gap-3">
-              <span class="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">{% include icon.html name="check" class="h-3.5 w-3.5" %}</span>
+            <li class="flex items-start gap-3">
+              <span class="mt-2 h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span>
               <span class="text-sm leading-relaxed text-muted-foreground">{{ pt }}</span>
             </li>
           {%- endfor -%}
         </ul>
-        <a href="{{ '/developers' | relative_url }}" class="link-arrow mt-7">See the developer overview {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+        <a href="{{ '/developers' | relative_url }}" class="link-arrow mt-8">See the developer overview {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
       </div>
 
-      <!-- REST code mock -->
-      <div data-reveal style="--reveal-delay:120ms" class="relative">
-        <div class="overflow-hidden rounded-3xl border border-white/10 bg-[#0b0712] shadow-2xl shadow-brand-950/40">
-          <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-            <span class="h-3 w-3 rounded-full bg-white/15"></span>
-            <span class="h-3 w-3 rounded-full bg-white/15"></span>
-            <span class="h-3 w-3 rounded-full bg-white/15"></span>
-            <span class="ml-2 font-mono text-xs text-white/40">track an event</span>
+      <!-- The terminal that runs -->
+      <div class="relative" data-api>
+        <div class="overflow-hidden rounded-3xl bg-[#0b0712] shadow-2xl shadow-brand-950/40 ring-1 ring-inset ring-white/[0.08]">
+          <div class="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-2.5">
+            <span class="font-mono text-xs text-white/40">api.fanfinity.io</span>
+            <span class="flex items-center gap-3">
+              <span class="font-mono text-[10px] text-white/35" data-api-note>simulated</span>
+              <button type="button" data-api-send class="btn btn-outline-light px-3.5 py-1.5 text-xs">Send test event</button>
+            </span>
           </div>
-<pre class="overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> https://api.fanfinity.io/v1/events \
+<pre class="min-h-[17.5rem] overflow-x-auto p-5 font-mono text-[12.5px] leading-relaxed text-white/70"><span data-api-req><span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \
   -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \
-  -d <span class="text-white/90">'{ "profile_id": "fan_8c2a…",
-        "event": "stream_started",
-        "channel": "web" }'</span>
+  -d <span class="text-white/90">'{ "event": "stream_started",
+        "profile_id": "fan_8c2a",
+        "channel": "web" }'</span></span>
 
-<span class="text-emerald-400/80"># 202 Accepted: profile updated, segments re-evaluated</span>
-<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"segments"</span>: 3 <span class="text-white/45">}</span></pre>
+<span data-api-res><span class="text-emerald-400/90">HTTP/2 202 Accepted</span>
+<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"profile"</span>: <span class="text-white/90">"fan_8c2a"</span>, <span class="text-brand-300">"segments"</span>: 4 <span class="text-white/45">}</span>
+<span class="text-white/40"># profile updated · journeys re-evaluated while the stream is live</span></span></pre>
         </div>
-      </div>
-    </div>
+        <p class="mt-2.5 text-center text-xs text-muted-foreground">A simulated call: this is the whole integration surface.</p>
 
-    <!-- Sovereignty sub-row (folded in from the old deploy stat band) -->
-    <div class="mt-16 border-t border-border pt-10" data-reveal>
-      <p class="text-sm font-semibold text-foreground">Runs where your rules require: your cloud, your on-prem, or ours.</p>
-      <dl class="mt-6 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-border">
-        {%- for stat in page.deploy_stats -%}
-          <div class="sm:px-8">
-            <dt class="font-heading text-2xl font-bold text-brand-foreground">{{ stat.value }}</dt>
-            <dd class="mt-1.5 text-sm text-muted-foreground">{{ stat.label }}</dd>
-          </div>
-        {%- endfor -%}
-      </dl>
+        <script>
+          /* Terminal demo - response replays on scroll and on Send,
+             rotating through three payloads. Markup ships fully
+             rendered; JS only re-enacts it. */
+          (function () {
+            var root = document.querySelector('[data-api]');
+            if (!root) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var req = root.querySelector('[data-api-req]');
+            var res = root.querySelector('[data-api-res]');
+            var btn = root.querySelector('[data-api-send]');
+            var variants = [
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "stream_started",\n        "profile_id": "fan_8c2a",\n        "channel": "web" }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"profile"</span>: <span class="text-white/90">"fan_8c2a"</span>, <span class="text-brand-300">"segments"</span>: 4 <span class="text-white/45">}</span>\n<span class="text-white/40"># profile updated · journeys re-evaluated while the stream is live</span>' },
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "quiz_answer",\n        "anonymous_id": "anon_9f13",\n        "channel": "match hub" }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"identity"</span>: <span class="text-white/90">"stitched → fan_8c2a"</span> <span class="text-white/45">}</span>\n<span class="text-white/40"># the anonymous visitor was Salem all along</span>' },
+              { req: '<span class="text-brand-300">curl</span> -X <span class="text-brand-300">POST</span> /v1/events \\\n  -H <span class="text-white/90">"Authorization: Bearer $TOKEN"</span> \\\n  -d <span class="text-white/90">\'{ "event": "purchase",\n        "profile_id": "fan_8c2a",\n        "value_sar": 240 }\'</span>',
+                res: '<span class="text-emerald-400/90">HTTP/2 202 Accepted</span>\n<span class="text-white/45">{</span> <span class="text-brand-300">"resolved"</span>: true, <span class="text-brand-300">"attributed_to"</span>: <span class="text-white/90">"matchday_offer"</span> <span class="text-white/45">}</span>\n<span class="text-white/40"># exposure → outcome, settled deterministically</span>' }
+            ];
+            var i = 0, running = false;
+            function play(idx) {
+              if (running || reduce) return;
+              running = true;
+              var v = variants[idx];
+              req.innerHTML = v.req;
+              res.style.opacity = '0';
+              setTimeout(function () {
+                res.innerHTML = v.res;
+                res.style.transition = 'opacity .45s ease-out';
+                res.style.opacity = '1';
+                running = false;
+              }, 520);
+            }
+            if (btn) btn.addEventListener('click', function () { i = (i + 1) % variants.length; play(i); });
+            if (!reduce && 'IntersectionObserver' in window) {
+              var fired = false;
+              var io = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                  if (e.isIntersecting && !fired) { fired = true; io.disconnect(); play(0); }
+                });
+              }, { threshold: 0.4 });
+              io.observe(root);
+            }
+          })();
+        </script>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ======================================= WIDGETS (engagement preview) -->
-<section id="widgets" class="relative overflow-hidden bg-background">
+<!-- ======================================== DEPLOYMENT · THE RACK
+     A server room at night. One bespoke coded rack unit; the switch
+     changes only the engraved location plate - the machine never does.
+     Faint LED field in the dark, grain, directional wash: same world
+     as the hero. Switch entries are links to /platform/deploy without
+     JS; blinking gated behind reduced motion in CSS. -->
+<section class="relative overflow-hidden bg-[#0b0712]" data-rack>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div class="absolute inset-0" style="background-image: linear-gradient(115deg, rgba(153,105,255,0.12) 0%, rgba(153,105,255,0.04) 30%, transparent 55%);"></div>
+    <div class="absolute inset-0 bg-grain opacity-[0.13]"></div>
+    <div class="room-sweep absolute inset-y-0 left-[-40%] w-[35%]" style="background-image: linear-gradient(105deg, transparent 0%, rgba(153,105,255,0.06) 42%, rgba(255,255,255,0.035) 50%, rgba(153,105,255,0.05) 58%, transparent 100%);"></div>
+    <span class="absolute left-[8%] top-[22%] h-1 w-1 rotate-45 bg-white/10"></span>
+    <span class="absolute left-[16%] top-[64%] h-1 w-1 rotate-45 bg-white/10 led-blink" style="animation-delay:1.2s"></span>
+    <span class="absolute left-[26%] top-[38%] h-1 w-1 rotate-45 bg-white/10"></span>
+    <span class="absolute left-[9%] top-[82%] h-1 w-1 rotate-45 bg-white/10"></span>
+    <span class="absolute right-[10%] top-[28%] h-1 w-1 rotate-45 bg-white/10 led-blink" style="animation-delay:2.8s"></span>
+    <span class="absolute right-[20%] top-[70%] h-1 w-1 rotate-45 bg-white/10"></span>
+    <span class="absolute right-[7%] top-[55%] h-1 w-1 rotate-45 bg-white/10"></span>
+    <span class="absolute left-[38%] top-[18%] h-1 w-1 rotate-45 bg-white/10 led-blink" style="animation-delay:0.4s"></span>
+    <span class="absolute right-[32%] top-[85%] h-1 w-1 rotate-45 bg-white/10"></span>
+  </div>
+
   <div class="container-page relative section">
-    <div class="mx-auto max-w-2xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">The widgets fans will <span class="text-brand-foreground">play with</span></h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Drop interactive formats into any live or on-demand moment, themed to your brand and ready for sponsors. The engagement layer is in Design Preview.</p>
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl text-balance">Runs where your rules require</h2>
+        <p class="mt-3 text-lg leading-relaxed text-white/60">Your cloud, your racks, or ours. The machine never changes; only the address on the plate does.</p>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2" role="tablist" aria-label="Deployment mode">
+        <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="true" data-rack-mode data-plate="me-south-1 &middot; your cloud" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white transition">
+          <span data-rack-mark class="h-1.5 w-1.5 rotate-45 border border-brand-300 bg-brand-300 transition"></span>Your cloud
+        </a>
+        <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="false" data-rack-mode data-plate="rack 07 &middot; your building" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/45 transition hover:text-white/80">
+          <span data-rack-mark class="h-1.5 w-1.5 rotate-45 border border-white/40 transition"></span>On-premise
+        </a>
+        <a href="{{ '/platform/deploy' | relative_url }}" role="tab" aria-selected="false" data-rack-mode data-plate="Riyadh &middot; Fanfinity managed" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/45 transition hover:text-white/80">
+          <span data-rack-mark class="h-1.5 w-1.5 rotate-45 border border-white/40 transition"></span>Fully managed
+        </a>
+      </div>
     </div>
 
-    <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {%- for w in page.widgets limit: 3 -%}
-        <figure data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms"
-                class="card-hover group/w flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
-          <figcaption class="flex items-center gap-3 px-5 pt-5">
-            <span class="icon-chip-sm">{% include icon.html name=w.icon class="h-5 w-5" %}</span>
-            <span class="min-w-0">
-              <span class="block text-sm font-semibold text-foreground">{{ w.title }}</span>
-              <span class="block font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ w.tag }}</span>
-            </span>
-          </figcaption>
-          <p class="px-5 pt-3 text-sm text-muted-foreground">{{ w.pitch }}</p>
-          <div class="mt-4 overflow-hidden border-t border-border bg-muted">
-            <img src="{{ '/assets/widgets/' | append: w.file | append: '.gif' | relative_url }}"
-                 alt="{{ w.alt }}" loading="lazy" decoding="async"
-                 class="w-full transition duration-500 group-hover/w:scale-[1.02]">
+    <!-- The unit -->
+    <div class="relative mx-auto mt-14 w-full max-w-xs sm:max-w-sm">
+      <div class="rack-breathe pointer-events-none absolute -inset-10 -z-0" style="background-image: radial-gradient(55% 60% at 50% 62%, rgba(153,105,255,0.13), transparent 70%);" aria-hidden="true"></div>
+      <div class="relative rounded-2xl p-5 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)] ring-1 ring-inset ring-white/[0.08]" style="background-image: linear-gradient(180deg, #191621 0%, #121017 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 30px 60px -30px rgba(0,0,0,0.9);">
+        <!-- bezel -->
+        <div class="flex items-center justify-between border-b border-white/[0.07] pb-3.5">
+          <p class="font-heading text-sm font-bold tracking-[0.08em] text-white/85">FANFINITY</p>
+          <span class="flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rotate-45 bg-brand-300" aria-hidden="true"></span>
+            <span class="led-blink h-1.5 w-1.5 rotate-45 bg-emerald-400/80" style="animation-delay:0.8s" aria-hidden="true"></span>
+            <span class="h-1.5 w-1.5 rotate-45 bg-white/25" aria-hidden="true"></span>
+          </span>
+        </div>
+        <!-- units -->
+        <div class="divide-y divide-white/[0.06]">
+          <div class="flex items-center gap-4 py-3">
+            <span class="flex-1 font-mono text-[11px] text-white/60">blocks</span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-brand-400" aria-hidden="true"></span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-emerald-400/70" style="animation-delay:1.1s; animation-duration:2.9s" aria-hidden="true"></span>
           </div>
-        </figure>
-      {%- endfor -%}
+          <div class="flex items-center gap-4 py-3">
+            <span class="flex-1 font-mono text-[11px] text-white/60">id</span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-brand-400" style="animation-delay:0.6s" aria-hidden="true"></span>
+            <span class="h-1.5 w-1.5 rotate-45 bg-brand-400" aria-hidden="true"></span>
+          </div>
+          <div class="flex items-center gap-4 py-3">
+            <span class="flex-1 font-mono text-[11px] text-white/60">engage</span>
+            <span class="h-1.5 w-1.5 rotate-45 border border-brand-400" aria-hidden="true"></span>
+            <span class="h-1.5 w-1.5 rotate-45 bg-white/20" aria-hidden="true"></span>
+          </div>
+          <div class="flex items-center gap-4 py-3">
+            <span class="flex-1 font-mono text-[11px] text-white/60">activate</span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-brand-400" style="animation-delay:1.8s; animation-duration:4.1s" aria-hidden="true"></span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-emerald-400/70" style="animation-delay:0.3s" aria-hidden="true"></span>
+          </div>
+          <div class="flex items-center gap-4 py-3">
+            <span class="flex-1 font-mono text-[11px] text-white/60">measure</span>
+            <span class="led-activity h-1.5 w-1.5 rotate-45 bg-brand-400" style="animation-delay:2.6s; animation-duration:3.1s" aria-hidden="true"></span>
+            <span class="h-1.5 w-1.5 rotate-45 bg-white/20" aria-hidden="true"></span>
+          </div>
+        </div>
+        <!-- the plate -->
+        <div class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-black/40 px-3 py-2.5 ring-1 ring-inset ring-white/10">
+          <span class="h-1 w-1 rotate-45 bg-white/20" aria-hidden="true"></span>
+          <p class="font-mono text-[11.5px] tracking-wide text-brand-200 transition-opacity duration-300" data-rack-plate>me-south-1 &middot; your cloud</p>
+          <span class="h-1 w-1 rotate-45 bg-white/20" aria-hidden="true"></span>
+        </div>
+      </div>
+      <!-- floor contact -->
+      <div class="mx-auto -mt-1 h-4 w-4/5 rounded-[100%] bg-black/50 blur-md" aria-hidden="true"></div>
+      <p class="mt-6 text-center text-xs text-white/40">Same unit wherever it lives. Nothing leaves it.</p>
+      <p class="mt-2 text-center"><a href="{{ '/platform/deploy' | relative_url }}" class="group inline-flex items-center gap-2.5 text-sm font-semibold text-white/70 transition hover:text-white"><span class="h-1.5 w-1.5 rotate-45 border border-white/50 transition group-hover:border-brand-300 group-hover:bg-brand-300"></span>Explore deployment</a></p>
+    </div>
+  </div>
+
+  <script>
+    /* The plate is the only thing that changes. Links without JS. */
+    (function () {
+      var root = document.querySelector('[data-rack]');
+      if (!root) return;
+      var tabs = Array.prototype.slice.call(root.querySelectorAll('[data-rack-mode]'));
+      var plate = root.querySelector('[data-rack-plate]');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          tabs.forEach(function (o) {
+            var on = o === tab;
+            o.setAttribute('aria-selected', on ? 'true' : 'false');
+            o.classList.toggle('text-white', on);
+            o.classList.toggle('text-white/45', !on);
+            var m = o.querySelector('[data-rack-mark]');
+            m.classList.toggle('bg-brand-300', on);
+            m.classList.toggle('border-brand-300', on);
+            m.classList.toggle('border-white/40', !on);
+          });
+          plate.style.opacity = '0';
+          setTimeout(function () {
+            plate.innerHTML = tab.getAttribute('data-plate');
+            plate.style.opacity = '1';
+          }, 180);
+        });
+      });
+    })();
+  </script>
+</section>
+
+<!-- ================================== ENGAGE · MATCH NIGHT (playable)
+     "Don't watch the widgets. Play them." — the widgets live inside a
+     match that is happening: a broadcast frame with a running clock,
+     three playable second-screen moments, and participation counters
+     that keep climbing like the crowd is playing along. All simulated
+     and labeled Illustrative; the engagement layer is Design Preview.
+     Clock and ambient counters stop under reduced motion. -->
+<section id="widgets" class="relative overflow-hidden bg-background">
+  <div class="container-page section">
+
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">Don&rsquo;t watch the widgets. <span class="text-brand-foreground">Play them.</span></h2>
+        <p class="mt-3 text-lg leading-relaxed text-muted-foreground">Tonight&rsquo;s match is live below, and so are all three widgets. Every tap you make is the kind of signal that lands on a fan profile.</p>
+      </div>
+      <p class="text-xs text-muted-foreground lg:pb-1">Design Preview &middot; Illustrative match</p>
     </div>
 
-    <p class="mt-8 text-center text-xs text-muted-foreground">Polls, sliders, quizzes, predictions, cheer meters, alerts &amp; more, all themeable and sponsorable.</p>
+    <!-- The match frame -->
+    <div class="mt-10 overflow-hidden rounded-3xl bg-[#0b0712] shadow-2xl shadow-brand-950/40 ring-1 ring-inset ring-white/[0.08]" data-match>
+
+      <!-- Scoreboard -->
+      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-white/10 px-5 py-4 sm:px-7">
+        <p class="flex items-center gap-2.5 font-heading text-sm font-bold tracking-wide text-white sm:text-base">
+          AL NAKHLA
+          <span class="rounded-md bg-white/10 px-2 py-0.5 tabular-nums">1</span>
+          <span class="font-normal text-white/40">&ndash;</span>
+          <span class="rounded-md bg-white/10 px-2 py-0.5 tabular-nums">1</span>
+          AL SAHIL
+        </p>
+        <p class="flex items-center gap-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-300/90"><span class="h-1.5 w-1.5 rounded-full bg-emerald-300/90"></span>Live</span>
+          <span class="font-mono text-sm font-semibold tabular-nums text-white" data-match-clock>78:24</span>
+          <span class="text-[11px] text-white/40">second screen</span>
+        </p>
+      </div>
+
+      <!-- The three moments -->
+      <div class="grid grid-cols-1 gap-3 p-3 sm:p-4 lg:grid-cols-[1.15fr_1fr_1fr]">
+
+        <!-- 1 · LIVE POLL -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.08]" data-poll>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Live Poll</p>
+            <span class="text-[11px] text-white/40">sponsorable</span>
+          </div>
+          <p class="mt-4 text-[15px] font-semibold text-white">Who scores next?</p>
+          <p class="mt-0.5 text-xs text-white/50" lang="ar" dir="rtl">من يسجل الهدف القادم؟</p>
+          <div class="mt-4 space-y-2">
+            <button type="button" data-poll-option data-pct="54" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>S. Al&#8209;Harbi</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
+            </button>
+            <button type="button" data-poll-option data-pct="31" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>K. Mendes</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
+            </button>
+            <button type="button" data-poll-option data-pct="15" class="relative w-full overflow-hidden rounded-xl bg-white/[0.06] px-3.5 py-2.5 text-left text-sm font-medium text-white/90 ring-1 ring-inset ring-white/10 transition hover:ring-brand-400/60">
+              <span class="absolute inset-y-0 left-0 w-0 bg-brand-500/35 transition-all duration-700 ease-out" data-poll-bar aria-hidden="true"></span>
+              <span class="relative flex items-center justify-between gap-2"><span>T. Okafor</span><span class="hidden font-semibold tabular-nums text-brand-200" data-poll-pct></span></span>
+            </button>
+          </div>
+          <div class="mt-auto flex items-center justify-between gap-3 pt-4">
+            <p class="text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="12482">12,482</span> playing<span data-poll-you></span></p>
+            <span class="rounded-md bg-white/[0.07] px-2 py-1 text-[10px] font-semibold text-white/50 ring-1 ring-inset ring-white/10">YOUR SPONSOR HERE</span>
+          </div>
+        </div>
+
+        <!-- 2 · PREDICTION -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.08]" data-predict>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Prediction</p>
+            <span class="text-[11px] text-white/40">+120 pts if exact</span>
+          </div>
+          <p class="mt-4 text-[15px] font-semibold text-white">Final total goals?</p>
+          <div class="mt-6 flex items-center justify-center gap-6">
+            <button type="button" data-predict-minus aria-label="Fewer goals" class="grid h-10 w-10 place-items-center rounded-full text-lg font-semibold text-white ring-1 ring-inset ring-white/25 transition hover:ring-brand-400/70">&minus;</button>
+            <span class="w-14 text-center font-heading text-5xl font-bold tabular-nums text-white" data-predict-value>3</span>
+            <button type="button" data-predict-plus aria-label="More goals" class="grid h-10 w-10 place-items-center rounded-full text-lg font-semibold text-white ring-1 ring-inset ring-white/25 transition hover:ring-brand-400/70">+</button>
+          </div>
+          <button type="button" data-predict-lock class="btn btn-white mt-6 w-full">Lock it in</button>
+          <p class="mt-3 hidden text-center text-xs text-white/55" data-predict-result></p>
+          <p class="mt-auto pt-4 text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="8207">8,207</span> predictions locked<span data-predict-you></span></p>
+        </div>
+
+        <!-- 3 · CHEER METER -->
+        <div class="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/[0.08]" data-cheer>
+          <div class="flex items-center justify-between gap-3">
+            <p class="flex items-center gap-2.5 text-sm font-bold text-white"><span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>Cheer Meter</p>
+            <span class="text-[11px] text-white/40">sponsorable</span>
+          </div>
+          <p class="mt-4 text-[15px] font-semibold text-white">Whose night is it?</p>
+          <div class="mt-5 flex h-3 overflow-hidden rounded-full ring-1 ring-inset ring-white/15" aria-hidden="true">
+            <span class="bg-brand-500 transition-all duration-300" data-cheer-bar-a style="width:52%"></span>
+            <span class="bg-white/30 transition-all duration-300" data-cheer-bar-b style="width:48%"></span>
+          </div>
+          <div class="mt-2 flex justify-between font-mono text-[11px] text-white/55">
+            <span><span class="font-semibold tabular-nums text-brand-200" data-cheer-pct-a>52%</span> Al Nakhla</span>
+            <span>Al Sahil <span class="font-semibold tabular-nums text-white/85" data-cheer-pct-b>48%</span></span>
+          </div>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <button type="button" data-cheer-a class="rounded-xl bg-brand-600 px-3 py-3 text-sm font-bold text-white transition hover:bg-brand-500 active:scale-95">CHEER</button>
+            <button type="button" data-cheer-b class="rounded-xl bg-white/15 px-3 py-3 text-sm font-bold text-white transition hover:bg-white/25 active:scale-95">CHEER</button>
+          </div>
+          <p class="mt-auto pt-4 text-[11px] text-white/45"><span class="font-semibold tabular-nums text-white/70" data-plays data-count="26914">26,914</span> cheers tonight<span data-cheer-you></span></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+      <p class="text-xs text-muted-foreground">Also in the library: quizzes, image sliders, guess the outcome, alerts &amp; Ask. All themeable, all sponsorable, all landing on the profile.</p>
+      <a href="{{ '/platform/engage' | relative_url }}" class="link-arrow shrink-0">Explore Fanfinity Engage {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </div>
+
+    <script>
+      /* Match night — the clock runs, the crowd keeps playing, and the
+         three widgets are real. Client-side only, nothing recorded. */
+      (function () {
+        var root = document.querySelector('[data-match]');
+        if (!root) return;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var fmt = function (n) { return n.toLocaleString('en-US'); };
+
+        /* the clock */
+        var clockEl = root.querySelector('[data-match-clock]');
+        if (clockEl && !reduce) {
+          var mins = 78, secs = 24;
+          setInterval(function () {
+            secs++;
+            if (secs > 59) { secs = 0; mins++; }
+            if (mins > 90) { mins = 78; secs = 24; }
+            clockEl.textContent = mins + ':' + (secs < 10 ? '0' : '') + secs;
+          }, 1000);
+        }
+
+        /* the crowd keeps playing */
+        var plays = Array.prototype.slice.call(root.querySelectorAll('[data-plays]'));
+        if (plays.length && !reduce) {
+          var pi = 0;
+          setInterval(function () {
+            var el = plays[pi % plays.length]; pi++;
+            var n = parseInt(el.getAttribute('data-count'), 10) + 1 + (pi % 3);
+            el.setAttribute('data-count', n);
+            el.textContent = fmt(n);
+          }, 3200);
+        }
+        function bump(el, extraSel) {
+          var n = parseInt(el.getAttribute('data-count'), 10) + 1;
+          el.setAttribute('data-count', n);
+          el.textContent = fmt(n);
+          var you = root.querySelector(extraSel);
+          if (you) you.textContent = ' · including you';
+        }
+
+        /* poll */
+        var poll = root.querySelector('[data-poll]');
+        if (poll) {
+          var opts = Array.prototype.slice.call(poll.querySelectorAll('[data-poll-option]'));
+          var voted = false;
+          opts.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              if (voted) return;
+              voted = true;
+              bump(poll.querySelector('[data-plays]'), '[data-poll-you]');
+              opts.forEach(function (b) {
+                var pct = parseInt(b.getAttribute('data-pct'), 10);
+                if (b === btn) { b.classList.add('ring-brand-400'); b.setAttribute('aria-pressed', 'true'); }
+                else { b.classList.add('opacity-75'); b.setAttribute('aria-pressed', 'false'); }
+                b.querySelector('[data-poll-bar]').style.width = pct + '%';
+                var pctEl = b.querySelector('[data-poll-pct]');
+                pctEl.textContent = pct + '%';
+                pctEl.classList.remove('hidden');
+                b.classList.add('cursor-default');
+              });
+            });
+          });
+        }
+
+        /* prediction */
+        var pr = root.querySelector('[data-predict]');
+        if (pr) {
+          var val = 3, locked = false;
+          var valEl = pr.querySelector('[data-predict-value]');
+          var lock = pr.querySelector('[data-predict-lock]');
+          var res = pr.querySelector('[data-predict-result]');
+          var splits = { 0: 2, 1: 7, 2: 19, 3: 27, 4: 21, 5: 12, 6: 7 };
+          pr.querySelector('[data-predict-minus]').addEventListener('click', function () { if (!locked && val > 2) { val--; valEl.textContent = val; } });
+          pr.querySelector('[data-predict-plus]').addEventListener('click', function () { if (!locked && val < 9) { val++; valEl.textContent = val; } });
+          lock.addEventListener('click', function () {
+            if (locked) return;
+            locked = true;
+            lock.textContent = 'Locked in';
+            lock.classList.add('opacity-70', 'cursor-default');
+            res.textContent = 'You and ' + (splits[val] || 3) + '% of fans say ' + val + '. Good luck.';
+            res.classList.remove('hidden');
+            bump(pr.querySelector('[data-plays]'), '[data-predict-you]');
+          });
+        }
+
+        /* cheer */
+        var ch = root.querySelector('[data-cheer]');
+        if (ch) {
+          var a = 13932, b = 12982, cheered = false;
+          var barA = ch.querySelector('[data-cheer-bar-a]'), barB = ch.querySelector('[data-cheer-bar-b]');
+          var pctA = ch.querySelector('[data-cheer-pct-a]'), pctB = ch.querySelector('[data-cheer-pct-b]');
+          var counter = ch.querySelector('[data-plays]');
+          function paint() {
+            var pa = Math.round(100 * a / (a + b));
+            barA.style.width = pa + '%'; barB.style.width = (100 - pa) + '%';
+            pctA.textContent = pa + '%'; pctB.textContent = (100 - pa) + '%';
+            counter.setAttribute('data-count', a + b);
+            counter.textContent = fmt(a + b);
+          }
+          function cheerYou() {
+            if (!cheered) { cheered = true; var you = ch.querySelector('[data-cheer-you]'); if (you) you.textContent = ' · including you'; }
+          }
+          ch.querySelector('[data-cheer-a]').addEventListener('click', function () { a += 25; paint(); cheerYou(); });
+          ch.querySelector('[data-cheer-b]').addEventListener('click', function () { b += 25; paint(); cheerYou(); });
+        }
+      })();
+    </script>
   </div>
 </section>
 
 <!-- ========================================================= INTEGRATIONS -->
 <section class="section-sm">
   <div class="container-page">
-    <div class="gradient-border flex flex-col items-start justify-between gap-6 rounded-4xl border border-border bg-soft p-8 md:flex-row md:items-center md:p-10" data-reveal>
+    <div class="flex flex-col items-start justify-between gap-6 rounded-3xl border border-border bg-soft p-8 md:flex-row md:items-center md:p-10">
       <div class="max-w-xl">
-        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl">Connect everything you already run</h2>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl text-balance">Connect everything you already run</h2>
         <p class="mt-3 text-muted-foreground">Ticketing, streaming, CRM, messaging, ad platforms, and your warehouse: 600+ connectors that run where your data lives.</p>
       </div>
       <a href="{{ '/integrations' | relative_url }}" class="btn btn-secondary btn-lg shrink-0">Browse integrations</a>
@@ -345,7 +1038,7 @@ measure_points:
 
 <!-- ============================================================== CTA -->
 {% include cta-band.html
-   heading="Own the fan relationship. Prove the revenue it drives."
-   text="See how Fanfinity unifies fan identity, activates it across every channel, and proves the outcome. Book a walkthrough with our team."
+   heading="Salem is in your crowd tonight."
+   text="He's scanning in, answering the poll, buying the shirt, and nobody knows his name yet. A walkthrough shows how fast that changes."
    secondary_text="Talk to the team"
    secondary_url="/contact" %}

@@ -1,16 +1,68 @@
 {%- comment -%}
-Proof band — design-partner stage. NO invented logos, customers, testimonials, or
-metrics. This band exists so pages don't feel proof-less while staying truthful.
-Frame the program as access/priority, never as company risk (see CLAUDE.md voice rules).
-Optional: include.eyebrow, include.heading, include.body, include.cta_text, include.cta_url.
+Design partner band — availability drawn in the site's own signature
+geometry: one horizontal line, five diamond stations (the five layers).
+The brand fill runs through the four Live stations and stops before
+Engagement, whose diamond is hollow: the roadmap literally drawn. NO
+invented logos, customers, testimonials, or metrics; frame the program
+as access and priority, never company risk (see CLAUDE.md voice rules).
+Used on home, platform, and why-fanfinity; no params.
 {%- endcomment -%}
-<section class="section-sm">
-  <div class="container-page">
-    <div class="gradient-border rounded-4xl border border-border bg-soft p-8 text-center md:p-10" data-reveal>
-      <p class="eyebrow justify-center">{{ include.eyebrow | default: 'Design-partner program' }}</p>
-      <h2 class="mt-3 text-2xl font-bold tracking-tight sm:text-3xl text-balance">{{ include.heading | default: 'Built with design partners' }}</h2>
-      <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-muted-foreground">{{ include.body | default: "The data, identity, activation, and measurement layers are Live; the engagement layer is in Design Preview. We build hands-on with a founding group of design partners who shape the roadmap and deploy first. When we publish customer stories, they will carry real names and real metrics." }}</p>
-      <a href="{{ include.cta_url | default: '/demo' | relative_url }}" class="link-arrow mt-6 justify-center">{{ include.cta_text | default: 'Become a design partner' }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+<section class="border-y border-border bg-background">
+  <div class="container-page section-sm">
+
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-xl">
+        <h2 class="text-2xl font-bold tracking-tight sm:text-3xl text-balance">Built with design partners</h2>
+        <p class="mt-3 leading-relaxed text-muted-foreground">A founding group shapes the roadmap and deploys first. When we publish customer stories, they will carry real names and real metrics.</p>
+      </div>
+      <a href="{{ '/demo' | relative_url }}" class="btn btn-primary shrink-0 self-start lg:self-auto">Become a design partner</a>
     </div>
+
+    <!-- The availability line: fill reaches Live, stops before Design Preview -->
+    <div class="mt-14 hidden sm:block" aria-label="Platform availability">
+      <div class="relative">
+        <div class="absolute left-[10%] right-[10%] top-[5px] h-px bg-border" aria-hidden="true"></div>
+        <div class="absolute left-[10%] top-[5px] h-px w-[60%] bg-brand-500" aria-hidden="true"></div>
+        <div class="relative grid grid-cols-5">
+          <div class="flex flex-col items-center text-center">
+            <span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span>
+            <p class="mt-3 text-sm font-semibold text-foreground">Data</p>
+            <p class="mt-0.5 text-xs text-muted-foreground">Fanfinity Blocks</p>
+            <p class="mt-1 text-xs font-semibold text-foreground">Live</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span>
+            <p class="mt-3 text-sm font-semibold text-foreground">Identity</p>
+            <p class="mt-0.5 text-xs text-muted-foreground">Fanfinity ID</p>
+            <p class="mt-1 text-xs font-semibold text-foreground">Live</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span>
+            <p class="mt-3 text-sm font-semibold text-foreground">Activation</p>
+            <p class="mt-0.5 text-xs text-muted-foreground">Fanfinity Activate</p>
+            <p class="mt-1 text-xs font-semibold text-foreground">Live</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <span class="h-2.5 w-2.5 rotate-45 bg-brand-500" aria-hidden="true"></span>
+            <p class="mt-3 text-sm font-semibold text-foreground">Measurement</p>
+            <p class="mt-0.5 text-xs text-muted-foreground">Fanfinity Measure</p>
+            <p class="mt-1 text-xs font-semibold text-foreground">Live</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <span class="h-2.5 w-2.5 rotate-45 border border-brand-500 bg-background" aria-hidden="true"></span>
+            <p class="mt-3 text-sm font-semibold text-foreground">Engagement</p>
+            <p class="mt-0.5 text-xs text-muted-foreground">Fanfinity Engage</p>
+            <p class="mt-1 text-xs font-semibold text-brand-foreground">Design Preview</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: same stations, stacked -->
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:hidden">
+      <p class="flex items-center gap-3 text-sm"><span class="h-2 w-2 shrink-0 rotate-45 bg-brand-500" aria-hidden="true"></span><span class="font-semibold text-foreground">Data, Identity, Activation &amp; Measurement</span><span class="text-muted-foreground">Live</span></p>
+      <p class="flex items-center gap-3 text-sm"><span class="h-2 w-2 shrink-0 rotate-45 border border-brand-500" aria-hidden="true"></span><span class="font-semibold text-foreground">Engagement</span><span class="text-brand-foreground">Design Preview</span></p>
+    </div>
+
   </div>
 </section>

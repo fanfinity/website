@@ -1,73 +1,89 @@
 {%- comment -%}
-Interactive industry switcher (home "Industries" section). Tabs across the five
-fan-driven industries; each swaps an ILLUSTRATIVE sample audience — segment rows,
-a reachable count, and channels — reusing the hero audience-card pattern. No real
-metrics or customers: the card is labelled "Illustrative sample audience".
-Serves the horizontal buyer: a media / retail / travel exec sees their own audience,
-not a sports one. Progressive enhancement: without JS the first (Sports) card shows.
-Tab metadata (label / key / url) is rendered server-side; sample data lives in JS.
+Industries — an expanding photo gallery. Five doors, one per industry,
+using the site's own industry photography under one consistent ink
+treatment (grayscale + ink gradient; color blooms on the open panel).
+Hover/focus expands a panel and reveals the industry's story with the
+Salem thread ("the same profile in every context"); click navigates to
+the industry page, so everything works without JS. Mobile stacks the
+panels as banners with the content always visible. ILLUSTRATIVE counts.
 {%- endcomment -%}
-{%- assign group = site.data.navigation.header | where: 'title', 'Solutions' | first -%}
-{%- assign inds = group.groups | where: 'heading', 'By industry' | first -%}
-<section class="section border-y border-border bg-soft" id="industries">
-  <div class="container-page">
-    <div class="grid items-center gap-12 lg:grid-cols-2">
+<section class="relative overflow-hidden border-y border-border bg-soft" id="industries">
+  <div class="container-page section">
 
-      <!-- Copy + tabs -->
-      <div data-reveal>
-        <p class="eyebrow">By industry</p>
-        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">One platform, every audience business</h2>
-        <p class="mt-4 text-lg text-muted-foreground">The same connected platform, tuned to the audience each industry needs to reach.</p>
-
-        <div class="mt-8 flex flex-wrap gap-2" data-industry-tabs role="tablist" aria-label="Industries">
-          {%- for ind in inds.links -%}
-            {%- assign key = ind.icon -%}
-            <button type="button" role="tab"
-                    data-industry-tab="{{ key }}"
-                    data-industry-url="{{ ind.url | relative_url }}"
-                    data-industry-label="{{ ind.title }}"
-                    class="rounded-full px-4 py-2 text-sm font-semibold transition {% if forloop.first %}bg-brand-600 text-white{% else %}border border-border bg-card text-muted-foreground hover:text-foreground{% endif %}">
-              {{ ind.title }}
-            </button>
-          {%- endfor -%}
-        </div>
-
-        <a href="{{ inds.links[0].url | relative_url }}" data-industry-link class="link-arrow mt-7">Explore {{ inds.links[0].title }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">One platform, every audience business</h2>
+        <p class="mt-3 text-lg leading-relaxed text-muted-foreground">The same person is a fan on matchday, a viewer at night, a shopper on Friday. One profile follows them through all of it.</p>
       </div>
+      <p class="text-xs text-muted-foreground lg:pb-1">Illustrative &middot; hover to open, click to explore</p>
+    </div>
 
-      <!-- Sample audience card — a resolved-audience summary (distinct from the hero's query builder) -->
-      <div data-reveal style="--reveal-delay:120ms" class="relative">
-        <div class="rounded-3xl border border-border bg-card p-6 shadow-xl shadow-brand-500/10">
-          <div class="flex items-center justify-between">
-            <span data-industry-tag class="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold text-brand-700">Sports &amp; Entertainment</span>
-            <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">Illustrative</span>
-          </div>
-          <div data-industry-body class="transition-opacity duration-500 ease-out">
-            <div class="mt-5 flex items-baseline gap-2">
-              <span data-industry-count class="font-heading text-4xl font-bold tabular-nums text-foreground">48,320</span>
-              <span class="text-sm text-muted-foreground">reachable profiles</span>
-            </div>
-            <h3 data-industry-title class="mt-1 text-sm font-semibold text-brand-foreground">High-value season-ticket holders</h3>
-            <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Defining traits</p>
-            <div data-industry-rows class="mt-1 divide-y divide-border">
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Region</span><span class="font-semibold text-foreground">KSA</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Lifetime value</span><span class="font-semibold text-foreground">&gt; SAR 5,000</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Matches attended</span><span class="font-semibold text-foreground">&#8805; 12</span></div>
-              <div class="flex items-center justify-between py-2 text-[13px]"><span class="text-muted-foreground">Last seen</span><span class="font-semibold text-foreground">&#8804; 7 days</span></div>
-            </div>
-            <div class="mt-5 flex flex-wrap items-center gap-2">
-              <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Ready on</span>
-              <div data-industry-channels class="flex flex-wrap gap-1.5">
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>WhatsApp</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Email</span>
-                <span class="inline-flex items-center gap-1.5 rounded-full border border-border px-2.5 py-1 text-[11px] font-semibold text-foreground"><span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>Push</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="mt-2 text-center text-[11px] text-muted-foreground">Illustrative sample audience.</p>
-      </div>
+    <div class="mt-10 flex flex-col gap-2.5 lg:h-[32rem] lg:flex-row" data-gallery>
 
+      {%- assign inds = "sports|Sports|solutions-sports|Season ticket holder|48,320 fans like Salem|Matchday, broadcast, and sponsorship on one fan graph.|Fans at a stadium during a match
+media|Media|solutions-media|Prime time viewer|37,480 viewers like Salem|Turn anonymous reach into known, addressable viewers.|A live audience facing a lit stage
+retail|Retail|solutions-retail|Gold tier shopper|22,905 shoppers like Salem|Personalize every journey from visit to repeat basket.|A shopping cart in a busy store aisle
+travel|Travel|solutions-travel|Returning guest|12,730 guests like Salem|One guest profile across every property and trip.|An aircraft at an airport gate
+brands|Brands|solutions-brands|Verified audience|61,140 people like Salem|Prove sponsored reach with names, not impressions.|A crowd at a live sponsored event" | newline_to_br | split: '<br />' -%}
+
+      {%- for row in inds -%}
+        {%- assign f = row | strip | split: '|' -%}
+        <a href="{{ '/solutions/' | append: f[0] | relative_url }}"
+           data-panel {% if forloop.first %}data-open{% endif %}
+           class="group panel-anim relative block h-44 overflow-hidden rounded-2xl lg:h-auto lg:min-w-0 lg:flex-1"
+           style="background-color:#17151d;flex-grow:{% if forloop.first %}3.2{% else %}1{% endif %}">
+          <img src="{{ '/assets/img/' | append: f[2] | append: '.jpg' | relative_url }}" alt="{{ f[6] }}" loading="lazy" decoding="async"
+               class="absolute inset-0 h-full w-full object-cover transition-all duration-700 {% unless forloop.first %}lg:grayscale{% endunless %}" data-panel-img>
+          <span class="absolute inset-0 bg-gradient-to-t from-[#0b0712]/95 via-[#0b0712]/40 to-[#0b0712]/25" aria-hidden="true"></span>
+
+          <!-- Collapsed spine (lg): vertical word -->
+          <span data-panel-spine class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 items-center gap-3 transition-opacity duration-300 lg:flex {% if forloop.first %}lg:opacity-0{% endif %}" style="writing-mode: vertical-rl;">
+            <span class="h-2 w-2 rotate-45 border border-white/60" aria-hidden="true"></span>
+            <span class="font-heading text-2xl font-bold tracking-tight text-white">{{ f[1] }}</span>
+          </span>
+
+          <!-- Story (always visible on mobile; revealed when open on lg) -->
+          <span data-panel-story class="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 p-5 transition-opacity duration-500 sm:p-6 {% unless forloop.first %}lg:opacity-0{% endunless %}">
+            <span class="flex items-center gap-2.5">
+              <span class="h-2 w-2 rotate-45 bg-brand-300" aria-hidden="true"></span>
+              <span class="font-heading text-2xl font-bold tracking-tight text-white sm:text-3xl">{{ f[1] }}</span>
+            </span>
+            <span class="text-sm text-white/70 lg:max-w-sm">{{ f[5] }}</span>
+            <span class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px]">
+              <span class="inline-flex items-center gap-2 text-white/85">
+                <span class="grid h-6 w-6 place-items-center rounded-full bg-brand-100 font-heading text-[10px] font-bold text-brand-700">SA</span>
+                Salem here: {{ f[3] }}
+              </span>
+              <span class="font-semibold tabular-nums text-white">{{ f[4] }}</span>
+            </span>
+            <span class="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-200">Explore {{ f[1] }} {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </span>
+        </a>
+      {%- endfor -%}
     </div>
   </div>
+
+  <script>
+    /* Gallery — hover/focus expands a door on desktop; click always
+       navigates, so the section is fully functional without JS. */
+    (function () {
+      var gallery = document.querySelector('[data-gallery]');
+      if (!gallery) return;
+      var lgUp = window.matchMedia('(min-width: 1024px)');
+      var panels = Array.prototype.slice.call(gallery.querySelectorAll('[data-panel]'));
+      function open(target) {
+        panels.forEach(function (p) {
+          var on = p === target;
+          p.style.flexGrow = on ? '3.2' : '1';
+          p.querySelector('[data-panel-img]').classList.toggle('lg:grayscale', !on);
+          p.querySelector('[data-panel-spine]').classList.toggle('lg:opacity-0', on);
+          p.querySelector('[data-panel-story]').classList.toggle('lg:opacity-0', !on);
+        });
+      }
+      panels.forEach(function (p) {
+        p.addEventListener('mouseenter', function () { if (lgUp.matches) open(p); });
+        p.addEventListener('focus', function () { if (lgUp.matches) open(p); });
+      });
+    })();
+  </script>
 </section>
