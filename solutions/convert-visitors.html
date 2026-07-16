@@ -9,43 +9,1419 @@ features:
   - { icon: bolt,     title: "Capture signals before the first login", body: "Every page view, scroll depth, click, and content interaction is tracked and attached to an anonymous profile the moment a visitor arrives. You stop flying blind and start building context from the very first touchpoint." }
   - { icon: identity, title: "Resolve identity the instant it appears", body: "When a visitor signs up, logs in, or fills a form, Fanfinity collapses all prior anonymous activity into their persistent fan profile. No history is lost: the session before the signup is as visible as every session after." }
   - { icon: spark,    title: "Personalize before they tell you who they are", body: "Behavioral patterns (what content they read, which products they dwell on, how they navigate) let you tailor the experience in real time without waiting for a form submission. Relevance starts on visit one." }
-  - { icon: megaphone, title: "Activate across every downstream channel", body: "Anonymous and resolved profiles flow downstream to ad platforms, email tools, and personalization engines via Reverse ETL. A visitor who browses but doesn't convert is suppressible, retargetable, or nurture-eligible immediately." }
+  - { icon: megaphone, title: "Activate across every downstream channel", body: "Anonymous and resolved profiles flow downstream to ad platforms, email tools, and personalization engines via Reverse ETL. A visitor who browses but doesn't convert is immediately eligible for suppression, retargeting, or nurturing." }
 steps:
   - { icon: bolt,     title: "Capture every anonymous signal", body: "Anonymous context starts building from the very first page load." }
   - { icon: identity, title: "Stitch identity when it appears", body: "A signup, login, or form fill merges that history into one persistent profile." }
   - { icon: spark,    title: "Personalize in real time", body: "Live signals drive in-session personalization and downstream audiences immediately." }
   - { icon: megaphone, title: "Activate across channels", body: "Resolved and anonymous segments sync to ad platforms, email, and CRM via reverse ETL." }
 ---
-{% include hero.html
-   eyebrow="Use Case"
-   title="Convert visitors before they tell you who they are"
-   subtitle="Most visitors leave without identifying. Fanfinity captures their behavioral signals from the first page load, builds anonymous profiles that personalize in real time, and collapses that history into the fan graph the instant they identify, so no interaction is ever wasted."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore Fanfinity Blocks"
-   secondary_url="/platform/blocks"
-   image="/assets/img/solutions-convert-visitors.jpg"
-   image_alt="A young man using a smartphone and credit card for online shopping" %}
 
-{% include feature-grid.html
-   heading="Behavioral context before the signup"
-   subheading="The window between a visitor's first page load and their first login is where most platforms go dark. Fanfinity keeps that window lit."
-   items=page.features
-   columns=2 %}
+<!-- ══ HERO — typographic, asymmetric: headline + live "signal ledger" annotation ══ -->
+<section class="cvx-hero" aria-labelledby="cvx-title">
+  <div class="container-page">
+    <div class="grid items-end gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-7" data-reveal>
+        <p class="eyebrow">Use Case · Identity resolution</p>
+        <h1 id="cvx-title" class="mt-5 font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.6rem] lg:leading-[1.05]">
+          Convert visitors <span class="cvx-accent">before</span> they tell you who they&nbsp;are
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Most visitors leave without identifying. Fanfinity captures their behavioral signals from the first page load, builds anonymous profiles that personalize in real time, and collapses that history into the fan graph the instant they identify, so no interaction is ever wasted.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="{{ '/platform/blocks' | relative_url }}" class="btn btn-secondary btn-lg">Explore Fanfinity Blocks</a>
+        </div>
+      </div>
 
-{% include feature-split.html
-   reverse=false
-   title="The moment of identity is not a starting line"
-   body="When a visitor finally identifies (through a signup, a login, or a form), most CDPs treat that as day one. Fanfinity treats it as a merge point. Every anonymous session, every behavioral signal, every inferred preference collapses into the persistent fan profile, so the fan graph is rich from the moment it becomes known."
-   cta_text="See how Fanfinity ID works"
-   cta_url="/platform/id"
-   icon="identity" %}
+      <aside class="cvx-ledger lg:col-span-5" data-reveal style="--reveal-delay:120ms" aria-label="Signal ledger: what Fanfinity attaches to an anonymous profile">
+        <p class="cvx-ledger-head">Signal ledger · live from the first page load</p>
+        <ul class="cvx-ledger-list">
+          <li><span class="cvx-ledger-dot" aria-hidden="true"></span><span>Page views</span><span class="cvx-ledger-code">evt.view</span></li>
+          <li><span class="cvx-ledger-dot" aria-hidden="true"></span><span>Scroll depth</span><span class="cvx-ledger-code">evt.scroll</span></li>
+          <li><span class="cvx-ledger-dot" aria-hidden="true"></span><span>Dwell time</span><span class="cvx-ledger-code">evt.dwell</span></li>
+          <li><span class="cvx-ledger-dot" aria-hidden="true"></span><span>Clicks &amp; interactions</span><span class="cvx-ledger-code">evt.click</span></li>
+        </ul>
+        <p class="cvx-ledger-foot">attached to an anonymous profile · consented · in-Kingdom</p>
+      </aside>
+    </div>
 
-{% include value-pillars.html
-   heading="Capture, resolve, personalize, activate"
-   subheading="Four steps from anonymous visitor to activated fan profile."
-   items=page.steps %}
+    <p class="cvx-flowmono" data-reveal style="--reveal-delay:200ms">
+      <span>capture</span><span class="cvx-flowmono-arrow" aria-hidden="true">→</span>
+      <span>stitch</span><span class="cvx-flowmono-arrow" aria-hidden="true">→</span>
+      <span>personalize</span><span class="cvx-flowmono-arrow" aria-hidden="true">→</span>
+      <span>activate</span>
+    </p>
+  </div>
+</section>
+
+<!-- ══ CENTERPIECE — playable "login moment" demo ══ -->
+<section class="cvx-demo-section" aria-labelledby="cvx-demo-title">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Playable demo · illustrative</p>
+      <h2 id="cvx-demo-title" class="mt-4 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">The login moment</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        Fire a few anonymous signals. Watch them orbit the unknown visitor and quietly reshape the page, before any form is filled. Then press <strong class="font-semibold text-foreground">Log&nbsp;in</strong> and see every fragment stitch into one known profile, history intact.
+      </p>
+    </div>
+
+    <div class="cvx-demo" data-reveal>
+      <!-- Stage: orbiting signal fragments around the unknown visitor -->
+      <div class="cvx-stage-col">
+        <div class="cvx-stage" id="cvx-stage">
+          <span class="cvx-ring cvx-ring-a" aria-hidden="true"></span>
+          <span class="cvx-ring cvx-ring-b" aria-hidden="true"></span>
+          <div class="cvx-orbits" id="cvx-orbits" aria-hidden="true"></div>
+
+          <div class="cvx-visitor" id="cvx-visitor">
+            <svg class="cvx-visitor-svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 6" aria-hidden="true">
+              <circle cx="60" cy="42" r="19"/>
+              <path d="M27 99c4.5-21 17-30 33-30s28.5 9 33 30"/>
+            </svg>
+            <p class="cvx-visitor-id">anon_8x3kf</p>
+            <p class="cvx-visitor-sub">unknown visitor</p>
+          </div>
+
+          <div class="cvx-known" id="cvx-known" hidden>
+            <div class="cvx-known-head">
+              <span class="cvx-known-avatar" aria-hidden="true">DF</span>
+              <div class="cvx-known-idblock">
+                <p class="cvx-known-name">Demo Fan · fan_48213</p>
+                <p class="cvx-known-sub">known profile · consented · in-Kingdom</p>
+              </div>
+              <span class="cvx-known-badge">Rich from day one</span>
+            </div>
+            <p class="cvx-known-histhead">stitched history · pre-login session</p>
+            <ul class="cvx-known-history" id="cvx-known-history"></ul>
+            <p class="cvx-known-count"><span id="cvx-count">0</span> pre-login signals stitched, history intact</p>
+          </div>
+        </div>
+
+        <div class="cvx-activate" id="cvx-activate" hidden>
+          <p class="cvx-activate-label">Reverse ETL <span aria-hidden="true">→</span></p>
+          <ul class="cvx-activate-chips">
+            <li class="cvx-act-chip">Ad platforms · <strong>suppress</strong></li>
+            <li class="cvx-act-chip">Email &amp; CRM · <strong>nurture</strong></li>
+            <li class="cvx-act-chip">On-site · <strong>retarget</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Control panel -->
+      <div class="cvx-panel">
+        <div class="cvx-panel-block">
+          <p class="cvx-panel-label" id="cvx-step1">01 · Fire anonymous signals</p>
+          <div class="cvx-sig-grid" role="group" aria-labelledby="cvx-step1">
+            <button type="button" class="cvx-sig" data-sig="view"><span class="cvx-sig-type">Page view</span><span class="cvx-sig-desc">cycles kit, fixtures, tickets</span></button>
+            <button type="button" class="cvx-sig" data-sig="scroll"><span class="cvx-sig-type">Scroll 75%</span><span class="cvx-sig-desc">fixture centre</span></button>
+            <button type="button" class="cvx-sig" data-sig="dwell"><span class="cvx-sig-type">Dwell 12s</span><span class="cvx-sig-desc">away kit page</span></button>
+            <button type="button" class="cvx-sig" data-sig="click"><span class="cvx-sig-type">Click</span><span class="cvx-sig-desc">derby tickets</span></button>
+          </div>
+        </div>
+
+        <div class="cvx-panel-block">
+          <p class="cvx-panel-label" id="cvx-step2">02 · Watch the page personalize, pre-login</p>
+          <div class="cvx-browser" aria-labelledby="cvx-step2">
+            <div class="cvx-browser-bar">
+              <span class="cvx-browser-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="cvx-browser-url">yoursite.com</span>
+              <span class="cvx-browser-state" id="cvx-pstate">Generic</span>
+            </div>
+            <div class="cvx-browser-body">
+              <p class="cvx-p-hero" id="cvx-p-hero">New season, new everything. Start exploring.</p>
+              <div class="cvx-mods">
+                <div class="cvx-mod" data-interest="kit">Away kit drop</div>
+                <div class="cvx-mod" data-interest="fixtures">Fixture centre</div>
+                <div class="cvx-mod" data-interest="tickets">Derby tickets</div>
+              </div>
+              <div class="cvx-meters" aria-hidden="true">
+                <div class="cvx-meter-row"><span class="cvx-meter-name">kit affinity</span><span class="cvx-meter"><span class="cvx-meter-fill" id="cvx-m-kit"></span></span></div>
+                <div class="cvx-meter-row"><span class="cvx-meter-name">fixtures</span><span class="cvx-meter"><span class="cvx-meter-fill" id="cvx-m-fixtures"></span></span></div>
+                <div class="cvx-meter-row"><span class="cvx-meter-name">tickets</span><span class="cvx-meter"><span class="cvx-meter-fill" id="cvx-m-tickets"></span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cvx-panel-block">
+          <p class="cvx-panel-label" id="cvx-step3">03 · Resolve identity</p>
+          <button type="button" class="cvx-login" id="cvx-login" disabled aria-describedby="cvx-login-hint">Log in</button>
+          <p class="cvx-login-hint" id="cvx-login-hint">Fire 4 signals to enable the login moment.</p>
+          <button type="button" class="cvx-reset" id="cvx-reset">Replay the moment</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="cvx-demo-note">Illustrative simulation, running entirely in your browser. No real visitor data is collected on this page.</p>
+    <span id="cvx-live" class="sr-only" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
+<!-- ══ FEATURES — editorial numbered list + identity-gap annotation ══ -->
+<section class="cvx-features" aria-labelledby="cvx-features-title">
+  <div class="container-page grid gap-12 lg:grid-cols-12">
+    <div class="lg:col-span-5" data-reveal>
+      <p class="eyebrow">From first click to known fan</p>
+      <h2 id="cvx-features-title" class="mt-4 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">Behavioral context before the signup</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        The window between a visitor's first page load and their first login is where most platforms go dark. Fanfinity keeps that window lit.
+      </p>
+
+      <div class="cvx-gap" role="img" aria-label="Diagram: between the first page load and the first login lies the identity gap. On a typical stack it is dark; Fanfinity keeps it lit.">
+        <div class="cvx-gap-ends">
+          <span class="cvx-gap-tick">First page load</span>
+          <span class="cvx-gap-name">The identity gap</span>
+          <span class="cvx-gap-tick">First login</span>
+        </div>
+        <div class="cvx-gap-track">
+          <span class="cvx-gap-dark-line" aria-hidden="true"></span>
+          <span class="cvx-gap-cap cvx-gap-cap-dark">typical stack · dark</span>
+        </div>
+        <div class="cvx-gap-track">
+          <span class="cvx-gap-lit-line flow-line" aria-hidden="true"></span>
+          <span class="cvx-gap-cap cvx-gap-cap-lit">fanfinity · lit</span>
+        </div>
+      </div>
+    </div>
+
+    <ol class="cvx-feature-list lg:col-span-7">
+      <li class="cvx-feature" data-reveal>
+        <span class="cvx-feature-num font-heading" aria-hidden="true">01</span>
+        <div class="cvx-feature-body">
+          <div class="flex items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+            <h3 class="font-heading text-xl font-semibold tracking-tight">Capture signals before the first login</h3>
+          </div>
+          <p class="mt-3 leading-relaxed text-muted-foreground">Every page view, scroll depth, click, and content interaction is tracked and attached to an anonymous profile the moment a visitor arrives. You stop flying blind and start building context from the very first touchpoint.</p>
+        </div>
+      </li>
+      <li class="cvx-feature" data-reveal>
+        <span class="cvx-feature-num font-heading" aria-hidden="true">02</span>
+        <div class="cvx-feature-body">
+          <div class="flex items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+            <h3 class="font-heading text-xl font-semibold tracking-tight">Resolve identity the instant it appears</h3>
+          </div>
+          <p class="mt-3 leading-relaxed text-muted-foreground">When a visitor signs up, logs in, or fills a form, Fanfinity collapses all prior anonymous activity into their persistent fan profile. No history is lost: the session before the signup is as visible as every session after.</p>
+        </div>
+      </li>
+      <li class="cvx-feature" data-reveal>
+        <span class="cvx-feature-num font-heading" aria-hidden="true">03</span>
+        <div class="cvx-feature-body">
+          <div class="flex items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+            <h3 class="font-heading text-xl font-semibold tracking-tight">Personalize before they tell you who they are</h3>
+          </div>
+          <p class="mt-3 leading-relaxed text-muted-foreground">What content they read, which products they dwell on, how they navigate: behavioral patterns let you tailor the experience in real time without waiting for a form submission. Relevance starts on visit one.</p>
+        </div>
+      </li>
+      <li class="cvx-feature" data-reveal>
+        <span class="cvx-feature-num font-heading" aria-hidden="true">04</span>
+        <div class="cvx-feature-body">
+          <div class="flex items-center gap-3">
+            <span class="icon-chip-sm">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+            <h3 class="font-heading text-xl font-semibold tracking-tight">Activate across every downstream channel</h3>
+          </div>
+          <p class="mt-3 leading-relaxed text-muted-foreground">Anonymous and resolved profiles flow downstream to ad platforms, email tools, and personalization engines via Reverse ETL. A visitor who browses but doesn't convert is immediately eligible for suppression, retargeting, or nurturing.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ IDENTITY — empty on day one vs rich from day one ══ -->
+<section class="cvx-identity" aria-labelledby="cvx-identity-title">
+  <div class="container-page grid items-center gap-12 lg:grid-cols-2">
+    <div data-reveal>
+      <p class="eyebrow">Identity resolution</p>
+      <h2 id="cvx-identity-title" class="mt-4 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">The moment of identity is not a starting line</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        When a visitor finally identifies, through a signup, a login, or a form, most CDPs treat that as day one. Fanfinity treats it as a merge point. Every anonymous session, every behavioral signal, every inferred preference collapses into the persistent fan profile, so the fan graph is rich from the moment it becomes known.
+      </p>
+      <p class="mt-6">
+        <a href="{{ '/platform/id' | relative_url }}" class="link-arrow">See how Fanfinity ID works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </p>
+    </div>
+
+    <div class="cvx-compare" data-reveal style="--reveal-delay:120ms">
+      <figure class="cvx-day">
+        <figcaption class="cvx-day-cap"><span class="cvx-day-tag">Typical CDP</span> day one</figcaption>
+        <div class="cvx-day-card cvx-day-empty-card">
+          <p class="cvx-day-id">user_10293 <span class="cvx-day-new">new</span></p>
+          <span class="cvx-skel" aria-hidden="true"></span>
+          <span class="cvx-skel cvx-skel-short" aria-hidden="true"></span>
+          <span class="cvx-skel" aria-hidden="true"></span>
+          <p class="cvx-day-note">0 historical signals, starts from zero</p>
+        </div>
+      </figure>
+
+      <div class="cvx-merge" aria-hidden="true">
+        <span class="cvx-merge-line"></span>
+        <span class="cvx-merge-label">signup · login · form fill<br/>= merge point</span>
+        <span class="cvx-merge-line"></span>
+      </div>
+
+      <figure class="cvx-day">
+        <figcaption class="cvx-day-cap"><span class="cvx-day-tag cvx-day-tag-gold">Fanfinity</span> day one</figcaption>
+        <div class="cvx-day-card cvx-day-rich-card">
+          <p class="cvx-day-id cvx-day-id-rich">fan_48213 <span class="cvx-day-stitched">stitched</span></p>
+          <ul class="cvx-day-rows">
+            <li>view · /kit/away-25 <span>pre-login</span></li>
+            <li>dwell 12s · away kit <span>pre-login</span></li>
+            <li>click · derby tickets <span>pre-login</span></li>
+          </ul>
+          <p class="cvx-day-note cvx-day-note-rich">12 pre-login signals stitched, rich from day one</p>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS — stepped timeline ══ -->
+<section class="cvx-how" aria-labelledby="cvx-how-title">
+  <div class="container-page">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <p class="eyebrow justify-center">How it works</p>
+      <h2 id="cvx-how-title" class="mt-4 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">Capture, resolve, personalize, activate</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Four steps from anonymous visitor to activated fan profile.</p>
+    </div>
+
+    <ol class="cvx-steps">
+      <li class="cvx-step" data-reveal>
+        <div class="cvx-step-top">
+          <span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+          <span class="cvx-step-num font-heading" aria-hidden="true">01</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-semibold tracking-tight">Capture every anonymous signal</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Anonymous context starts building from the very first page load.</p>
+      </li>
+      <li class="cvx-step" data-reveal style="--reveal-delay:80ms">
+        <div class="cvx-step-top">
+          <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+          <span class="cvx-step-num font-heading" aria-hidden="true">02</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-semibold tracking-tight">Stitch identity when it appears</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">A signup, login, or form fill merges that history into one persistent profile.</p>
+      </li>
+      <li class="cvx-step" data-reveal style="--reveal-delay:160ms">
+        <div class="cvx-step-top">
+          <span class="icon-chip">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+          <span class="cvx-step-num font-heading" aria-hidden="true">03</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-semibold tracking-tight">Personalize in real time</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Live signals drive in-session personalization and downstream audiences immediately.</p>
+      </li>
+      <li class="cvx-step" data-reveal style="--reveal-delay:240ms">
+        <div class="cvx-step-top">
+          <span class="icon-chip">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+          <span class="cvx-step-num font-heading" aria-hidden="true">04</span>
+        </div>
+        <h3 class="mt-4 font-heading text-lg font-semibold tracking-tight">Activate across channels</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Resolved and anonymous segments sync to ad platforms, email, and CRM via Reverse ETL.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══ DOWNSTREAM — Reverse ETL flow diagram ══ -->
+<section class="cvx-etl-section" aria-labelledby="cvx-etl-title">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Downstream · Reverse ETL</p>
+      <h2 id="cvx-etl-title" class="mt-4 font-heading text-3xl font-semibold tracking-tight text-balance sm:text-4xl">Suppress, retarget, nurture, immediately</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        A visitor who browses but doesn't convert is immediately eligible for suppression, retargeting, or nurturing. Anonymous and resolved segments flow to the tools you already use: ad platforms, email, and CRM, via Reverse ETL.
+      </p>
+    </div>
+
+    <div class="cvx-etl" data-reveal>
+      <div class="cvx-etl-src">
+        <span class="cvx-etl-avatar" aria-hidden="true">DF</span>
+        <div>
+          <p class="cvx-etl-src-id">fan_48213</p>
+          <p class="cvx-etl-src-sub">resolved + anonymous segments</p>
+        </div>
+      </div>
+      <div class="cvx-etl-pipe" aria-hidden="true">
+        <span class="cvx-etl-flow flow-line"></span>
+        <span class="cvx-etl-pipe-label">Reverse&nbsp;ETL</span>
+        <span class="cvx-etl-flow flow-line"></span>
+      </div>
+      <ul class="cvx-etl-dests">
+        <li class="cvx-etl-dest">
+          <span class="icon-chip-sm">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+          <div><p class="cvx-etl-dest-name">Ad platforms</p><p class="cvx-etl-dest-sub">paid suppression &amp; lookalikes</p></div>
+          <span class="cvx-etl-chip">suppress</span>
+        </li>
+        <li class="cvx-etl-dest">
+          <span class="icon-chip-sm">{% include icon.html name="chat" class="h-5 w-5" %}</span>
+          <div><p class="cvx-etl-dest-name">Email &amp; CRM</p><p class="cvx-etl-dest-sub">abandoned browsing journeys</p></div>
+          <span class="cvx-etl-chip">nurture</span>
+        </li>
+        <li class="cvx-etl-dest">
+          <span class="icon-chip-sm">{% include icon.html name="target" class="h-5 w-5" %}</span>
+          <div><p class="cvx-etl-dest-name">Personalization engines</p><p class="cvx-etl-dest-sub">relevance on the next visit</p></div>
+          <span class="cvx-etl-chip">retarget</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="mt-8" data-reveal>
+      <a href="{{ '/platform/blocks' | relative_url }}" class="link-arrow">See what powers it: Fanfinity Blocks {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+    </p>
+  </div>
+</section>
+
+{% raw %}
+<style>
+/* ─────────────────────────────────────────────────────────────
+   Convert Visitors page — scoped styles (prefix: cvx-)
+   Hard-coded colors carry an html.dark override underneath.
+   ───────────────────────────────────────────────────────────── */
+
+/* Hero */
+.cvx-hero { padding: 4rem 0 3.5rem; }
+@media (min-width: 768px) { .cvx-hero { padding: 6rem 0 4.5rem; } }
+.cvx-accent {
+  color: #7c4dff;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 0.09em;
+  background-repeat: no-repeat;
+  background-position: 0 96%;
+  padding-bottom: 0.04em;
+}
+html.dark .cvx-accent { color: #b89aff; }
+
+.cvx-flowmono {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.cvx-flowmono-arrow { color: #9969ff; }
+
+/* Signal ledger card */
+.cvx-ledger {
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-card);
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 24px 60px -40px rgba(53, 16, 112, 0.25);
+}
+.cvx-ledger-head, .cvx-ledger-foot {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.cvx-ledger-list { margin: 1rem 0; }
+.cvx-ledger-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0;
+  border-top: 1px dashed var(--color-border);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.cvx-ledger-list li:first-child { border-top: 0; }
+.cvx-ledger-dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: #9969ff;
+  box-shadow: 0 0 10px rgba(153, 105, 255, 0.75);
+  flex-shrink: 0;
+}
+.cvx-ledger-code {
+  margin-left: auto;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: #7c4dff;
+}
+html.dark .cvx-ledger-code { color: #b89aff; }
+
+/* ── Centerpiece demo ── */
+.cvx-demo-section { padding: 4.5rem 0; border-top: 1px solid var(--color-border); }
+@media (min-width: 768px) { .cvx-demo-section { padding: 6rem 0; } }
+.cvx-demo {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+@media (min-width: 1024px) { .cvx-demo { grid-template-columns: 1.45fr 1fr; } }
+
+.cvx-stage {
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background-color: var(--color-card);
+  background-image: radial-gradient(rgba(124, 77, 255, 0.10) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+}
+html.dark .cvx-stage { background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px); }
+@media (max-width: 480px) { .cvx-stage { height: 380px; } }
+
+.cvx-ring {
+  position: absolute;
+  border: 1px dashed rgba(153, 105, 255, 0.30);
+  border-radius: 50%;
+  pointer-events: none;
+}
+html.dark .cvx-ring { border-color: rgba(153, 105, 255, 0.22); }
+.cvx-ring-a { width: 60%; height: 56%; left: 20%; top: 22%; }
+.cvx-ring-b { width: 80%; height: 76%; left: 10%; top: 12%; border-color: rgba(153, 105, 255, 0.16); }
+
+.cvx-orbits { position: absolute; inset: 0; z-index: 2; }
+
+.cvx-frag {
+  position: absolute;
+  top: 0; left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px 3px 6px;
+  max-width: 46%;
+  border-radius: 999px;
+  border: 1px solid rgba(153, 105, 255, 0.42);
+  background: var(--color-card);
+  box-shadow: 0 4px 14px -6px rgba(124, 77, 255, 0.45);
+  white-space: nowrap;
+  will-change: transform;
+}
+.cvx-frag-dot {
+  width: 7px; height: 7px;
+  border-radius: 999px;
+  background: #9969ff;
+  box-shadow: 0 0 10px rgba(153, 105, 255, 0.85);
+  flex-shrink: 0;
+  animation: cvxpop 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.4);
+}
+@keyframes cvxpop { from { transform: scale(0.2); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.cvx-frag-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: #5b3fb8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+html.dark .cvx-frag-label { color: #c9b3ff; }
+@media (max-width: 520px) { .cvx-frag-label { display: none; } .cvx-frag { padding: 5px; } }
+.cvx-frag.cvx-collapsing {
+  transition: transform 0.75s cubic-bezier(0.55, 0, 0.15, 1), opacity 0.75s ease;
+  opacity: 0;
+}
+
+/* Unknown visitor silhouette */
+.cvx-visitor {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  color: var(--color-muted-foreground);
+  transition: opacity 0.5s ease;
+}
+.cvx-visitor.cvx-visitor-hidden { opacity: 0; }
+.cvx-visitor-svg { width: 84px; height: 84px; margin: 0 auto; opacity: 0.85; }
+.cvx-visitor-id {
+  margin-top: 0.5rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--color-foreground);
+}
+.cvx-visitor-sub {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+/* Golden known-profile card */
+.cvx-known[hidden], .cvx-activate[hidden] { display: none; }
+.cvx-known {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: min(340px, 88%);
+  border-radius: 20px;
+  border: 1px solid #e8d194;
+  background: #fdf8ec;
+  box-shadow: 0 24px 60px -20px rgba(180, 130, 20, 0.40);
+  padding: 1.1rem 1.2rem;
+}
+.cvx-known.cvx-in { animation: cvxknown 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.15); }
+@keyframes cvxknown { from { transform: translate(-50%, -46%) scale(0.86); opacity: 0; } to { transform: translate(-50%, -50%) scale(1); opacity: 1; } }
+html.dark .cvx-known { background: #251c0c; border-color: #7a5c22; box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.6); }
+.cvx-known-head { display: flex; align-items: center; gap: 0.7rem; }
+.cvx-known-avatar {
+  width: 38px; height: 38px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: #f3e3b5;
+  color: #8a5a0b;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px; font-weight: 700;
+  flex-shrink: 0;
+}
+html.dark .cvx-known-avatar { background: #3a2d12; color: #eec85f; }
+.cvx-known-name { font-weight: 700; font-size: 0.92rem; color: #6b4a08; }
+html.dark .cvx-known-name { color: #f2d189; }
+.cvx-known-sub {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  color: #a8842f;
+}
+html.dark .cvx-known-sub { color: #c9a44e; }
+.cvx-known-badge {
+  margin-left: auto;
+  border-radius: 999px;
+  background: #f3e3b5;
+  color: #8a5a0b;
+  font-size: 10px; font-weight: 700;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+html.dark .cvx-known-badge { background: #3a2d12; color: #eec85f; }
+.cvx-known-histhead {
+  margin-top: 0.9rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a8842f;
+}
+html.dark .cvx-known-histhead { color: #c9a44e; }
+.cvx-known-history { margin-top: 0.45rem; }
+.cvx-known-history li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  border-top: 1px dashed #ecd9a8;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: #7c5c10;
+}
+html.dark .cvx-known-history li { border-color: #54401a; color: #d9b968; }
+.cvx-known-count {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b4a08;
+}
+html.dark .cvx-known-count { color: #f2d189; }
+.cvx-known-count span { font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; }
+
+/* Activation chips under the stage */
+.cvx-activate {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 16px;
+  padding: 0.85rem 1.1rem;
+}
+.cvx-activate.cvx-in .cvx-act-chip { animation: cvxchip 0.5s ease both; }
+.cvx-activate.cvx-in .cvx-act-chip:nth-child(2) { animation-delay: 0.12s; }
+.cvx-activate.cvx-in .cvx-act-chip:nth-child(3) { animation-delay: 0.24s; }
+@keyframes cvxchip { from { transform: translateY(8px); opacity: 0; } to { transform: none; opacity: 1; } }
+.cvx-activate-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.cvx-activate-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.cvx-act-chip {
+  border-radius: 999px;
+  border: 1px solid #e8d194;
+  background: #fdf8ec;
+  color: #8a5a0b;
+  font-size: 12px;
+  padding: 5px 12px;
+}
+html.dark .cvx-act-chip { background: #251c0c; border-color: #7a5c22; color: #eec85f; }
+
+/* Control panel */
+.cvx-panel { display: flex; flex-direction: column; gap: 1rem; }
+.cvx-panel-block {
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-card);
+  padding: 1.1rem 1.2rem;
+}
+.cvx-panel-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  margin-bottom: 0.85rem;
+}
+.cvx-sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+@media (max-width: 400px) { .cvx-sig-grid { grid-template-columns: 1fr; } }
+.cvx-sig {
+  display: flex; flex-direction: column; gap: 2px;
+  text-align: left;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-background);
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.1s ease;
+}
+.cvx-sig:hover { border-color: #9969ff; }
+.cvx-sig:active { transform: scale(0.97); }
+.cvx-sig:disabled { opacity: 0.45; cursor: not-allowed; }
+.cvx-sig-type { font-size: 0.85rem; font-weight: 600; color: var(--color-foreground); }
+.cvx-sig-desc {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9.5px;
+  color: var(--color-muted-foreground);
+}
+
+/* Browser mock */
+.cvx-browser {
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-background);
+}
+.cvx-browser-bar {
+  display: flex; align-items: center; gap: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  background: var(--color-card);
+}
+.cvx-browser-dots { display: inline-flex; gap: 4px; }
+.cvx-browser-dots i { width: 7px; height: 7px; border-radius: 999px; background: var(--color-border); }
+.cvx-browser-url {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: var(--color-muted-foreground);
+}
+.cvx-browser-state {
+  margin-left: auto;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  padding: 2px 9px;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  transition: all 0.25s ease;
+}
+.cvx-browser-state.is-personal { border-color: #9969ff; color: #7c4dff; background: rgba(153, 105, 255, 0.10); }
+html.dark .cvx-browser-state.is-personal { color: #c9b3ff; }
+.cvx-browser-body { padding: 0.9rem; }
+.cvx-p-hero { font-size: 0.95rem; font-weight: 600; line-height: 1.35; min-height: 2.6em; transition: color 0.25s ease; }
+.cvx-mods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.7rem; }
+.cvx-mod {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.55rem 0.5rem;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-muted-foreground);
+  transition: all 0.25s ease;
+}
+.cvx-mod.is-hot { border-color: #9969ff; background: rgba(153, 105, 255, 0.09); color: #7c4dff; box-shadow: 0 0 0 1px rgba(153, 105, 255, 0.35); }
+html.dark .cvx-mod.is-hot { color: #c9b3ff; background: rgba(153, 105, 255, 0.16); }
+.cvx-meters { margin-top: 0.85rem; display: grid; gap: 0.4rem; }
+.cvx-meter-row { display: flex; align-items: center; gap: 0.6rem; }
+.cvx-meter-name {
+  width: 78px; flex-shrink: 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.cvx-meter { flex: 1; height: 4px; border-radius: 2px; background: var(--color-muted); overflow: hidden; }
+.cvx-meter-fill { display: block; height: 100%; width: 0; border-radius: 2px; background: #9969ff; transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+
+/* Login + reset */
+.cvx-login {
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  background: #7c4dff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.25s ease;
+  box-shadow: 0 14px 34px -14px rgba(124, 77, 255, 0.65);
+}
+.cvx-login:hover:not(:disabled) { background: #854dff; }
+.cvx-login:active:not(:disabled) { transform: translateY(1px); }
+.cvx-login:disabled { background: var(--color-muted); color: var(--color-muted-foreground); cursor: not-allowed; box-shadow: none; }
+.cvx-login.is-resolved { background: #b98a1d; box-shadow: 0 14px 34px -14px rgba(185, 138, 29, 0.6); cursor: default; }
+html.dark .cvx-login.is-resolved { background: #8a6a1c; }
+.cvx-login:focus-visible, .cvx-reset:focus-visible, .cvx-sig:focus-visible {
+  outline: 2px solid #9969ff;
+  outline-offset: 2px;
+}
+.cvx-login-hint {
+  margin-top: 0.6rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: var(--color-muted-foreground);
+}
+.cvx-reset {
+  margin-top: 0.7rem;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--color-foreground);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+.cvx-reset:hover { border-color: #9969ff; }
+.cvx-demo-note {
+  margin-top: 1.5rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--color-muted-foreground);
+}
+
+/* ── Features: numbered editorial list ── */
+.cvx-features { padding: 4.5rem 0; border-top: 1px solid var(--color-border); }
+@media (min-width: 768px) { .cvx-features { padding: 6.5rem 0; } }
+.cvx-feature-list { list-style: none; margin: 0; padding: 0; }
+.cvx-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.cvx-feature:first-child { border-top: 0; padding-top: 0; }
+.cvx-feature-num {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #d9c8ff;
+  min-width: 3.2rem;
+}
+html.dark .cvx-feature-num { color: #452a86; }
+
+/* Identity gap diagram */
+.cvx-gap { margin-top: 2.5rem; max-width: 26rem; }
+.cvx-gap-ends {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.cvx-gap-tick {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-foreground);
+  white-space: nowrap;
+}
+.cvx-gap-name {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #7c4dff;
+  text-align: center;
+}
+html.dark .cvx-gap-name { color: #b89aff; }
+.cvx-gap-track { position: relative; margin-top: 0.9rem; height: 20px; }
+.cvx-gap-dark-line {
+  position: absolute; left: 0; right: 0; top: 4px;
+  border-top: 2px dashed var(--color-border);
+}
+.cvx-gap-lit-line {
+  position: absolute; left: 0; right: 0; top: 4px;
+  display: block; height: 2px;
+}
+.cvx-gap-cap {
+  position: absolute; top: 10px;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cvx-gap-cap-dark { left: 0; color: var(--color-muted-foreground); }
+.cvx-gap-cap-lit { right: 0; color: #7c4dff; }
+html.dark .cvx-gap-cap-lit { color: #b89aff; }
+
+/* ── Identity compare ── */
+.cvx-identity { padding: 4.5rem 0; border-top: 1px solid var(--color-border); }
+@media (min-width: 768px) { .cvx-identity { padding: 6.5rem 0; } }
+.cvx-compare {
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: var(--color-card);
+  padding: 1.4rem;
+}
+.cvx-day-cap {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  margin-bottom: 0.6rem;
+}
+.cvx-day-tag {
+  display: inline-block;
+  border-radius: 6px;
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  padding: 2px 7px;
+  margin-right: 6px;
+  font-weight: 700;
+}
+.cvx-day-tag-gold { background: #f3e3b5; color: #8a5a0b; }
+html.dark .cvx-day-tag-gold { background: #3a2d12; color: #eec85f; }
+.cvx-day-card { border-radius: 16px; padding: 1rem 1.1rem; }
+.cvx-day-empty-card {
+  border: 1px dashed var(--color-border);
+  background: var(--color-background);
+}
+.cvx-day-id {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin-bottom: 0.8rem;
+}
+.cvx-day-new {
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  padding: 1px 8px;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+}
+.cvx-skel { display: block; height: 10px; border-radius: 5px; background: var(--color-muted); margin-bottom: 8px; }
+.cvx-skel-short { width: 55%; }
+.cvx-day-note {
+  margin-top: 0.7rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: var(--color-muted-foreground);
+}
+.cvx-merge {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0.9rem 0;
+}
+.cvx-merge-line { flex: 1; border-top: 1px solid var(--color-border); }
+.cvx-merge-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #7c4dff;
+  text-align: center;
+  line-height: 1.6;
+}
+html.dark .cvx-merge-label { color: #b89aff; }
+.cvx-day-rich-card { border: 1px solid #e8d194; background: #fdf8ec; }
+html.dark .cvx-day-rich-card { background: #251c0c; border-color: #7a5c22; }
+.cvx-day-id-rich { color: #6b4a08; }
+html.dark .cvx-day-id-rich { color: #f2d189; }
+.cvx-day-stitched {
+  border-radius: 999px;
+  background: #f3e3b5;
+  color: #8a5a0b;
+  padding: 1px 8px;
+  font-size: 9px;
+  font-weight: 700;
+}
+html.dark .cvx-day-stitched { background: #3a2d12; color: #eec85f; }
+.cvx-day-rows { list-style: none; margin: 0; padding: 0; }
+.cvx-day-rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.35rem 0;
+  border-top: 1px dashed #ecd9a8;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  color: #7c5c10;
+}
+html.dark .cvx-day-rows li { border-color: #54401a; color: #d9b968; }
+.cvx-day-rows li span { opacity: 0.7; }
+.cvx-day-note-rich { color: #8a5a0b; font-weight: 600; }
+html.dark .cvx-day-note-rich { color: #eec85f; }
+
+/* ── Steps timeline ── */
+.cvx-how { padding: 4.5rem 0; border-top: 1px solid var(--color-border); }
+@media (min-width: 768px) { .cvx-how { padding: 6.5rem 0; } }
+.cvx-steps {
+  position: relative;
+  margin-top: 3rem;
+  display: grid;
+  gap: 2.2rem;
+  list-style: none;
+  padding: 0;
+}
+@media (min-width: 900px) {
+  .cvx-steps { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .cvx-steps::before {
+    content: "";
+    position: absolute;
+    top: 22px; left: 6%; right: 6%;
+    border-top: 1px solid var(--color-border);
+  }
+}
+.cvx-step { position: relative; }
+.cvx-step-top { display: flex; align-items: center; justify-content: space-between; }
+.cvx-step .icon-chip { position: relative; z-index: 1; }
+.cvx-step-num {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #e3d7ff;
+}
+html.dark .cvx-step-num { color: #3a226e; }
+
+/* ── Reverse ETL band ── */
+.cvx-etl-section { padding: 4.5rem 0; border-top: 1px solid var(--color-border); }
+@media (min-width: 768px) { .cvx-etl-section { padding: 6.5rem 0; } }
+.cvx-etl {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.2rem;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: var(--color-card);
+  padding: 1.4rem;
+}
+@media (min-width: 900px) {
+  .cvx-etl { grid-template-columns: auto minmax(140px, 1fr) 1.6fr; gap: 1.6rem; padding: 1.8rem; }
+}
+.cvx-etl-src { display: flex; align-items: center; gap: 0.8rem; }
+.cvx-etl-avatar {
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  background: #f3e3b5;
+  color: #8a5a0b;
+  border: 1px solid #e8d194;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px; font-weight: 700;
+  flex-shrink: 0;
+}
+html.dark .cvx-etl-avatar { background: #3a2d12; color: #eec85f; border-color: #7a5c22; }
+.cvx-etl-src-id {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px; font-weight: 700;
+  color: var(--color-foreground);
+}
+.cvx-etl-src-sub {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9.5px;
+  color: var(--color-muted-foreground);
+}
+.cvx-etl-pipe { display: flex; align-items: center; gap: 0.7rem; }
+.cvx-etl-flow { display: block; flex: 1; height: 2px; min-width: 28px; }
+.cvx-etl-pipe-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7c4dff;
+  white-space: nowrap;
+}
+html.dark .cvx-etl-pipe-label { color: #b89aff; }
+.cvx-etl-dests {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 0.7rem;
+}
+@media (min-width: 640px) { .cvx-etl-dests { grid-template-columns: repeat(3, 1fr); } }
+.cvx-etl-dest {
+  display: flex; align-items: center; gap: 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 0.75rem 0.85rem;
+}
+.cvx-etl-dest-name { font-size: 0.82rem; font-weight: 600; }
+.cvx-etl-dest-sub {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px;
+  color: var(--color-muted-foreground);
+}
+.cvx-etl-chip {
+  margin-left: auto;
+  border-radius: 999px;
+  border: 1px solid #e8d194;
+  background: #fdf8ec;
+  color: #8a5a0b;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+html.dark .cvx-etl-chip { background: #251c0c; border-color: #7a5c22; color: #eec85f; }
+
+/* Reduced motion: kill looping/pop animation, keep state changes instant */
+@media (prefers-reduced-motion: reduce) {
+  .cvx-frag-dot, .cvx-known.cvx-in, .cvx-activate.cvx-in .cvx-act-chip { animation: none; }
+  .cvx-frag.cvx-collapsing { transition: none; }
+  .cvx-meter-fill, .cvx-visitor, .cvx-mod, .cvx-browser-state { transition: none; }
+}
+</style>
+{% endraw %}
 
 {% include cta-band.html
    heading="Stop losing visitors to the identity gap"
    text="See how Fanfinity builds behavioral context from the first page load, resolves it at the identity moment, and activates it across every downstream channel, all on a first-party fan graph you own." %}
+
+{% raw %}
+<script>
+(function () {
+  var stage = document.getElementById('cvx-stage');
+  if (!stage) return;
+
+  var orbits    = document.getElementById('cvx-orbits');
+  var visitor   = document.getElementById('cvx-visitor');
+  var known     = document.getElementById('cvx-known');
+  var knownHist = document.getElementById('cvx-known-history');
+  var countEl   = document.getElementById('cvx-count');
+  var activate  = document.getElementById('cvx-activate');
+  var loginBtn  = document.getElementById('cvx-login');
+  var resetBtn  = document.getElementById('cvx-reset');
+  var hint      = document.getElementById('cvx-login-hint');
+  var live      = document.getElementById('cvx-live');
+  var pHero     = document.getElementById('cvx-p-hero');
+  var pState    = document.getElementById('cvx-pstate');
+  var mods      = Array.prototype.slice.call(document.querySelectorAll('.cvx-mod'));
+  var meters    = {
+    kit: document.getElementById('cvx-m-kit'),
+    fixtures: document.getElementById('cvx-m-fixtures'),
+    tickets: document.getElementById('cvx-m-tickets')
+  };
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var MAX_FRAGS = 14;
+  var LOGIN_AT = 4;
+
+  var SIG = {
+    view: [
+      { label: 'view · /kit/away-25',   interest: 'kit' },
+      { label: 'view · /fixtures',      interest: 'fixtures' },
+      { label: 'view · /tickets/derby', interest: 'tickets' },
+      { label: 'view · /kit/retro-99',  interest: 'kit' }
+    ],
+    scroll: [{ label: 'scroll 75% · /fixtures', interest: 'fixtures' }],
+    dwell:  [{ label: 'dwell 12s · away kit',   interest: 'kit' }],
+    click: [
+      { label: 'click · derby tickets',  interest: 'tickets' },
+      { label: 'click · fixture alerts', interest: 'fixtures' }
+    ]
+  };
+  var HERO_COPY = {
+    kit: 'Back again? The 25/26 away kit just restocked in your size.',
+    fixtures: 'Derby week: your fixture hub, front and center.',
+    tickets: 'Derby tickets are nearly gone, held for you at checkout.'
+  };
+  var DEFAULT_HERO = 'New season, new everything. Start exploring.';
+
+  var frags = [];        // { el, angle, speed, dir, rf }
+  var history = [];      // signal labels in capture order
+  var interests = { kit: 0, fixtures: 0, tickets: 0 };
+  var cycles = { view: 0, click: 0 };
+  var loggedIn = false;
+  var visible = false;
+  var rafId = null;
+  var autoId = null;
+  var lastT = 0;
+  var geo = { cx: 0, cy: 0, rx: 0, ry: 0 };
+
+  function say(msg) { if (live) live.textContent = msg; }
+
+  function measure() {
+    var w = stage.clientWidth, h = stage.clientHeight;
+    geo.cx = w / 2;
+    geo.cy = h / 2;
+    geo.rx = Math.max(70, w * 0.30);
+    geo.ry = Math.max(64, h * 0.30);
+  }
+
+  function totalSignals() { return history.length; }
+
+  function placeFrag(f) {
+    var rx = geo.rx * f.rf;
+    var ry = geo.ry * f.rf;
+    var x = geo.cx + Math.cos(f.angle) * rx;
+    var y = geo.cy + Math.sin(f.angle) * ry;
+    f.x = x; f.y = y;
+    f.el.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) translate(-50%,-50%)';
+  }
+
+  function tick(t) {
+    if (!visible || loggedIn || reduce) { rafId = null; return; }
+    if (!lastT) lastT = t;
+    var dt = Math.min(64, t - lastT) / 1000;
+    lastT = t;
+    for (var i = 0; i < frags.length; i++) {
+      var f = frags[i];
+      f.angle += f.speed * f.dir * dt;
+      placeFrag(f);
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function startLoop() {
+    if (reduce || loggedIn || rafId !== null) return;
+    lastT = 0;
+    rafId = requestAnimationFrame(tick);
+  }
+  function stopLoop() {
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  function updatePreview() {
+    var dom = null, max = 1;
+    ['kit', 'fixtures', 'tickets'].forEach(function (k) {
+      if (meters[k]) meters[k].style.width = Math.min(100, (interests[k] / 3) * 100) + '%';
+      if (interests[k] > max) { max = interests[k]; dom = k; }
+    });
+    mods.forEach(function (m) {
+      var hot = dom && m.getAttribute('data-interest') === dom;
+      m.classList.toggle('is-hot', !!hot);
+    });
+    if (dom) {
+      pHero.textContent = HERO_COPY[dom];
+      pState.textContent = 'Personalized · pre-login';
+      pState.classList.add('is-personal');
+    } else {
+      pHero.textContent = DEFAULT_HERO;
+      pState.textContent = 'Generic';
+      pState.classList.remove('is-personal');
+    }
+  }
+
+  function updateLogin() {
+    var n = totalSignals();
+    if (loggedIn) return;
+    if (n >= LOGIN_AT) {
+      loginBtn.disabled = false;
+      hint.textContent = 'Ready. Log in to stitch ' + n + ' anonymous signal' + (n === 1 ? '' : 's') + ' into one profile.';
+    } else {
+      loginBtn.disabled = true;
+      hint.textContent = 'Fire ' + (LOGIN_AT - n) + ' more signal' + (LOGIN_AT - n === 1 ? '' : 's') + ' to enable the login moment.';
+    }
+  }
+
+  function addSignal(def) {
+    if (loggedIn) return;
+    history.push(def.label);
+    interests[def.interest] += 1;
+
+    var el = document.createElement('span');
+    el.className = 'cvx-frag';
+    el.innerHTML = '<span class="cvx-frag-dot"></span><span class="cvx-frag-label"></span>';
+    el.querySelector('.cvx-frag-label').textContent = def.label;
+    orbits.appendChild(el);
+
+    var f = {
+      el: el,
+      angle: Math.random() * Math.PI * 2,
+      speed: 0.14 + Math.random() * 0.10,
+      dir: frags.length % 2 === 0 ? 1 : -1,
+      rf: 0.82 + (frags.length % 3) * 0.11,
+      x: geo.cx, y: geo.cy
+    };
+    frags.push(f);
+
+    if (frags.length > MAX_FRAGS) {
+      var old = frags.shift();
+      if (old.el.parentNode) old.el.parentNode.removeChild(old.el);
+    }
+
+    if (reduce) {
+      // Static ring layout: distribute evenly, no motion loop.
+      for (var i = 0; i < frags.length; i++) {
+        frags[i].angle = (i / frags.length) * Math.PI * 2;
+        placeFrag(frags[i]);
+      }
+    } else {
+      placeFrag(f);
+    }
+
+    updatePreview();
+    updateLogin();
+    var n = totalSignals();
+    say(n + ' anonymous signal' + (n === 1 ? '' : 's') + ' captured.');
+  }
+
+  function pickSignal(type) {
+    if (type === 'view') { var v = SIG.view[cycles.view % SIG.view.length]; cycles.view++; return v; }
+    if (type === 'click') { var c = SIG.click[cycles.click % SIG.click.length]; cycles.click++; return c; }
+    return SIG[type][0];
+  }
+
+  function countUp(target) {
+    if (reduce) { countEl.textContent = String(target); return; }
+    var start = null;
+    var dur = 900;
+    function step(t) {
+      if (!start) start = t;
+      var p = Math.min(1, (t - start) / dur);
+      countEl.textContent = String(Math.round(target * (p * (2 - p))));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function doLogin() {
+    if (loggedIn || loginBtn.disabled) return;
+    loggedIn = true;
+    stopLoop();
+    if (autoId !== null) { clearInterval(autoId); autoId = null; }
+
+    loginBtn.disabled = true;
+    loginBtn.textContent = 'Identity resolved ✓';
+    loginBtn.classList.add('is-resolved');
+    hint.textContent = 'Anonymous history merged into fan_48213. Nothing lost.';
+    document.querySelectorAll('.cvx-sig').forEach(function (b) { b.disabled = true; });
+
+    // Collapse every fragment into the center.
+    frags.forEach(function (f, i) {
+      f.el.classList.add('cvx-collapsing');
+      f.el.style.transitionDelay = (i * 40) + 'ms';
+      f.el.style.transform = 'translate(' + geo.cx + 'px,' + geo.cy + 'px) translate(-50%,-50%) scale(0.15)';
+    });
+
+    var wait = reduce ? 60 : 780 + frags.length * 40;
+    window.setTimeout(function () {
+      orbits.hidden = true;
+      visitor.classList.add('cvx-visitor-hidden');
+
+      // Fill the golden card with the real captured history.
+      knownHist.innerHTML = '';
+      var rows = history.slice(-4);
+      rows.forEach(function (label) {
+        var li = document.createElement('li');
+        var a = document.createElement('span');
+        a.textContent = label;
+        var b = document.createElement('span');
+        b.textContent = 'pre-login';
+        li.appendChild(a); li.appendChild(b);
+        knownHist.appendChild(li);
+      });
+
+      known.hidden = false;
+      known.classList.add('cvx-in');
+      countUp(totalSignals());
+
+      activate.hidden = false;
+      activate.classList.add('cvx-in');
+      say('Identity resolved. ' + totalSignals() + ' pre-login signals stitched into one known profile, history intact. Segments now syncing downstream via Reverse E T L.');
+    }, wait);
+  }
+
+  function doReset() {
+    stopLoop();
+    if (autoId !== null) { clearInterval(autoId); autoId = null; }
+    loggedIn = false;
+    frags.forEach(function (f) { if (f.el.parentNode) f.el.parentNode.removeChild(f.el); });
+    frags = [];
+    history = [];
+    interests = { kit: 0, fixtures: 0, tickets: 0 };
+    cycles = { view: 0, click: 0 };
+
+    orbits.hidden = false;
+    visitor.classList.remove('cvx-visitor-hidden');
+    known.hidden = true;
+    known.classList.remove('cvx-in');
+    activate.hidden = true;
+    activate.classList.remove('cvx-in');
+    countEl.textContent = '0';
+
+    loginBtn.textContent = 'Log in';
+    loginBtn.classList.remove('is-resolved');
+    document.querySelectorAll('.cvx-sig').forEach(function (b) { b.disabled = false; });
+
+    updatePreview();
+    updateLogin();
+    seed();
+    if (visible) { startLoop(); startAuto(); }
+    say('Demo reset. Anonymous visitor, no signals yet.');
+  }
+
+  function startAuto() {
+    if (reduce || autoId !== null) return;
+    autoId = window.setInterval(function () {
+      if (!loggedIn && totalSignals() < 8) addSignal(pickSignal('view'));
+    }, 2800);
+  }
+
+  function seed() {
+    // One signal per interest: scene feels alive but nothing personalizes
+    // until the visitor (or the ambient ticker) tips an interest past 2.
+    addSignal(SIG.view[0]);
+    addSignal(SIG.scroll[0]);
+    addSignal(SIG.view[2]);
+  }
+
+  // Wire up controls.
+  document.querySelectorAll('.cvx-sig').forEach(function (b) {
+    b.addEventListener('click', function () { addSignal(pickSignal(b.getAttribute('data-sig'))); });
+  });
+  loginBtn.addEventListener('click', doLogin);
+  resetBtn.addEventListener('click', doReset);
+
+  window.addEventListener('resize', function () {
+    measure();
+    frags.forEach(placeFrag);
+  });
+
+  // Pause everything while the stage is offscreen.
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        visible = e.isIntersecting;
+        if (visible) { measure(); startLoop(); startAuto(); }
+        else { stopLoop(); if (autoId !== null) { clearInterval(autoId); autoId = null; } }
+      });
+    }, { threshold: 0.12 });
+    io.observe(stage);
+  } else {
+    visible = true;
+  }
+
+  // Init.
+  measure();
+  updatePreview();
+  updateLogin();
+  seed();
+  if (visible) { startLoop(); startAuto(); }
+})();
+</script>
+{% endraw %}

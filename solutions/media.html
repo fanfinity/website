@@ -3,58 +3,1154 @@ layout: page
 cta: false
 permalink: /solutions/media
 title: Media & Publishers
-description: "For publishers and broadcasters: resolve mostly-anonymous audiences into first-party subscriber profiles, time the paywall to real intent, and sell owned segments directly to advertisers, post-cookie and in-region."
+description: "For publishers and broadcasters: resolve mostly anonymous audiences into first-party subscriber profiles, time the paywall to real intent, and sell owned segments directly to advertisers, post-cookie and in-Kingdom."
 breadcrumb_parent: { title: Solutions, url: /solutions }
 features:
   - { icon: identity,  title: "Recognize the logged-out visitor", body: "Stitch anonymous sessions across site, app, and stream into one profile, so you know a reader before they ever register or subscribe." }
-  - { icon: chart,     title: "Read propensity to subscribe", body: "Watch-time, scroll depth, and return cadence are the signals that precede a subscription. Score them as they happen instead of metering on a fixed article count." }
-  - { icon: broadcast, title: "Spoiler-safe by playback position", body: "Hold results and reactions to each viewer's position in a stream, so on-demand and time-shifted audiences are never spoiled by a live moment (Engage layer, Preview)." }
+  - { icon: chart,     title: "Read propensity to subscribe", body: "Watch time, scroll depth, and return cadence are the signals that precede a subscription. Score them as they happen instead of metering on a fixed article count." }
+  - { icon: broadcast, title: "Spoiler safe by playback position", body: "Hold results and reactions to each viewer's position in a stream, so on-demand and time-shifted audiences are never spoiled by a live moment (Engage layer, Preview)." }
   - { icon: target,    title: "Sell segments, not cookies", body: "Package consented audience data into addressable segments advertisers buy from you directly, replacing reach you used to rent through third-party cookies." }
-  - { icon: bell,      title: "Catch the pre-cancel signal", body: "Watch-time decay and login gaps precede a lapse. Segment on them in real time and intervene before the renewal date, not after the churn." }
+  - { icon: bell,      title: "Catch the cancellation signal", body: "A decline in watch time and longer login gaps precede a lapse. Segment on them in real time and intervene before the renewal date, not after the churn." }
   - { icon: slider,    title: "Program the next session", body: "Recommend the next read, watch, or episode from behavior and profile history, for known and anonymous audiences alike." }
 propensity_points:
-  - "Read session depth, watch-time, and return cadence the moment they happen, not on a metering rule set months ago."
+  - "Read session depth, watch time, and return cadence the moment they happen, not on a metering rule set months ago."
   - "Time the subscription prompt to the reader closest to paying, across site, app, email, and push from one profile."
   - "Report which prompts converted to paid, so you optimize the offer instead of guessing the meter."
 ad_points:
   - "Build addressable segments from consented first-party behavior, with no third-party cookie in the path."
   - "Sell those segments to advertisers directly, as inventory you own rather than reach you rent."
-  - "Keep every audience profile governed in-region, so a data-residency clause never blocks a media deal."
+  - "Keep every audience profile governed in-Kingdom, so a data residency clause never blocks a media deal."
 ---
-{% include hero.html
-   eyebrow="Solutions · Media & Publishers"
-   image="/assets/img/solutions-media.jpg"
-   image_alt="A live audience in front of a lit stage"
-   title="Reach you rent is not an audience you own"
-   subtitle="Publishers and broadcasters sit on huge, mostly-anonymous audiences that live in a rented, cookie-dependent middle layer. Fanfinity resolves them into first-party subscriber profiles you own, then helps you grow paid audiences and sell them directly to advertisers, post-cookie."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform" %}
 
-{% include feature-split.html
-   title="Lift free readers to paid on the signals they already give you"
-   body="A metered paywall fires on an article count and misses the moment intent is real. Once identity is resolved, propensity to subscribe is something you read directly from watch-time, article depth, and return frequency, and the offer lands when a reader is closest to paying rather than on an arbitrary threshold."
-   points=page.propensity_points
-   cta_text="See how activation works"
-   cta_url="/platform/activate"
-   icon="chart" %}
+<!-- ══════════════ HERO ══════════════ -->
+<section class="relative overflow-hidden" aria-labelledby="mpx-hero-h">
+  <div class="container-page section-sm md:pt-24 md:pb-20">
+    <div class="grid items-end gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7" data-reveal>
+        <p class="eyebrow">Solutions · Media &amp; Publishers</p>
+        <h1 id="mpx-hero-h" class="mt-5 text-5xl font-bold leading-[1.04] tracking-tight sm:text-6xl">
+          Reach you rent is not an <span class="mpx-accent">audience you own</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Publishers and broadcasters sit on huge, mostly anonymous audiences that live in a rented, cookie-dependent middle layer. Fanfinity resolves them into first-party subscriber profiles you own, then helps you grow paid audiences and sell them directly to advertisers, post-cookie.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="{{ '/platform' | relative_url }}" class="btn btn-secondary btn-lg">Explore the platform</a>
+        </div>
+        <ul class="mt-10 flex flex-wrap gap-x-6 gap-y-2 border-t border-border pt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" aria-label="Platform facts">
+          <li>First-party profiles</li>
+          <li aria-hidden="true" class="text-brand-500">·</li>
+          <li>Post-cookie</li>
+          <li aria-hidden="true" class="text-brand-500">·</li>
+          <li>Governed in-Kingdom</li>
+          <li aria-hidden="true" class="text-brand-500">·</li>
+          <li>Subscriptions + advertising</li>
+        </ul>
+      </div>
 
-{% include feature-grid.html
-   heading="From rented reach to owned, monetizable audience"
-   subheading="The connected platform, tuned to the two revenue lines publishers actually run: subscriptions and advertising."
-   items=page.features
-   columns=3 %}
+      <div class="lg:col-span-5" data-reveal style="--reveal-delay:120ms">
+        <a href="#night-curve" class="mpx-mini group block" aria-label="Skip to the interactive night curve demo">
+          <div class="mpx-mini-head">
+            <span>Tonight, on your properties</span>
+            <span class="mpx-mini-tag">24h of intent</span>
+          </div>
+          <svg id="mpx-mini-svg" viewBox="0 0 320 150" class="mt-2 block h-auto w-full" role="img" aria-label="Small preview of the 24-hour audience attention curve">
+            <polyline id="mpx-mini-fallback" points="6,120.8 31.7,123 57.3,121.9 76.6,116.3 89.4,102.9 102.2,85 115.1,91.7 127.9,100.6 147.1,98.4 160,78.2 169.6,60.3 179.2,73.8 192,89.4 211.3,93.9 230.5,87.2 243.4,73.8 256.2,58.1 269.1,35.7 275.5,26.7 288.3,42.4 297.9,60.3 307.5,82.7 314,109.6" fill="none" stroke="#854dff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+          <div class="mpx-mini-foot">
+            <span class="link-arrow">Scrub the full day below {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-split.html
-   reverse=true
-   title="Sell first-party audiences directly, when the cookie is gone"
-   body="Third-party cookies underwrote most programmatic revenue, and they are leaving. For a publisher, the compensating asset is a consented first-party audience packaged as inventory you sell yourself. Fanfinity resolves that audience on your properties and turns it into addressable segments buyers can transact against, governed in-region so residency never stalls the deal."
-   points=page.ad_points
-   cta_text="See how identity works"
-   cta_url="/platform/id"
-   icon="target" %}
+<!-- ══════════════ CENTERPIECE · THE NIGHT CURVE ══════════════ -->
+<section id="night-curve" class="relative" aria-labelledby="mpx-curve-h">
+  <div class="container-page pb-20 md:pb-28">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Playable demo · The night curve</p>
+      <h2 id="mpx-curve-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
+        Fire the offer at the peak of intent — not at article five
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        Every audience has a daily rhythm: the commute skim, the lunch spike, the primetime lean-in. Drag across the day and watch the signals being read live — and which paywall philosophy actually meets the reader.
+      </p>
+    </div>
+
+    <div class="mpx-panel mt-10" data-reveal style="--reveal-delay:100ms">
+      <!-- Toolbar: daypart jumps + play -->
+      <div class="mpx-toolbar">
+        <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Jump to a moment of the day">
+          <button type="button" class="mpx-chip" data-mpx-jump="465" data-mpx-part="commute" aria-pressed="false">Commute</button>
+          <button type="button" class="mpx-chip" data-mpx-jump="770" data-mpx-part="lunch" aria-pressed="false">Lunch</button>
+          <button type="button" class="mpx-chip" data-mpx-jump="1260" data-mpx-part="primetime" aria-pressed="false">Primetime</button>
+          <button type="button" class="mpx-chip" data-mpx-jump="1410" data-mpx-part="late" aria-pressed="false">Late night</button>
+        </div>
+        <button type="button" id="mpx-play" class="mpx-play" aria-pressed="false">
+          <svg class="mpx-ic-play h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+          <svg class="mpx-ic-pause h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="display:none"><path d="M3.5 2.5h3v11h-3zM9.5 2.5h3v11h-3z"/></svg>
+          <span id="mpx-play-label">Play the day</span>
+        </button>
+      </div>
+
+      <!-- Chart stage -->
+      <div class="mpx-stage" id="mpx-stage">
+        <svg id="mpx-svg" viewBox="0 0 960 420" class="block h-auto w-full" role="img"
+             aria-label="Twenty-four hour audience attention curve. Scrub with the slider to read live signals at each moment.">
+          <!-- daypart bands -->
+          <rect class="mpx-band" x="266"   y="30" width="131.8" height="346"/>
+          <rect class="mpx-band" x="492"   y="30" width="75.3"  height="346"/>
+          <rect class="mpx-band" x="774.5" y="30" width="131.8" height="346"/>
+          <text class="mpx-band-label" x="332"  y="46" text-anchor="middle">COMMUTE</text>
+          <text class="mpx-band-label" x="529"  y="46" text-anchor="middle">LUNCH</text>
+          <text class="mpx-band-label" x="840"  y="46" text-anchor="middle">PRIMETIME</text>
+          <!-- grid -->
+          <line class="mpx-grid" x1="40" y1="376" x2="944" y2="376"/>
+          <line class="mpx-grid mpx-grid-soft" x1="40" y1="289.5" x2="944" y2="289.5"/>
+          <line class="mpx-grid mpx-grid-soft" x1="40" y1="203" x2="944" y2="203"/>
+          <line class="mpx-grid mpx-grid-soft" x1="40" y1="116.5" x2="944" y2="116.5"/>
+          <text class="mpx-axis" x="30" y="380" text-anchor="end">0</text>
+          <text class="mpx-axis" x="30" y="207" text-anchor="end">50</text>
+          <text class="mpx-axis" x="30" y="120.5" text-anchor="end">100</text>
+          <text class="mpx-axis" x="40"  y="398">00:00</text>
+          <text class="mpx-axis" x="266" y="398">06:00</text>
+          <text class="mpx-axis" x="492" y="398">12:00</text>
+          <text class="mpx-axis" x="718" y="398">18:00</text>
+          <text class="mpx-axis" x="944" y="398" text-anchor="end">24:00</text>
+          <!-- offer threshold -->
+          <line class="mpx-threshold" x1="40" y1="175.3" x2="944" y2="175.3"/>
+          <text class="mpx-th-label" x="938" y="166" text-anchor="end">OFFER THRESHOLD · 58</text>
+          <!-- JS-built layers -->
+          <path id="mpx-firefill" class="mpx-firefill" d=""/>
+          <path id="mpx-area" class="mpx-area" d=""/>
+          <path id="mpx-line" class="mpx-line" d=""/>
+          <polyline id="mpx-fallback" class="mpx-line" points="40,341.4 115.3,348.3 190.7,344.8 247.2,327.6 285,286 322.7,230.7 360.3,251.4 397.8,279.2 454.7,272.2 492,209.9 520.3,154.6 548.7,196.1 586,244.5 642.7,258.4 699.3,237.6 737,196.1 774.3,147.8 811.7,78.4 831,50.8 868.7,99.2 897.1,154.6 925.2,223.8 944,306.8" fill="none"/>
+          <g id="mpx-peak" class="mpx-peak" style="display:none">
+            <circle id="mpx-peak-dot" r="4"/>
+            <text id="mpx-peak-label" text-anchor="middle" y="-14">PEAK INTENT</text>
+          </g>
+          <!-- scrubber -->
+          <g id="mpx-scrub" class="mpx-scrub">
+            <line id="mpx-scrub-line" x1="831" y1="30" x2="831" y2="376"/>
+            <circle id="mpx-scrub-handle" cx="831" cy="50.8" r="8"/>
+            <circle id="mpx-scrub-core" cx="831" cy="50.8" r="3.5"/>
+          </g>
+        </svg>
+
+        <div id="mpx-timechip" class="mpx-timechip" style="left:86.6%">21:00</div>
+        <div id="mpx-fireflag" class="mpx-fireflag" aria-hidden="true">Offer fired</div>
+
+        <input type="range" id="mpx-range" class="mpx-range" min="0" max="1435" step="5" value="1260"
+               aria-label="Scrub across twenty-four hours of audience intent" aria-valuetext="21:00, primetime">
+        <noscript><p class="p-4 text-sm text-muted-foreground">This demo is interactive — enable JavaScript to scrub the day.</p></noscript>
+      </div>
+
+      <!-- Readouts -->
+      <div class="mpx-read">
+        <div class="mpx-read-col">
+          <p class="mpx-read-label">The moment</p>
+          <p class="mt-3 flex items-baseline gap-3">
+            <span id="mpx-time" class="mpx-big-time">21:00</span>
+            <span id="mpx-part" class="badge">Primetime</span>
+          </p>
+          <p id="mpx-part-desc" class="mt-3 text-sm leading-relaxed text-muted-foreground">
+            The night's biggest audience at its deepest attention. This is when the offer should land.
+          </p>
+        </div>
+
+        <div class="mpx-read-col">
+          <p class="mpx-read-label">Signals, read live</p>
+          <dl class="mt-4 space-y-3.5">
+            <div>
+              <div class="mpx-sig-row"><dt>Watch time · this session</dt><dd><span id="mpx-watch-v">42</span> min</dd></div>
+              <div class="mpx-bar"><i id="mpx-watch-b" style="width:93%"></i></div>
+            </div>
+            <div>
+              <div class="mpx-sig-row"><dt>Scroll depth · this article</dt><dd><span id="mpx-scroll-v">90</span>%</dd></div>
+              <div class="mpx-bar"><i id="mpx-scroll-b" style="width:90%"></i></div>
+            </div>
+            <div>
+              <div class="mpx-sig-row"><dt>Return cadence · this week</dt><dd><span id="mpx-cad-v">8.1</span> visits</dd></div>
+              <div class="mpx-bar"><i id="mpx-cad-b" style="width:90%"></i></div>
+            </div>
+            <div>
+              <div class="mpx-sig-row"><dt class="font-semibold text-foreground">Propensity to subscribe</dt><dd class="font-semibold text-foreground"><span id="mpx-score-v">94</span>/100</dd></div>
+              <div class="mpx-bar mpx-bar-score"><i id="mpx-score-b" style="width:94%"></i><span class="mpx-bar-th" aria-hidden="true"></span></div>
+            </div>
+          </dl>
+        </div>
+
+        <div class="mpx-read-col">
+          <p class="mpx-read-label">The paywall decision</p>
+          <div class="mt-4 space-y-3">
+            <div id="mpx-meter" class="mpx-decide">
+              <div class="flex items-center justify-between gap-2">
+                <span class="mpx-decide-tag">Fixed meter</span>
+                <span id="mpx-meter-pill" class="mpx-decide-pill">Counting · 3/5</span>
+              </div>
+              <div class="mpx-arts" aria-hidden="true">
+                <span></span><span></span><span></span><span class="is-open"></span><span class="is-open"></span><b class="mpx-wall"></b>
+              </div>
+              <p id="mpx-meter-text" class="mt-2.5 text-xs leading-relaxed text-muted-foreground">
+                Set months ago. Fires at article five regardless of the clock — blind to tonight's peak.
+              </p>
+            </div>
+            <div id="mpx-ff" class="mpx-decide mpx-ff is-live">
+              <div class="flex items-center justify-between gap-2">
+                <span class="mpx-decide-tag">Fanfinity timing</span>
+                <span id="mpx-ff-pill" class="mpx-decide-pill">Offer fired</span>
+              </div>
+              <p class="mt-2.5 flex items-baseline gap-2">
+                <span id="mpx-ff-score" class="mpx-ff-score">94</span>
+                <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">propensity / 100</span>
+              </p>
+              <p id="mpx-ff-text" class="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                Over the threshold — the offer lands now, on the reader's own terms.
+              </p>
+            </div>
+          </div>
+          <p class="sr-only" aria-live="polite" id="mpx-live"></p>
+        </div>
+      </div>
+
+      <p class="mpx-caption">
+        Illustrative curve. The signals shown are the ones Fanfinity scores in real time — watch time, scroll depth, return cadence — and the threshold, the offer, and the channel are yours to set. One profile across site, app, email, and push.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ TWO REVENUE LINES ══════════════ -->
+<section class="relative border-t border-border" aria-labelledby="mpx-lines-h">
+  <div class="container-page section">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">The platform, tuned to publishing</p>
+      <h2 id="mpx-lines-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
+        One resolved audience, two revenue lines
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        The connected platform, tuned to the two revenue lines publishers actually run: subscriptions and advertising. Both start from the same place — knowing who is actually on the other side of the screen.
+      </p>
+    </div>
+
+    <!-- Underneath both lines: identity + propensity -->
+    <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2" data-reveal>
+      <div class="bg-card p-6 md:p-7">
+        <div class="flex items-center gap-3">
+          <span class="icon-chip-sm">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+          <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Underneath both lines · 01</p>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold tracking-tight">Recognize the logged-out visitor</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Stitch anonymous sessions across site, app, and stream into one profile, so you know a reader before they ever register or subscribe.
+        </p>
+      </div>
+      <div class="bg-card p-6 md:p-7">
+        <div class="flex items-center gap-3">
+          <span class="icon-chip-sm">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+          <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Underneath both lines · 02</p>
+        </div>
+        <h3 class="mt-4 text-lg font-semibold tracking-tight">Read propensity to subscribe</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Watch time, scroll depth, and return cadence are the signals that precede a subscription. Score them as they happen instead of metering on a fixed article count.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── Lane 01 · Subscriptions ── -->
+    <div class="mt-20 grid items-center gap-10 lg:grid-cols-12" data-reveal>
+      <div class="relative lg:col-span-6">
+        <span class="mpx-num" aria-hidden="true">01</span>
+        <p class="eyebrow">The subscription use case</p>
+        <h3 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl text-balance">
+          Lift free readers to paid on the signals they already give you
+        </h3>
+        <p class="mt-4 leading-relaxed text-muted-foreground">
+          A metered paywall fires on an article count and misses the moment intent is real. Once identity is resolved, propensity to subscribe is something you read directly from watch time, article depth, and return frequency, and the offer lands when a reader is closest to paying rather than on an arbitrary threshold.
+        </p>
+        <ul class="mt-6 space-y-3.5">
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Read session depth, watch time, and return cadence the moment they happen, not on a metering rule set months ago.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Time the subscription prompt to the reader closest to paying, across site, app, email, and push from one profile.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Report which prompts converted to paid, so you optimize the offer instead of guessing the meter.</span>
+          </li>
+        </ul>
+        <a href="{{ '/platform/activate' | relative_url }}" class="link-arrow mt-7">
+          See how activation works {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+
+      <!-- Meter vs moment -->
+      <div class="lg:col-span-6">
+        <div class="mpx-vs">
+          <div class="mpx-vs-row">
+            <div class="flex items-center justify-between">
+              <p class="mpx-vs-tag">Metered paywall</p>
+              <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Blind to the clock</p>
+            </div>
+            <div class="mpx-vs-meter" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+              <span class="is-wall"><i></i></span>
+            </div>
+            <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Wall fires at article 5 — whenever the count says so</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              A rule set months ago, fired on a count. The 21:00 peak comes and goes; the meter never looks up.
+            </p>
+          </div>
+          <div class="mpx-vs-row is-ff">
+            <div class="flex items-center justify-between">
+              <p class="mpx-vs-tag text-brand-foreground">Fanfinity timing</p>
+              <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">Reads intent live</p>
+            </div>
+            <svg viewBox="0 0 300 96" class="mt-4 block h-auto w-full" role="img" aria-label="A small attention curve with the offer pinned at its peak">
+              <path class="mpx-vs-curve" d="M4,78 L30,74 L52,52 L74,64 L96,40 L118,30 L140,52 L168,16 L196,42 L224,62 L252,72 L296,76" fill="none"/>
+              <line class="mpx-vs-pin-line" x1="168" y1="16" x2="168" y2="2"/>
+              <circle class="mpx-vs-pin" cx="168" cy="16" r="4.5"/>
+              <text class="mpx-vs-pin-label" x="292" y="10" text-anchor="end">OFFER FIRES AT THE PEAK</text>
+            </svg>
+            <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+              21:05 tonight, 12:40 tomorrow — the prompt lands when this reader is closest to paying, then reports back which prompts converted.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Lane 02 · Advertising ── -->
+    <div class="mt-24 grid items-center gap-10 lg:grid-cols-12" data-reveal>
+      <!-- Pipeline visual -->
+      <div class="lg:col-span-6 lg:order-1 order-2">
+        <div class="mpx-pipe-wrap">
+          <p class="mpx-vs-tag mb-5">From rented reach to owned inventory</p>
+          <ol class="mpx-pipe">
+            <li class="is-dead">
+              <span class="mpx-pipe-num">01</span>
+              <div>
+                <p class="mpx-pipe-title"><s>Third-party cookies</s></p>
+                <p class="mpx-pipe-sub">Leaving — the reach you used to rent</p>
+              </div>
+              <span class="mpx-pipe-badge">Gone</span>
+            </li>
+            <li class="mpx-pipe-arrow" aria-hidden="true">{% include icon.html name="chevron-down" class="h-4 w-4" %}</li>
+            <li>
+              <span class="mpx-pipe-num">02</span>
+              <div>
+                <p class="mpx-pipe-title">Consented first-party behavior</p>
+                <p class="mpx-pipe-sub">Read on your site, app, and stream</p>
+              </div>
+            </li>
+            <li class="mpx-pipe-arrow" aria-hidden="true">{% include icon.html name="chevron-down" class="h-4 w-4" %}</li>
+            <li>
+              <span class="mpx-pipe-num">03</span>
+              <div>
+                <p class="mpx-pipe-title">Addressable segments</p>
+                <p class="mpx-pipe-sub">Packaged by you, priced by you</p>
+              </div>
+            </li>
+            <li class="mpx-pipe-arrow" aria-hidden="true">{% include icon.html name="chevron-down" class="h-4 w-4" %}</li>
+            <li class="is-win">
+              <span class="mpx-pipe-num">04</span>
+              <div>
+                <p class="mpx-pipe-title">Advertisers buy directly</p>
+                <p class="mpx-pipe-sub">Inventory you own, not reach you rent</p>
+              </div>
+              <span class="mpx-pipe-badge is-live">Owned</span>
+            </li>
+          </ol>
+          <p class="mpx-pipe-foot">
+            {% include icon.html name="shield" class="h-4 w-4" %}
+            Governed in-Kingdom — a data residency clause never blocks a media deal
+          </p>
+        </div>
+      </div>
+
+      <div class="relative lg:col-span-6 lg:order-2 order-1">
+        <span class="mpx-num" aria-hidden="true">02</span>
+        <p class="eyebrow">The advertising use case</p>
+        <h3 class="mt-4 text-2xl font-bold tracking-tight sm:text-3xl text-balance">
+          Sell first-party audiences directly, when the cookie is gone
+        </h3>
+        <p class="mt-4 leading-relaxed text-muted-foreground">
+          Third-party cookies underwrote most programmatic revenue, and they are leaving. For a publisher, the compensating asset is a consented first-party audience packaged as inventory you sell yourself. Fanfinity resolves that audience on your properties and turns it into addressable segments buyers can transact against, governed in-Kingdom so residency never stalls the deal.
+        </p>
+        <ul class="mt-6 space-y-3.5">
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Build addressable segments from consented first-party behavior, with no third-party cookie in the path.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Sell those segments to advertisers directly, as inventory you own rather than reach you rent.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="mpx-check">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-sm leading-relaxed text-foreground">Keep every audience profile governed in-Kingdom, so a data residency clause never blocks a media deal.</span>
+          </li>
+        </ul>
+        <a href="{{ '/platform/id' | relative_url }}" class="link-arrow mt-7">
+          See how identity works {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ AROUND THE OFFER ══════════════ -->
+<section class="relative border-y border-border bg-soft" aria-labelledby="mpx-care-h">
+  <div class="container-page section">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Around the offer</p>
+      <h2 id="mpx-care-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">
+        Hold the moment, catch the lapse, program what's next
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        The same first-party profile that times the paywall also protects the experience around it — for live, time-shifted, and returning audiences alike.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-3">
+      <!-- Spoiler safe -->
+      <article class="card card-hover flex flex-col" data-reveal>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">{% include icon.html name="broadcast" class="h-5 w-5" %}</span>
+          <span class="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Preview</span>
+        </div>
+        <svg viewBox="0 0 300 84" class="mpx-care-vis" role="img" aria-label="Playback positions: the live edge is ahead, the viewer is behind, and results are held between them">
+          <line class="mpx-care-track" x1="8" y1="42" x2="292" y2="42"/>
+          <rect class="mpx-care-held" x="150" y="36" width="118" height="12" rx="6"/>
+          <circle class="mpx-care-viewer" cx="150" cy="42" r="6"/>
+          <circle class="mpx-care-live" cx="268" cy="42" r="6"/>
+          <text class="mpx-care-label" x="150" y="66" text-anchor="middle">VIEWER · 38:12</text>
+          <text class="mpx-care-label" x="268" y="66" text-anchor="middle">LIVE EDGE</text>
+          <text class="mpx-care-label mpx-care-label-strong" x="209" y="26" text-anchor="middle">HELD TO YOUR POSITION</text>
+        </svg>
+        <h3 class="mt-5 text-lg font-semibold tracking-tight">Spoiler safe by playback position</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Hold results and reactions to each viewer's position in a stream, so on-demand and time-shifted audiences are never spoiled by a live moment (Engage layer, Preview).
+        </p>
+      </article>
+
+      <!-- Cancellation signal -->
+      <article class="card card-hover flex flex-col" data-reveal style="--reveal-delay:80ms">
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">{% include icon.html name="bell" class="h-5 w-5" %}</span>
+          <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Retention</span>
+        </div>
+        <svg viewBox="0 0 300 84" class="mpx-care-vis" role="img" aria-label="Watch time declining over several weeks; an intervention marker fires before the renewal date">
+          <line class="mpx-care-track" x1="8" y1="70" x2="292" y2="70"/>
+          <path class="mpx-care-decay" d="M12,26 L52,32 L92,30 L132,40 L172,44 L212,56 L252,62" fill="none"/>
+          <line class="mpx-care-renewal" x1="272" y1="14" x2="272" y2="70"/>
+          <circle class="mpx-care-flag" cx="212" cy="56" r="5"/>
+          <text class="mpx-care-label" x="212" y="18" text-anchor="middle">INTERVENE</text>
+          <text class="mpx-care-label" x="272" y="82" text-anchor="middle">RENEWAL</text>
+          <text class="mpx-care-label" x="12" y="18">WATCH TIME / WK</text>
+        </svg>
+        <h3 class="mt-5 text-lg font-semibold tracking-tight">Catch the cancellation signal</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          A decline in watch time and longer login gaps precede a lapse. Segment on them in real time and intervene before the renewal date, not after the churn.
+        </p>
+      </article>
+
+      <!-- Next session -->
+      <article class="card card-hover flex flex-col" data-reveal style="--reveal-delay:160ms">
+        <div class="flex items-center justify-between">
+          <span class="icon-chip">{% include icon.html name="slider" class="h-5 w-5" %}</span>
+          <span class="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">Programming</span>
+        </div>
+        <div class="mpx-queue" aria-hidden="true">
+          <div class="mpx-queue-row"><span class="mpx-queue-k">Next read</span><span class="mpx-queue-bar"><i style="width:82%"></i></span></div>
+          <div class="mpx-queue-row"><span class="mpx-queue-k">Next watch</span><span class="mpx-queue-bar"><i style="width:64%"></i></span></div>
+          <div class="mpx-queue-row"><span class="mpx-queue-k">Next episode</span><span class="mpx-queue-bar"><i style="width:47%"></i></span></div>
+          <p class="mpx-queue-note">Ranked from behavior + profile history</p>
+        </div>
+        <h3 class="mt-5 text-lg font-semibold tracking-tight">Program the next session</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">
+          Recommend the next read, watch, or episode from behavior and profile history, for known and anonymous audiences alike.
+        </p>
+      </article>
+    </div>
+
+    <!-- Sell segments (advertising capability, kept with its claim) -->
+    <div class="mt-5 grid gap-5 lg:grid-cols-1" data-reveal>
+      <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+        <span class="icon-chip">{% include icon.html name="target" class="h-5 w-5" %}</span>
+        <div class="flex-1">
+          <h3 class="text-lg font-semibold tracking-tight">Sell segments, not cookies</h3>
+          <p class="mt-1 text-sm leading-relaxed text-muted-foreground">
+            Package consented audience data into addressable segments advertisers buy from you directly, replacing reach you used to rent through third-party cookies.
+          </p>
+        </div>
+        <a href="{{ '/platform/id' | relative_url }}" class="link-arrow shrink-0">
+          Identity &amp; segments {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% include cta-band.html
    heading="Turn your audience into subscribers and inventory you own"
    text="See how Fanfinity resolves anonymous audiences, times the paywall to real intent, and packages first-party segments advertisers buy directly. Book a walkthrough on your audience and inventory." %}
+
+{% raw %}
+<style>
+/* ══ Media & Publishers page — scoped under .mpx- ══ */
+
+/* Hero accent: a hand-set underline swash, not a gradient */
+.mpx-accent { color: #7c4dff; }
+
+/* Hero mini-poster */
+.mpx-mini {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-card);
+  padding: 18px 20px 16px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.mpx-mini:hover { border-color: #c4aaff; box-shadow: 0 8px 30px -18px rgba(53,16,112,.25); }
+.mpx-mini-head, .mpx-mini-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.mpx-mini-tag { color: #7c4dff; }
+.mpx-mini-foot { margin-top: 10px; justify-content: flex-end; }
+
+/* ── Centerpiece panel ── */
+.mpx-panel {
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-card);
+  overflow: hidden;
+  box-shadow: 0 24px 60px -40px rgba(53,16,112,.22);
+}
+.mpx-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+.mpx-chip {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  padding: 7px 14px; border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card); color: var(--color-muted-foreground);
+  cursor: pointer; transition: all .18s ease;
+}
+.mpx-chip:hover { border-color: #c4aaff; color: #7c4dff; }
+.mpx-chip[aria-pressed="true"] {
+  background: #f5f0ff; border-color: #dccfff; color: #7c4dff; font-weight: 600;
+}
+.mpx-play {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 999px;
+  background: #351070; color: #fff; border: 1px solid #351070;
+  cursor: pointer; transition: all .18s ease;
+}
+.mpx-play:hover { background: #5a20b8; border-color: #5a20b8; }
+.mpx-play[aria-pressed="true"] { background: #854dff; border-color: #854dff; }
+
+/* Chart stage */
+.mpx-stage { position: relative; background: var(--color-card); }
+.mpx-stage.mpx-focus { outline: 2px solid #9969ff; outline-offset: -2px; }
+.mpx-range {
+  position: absolute; top: 0; bottom: 0; left: 4.2%; right: 1.7%;
+  width: auto; height: 100%; margin: 0;
+  opacity: 0; cursor: ew-resize; touch-action: pan-y;
+  -webkit-appearance: none; appearance: none; background: transparent;
+}
+.mpx-range::-webkit-slider-thumb { -webkit-appearance: none; width: 44px; height: 420px; }
+.mpx-range::-moz-range-thumb { width: 44px; height: 420px; border: 0; background: transparent; }
+
+.mpx-band { fill: var(--color-muted); opacity: .55; }
+.mpx-band-label {
+  fill: var(--color-muted-foreground);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .18em; opacity: .85;
+}
+.mpx-grid { stroke: var(--color-foreground); stroke-opacity: .9; stroke-width: 1; }
+.mpx-grid-soft { stroke: var(--color-border); stroke-opacity: 1; }
+.mpx-axis {
+  fill: var(--color-muted-foreground);
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px;
+}
+.mpx-threshold { stroke: var(--color-muted-foreground); stroke-width: 1.2; stroke-dasharray: 5 5; opacity: .75; }
+.mpx-th-label {
+  fill: var(--color-muted-foreground);
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: .14em;
+}
+.mpx-firefill { fill: rgba(133, 77, 255, .14); }
+.mpx-area { fill: rgba(133, 77, 255, .09); }
+.mpx-line { stroke: #854dff; stroke-width: 2.5; fill: none; stroke-linejoin: round; stroke-linecap: round; }
+.mpx-peak circle { fill: #351070; }
+.mpx-peak text {
+  fill: var(--color-muted-foreground);
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: .16em;
+}
+.mpx-scrub line { stroke: #351070; stroke-width: 1.5; }
+.mpx-scrub #mpx-scrub-handle { fill: var(--color-card); stroke: #351070; stroke-width: 2; transition: fill .2s ease; }
+.mpx-scrub #mpx-scrub-core { fill: #351070; transition: fill .2s ease; }
+.mpx-scrub.is-hot #mpx-scrub-handle { fill: #854dff; stroke: #854dff; }
+.mpx-scrub.is-hot #mpx-scrub-core { fill: #fff; }
+
+.mpx-timechip {
+  position: absolute; top: 10px; transform: translateX(-50%);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12px; font-weight: 600; letter-spacing: .06em;
+  background: #351070; color: #fff;
+  padding: 4px 10px; border-radius: 8px;
+  pointer-events: none; white-space: nowrap;
+}
+.mpx-fireflag {
+  position: absolute; top: 10px; right: 12px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  background: #854dff; color: #fff;
+  padding: 5px 10px; border-radius: 999px;
+  opacity: 0; transform: translateY(-4px);
+  transition: opacity .25s ease, transform .25s ease;
+  pointer-events: none;
+}
+.mpx-fireflag.is-on { opacity: 1; transform: none; }
+
+/* Readouts */
+.mpx-read {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+  padding: 22px 18px 24px;
+  border-top: 1px solid var(--color-border);
+}
+@media (min-width: 768px) { .mpx-read { grid-template-columns: 1fr 1.2fr 1.3fr; padding: 26px 26px 28px; gap: 32px; } }
+.mpx-read-col { min-width: 0; }
+.mpx-read-label {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  border-bottom: 1px solid var(--color-border); padding-bottom: 8px;
+}
+.mpx-big-time {
+  font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  font-size: 2.6rem; line-height: 1; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--color-foreground); font-variant-numeric: tabular-nums;
+}
+.mpx-sig-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
+  font-size: 12.5px; color: var(--color-muted-foreground); margin-bottom: 5px;
+}
+.mpx-sig-row dd { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: var(--color-foreground); font-variant-numeric: tabular-nums; }
+.mpx-bar {
+  position: relative; height: 6px; border-radius: 999px;
+  background: var(--color-muted); overflow: hidden;
+}
+.mpx-bar i {
+  display: block; height: 100%; border-radius: 999px;
+  background: #854dff; transition: width .35s cubic-bezier(.2,.7,.2,1);
+}
+.mpx-bar-score i { background: #351070; }
+.mpx-bar-th {
+  position: absolute; top: -2px; bottom: -2px; left: 58%; width: 2px;
+  background: var(--color-foreground); opacity: .55;
+}
+
+/* Decision cards */
+.mpx-decide {
+  border: 1px solid var(--color-border); border-radius: 14px;
+  padding: 13px 14px; background: var(--color-card);
+  transition: border-color .25s ease, background .25s ease;
+}
+.mpx-decide-tag {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.mpx-decide-pill {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px;
+  background: var(--color-muted); color: var(--color-muted-foreground);
+  transition: all .25s ease; white-space: nowrap;
+}
+.mpx-decide.is-missed .mpx-decide-pill { background: transparent; border: 1px dashed var(--color-muted-foreground); color: var(--color-muted-foreground); }
+.mpx-ff.is-live { border-color: #854dff; background: #f5f0ff; }
+.mpx-ff.is-live .mpx-decide-tag { color: #7c4dff; }
+.mpx-ff.is-live .mpx-decide-pill { background: #854dff; color: #fff; }
+.mpx-ff-score {
+  font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.9rem; font-weight: 700; line-height: 1;
+  color: var(--color-foreground); font-variant-numeric: tabular-nums;
+  transition: color .25s ease;
+}
+.mpx-ff.is-live .mpx-ff-score { color: #5a20b8; }
+
+.mpx-arts { display: flex; align-items: center; gap: 5px; margin-top: 11px; }
+.mpx-arts span { width: 22px; height: 28px; border-radius: 4px; background: var(--color-muted-foreground); opacity: .5; }
+.mpx-arts span.is-open { background: transparent; border: 1.5px solid var(--color-border); opacity: 1; }
+.mpx-arts .mpx-wall { width: 4px; height: 34px; border-radius: 2px; background: var(--color-foreground); margin-left: 3px; }
+
+.mpx-caption {
+  padding: 14px 18px 16px;
+  border-top: 1px solid var(--color-border);
+  font-size: 12.5px; line-height: 1.6; color: var(--color-muted-foreground);
+}
+
+/* ── Revenue lanes ── */
+.mpx-num {
+  position: absolute; top: -0.14em; right: 0; z-index: 0;
+  font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(5rem, 9vw, 7.5rem); font-weight: 700; line-height: .8;
+  color: rgba(133, 77, 255, .10); pointer-events: none; user-select: none;
+}
+.mpx-check {
+  display: grid; place-items: center; flex-shrink: 0;
+  width: 22px; height: 22px; margin-top: 1px;
+  border-radius: 999px; background: #f5f0ff; color: #7c4dff;
+  box-shadow: inset 0 0 0 1px #ede5ff;
+}
+
+/* Meter vs moment visual */
+.mpx-vs {
+  border: 1px solid var(--color-border); border-radius: 20px;
+  background: var(--color-card); overflow: hidden;
+  box-shadow: 0 24px 60px -44px rgba(53,16,112,.25);
+}
+.mpx-vs-row { padding: 22px 22px 20px; }
+.mpx-vs-row + .mpx-vs-row { border-top: 1px solid var(--color-border); }
+.mpx-vs-row.is-ff { background: rgba(245, 240, 255, .6); }
+.mpx-vs-tag {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.mpx-vs-meter { display: flex; align-items: stretch; gap: 7px; margin-top: 16px; }
+.mpx-vs-meter > span {
+  flex: 1; height: 46px; border-radius: 8px;
+  background: var(--color-muted-foreground); opacity: .35;
+}
+.mpx-vs-meter > span.is-wall { background: transparent; opacity: 1; border: 1.5px dashed var(--color-muted-foreground); display: grid; place-items: center; }
+.mpx-vs-meter > span.is-wall i { width: 4px; height: 30px; border-radius: 2px; background: var(--color-foreground); }
+.mpx-vs-curve { stroke: #854dff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.mpx-vs-pin { fill: #854dff; }
+.mpx-vs-pin-line { stroke: #854dff; stroke-width: 1.5; }
+.mpx-vs-pin-label {
+  fill: #7c4dff; font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .12em;
+}
+
+/* Advertising pipeline */
+.mpx-pipe-wrap {
+  border: 1px solid var(--color-border); border-radius: 20px;
+  background: var(--color-card); padding: 24px 22px;
+  box-shadow: 0 24px 60px -44px rgba(53,16,112,.25);
+}
+.mpx-pipe { list-style: none; margin: 0; padding: 0; }
+.mpx-pipe > li:not(.mpx-pipe-arrow) {
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid var(--color-border); border-radius: 14px;
+  padding: 13px 16px; background: var(--color-card);
+}
+.mpx-pipe > li.is-dead { opacity: .55; background: var(--color-muted); }
+.mpx-pipe > li.is-win { border-color: #854dff; background: #f5f0ff; }
+.mpx-pipe-num {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; font-weight: 700; letter-spacing: .08em;
+  color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border); border-radius: 6px;
+  padding: 3px 6px; flex-shrink: 0;
+}
+.mpx-pipe > li.is-win .mpx-pipe-num { color: #7c4dff; border-color: #dccfff; background: #fff; }
+.mpx-pipe-title { font-size: 14px; font-weight: 600; color: var(--color-foreground); }
+.mpx-pipe-title s { text-decoration-color: #854dff; text-decoration-thickness: 2px; }
+.mpx-pipe-sub { font-size: 12px; color: var(--color-muted-foreground); margin-top: 1px; }
+.mpx-pipe-badge {
+  margin-left: auto; flex-shrink: 0;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  padding: 3px 8px; border-radius: 999px;
+  background: var(--color-muted-foreground); color: var(--color-card);
+}
+.mpx-pipe-badge.is-live { background: #854dff; color: #fff; }
+.mpx-pipe-arrow {
+  display: flex; justify-content: center; padding: 5px 0;
+  color: #9969ff;
+}
+.mpx-pipe-foot {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--color-border);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10.5px; letter-spacing: .06em;
+  color: var(--color-muted-foreground);
+}
+.mpx-pipe-foot svg { color: #7c4dff; flex-shrink: 0; }
+
+/* ── Around-the-offer visuals ── */
+.mpx-care-vis { display: block; width: 100%; height: auto; margin-top: 20px; }
+.mpx-care-track { stroke: var(--color-border); stroke-width: 2; }
+.mpx-care-held { fill: rgba(133, 77, 255, .16); }
+.mpx-care-viewer { fill: var(--color-card); stroke: #854dff; stroke-width: 2.5; }
+.mpx-care-live { fill: #854dff; animation: mpx-pulse 2.2s ease-in-out infinite; }
+.mpx-care-decay { stroke: #854dff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.mpx-care-renewal { stroke: var(--color-muted-foreground); stroke-width: 1.4; stroke-dasharray: 4 4; }
+.mpx-care-flag { fill: #351070; }
+.mpx-care-label {
+  fill: var(--color-muted-foreground);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 8.5px; letter-spacing: .1em;
+}
+.mpx-care-label-strong { fill: #7c4dff; font-weight: 700; }
+@keyframes mpx-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+.mpx-queue { margin-top: 20px; border: 1px solid var(--color-border); border-radius: 14px; padding: 14px 16px; background: var(--color-muted); }
+.mpx-queue-row { display: flex; align-items: center; gap: 12px; padding: 6px 0; }
+.mpx-queue-k {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--color-foreground); width: 92px; flex-shrink: 0;
+}
+.mpx-queue-bar { flex: 1; height: 5px; border-radius: 999px; background: var(--color-border); overflow: hidden; }
+.mpx-queue-bar i { display: block; height: 100%; border-radius: 999px; background: #854dff; }
+.mpx-queue-note {
+  margin-top: 8px; font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .08em; color: var(--color-muted-foreground);
+}
+
+/* ── Dark-mode overrides ── */
+html.dark .mpx-chip[aria-pressed="true"] { background: rgba(53,16,112,.45); border-color: #5a20b8; color: #c4aaff; }
+html.dark .mpx-play { background: #c4aaff; border-color: #c4aaff; color: #351070; }
+html.dark .mpx-play:hover { background: #aa80ff; border-color: #aa80ff; }
+html.dark .mpx-play[aria-pressed="true"] { background: #9969ff; border-color: #9969ff; color: #fff; }
+html.dark .mpx-firefill { fill: rgba(153, 105, 255, .18); }
+html.dark .mpx-area { fill: rgba(153, 105, 255, .12); }
+html.dark .mpx-line { stroke: #aa80ff; }
+html.dark .mpx-peak circle { fill: #c4aaff; }
+html.dark .mpx-scrub line { stroke: #c4aaff; }
+html.dark .mpx-scrub #mpx-scrub-handle { stroke: #c4aaff; }
+html.dark .mpx-scrub #mpx-scrub-core { fill: #c4aaff; }
+html.dark .mpx-scrub.is-hot #mpx-scrub-handle { fill: #9969ff; stroke: #9969ff; }
+html.dark .mpx-scrub.is-hot #mpx-scrub-core { fill: #351070; }
+html.dark .mpx-timechip { background: #c4aaff; color: #351070; }
+html.dark .mpx-bar-score i { background: #c4aaff; }
+html.dark .mpx-ff.is-live { background: rgba(53,16,112,.30); border-color: #9969ff; }
+html.dark .mpx-ff.is-live .mpx-ff-score { color: #c4aaff; }
+html.dark .mpx-vs-row.is-ff { background: rgba(53,16,112,.18); }
+html.dark .mpx-vs-curve { stroke: #aa80ff; }
+html.dark .mpx-vs-pin { fill: #aa80ff; }
+html.dark .mpx-vs-pin-line { stroke: #aa80ff; }
+html.dark .mpx-vs-pin-label { fill: #c4aaff; }
+html.dark .mpx-pipe > li.is-win { background: rgba(53,16,112,.30); border-color: #9969ff; }
+html.dark .mpx-pipe > li.is-win .mpx-pipe-num { background: transparent; border-color: #5a20b8; color: #c4aaff; }
+html.dark .mpx-check { background: rgba(53,16,112,.5); color: #c4aaff; box-shadow: inset 0 0 0 1px #5a20b8; }
+html.dark .mpx-num { color: rgba(153, 105, 255, .13); }
+html.dark .mpx-care-flag { fill: #c4aaff; }
+html.dark .mpx-queue-bar i { background: #aa80ff; }
+html.dark .mpx-mini:hover { box-shadow: 0 8px 30px -14px rgba(0,0,0,.5); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .mpx-care-live { animation: none; }
+  .mpx-bar i { transition: none; }
+  .mpx-timechip { transition: none; }
+  .mpx-fireflag { transition: none; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  "use strict";
+
+  /* ── Curve model: 24h of audience intent (0–100), anchors in [hour, value] ── */
+  var THRESHOLD = 58;
+  var W = 960, H = 420, PL = 40, PR = 16, PT = 30, PB = 44;
+  var PW = W - PL - PR, PH = H - PT - PB;
+  var ANCHORS = [
+    [0, 10], [2, 8], [4, 9], [5.5, 14], [6.5, 26], [7.5, 42], [8.5, 36],
+    [9.5, 28], [11, 30], [12, 48], [12.75, 64], [13.5, 52], [14.5, 38],
+    [16, 34], [17.5, 40], [18.5, 52], [19.5, 66], [20.5, 86], [21, 94],
+    [22, 80], [22.75, 64], [23.5, 44], [24, 20]
+  ];
+  var PARTS = [
+    { from: 0,    to: 360,  key: "late",      label: "Late night",  desc: "The night owls are few but loyal — deep sessions, small audience." },
+    { from: 360,  to: 570,  key: "commute",   label: "Commute",     desc: "Phones out on the way in. Real attention, shallow sessions — below paying intent." },
+    { from: 570,  to: 720,  key: "daytime",   label: "Mid-morning", desc: "Workday grazing between meetings. Intent builds slowly." },
+    { from: 720,  to: 840,  key: "lunch",     label: "Lunch",       desc: "The midday spike — the day's second-best window to ask." },
+    { from: 840,  to: 1080, key: "afternoon", label: "Afternoon",   desc: "Steady background reading while the workday winds down." },
+    { from: 1080, to: 1170, key: "evening",   label: "Evening",     desc: "Home, second screen on, settling toward the peak." },
+    { from: 1170, to: 1380, key: "primetime", label: "Primetime",   desc: "The night's biggest audience at its deepest attention. This is when the offer should land." },
+    { from: 1380, to: 1440, key: "late",      label: "Late night",  desc: "The night owls are few but loyal — deep sessions, small audience." }
+  ];
+
+  function x(h) { return PL + (h / 24) * PW; }
+  function y(v) { return PT + (1 - v / 100) * PH; }
+
+  /* Catmull-Rom sampling at ~5-minute resolution */
+  function cr(p0, p1, p2, p3, t) {
+    var t2 = t * t, t3 = t2 * t;
+    return 0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3);
+  }
+  var SAMPLES = [];
+  for (var i = 0; i < ANCHORS.length - 1; i++) {
+    var a = ANCHORS[Math.max(0, i - 1)], b = ANCHORS[i], c = ANCHORS[i + 1], d = ANCHORS[Math.min(ANCHORS.length - 1, i + 2)];
+    var steps = Math.max(2, Math.round((c[0] - b[0]) * 12));
+    for (var s = 0; s < steps; s++) {
+      var t = s / steps;
+      var v = cr(a[1], b[1], c[1], d[1], t);
+      SAMPLES.push([b[0] + (c[0] - b[0]) * t, Math.max(4, Math.min(98, v))]);
+    }
+  }
+  SAMPLES.push([24, ANCHORS[ANCHORS.length - 1][1]]);
+
+  function valueAt(minutes) {
+    var hour = minutes / 60;
+    var lo = 0, hi = SAMPLES.length - 1;
+    while (lo < hi) { var mid = (lo + hi) >> 1; if (SAMPLES[mid][0] < hour) lo = mid + 1; else hi = mid; }
+    var i2 = Math.max(1, lo), i1 = i2 - 1;
+    var s1 = SAMPLES[i1], s2 = SAMPLES[Math.min(i2, SAMPLES.length - 1)];
+    var span = s2[0] - s1[0];
+    var f = span > 0 ? (hour - s1[0]) / span : 0;
+    return s1[1] + (s2[1] - s1[1]) * Math.max(0, Math.min(1, f));
+  }
+
+  function fmt(m) {
+    m = Math.round(m);
+    var h = Math.floor(m / 60) % 24, mm = m % 60;
+    return (h < 10 ? "0" : "") + h + ":" + (mm < 10 ? "0" : "") + mm;
+  }
+  function partFor(m) {
+    for (var i = 0; i < PARTS.length; i++) if (m >= PARTS[i].from && m < PARTS[i].to) return PARTS[i];
+    return PARTS[PARTS.length - 1];
+  }
+
+  /* ── Build static SVG layers once ── */
+  function buildMain() {
+    var line = "", area = "", fire = "";
+    var peak = null, inFire = false;
+    var yT = y(THRESHOLD);
+    for (var i = 0; i < SAMPLES.length; i++) {
+      var sx = x(SAMPLES[i][0]).toFixed(1), sy = y(SAMPLES[i][1]).toFixed(1);
+      line += (i === 0 ? "M" : " L") + sx + " " + sy;
+      if (!peak || SAMPLES[i][1] > peak[1]) peak = SAMPLES[i];
+      if (SAMPLES[i][1] >= THRESHOLD) {
+        if (!inFire) { fire += "M" + sx + " " + yT.toFixed(1) + " L" + sx + " " + sy; inFire = true; }
+        else fire += " L" + sx + " " + sy;
+      } else if (inFire) { fire += " L" + sx + " " + yT.toFixed(1) + " Z"; inFire = false; }
+    }
+    if (inFire) fire += " L" + x(24).toFixed(1) + " " + yT.toFixed(1) + " Z";
+    area = line + " L" + x(24).toFixed(1) + " " + (PT + PH) + " L" + PL + " " + (PT + PH) + " Z";
+
+    var lineEl = document.getElementById("mpx-line");
+    if (!lineEl) return;
+    lineEl.setAttribute("d", line);
+    document.getElementById("mpx-area").setAttribute("d", area);
+    document.getElementById("mpx-firefill").setAttribute("d", fire);
+    var fb = document.getElementById("mpx-fallback");
+    if (fb) fb.style.display = "none";
+
+    var pk = document.getElementById("mpx-peak");
+    if (peak && pk) {
+      pk.style.display = "";
+      pk.setAttribute("transform", "translate(" + x(peak[0]).toFixed(1) + " " + y(peak[1]).toFixed(1) + ")");
+      document.getElementById("mpx-peak-label").textContent = "PEAK INTENT · " + fmt(peak[0] * 60);
+    }
+  }
+
+  function buildMini() {
+    var svg = document.getElementById("mpx-mini-svg");
+    if (!svg) return;
+    var NS = "http://www.w3.org/2000/svg";
+    var mx = function (h) { return 6 + (h / 24) * 308; };
+    var my = function (v) { return 132 - v * 1.12; };
+    var line = "", area = "";
+    for (var i = 0; i < SAMPLES.length; i += 6) {
+      var px = mx(SAMPLES[i][0]).toFixed(1), py = my(SAMPLES[i][1]).toFixed(1);
+      line += (line ? " L" : "M") + px + " " + py;
+    }
+    line += " L" + mx(24).toFixed(1) + " " + my(SAMPLES[SAMPLES.length - 1][1]).toFixed(1);
+    area = line + " L" + mx(24).toFixed(1) + " 132 L6 132 Z";
+
+    var areaEl = document.createElementNS(NS, "path");
+    areaEl.setAttribute("d", area);
+    areaEl.setAttribute("fill", "rgba(133,77,255,.10)");
+    var lineEl = document.createElementNS(NS, "path");
+    lineEl.setAttribute("d", line);
+    lineEl.setAttribute("class", "mpx-line");
+    lineEl.setAttribute("stroke-width", "2");
+    /* threshold */
+    var thEl = document.createElementNS(NS, "line");
+    thEl.setAttribute("x1", "6"); thEl.setAttribute("x2", "314");
+    thEl.setAttribute("y1", my(THRESHOLD)); thEl.setAttribute("y2", my(THRESHOLD));
+    thEl.setAttribute("stroke", "currentColor"); thEl.setAttribute("stroke-opacity", ".35");
+    thEl.setAttribute("stroke-dasharray", "4 4");
+    /* peak dot */
+    var dot = document.createElementNS(NS, "circle");
+    dot.setAttribute("cx", mx(21)); dot.setAttribute("cy", my(94)); dot.setAttribute("r", "3.5");
+    dot.setAttribute("fill", "#854dff");
+    var pk = document.createElementNS(NS, "text");
+    pk.setAttribute("x", "310"); pk.setAttribute("y", my(94) - 9);
+    pk.setAttribute("text-anchor", "end");
+    pk.setAttribute("style", "fill:var(--color-muted-foreground);font-family:'Geist Mono',monospace;font-size:8px;letter-spacing:.12em");
+    pk.textContent = "21:00 · OFFER FIRES";
+
+    svg.appendChild(areaEl); svg.appendChild(thEl); svg.appendChild(lineEl);
+    svg.appendChild(dot); svg.appendChild(pk);
+    var fb = document.getElementById("mpx-mini-fallback");
+    if (fb) fb.style.display = "none";
+  }
+
+  /* ── Live update ── */
+  var els = {};
+  function grab(id) { return document.getElementById(id); }
+  ["mpx-range", "mpx-stage", "mpx-scrub", "mpx-scrub-line", "mpx-scrub-handle", "mpx-scrub-core",
+   "mpx-timechip", "mpx-fireflag", "mpx-time", "mpx-part", "mpx-part-desc",
+   "mpx-watch-v", "mpx-watch-b", "mpx-scroll-v", "mpx-scroll-b", "mpx-cad-v", "mpx-cad-b",
+   "mpx-score-v", "mpx-score-b", "mpx-meter", "mpx-meter-pill", "mpx-meter-text",
+   "mpx-ff", "mpx-ff-pill", "mpx-ff-score", "mpx-ff-text", "mpx-live", "mpx-play",
+   "mpx-play-label"].forEach(function (id) { els[id] = grab(id); });
+
+  var lastFired = null;
+
+  function update() {
+    var m = parseFloat(els["mpx-range"].value);
+    var v = valueAt(m);
+    var fired = v >= THRESHOLD;
+    var part = partFor(m);
+    var sx = x(m / 60), sy = y(v);
+    var pct = (sx / W) * 100;
+
+    els["mpx-scrub-line"].setAttribute("x1", sx.toFixed(1));
+    els["mpx-scrub-line"].setAttribute("x2", sx.toFixed(1));
+    els["mpx-scrub-handle"].setAttribute("cx", sx.toFixed(1));
+    els["mpx-scrub-handle"].setAttribute("cy", sy.toFixed(1));
+    els["mpx-scrub-core"].setAttribute("cx", sx.toFixed(1));
+    els["mpx-scrub-core"].setAttribute("cy", sy.toFixed(1));
+    els["mpx-scrub"].classList.toggle("is-hot", fired);
+    els["mpx-timechip"].style.left = Math.max(7, Math.min(93, pct)).toFixed(1) + "%";
+    els["mpx-timechip"].textContent = fmt(m);
+    els["mpx-fireflag"].classList.toggle("is-on", fired);
+    els["mpx-fireflag"].setAttribute("aria-hidden", fired ? "false" : "true");
+
+    els["mpx-time"].textContent = fmt(m);
+    els["mpx-part"].textContent = part.label;
+    els["mpx-part-desc"].textContent = part.desc;
+    els["mpx-range"].setAttribute("aria-valuetext", fmt(m) + ", " + part.label.toLowerCase() + (fired ? ", offer fired" : ", watching"));
+
+    var watch = Math.round(3 + v * 0.42);
+    var scroll = Math.round(22 + v * 0.72);
+    var cad = (1 + v * 0.075).toFixed(1);
+    els["mpx-watch-v"].textContent = watch;
+    els["mpx-watch-b"].style.width = Math.min(100, (watch / 45) * 100).toFixed(0) + "%";
+    els["mpx-scroll-v"].textContent = scroll;
+    els["mpx-scroll-b"].style.width = scroll + "%";
+    els["mpx-cad-v"].textContent = cad;
+    els["mpx-cad-b"].style.width = Math.min(100, (cad / 9) * 100).toFixed(0) + "%";
+    els["mpx-score-v"].textContent = Math.round(v);
+    els["mpx-score-b"].style.width = Math.round(v) + "%";
+
+    els["mpx-meter"].classList.toggle("is-missed", fired);
+    els["mpx-meter-pill"].textContent = fired ? "Missed · 3/5" : "Counting · 3/5";
+    els["mpx-meter-text"].textContent = fired
+      ? "The reader is at peak intent right now — and the meter is still counting articles. The moment passes unused."
+      : "Set months ago. Fires at article five regardless of the clock — blind to tonight's peak.";
+
+    els["mpx-ff"].classList.toggle("is-live", fired);
+    els["mpx-ff-pill"].textContent = fired ? "Offer fired" : "Watching";
+    els["mpx-ff-score"].textContent = Math.round(v);
+    els["mpx-ff-text"].textContent = fired
+      ? "Over the threshold — the offer lands now, on the reader's own terms."
+      : "Below the threshold — no wall. The session keeps building toward the peak.";
+
+    if (lastFired !== fired) {
+      els["mpx-live"].textContent = fired
+        ? "Offer fired at " + fmt(m) + ". Propensity " + Math.round(v) + " of 100, over the threshold of 58."
+        : "Back below threshold at " + fmt(m) + ". The offer stands down.";
+      lastFired = fired;
+    }
+
+    var chips = document.querySelectorAll(".mpx-chip[data-mpx-part]");
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].setAttribute("aria-pressed", chips[i].getAttribute("data-mpx-part") === part.key ? "true" : "false");
+    }
+  }
+
+  /* ── Play the day ── */
+  var playing = false, raf = null, last = 0, playhead = 0;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function setPlayUI() {
+    els["mpx-play"].setAttribute("aria-pressed", playing ? "true" : "false");
+    els["mpx-play-label"].textContent = playing ? "Pause" : "Play the day";
+    var ip = els["mpx-play"].querySelector(".mpx-ic-play");
+    var iq = els["mpx-play"].querySelector(".mpx-ic-pause");
+    if (ip) ip.style.display = playing ? "none" : "";
+    if (iq) iq.style.display = playing ? "" : "none";
+  }
+  function stop() { playing = false; last = 0; if (raf) cancelAnimationFrame(raf); raf = null; setPlayUI(); }
+  function tick(ts) {
+    if (!playing) return;
+    if (!last) last = ts;
+    var dt = ts - last; last = ts;
+    playhead += dt * 0.09; /* full day in ~16s */
+    if (playhead >= 1435) { els["mpx-range"].value = 1435; update(); stop(); return; }
+    els["mpx-range"].value = playhead;
+    update();
+    raf = requestAnimationFrame(tick);
+  }
+
+  /* ── Wire up ── */
+  function init() {
+    if (!els["mpx-range"]) return;
+    buildMain();
+    buildMini();
+
+    els["mpx-range"].addEventListener("input", function () { if (playing) stop(); update(); });
+    els["mpx-range"].addEventListener("focus", function () { els["mpx-stage"].classList.add("mpx-focus"); });
+    els["mpx-range"].addEventListener("blur", function () { els["mpx-stage"].classList.remove("mpx-focus"); });
+
+    var chips = document.querySelectorAll(".mpx-chip[data-mpx-jump]");
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].addEventListener("click", function () {
+        if (playing) stop();
+        els["mpx-range"].value = this.getAttribute("data-mpx-jump");
+        update();
+      });
+    }
+
+    if (reduced) {
+      els["mpx-play"].style.display = "none";
+    } else {
+      els["mpx-play"].addEventListener("click", function () {
+        if (playing) { stop(); return; }
+        if (parseFloat(els["mpx-range"].value) >= 1430) els["mpx-range"].value = 0;
+        playhead = parseFloat(els["mpx-range"].value);
+        playing = true; setPlayUI();
+        raf = requestAnimationFrame(tick);
+      });
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting && playing) stop();
+        }, { threshold: 0.15 }).observe(els["mpx-stage"]);
+      }
+    }
+
+    update();
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+{% endraw %}

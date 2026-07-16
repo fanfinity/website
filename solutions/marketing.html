@@ -5,56 +5,853 @@ permalink: /solutions/marketing
 title: Marketing & Growth
 description: "Build audiences, launch journeys, and prove what worked: self-serve, on first-party data you own, without opening an engineering ticket."
 breadcrumb_parent: { title: Solutions, url: /solutions }
-features:
-  - { icon: users,     title: "Build segments without SQL", body: "Compose audiences from behavior, profile traits, and lifecycle stage in a point-and-click builder. No query language, no analyst hand-off, no Jira ticket sitting in someone else's backlog." }
-  - { icon: bolt,      title: "Launch journeys on a canvas", body: "Orchestrate multi-step, multi-channel journeys: entry conditions, waits, branches, and exits, triggered off a live signal instead of a nightly batch. (The visual drag-and-drop journey canvas is in design preview.)" }
-  - { icon: slider,    title: "Personalize per segment", body: "Tailor content, offers, and recommendations to each audience, and let the message update as new behavior arrives rather than freezing at export time." }
-  - { icon: target,    title: "Sharpen paid spend", body: "Push first-party lookalikes to ad platforms and suppress fans who already converted, so budget goes to reach you don't already own." }
-  - { icon: chart,     title: "Attribute to outcomes", body: "See which segments and journeys moved the number you report on, so you can double down on what works and retire what doesn't." }
-  - { icon: identity,  title: "One profile, post-cookie", body: "Every segment reads from one resolved first-party profile per fan, so the same person isn't three different audiences across three tools." }
-points:
-  - "Build and launch an audience on first-party data you own, without standing up a data-pipeline project first."
-  - "Trigger journeys off live behavior instead of last night's export."
-  - "Activate across WhatsApp, email, and push from one consented profile."
-  - "Attribute activation to real outcomes so you can prove and repeat what works."
-steps:
-  - { icon: identity, title: "Start from a resolved profile", body: "Fragmented touchpoints are already stitched into one first-party profile per fan, so you segment on a person, not a cookie." }
-  - { icon: users,    title: "Compose the audience", body: "Layer behavioral, demographic, and lifecycle conditions in the builder until the segment is exactly who you meant." }
-  - { icon: bolt,     title: "Orchestrate the journey", body: "Sequence channels and timing around the segment, and set the goal you'll measure against. (Visual canvas in preview.)" }
-  - { icon: chart,    title: "Read the result and iterate", body: "Watch conversion and drop-off per step, then adjust the journey without rebuilding it from scratch." }
 ---
-{% include hero.html
-   eyebrow="Solutions · Marketing & Growth"
-   title="Segment, launch, and prove without waiting on engineering"
-   subtitle="Marketing teams shouldn't need a data pipeline to ship a campaign. Fanfinity gives you self-serve audiences, real-time journeys (the visual canvas is in design preview), and honest attribution on first-party data you own, in-region and post-cookie."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/solutions-marketing.jpg"
-   image_alt="A growth team collaborating over laptops" %}
+{% raw %}
+<style>
+  /* ── Marketing & Growth bespoke layer (prefix: .mkt-) ─────────────────── */
 
-{% include feature-grid.html
-   heading="From raw signals to campaigns that prove their worth"
-   subheading="Every step lives in one tool, so the audience you build is the audience you activate and the audience you measure."
-   items=page.features
-   columns=3 %}
+  /* Hero: the old-loop ticket artifact */
+  .mkt-ticket { position: relative; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 20px 22px 26px; transform: rotate(-2deg); box-shadow: 0 24px 48px -24px rgba(23, 10, 46, 0.22); }
+  .mkt-ticket-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+  .mkt-ticket-state { border: 1px dashed var(--color-border); border-radius: 999px; padding: 2px 9px; }
+  .mkt-ticket-title { margin-top: 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 1.12rem; line-height: 1.35; color: var(--color-foreground); text-wrap: balance; }
+  .mkt-ticket-meta { margin-top: 14px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; color: var(--color-muted-foreground); }
+  .mkt-ticket-meta li { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--color-border); }
+  .mkt-ticket-meta s { opacity: 0.65; }
+  .mkt-ticket-stamp { position: absolute; right: 16px; bottom: 12px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #854dff; border: 1.5px solid rgba(133, 77, 255, 0.55); border-radius: 999px; padding: 3px 10px; transform: rotate(5deg); opacity: 0.85; }
+  html.dark .mkt-ticket-stamp { color: #b79bff; border-color: rgba(160, 123, 255, 0.55); }
+  .mkt-ticket-alt { margin-top: 26px; margin-left: 10px; display: flex; align-items: center; gap: 12px; background: var(--color-card); border: 1px solid rgba(133, 77, 255, 0.4); border-radius: 16px; padding: 14px 18px; }
+  .mkt-ticket-alt-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: #854dff; animation: mkt-pulse 2.2s ease-out infinite; }
+  .mkt-ticket-alt-title { font-weight: 600; font-size: 0.92rem; color: var(--color-foreground); }
+  .mkt-ticket-alt-sub { font-size: 0.82rem; color: var(--color-muted-foreground); }
+  .mkt-ticket-alt .link-arrow { margin-left: auto; flex: none; }
+  @keyframes mkt-pulse { 0% { box-shadow: 0 0 0 0 rgba(133, 77, 255, 0.45); } 70% { box-shadow: 0 0 0 9px rgba(133, 77, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(133, 77, 255, 0); } }
 
-{% include feature-split.html
-   reverse=true
-   title="The bottleneck isn't ideas, it's the hand-off"
-   body="When every segment is a request to the data team, good campaigns die waiting. Fanfinity puts audience building and real-time orchestration in the hands of the people running growth, so the loop between an idea and a live journey is measured in hours, not sprints."
-   points=page.points
-   cta_text="See how activation works"
-   cta_url="/platform/activate"
-   icon="megaphone" %}
+  /* Sieve centerpiece */
+  .mkt-sieve { display: grid; gap: 20px; }
+  @media (min-width: 1024px) { .mkt-sieve { grid-template-columns: 344px minmax(0, 1fr); align-items: start; } }
+  .mkt-layer { position: relative; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 16px 18px; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+  .mkt-layer + .mkt-layer { margin-top: 16px; }
+  .mkt-layer:not(:last-child)::after { content: ""; position: absolute; left: 32px; bottom: -17px; width: 1px; height: 16px; background: var(--color-border); }
+  .mkt-layer.is-on { border-color: rgba(133, 77, 255, 0.55); box-shadow: 0 10px 30px -18px rgba(124, 77, 255, 0.45); }
+  .mkt-layer-head { display: flex; align-items: center; gap: 12px; }
+  .mkt-layer-idx { flex: none; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; color: var(--color-muted-foreground); border: 1px solid var(--color-border); border-radius: 6px; padding: 2px 6px; }
+  .mkt-layer-title { font-size: 0.95rem; font-weight: 600; color: var(--color-foreground); line-height: 1.2; }
+  .mkt-layer-sub { font-size: 0.78rem; color: var(--color-muted-foreground); }
+  .mkt-switch { margin-left: auto; flex: none; width: 42px; height: 23px; border-radius: 999px; background: var(--color-muted); border: 1px solid var(--color-border); position: relative; cursor: pointer; transition: background 0.2s ease, border-color 0.2s ease; }
+  .mkt-knob { position: absolute; top: 2px; left: 2px; width: 17px; height: 17px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); transition: transform 0.2s ease; }
+  .mkt-switch[aria-checked="true"] { background: #854dff; border-color: #854dff; }
+  .mkt-switch[aria-checked="true"] .mkt-knob { transform: translateX(19px); }
+  .mkt-opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .mkt-opt { font-size: 0.78rem; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--color-border); color: var(--color-muted-foreground); background: transparent; cursor: pointer; transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease; }
+  .mkt-opt:hover { border-color: rgba(133, 77, 255, 0.5); color: var(--color-foreground); }
+  .mkt-opt[aria-checked="true"] { background: rgba(133, 77, 255, 0.12); border-color: rgba(133, 77, 255, 0.6); color: #7c4dff; }
+  html.dark .mkt-opt[aria-checked="true"] { color: #c4aaff; }
+  .mkt-layer:not(.is-on) .mkt-opts { opacity: 0.55; }
+  .mkt-keep { margin-top: 11px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.04em; color: var(--color-muted-foreground); }
+  .mkt-layer.is-on .mkt-keep { color: #7c4dff; }
+  html.dark .mkt-layer.is-on .mkt-keep { color: #c4aaff; }
+  .mkt-hint { position: absolute; top: -9px; right: 14px; background: #854dff; color: #ffffff; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; animation: mkt-bob 1.8s ease-in-out infinite; }
+  @keyframes mkt-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 
-{% include value-pillars.html
-   eyebrow="How a campaign comes together"
-   heading="One loop, from profile to proof"
-   subheading="No exports between tools, no waiting on a rebuild: each step feeds the next inside the same platform."
-   items=page.steps %}
+  .mkt-stage { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 20px; overflow: hidden; }
+  .mkt-canvas-wrap { position: relative; height: clamp(340px, 52vw, 480px); }
+  .mkt-canvas-wrap canvas { display: block; width: 100%; height: 100%; touch-action: manipulation; }
+  .mkt-count { position: absolute; top: 14px; left: 14px; background: var(--color-card); background: color-mix(in srgb, var(--color-card) 88%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border: 1px solid var(--color-border); border-radius: 14px; padding: 10px 16px 12px; min-width: 148px; }
+  .mkt-count-num { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 2rem; line-height: 1; color: var(--color-foreground); font-variant-numeric: tabular-nums; }
+  .mkt-count-of { display: block; margin-top: 3px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10.5px; color: var(--color-muted-foreground); }
+  .mkt-count-bar { display: block; height: 3px; margin-top: 9px; border-radius: 2px; background: var(--color-muted); overflow: hidden; }
+  .mkt-count-fill { display: block; height: 100%; width: 100%; background: #854dff; transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .mkt-count-label { display: block; margin-top: 7px; font-size: 0.75rem; color: var(--color-muted-foreground); }
+  .mkt-stage-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; border-top: 1px solid var(--color-border); padding: 14px 18px; }
+  .mkt-stage-foot .btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+  .mkt-launch-note { flex-basis: 100%; font-size: 0.84rem; color: var(--color-muted-foreground); }
+
+  /* Feature grid */
+  .mkt-tile { display: flex; flex-direction: column; gap: 12px; height: 100%; }
+  .mkt-tile-body { color: var(--color-muted-foreground); font-size: 0.94rem; line-height: 1.6; }
+  .mkt-tile-foot { margin-top: auto; }
+  .mkt-node { fill: var(--color-card); stroke: var(--color-border); stroke-width: 1; }
+  .mkt-node-brand { fill: rgba(133, 77, 255, 0.1); stroke: rgba(133, 77, 255, 0.55); }
+  .mkt-edge { fill: none; stroke: var(--color-border); stroke-width: 1.2; }
+  .mkt-edge-dash { stroke-dasharray: 4 4; }
+  .mkt-svg-lab { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; letter-spacing: 0.08em; fill: var(--color-muted-foreground); text-transform: uppercase; }
+  .mkt-svg-title { font-family: 'Inter', sans-serif; font-size: 10.5px; font-weight: 600; fill: var(--color-foreground); }
+
+  /* Handoff lanes */
+  .mkt-lane { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 16px; padding: 16px 18px; }
+  .mkt-lane + .mkt-lane { margin-top: 14px; }
+  .mkt-lane-label { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-muted-foreground); }
+  .mkt-lane-new { border-color: rgba(133, 77, 255, 0.5); }
+  .mkt-lane-new .mkt-lane-label { color: #7c4dff; }
+  html.dark .mkt-lane-new .mkt-lane-label { color: #c4aaff; }
+  .mkt-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 11px; }
+  .mkt-chip { font-size: 0.78rem; padding: 6px 10px; border-radius: 9px; border: 1px solid var(--color-border); color: var(--color-muted-foreground); background: var(--color-background); }
+  .mkt-chip-ghost { border-style: dashed; }
+  .mkt-arrow { color: var(--color-muted-foreground); font-size: 0.75rem; }
+  .mkt-lane-new .mkt-chip { border-color: rgba(133, 77, 255, 0.45); background: rgba(133, 77, 255, 0.08); color: var(--color-foreground); }
+  .mkt-lane-note { margin-top: 11px; font-size: 0.8rem; color: var(--color-muted-foreground); }
+
+  /* Steps */
+  .mkt-step { position: relative; border-top: 1px dashed var(--color-border); padding-top: 20px; }
+  .mkt-step::before { content: ""; position: absolute; top: -4px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: #854dff; }
+  .mkt-step-num { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 3rem; line-height: 1; color: rgba(133, 77, 255, 0.16); }
+  html.dark .mkt-step-num { color: rgba(153, 105, 255, 0.24); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mkt-hint, .mkt-ticket-alt-dot { animation: none; }
+    .mkt-count-fill { transition: none; }
+    .mkt-switch, .mkt-knob, .mkt-opt, .mkt-layer { transition: none; }
+  }
+</style>
+{% endraw %}
+
+<!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+<section class="bg-soft">
+  <div class="container-page section">
+    <div class="grid items-center gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7" data-reveal>
+        <p class="eyebrow">Solutions · Marketing &amp; Growth</p>
+        <h1 class="mt-5 max-w-2xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+          Segment, launch, and prove — <span class="text-brand-foreground">without waiting on engineering</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-muted-foreground">
+          Marketing teams shouldn't need a data pipeline to ship a campaign. Fanfinity gives you self-serve
+          audiences, real-time journeys (the visual canvas is in design preview), and honest attribution on
+          first-party data you own, in-Kingdom and post-cookie.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/platform" class="btn btn-secondary btn-lg">Explore the platform</a>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-2">
+          <span class="pill">No SQL</span>
+          <span class="pill">No ticket queue</span>
+          <span class="pill">Minutes, not sprints</span>
+          <span class="pill">First-party, in-Kingdom</span>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="mkt-ticket" data-reveal style="--reveal-delay:120ms">
+          <div class="mkt-ticket-head"><span>Data queue · #4821</span><span class="mkt-ticket-state">waiting</span></div>
+          <p class="mkt-ticket-title">&ldquo;Pull a list: lapsing fans, in-Kingdom, for the renewal push.&rdquo;</p>
+          <ul class="mkt-ticket-meta">
+            <li><span>Requested</span><span>Week 1</span></li>
+            <li><span>Slotted</span><span>Sprint 3 <s>&rarr; 4</s> <s>&rarr; 5</s></span></li>
+            <li><span>Campaign</span><span>&hellip;shipped without it</span></li>
+          </ul>
+          <span class="mkt-ticket-stamp">the old loop</span>
+        </div>
+        <div class="mkt-ticket-alt" data-reveal style="--reveal-delay:240ms">
+          <span class="mkt-ticket-alt-dot" aria-hidden="true"></span>
+          <div>
+            <p class="mkt-ticket-alt-title">With Fanfinity</p>
+            <p class="mkt-ticket-alt-sub">Build it yourself, below — the sieve takes seconds.</p>
+          </div>
+          <a href="#mkt-sieve" class="link-arrow">Try the sieve {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Playable centerpiece: the crowd sieve ────────────────────────────── -->
+<section class="section" id="mkt-sieve" aria-labelledby="mkt-sieve-h">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Playable · The crowd sieve</p>
+      <h2 id="mkt-sieve-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+        Point at a crowd. Keep exactly who you meant.
+      </h2>
+      <p class="mt-5 text-lg text-muted-foreground">
+        A field of dots, each one a resolved, consented fan profile — the same person never appears twice.
+        Switch on the sieve layers and watch non-matching fans shake out of the flow until a precise, counted
+        segment remains. That is the whole segment builder: behavior, profile traits, lifecycle stage —
+        no query language, no analyst handoff.
+      </p>
+    </div>
+
+    <div class="mkt-sieve mt-12" data-reveal>
+      <div class="mkt-layers" role="group" aria-label="Sieve layers — configure your segment">
+        <div class="mkt-layer" data-layer="0">
+          <span class="mkt-hint" id="mkt-hint">Start here</span>
+          <div class="mkt-layer-head">
+            <span class="mkt-layer-idx">01</span>
+            <div>
+              <p class="mkt-layer-title">Behavior</p>
+              <p class="mkt-layer-sub">What fans actually do</p>
+            </div>
+            <button type="button" class="mkt-switch" role="switch" aria-checked="false" aria-label="Toggle behavior layer">
+              <span class="mkt-knob" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mkt-opts" role="radiogroup" aria-label="Behavior criterion">
+            <button type="button" class="mkt-opt" role="radio" aria-checked="true" data-opt="0">Active &le; 7 days</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="1">Attended an event</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="2">Streamed last match</button>
+          </div>
+          <p class="mkt-keep" id="mkt-keep-0">Layer off — full crowd passes</p>
+        </div>
+
+        <div class="mkt-layer" data-layer="1">
+          <div class="mkt-layer-head">
+            <span class="mkt-layer-idx">02</span>
+            <div>
+              <p class="mkt-layer-title">Profile trait</p>
+              <p class="mkt-layer-sub">Who the fan is</p>
+            </div>
+            <button type="button" class="mkt-switch" role="switch" aria-checked="false" aria-label="Toggle profile trait layer">
+              <span class="mkt-knob" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mkt-opts" role="radiogroup" aria-label="Profile trait criterion">
+            <button type="button" class="mkt-opt" role="radio" aria-checked="true" data-opt="0">Lives in-Kingdom</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="1">Season member</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="2">App installed</button>
+          </div>
+          <p class="mkt-keep" id="mkt-keep-1">Layer off — full crowd passes</p>
+        </div>
+
+        <div class="mkt-layer" data-layer="2">
+          <div class="mkt-layer-head">
+            <span class="mkt-layer-idx">03</span>
+            <div>
+              <p class="mkt-layer-title">Lifecycle stage</p>
+              <p class="mkt-layer-sub">Where the relationship stands</p>
+            </div>
+            <button type="button" class="mkt-switch" role="switch" aria-checked="false" aria-label="Toggle lifecycle stage layer">
+              <span class="mkt-knob" aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="mkt-opts" role="radiogroup" aria-label="Lifecycle stage criterion">
+            <button type="button" class="mkt-opt" role="radio" aria-checked="true" data-opt="0">Lapsing · quiet 30d+</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="1">New this season</button>
+            <button type="button" class="mkt-opt" role="radio" aria-checked="false" data-opt="2">High intent</button>
+          </div>
+          <p class="mkt-keep" id="mkt-keep-2">Layer off — full crowd passes</p>
+        </div>
+      </div>
+
+      <div class="mkt-stage">
+        <div class="mkt-canvas-wrap">
+          <canvas id="mkt-field" aria-hidden="true"></canvas>
+          <div class="mkt-count" aria-hidden="true">
+            <span class="mkt-count-num" id="mkt-count-num">0</span>
+            <span class="mkt-count-of">of <span id="mkt-count-total">0</span> profiles</span>
+            <span class="mkt-count-bar"><span class="mkt-count-fill" id="mkt-count-fill"></span></span>
+            <span class="mkt-count-label" id="mkt-count-label">the whole crowd</span>
+          </div>
+        </div>
+        <div class="mkt-stage-foot">
+          <button type="button" class="btn btn-primary" id="mkt-launch-btn" disabled>
+            {% include icon.html name="bolt" class="h-4 w-4" %} Launch a journey to this segment
+          </button>
+          <button type="button" class="btn btn-ghost" id="mkt-reset">Reset crowd</button>
+          <p class="mkt-launch-note" id="mkt-launch-note" hidden>
+            Segment armed as the journey entry — triggered off live behavior, not last night's export.
+            Next stop: <a class="link-arrow" href="#mkt-canvas-tile">the journey canvas</a> (visual canvas in design preview).
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="sr-only" role="status" id="mkt-status"></p>
+  </div>
+</section>
+
+<!-- ── Features: what growth teams do ───────────────────────────────────── -->
+<section class="section" aria-labelledby="mkt-feat-h">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">What growth teams do with Fanfinity</p>
+      <h2 id="mkt-feat-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+        From raw signals to campaigns that prove their worth
+      </h2>
+      <p class="mt-5 text-lg text-muted-foreground">
+        Every step lives in one tool, so the audience you build is the audience you activate
+        and the audience you measure.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 lg:grid-cols-12">
+      <div class="card card-hover mkt-tile lg:col-span-7 lg:row-span-2" id="mkt-canvas-tile" data-reveal>
+        <div class="flex items-center gap-3">
+          <span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+          <h3 class="text-lg font-semibold">Launch journeys on a canvas</h3>
+          <span class="badge ml-auto">Design preview</span>
+        </div>
+        <p class="mkt-tile-body">
+          Orchestrate multi-step, multi-channel journeys — entry conditions, waits, branches, and exits —
+          triggered off a live signal instead of a nightly batch.
+          (The visual drag-and-drop journey canvas is in design preview.)
+        </p>
+        <div class="mkt-tile-foot pt-2">
+          <svg viewBox="0 0 560 252" class="h-auto w-full" role="img" aria-label="Sketch of the journey canvas: a segment enters on a live signal, waits, branches on opens into WhatsApp or email, and converges on a renewal goal.">
+            <text class="mkt-svg-lab" x="16" y="12">trigger · lapsed 30 d, ticket page visit</text>
+            <path class="mkt-edge" d="M136 46 H196" />
+            <path class="mkt-edge" d="M286 46 H308" />
+            <path class="mkt-edge" d="M396 38 L452 26" />
+            <path class="mkt-edge" d="M396 54 L452 66" />
+            <path class="mkt-edge mkt-edge-dash" d="M500 44 V 120 Q 500 150 470 158 L 348 176" />
+            <path class="mkt-edge mkt-edge-dash" d="M500 100 V 128 Q 500 158 470 166 L 348 184" />
+            <g>
+              <rect class="mkt-node mkt-node-brand" x="16" y="24" width="120" height="44" rx="10" />
+              <text class="mkt-svg-title" x="30" y="42">Segment enters</text>
+              <text class="mkt-svg-lab" x="30" y="57">live signal</text>
+            </g>
+            <g>
+              <rect class="mkt-node" x="196" y="24" width="90" height="44" rx="10" />
+              <text class="mkt-svg-title" x="222" y="42">Wait 2 h</text>
+              <text class="mkt-svg-lab" x="214" y="57">then check</text>
+            </g>
+            <g>
+              <path class="mkt-node" d="M352 18 L398 46 L352 74 L306 46 Z" />
+              <text class="mkt-svg-title" x="330" y="43">Opened?</text>
+              <text class="mkt-svg-lab" x="334" y="57">branch</text>
+            </g>
+            <g>
+              <rect class="mkt-node mkt-node-brand" x="452" y="10" width="96" height="34" rx="9" />
+              <text class="mkt-svg-title" x="468" y="30">WhatsApp</text>
+            </g>
+            <g>
+              <rect class="mkt-node" x="452" y="60" width="96" height="34" rx="9" />
+              <text class="mkt-svg-title" x="482" y="80">Email</text>
+            </g>
+            <g>
+              <rect class="mkt-node mkt-node-brand" x="196" y="158" width="150" height="46" rx="10" />
+              <text class="mkt-svg-title" x="222" y="177">Goal: renewal</text>
+              <text class="mkt-svg-lab" x="218" y="193">measured per step</text>
+            </g>
+            <text class="mkt-svg-lab" x="418" y="22">yes</text>
+            <text class="mkt-svg-lab" x="420" y="72">no</text>
+            <text class="mkt-svg-lab" x="16" y="240">entry &middot; waits &middot; branches &middot; exits — set the goal you report on</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="card card-hover mkt-tile lg:col-span-5" data-reveal style="--reveal-delay:60ms">
+        <span class="icon-chip">{% include icon.html name="users" class="h-5 w-5" %}</span>
+        <h3 class="text-lg font-semibold">Build segments without SQL</h3>
+        <p class="mkt-tile-body">
+          Compose audiences from behavior, profile traits, and lifecycle stage in a point-and-click builder.
+          No query language, no analyst handoff, no Jira ticket sitting in someone else's backlog.
+        </p>
+      </div>
+
+      <div class="card card-hover mkt-tile lg:col-span-5" data-reveal style="--reveal-delay:120ms">
+        <span class="icon-chip">{% include icon.html name="slider" class="h-5 w-5" %}</span>
+        <h3 class="text-lg font-semibold">Personalize per segment</h3>
+        <p class="mkt-tile-body">
+          Tailor content, offers, and recommendations to each audience — and let the message update as new
+          behavior arrives, rather than freezing at export time.
+        </p>
+      </div>
+
+      <div class="card card-hover mkt-tile lg:col-span-4" data-reveal>
+        <span class="icon-chip">{% include icon.html name="target" class="h-5 w-5" %}</span>
+        <h3 class="text-lg font-semibold">Sharpen paid spend</h3>
+        <p class="mkt-tile-body">
+          Push first-party lookalikes to ad platforms and suppress fans who already converted, so budget goes
+          to reach you don't already own.
+        </p>
+      </div>
+
+      <div class="card card-hover mkt-tile lg:col-span-4" data-reveal style="--reveal-delay:60ms">
+        <span class="icon-chip">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+        <h3 class="text-lg font-semibold">Attribute to outcomes</h3>
+        <p class="mkt-tile-body">
+          See which segments and journeys moved the number you report on, so you can double down on what works
+          and retire what doesn't.
+        </p>
+      </div>
+
+      <div class="card card-hover mkt-tile lg:col-span-4" data-reveal style="--reveal-delay:120ms">
+        <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3 class="text-lg font-semibold">One profile, post-cookie</h3>
+        <p class="mkt-tile-body">
+          Every segment reads from one resolved first-party profile per fan, so the same person isn't three
+          different audiences across three tools.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Self-serve, not a ticket queue ───────────────────────────────────── -->
+<section class="section" aria-labelledby="mkt-handoff-h">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">Self-serve, not a ticket queue</p>
+        <h2 id="mkt-handoff-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          The bottleneck isn't ideas, it's the handoff
+        </h2>
+        <p class="mt-5 text-lg text-muted-foreground">
+          When every segment is a request to the data team, good campaigns die waiting. Fanfinity puts audience
+          building and real-time orchestration in the hands of the people running growth, so the loop between
+          an idea and a live journey is measured in hours, not sprints.
+        </p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-muted-foreground">Build and launch an audience on first-party data you own, without standing up a data pipeline project first.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-muted-foreground">Trigger journeys off live behavior instead of last night's export.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-muted-foreground">Activate across WhatsApp, email, and push from one consented profile.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <span class="text-muted-foreground">Attribute activation to real outcomes so you can prove and repeat what works.</span>
+          </li>
+        </ul>
+        <a href="/platform/activate" class="link-arrow mt-8">
+          See how activation works {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+
+      <div data-reveal style="--reveal-delay:120ms">
+        <div class="mkt-lane">
+          <p class="mkt-lane-label">The handoff</p>
+          <div class="mkt-flow">
+            <span class="mkt-chip">Campaign idea</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip">Ticket #4821</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip">Backlog</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip"><s>Sprint 3</s> &hellip; Sprint 5</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip mkt-chip-ghost">&ldquo;Live&rdquo; — maybe</span>
+          </div>
+          <p class="mkt-lane-note">The idea often outlives the moment it was meant for.</p>
+        </div>
+        <div class="mkt-lane mkt-lane-new">
+          <p class="mkt-lane-label">Self-serve</p>
+          <div class="mkt-flow">
+            <span class="mkt-chip">Campaign idea</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip">Segment built</span><span class="mkt-arrow">&rarr;</span>
+            <span class="mkt-chip">Journey live</span>
+          </div>
+          <p class="mkt-lane-note">Hours, not sprints — shipped by the person who had the idea.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── One loop, from profile to proof ──────────────────────────────────── -->
+<section class="section" aria-labelledby="mkt-loop-h">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">How a campaign comes together</p>
+      <h2 id="mkt-loop-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+        One loop, from profile to proof
+      </h2>
+      <p class="mt-5 text-lg text-muted-foreground">
+        No exports between tools, no waiting on a rebuild: each step feeds the next inside the same platform.
+      </p>
+    </div>
+
+    <div class="mt-12 grid items-start gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+      <div class="mkt-step" data-reveal>
+        <span class="mkt-step-num">01</span>
+        <span class="icon-chip mt-5">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Start from a resolved profile</h3>
+        <p class="mkt-tile-body mt-2">
+          Fragmented touchpoints are already stitched into one first-party profile per fan, so you segment on
+          a person, not a cookie.
+        </p>
+      </div>
+      <div class="mkt-step lg:mt-8" data-reveal style="--reveal-delay:80ms">
+        <span class="mkt-step-num">02</span>
+        <span class="icon-chip mt-5">{% include icon.html name="users" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Compose the audience</h3>
+        <p class="mkt-tile-body mt-2">
+          Layer behavioral, demographic, and lifecycle conditions in the builder until the segment is exactly
+          who you meant.
+        </p>
+      </div>
+      <div class="mkt-step lg:mt-16" data-reveal style="--reveal-delay:160ms">
+        <span class="mkt-step-num">03</span>
+        <span class="icon-chip mt-5">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Orchestrate the journey</h3>
+        <p class="mkt-tile-body mt-2">
+          Sequence channels and timing around the segment, and set the goal you'll measure against.
+          (Visual canvas in preview.)
+        </p>
+      </div>
+      <div class="mkt-step lg:mt-24" data-reveal style="--reveal-delay:240ms">
+        <span class="mkt-step-num">04</span>
+        <span class="icon-chip mt-5">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Read the result and iterate</h3>
+        <p class="mkt-tile-body mt-2">
+          Watch conversion and drop-off per step, then adjust the journey without rebuilding it from scratch.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% include cta-band.html
    heading="Ship the next campaign yourself"
    text="See the audience builder and attribution working on first-party data you own, and preview the journey canvas designs. Book a hands-on walkthrough with our team." %}
+
+{% raw %}
+<script>
+(function () {
+  "use strict";
+  var canvas = document.getElementById("mkt-field");
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext("2d");
+  var wrap = canvas.parentElement;
+
+  var reduced = false;
+  try { reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+
+  var LAYERS = [
+    { options: [
+      { id: "b0", p: 0.55 },
+      { id: "b1", p: 0.45 },
+      { id: "b2", p: 0.50 } ] },
+    { options: [
+      { id: "p0", p: 0.60 },
+      { id: "p1", p: 0.40 },
+      { id: "p2", p: 0.65 } ] },
+    { options: [
+      { id: "l0", p: 0.35 },
+      { id: "l1", p: 0.30 },
+      { id: "l2", p: 0.40 } ] }
+  ];
+
+  var PAL = {
+    light: {
+      tones: ["#cfc8dd", "#d8cec2", "#c3cdd4", "#dcc6c9"],
+      hot: "#7c4dff",
+      line: "rgba(62, 40, 96, 0.10)",
+      lineHot: "rgba(124, 77, 255, 0.38)"
+    },
+    dark: {
+      tones: ["#554e68", "#5f5749", "#485863", "#634f5a"],
+      hot: "#a07bff",
+      line: "rgba(255, 255, 255, 0.09)",
+      lineHot: "rgba(160, 123, 255, 0.5)"
+    }
+  };
+  function pal() { return document.documentElement.classList.contains("dark") ? PAL.dark : PAL.light; }
+
+  var state = { active: [false, false, false], sel: [0, 0, 0] };
+  var dots = [], W = 0, H = 0, DPR = 1;
+  var raf = null, visible = true;
+  var matchedCount = 0, displayedCount = -1;
+  var pulseUntil = 0, firstRun = true;
+
+  var numEl = document.getElementById("mkt-count-num");
+  var totalEl = document.getElementById("mkt-count-total");
+  var fillEl = document.getElementById("mkt-count-fill");
+  var labelEl = document.getElementById("mkt-count-label");
+  var statusEl = document.getElementById("mkt-status");
+  var launchBtn = document.getElementById("mkt-launch-btn");
+  var resetBtn = document.getElementById("mkt-reset");
+  var noteEl = document.getElementById("mkt-launch-note");
+  var hintEl = document.getElementById("mkt-hint");
+  var keepEls = [
+    document.getElementById("mkt-keep-0"),
+    document.getElementById("mkt-keep-1"),
+    document.getElementById("mkt-keep-2")
+  ];
+  var layerEls = Array.prototype.slice.call(document.querySelectorAll(".mkt-layer"));
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function buildDots() {
+    var n = Math.max(120, Math.min(260, Math.round((W * H) / 2200)));
+    dots = [];
+    for (var i = 0; i < n; i++) {
+      var attrs = {};
+      for (var li = 0; li < 3; li++) {
+        for (var oi = 0; oi < 3; oi++) {
+          attrs[LAYERS[li].options[oi].id] = Math.random() < LAYERS[li].options[oi].p;
+        }
+      }
+      dots.push({
+        x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0,
+        r: rand(2.2, 4.2), tone: i % 4, seed: Math.random() * Math.PI * 2,
+        attrs: attrs, alive: true, falling: false, pendingFall: false, fallAt: 0,
+        dead: false, alpha: 0, hot: false
+      });
+    }
+    // Guarantee every one-option-per-layer combo keeps at least 8 dots.
+    for (var a = 0; a < 3; a++) {
+      for (var b = 0; b < 3; b++) {
+        for (var c = 0; c < 3; c++) {
+          var ids = [LAYERS[0].options[a].id, LAYERS[1].options[b].id, LAYERS[2].options[c].id];
+          var have = dots.filter(function (d) { return d.attrs[ids[0]] && d.attrs[ids[1]] && d.attrs[ids[2]]; });
+          var need = 8 - have.length;
+          for (var k = 0; k < need; k++) {
+            var d = dots[Math.floor(Math.random() * dots.length)];
+            d.attrs[ids[0]] = true; d.attrs[ids[1]] = true; d.attrs[ids[2]] = true;
+          }
+        }
+      }
+    }
+  }
+
+  function layoutIdle() {
+    var m = 26;
+    var cols = Math.max(6, Math.ceil(Math.sqrt(dots.length * (W / H))));
+    var rows = Math.ceil(dots.length / cols);
+    var gw = (W - 2 * m) / cols, gh = (H - 2 * m) / rows;
+    dots.forEach(function (d, i) {
+      var c = i % cols, r = Math.floor(i / cols);
+      d.tx = m + gw * (c + 0.5) + rand(-gw * 0.26, gw * 0.26);
+      d.ty = m + gh * (r + 0.5) + rand(-gh * 0.26, gh * 0.26);
+    });
+  }
+
+  function layoutCompact(set) {
+    if (!set.length) return;
+    var maxW = Math.min(W * 0.62, 440), cx = W / 2, cy = H * 0.56;
+    var cols = Math.ceil(Math.sqrt(set.length * (maxW / (maxW * 0.66))));
+    var rows = Math.ceil(set.length / cols);
+    var gw = maxW / cols, gh = Math.min(gw, (H * 0.52) / Math.max(1, rows));
+    set.forEach(function (d, i) {
+      var c = i % cols, r = Math.floor(i / cols);
+      d.tx = cx - maxW / 2 + gw * (c + 0.5) + rand(-3, 3);
+      d.ty = cy - (rows * gh) / 2 + gh * (r + 0.5) + rand(-3, 3);
+    });
+  }
+
+  function matches(d) {
+    for (var i = 0; i < 3; i++) {
+      if (state.active[i] && !d.attrs[LAYERS[i].options[state.sel[i]].id]) return false;
+    }
+    return true;
+  }
+
+  function anyActive() { return state.active[0] || state.active[1] || state.active[2]; }
+
+  function recompute(withShake) {
+    var now = performance.now();
+    var set = [];
+    dots.forEach(function (d) {
+      var m = matches(d);
+      d.hot = m && anyActive();
+      if (m) {
+        set.push(d);
+        if (!d.alive) { // revive: re-enter from below
+          d.alive = true; d.falling = false; d.pendingFall = false; d.dead = false;
+          d.alpha = 0; d.x = rand(W * 0.25, W * 0.75); d.y = H + 12; d.vx = 0; d.vy = 0;
+        }
+      } else if (d.alive) {
+        d.alive = false;
+        if (reduced || !withShake) { d.dead = true; d.alpha = reduced ? 0.12 : 0; }
+        else { d.pendingFall = true; d.fallAt = now + rand(140, 560); }
+      }
+    });
+    matchedCount = set.length;
+    layoutIdle();
+    if (anyActive()) layoutCompact(set);
+    if (withShake && !reduced) {
+      set.forEach(function (d) { d.vx += rand(-2.6, 2.6); d.vy += rand(-1.4, 1.4); });
+    }
+    if (reduced) {
+      dots.forEach(function (d) {
+        d.x = d.tx; d.y = d.ty;
+        d.alpha = d.alive ? 1 : 0.12;
+      });
+      draw(performance.now());
+    }
+    updateDom();
+  }
+
+  function updateDom() {
+    totalEl.textContent = dots.length;
+    if (reduced || displayedCount < 0) {
+      displayedCount = matchedCount;
+      numEl.textContent = matchedCount;
+    }
+    fillEl.style.width = dots.length ? (matchedCount / dots.length) * 100 + "%" : "0%";
+    labelEl.textContent = anyActive() ? "fans in your segment" : "the whole crowd";
+    var remaining = dots.slice();
+    for (var i = 0; i < 3; i++) {
+      if (state.active[i]) {
+        var oid = LAYERS[i].options[state.sel[i]].id;
+        remaining = remaining.filter(function (d) { return d.attrs[oid]; });
+        keepEls[i].textContent = "keeps " + remaining.length + " of " + dots.length;
+      } else {
+        keepEls[i].textContent = "Layer off — full crowd passes";
+      }
+    }
+    launchBtn.disabled = !anyActive();
+    statusEl.textContent = anyActive()
+      ? "Segment updated: " + matchedCount + " of " + dots.length + " fans remain."
+      : "Full crowd showing: " + dots.length + " fans.";
+  }
+
+  function tick(now) {
+    for (var i = 0; i < dots.length; i++) {
+      var d = dots[i];
+      if (d.pendingFall && now >= d.fallAt) {
+        d.pendingFall = false; d.falling = true;
+        d.vx = rand(-1.6, 1.6); d.vy = rand(-2.2, -0.4);
+      }
+      if (d.falling) {
+        d.vy += 0.5; d.x += d.vx; d.y += d.vy;
+        if (d.y > H * 0.78) d.alpha = Math.max(0, d.alpha - 0.07);
+        if (d.y > H + 30) { d.falling = false; d.dead = true; d.alpha = 0; }
+      } else if (!d.dead) {
+        d.vx += (d.tx - d.x) * 0.055; d.vy += (d.ty - d.y) * 0.055;
+        d.vx *= 0.82; d.vy *= 0.82;
+        d.x += d.vx; d.y += d.vy;
+        var targetA = d.alive ? 1 : 0;
+        if (d.alpha < targetA) d.alpha = Math.min(targetA, d.alpha + 0.045);
+      }
+    }
+    if (displayedCount !== matchedCount) {
+      var diff = matchedCount - displayedCount;
+      displayedCount += Math.abs(diff) < 0.6 ? diff : diff * 0.14;
+      numEl.textContent = Math.round(displayedCount);
+    }
+  }
+
+  function draw(now) {
+    var p = pal();
+    ctx.clearRect(0, 0, W, H);
+    // sieve lines
+    for (var i = 0; i < 3; i++) {
+      var y = H * (0.3 + 0.17 * i);
+      ctx.strokeStyle = state.active[i] ? p.lineHot : p.line;
+      ctx.lineWidth = 1;
+      ctx.setLineDash(state.active[i] ? [] : [3, 6]);
+      ctx.beginPath(); ctx.moveTo(14, y); ctx.lineTo(W - 14, y); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    for (var j = 0; j < dots.length; j++) {
+      var d = dots[j];
+      if (d.alpha <= 0.01) continue;
+      var bob = reduced ? 0 : Math.sin(now / 950 + d.seed) * 1.3;
+      var r = d.r;
+      if (d.hot && now < pulseUntil && !reduced) r = d.r * (1 + 0.3 * Math.sin(now / 110 + d.seed));
+      ctx.globalAlpha = d.alpha;
+      ctx.fillStyle = d.hot ? p.hot : p.tones[d.tone];
+      ctx.beginPath(); ctx.arc(d.x, d.y + (d.alive ? bob : 0), r, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function loop(now) {
+    raf = requestAnimationFrame(loop);
+    tick(now);
+    draw(now);
+  }
+  function start() { if (!raf && !reduced) raf = requestAnimationFrame(loop); }
+  function stop() { if (raf) { cancelAnimationFrame(raf); raf = null; } }
+
+  function resize() {
+    var rect = wrap.getBoundingClientRect();
+    var w = Math.max(280, rect.width), h = Math.max(320, rect.height);
+    var rebuild = !dots.length || Math.abs(w - W) > 120;
+    DPR = Math.min(2, window.devicePixelRatio || 1);
+    W = w; H = h;
+    canvas.width = W * DPR; canvas.height = H * DPR;
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    if (rebuild) {
+      buildDots();
+      recompute(false);
+      if (firstRun) { // gentle entrance
+        firstRun = false;
+        dots.forEach(function (d) { d.x = d.tx + rand(-30, 30); d.y = d.ty + rand(-30, 30); });
+      }
+    } else {
+      recompute(false);
+    }
+    if (reduced) draw(performance.now());
+  }
+
+  // ── Controls ──
+  function syncLayerUI(i) {
+    var card = layerEls[i];
+    var sw = card.querySelector(".mkt-switch");
+    sw.setAttribute("aria-checked", String(state.active[i]));
+    card.classList.toggle("is-on", state.active[i]);
+    card.querySelectorAll(".mkt-opt").forEach(function (btn, oi) {
+      btn.setAttribute("aria-checked", String(state.sel[i] === oi));
+    });
+  }
+
+  function dismissHint() { if (hintEl) { hintEl.remove(); hintEl = null; } }
+
+  layerEls.forEach(function (card, i) {
+    card.querySelector(".mkt-switch").addEventListener("click", function () {
+      state.active[i] = !state.active[i];
+      if (state.active[i]) dismissHint();
+      syncLayerUI(i);
+      recompute(true);
+      start();
+    });
+    card.querySelectorAll(".mkt-opt").forEach(function (btn, oi) {
+      btn.addEventListener("click", function () {
+        state.sel[i] = oi;
+        if (!state.active[i]) state.active[i] = true;
+        dismissHint();
+        syncLayerUI(i);
+        recompute(true);
+        start();
+      });
+    });
+  });
+
+  var launchTimer = null;
+  launchBtn.addEventListener("click", function () {
+    if (!anyActive()) return;
+    pulseUntil = performance.now() + 1800;
+    noteEl.hidden = false;
+    statusEl.textContent = "Journey armed for " + matchedCount + " fans. The visual journey canvas is in design preview below.";
+    var original = launchBtn.innerHTML;
+    launchBtn.innerHTML = "Segment armed ✓";
+    launchBtn.disabled = true;
+    if (launchTimer) clearTimeout(launchTimer);
+    launchTimer = setTimeout(function () {
+      launchBtn.innerHTML = original;
+      launchBtn.disabled = !anyActive();
+    }, 2600);
+    start();
+  });
+
+  resetBtn.addEventListener("click", function () {
+    state.active = [false, false, false];
+    state.sel = [0, 0, 0];
+    noteEl.hidden = true;
+    layerEls.forEach(function (card, i) { syncLayerUI(i); });
+    recompute(true);
+    start();
+  });
+
+  // ── Lifecycle: pause offscreen, react to theme, resize ──
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      visible = entries[0].isIntersecting;
+      if (visible) start(); else stop();
+    }, { threshold: 0.05 }).observe(wrap);
+  }
+
+  if ("ResizeObserver" in window) {
+    var rzTimer = null;
+    new ResizeObserver(function () {
+      if (rzTimer) clearTimeout(rzTimer);
+      rzTimer = setTimeout(resize, 180);
+    }).observe(wrap);
+  } else {
+    window.addEventListener("resize", resize);
+  }
+
+  new MutationObserver(function () { if (reduced) draw(performance.now()); })
+    .observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+  resize();
+  updateDom();
+  if (reduced) { draw(performance.now()); } else { start(); }
+})();
+</script>
+{% endraw %}

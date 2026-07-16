@@ -3,49 +3,1164 @@ layout: page
 cta: false
 permalink: /solutions/prevent-churn
 title: Prevent Churn
-description: "Fanfinity surfaces at-risk customers before they cancel, lapse, or go cold, then triggers the right re-engagement automatically, across WhatsApp, email, and push, while there is still time to act."
+description: "Fanfinity surfaces at-risk customers before they cancel, lapse, or go cold, then triggers the right reengagement automatically, across WhatsApp, email, and push, while there is still time to act."
 breadcrumb_parent: { title: Solutions, url: /solutions }
 features:
   - { icon: gauge,    title: "See drift before it becomes departure", body: "Real-time behavioral signals (declining session frequency, shorter dwell times, skipped interactions) surface in Fanfinity ID as lapse risk scores before a customer cancels or goes cold. You act on the trend, not the cancellation." }
   - { icon: identity, title: "Know what each at-risk fan looks like", body: "Every fan's churn risk is calculated on their individual profile history, not a population average. A lapsed sports fan looks different from a lapsed shopper, and the intervention should reflect that." }
-  - { icon: bolt,     title: "Trigger re-engagement at the right moment", body: "When a fan's profile crosses a lapse threshold, Fanfinity triggers a journey automatically (a personalized WhatsApp message, a reward top-up, a win-back offer) without waiting for a batch report or a manual export. (Reward mechanics in Preview.)" }
-  - { icon: repeat,   title: "Win back the ones who already left", body: "Suppressed or lapsed fans are not lost forever. Audience Builder segments them by last-active date, engagement history, and tier status so win-back campaigns reach the right people with the right incentive, not a blanket discount." }
+  - { icon: bolt,     title: "Trigger reengagement at the right moment", body: "When a fan's profile crosses a lapse threshold, Fanfinity triggers a journey automatically (a personalized WhatsApp message, a reward top-up, a win-back offer) without waiting for a batch report or a manual export. (Reward mechanics in Preview.)" }
+  - { icon: repeat,   title: "Win back the ones who already left", body: "Suppressed or lapsed fans are not lost forever. Audience Builder segments them by last active date, engagement history, and tier status so win-back campaigns reach the right people with the right incentive, not a blanket discount." }
 steps:
   - { icon: gauge,    title: "Detect lapse risk early", body: "Declining signals surface as at-risk flags before the customer formally churns." }
   - { icon: identity, title: "Understand each fan's risk individually", body: "Risk is computed on the individual profile, not a cohort average." }
   - { icon: bolt,     title: "Trigger the right intervention automatically", body: "Crossing a lapse threshold fires a real-time journey, with no manual exports." }
-  - { icon: repeat,   title: "Win back the already-lapsed", body: "Win-back audiences segment former fans by history, tier, and last-active date." }
+  - { icon: repeat,   title: "Win back those who have already lapsed", body: "Win-back audiences segment former fans by history, tier, and last active date." }
 ---
-{% include hero.html
-   eyebrow="Use Case"
-   title="Catch at-risk customers before they leave"
-   subtitle="Churn is visible in the data before it shows up in your cancellation numbers. Fanfinity surfaces the behavioral signals that precede departure, triggers the right intervention in real time, and gives you the segmentation to win back fans who already went cold."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore Fanfinity ID"
-   secondary_url="/platform/id"
-   image="/assets/img/solutions-prevent-churn.jpg"
-   image_alt="A young man at a desk wearing headphones" %}
 
-{% include feature-grid.html
-   heading="Act on the signal, not the cancellation"
-   subheading="By the time a customer cancels, the churn has already happened. Fanfinity works upstream of that moment."
-   items=page.features
-   columns=2 %}
+<!-- ══════════════ HERO + ENGAGEMENT ECG CENTERPIECE ══════════════ -->
+<section class="bg-soft" aria-labelledby="pcx-title">
+  <div class="container-page pt-12 pb-16 md:pt-20 md:pb-24">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Use Case · Prevent Churn</p>
+      <h1 id="pcx-title" class="mt-5 text-4xl font-bold leading-[1.04] tracking-tight text-foreground sm:text-5xl lg:text-[3.8rem]">
+        Catch at-risk customers <span class="pcx-accent">before they leave</span>
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        Churn is visible in the data before it shows up in your cancellation numbers. Fanfinity surfaces the behavioral signals that precede departure, triggers the right intervention in real time, and gives you the segmentation to win back fans who already went cold.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+        <a href="/platform/id" class="btn btn-secondary btn-lg">Explore Fanfinity ID</a>
+      </div>
+    </div>
 
-{% include feature-split.html
-   reverse=false
-   title="The drift is visible long before the departure"
-   body="A fan who is about to churn does not go from fully engaged to cancelled overnight. They drift: sessions get shorter, interactions get sparser, content gets ignored. Fanfinity tracks these signals in the fan profile in real time, so a lapse risk score is available the moment the pattern starts, not after the cancellation email arrives."
-   cta_text="See how real-time profiles work"
-   cta_url="/platform/id"
-   icon="gauge" %}
+    <p class="mt-14 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground md:mt-20" data-reveal>
+      One fan · twelve weeks · watch the signal
+    </p>
 
-{% include value-pillars.html
-   heading="Detect, understand, intervene, win back"
-   subheading="Four steps from churn signal to recovered fan."
-   items=page.steps %}
+    <!-- The Engagement ECG -->
+    <figure class="pcx-monitor" id="pcxMonitor" data-reveal>
+      <div class="pcx-mon-top">
+        <div class="pcx-mon-id">
+          <span class="pcx-live-dot" aria-hidden="true"></span>
+          <span>Fanfinity Vitals · Fan #48211</span>
+        </div>
+        <div class="pcx-mon-meta">Consented profile · in-Kingdom</div>
+        <div class="pcx-status pcx-st-healthy" id="pcxStatusPill" role="status">
+          <span class="pcx-status-dot" aria-hidden="true"></span>
+          <span id="pcxStatusText">Healthy</span>
+        </div>
+      </div>
+
+      <div class="pcx-stage">
+        <svg id="pcxSvg" viewBox="0 0 960 340" role="img"
+             aria-label="Interactive engagement heartbeat of one fan over twelve weeks. Play or scrub the timeline to watch engagement drift, a lapse-risk flag appear, and an intervention restore the rhythm.">
+          <defs>
+            <pattern id="pcxGridS" width="16" height="16" patternUnits="userSpaceOnUse">
+              <path d="M16 0H0V16" fill="none" class="pcx-grid-s"/>
+            </pattern>
+            <pattern id="pcxGridL" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M80 0H0V80" fill="none" class="pcx-grid-l"/>
+            </pattern>
+            <clipPath id="pcxClip"><rect id="pcxClipRect" x="0" y="0" width="0" height="340"/></clipPath>
+            <filter id="pcxGlow" x="-60%" y="-60%" width="220%" height="220%">
+              <feGaussianBlur stdDeviation="4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="960" height="340" fill="url(#pcxGridS)"/>
+          <rect width="960" height="340" fill="url(#pcxGridL)"/>
+          <g id="pcxWeeks" aria-hidden="true"></g>
+
+          <!-- Lapse-risk flag (revealed at week 8) -->
+          <g id="pcxFlag" visibility="hidden" aria-hidden="true">
+            <line x1="640" y1="46" x2="640" y2="304" class="pcx-flag-line"/>
+            <path d="M640 16 L678 25 L640 34 Z" class="pcx-flag-tri"/>
+            <line x1="640" y1="14" x2="640" y2="46" class="pcx-flag-line"/>
+            <rect x="650" y="38" rx="8" width="178" height="42" class="pcx-flag-box"/>
+            <text x="662" y="56" class="pcx-flag-t1">LAPSE RISK 68</text>
+            <text x="662" y="72" class="pcx-flag-t2">threshold 60 crossed</text>
+          </g>
+
+          <!-- Intervention marker (positioned by JS) -->
+          <g id="pcxIV" visibility="hidden" aria-hidden="true">
+            <line x1="0" y1="50" x2="0" y2="304" class="pcx-iv-line"/>
+            <path d="M0 14 L34 22 L0 30 Z" class="pcx-iv-tri"/>
+            <line x1="0" y1="14" x2="0" y2="50" class="pcx-iv-line"/>
+            <rect id="pcxIVBox" x="-78" y="36" rx="8" width="156" height="26" class="pcx-iv-box"/>
+            <text id="pcxIVText" x="0" y="53" text-anchor="middle" class="pcx-iv-t">JOURNEY FIRED</text>
+          </g>
+
+          <!-- Trace -->
+          <g clip-path="url(#pcxClip)">
+            <path id="pcxTraceGlow" class="pcx-trace-glow" d=""/>
+            <path id="pcxTrace" class="pcx-trace" d=""/>
+          </g>
+          <line id="pcxPlayhead" class="pcx-playhead" x1="0" x2="0" y1="10" y2="304" visibility="hidden"/>
+          <circle id="pcxDot" class="pcx-dot" r="4.5" cx="0" cy="200" filter="url(#pcxGlow)"/>
+        </svg>
+
+        <div class="pcx-chip" id="pcxChip" hidden>
+          <span class="pcx-chip-tag">Journey fired · real time</span>
+          <span class="pcx-chip-body">WhatsApp · win-back offer + reward top-up <em>(Preview)</em></span>
+        </div>
+      </div>
+
+      <div class="pcx-vitals" role="group" aria-label="Fan vitals at the current point in time">
+        <div class="pcx-vital">
+          <span class="pcx-v-label">Lapse risk</span>
+          <span class="pcx-v-value"><span id="pcxRisk" class="pcx-r-ok">8</span><span class="pcx-v-unit">/100</span></span>
+        </div>
+        <div class="pcx-vital">
+          <span class="pcx-v-label">Sessions / wk</span>
+          <span class="pcx-v-value" id="pcxSessions">5.4</span>
+        </div>
+        <div class="pcx-vital">
+          <span class="pcx-v-label">Days since active</span>
+          <span class="pcx-v-value"><span id="pcxDays">1</span></span>
+        </div>
+        <div class="pcx-vital">
+          <span class="pcx-v-label">Threshold</span>
+          <span class="pcx-v-value">60<span class="pcx-v-unit">crossing fires the journey</span></span>
+        </div>
+      </div>
+
+      <div class="pcx-controls">
+        <div class="pcx-controls-row">
+          <button type="button" id="pcxPlay" class="pcx-btn pcx-btn-play" aria-pressed="false">
+            <svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+            <span>Play the drift</span>
+          </button>
+          <button type="button" id="pcxFire" class="pcx-btn pcx-btn-fire" disabled>
+            <svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M9 1L3 9h3.5L6 15l6-8H8.5z"/></svg>
+            <span id="pcxFireLabel">Trigger the intervention</span>
+          </button>
+          <button type="button" id="pcxReset" class="pcx-btn pcx-btn-ghost">Reset</button>
+        </div>
+        <div class="pcx-scrub-wrap">
+          <input type="range" id="pcxScrub" class="pcx-scrub" min="0" max="1200" value="0" step="1"
+                 aria-label="Scrub through twelve weeks of one fan's engagement">
+          <div class="pcx-scrub-meta">
+            <span id="pcxTime">Week 0.0 / 12</span>
+            <span class="pcx-scrub-hint">drag · or press play</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="pcx-caption">
+        <span class="pcx-caption-dot" aria-hidden="true"></span>
+        <span id="pcxCaption" aria-live="polite">Press play — or drag the timeline — to watch twelve weeks of one fan’s engagement.</span>
+      </p>
+
+      <figcaption class="pcx-mon-foot">
+        Simulated fan profile for illustration — production deployments stream your own first-party signals.
+      </figcaption>
+    </figure>
+
+    <!-- Contrast: signal vs cancellation -->
+    <p class="mt-12 font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground" data-reveal>
+      Two ways this story ends
+    </p>
+    <div class="mt-5 grid gap-5 lg:grid-cols-2">
+      <article class="pcx-case" data-reveal>
+        <header class="pcx-case-head">
+          <span class="pcx-case-tag pcx-case-tag-a">Option A</span>
+          <h2 class="pcx-case-title">Act on the signal</h2>
+        </header>
+        <svg id="pcxMiniA" viewBox="0 0 460 170" class="pcx-mini" role="img"
+             aria-label="Timeline where the lapse-risk flag at week eight fires a journey and the fan's engagement recovers."></svg>
+        <p class="pcx-case-body">
+          Week 8: the threshold crossing fires a journey in real time. The fan engages again — the cancellation moment never arrives.
+        </p>
+        <p class="pcx-outcome pcx-outcome-a">
+          {% include icon.html name="check" class="h-4 w-4" %}
+          Fan retained, on the same profile
+        </p>
+      </article>
+      <article class="pcx-case" data-reveal style="--reveal-delay:90ms">
+        <header class="pcx-case-head">
+          <span class="pcx-case-tag pcx-case-tag-b">Option B</span>
+          <h2 class="pcx-case-title">Act on the cancellation</h2>
+        </header>
+        <svg id="pcxMiniB" viewBox="0 0 460 170" class="pcx-mini" role="img"
+             aria-label="Timeline where the drift goes unnoticed until the fan cancels at week twelve, leaving only a slow, uncertain win-back."></svg>
+        <p class="pcx-case-body">
+          Week 12: the first “signal” is the cancellation email itself. Now it is win-back — slower, costlier, and far from guaranteed.
+        </p>
+        <p class="pcx-outcome pcx-outcome-b">
+          {% include icon.html name="close" class="h-4 w-4" %}
+          Win-back from cold, at discount prices
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURES — ACT ON THE SIGNAL ══════════════ -->
+<section class="section" aria-labelledby="pcx-feat-h">
+  <div class="container-page">
+    <div class="max-w-2xl" data-reveal>
+      <p class="eyebrow">From risk to renewed engagement</p>
+      <h2 id="pcx-feat-h" class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+        Act on the signal, <span class="pcx-accent">not the cancellation</span>
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        By the time a customer cancels, the churn has already happened. Fanfinity works upstream of that moment.
+      </p>
+    </div>
+
+    <div class="pcx-feat-grid">
+      <article class="pcx-feat pcx-feat-1" data-reveal>
+        <span class="pcx-feat-num" aria-hidden="true">01</span>
+        <div class="icon-chip">{% include icon.html name="gauge" class="h-5 w-5" %}</div>
+        <h3>See drift before it becomes departure</h3>
+        <p>Real-time behavioral signals — declining session frequency, shorter dwell times, skipped interactions — surface in Fanfinity ID as lapse risk scores before a customer cancels or goes cold. You act on the trend, not the cancellation.</p>
+      </article>
+      <article class="pcx-feat pcx-feat-2" data-reveal style="--reveal-delay:80ms">
+        <span class="pcx-feat-num" aria-hidden="true">02</span>
+        <div class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</div>
+        <h3>Know what each at-risk fan looks like</h3>
+        <p>Every fan’s churn risk is calculated on their individual profile history, not a population average. A lapsed sports fan looks different from a lapsed shopper — and the intervention should reflect that.</p>
+      </article>
+      <article class="pcx-feat pcx-feat-3" data-reveal style="--reveal-delay:120ms">
+        <span class="pcx-feat-num" aria-hidden="true">03</span>
+        <div class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</div>
+        <h3>Trigger reengagement at the right moment</h3>
+        <p>When a fan’s profile crosses a lapse threshold, Fanfinity triggers a journey automatically — a personalized WhatsApp message, a reward top-up, a win-back offer — without waiting for a batch report or a manual export. (Reward mechanics in Preview.)</p>
+      </article>
+      <article class="pcx-feat pcx-feat-4" data-reveal style="--reveal-delay:160ms">
+        <span class="pcx-feat-num" aria-hidden="true">04</span>
+        <div class="icon-chip">{% include icon.html name="repeat" class="h-5 w-5" %}</div>
+        <h3>Win back the ones who already left</h3>
+        <p>Suppressed or lapsed fans are not lost forever. Audience Builder segments them by last active date, engagement history, and tier status, so win-back campaigns reach the right people with the right incentive — not a blanket discount.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SIGNAL ANATOMY — REAL-TIME LAPSE DETECTION ══════════════ -->
+<section class="section border-y border-border bg-card" aria-labelledby="pcx-anatomy-h">
+  <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div data-reveal>
+      <p class="eyebrow">Real-time lapse detection</p>
+      <h2 id="pcx-anatomy-h" class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+        The drift is visible long before the departure
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
+        A fan who is about to churn does not go from fully engaged to cancelled overnight. They drift: sessions get shorter, interactions get sparser, content gets ignored. Fanfinity tracks these signals in the fan profile in real time, so a lapse risk score is available the moment the pattern starts — not after the cancellation email arrives.
+      </p>
+      <a href="/platform/id" class="link-arrow mt-7">
+        See how real-time profiles work
+        {% include icon.html name="arrow-right" class="h-4 w-4" %}
+      </a>
+    </div>
+
+    <div class="pcx-anatomy" data-reveal style="--reveal-delay:100ms">
+      <div class="pcx-anatomy-head">
+        <span>Signal anatomy · Fan #48211</span>
+        <span class="pcx-anatomy-tag">Real time</span>
+      </div>
+
+      <div class="pcx-sig">
+        <div class="pcx-sig-meta">
+          <span class="pcx-sig-name">Session frequency</span>
+          <span class="pcx-sig-val">5.4 → 1.2 /wk</span>
+        </div>
+        <svg viewBox="0 0 120 36" class="pcx-spark" aria-hidden="true">
+          <polyline points="0,6 17,8 34,10 51,14 68,20 85,26 102,31 120,33"/>
+          <circle cx="120" cy="33" r="2.5"/>
+        </svg>
+      </div>
+      <div class="pcx-sig">
+        <div class="pcx-sig-meta">
+          <span class="pcx-sig-name">Dwell time</span>
+          <span class="pcx-sig-val">6 min → 40 sec</span>
+        </div>
+        <svg viewBox="0 0 120 36" class="pcx-spark" aria-hidden="true">
+          <polyline points="0,7 17,7 34,11 51,13 68,19 85,24 102,29 120,32"/>
+          <circle cx="120" cy="32" r="2.5"/>
+        </svg>
+      </div>
+      <div class="pcx-sig">
+        <div class="pcx-sig-meta">
+          <span class="pcx-sig-name">Interactions</span>
+          <span class="pcx-sig-val">daily → skipped</span>
+        </div>
+        <svg viewBox="0 0 120 36" class="pcx-spark" aria-hidden="true">
+          <polyline points="0,5 17,9 34,9 51,16 68,18 85,27 102,28 120,33"/>
+          <circle cx="120" cy="33" r="2.5"/>
+        </svg>
+      </div>
+
+      <div class="pcx-resolve" aria-hidden="true">
+        <span class="pcx-resolve-line"></span>
+        <span class="pcx-resolve-tag">resolves into</span>
+        <span class="pcx-resolve-line"></span>
+      </div>
+
+      <div class="pcx-gauge-row">
+        <svg viewBox="0 0 220 132" class="pcx-gauge" role="img"
+             aria-label="Lapse risk gauge showing a score of 68 against a threshold of 60.">
+          <path d="M26 112 A 84 84 0 0 1 194 112" class="pcx-gauge-track"/>
+          <path d="M136 32.1 A 84 84 0 0 1 194 112" class="pcx-gauge-zone"/>
+          <path d="M26 112 A 84 84 0 0 1 155 41.1" class="pcx-gauge-val"/>
+          <line x1="134.1" y1="37.8" x2="137.8" y2="26.5" class="pcx-gauge-tick"/>
+          <line x1="110" y1="112" x2="143.2" y2="59.7" class="pcx-gauge-needle"/>
+          <circle cx="110" cy="112" r="5" class="pcx-gauge-hub"/>
+          <text x="110" y="100" text-anchor="middle" class="pcx-gauge-num">68</text>
+          <text x="110" y="128" text-anchor="middle" class="pcx-gauge-lab">LAPSE RISK · THRESHOLD 60</text>
+        </svg>
+        <div class="pcx-gauge-copy">
+          <h3>One score per fan, not per cohort</h3>
+          <p>
+            Lapse risk is computed on this fan’s own profile history — not a population average — and surfaced in Fanfinity ID the moment the pattern starts. Crossing the threshold fires the journey automatically.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ HOW IT WORKS — FOUR-STEP RAIL ══════════════ -->
+<section class="section" aria-labelledby="pcx-how-h">
+  <div class="container-page">
+    <div class="max-w-2xl" data-reveal>
+      <p class="eyebrow">How it works</p>
+      <h2 id="pcx-how-h" class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+        Detect, understand, intervene, win back
+      </h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+        Four steps from churn signal to recovered fan.
+      </p>
+    </div>
+
+    <div class="pcx-rail-wrap">
+      <div class="pcx-rail-line" aria-hidden="true"><span class="pcx-rail-pulse"></span></div>
+      <ol class="pcx-rail">
+        <li class="pcx-step" data-reveal>
+          <div class="pcx-step-node">01</div>
+          <div class="icon-chip-sm pcx-step-icon">{% include icon.html name="gauge" class="h-4 w-4" %}</div>
+          <h3 class="pcx-step-title">Detect lapse risk early</h3>
+          <p class="pcx-step-body">Declining signals surface as at-risk flags before the customer formally churns.</p>
+        </li>
+        <li class="pcx-step" data-reveal style="--reveal-delay:80ms">
+          <div class="pcx-step-node">02</div>
+          <div class="icon-chip-sm pcx-step-icon">{% include icon.html name="identity" class="h-4 w-4" %}</div>
+          <h3 class="pcx-step-title">Understand each fan’s risk individually</h3>
+          <p class="pcx-step-body">Risk is computed on the individual profile, not a cohort average.</p>
+        </li>
+        <li class="pcx-step" data-reveal style="--reveal-delay:160ms">
+          <div class="pcx-step-node">03</div>
+          <div class="icon-chip-sm pcx-step-icon">{% include icon.html name="bolt" class="h-4 w-4" %}</div>
+          <h3 class="pcx-step-title">Trigger the right intervention automatically</h3>
+          <p class="pcx-step-body">Crossing a lapse threshold fires a real-time journey, with no manual exports.</p>
+        </li>
+        <li class="pcx-step" data-reveal style="--reveal-delay:240ms">
+          <div class="pcx-step-node">04</div>
+          <div class="icon-chip-sm pcx-step-icon">{% include icon.html name="repeat" class="h-4 w-4" %}</div>
+          <h3 class="pcx-step-title">Win back those who have already lapsed</h3>
+          <p class="pcx-step-body">Win-back audiences segment former fans by history, tier, and last active date.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WIN-BACK SEGMENTATION ══════════════ -->
+<section class="section pt-0" aria-labelledby="pcx-winback-h">
+  <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div data-reveal>
+      <p class="eyebrow">Win-back segmentation</p>
+      <h2 id="pcx-winback-h" class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+        Gone cold is not <span class="pcx-accent">gone forever</span>
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
+        Suppressed or lapsed fans are not lost forever. Audience Builder segments them by last active date, engagement history, and tier status — so a lapsed sports fan and a lapsed shopper get different offers, on the channels they actually answer.
+      </p>
+      <p class="mt-4 leading-relaxed text-muted-foreground">
+        Because segmentation runs on the same first-party fan graph that flagged the drift, win-back campaigns reach the right people with the right incentive — not a blanket discount sent to everyone who ever went quiet.
+      </p>
+    </div>
+
+    <div class="pcx-ab" data-reveal style="--reveal-delay:100ms">
+      <div class="pcx-ab-head">
+        <span>Audience Builder</span>
+        <span class="pcx-ab-tag">Win-back segment</span>
+      </div>
+      <div class="pcx-ab-rows">
+        <div class="pcx-ab-row">
+          <span class="pcx-ab-k">Last active</span>
+          <span class="pcx-ab-chip">30–90 days ago</span>
+        </div>
+        <div class="pcx-ab-row">
+          <span class="pcx-ab-k">Engagement history</span>
+          <span class="pcx-ab-chip">Previously weekly</span>
+        </div>
+        <div class="pcx-ab-row">
+          <span class="pcx-ab-k">Tier status</span>
+          <span class="pcx-ab-chip">Gold</span>
+        </div>
+      </div>
+      <div class="pcx-resolve" aria-hidden="true">
+        <span class="pcx-resolve-line"></span>
+        <span class="pcx-resolve-tag">activates as</span>
+        <span class="pcx-resolve-line"></span>
+      </div>
+      <div class="pcx-ab-out">
+        <div class="pcx-ab-out-head">
+          <span class="pcx-ab-out-title">Win-back audience</span>
+          <span class="pcx-ab-live">Ready to activate</span>
+        </div>
+        <div class="pcx-ab-channels">
+          <span class="pcx-ab-ch">WhatsApp</span>
+          <span class="pcx-ab-ch">Email</span>
+          <span class="pcx-ab-ch">Push</span>
+        </div>
+      </div>
+      <p class="pcx-ab-note">
+        Segmented on the first-party fan graph you own — the right people, the right incentive, not a blanket discount.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% raw %}
+<style>
+/* ═══ Prevent Churn page — scoped styles (.pcx-) ═══ */
+
+/* — shared accent — */
+.pcx-accent { color:#7c4dff; text-decoration:underline; text-decoration-color:rgba(153,105,255,.45); text-decoration-thickness:3px; text-underline-offset:7px; }
+html.dark .pcx-accent { color:#aa80ff; }
+
+/* ═══ ECG monitor (always-dark device, intentional in both modes) ═══ */
+.pcx-monitor {
+  margin: 14px 0 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0d0a15;
+  border: 1px solid rgba(153,105,255,.22);
+  box-shadow: 0 30px 70px -30px rgba(53,16,112,.45), 0 2px 0 0 rgba(255,255,255,.03) inset;
+}
+.pcx-mon-top {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px;
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.pcx-mon-id {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(240,235,255,.75);
+}
+.pcx-live-dot { width: 7px; height: 7px; border-radius: 9999px; background: #aa80ff; box-shadow: 0 0 10px rgba(170,128,255,.9); animation: pcx-blink 2.2s ease-in-out infinite; }
+@keyframes pcx-blink { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+.pcx-mon-meta {
+  display: none;
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(240,235,255,.35);
+}
+@media (min-width: 720px) { .pcx-mon-meta { display: block; } }
+
+.pcx-status {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 5px 11px; border-radius: 9999px; border: 1px solid transparent;
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+}
+.pcx-status-dot { width: 6px; height: 6px; border-radius: 9999px; background: currentColor; animation: pcx-blink 2.2s ease-in-out infinite; }
+.pcx-st-healthy    { color: #b79bff; background: rgba(153,105,255,.13); border-color: rgba(153,105,255,.4); }
+.pcx-st-drift      { color: #f6c877; background: rgba(242,176,78,.10); border-color: rgba(242,176,78,.4); }
+.pcx-st-risk       { color: #f2a94e; background: rgba(242,150,60,.15); border-color: rgba(242,150,60,.55); }
+.pcx-st-lapsed     { color: #f28a8a; background: rgba(240,110,110,.12); border-color: rgba(240,110,110,.45); }
+.pcx-st-recovering,
+.pcx-st-recovered  { color: #5fdca4; background: rgba(70,210,150,.10); border-color: rgba(70,210,150,.4); }
+
+/* — stage — */
+.pcx-stage { position: relative; background: #0a0712; }
+.pcx-stage svg { display: block; width: 100%; height: auto; }
+.pcx-grid-s { stroke: rgba(153,105,255,.07); stroke-width: 1; }
+.pcx-grid-l { stroke: rgba(153,105,255,.14); stroke-width: 1; }
+.pcx-tick { stroke: rgba(240,235,255,.18); stroke-width: 1; }
+.pcx-tick-label {
+  fill: rgba(240,235,255,.32);
+  font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px; letter-spacing: .08em;
+}
+.pcx-trace { fill: none; stroke: #b18cff; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.pcx-trace-glow { fill: none; stroke: rgba(153,105,255,.32); stroke-width: 7; stroke-linejoin: round; stroke-linecap: round; }
+.pcx-playhead { stroke: rgba(240,235,255,.22); stroke-width: 1; stroke-dasharray: 2 4; }
+.pcx-dot { fill: #dccfff; }
+.pcx-flag-line { stroke: #f2b04e; stroke-width: 1.5; stroke-dasharray: 4 4; }
+.pcx-flag-tri { fill: #f2b04e; }
+.pcx-flag-box { fill: rgba(20,14,6,.85); stroke: rgba(242,176,78,.55); }
+.pcx-flag-t1 { fill: #f6c877; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; font-weight: 600; letter-spacing: .06em; }
+.pcx-flag-t2 { fill: rgba(246,200,119,.6); font-family: 'Geist Mono', ui-monospace, monospace; font-size: 10px; }
+.pcx-iv-line { stroke: #aa80ff; stroke-width: 1.5; }
+.pcx-iv-tri { fill: #aa80ff; }
+.pcx-iv-box { fill: rgba(23,13,44,.9); stroke: rgba(170,128,255,.55); }
+.pcx-iv-t { fill: #c4aaff; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; font-weight: 600; letter-spacing: .08em; }
+
+/* — journey chip — */
+.pcx-chip {
+  position: absolute; left: 12px; bottom: 12px; max-width: 250px;
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 10px 12px; border-radius: 12px;
+  background: rgba(16,11,26,.92);
+  border: 1px solid rgba(170,128,255,.45);
+  box-shadow: 0 12px 30px -12px rgba(0,0,0,.6);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.2,.7,.2,1);
+}
+.pcx-chip-show { opacity: 1; transform: none; }
+.pcx-chip-tag {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #f6c877;
+}
+.pcx-chip-body { font-size: 12px; line-height: 1.45; color: rgba(240,235,255,.85); }
+.pcx-chip-body em { color: rgba(240,235,255,.45); font-style: normal; }
+
+/* — vitals — */
+.pcx-vitals {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+@media (min-width: 720px) { .pcx-vitals { grid-template-columns: repeat(4, 1fr); } }
+.pcx-vital { padding: 13px 18px; border-left: 1px solid rgba(255,255,255,.06); }
+.pcx-vital:first-child { border-left: 0; }
+@media (max-width: 719px) { .pcx-vital:nth-child(3) { border-left: 0; } .pcx-vital:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.06); } }
+.pcx-v-label {
+  display: block;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(240,235,255,.38);
+}
+.pcx-v-value {
+  display: flex; align-items: baseline; gap: 6px; margin-top: 4px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 21px; font-weight: 500; color: #f3efff; line-height: 1.15;
+}
+.pcx-v-unit { font-size: 10px; color: rgba(240,235,255,.35); letter-spacing: .04em; }
+.pcx-r-ok    { color: #b79bff; }
+.pcx-r-warn  { color: #f6c877; }
+.pcx-r-high  { color: #f2a94e; }
+.pcx-r-crit  { color: #f28a8a; }
+.pcx-r-recov { color: #5fdca4; }
+
+/* — controls — */
+.pcx-controls {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+@media (min-width: 720px) { .pcx-controls { flex-direction: row; align-items: center; gap: 16px; } }
+.pcx-controls-row { display: flex; flex-wrap: wrap; gap: 9px; }
+.pcx-scrub-wrap { flex: 1 1 220px; min-width: 0; }
+.pcx-scrub-meta {
+  display: flex; justify-content: space-between; margin-top: 2px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(240,235,255,.45);
+}
+.pcx-scrub-hint { display: none; }
+@media (min-width: 480px) { .pcx-scrub-hint { display: inline; } }
+
+.pcx-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 15px; border-radius: 9999px; border: 1px solid transparent;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; transition: background .18s ease, border-color .18s ease, opacity .18s ease, box-shadow .18s ease;
+}
+.pcx-btn:disabled { opacity: .35; cursor: not-allowed; }
+.pcx-btn-play { background: #7c4dff; color: #fff; }
+.pcx-btn-play:hover:not(:disabled) { background: #854dff; }
+.pcx-btn-fire { background: rgba(242,176,78,.08); border-color: rgba(242,176,78,.5); color: #f6c877; }
+.pcx-btn-fire:hover:not(:disabled) { background: rgba(242,176,78,.16); }
+.pcx-btn-fire.pcx-armed { animation: pcx-arm 1.7s ease-in-out infinite; }
+@keyframes pcx-arm {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(242,176,78,.45); }
+  55%      { box-shadow: 0 0 0 7px rgba(242,176,78,0); }
+}
+.pcx-btn-ghost { border-color: rgba(255,255,255,.16); color: rgba(240,235,255,.7); background: transparent; }
+.pcx-btn-ghost:hover:not(:disabled) { background: rgba(255,255,255,.06); }
+
+.pcx-scrub { -webkit-appearance: none; appearance: none; width: 100%; height: 26px; background: transparent; cursor: pointer; display: block; }
+.pcx-scrub::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: rgba(255,255,255,.14); }
+.pcx-scrub::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 18px; height: 18px; margin-top: -7px; border-radius: 50%;
+  background: #aa80ff; border: 2px solid #0d0a15; box-shadow: 0 0 0 2px rgba(170,128,255,.45);
+}
+.pcx-scrub::-moz-range-track { height: 4px; border-radius: 2px; background: rgba(255,255,255,.14); }
+.pcx-scrub::-moz-range-thumb {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #aa80ff; border: 2px solid #0d0a15; box-shadow: 0 0 0 2px rgba(170,128,255,.45);
+}
+.pcx-scrub:focus-visible { outline: 2px solid #aa80ff; outline-offset: 4px; border-radius: 6px; }
+
+/* — caption + footnote — */
+.pcx-caption {
+  display: flex; align-items: flex-start; gap: 9px;
+  padding: 12px 18px 14px; margin: 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 11.5px; line-height: 1.6; color: rgba(240,235,255,.62);
+}
+.pcx-caption-dot { flex: none; width: 6px; height: 6px; border-radius: 9999px; background: #aa80ff; margin-top: 6px; }
+.pcx-mon-foot {
+  padding: 0 18px 14px; margin: 0;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(240,235,255,.28);
+}
+
+/* ═══ Contrast cases ═══ */
+.pcx-case {
+  border-radius: 20px; border: 1px solid var(--color-border);
+  background: var(--color-card); padding: 22px;
+}
+.pcx-case-head { display: flex; align-items: center; gap: 12px; }
+.pcx-case-tag {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 9999px;
+}
+.pcx-case-tag-a { color: #6a30e0; background: rgba(124,77,255,.1); }
+.pcx-case-tag-b { color: #a4505a; background: rgba(200,90,100,.09); }
+html.dark .pcx-case-tag-a { color: #c4aaff; background: rgba(153,105,255,.14); }
+html.dark .pcx-case-tag-b { color: #f0a3a8; background: rgba(240,110,120,.12); }
+.pcx-case-title { font-size: 19px; font-weight: 600; }
+.pcx-mini { display: block; width: 100%; height: auto; margin-top: 14px; border-radius: 12px; background: var(--color-background); border: 1px solid var(--color-border); }
+.pcx-case-body { margin-top: 14px; font-size: 14.5px; line-height: 1.65; color: var(--color-muted-foreground); }
+.pcx-outcome { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 7px 12px; border-radius: 9999px; font-size: 12.5px; font-weight: 600; }
+.pcx-outcome-a { color: #6a30e0; background: rgba(124,77,255,.09); }
+.pcx-outcome-b { color: #a4505a; background: rgba(200,90,100,.08); }
+html.dark .pcx-outcome-a { color: #c4aaff; background: rgba(153,105,255,.13); }
+html.dark .pcx-outcome-b { color: #f0a3a8; background: rgba(240,110,120,.11); }
+
+/* mini svg internals */
+.pcx-mini-base { stroke: var(--color-border); stroke-width: 1; stroke-dasharray: 2 4; }
+.pcx-mini-trace-a { fill: none; stroke: #854dff; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.pcx-mini-trace-b { fill: none; stroke: #a49bb0; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+html.dark .pcx-mini-trace-a { stroke: #aa80ff; }
+html.dark .pcx-mini-trace-b { stroke: rgba(255,255,255,.45); }
+.pcx-mini-flag { stroke: #e69a3c; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.pcx-mini-iv { stroke: #854dff; stroke-width: 1.5; }
+html.dark .pcx-mini-iv { stroke: #aa80ff; }
+.pcx-mini-note { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #6a30e0; }
+.pcx-mini-note-amber { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #b97c1f; }
+.pcx-mini-note-red { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; fill: #b3454f; }
+html.dark .pcx-mini-note { fill: #c4aaff; }
+html.dark .pcx-mini-note-amber { fill: #f0c078; }
+html.dark .pcx-mini-note-red { fill: #f0a3a8; }
+.pcx-mini-cancel { stroke: #d65a5a; stroke-width: 2; stroke-linecap: round; }
+.pcx-mini-maybe { fill: none; stroke: #a49bb0; stroke-width: 1.5; stroke-dasharray: 3 4; stroke-linecap: round; }
+html.dark .pcx-mini-maybe { stroke: rgba(255,255,255,.4); }
+.pcx-mini-axis { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; fill: var(--color-muted-foreground); letter-spacing: .06em; }
+
+/* ═══ Features editorial grid ═══ */
+.pcx-feat-grid { margin-top: 48px; display: grid; gap: 20px; }
+@media (min-width: 768px) {
+  .pcx-feat-grid { grid-template-columns: repeat(12, 1fr); }
+  .pcx-feat-1 { grid-column: span 7; }
+  .pcx-feat-2 { grid-column: span 5; }
+  .pcx-feat-3 { grid-column: span 5; }
+  .pcx-feat-4 { grid-column: span 7; }
+}
+.pcx-feat {
+  position: relative; overflow: hidden;
+  border-radius: 20px; border: 1px solid var(--color-border);
+  background: var(--color-card); padding: 28px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.pcx-feat:hover { border-color: rgba(124,77,255,.35); box-shadow: 0 12px 34px -20px rgba(53,16,112,.28); }
+.pcx-feat-num {
+  position: absolute; top: -26px; right: 8px;
+  font-family: 'Bricolage Grotesque', ui-sans-serif, sans-serif;
+  font-weight: 700; font-size: 118px; line-height: 1;
+  color: rgba(124,77,255,.07); pointer-events: none; user-select: none;
+}
+html.dark .pcx-feat-num { color: rgba(153,105,255,.1); }
+.pcx-feat h3 { margin-top: 20px; font-size: 19px; max-width: 26ch; }
+.pcx-feat p { margin-top: 9px; font-size: 15px; line-height: 1.7; color: var(--color-muted-foreground); max-width: 58ch; }
+
+/* ═══ Signal anatomy card ═══ */
+.pcx-anatomy {
+  border-radius: 20px; border: 1px solid var(--color-border);
+  background: var(--color-background); padding: 22px;
+}
+.pcx-anatomy-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.pcx-anatomy-tag { color: #6a30e0; background: rgba(124,77,255,.1); border-radius: 9999px; padding: 4px 9px; }
+html.dark .pcx-anatomy-tag { color: #c4aaff; background: rgba(153,105,255,.14); }
+.pcx-sig { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px dashed var(--color-border); }
+.pcx-sig-meta { display: flex; flex-direction: column; gap: 3px; }
+.pcx-sig-name { font-size: 14px; font-weight: 600; color: var(--color-foreground); }
+.pcx-sig-val { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: var(--color-muted-foreground); }
+.pcx-spark { flex: none; width: 120px; height: 36px; }
+.pcx-spark polyline { fill: none; stroke: #7c4dff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pcx-spark circle { fill: #7c4dff; }
+html.dark .pcx-spark polyline { stroke: #aa80ff; }
+html.dark .pcx-spark circle { fill: #aa80ff; }
+
+.pcx-resolve { display: flex; align-items: center; gap: 12px; padding: 16px 0; }
+.pcx-resolve-line { flex: 1; height: 1px; background-image: linear-gradient(90deg, var(--color-border) 55%, transparent 0); background-size: 7px 1px; }
+.pcx-resolve-tag {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+.pcx-gauge-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.pcx-gauge { flex: none; width: 190px; height: auto; }
+.pcx-gauge-track { fill: none; stroke: #e9e2f7; stroke-width: 10; stroke-linecap: round; }
+.pcx-gauge-zone { fill: none; stroke: #e69a3c; stroke-width: 10; opacity: .4; }
+.pcx-gauge-val { fill: none; stroke: #7c4dff; stroke-width: 10; stroke-linecap: round; }
+.pcx-gauge-tick { stroke: #b97c1f; stroke-width: 2.5; stroke-linecap: round; }
+.pcx-gauge-needle { stroke: var(--color-foreground); stroke-width: 2.5; stroke-linecap: round; }
+.pcx-gauge-hub { fill: var(--color-foreground); }
+.pcx-gauge-num { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 26px; font-weight: 600; fill: var(--color-foreground); }
+.pcx-gauge-lab { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 8px; letter-spacing: .12em; fill: var(--color-muted-foreground); }
+html.dark .pcx-gauge-track { stroke: rgba(255,255,255,.1); }
+html.dark .pcx-gauge-val { stroke: #aa80ff; }
+.pcx-gauge-copy { flex: 1 1 220px; }
+.pcx-gauge-copy h3 { font-size: 17px; }
+.pcx-gauge-copy p { margin-top: 7px; font-size: 14.5px; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ═══ Four-step rail ═══ */
+.pcx-rail-wrap { position: relative; margin-top: 52px; }
+.pcx-rail { display: grid; gap: 30px; list-style: none; margin: 0; padding: 0; }
+.pcx-rail-line { display: none; }
+@media (min-width: 820px) {
+  .pcx-rail { grid-template-columns: repeat(4, 1fr); gap: 26px; }
+  .pcx-rail-line { display: block; position: absolute; top: 21px; left: 6%; right: 6%; height: 1px; background: var(--color-border); }
+  .pcx-rail-pulse {
+    position: absolute; top: -3px; left: 0; width: 7px; height: 7px; border-radius: 9999px;
+    background: #854dff; box-shadow: 0 0 12px rgba(133,77,255,.9);
+    animation: pcx-travel 4.6s linear infinite;
+  }
+}
+@keyframes pcx-travel { 0% { left: 0; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
+.pcx-step-node {
+  position: relative; width: 43px; height: 43px; border-radius: 9999px;
+  display: grid; place-items: center;
+  background: var(--color-card); border: 1px solid var(--color-border);
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: #7c4dff;
+}
+html.dark .pcx-step-node { color: #c4aaff; }
+.pcx-step-icon { margin-top: 20px; }
+.pcx-step-title { margin-top: 13px; font-size: 16.5px; }
+.pcx-step-body { margin-top: 7px; font-size: 14px; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ═══ Audience builder card ═══ */
+.pcx-ab {
+  border-radius: 20px; border: 1px solid var(--color-border);
+  background: var(--color-card); padding: 24px;
+  box-shadow: 0 24px 60px -34px rgba(53,16,112,.25);
+}
+.pcx-ab-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+.pcx-ab-tag { color: #6a30e0; background: rgba(124,77,255,.1); border-radius: 9999px; padding: 4px 9px; }
+html.dark .pcx-ab-tag { color: #c4aaff; background: rgba(153,105,255,.14); }
+.pcx-ab-rows { margin-top: 6px; }
+.pcx-ab-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--color-border); }
+.pcx-ab-k { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px; color: var(--color-muted-foreground); }
+.pcx-ab-chip {
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11.5px;
+  color: var(--color-foreground);
+  background: rgba(124,77,255,.07); border: 1px solid rgba(124,77,255,.2);
+  border-radius: 9999px; padding: 4px 11px; white-space: nowrap;
+}
+html.dark .pcx-ab-chip { background: rgba(153,105,255,.1); border-color: rgba(153,105,255,.28); }
+.pcx-ab-out {
+  border-radius: 14px; padding: 15px 16px;
+  border: 1px solid rgba(124,77,255,.28); background: rgba(124,77,255,.05);
+}
+html.dark .pcx-ab-out { border-color: rgba(153,105,255,.32); background: rgba(153,105,255,.08); }
+.pcx-ab-out-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.pcx-ab-out-title { font-size: 15px; font-weight: 700; font-family: 'Bricolage Grotesque', ui-sans-serif, sans-serif; color: var(--color-foreground); }
+.pcx-ab-live {
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase;
+  color: #1e8f63; background: rgba(60,190,130,.12); border-radius: 9999px; padding: 4px 9px;
+}
+html.dark .pcx-ab-live { color: #5fdca4; background: rgba(70,210,150,.12); }
+.pcx-ab-channels { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.pcx-ab-ch {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: 'Geist Mono', ui-monospace, monospace; font-size: 11px; color: var(--color-muted-foreground);
+}
+.pcx-ab-ch::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+html.dark .pcx-ab-ch::before { background: #aa80ff; }
+.pcx-ab-note { margin-top: 16px; font-size: 13.5px; line-height: 1.6; color: var(--color-muted-foreground); }
+
+/* ═══ Reduced motion ═══ */
+@media (prefers-reduced-motion: reduce) {
+  .pcx-live-dot, .pcx-status-dot, .pcx-btn-fire.pcx-armed, .pcx-rail-pulse { animation: none !important; }
+  .pcx-chip { transition: none; }
+}
+</style>
+{% endraw %}
 
 {% include cta-band.html
    heading="Stop churn before it starts"
-   text="See how Fanfinity surfaces at-risk customers from behavioral signals, triggers real-time re-engagement, and segments lapsed fans for win-back campaigns, all on a first-party fan graph you own." %}
+   text="See how Fanfinity surfaces at-risk customers from behavioral signals, triggers real-time reengagement, and segments lapsed fans for win-back campaigns, all on a first-party fan graph you own." %}
+
+{% raw %}
+<script>
+(function () {
+  'use strict';
+
+  /* ═══ Model ═══ */
+  var WEEKS = 12, PXW = 80, W = 960, BASE = 200;
+  var FLAG = 8, LAPSE = 10.2, CANCEL = 11.5;
+  var SPEED = WEEKS / 16000; /* weeks per ms → 16 s full sweep */
+
+  /* QRS-ish beat shape: [dx px, value] — positive value = upward deflection */
+  var SHAPE = [[-26, 0], [-20, 0.05], [-14, 0], [-8, -0.06], [-2, 1], [3, -0.24], [8, 0], [15, 0.12], [23, 0]];
+
+  function shapeAt(dx) {
+    if (dx <= SHAPE[0][0] || dx >= SHAPE[SHAPE.length - 1][0]) return 0;
+    for (var i = 0; i < SHAPE.length - 1; i++) {
+      var a = SHAPE[i], b = SHAPE[i + 1];
+      if (dx >= a[0] && dx <= b[0]) {
+        var k = (dx - a[0]) / (b[0] - a[0]);
+        return a[1] + (b[1] - a[1]) * k;
+      }
+    }
+    return 0;
+  }
+
+  function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function ss(v) { v = clamp01(v); return v * v * (3 - 2 * v); }
+
+  /* Beat schedule: healthy → drift → weak → flatline; recovery after intervention week ix */
+  function buildBeats(ix) {
+    var beats = [], t = 0.32, n = 0;
+    while (t < WEEKS - 0.08 && n < 90) {
+      n++;
+      var amp, gap;
+      if (ix !== null && t >= ix + 0.5) {
+        var k = Math.min(1, (t - ix - 0.5) / 2.4);
+        gap = 1.15 - 0.55 * k;   /* 1.15 → 0.60 wk */
+        amp = 30 + 72 * k;       /* 30 → 102 px  */
+      } else if (t < 4.2) {
+        gap = 0.56;
+        amp = 96 + 10 * Math.sin(t * 3.1);
+      } else if (t < FLAG) {
+        var k2 = (t - 4.2) / (FLAG - 4.2);
+        gap = 0.62 + 0.78 * k2;  /* → 1.40 wk */
+        amp = 92 - 52 * k2;      /* → 40 px  */
+      } else if (t < LAPSE) {
+        var k3 = (t - FLAG) / (LAPSE - FLAG);
+        gap = 1.45 + 0.5 * k3;
+        amp = 36 - 24 * k3;      /* → 12 px  */
+      } else {
+        if (ix === null) break;  /* flatline */
+        t += 0.4;                /* silence until the journey lands */
+        continue;
+      }
+      beats.push({ t: t, amp: amp });
+      t += gap;
+    }
+    return beats;
+  }
+
+  function traceY(xw, beats, pxw, ampScale, base) {
+    var y = base + Math.sin(xw * 7.3) * 1.5 + Math.sin(xw * 17.7) * 0.7;
+    for (var i = 0; i < beats.length; i++) {
+      var dx = (xw - beats[i].t) * pxw;
+      if (dx < -27 || dx > 24) continue;
+      y -= beats[i].amp * ampScale * shapeAt(dx);
+    }
+    return y;
+  }
+
+  function tracePath(beats, pxw, ampScale, base, wPx) {
+    var d = '';
+    for (var x = 0; x <= wPx; x += 2) {
+      var y = traceY(x / pxw, beats, pxw, ampScale, base);
+      d += (x === 0 ? 'M' : 'L') + x.toFixed(1) + ' ' + y.toFixed(1) + ' ';
+    }
+    return d;
+  }
+
+  /* Vitals */
+  function riskAt(t, ix) {
+    var base = 6 + 84 * ss((t - 3) / 7.5);          /* ≈68 at wk 8, ≈90 at wk 11.5 */
+    if (ix !== null && t >= ix) {
+      var r0 = 6 + 84 * ss((ix - 3) / 7.5);
+      return Math.max(9, 12 + (r0 - 12) * Math.exp(-(t - ix) / 1.15));
+    }
+    return base;
+  }
+  function sessionsAt(t, ix) {
+    var s;
+    if (t < 4.2) s = 5.4 + 0.3 * Math.sin(t * 2.4);
+    else s = 5.4 * (1 - 0.96 * ss((t - 4.2) / 6.2));
+    if (ix !== null && t > ix + 0.5) {
+      s = Math.max(s, 0.4 + 4.8 * ss((t - ix - 0.5) / 2.6));
+    }
+    return Math.max(0, s);
+  }
+  function daysAt(t, ix) {
+    var d;
+    if (t < 4.2) d = 1;
+    else d = 1 + 24 * ss((t - 4.2) / 6.5);
+    if (ix !== null && t > ix + 0.5) d = d * (1 - ss((t - ix - 0.5) / 1.6));
+    return Math.round(d);
+  }
+  function statusKey(t, ix, r) {
+    if (ix !== null && t >= ix) return r < 30 ? 'recovered' : 'recovering';
+    if (t >= LAPSE) return 'lapsed';
+    if (r >= 60) return 'risk';
+    if (r >= 32) return 'drift';
+    return 'healthy';
+  }
+  var STATUS = {
+    healthy:    { label: 'Healthy',           riskCls: 'pcx-r-ok' },
+    drift:      { label: 'Drifting',          riskCls: 'pcx-r-warn' },
+    risk:       { label: 'At risk — flagged', riskCls: 'pcx-r-high' },
+    lapsed:     { label: 'Lapsed',            riskCls: 'pcx-r-crit' },
+    recovering: { label: 'Recovering',        riskCls: 'pcx-r-recov' },
+    recovered:  { label: 'Recovered',         riskCls: 'pcx-r-recov' }
+  };
+  function captionFor(t, ix, r) {
+    if (ix !== null && t >= ix) {
+      if (t < ix + 1.1) return 'The journey fires in real time — a personalized WhatsApp message, a reward top-up. (Reward mechanics in Preview.)';
+      if (r < 30) return 'Rhythm restored. The fan is back on a healthy cadence — and the save is measured on the same profile.';
+      return 'The fan engages again: sessions resume, dwell returns, the risk score unwinds.';
+    }
+    if (t < 0.05) return 'Press play — or drag the timeline — to watch twelve weeks of one fan’s engagement.';
+    if (t < 4.2) return 'A healthy rhythm: weekly sessions, steady interaction. This is the fan’s own baseline, not a cohort average.';
+    if (t < FLAG - 0.12) return 'The drift: shorter sessions, sparser interaction. Averages still look fine — this fan’s baseline doesn’t.';
+    if (t < FLAG + 0.6) return 'Lapse risk 68 — the 60 threshold is crossed. Fanfinity flags the fan while there is still time to act.';
+    if (t < LAPSE) return 'The window narrows. Without Fanfinity, this fan first appears in next month’s churn report.';
+    return 'Flatline. The cancellation email has arrived — retention is now win-back. The trigger below still works.';
+  }
+
+  /* ═══ DOM ═══ */
+  var monitor   = document.getElementById('pcxMonitor');
+  var clipRect  = document.getElementById('pcxClipRect');
+  var traceEl   = document.getElementById('pcxTrace');
+  var glowEl    = document.getElementById('pcxTraceGlow');
+  var dot       = document.getElementById('pcxDot');
+  var playhead  = document.getElementById('pcxPlayhead');
+  var weeksG    = document.getElementById('pcxWeeks');
+  var flagG     = document.getElementById('pcxFlag');
+  var ivG       = document.getElementById('pcxIV');
+  var ivBox     = document.getElementById('pcxIVBox');
+  var ivText    = document.getElementById('pcxIVText');
+  var chip      = document.getElementById('pcxChip');
+  var playBtn   = document.getElementById('pcxPlay');
+  var fireBtn   = document.getElementById('pcxFire');
+  var fireLabel = document.getElementById('pcxFireLabel');
+  var resetBtn  = document.getElementById('pcxReset');
+  var scrub     = document.getElementById('pcxScrub');
+  var timeEl    = document.getElementById('pcxTime');
+  var riskEl    = document.getElementById('pcxRisk');
+  var sessEl    = document.getElementById('pcxSessions');
+  var daysEl    = document.getElementById('pcxDays');
+  var pill      = document.getElementById('pcxStatusPill');
+  var pillText  = document.getElementById('pcxStatusText');
+  var captionEl = document.getElementById('pcxCaption');
+  if (!monitor || !traceEl) return;
+
+  /* ═══ State ═══ */
+  var t = 0, ix = null, playing = false, rafId = null, lastTs = 0;
+  var flagPauseDone = false, wasPlaying = false;
+  var beats = [], lastCap = '', lastStatus = '';
+
+  var PLAY_ICON  = '<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>';
+  var PAUSE_ICON = '<svg viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M3.5 2.5h3v11h-3zM9.5 2.5h3v11h-3z"/></svg>';
+
+  function rebuildTrace() {
+    beats = buildBeats(ix);
+    var d = tracePath(beats, PXW, 1, BASE, W);
+    traceEl.setAttribute('d', d);
+    glowEl.setAttribute('d', d);
+  }
+
+  function buildWeekTicks() {
+    var s = '';
+    for (var wk = 0; wk < WEEKS; wk++) {
+      s += '<line x1="' + (wk * PXW) + '" y1="306" x2="' + (wk * PXW) + '" y2="312" class="pcx-tick"/>'
+         + '<text x="' + (wk * PXW + 6) + '" y="327" class="pcx-tick-label">W' + (wk + 1) + '</text>';
+    }
+    weeksG.innerHTML = s;
+  }
+
+  function render() {
+    var x = t * PXW;
+    clipRect.setAttribute('width', Math.max(0, x).toFixed(1));
+    dot.setAttribute('cx', x.toFixed(1));
+    dot.setAttribute('cy', traceY(t, beats, PXW, 1, BASE).toFixed(1));
+    playhead.setAttribute('x1', x.toFixed(1));
+    playhead.setAttribute('x2', x.toFixed(1));
+    playhead.setAttribute('visibility', t > 0.03 && t < WEEKS - 0.03 ? 'visible' : 'hidden');
+    flagG.setAttribute('visibility', t >= FLAG ? 'visible' : 'hidden');
+
+    if (ix !== null) {
+      var ixx = ix * PXW;
+      ivG.setAttribute('visibility', 'visible');
+      ivG.setAttribute('transform', 'translate(' + ixx.toFixed(1) + ',0)');
+      var lx = Math.min(Math.max(ixx, 86), W - 86);
+      ivBox.setAttribute('x', (lx - ixx - 78).toFixed(1));
+      ivText.setAttribute('x', (lx - ixx).toFixed(1));
+    } else {
+      ivG.setAttribute('visibility', 'hidden');
+    }
+
+    timeEl.textContent = 'Week ' + t.toFixed(1) + ' / 12';
+    var sv = Math.round(t * 100);
+    if (Number(scrub.value) !== sv) scrub.value = sv;
+
+    var r = riskAt(t, ix), s = sessionsAt(t, ix), d = daysAt(t, ix);
+    var key = statusKey(t, ix, r), st = STATUS[key];
+
+    riskEl.textContent = Math.round(r);
+    riskEl.setAttribute('class', st.riskCls);
+    sessEl.textContent = s.toFixed(1);
+    daysEl.textContent = d === 0 ? 'today' : String(d);
+
+    if (key !== lastStatus) {
+      lastStatus = key;
+      pillText.textContent = st.label;
+      pill.setAttribute('class', 'pcx-status pcx-st-' + key);
+    }
+
+    var cap = captionFor(t, ix, r);
+    if (cap !== lastCap) { lastCap = cap; captionEl.textContent = cap; }
+
+    if (ix !== null) {
+      fireBtn.disabled = true;
+      fireLabel.textContent = 'Journey fired';
+      fireBtn.classList.remove('pcx-armed');
+    } else if (t < FLAG) {
+      fireBtn.disabled = true;
+      fireLabel.textContent = 'Trigger the intervention';
+      fireBtn.classList.remove('pcx-armed');
+    } else {
+      fireBtn.disabled = false;
+      fireLabel.textContent = t >= LAPSE ? 'Trigger win-back journey' : 'Trigger the intervention';
+    }
+  }
+
+  function setPlaying(p) {
+    if (p && t >= WEEKS - 0.001) onReset();
+    playing = p;
+    playBtn.setAttribute('aria-pressed', p ? 'true' : 'false');
+    playBtn.innerHTML = (p ? PAUSE_ICON + '<span>Pause</span>' : PLAY_ICON + '<span>Play the drift</span>');
+    if (p) {
+      lastTs = performance.now();
+      rafId = requestAnimationFrame(tick);
+    } else if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  function tick(ts) {
+    if (!playing) return;
+    var dt = Math.min(64, ts - lastTs);
+    lastTs = ts;
+    t += dt * SPEED;
+    if (!flagPauseDone && ix === null && t >= FLAG) {
+      t = FLAG;
+      flagPauseDone = true;
+      setPlaying(false);
+      fireBtn.classList.add('pcx-armed');
+    }
+    if (t >= WEEKS) { t = WEEKS; setPlaying(false); }
+    render();
+    if (playing) rafId = requestAnimationFrame(tick);
+  }
+
+  function onFire() {
+    if (ix !== null || t < FLAG) return;
+    ix = t;
+    fireBtn.classList.remove('pcx-armed');
+    rebuildTrace();
+    chip.hidden = false;
+    requestAnimationFrame(function () { chip.classList.add('pcx-chip-show'); });
+    render();
+  }
+
+  function onReset() {
+    setPlaying(false);
+    t = 0; ix = null; flagPauseDone = false;
+    rebuildTrace();
+    chip.classList.remove('pcx-chip-show');
+    chip.hidden = true;
+    render();
+  }
+
+  playBtn.addEventListener('click', function () { setPlaying(!playing); });
+  fireBtn.addEventListener('click', onFire);
+  resetBtn.addEventListener('click', onReset);
+  scrub.addEventListener('input', function () {
+    t = Number(scrub.value) / 100;
+    if (t > FLAG) flagPauseDone = true;
+    render();
+  });
+
+  /* Pause when the monitor scrolls offscreen; resume if it was playing */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting && playing) { wasPlaying = true; setPlaying(false); }
+        else if (e.isIntersecting && wasPlaying) { wasPlaying = false; setPlaying(true); }
+      });
+    }, { threshold: 0.15 });
+    io.observe(monitor);
+  }
+
+  /* ═══ Contrast minis (same model, static scenarios) ═══ */
+  function renderMinis() {
+    var pxw = 460 / WEEKS, base = 118, amp = 0.52;
+
+    /* A — act on the signal: flag at wk 8, journey fires at wk 8.3 */
+    var dA = tracePath(buildBeats(8.3), pxw, amp, base, 460);
+    var fx = (FLAG * pxw).toFixed(1), jx = (8.3 * pxw).toFixed(1);
+    document.getElementById('pcxMiniA').innerHTML =
+      '<line x1="0" y1="' + base + '" x2="460" y2="' + base + '" class="pcx-mini-base"/>'
+      + '<path d="' + dA + '" class="pcx-mini-trace-a"/>'
+      + '<line x1="' + fx + '" y1="26" x2="' + fx + '" y2="150" class="pcx-mini-flag"/>'
+      + '<line x1="' + jx + '" y1="26" x2="' + jx + '" y2="150" class="pcx-mini-iv"/>'
+      + '<text x="' + (FLAG * pxw - 6) + '" y="20" text-anchor="end" class="pcx-mini-note-amber">risk flag</text>'
+      + '<text x="' + (8.3 * pxw + 6) + '" y="20" class="pcx-mini-note">journey fires</text>'
+      + '<text x="' + (4 * pxw) + '" y="164" text-anchor="middle" class="pcx-mini-axis">W4</text>'
+      + '<text x="' + (8 * pxw) + '" y="164" text-anchor="middle" class="pcx-mini-axis">W8</text>'
+      + '<text x="' + (12 * pxw - 4) + '" y="164" text-anchor="end" class="pcx-mini-axis">W12</text>';
+
+    /* B — act on the cancellation: flatline, cancel at wk 11.5, uncertain win-back */
+    var dB = tracePath(buildBeats(null), pxw, amp, base, 460);
+    var cx = (CANCEL * pxw).toFixed(1);
+    document.getElementById('pcxMiniB').innerHTML =
+      '<line x1="0" y1="' + base + '" x2="460" y2="' + base + '" class="pcx-mini-base"/>'
+      + '<path d="' + dB + '" class="pcx-mini-trace-b"/>'
+      + '<line x1="' + (CANCEL * pxw - 5) + '" y1="28" x2="' + (CANCEL * pxw + 5) + '" y2="38" class="pcx-mini-cancel"/>'
+      + '<line x1="' + (CANCEL * pxw + 5) + '" y1="28" x2="' + (CANCEL * pxw - 5) + '" y2="38" class="pcx-mini-cancel"/>'
+      + '<path d="M ' + cx + ' ' + base + ' C 449 116, 453 108, 458 99" class="pcx-mini-maybe"/>'
+      + '<text x="' + (CANCEL * pxw - 10) + '" y="20" text-anchor="end" class="pcx-mini-note-red">cancels</text>'
+      + '<text x="' + (4 * pxw) + '" y="164" text-anchor="middle" class="pcx-mini-axis">W4</text>'
+      + '<text x="' + (8 * pxw) + '" y="164" text-anchor="middle" class="pcx-mini-axis">W8</text>'
+      + '<text x="' + (12 * pxw - 4) + '" y="164" text-anchor="end" class="pcx-mini-axis">W12</text>';
+  }
+
+  /* ═══ Init ═══ */
+  buildWeekTicks();
+  rebuildTrace();
+  renderMinis();
+  render();
+})();
+</script>
+{% endraw %}
