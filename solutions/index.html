@@ -1,35 +1,1135 @@
 ---
 layout: page
+cta: false
 permalink: /solutions/
 title: Solutions
 description: Fanfinity by industry and by team, sports and entertainment first, extensible to media, brands, events and hospitality, and retail.
+breadcrumb_parent: { title: Solutions, url: /solutions }
 ---
-{% include hero.html
-   eyebrow="Solutions"
-   title="Built for your industry and your team"
-   subtitle="The same connected platform, focused on the outcomes each industry and each team is measured on. Sports and entertainment is our flagship and deepest vertical."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the products"
-   secondary_url="/platform"
-   image="/assets/img/solutions-hub.jpg"
-   image_alt="Business professionals collaborating in a modern office" %}
 
-<section class="section">
+{% raw %}
+<style>
+  /* ── Solutions hub — bespoke styles (prefix: .sol-) ─────────────────── */
+
+  .sol-display {
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .sol-meta {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+  }
+
+  /* Hero orbit motif */
+  .sol-hero-orbit { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .sol-hero-orbit circle,
+  .sol-hero-orbit ellipse { fill: none; stroke: var(--color-border); }
+  .sol-hero-orbit .sol-o-dot { fill: var(--color-muted-foreground); stroke: none; }
+  .sol-hero-orbit .sol-o-hot { fill: #854dff; stroke: none; }
+
+  /* ── Centerpiece: constellation map ── */
+  .sol-stage {
+    position: relative;
+    width: 100%;
+    max-width: 660px;
+    margin-inline: auto;
+    aspect-ratio: 4 / 5;
+    touch-action: manipulation;
+  }
+  @media (min-width: 1024px) {
+    .sol-stage { aspect-ratio: 1 / 1; }
+  }
+  .sol-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .sol-ring { fill: none; stroke: var(--color-border); stroke-width: 1; stroke-dasharray: 1 7; }
+  .sol-spoke { stroke: var(--color-border); stroke-width: 1; transition: stroke 0.35s ease, stroke-width 0.35s ease, opacity 0.35s ease; }
+  .sol-spoke.is-active { stroke: #854dff; stroke-width: 1.8; }
+  .sol-spoke.is-dim { opacity: 0.45; }
+
+  .sol-node {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 4px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sol-node-dot {
+    display: grid;
+    place-items: center;
+    border-radius: 9999px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  }
+  .sol-node[data-ring="ind"] .sol-node-dot { width: 46px; height: 46px; background: #854dff; color: #fff; box-shadow: 0 0 0 1px rgba(133, 77, 255, 0.35); }
+  .sol-node[data-ring="ind"].is-flagship .sol-node-dot { width: 58px; height: 58px; background: #7c4dff; }
+  .sol-node[data-ring="team"] .sol-node-dot { width: 42px; height: 42px; background: var(--color-foreground); color: var(--color-background); }
+  .sol-node[data-ring="use"] .sol-node-dot { width: 38px; height: 38px; background: var(--color-card); color: var(--color-foreground); border: 1px solid var(--color-border); }
+  .sol-node:hover .sol-node-dot,
+  .sol-node:focus-visible .sol-node-dot { transform: scale(1.1); }
+  .sol-node[aria-pressed="true"] .sol-node-dot {
+    transform: scale(1.14);
+    box-shadow: 0 0 0 6px rgba(133, 77, 255, 0.18), 0 0 0 1.5px #854dff;
+  }
+  .sol-node-label {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--color-muted-foreground);
+    background: color-mix(in srgb, var(--color-background) 84%, transparent);
+    border-radius: 999px;
+    padding: 2px 7px;
+    transition: color 0.25s ease;
+  }
+  .sol-node[aria-pressed="true"] .sol-node-label { color: #854dff; }
+  html.dark .sol-node[aria-pressed="true"] .sol-node-label { color: #b18cff; }
+
+  /* Fan graph core */
+  .sol-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 9999px;
+    border: 0;
+    cursor: pointer;
+    background: #351070;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 10px 34px -10px rgba(53, 16, 112, 0.55);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .sol-core:hover { transform: translate(-50%, -50%) scale(1.05); }
+  .sol-core[aria-pressed="true"] { box-shadow: 0 0 0 7px rgba(133, 77, 255, 0.22), 0 10px 34px -10px rgba(53, 16, 112, 0.55); }
+  .sol-core::before,
+  .sol-core::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px solid rgba(133, 77, 255, 0.55);
+    animation: sol-core-pulse 3.2s ease-out infinite;
+    pointer-events: none;
+  }
+  .sol-core::after { animation-delay: 1.6s; }
+  @keyframes sol-core-pulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    70% { transform: scale(1.75); opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* Tight screens: shrink core + nodes so rings never collide */
+  @media (max-width: 480px) {
+    .sol-core { width: 68px; height: 68px; }
+    .sol-node[data-ring="ind"] .sol-node-dot { width: 40px; height: 40px; }
+    .sol-node[data-ring="ind"].is-flagship .sol-node-dot { width: 50px; height: 50px; }
+    .sol-node[data-ring="team"] .sol-node-dot { width: 38px; height: 38px; }
+    .sol-node[data-ring="use"] .sol-node-dot { width: 34px; height: 34px; }
+    .sol-node-label { font-size: 0.56rem; padding: 2px 5px; }
+  }
+
+  /* Motion toggle */
+  .sol-motion {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
+    color: var(--color-muted-foreground);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .sol-motion:hover { color: var(--color-foreground); border-color: #854dff; }
+  .sol-motion-icon { position: relative; width: 10px; height: 10px; }
+  .sol-motion-icon::before,
+  .sol-motion-icon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 3px;
+    height: 10px;
+    background: currentColor;
+  }
+  .sol-motion-icon::before { left: 0; }
+  .sol-motion-icon::after { right: 0; }
+  .sol-motion.is-paused .sol-motion-icon::before {
+    left: 1px;
+    width: 0;
+    height: 0;
+    background: none;
+    border-left: 8px solid currentColor;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  .sol-motion.is-paused .sol-motion-icon::after { display: none; }
+
+  /* Legend */
+  .sol-key { display: inline-flex; align-items: center; gap: 7px; }
+  .sol-key-swatch { width: 12px; height: 12px; border-radius: 999px; }
+  .sol-key-ind { background: #854dff; }
+  .sol-key-team { background: var(--color-foreground); }
+  .sol-key-use { background: var(--color-card); border: 1px solid var(--color-border); }
+
+  /* Detail panel */
+  .sol-panel {
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+  }
+  @media (min-width: 1024px) {
+    .sol-panel { position: sticky; top: 6rem; }
+  }
+  .sol-panel-icon { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 0.85rem; background: rgba(133, 77, 255, 0.1); color: #854dff; }
+  html.dark .sol-panel-icon { background: rgba(133, 77, 255, 0.16); color: #b18cff; }
+  .sol-panel-chip {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .sol-panel-chip.is-preview { color: #854dff; border-color: rgba(133, 77, 255, 0.4); }
+  html.dark .sol-panel-chip.is-preview { color: #b18cff; }
+
+  /* Stage path strip: collect → resolve → engage → activate → measure */
+  .sol-steps { display: flex; flex-direction: column; gap: 1.4rem; position: relative; padding-left: 30px; }
+  .sol-steps::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--color-border);
+  }
+  .sol-step { position: relative; }
+  .sol-step-dot {
+    position: absolute;
+    left: -30px;
+    top: 4px;
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    transition: background-color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease;
+    transition-delay: var(--d, 0ms);
+  }
+  .sol-step-name {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground);
+    transition: color 0.45s ease;
+    transition-delay: var(--d, 0ms);
+  }
+  .sol-step-product {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-foreground);
+    transition: color 0.45s ease;
+    transition-delay: var(--d, 0ms);
+  }
+  .sol-step.is-lit .sol-step-dot { background: #854dff; border-color: #854dff; box-shadow: 0 0 0 5px rgba(133, 77, 255, 0.16); }
+  .sol-step.is-lit .sol-step-name { color: #854dff; }
+  html.dark .sol-step.is-lit .sol-step-name { color: #b18cff; }
+  @media (min-width: 768px) {
+    .sol-steps { flex-direction: row; gap: 0; padding-left: 0; }
+    .sol-steps::before { display: none; }
+    .sol-step { flex: 1 1 0; text-align: center; padding-top: 1.9rem; }
+    .sol-step::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: -50%;
+      right: 50%;
+      height: 1px;
+      background: var(--color-border);
+    }
+    .sol-step:first-child::before { display: none; }
+    .sol-step-dot { left: 50%; top: 0; transform: translateX(-50%); }
+  }
+
+  /* ── Directory: numbered index rows ── */
+  .sol-idx { border-bottom: 1px solid var(--color-border); }
+  .sol-idx-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.15rem 0.5rem;
+    border-top: 1px solid var(--color-border);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  @media (min-width: 768px) {
+    .sol-idx-row { grid-template-columns: 4.5rem auto 1fr auto; gap: 1.5rem; padding: 1.35rem 0.75rem; }
+  }
+  .sol-idx-row:hover { background: color-mix(in srgb, var(--color-muted) 55%, transparent); transform: translateX(4px); }
+  .sol-idx-num {
+    display: none;
+    font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: color-mix(in srgb, var(--color-muted-foreground) 45%, transparent);
+  }
+  @media (min-width: 768px) { .sol-idx-num { display: block; } }
+  .sol-idx-row.is-flagship {
+    background: #f5f0ff;
+    border-radius: 1rem;
+    border-top-color: transparent;
+    margin-top: 0.5rem;
+    padding-inline: 0.75rem;
+  }
+  html.dark .sol-idx-row.is-flagship { background: rgba(133, 77, 255, 0.1); }
+  .sol-idx-row.is-flagship .sol-idx-num { color: #854dff; }
+  html.dark .sol-idx-row.is-flagship .sol-idx-num { color: #b18cff; }
+  .sol-idx-arrow {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    color: var(--color-muted-foreground);
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .sol-idx-row:hover .sol-idx-arrow { color: #854dff; border-color: #854dff; transform: translateX(3px); }
+
+  /* Use-case tiles */
+  .sol-use {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-card);
+    border-radius: 1rem;
+    padding: 1.1rem 1.2rem;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .sol-use:hover { border-color: rgba(133, 77, 255, 0.5); box-shadow: 0 8px 24px -14px rgba(53, 16, 112, 0.35); }
+  .sol-use-id {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: #854dff;
+    border: 1px solid rgba(133, 77, 255, 0.35);
+    border-radius: 0.45rem;
+    padding: 3px 6px;
+    margin-top: 2px;
+    white-space: nowrap;
+  }
+  html.dark .sol-use-id { color: #b18cff; }
+
+  /* ── Platform band (dark) ── */
+  .sol-band { background-color: #0b0712; }
+  .sol-track { position: relative; display: grid; gap: 2.4rem; padding-left: 30px; }
+  .sol-track::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.14);
+  }
+  .sol-track-flow-v {
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+  }
+  .sol-track-flow-h { display: none; }
+  .sol-station { position: relative; }
+  .sol-station-dot {
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background: #0b0712;
+    border: 1px solid rgba(153, 105, 255, 0.65);
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  }
+  .sol-station:hover .sol-station-dot { background: #9969ff; box-shadow: 0 0 0 6px rgba(153, 105, 255, 0.18); }
+  .sol-station-tag {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(153, 105, 255, 0.9);
+  }
+  .sol-station a.sol-station-link { color: #fff; text-decoration: none; }
+  .sol-station a.sol-station-link:hover { color: #c9a8ff; }
+  .sol-caps { display: flex; flex-wrap: wrap; gap: 5px; }
+  .sol-caps li {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    padding: 3px 7px;
+    white-space: nowrap;
+  }
+  @media (min-width: 1024px) {
+    .sol-track { grid-template-columns: repeat(5, 1fr); gap: 1.6rem; padding-left: 0; }
+    .sol-track::before { left: 0; right: 0; top: 5px; bottom: auto; width: auto; height: 1px; }
+    .sol-track-flow-v { display: none; }
+    .sol-track-flow-h { display: block; position: absolute; left: 0; right: 0; top: 5px; height: 1px; }
+    .sol-station { padding-top: 2.1rem; }
+    .sol-station-dot { left: 0; top: 0; }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .sol-core::before,
+    .sol-core::after { animation: none; }
+    .sol-node-dot,
+    .sol-idx-row,
+    .sol-idx-arrow,
+    .sol-spoke { transition: none; }
+  }
+</style>
+{% endraw %}
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<header class="relative overflow-hidden">
+  <div class="container-page pb-14 pt-14 md:pb-20 md:pt-20">
+    <div class="grid items-center gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-8">
+        <p class="eyebrow">Solutions</p>
+        <h1 class="sol-display mt-5 font-heading font-semibold text-foreground" data-reveal>
+          Built for your industry<br class="hidden sm:block"> and your team
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground" data-reveal style="--reveal-delay:80ms">
+          The same connected platform, focused on the outcomes each industry and each team is measured on. Sports and entertainment is our flagship and deepest vertical.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-3" data-reveal style="--reveal-delay:140ms">
+          <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/platform" class="btn btn-secondary btn-lg">Explore the products</a>
+        </div>
+        <p class="sol-meta mt-10" data-reveal style="--reveal-delay:200ms">
+          12 playbooks · 5 industries · 3 teams · 4 use cases — 1 fan graph
+        </p>
+      </div>
+      <div class="relative hidden h-64 lg:col-span-4 lg:block" aria-hidden="true">
+        <svg class="sol-hero-orbit" viewBox="0 0 320 320">
+          <circle cx="160" cy="160" r="150" stroke-dasharray="1 8"></circle>
+          <circle cx="160" cy="160" r="104" stroke-dasharray="1 7"></circle>
+          <circle cx="160" cy="160" r="58" stroke-dasharray="1 6"></circle>
+          <circle class="sol-o-hot" cx="160" cy="10" r="5"></circle>
+          <circle class="sol-o-dot" cx="264" cy="160" r="4"></circle>
+          <circle class="sol-o-dot" cx="62" cy="218" r="4"></circle>
+          <circle class="sol-o-dot" cx="160" cy="262" r="4"></circle>
+          <circle class="sol-o-hot" cx="160" cy="160" r="9"></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ CENTERPIECE: ONE GRAPH, MANY WORLDS ═══════════════════ -->
+<section class="section-sm border-t border-border bg-soft" aria-labelledby="sol-map-heading">
   <div class="container-page">
-    <div class="max-w-3xl" data-reveal>
-      <p class="text-lg leading-relaxed text-muted-foreground">Every team and every industry runs on the same live fan graph: fragmented signals collected in real time, resolved into one consented profile in-region, then activated and proven. What changes below is the playbook: the outcomes, vocabulary, and buying questions each world brings. Pick where you start.</p>
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-3xl" data-reveal>
+        <p class="eyebrow">The map</p>
+        <h2 id="sol-map-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">One graph, many worlds</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+          Every team and every industry runs on the same live fan graph: fragmented signals collected in real time, resolved into one consented profile in-Kingdom, then activated and proven. What changes below is the playbook: the outcomes, vocabulary, and buying questions each world brings. Pick where you start.
+        </p>
+      </div>
+      <div class="flex flex-col gap-2" data-reveal style="--reveal-delay:100ms">
+        <p class="sol-meta">Tap a world to trace its path</p>
+        <div class="flex flex-wrap gap-x-5 gap-y-2">
+          <span class="sol-key"><span class="sol-key-swatch sol-key-ind" aria-hidden="true"></span><span class="text-xs text-muted-foreground">Industries</span></span>
+          <span class="sol-key"><span class="sol-key-swatch sol-key-team" aria-hidden="true"></span><span class="text-xs text-muted-foreground">Teams</span></span>
+          <span class="sol-key"><span class="sol-key-swatch sol-key-use" aria-hidden="true"></span><span class="text-xs text-muted-foreground">Use cases</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-12">
+      <!-- Constellation stage -->
+      <div class="lg:col-span-7" data-reveal>
+        <div
+          id="sol-stage"
+          class="sol-stage"
+          role="group"
+          aria-label="Constellation map of Fanfinity solutions arranged around the fan graph core">
+          <svg id="sol-svg" class="sol-svg" aria-hidden="true"></svg>
+
+          <button
+            type="button"
+            id="sol-core"
+            class="sol-core"
+            aria-pressed="false"
+            data-wid="W-00"
+            data-group="Platform core"
+            data-title="One consented fan graph"
+            data-desc="Fragmented signals collected in real time, resolved into one consented profile in-Kingdom, then activated and proven. Every world on this map runs on it."
+            data-url="/platform"
+            data-cta="Explore the platform">
+            <span>
+              <span class="block font-mono text-[0.55rem] uppercase tracking-[0.2em] text-white/60">The</span>
+              <span class="block font-heading text-sm font-bold leading-tight">Fan<br>Graph</span>
+            </span>
+          </button>
+
+          <!-- Industries (inner ring) -->
+          <button type="button" class="sol-node is-flagship" data-ring="ind" data-angle="-90" aria-pressed="true"
+            data-wid="W-01" data-group="Industry · Flagship" data-title="Sports &amp; Entertainment"
+            data-desc="Clubs, leagues, media &amp; sponsors — our flagship and deepest vertical."
+            data-url="/solutions/sports" data-badge="Flagship" data-cta="Explore Sports &amp; Entertainment">
+            <span class="sol-node-dot">{% include icon.html name="whistle" class="h-6 w-6" %}</span>
+            <span class="sol-node-label">Sports</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="ind" data-angle="-18" aria-pressed="false"
+            data-wid="W-02" data-group="Industry" data-title="Media &amp; Publishers"
+            data-desc="Turn audiences into known fans."
+            data-url="/solutions/media" data-cta="Explore Media &amp; Publishers">
+            <span class="sol-node-dot">{% include icon.html name="broadcast" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Media</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="ind" data-angle="54" aria-pressed="false"
+            data-wid="W-03" data-group="Industry" data-title="Brands &amp; Sponsors"
+            data-desc="Prove &amp; activate sponsored reach."
+            data-url="/solutions/brands" data-cta="Explore Brands &amp; Sponsors">
+            <span class="sol-node-dot">{% include icon.html name="handshake" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Brands</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="ind" data-angle="126" aria-pressed="false"
+            data-wid="W-04" data-group="Industry" data-title="Travel &amp; Hospitality"
+            data-desc="One guest across every trip."
+            data-url="/solutions/travel" data-cta="Explore Travel &amp; Hospitality">
+            <span class="sol-node-dot">{% include icon.html name="airplane" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Travel</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="ind" data-angle="198" aria-pressed="false"
+            data-wid="W-05" data-group="Industry" data-title="Retail &amp; E-commerce"
+            data-desc="Personalize the shopper journey."
+            data-url="/solutions/retail" data-cta="Explore Retail &amp; E-commerce">
+            <span class="sol-node-dot">{% include icon.html name="gift" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Retail</span>
+          </button>
+
+          <!-- Teams (middle ring) -->
+          <button type="button" class="sol-node" data-ring="team" data-angle="-126" aria-pressed="false"
+            data-wid="W-06" data-group="Team" data-title="Marketing &amp; Growth"
+            data-desc="Segment, activate, measure."
+            data-url="/solutions/marketing" data-cta="Explore Marketing &amp; Growth">
+            <span class="sol-node-dot">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Marketing</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="team" data-angle="18" aria-pressed="false"
+            data-wid="W-07" data-group="Team" data-title="Data &amp; Engineering"
+            data-desc="Own your data &amp; pipelines."
+            data-url="/solutions/engineering" data-cta="Explore Data &amp; Engineering">
+            <span class="sol-node-dot">{% include icon.html name="code" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">Data &amp; Eng</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="team" data-angle="90" aria-pressed="false"
+            data-wid="W-08" data-group="Team" data-title="AI &amp; Agents"
+            data-desc="Governed context for agents."
+            data-url="/solutions/ai-agents" data-cta="Explore AI &amp; Agents">
+            <span class="sol-node-dot">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+            <span class="sol-node-label">AI &amp; Agents</span>
+          </button>
+
+          <!-- Use cases (outer ring) -->
+          <button type="button" class="sol-node" data-ring="use" data-angle="-60" aria-pressed="false"
+            data-wid="W-09" data-group="Use case" data-title="Anonymous to Known"
+            data-desc="Build rich profiles from the first page load."
+            data-url="/solutions/convert-visitors" data-cta="Explore Anonymous to Known">
+            <span class="sol-node-dot">{% include icon.html name="identity" class="h-4 w-4" %}</span>
+            <span class="sol-node-label">Anon to Known</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="use" data-angle="0" aria-pressed="false"
+            data-wid="W-10" data-group="Use case" data-title="Grow Lifetime Value"
+            data-desc="Loyalty, journeys, and rewards that compound."
+            data-url="/solutions/boost-clv" data-cta="Explore Grow Lifetime Value">
+            <span class="sol-node-dot">{% include icon.html name="coins" class="h-4 w-4" %}</span>
+            <span class="sol-node-label">Grow CLV</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="use" data-angle="150" aria-pressed="false"
+            data-wid="W-11" data-group="Use case" data-title="Prevent Churn"
+            data-desc="Catch drift before it becomes departure."
+            data-url="/solutions/prevent-churn" data-cta="Explore Prevent Churn">
+            <span class="sol-node-dot">{% include icon.html name="repeat" class="h-4 w-4" %}</span>
+            <span class="sol-node-label">Churn</span>
+          </button>
+          <button type="button" class="sol-node" data-ring="use" data-angle="180" aria-pressed="false"
+            data-wid="W-12" data-group="Use case" data-title="Sharpen Ad Targeting"
+            data-desc="Real-time suppression and smarter lookalikes."
+            data-url="/solutions/optimize-adspend" data-cta="Explore Sharpen Ad Targeting">
+            <span class="sol-node-dot">{% include icon.html name="target" class="h-4 w-4" %}</span>
+            <span class="sol-node-label">Ad Targeting</span>
+          </button>
+
+          <button type="button" id="sol-motion" class="sol-motion" aria-pressed="true">
+            <span class="sol-motion-icon" aria-hidden="true"></span>
+            <span id="sol-motion-label">Pause drift</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Detail panel + path -->
+      <div class="lg:col-span-5">
+        <div class="sol-panel" data-reveal style="--reveal-delay:120ms">
+          <div aria-live="polite">
+            <div class="flex items-center justify-between gap-3">
+              <span class="sol-meta" id="sol-panel-id">W-01</span>
+              <span class="sol-meta" id="sol-panel-group">Industry · Flagship</span>
+            </div>
+            <div class="mt-5 flex items-center gap-4">
+              <span class="sol-panel-icon" id="sol-panel-icon">{% include icon.html name="whistle" class="h-6 w-6" %}</span>
+              <h3 class="text-2xl font-bold tracking-tight" id="sol-panel-title">Sports &amp; Entertainment</h3>
+            </div>
+            <p class="mt-1 hidden" id="sol-panel-badge-row"><span class="badge" id="sol-panel-badge">Flagship</span></p>
+            <p class="mt-3 leading-relaxed text-muted-foreground" id="sol-panel-desc">Clubs, leagues, media &amp; sponsors — our flagship and deepest vertical.</p>
+            <a href="/solutions/sports" class="link-arrow mt-5" id="sol-panel-link">
+              <span id="sol-panel-cta">Explore Sports &amp; Entertainment</span>
+              {% include icon.html name="arrow-right" class="h-4 w-4" %}
+            </a>
+          </div>
+
+          <div class="mt-7 border-t border-border pt-5">
+            <p class="sol-meta">Runs on the same loop</p>
+            <div class="mt-3 flex flex-wrap items-center gap-1.5">
+              <span class="sol-panel-chip">Collect</span>
+              <span class="sol-panel-chip">Resolve</span>
+              <span class="sol-panel-chip is-preview">Engage · Preview</span>
+              <span class="sol-panel-chip">Activate</span>
+              <span class="sol-panel-chip">Measure</span>
+            </div>
+            <p class="mt-3 text-xs text-muted-foreground">Engagement layer in design preview; the identity and data beneath it are live today.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Path strip -->
+    <div class="mt-14" data-reveal>
+      <p class="sol-meta mb-6 text-center md:text-left">The path every world lights up</p>
+      <ol class="sol-steps" id="sol-steps">
+        <li class="sol-step" style="--d:0ms">
+          <span class="sol-step-dot" aria-hidden="true"></span>
+          <span class="sol-step-name">01 · Collect</span>
+          <span class="sol-step-product">Fanfinity Blocks</span>
+        </li>
+        <li class="sol-step" style="--d:140ms">
+          <span class="sol-step-dot" aria-hidden="true"></span>
+          <span class="sol-step-name">02 · Resolve</span>
+          <span class="sol-step-product">Fanfinity ID</span>
+        </li>
+        <li class="sol-step" style="--d:280ms">
+          <span class="sol-step-dot" aria-hidden="true"></span>
+          <span class="sol-step-name">03 · Engage (Preview)</span>
+          <span class="sol-step-product">Fanfinity Engage</span>
+        </li>
+        <li class="sol-step" style="--d:420ms">
+          <span class="sol-step-dot" aria-hidden="true"></span>
+          <span class="sol-step-name">04 · Activate</span>
+          <span class="sol-step-product">Fanfinity Activate</span>
+        </li>
+        <li class="sol-step" style="--d:560ms">
+          <span class="sol-step-dot" aria-hidden="true"></span>
+          <span class="sol-step-name">05 · Measure</span>
+          <span class="sol-step-product">Fanfinity Measure</span>
+        </li>
+      </ol>
     </div>
   </div>
 </section>
 
-{% include link-cards.html
-   nav_title="Solutions"
-   eyebrow="By industry & by team"
-   heading="Pick your world"
-   subheading="Purpose-built playbooks for each industry, and tailored entry points for marketing, data, and AI teams." %}
+<!-- ═══════════════════ DIRECTORY: PICK YOUR WORLD ═══════════════════ -->
+<section class="section border-t border-border" aria-labelledby="sol-dir-heading">
+  <div class="container-page">
+    <div class="max-w-2xl" data-reveal>
+      <p class="eyebrow">By industry &amp; by team</p>
+      <h2 id="sol-dir-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Pick your world</h2>
+      <p class="mt-4 text-lg text-muted-foreground">Purpose-built playbooks for each industry, and tailored entry points for marketing, data, and AI teams.</p>
+    </div>
 
-{% include pillar-cards.html
-   eyebrow="Under the hood"
-   heading="One platform behind every solution"
-   subheading="Whichever vertical or team you're in, you're running the same five connected products, so collection, identity, engagement, activation, and measurement stay in sync." %}
+    <!-- By industry -->
+    <div class="mt-14">
+      <p class="sol-meta mb-4" data-reveal>Industries — 01 to 05</p>
+      <ol class="sol-idx">
+        <li data-reveal>
+          <a href="/solutions/sports" class="sol-idx-row is-flagship">
+            <span class="sol-idx-num" aria-hidden="true">01</span>
+            <span class="icon-chip">{% include icon.html name="whistle" class="h-6 w-6" %}</span>
+            <span>
+              <span class="flex flex-wrap items-center gap-2 text-lg font-semibold sm:text-xl">Sports &amp; Entertainment <span class="badge">Flagship</span></span>
+              <span class="mt-0.5 block text-sm text-muted-foreground">Clubs, leagues, media &amp; sponsors</span>
+            </span>
+            <span class="sol-idx-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </a>
+        </li>
+        <li data-reveal style="--reveal-delay:60ms">
+          <a href="/solutions/media" class="sol-idx-row">
+            <span class="sol-idx-num" aria-hidden="true">02</span>
+            <span class="icon-chip">{% include icon.html name="broadcast" class="h-6 w-6" %}</span>
+            <span>
+              <span class="block text-lg font-semibold">Media &amp; Publishers</span>
+              <span class="mt-0.5 block text-sm text-muted-foreground">Turn audiences into known fans</span>
+            </span>
+            <span class="sol-idx-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </a>
+        </li>
+        <li data-reveal style="--reveal-delay:120ms">
+          <a href="/solutions/brands" class="sol-idx-row">
+            <span class="sol-idx-num" aria-hidden="true">03</span>
+            <span class="icon-chip">{% include icon.html name="handshake" class="h-6 w-6" %}</span>
+            <span>
+              <span class="block text-lg font-semibold">Brands &amp; Sponsors</span>
+              <span class="mt-0.5 block text-sm text-muted-foreground">Prove &amp; activate sponsored reach</span>
+            </span>
+            <span class="sol-idx-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </a>
+        </li>
+        <li data-reveal style="--reveal-delay:180ms">
+          <a href="/solutions/travel" class="sol-idx-row">
+            <span class="sol-idx-num" aria-hidden="true">04</span>
+            <span class="icon-chip">{% include icon.html name="airplane" class="h-6 w-6" %}</span>
+            <span>
+              <span class="block text-lg font-semibold">Travel &amp; Hospitality</span>
+              <span class="mt-0.5 block text-sm text-muted-foreground">One guest across every trip</span>
+            </span>
+            <span class="sol-idx-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </a>
+        </li>
+        <li data-reveal style="--reveal-delay:240ms">
+          <a href="/solutions/retail" class="sol-idx-row">
+            <span class="sol-idx-num" aria-hidden="true">05</span>
+            <span class="icon-chip">{% include icon.html name="gift" class="h-6 w-6" %}</span>
+            <span>
+              <span class="block text-lg font-semibold">Retail &amp; E-commerce</span>
+              <span class="mt-0.5 block text-sm text-muted-foreground">Personalize the shopper journey</span>
+            </span>
+            <span class="sol-idx-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- By team -->
+    <div class="mt-16">
+      <p class="sol-meta mb-5" data-reveal>Teams — 06 to 08</p>
+      <div class="grid gap-5 md:grid-cols-3">
+        <a href="/solutions/marketing" class="card card-hover group/link flex flex-col" data-reveal>
+          <span class="icon-chip">{% include icon.html name="megaphone" class="h-6 w-6" %}</span>
+          <h3 class="mt-5 text-lg font-semibold">Marketing &amp; Growth</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">Segment, activate, measure</p>
+          <span class="mt-5 link-arrow">Open playbook {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+        </a>
+        <a href="/solutions/engineering" class="card card-hover group/link flex flex-col" data-reveal style="--reveal-delay:80ms">
+          <span class="icon-chip">{% include icon.html name="code" class="h-6 w-6" %}</span>
+          <h3 class="mt-5 text-lg font-semibold">Data &amp; Engineering</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">Own your data &amp; pipelines</p>
+          <span class="mt-5 link-arrow">Open playbook {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+        </a>
+        <a href="/solutions/ai-agents" class="card card-hover group/link flex flex-col" data-reveal style="--reveal-delay:160ms">
+          <span class="icon-chip">{% include icon.html name="spark" class="h-6 w-6" %}</span>
+          <h3 class="mt-5 text-lg font-semibold">AI &amp; Agents</h3>
+          <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">Governed context for agents</p>
+          <span class="mt-5 link-arrow">Open playbook {% include icon.html name="arrow-right" class="h-4 w-4" %}</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- By use case -->
+    <div class="mt-16">
+      <p class="sol-meta mb-5" data-reveal>Use cases — 09 to 12</p>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <a href="/solutions/convert-visitors" class="sol-use" data-reveal>
+          <span class="sol-use-id" aria-hidden="true">U-01</span>
+          <span>
+            <span class="block font-semibold">Anonymous to Known</span>
+            <span class="mt-0.5 block text-sm text-muted-foreground">Build rich profiles from the first page load</span>
+          </span>
+        </a>
+        <a href="/solutions/boost-clv" class="sol-use" data-reveal style="--reveal-delay:70ms">
+          <span class="sol-use-id" aria-hidden="true">U-02</span>
+          <span>
+            <span class="block font-semibold">Grow Lifetime Value</span>
+            <span class="mt-0.5 block text-sm text-muted-foreground">Loyalty, journeys, and rewards that compound</span>
+          </span>
+        </a>
+        <a href="/solutions/prevent-churn" class="sol-use" data-reveal style="--reveal-delay:140ms">
+          <span class="sol-use-id" aria-hidden="true">U-03</span>
+          <span>
+            <span class="block font-semibold">Prevent Churn</span>
+            <span class="mt-0.5 block text-sm text-muted-foreground">Catch drift before it becomes departure</span>
+          </span>
+        </a>
+        <a href="/solutions/optimize-adspend" class="sol-use" data-reveal style="--reveal-delay:210ms">
+          <span class="sol-use-id" aria-hidden="true">U-04</span>
+          <span>
+            <span class="block font-semibold">Sharpen Ad Targeting</span>
+            <span class="mt-0.5 block text-sm text-muted-foreground">Real-time suppression and smarter lookalikes</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ONE PLATFORM BEHIND EVERY SOLUTION ═══════════════════ -->
+<section class="section border-t border-border" aria-labelledby="sol-platform-heading">
+  <div class="container-page">
+    <div class="sol-band gradient-border relative overflow-hidden rounded-4xl px-6 py-14 md:px-12 md:py-16">
+      <div class="absolute inset-0 dot-grid opacity-30" aria-hidden="true"></div>
+      <div class="relative">
+        <div class="max-w-2xl" data-reveal>
+          <p class="eyebrow eyebrow-on-dark">Under the hood</p>
+          <h2 id="sol-platform-heading" class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">One platform behind every solution</h2>
+          <p class="mt-4 text-lg text-white/60">Whichever vertical or team you're in, you're running the same five connected products, so collection, identity, engagement, activation, and measurement stay in sync.</p>
+        </div>
+
+        <ol class="sol-track mt-14">
+          <div class="sol-track-flow-v flow-line-v" aria-hidden="true"></div>
+          <div class="sol-track-flow-h flow-line" aria-hidden="true"></div>
+
+          <li class="sol-station" data-reveal>
+            <span class="sol-station-dot" aria-hidden="true"></span>
+            <p class="sol-station-tag">01 · Collect</p>
+            <h3 class="mt-2 text-lg font-semibold"><a class="sol-station-link" href="/platform/blocks">Fanfinity Blocks</a></h3>
+            <p class="mt-1 text-sm font-medium text-white/80">Connect every signal.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/55">The CDI layer that collects events from every fan touchpoint, stitches identifiers in real time, enriches profiles for AI and activation, and distributes governed data to every tool in your stack.</p>
+            <ul class="sol-caps mt-4">
+              <li>Data Collection</li><li>Reverse ETL</li><li>Identity Stitching</li><li>AI Enrichment</li><li>Integrations</li>
+            </ul>
+          </li>
+
+          <li class="sol-station" data-reveal style="--reveal-delay:90ms">
+            <span class="sol-station-dot" aria-hidden="true"></span>
+            <p class="sol-station-tag">02 · Resolve</p>
+            <h3 class="mt-2 text-lg font-semibold"><a class="sol-station-link" href="/platform/id">Fanfinity ID</a></h3>
+            <p class="mt-1 text-sm font-medium text-white/80">Know every fan.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/55">A sovereign CDP and real-time identity graph that unifies every touchpoint (ticketing, streaming, app, web, on-site, social) into one golden fan profile, with consent governance built in.</p>
+            <ul class="sol-caps mt-4">
+              <li>Identity Resolution</li><li>Golden Record</li><li>Consent &amp; Governance</li><li>Real-time Profiles</li>
+            </ul>
+          </li>
+
+          <li class="sol-station" data-reveal style="--reveal-delay:180ms">
+            <span class="sol-station-dot" aria-hidden="true"></span>
+            <p class="sol-station-tag">03 · Engage</p>
+            <h3 class="mt-2 flex flex-wrap items-center gap-2 text-lg font-semibold"><a class="sol-station-link" href="/platform/engage">Fanfinity Engage</a> <span class="badge">Preview</span></h3>
+            <p class="mt-1 text-sm font-medium text-white/80">Engage every fan. (Preview)</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/55">Live interactivity, gamification, and loyalty: polls, predictions, quizzes, quests, streaks, leaderboards, and sponsorable programs, all anchored to the same resolved fan profile. In design preview; not yet generally available.</p>
+            <ul class="sol-caps mt-4">
+              <li>Widgets &amp; Programs</li><li>Gamification</li><li>Loyalty &amp; Rewards</li><li>Custom Themes</li>
+            </ul>
+          </li>
+
+          <li class="sol-station" data-reveal style="--reveal-delay:270ms">
+            <span class="sol-station-dot" aria-hidden="true"></span>
+            <p class="sol-station-tag">04 · Activate</p>
+            <h3 class="mt-2 text-lg font-semibold"><a class="sol-station-link" href="/platform/activate">Fanfinity Activate</a></h3>
+            <p class="mt-1 text-sm font-medium text-white/80">Reach every fan.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/55">The activation layer that turns one governed profile into real-time engagement across WhatsApp, email, push, and paid media. Segment on live behavior, orchestrate journeys that react, and suppress fans who've already converted.</p>
+            <ul class="sol-caps mt-4">
+              <li>Omnichannel Activation</li><li>Audience Segmentation</li><li>Journey Orchestration</li><li>Ad Audiences &amp; Suppression</li>
+            </ul>
+          </li>
+
+          <li class="sol-station" data-reveal style="--reveal-delay:360ms">
+            <span class="sol-station-dot" aria-hidden="true"></span>
+            <p class="sol-station-tag">05 · Measure</p>
+            <h3 class="mt-2 text-lg font-semibold"><a class="sol-station-link" href="/platform/measure">Fanfinity Measure</a></h3>
+            <p class="mt-1 text-sm font-medium text-white/80">Prove the value.</p>
+            <p class="mt-2 text-sm leading-relaxed text-white/55">Deterministic attribution and a sponsor/partner portal: verified reach instead of impressions, measurement from exposure through outcome, and premium audience monetization.</p>
+            <ul class="sol-caps mt-4">
+              <li>Verified Reach</li><li>Attribution</li><li>Sponsor Portal</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="One graph, ready for your world"
+   text="Book a walkthrough and we'll map the five connected products — collection, identity, engagement, activation, and measurement — to your industry, your team, and the outcomes you're measured on."
+   cta_text="Book a Demo"
+   cta_url="/demo"
+   secondary_text="Explore the products"
+   secondary_url="/platform" %}
+
+{% raw %}
+<script>
+(function () {
+  var stage = document.getElementById('sol-stage');
+  if (!stage) return;
+
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var svg = document.getElementById('sol-svg');
+  var core = document.getElementById('sol-core');
+  var nodes = Array.prototype.slice.call(stage.querySelectorAll('.sol-node'));
+  var stepsWrap = document.getElementById('sol-steps');
+  var steps = Array.prototype.slice.call(stepsWrap.querySelectorAll('.sol-step'));
+  var motionBtn = document.getElementById('sol-motion');
+  var motionLabel = document.getElementById('sol-motion-label');
+
+  var panel = {
+    id: document.getElementById('sol-panel-id'),
+    group: document.getElementById('sol-panel-group'),
+    icon: document.getElementById('sol-panel-icon'),
+    title: document.getElementById('sol-panel-title'),
+    desc: document.getElementById('sol-panel-desc'),
+    badgeRow: document.getElementById('sol-panel-badge-row'),
+    badge: document.getElementById('sol-panel-badge'),
+    link: document.getElementById('sol-panel-link'),
+    cta: document.getElementById('sol-panel-cta')
+  };
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RINGS = { ind: 0.42, team: 0.60, use: 0.78 };
+  var RINGS_SMALL = { ind: 0.46, team: 0.60, use: 0.72 };
+  var SPEED = (Math.PI * 2) / 240000; /* one full drift every 4 minutes */
+
+  var W = 0, H = 0, cx = 0, cy = 0, half = 0;
+  var offset = 0;
+  var lastT = 0;
+  var rafId = null;
+  var auto = !reduceMotion;   /* visitor's play/pause choice */
+  var hold = false;           /* hover / focus pause */
+  var inView = true;
+  var spokes = [];
+  var ringEls = {};
+
+  /* Build ring circles + one spoke per node */
+  ['ind', 'team', 'use'].forEach(function (ring) {
+    var c = document.createElementNS(SVG_NS, 'circle');
+    c.setAttribute('class', 'sol-ring');
+    svg.appendChild(c);
+    ringEls[ring] = c;
+  });
+  nodes.forEach(function (node) {
+    var line = document.createElementNS(SVG_NS, 'line');
+    line.setAttribute('class', 'sol-spoke');
+    line.setAttribute('pathLength', '1');
+    svg.appendChild(line);
+    spokes.push(line);
+  });
+
+  function layout() {
+    W = stage.clientWidth;
+    H = stage.clientHeight;
+    cx = W / 2;
+    cy = H / 2;
+    half = Math.min(W, H) / 2;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var radii = half < 200 ? RINGS_SMALL : RINGS;
+    ['ind', 'team', 'use'].forEach(function (ring) {
+      var r = radii[ring] * half;
+      ringEls[ring].setAttribute('cx', cx);
+      ringEls[ring].setAttribute('cy', cy);
+      ringEls[ring].setAttribute('r', r);
+    });
+    place();
+  }
+
+  function place() {
+    var radii = half < 200 ? RINGS_SMALL : RINGS;
+    nodes.forEach(function (node, i) {
+      var ring = node.getAttribute('data-ring');
+      var base = parseFloat(node.getAttribute('data-angle')) * Math.PI / 180;
+      var a = base + offset;
+      var r = radii[ring] * half;
+      var x = cx + r * Math.cos(a);
+      var y = cy + r * Math.sin(a);
+      node.style.left = x + 'px';
+      node.style.top = y + 'px';
+      spokes[i].setAttribute('x1', cx);
+      spokes[i].setAttribute('y1', cy);
+      spokes[i].setAttribute('x2', x);
+      spokes[i].setAttribute('y2', y);
+    });
+  }
+
+  function playing() {
+    return auto && !hold && inView && !document.hidden;
+  }
+
+  function tick(t) {
+    if (!lastT) lastT = t;
+    var dt = Math.min(t - lastT, 100);
+    lastT = t;
+    offset += SPEED * dt;
+    place();
+    if (playing()) {
+      rafId = window.requestAnimationFrame(tick);
+    } else {
+      rafId = null;
+      lastT = 0;
+    }
+  }
+
+  function syncLoop() {
+    if (playing() && rafId === null) {
+      lastT = 0;
+      rafId = window.requestAnimationFrame(tick);
+    }
+  }
+
+  function lightSteps() {
+    steps.forEach(function (s) { s.classList.remove('is-lit'); });
+    void stepsWrap.offsetWidth; /* restart the staggered transitions */
+    steps.forEach(function (s) { s.classList.add('is-lit'); });
+  }
+
+  function select(btn) {
+    nodes.forEach(function (n) { n.setAttribute('aria-pressed', 'false'); });
+    core.setAttribute('aria-pressed', 'false');
+    spokes.forEach(function (s) {
+      s.classList.remove('is-active');
+      s.classList.add('is-dim');
+    });
+    btn.setAttribute('aria-pressed', 'true');
+
+    var idx = nodes.indexOf(btn);
+    if (idx > -1) {
+      spokes[idx].classList.add('is-active');
+      spokes[idx].classList.remove('is-dim');
+    } else {
+      spokes.forEach(function (s) { s.classList.remove('is-dim'); });
+    }
+
+    panel.id.textContent = btn.getAttribute('data-wid');
+    panel.group.textContent = btn.getAttribute('data-group');
+    panel.title.textContent = btn.getAttribute('data-title');
+    panel.desc.textContent = btn.getAttribute('data-desc');
+    panel.cta.textContent = btn.getAttribute('data-cta');
+    panel.link.setAttribute('href', btn.getAttribute('data-url'));
+
+    var badge = btn.getAttribute('data-badge');
+    if (badge) {
+      panel.badge.textContent = badge;
+      panel.badgeRow.classList.remove('hidden');
+    } else {
+      panel.badgeRow.classList.add('hidden');
+    }
+
+    var iconSvg = btn.querySelector('.sol-node-dot svg');
+    panel.icon.innerHTML = '';
+    if (iconSvg) {
+      var clone = iconSvg.cloneNode(true);
+      clone.setAttribute('class', 'h-6 w-6');
+      panel.icon.appendChild(clone);
+    } else if (btn === core) {
+      panel.icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class="h-6 w-6" fill="currentColor" aria-hidden="true"><circle cx="128" cy="128" r="20"/><circle cx="128" cy="128" r="56" fill="none" stroke="currentColor" stroke-width="10" stroke-dasharray="2 14"/><circle cx="128" cy="128" r="92" fill="none" stroke="currentColor" stroke-width="10" stroke-dasharray="2 20"/></svg>';
+    }
+
+    lightSteps();
+  }
+
+  nodes.forEach(function (node) {
+    node.addEventListener('click', function () { select(node); });
+  });
+  core.addEventListener('click', function () { select(core); });
+
+  /* Keyboard: arrows cycle the constellation */
+  stage.addEventListener('keydown', function (e) {
+    var keys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'];
+    if (keys.indexOf(e.key) === -1) return;
+    var current = nodes.findIndex(function (n) { return n.getAttribute('aria-pressed') === 'true'; });
+    var next = 0;
+    if (e.key === 'Home') next = 0;
+    else if (e.key === 'End') next = nodes.length - 1;
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (current + 1 + nodes.length) % nodes.length;
+    else next = (current - 1 + nodes.length) % nodes.length;
+    e.preventDefault();
+    nodes[next].focus();
+    select(nodes[next]);
+  });
+
+  /* Pause drift on hover / focus for readability */
+  stage.addEventListener('pointerenter', function () { hold = true; });
+  stage.addEventListener('pointerleave', function () { hold = false; syncLoop(); });
+  stage.addEventListener('focusin', function () { hold = true; });
+  stage.addEventListener('focusout', function () { hold = false; syncLoop(); });
+
+  /* Play / pause toggle */
+  function syncMotionBtn() {
+    motionBtn.setAttribute('aria-pressed', String(auto));
+    motionBtn.classList.toggle('is-paused', !auto);
+    motionLabel.textContent = auto ? 'Pause drift' : 'Resume drift';
+  }
+  motionBtn.addEventListener('click', function () {
+    auto = !auto;
+    syncMotionBtn();
+    syncLoop();
+  });
+
+  /* Only animate while on screen */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      syncLoop();
+    }, { threshold: 0.05 });
+    io.observe(stage);
+  }
+  document.addEventListener('visibilitychange', syncLoop);
+
+  if ('ResizeObserver' in window) {
+    var ro = new ResizeObserver(layout);
+    ro.observe(stage);
+  } else {
+    window.addEventListener('resize', layout);
+  }
+
+  /* Init */
+  if (reduceMotion) { auto = false; }
+  syncMotionBtn();
+  layout();
+  select(nodes[0]); /* Sports — the flagship world */
+  syncLoop();
+})();
+</script>
+{% endraw %}

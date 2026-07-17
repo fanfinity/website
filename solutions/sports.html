@@ -3,113 +3,929 @@ layout: page
 cta: false
 permalink: /solutions/sports
 title: Sports Leagues & Teams
-description: "Win matchday and keep fans all season: in-play widgets and predictions (Preview), season leaderboards and tiers, daily streaks, spoiler-safe sync, and sponsor ready branded moments on a fan graph you own."
+description: "Win matchday and keep fans all season: in-play widgets and predictions (Preview), season leaderboards and tiers, daily streaks, spoiler safe sync, and sponsor-ready branded moments on a fan graph you own."
 breadcrumb_parent: { title: Solutions, url: /solutions }
-features:
-  - { icon: bolt,      title: "Light up every matchday (Preview)", body: "Fire in-play polls, predictions, and trivia the instant a moment happens, turning passive watchers into active participants. The live engagement layer is a design Preview; the fan identity and data beneath it are live today." }
-  - { icon: trophy,    title: "Reward the whole season", body: "Season-long leaderboards rank fans by what they earn across linked programs, and status tiers recognize your most committed supporters with thresholds and benefits they can see themselves climbing toward." }
-  - { icon: target,    title: "Build a between-match habit", body: "Daily check-in streaks give fans a reason to open the app when there's no match on. Milestones, freezes, and timezone-aware windows keep a run alive across a long fixture list and an off-season." }
-  - { icon: shield,    title: "Never spoil the result", body: "Spoiler-safe delivery holds widgets and reactions to each viewer's playback position, so a fan on a delay isn't spoiled by fans watching the live edge. Second-screen play works for everyone, whenever they watch." }
-  - { icon: megaphone, title: "Turn moments into sponsor inventory", body: "Attach a sponsor's name, image, and brand color to programs and quests, so live engagement becomes addressable, on-brand inventory a partner can measure rather than a logo in the corner of a graphic." }
-  - { icon: identity,  title: "Own the fan, not just the seat", body: "Every poll answer, streak, and reward accrues to one persistent, first-party fan profile you own and govern in-region, so matchday attention becomes a season-long relationship you keep." }
-season_points:
-  - "Run in-play participation during the match, then keep fans returning between games and through the off-season."
-  - "Leaderboards and status tiers turn one-off viewers into recognized, season-long supporters."
-  - "Spoiler-safe delivery means live and behind-live fans share the same experience."
-  - "Every interaction accrues to one first-party fan profile you own, not a rented audience."
-sponsor_points:
-  - "Attach a sponsor's identity to programs, quests, and rewards, turning attention into branded inventory."
-  - "Measure sponsored exposure against the fan actions that followed, not against impressions."
-  - "Reskin every widget to the club or the sponsor, so each activation is on-brand and consistent (Preview)."
-  - "Renew sponsorships on evidence, in-region and consented."
-steps:
-  - { icon: bolt,     title: "Win the live moment (Preview)", body: "In-play widgets make the match something fans play, not just watch. (Design Preview today.)" }
-  - { icon: gift,     title: "Reward the participation", body: "Every interaction earns a payoff that feeds leaderboards and tiers automatically." }
-  - { icon: target,   title: "Build the season habit", body: "Streaks and tiers carry attention across the fixture list and the off-season." }
-  - { icon: identity, title: "Keep the fan you earned", body: "Everything accrues to one first-party profile the club owns, in-region." }
-journey:
-  - { icon: identity,      time: "Gate",      badge: Live,    act: "Scans in at kickoff",              fx: "Recognized as the same fan across ticket, app, and stream." }
-  - { icon: target,        time: "Kickoff",   badge: Preview, act: "Predicts the first scorer",         fx: "Plays along with the match in real time, not just watches it." }
-  - { icon: gift,          time: "Half-time", badge: Preview, act: "Redeems points for a voucher",      fx: "Every interaction earns a payoff, feeding streaks and tiers automatically." }
-  - { icon: trophy,        time: "Full-time", badge: Preview, act: "Climbs the season leaderboard",     fx: "One match turns into a reason to come back next week." }
-  - { icon: rocket-launch, time: "Tuesday",   badge: Live,    act: "Gets a sponsor offer on WhatsApp", fx: "Reachable, consented, and measurable, on a fan graph you own." }
 ---
-{% include hero.html
-   eyebrow="Solutions · Sports"
-   image="/assets/img/solutions-sports.jpg"
-   image_alt="Fans in a packed stadium"
-   title="Win matchday, keep fans all season"
-   subtitle="Fans show up for the match and disappear until the next one. Fanfinity turns every match into a moment fans play along with, turns that attention into a season-long habit, and turns the whole thing into inventory a sponsor can measure, all on a first-party fan graph the club owns."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform" %}
 
-{% include feature-grid.html
-   heading="Matchday participation that compounds into loyalty"
-   subheading="The same engagement layer powers in-play play during the match and season-long loyalty between them, branded and sponsor ready throughout. Live engagement is a design Preview; the identity and data layer is live."
-   items=page.features
-   columns=3 %}
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="relative overflow-hidden bg-soft">
+  <div class="container-page section">
+    <div class="grid items-center gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7" data-reveal>
+        <p class="eyebrow">Solutions · Sports</p>
+        <h1 class="mt-5 font-heading text-5xl font-bold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+          Win matchday.<br>
+          <span class="text-brand-foreground">Keep fans all season.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          Fans show up for the match and disappear until the next one. Fanfinity turns every match into a moment fans play along with, turns that attention into a season-long habit, and turns the whole thing into inventory a sponsor can measure — all on a first-party fan graph the club owns.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="{{ '/platform' | relative_url }}" class="btn btn-secondary btn-lg">Explore the platform</a>
+        </div>
+        <ul class="mt-8 flex flex-wrap gap-2" aria-label="What is live today versus in design preview">
+          <li class="pill"><span class="inline-block h-1.5 w-1.5 rounded-full bg-brand-600" aria-hidden="true"></span>Live today — fan identity, first-party data, loyalty &amp; offers</li>
+          <li class="pill"><span class="inline-block h-1.5 w-1.5 rounded-full border border-current" aria-hidden="true"></span>Design Preview — the in-play widget layer</li>
+        </ul>
+      </div>
+      <div class="lg:col-span-5" data-reveal style="--reveal-delay:120ms">
+        <figure class="spx-frame">
+          <div class="spx-duo">
+            <img src="{{ '/assets/img/solutions-sports.jpg' | relative_url }}" alt="Fans in a packed stadium, treated in Fanfinity purple duotone" loading="eager">
+          </div>
+          <div class="spx-scorebug" aria-hidden="true">
+            <span class="spx-scorebug-dot"></span>Fanfinity Matchday · 90&prime;+2
+          </div>
+          <figcaption class="mt-3 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+            One matchday, played — not just watched
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</header>
 
-<!-- Illustrative matchday journey: a concrete proof scene. Honest: the interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live. -->
-<section class="relative overflow-hidden border-y border-border bg-soft">
-  <div class="container-page relative section">
+<!-- ═══════════════ PLAYABLE CENTERPIECE · THE TACTICS BOARD ═══════════════ -->
+<section class="section pt-0 md:pt-4" aria-labelledby="spx-board-heading">
+  <div class="container-page">
     <div class="mx-auto max-w-3xl text-center" data-reveal>
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-balance">What one fan's matchday looks like on Fanfinity</h2>
+      <p class="eyebrow justify-center">Playable · The tactics board</p>
+      <h2 id="spx-board-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Call a play. Watch the matchday light up.</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Five plays a club can call across one matchday — from the first prediction to the sponsor moment after full-time. Tap a play and watch it run across the pitch.</p>
+    </div>
+
+    <div class="spx-board mt-12" data-reveal id="spx-board">
+      <div class="spx-board-grid">
+        <!-- Pitch -->
+        <div class="spx-pitch-wrap">
+          <svg id="spx-pitch" viewBox="0 0 640 400" role="img" aria-label="Chalk-style football pitch. Triggered plays draw a run across the pitch." class="h-auto w-full">
+            <!-- pitch markings -->
+            <g class="spx-chalk" fill="none">
+              <rect x="18" y="14" width="604" height="372" rx="4"/>
+              <line x1="320" y1="14" x2="320" y2="386"/>
+              <circle cx="320" cy="200" r="58"/>
+              <circle cx="320" cy="200" r="2.5" class="spx-chalk-fill"/>
+              <rect x="18" y="106" width="96" height="188"/>
+              <rect x="18" y="152" width="40" height="96"/>
+              <circle cx="82" cy="200" r="2.5" class="spx-chalk-fill"/>
+              <rect x="526" y="106" width="96" height="188"/>
+              <rect x="582" y="152" width="40" height="96"/>
+              <circle cx="558" cy="200" r="2.5" class="spx-chalk-fill"/>
+            </g>
+            <text x="34" y="40" class="spx-pitch-label">Fanfinity tactics board</text>
+            <!-- play routes (drawn on demand) -->
+            <path id="spx-route-0" class="spx-route" d="M 320 200 C 400 130, 500 118, 566 176"/>
+            <path id="spx-route-1" class="spx-route" d="M 122 330 C 200 292, 262 250, 316 206"/>
+            <path id="spx-route-2" class="spx-route" d="M 200 352 C 244 292, 262 248, 330 210 C 402 170, 442 112, 512 70"/>
+            <path id="spx-route-3" class="spx-route" d="M 320 130 A 70 70 0 1 1 319.9 130"/>
+            <path id="spx-route-4" class="spx-route" d="M 320 200 C 402 252, 502 302, 596 344"/>
+            <!-- end zones -->
+            <g class="spx-zones" fill="none">
+              <circle id="spx-zone-0" class="spx-zone" cx="566" cy="176" r="15"/>
+              <circle id="spx-zone-1" class="spx-zone" cx="316" cy="206" r="15"/>
+              <circle id="spx-zone-2" class="spx-zone" cx="512" cy="70" r="15"/>
+              <circle id="spx-zone-3" class="spx-zone" cx="320" cy="130" r="15"/>
+              <circle id="spx-zone-4" class="spx-zone" cx="596" cy="344" r="15"/>
+            </g>
+            <!-- idle pulse at the centre spot -->
+            <circle id="spx-idle" class="spx-idle" cx="320" cy="200" r="8"/>
+            <!-- the ball -->
+            <circle id="spx-ball" class="spx-ball" cx="320" cy="200" r="6"/>
+          </svg>
+
+          <!-- play annotation card -->
+          <div class="spx-playcard" aria-live="polite">
+            <div class="flex items-center justify-between gap-3">
+              <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-brand-300" id="spx-card-min">Min 05&prime;</p>
+              <span id="spx-card-badge" class="spx-badge spx-badge-preview">Preview</span>
+            </div>
+            <p id="spx-card-title" class="mt-2 font-heading text-lg font-semibold leading-snug text-white">In-play prediction</p>
+            <p id="spx-card-body" class="mt-1.5 text-sm leading-relaxed text-white/65">First scorer, next card, next corner: fans play the match, not just watch it. The widget layer is a design Preview; every tap lands on a live fan profile.</p>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="spx-controls">
+          <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-white/50">Call the play</p>
+          <div class="mt-3 flex flex-col gap-2" role="group" aria-label="Matchday plays">
+            <button type="button" class="spx-playbtn" data-play="0" data-route="spx-route-0" data-zone="spx-zone-0" data-min="Min 05&prime;" data-count="5" data-pos="10" data-badge="Preview" data-title="In-play prediction" data-body="First scorer, next card, next corner: fans play the match, not just watch it. The widget layer is a design Preview; every tap lands on a live fan profile." aria-pressed="true">
+              <span class="spx-playbtn-min">05&prime;</span>
+              <span class="spx-playbtn-title">In-play prediction</span>
+              <span class="spx-badge spx-badge-preview">Preview</span>
+            </button>
+            <button type="button" class="spx-playbtn" data-play="1" data-route="spx-route-1" data-zone="spx-zone-1" data-min="Min 45&prime;" data-count="45" data-pos="40" data-badge="Preview" data-title="Half-time reward" data-body="Points earned in play redeem for a voucher at the break — every interaction earns a payoff, feeding streaks and tiers automatically." aria-pressed="false">
+              <span class="spx-playbtn-min">45&prime;</span>
+              <span class="spx-playbtn-title">Half-time reward</span>
+              <span class="spx-badge spx-badge-preview">Preview</span>
+            </button>
+            <button type="button" class="spx-playbtn" data-play="2" data-route="spx-route-2" data-zone="spx-zone-2" data-min="Min 90&prime;" data-count="90" data-pos="72" data-badge="Preview" data-title="Leaderboard climb" data-body="The final whistle posts the result to a season-long table that ranks fans by what they earn across linked programs. One match becomes a reason to come back next week." aria-pressed="false">
+              <span class="spx-playbtn-min">90&prime;</span>
+              <span class="spx-playbtn-title">Leaderboard climb</span>
+              <span class="spx-badge spx-badge-preview">Preview</span>
+            </button>
+            <button type="button" class="spx-playbtn" data-play="3" data-route="spx-route-3" data-zone="spx-zone-3" data-min="Tuesday" data-count="" data-pos="92" data-badge="Live" data-title="Streak save" data-body="No match? A daily check-in keeps the run alive — milestones, freezes, and timezone-aware windows carry the habit across the fixture list and the off-season." aria-pressed="false">
+              <span class="spx-playbtn-min">Tue</span>
+              <span class="spx-playbtn-title">Streak save</span>
+              <span class="spx-badge spx-badge-live">Live</span>
+            </button>
+            <button type="button" class="spx-playbtn" data-play="4" data-route="spx-route-4" data-zone="spx-zone-4" data-min="Tuesday" data-count="" data-pos="100" data-badge="Live" data-title="Sponsor moment" data-body="A consented offer lands on WhatsApp with the partner&rsquo;s name on the program fans just played — reachable, measurable against the actions that followed, on a fan graph you own." aria-pressed="false">
+              <span class="spx-playbtn-min">Tue</span>
+              <span class="spx-playbtn-title">Sponsor moment</span>
+              <span class="spx-badge spx-badge-live">Live</span>
+            </button>
+          </div>
+
+          <!-- kickoff → full-time timeline -->
+          <div class="spx-tl" aria-hidden="true">
+            <div class="spx-tl-track">
+              <span class="spx-tl-fill" id="spx-tl-fill"></span>
+              <span class="spx-tl-marker" id="spx-tl-marker"></span>
+            </div>
+            <div class="spx-tl-ticks">
+              <span>Kickoff</span><span>Half-time</span><span>Full-time</span><span>Tuesday</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-2" data-reveal>
+      <span class="spx-legend"><span class="spx-badge spx-badge-live">Live</span> identity, data, loyalty &amp; offers run on Fanfinity today</span>
+      <span class="spx-legend"><span class="spx-badge spx-badge-preview">Preview</span> the in-play widget layer is a design Preview</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FIVE-MOMENT MATCHDAY JOURNEY ═══════════════ -->
+<section class="relative overflow-hidden border-y border-border bg-soft" aria-labelledby="spx-journey-heading">
+  <div class="container-page section">
+    <div class="mx-auto max-w-3xl text-center" data-reveal>
+      <p class="eyebrow justify-center">One fan · One profile</p>
+      <h2 id="spx-journey-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">What one fan&rsquo;s matchday looks like on Fanfinity</h2>
       <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Illustrative. Today these five moments are five disconnected logs in five systems. On Fanfinity they are one profile, from the turnstile to Tuesday.</p>
     </div>
 
-    <ol class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-      {%- for m in page.journey -%}
-        <li data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms" class="card-hover flex flex-col rounded-2xl border border-border bg-card p-5">
-          <div class="flex items-center justify-between">
-            <span class="icon-chip-sm">{% include icon.html name=m.icon class="h-5 w-5" %}</span>
-            {%- if m.badge == "Live" -%}
-              <span class="inline-flex items-center rounded-full bg-brand-600 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white">Live</span>
-            {%- else -%}
-              <span class="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Preview</span>
-            {%- endif -%}
-          </div>
-          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-foreground">{{ m.time }}</p>
-          <p class="mt-1 font-semibold leading-snug text-foreground">{{ m.act }}</p>
-          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">{{ m.fx }}</p>
-        </li>
-      {%- endfor -%}
+    <ol class="spx-journey mt-16">
+      <li data-reveal style="--reveal-delay:0ms">
+        <div class="spx-journey-rail"><span class="spx-journey-dot"></span></div>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip-sm">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+          <span class="spx-badge spx-badge-live">Live</span>
+        </div>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-brand-foreground">Gate</p>
+        <p class="mt-1 font-semibold leading-snug text-foreground">Scans in at kickoff</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Recognized as the same fan across ticket, app, and stream.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:80ms">
+        <div class="spx-journey-rail"><span class="spx-journey-dot"></span></div>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip-sm">{% include icon.html name="target" class="h-5 w-5" %}</span>
+          <span class="spx-badge spx-badge-preview">Preview</span>
+        </div>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-brand-foreground">Kickoff</p>
+        <p class="mt-1 font-semibold leading-snug text-foreground">Predicts the first scorer</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Plays along with the match in real time, not just watches it.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:160ms">
+        <div class="spx-journey-rail"><span class="spx-journey-dot"></span></div>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip-sm">{% include icon.html name="gift" class="h-5 w-5" %}</span>
+          <span class="spx-badge spx-badge-preview">Preview</span>
+        </div>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-brand-foreground">Half-time</p>
+        <p class="mt-1 font-semibold leading-snug text-foreground">Redeems points for a voucher</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Every interaction earns a payoff, feeding streaks and tiers automatically.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:240ms">
+        <div class="spx-journey-rail"><span class="spx-journey-dot"></span></div>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip-sm">{% include icon.html name="trophy" class="h-5 w-5" %}</span>
+          <span class="spx-badge spx-badge-preview">Preview</span>
+        </div>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-brand-foreground">Full-time</p>
+        <p class="mt-1 font-semibold leading-snug text-foreground">Climbs the season leaderboard</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">One match turns into a reason to come back next week.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:320ms">
+        <div class="spx-journey-rail"><span class="spx-journey-dot"></span></div>
+        <div class="flex items-center justify-between">
+          <span class="icon-chip-sm">{% include icon.html name="rocket-launch" class="h-5 w-5" %}</span>
+          <span class="spx-badge spx-badge-live">Live</span>
+        </div>
+        <p class="mt-4 font-mono text-xs uppercase tracking-[0.16em] text-brand-foreground">Tuesday</p>
+        <p class="mt-1 font-semibold leading-snug text-foreground">Gets a sponsor offer on WhatsApp</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Reachable, consented, and measurable, on a fan graph you own.</p>
+      </li>
     </ol>
 
-    <p class="mx-auto mt-8 max-w-3xl text-center text-sm text-muted-foreground">One fan, one profile, every moment tied together and provable to a sponsor. The interactive moments are the design-Preview engagement layer; the identity and profile beneath them are live today, kept <a href="{{ '/platform/data-residency' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">in-Kingdom and PDPL-governed</a>.</p>
+    <p class="mx-auto mt-12 max-w-3xl text-center text-sm leading-relaxed text-muted-foreground" data-reveal>
+      One fan, one profile, every moment tied together and provable to a sponsor. The interactive moments are the Design Preview engagement layer; the identity and profile beneath them are live today, kept <a href="{{ '/platform/data-residency' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">in-Kingdom and governed under PDPL</a>.
+    </p>
   </div>
 </section>
 
-{% include feature-split.html
-   reverse=true
-   title="Attention on matchday is easy; keeping it all season is the hard part"
-   body="A great in-play moment earns the attention. What you do with it decides whether a fan comes back on a Tuesday with no match on. Fanfinity carries matchday participation into streaks, leaderboards, and tiers, so a spike of attention turns into a season-long habit rather than a moment that fades by the final whistle."
-   points=page.season_points
-   cta_text="See how engagement works (Preview)"
-   cta_url="/platform/engage"
-   icon="whistle" %}
-
-{% include feature-split.html
-   title="Give sponsors moments they can measure, not just a logo placement"
-   body="A perimeter board proves nothing. When a sponsor's identity is attached to the programs and quests fans actually play, engagement becomes addressable inventory, and because it runs on a fan graph the club owns and governs, exposure can be tied to the actions that followed."
-   points=page.sponsor_points
-   cta_text="See how measurement works"
-   cta_url="/platform/measure"
-   icon="megaphone" %}
-
-<section class="section-sm pt-0">
+<!-- ═══════════════ SIX PLAYS · FEATURE GRID ═══════════════ -->
+<section class="section" aria-labelledby="spx-features-heading">
   <div class="container-page">
-    <p class="text-muted-foreground" data-reveal>On the sponsor side of this story? Start from the <a href="{{ '/solutions/brands' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Brands &amp; Sponsors playbook</a>.</p>
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">From the opening whistle to the final standings</p>
+      <h2 id="spx-features-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Matchday participation that compounds into loyalty</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">The same engagement layer powers in-play play during the match and season-long loyalty between them, branded and sponsor-ready throughout. Live engagement is a design Preview; the identity and data layer is live.</p>
+    </div>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-6">
+      <article class="card card-hover relative overflow-hidden md:col-span-4" data-reveal>
+        <span class="spx-num" aria-hidden="true">01</span>
+        <div class="relative">
+          <span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">Light up every matchday <span class="badge align-middle">Preview</span></h3>
+          <p class="mt-2 max-w-lg leading-relaxed text-muted-foreground">Fire in-play polls, predictions, and trivia the instant a moment happens, turning passive watchers into active participants. The live engagement layer is a design Preview; the fan identity and data beneath it are live today.</p>
+        </div>
+      </article>
+      <article class="card card-hover relative overflow-hidden md:col-span-2" data-reveal style="--reveal-delay:80ms">
+        <span class="spx-num" aria-hidden="true">02</span>
+        <div class="relative">
+          <span class="icon-chip">{% include icon.html name="trophy" class="h-5 w-5" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">Reward the whole season</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Season-long leaderboards rank fans by what they earn across linked programs, and status tiers recognize your most committed supporters with thresholds and benefits they can see themselves climbing toward.</p>
+        </div>
+      </article>
+      <article class="card card-hover relative overflow-hidden md:col-span-2" data-reveal>
+        <span class="spx-num" aria-hidden="true">03</span>
+        <div class="relative">
+          <span class="icon-chip">{% include icon.html name="target" class="h-5 w-5" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">Build a habit between matches</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Daily check-in streaks give fans a reason to open the app when there&rsquo;s no match on. Milestones, freezes, and timezone-aware windows keep a run alive across a long fixture list and an off-season.</p>
+        </div>
+      </article>
+      <article class="card card-hover relative overflow-hidden md:col-span-2" data-reveal style="--reveal-delay:80ms">
+        <span class="spx-num" aria-hidden="true">04</span>
+        <div class="relative">
+          <span class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">Never spoil the result</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Spoiler safe delivery holds widgets and reactions to each viewer&rsquo;s playback position, so a fan on a delay isn&rsquo;t spoiled by fans watching the live edge.</p>
+        </div>
+      </article>
+      <article class="card card-hover relative overflow-hidden md:col-span-2" data-reveal style="--reveal-delay:160ms">
+        <span class="spx-num" aria-hidden="true">05</span>
+        <div class="relative">
+          <span class="icon-chip">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+          <h3 class="mt-5 text-xl font-semibold">Turn moments into sponsor inventory</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Attach a sponsor&rsquo;s name, image, and brand color to programs and quests, so live engagement becomes addressable, on-brand inventory a partner can measure.</p>
+        </div>
+      </article>
+      <article class="card card-hover relative overflow-hidden md:col-span-6" data-reveal>
+        <span class="spx-num" aria-hidden="true">06</span>
+        <div class="relative md:flex md:items-center md:gap-8">
+          <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+          <div class="mt-5 md:mt-0">
+            <h3 class="text-xl font-semibold">Own the fan, not just the seat</h3>
+            <p class="mt-2 max-w-3xl leading-relaxed text-muted-foreground">Every poll answer, streak, and reward accrues to one persistent, first-party fan profile you own and govern in-Kingdom, so matchday attention becomes a season-long relationship you keep.</p>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-{% include value-pillars.html
-   eyebrow="How matchday becomes a season"
-   heading="Play, reward, retain, own"
-   subheading="Each stage feeds the next inside one platform, so live attention compounds into a fan relationship the club keeps."
-   items=page.steps %}
+<!-- ═══════════════ THE SEASON HABIT ═══════════════ -->
+<section class="section border-y border-border bg-soft" aria-labelledby="spx-season-heading">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">Why it works for sport</p>
+        <h2 id="spx-season-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Attention on matchday is easy; keeping it all season is the hard part</h2>
+        <p class="mt-4 leading-relaxed text-muted-foreground">A great in-play moment earns the attention. What you do with it decides whether a fan comes back on a Tuesday with no match on. Fanfinity carries matchday participation into streaks, leaderboards, and tiers, so a spike of attention turns into a season-long habit rather than a moment that fades by the final whistle.</p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Run in-play participation during the match, then keep fans returning between games and through the off-season.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Leaderboards and status tiers turn one-off viewers into recognized, season-long supporters.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Spoiler safe delivery means live and delayed fans share the same experience.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Every interaction accrues to one first-party fan profile you own, not a rented audience.</p>
+          </li>
+        </ul>
+        <a href="{{ '/platform/engage' | relative_url }}" class="link-arrow mt-8">See how engagement works (Preview) {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <figure class="card" data-reveal style="--reveal-delay:120ms">
+        <figcaption class="flex flex-wrap items-center justify-between gap-2">
+          <span class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Fan attention · one week</span>
+          <span class="flex gap-3 font-mono text-[10px] uppercase tracking-[0.12em]">
+            <span class="spx-key spx-key-solid">Habit held</span>
+            <span class="spx-key spx-key-dash">Spike fades</span>
+          </span>
+        </figcaption>
+        <svg viewBox="0 0 520 300" class="mt-4 h-auto w-full" role="img" aria-label="Chart: without a habit loop, matchday attention spikes and is gone by Tuesday; with Fanfinity it holds between matchdays.">
+          <line x1="36" y1="252" x2="500" y2="252" class="spx-axis"/>
+          <g class="spx-axis-labels">
+            <text x="44" y="272">Sat</text><text x="109" y="272">Sun</text><text x="174" y="272">Mon</text>
+            <text x="239" y="272">Tue</text><text x="304" y="272">Wed</text><text x="369" y="272">Thu</text>
+            <text x="434" y="272">Fri</text><text x="486" y="272">Sat</text>
+          </g>
+          <path class="spx-line-fade" d="M 44 70 C 84 92, 100 208, 140 226 C 180 242, 230 244, 270 241 C 340 237, 420 233, 452 222 C 472 202, 486 140, 492 92"/>
+          <path class="spx-line-hold" d="M 44 70 C 92 112, 122 150, 174 160 C 226 170, 268 165, 306 160 C 356 154, 402 140, 442 120 C 468 106, 484 92, 492 76"/>
+          <circle cx="44" cy="70" r="4" class="spx-dot-match"/>
+          <circle cx="492" cy="76" r="4" class="spx-dot-match"/>
+          <text x="52" y="56" class="spx-anno">Matchday</text>
+          <text x="206" y="140" class="spx-anno spx-anno-brand">Streaks · tiers · check-ins</text>
+          <text x="220" y="226" class="spx-anno spx-anno-muted">Gone by Tuesday</text>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SPOILER SAFE ═══════════════ -->
+<section class="section-sm" aria-labelledby="spx-spoiler-heading">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <figure class="card order-last lg:order-first" data-reveal>
+        <figcaption class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Second-screen sync · 34&prime; goal</figcaption>
+        <div class="mt-6 space-y-8">
+          <div>
+            <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.12em]">
+              <span class="text-foreground">Watching live</span><span class="text-muted-foreground">34:12</span>
+            </div>
+            <div class="spx-sync-bar mt-2">
+              <span class="spx-sync-fill" style="width:76%"></span>
+              <span class="spx-sync-goal" style="left:70%"><span class="spx-sync-tag spx-sync-tag-live">Widget fires</span></span>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.12em]">
+              <span class="text-foreground">Watching +12 min behind</span><span class="text-muted-foreground">22:04</span>
+            </div>
+            <div class="spx-sync-bar mt-2">
+              <span class="spx-sync-fill" style="width:49%"></span>
+              <span class="spx-sync-goal spx-sync-goal-held" style="left:70%"><span class="spx-sync-tag spx-sync-tag-held">Held until they reach it</span></span>
+            </div>
+          </div>
+        </div>
+        <p class="mt-8 text-xs leading-relaxed text-muted-foreground">The same moment, released at each viewer&rsquo;s own playback position — never ahead of their screen.</p>
+      </figure>
+      <div data-reveal style="--reveal-delay:80ms">
+        <p class="eyebrow">Second-screen, spoiler safe</p>
+        <h2 id="spx-spoiler-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Never spoil the result</h2>
+        <p class="mt-4 leading-relaxed text-muted-foreground">Spoiler safe delivery holds widgets and reactions to each viewer&rsquo;s playback position, so a fan on a delay isn&rsquo;t spoiled by fans watching the live edge. Second-screen play works for everyone, whenever they watch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SPONSOR INVENTORY ═══════════════ -->
+<section class="section border-t border-border" aria-labelledby="spx-sponsor-heading">
+  <div class="container-page">
+    <div class="grid items-center gap-12 lg:grid-cols-2">
+      <div data-reveal>
+        <p class="eyebrow">Sponsorship</p>
+        <h2 id="spx-sponsor-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Give sponsors moments they can measure, not just a logo placement</h2>
+        <p class="mt-4 leading-relaxed text-muted-foreground">A perimeter board proves nothing. When a sponsor&rsquo;s identity is attached to the programs and quests fans actually play, engagement becomes addressable inventory, and because it runs on a fan graph the club owns and governs, exposure can be tied to the actions that followed.</p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Attach a sponsor&rsquo;s identity to programs, quests, and rewards, turning attention into branded inventory.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Measure sponsored exposure against the fan actions that followed, not against impressions.</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Reskin every widget to the club or the sponsor, so each activation is on-brand and consistent (Preview).</p>
+          </li>
+          <li class="flex gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-foreground">Renew sponsorships on evidence, in-Kingdom and consented.</p>
+          </li>
+        </ul>
+        <a href="{{ '/platform/measure' | relative_url }}" class="link-arrow mt-8">See how measurement works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+
+      <div class="space-y-4" data-reveal style="--reveal-delay:120ms">
+        <!-- branded moment mock -->
+        <div class="spx-widget">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">In-play · Prediction</span>
+            <span class="spx-badge spx-badge-preview">Preview</span>
+          </div>
+          <p class="mt-3 font-heading text-lg font-semibold text-foreground">Who scores the next goal?</p>
+          <div class="mt-3 grid grid-cols-2 gap-2" aria-hidden="true">
+            <span class="spx-widget-opt">Home No. 9</span>
+            <span class="spx-widget-opt">Away No. 7</span>
+          </div>
+          <div class="spx-widget-sponsor">
+            <span class="font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">Presented by</span>
+            <span class="spx-widget-brand">Your partner&rsquo;s brand</span>
+          </div>
+        </div>
+        <div class="flex justify-center" aria-hidden="true">
+          <svg class="h-8 w-8 text-brand-foreground" viewBox="0 0 256 256" fill="currentColor"><path d="m213.66 133.66-72 72a8 8 0 0 1-11.32 0l-72-72a8 8 0 0 1 11.32-11.32L128 180.69l58.34-58.35a8 8 0 0 1 11.32 11.32Z" opacity=".9"/></svg>
+        </div>
+        <div class="card">
+          <p class="font-mono text-[10px] uppercase tracking-[0.16em] text-brand-foreground">Measured, not implied</p>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Sponsored exposure is tied to the fan actions that followed it — addressable, on-brand inventory a partner can renew on evidence, rather than a logo in the corner of a graphic.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="mt-14 text-muted-foreground" data-reveal>On the sponsor side of this story? Start from the <a href="{{ '/solutions/brands' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Brands &amp; Sponsors playbook</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ PLAY · REWARD · RETAIN · OWN ═══════════════ -->
+<section class="section-sm border-t border-border" aria-labelledby="spx-steps-heading">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">How matchday becomes a season</p>
+      <h2 id="spx-steps-heading" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Play, reward, retain, own</h2>
+      <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Each stage feeds the next inside one platform, so live attention compounds into a fan relationship the club keeps.</p>
+    </div>
+
+    <ol class="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <li data-reveal style="--reveal-delay:0ms">
+        <p class="spx-stepnum" aria-hidden="true">01</p>
+        <span class="icon-chip-sm mt-4">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Win the live moment <span class="badge align-middle">Preview</span></h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">In-play widgets make the match something fans play, not just watch. (Design Preview today.)</p>
+      </li>
+      <li data-reveal style="--reveal-delay:80ms">
+        <p class="spx-stepnum" aria-hidden="true">02</p>
+        <span class="icon-chip-sm mt-4">{% include icon.html name="gift" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Reward the participation</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Every interaction earns a payoff that feeds leaderboards and tiers automatically.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:160ms">
+        <p class="spx-stepnum" aria-hidden="true">03</p>
+        <span class="icon-chip-sm mt-4">{% include icon.html name="target" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Build the season habit</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Streaks and tiers carry attention across the fixture list and the off-season.</p>
+      </li>
+      <li data-reveal style="--reveal-delay:240ms">
+        <p class="spx-stepnum" aria-hidden="true">04</p>
+        <span class="icon-chip-sm mt-4">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3 class="mt-4 text-lg font-semibold">Keep the fan you earned</h3>
+        <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Everything accrues to one first-party profile the club owns, in-Kingdom.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
 {% include cta-band.html
    heading="Turn matchday into a season worth sponsoring"
-   text="See how Fanfinity wins the live moment, builds a between-match habit, and packages it as measurable sponsor inventory on a fan graph you own. Book a matchday walkthrough with our team." %}
+   text="See how Fanfinity wins the live moment, builds a habit between matches, and packages it as measurable sponsor inventory on a fan graph you own. Book a matchday walkthrough with our team." %}
+
+{% raw %}
+<style>
+/* ── Sports page bespoke styles (scoped: .spx-) ─────────────────────── */
+
+/* Hero — duotone frame + scorebug */
+.spx-frame { position: relative; }
+.spx-duo {
+  position: relative; overflow: hidden; border-radius: 24px;
+  border: 1px solid var(--color-border);
+  aspect-ratio: 4 / 5;
+}
+.spx-duo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: grayscale(1) contrast(1.08) brightness(0.94);
+}
+.spx-duo::after {
+  content: ""; position: absolute; inset: 0;
+  background: #2e0f63; mix-blend-mode: screen; opacity: 0.88;
+  pointer-events: none;
+}
+.spx-scorebug {
+  position: absolute; top: 14px; left: 14px;
+  display: inline-flex; align-items: center; gap: 8px;
+  border-radius: 999px; padding: 7px 14px;
+  background: rgba(11, 7, 18, 0.82); backdrop-filter: blur(6px);
+  color: #fff; font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.spx-scorebug-dot {
+  width: 7px; height: 7px; border-radius: 999px; background: #9969ff;
+  animation: spx-blink 1.8s ease-in-out infinite;
+}
+@keyframes spx-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+/* Tactics board */
+.spx-board {
+  border-radius: 28px; padding: 22px;
+  background-color: #0d0814;
+  background-image:
+    radial-gradient(70% 90% at 50% -10%, rgba(124, 77, 255, 0.16), transparent 60%);
+  border: 1px solid rgba(153, 105, 255, 0.16);
+  box-shadow: 0 30px 80px -30px rgba(53, 16, 112, 0.35);
+}
+.spx-board-grid { display: grid; gap: 20px; }
+@media (min-width: 1024px) {
+  .spx-board { padding: 28px; }
+  .spx-board-grid { grid-template-columns: 7fr 4fr; gap: 28px; align-items: stretch; }
+}
+.spx-pitch-wrap {
+  position: relative; border-radius: 18px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 10px;
+}
+.spx-chalk { stroke: rgba(237, 231, 246, 0.42); stroke-width: 2; }
+.spx-chalk-fill { fill: rgba(237, 231, 246, 0.42); stroke: none; }
+.spx-pitch-label {
+  fill: rgba(237, 231, 246, 0.4);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.spx-route {
+  fill: none; stroke: #a87fff; stroke-width: 2.5; stroke-linecap: round;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.spx-route.is-on { opacity: 1; }
+.spx-zone {
+  stroke: rgba(255, 255, 255, 0.25); stroke-width: 1.5;
+  stroke-dasharray: 3 5; transition: stroke 0.3s ease;
+}
+.spx-zone.is-hot { stroke: #a87fff; }
+.spx-ball {
+  fill: #ffffff; stroke: rgba(168, 127, 255, 0.9); stroke-width: 2.5;
+  filter: drop-shadow(0 0 6px rgba(168, 127, 255, 0.8));
+}
+.spx-idle {
+  fill: none; stroke: rgba(168, 127, 255, 0.7); stroke-width: 1.5;
+  transform-origin: 320px 200px; opacity: 0;
+}
+.spx-board.is-live .spx-idle { animation: spx-ping 2.6s ease-out infinite; }
+@keyframes spx-ping {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  70% { transform: scale(3.2); opacity: 0; }
+  100% { opacity: 0; }
+}
+.spx-playcard {
+  margin-top: 12px; border-radius: 14px; padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 1024px) {
+  .spx-playcard {
+    position: absolute; left: 22px; bottom: 22px; margin-top: 0;
+    width: 330px; backdrop-filter: blur(8px);
+    background: rgba(13, 8, 20, 0.78);
+  }
+}
+
+/* Badges (used on dark + light surfaces) */
+.spx-badge {
+  display: inline-flex; align-items: center; border-radius: 999px;
+  padding: 3px 10px; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+}
+.spx-badge-live { background: #854dff; color: #fff; }
+.spx-badge-preview {
+  background: transparent; color: currentColor;
+  border: 1px solid currentColor; opacity: 0.75; font-weight: 600;
+}
+.card .spx-badge-preview, .spx-legend .spx-badge-preview { color: var(--color-muted-foreground); }
+.spx-playcard .spx-badge-preview { color: rgba(255, 255, 255, 0.7); }
+
+/* Play buttons */
+.spx-controls { display: flex; flex-direction: column; }
+.spx-playbtn {
+  display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 10px;
+  width: 100%; text-align: left; cursor: pointer;
+  border-radius: 12px; padding: 11px 13px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.85);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+.spx-playbtn:hover { background: rgba(255, 255, 255, 0.07); }
+.spx-playbtn:focus-visible {
+  outline: none; box-shadow: 0 0 0 2px #0d0814, 0 0 0 4px #9969ff;
+}
+.spx-playbtn[aria-pressed="true"] {
+  border-color: rgba(168, 127, 255, 0.65);
+  background: rgba(133, 77, 255, 0.14);
+}
+.spx-playbtn-min {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px; letter-spacing: 0.1em; color: #b79aff;
+  text-transform: uppercase;
+}
+.spx-playbtn-title { font-weight: 600; font-size: 14px; }
+.spx-playbtn .spx-badge-preview { color: rgba(255, 255, 255, 0.7); }
+
+/* Timeline */
+.spx-tl { margin-top: auto; padding-top: 22px; }
+.spx-tl-track {
+  position: relative; height: 3px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.spx-tl-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; width: 10%;
+  border-radius: 999px; background: #854dff;
+  transition: width 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.spx-tl-marker {
+  position: absolute; top: 50%; left: 10%;
+  width: 13px; height: 13px; border-radius: 999px;
+  background: #fff; border: 3px solid #854dff;
+  transform: translate(-50%, -50%);
+  transition: left 1.1s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.spx-tl-ticks {
+  display: flex; justify-content: space-between; margin-top: 10px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Legend */
+.spx-legend {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; color: var(--color-muted-foreground);
+}
+
+/* Ghost numerals */
+.spx-num {
+  position: absolute; top: 10px; right: 18px;
+  font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+  font-size: 92px; line-height: 1; color: transparent;
+  -webkit-text-stroke: 1.5px rgba(124, 77, 255, 0.22);
+  pointer-events: none; user-select: none;
+}
+.spx-stepnum {
+  font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+  font-size: 64px; line-height: 1; color: transparent;
+  -webkit-text-stroke: 1.5px rgba(124, 77, 255, 0.4);
+}
+@supports not (-webkit-text-stroke: 1px black) {
+  .spx-num, .spx-stepnum { color: rgba(124, 77, 255, 0.15); }
+}
+
+/* Journey rail */
+.spx-journey {
+  display: grid; gap: 28px;
+  list-style: none; margin: 0; padding: 0;
+}
+@media (min-width: 640px) { .spx-journey { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .spx-journey { grid-template-columns: repeat(5, 1fr); gap: 20px; } }
+.spx-journey-rail {
+  position: relative; height: 2px; margin-bottom: 18px;
+  background: var(--color-border);
+}
+.spx-journey-dot {
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 11px; height: 11px; border-radius: 999px;
+  background: var(--color-card); border: 3px solid #854dff;
+}
+
+/* Season chart */
+.spx-axis { stroke: var(--color-border); stroke-width: 1.5; }
+.spx-axis-labels text {
+  fill: var(--color-muted-foreground);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px; letter-spacing: 0.08em;
+}
+.spx-line-fade {
+  fill: none; stroke: var(--color-muted-foreground); stroke-width: 2;
+  stroke-dasharray: 5 6; opacity: 0.65;
+}
+.spx-line-hold { fill: none; stroke: #854dff; stroke-width: 3; stroke-linecap: round; }
+.spx-dot-match { fill: #854dff; }
+.spx-anno {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px; letter-spacing: 0.06em; fill: var(--color-foreground);
+}
+.spx-anno-brand { fill: #7c4dff; }
+.spx-anno-muted { fill: var(--color-muted-foreground); }
+.spx-key {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--color-muted-foreground);
+}
+.spx-key::before { content: ""; width: 16px; height: 0; border-top: 2px solid #854dff; }
+.spx-key-dash::before { border-top-style: dashed; border-color: var(--color-muted-foreground); }
+
+/* Spoiler safe sync bars */
+.spx-sync-bar {
+  position: relative; height: 8px; border-radius: 999px;
+  background: var(--color-muted); border: 1px solid var(--color-border);
+}
+.spx-sync-fill {
+  position: absolute; left: 0; top: 0; bottom: 0; border-radius: 999px;
+  background: #854dff; opacity: 0.85;
+}
+.spx-sync-goal {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 14px; height: 14px; border-radius: 999px;
+  background: #fff; border: 3px solid #854dff;
+}
+.spx-sync-goal-held { background: var(--color-card); border-style: dashed; border-color: var(--color-muted-foreground); }
+.spx-sync-tag {
+  position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  white-space: nowrap; border-radius: 8px; padding: 4px 9px;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.spx-sync-tag-live { background: #351070; color: #fff; }
+.spx-sync-tag-held {
+  background: var(--color-card); color: var(--color-muted-foreground);
+  border: 1px dashed var(--color-muted-foreground);
+}
+@media (max-width: 420px) {
+  .spx-sync-tag { font-size: 8px; padding: 3px 6px; }
+}
+
+/* Sponsor widget mock */
+.spx-widget {
+  border-radius: 20px; padding: 20px;
+  background: var(--color-card); border: 1px solid var(--color-border);
+  box-shadow: 0 18px 50px -24px rgba(53, 16, 112, 0.22);
+}
+.spx-widget-opt {
+  display: block; border-radius: 10px; padding: 10px 12px;
+  border: 1px solid var(--color-border); background: var(--color-muted);
+  font-size: 13px; font-weight: 600; color: var(--color-foreground);
+  text-align: center;
+}
+.spx-widget-sponsor {
+  margin-top: 14px; border-radius: 12px; padding: 10px 14px;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  background: linear-gradient(90deg, rgba(153, 105, 255, 0.12), rgba(153, 105, 255, 0.04));
+  border: 1px solid rgba(153, 105, 255, 0.28);
+}
+.spx-widget-brand {
+  font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+  font-size: 14px; color: #7c4dff; letter-spacing: 0.02em;
+}
+
+/* Dark-mode refinements for hard-coded accents */
+html.dark .spx-num { -webkit-text-stroke-color: rgba(153, 105, 255, 0.3); }
+html.dark .spx-stepnum { -webkit-text-stroke-color: rgba(153, 105, 255, 0.5); }
+html.dark .spx-line-hold { stroke: #a87fff; }
+html.dark .spx-dot-match { fill: #a87fff; }
+html.dark .spx-anno-brand { fill: #b79aff; }
+html.dark .spx-sync-fill { background: #9969ff; }
+html.dark .spx-sync-goal { border-color: #9969ff; }
+html.dark .spx-widget-brand { color: #b79aff; }
+html.dark .spx-widget-sponsor {
+  background: linear-gradient(90deg, rgba(153, 105, 255, 0.16), rgba(153, 105, 255, 0.05));
+  border-color: rgba(153, 105, 255, 0.32);
+}
+
+/* Reduced motion: no loops, no pings */
+@media (prefers-reduced-motion: reduce) {
+  .spx-scorebug-dot, .spx-board.is-live .spx-idle { animation: none; }
+  .spx-idle { opacity: 0 !important; }
+  .spx-tl-fill, .spx-tl-marker { transition: none; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  var board = document.getElementById('spx-board');
+  if (!board) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var buttons = Array.prototype.slice.call(board.querySelectorAll('.spx-playbtn'));
+  var ball = document.getElementById('spx-ball');
+  var idle = document.getElementById('spx-idle');
+  var cardMin = document.getElementById('spx-card-min');
+  var cardBadge = document.getElementById('spx-card-badge');
+  var cardTitle = document.getElementById('spx-card-title');
+  var cardBody = document.getElementById('spx-card-body');
+  var tlFill = document.getElementById('spx-tl-fill');
+  var tlMarker = document.getElementById('spx-tl-marker');
+
+  var DURATION = 1500;
+  var rafId = null;
+  var visible = false;
+
+  function easeInOut(t) {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+
+  function cancelRun() {
+    if (rafId !== null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  function setCard(btn) {
+    cardMin.innerHTML = btn.getAttribute('data-min');
+    cardTitle.textContent = btn.getAttribute('data-title');
+    cardBody.innerHTML = btn.getAttribute('data-body');
+    var badge = btn.getAttribute('data-badge');
+    cardBadge.textContent = badge;
+    cardBadge.className = 'spx-badge ' + (badge === 'Live' ? 'spx-badge-live' : 'spx-badge-preview');
+  }
+
+  function setTimeline(pos) {
+    tlFill.style.width = pos + '%';
+    tlMarker.style.left = pos + '%';
+  }
+
+  function runPlay(btn) {
+    cancelRun();
+    var route = document.getElementById(btn.getAttribute('data-route'));
+    var zone = document.getElementById(btn.getAttribute('data-zone'));
+    if (!route) return;
+
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+    board.querySelectorAll('.spx-route').forEach(function (r) { r.classList.remove('is-on'); });
+    board.querySelectorAll('.spx-zone').forEach(function (z) { z.classList.remove('is-hot'); });
+    if (idle) idle.style.opacity = '0';
+
+    setCard(btn);
+    setTimeline(btn.getAttribute('data-pos'));
+    route.classList.add('is-on');
+    if (zone) zone.classList.add('is-hot');
+
+    var len = route.getTotalLength();
+    route.style.strokeDasharray = String(len);
+
+    if (reduce) {
+      route.style.strokeDashoffset = '0';
+      var end = route.getPointAtLength(len);
+      ball.setAttribute('cx', end.x);
+      ball.setAttribute('cy', end.y);
+      return;
+    }
+
+    route.style.transition = 'none';
+    route.style.strokeDashoffset = String(len);
+    /* force reflow so the transition restarts cleanly */
+    void route.getBoundingClientRect();
+    route.style.transition = 'stroke-dashoffset ' + DURATION + 'ms cubic-bezier(0.35, 0.1, 0.2, 1)';
+    route.style.strokeDashoffset = '0';
+
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var t = Math.min((ts - start) / DURATION, 1);
+      var p = route.getPointAtLength(easeInOut(t) * len);
+      ball.setAttribute('cx', p.x);
+      ball.setAttribute('cy', p.y);
+      if (t < 1) {
+        rafId = requestAnimationFrame(step);
+      } else {
+        rafId = null;
+      }
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { runPlay(btn); });
+  });
+
+  /* Pause work offscreen; auto-run the first play once when scrolled into view */
+  var autoPlayed = false;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        visible = entry.isIntersecting;
+        board.classList.toggle('is-live', visible && !reduce);
+        if (!visible) {
+          cancelRun();
+        } else if (!autoPlayed) {
+          autoPlayed = true;
+          runPlay(buttons[0]);
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(board);
+  } else {
+    board.classList.toggle('is-live', !reduce);
+  }
+
+  /* Static, honest initial state for reduced motion */
+  if (reduce) {
+    var first = buttons[0];
+    var route = document.getElementById(first.getAttribute('data-route'));
+    if (route) {
+      route.classList.add('is-on');
+      route.style.strokeDasharray = 'none';
+      var zone = document.getElementById(first.getAttribute('data-zone'));
+      if (zone) zone.classList.add('is-hot');
+      var end = route.getPointAtLength(route.getTotalLength());
+      ball.setAttribute('cx', end.x);
+      ball.setAttribute('cy', end.y);
+    }
+    setTimeline(first.getAttribute('data-pos'));
+  }
+})();
+</script>
+{% endraw %}

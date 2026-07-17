@@ -5,55 +5,772 @@ permalink: /solutions/travel
 title: Travel & Hospitality
 description: "For travel and hospitality: unify booking, loyalty, and app signals across brands into one profile, win back travelers before a poor experience becomes churn, and recognize the same guest whether they research online or book in-branch."
 breadcrumb_parent: { title: Solutions, url: /solutions }
-features:
-  - { icon: identity, title: "One guest across every brand", body: "Unify booking, loyalty, and app signals across brands and business units into a single profile, so a returning traveler is recognized rather than treated as new." }
-  - { icon: link,     title: "Online research, offline booking", body: "Connect the trip a traveler researches online to the booking they complete in a branch or on the phone, so the research trail and the booking finally meet in one record." }
-  - { icon: users,    title: "Segment by how people book", body: "Tell school-holiday planners from weekend escapers, group organizers from solo travelers, and act on those patterns in real time without an IT ticket." }
-  - { icon: slider,   title: "Personalize the next trip", body: "Adapt destinations, upgrades, and offers to each traveler's history and intent, from the first search onward." }
-  - { icon: gift,     title: "Loyalty across every journey", body: "Base tiers and rewards on the resolved profile you own, carrying recognition across trips, brands, and channels. (Richer gamified loyalty in Preview.)" }
-  - { icon: megaphone, title: "Reach travelers pre, in, and post-trip", body: "Activate on WhatsApp, email, and push from the same profile at every stage of the journey." }
-winback_points:
-  - "Connect a low satisfaction score to that traveler's booking and behavioral history under one profile."
-  - "Act on the signal early, with a relevant gesture or offer, before a poor trip becomes a lost customer."
-  - "Reach the traveler on an owned channel, timed to when re-booking intent is most likely to return."
-research_points:
-  - "Recognize the traveler who researches online and books through a branch or call center as one person."
-  - "Segment on real intent (school-holiday planner versus weekend escaper, group versus solo) as signals arrive."
-  - "Personalize offers and retention journeys around that intent, across every brand you operate."
 ---
-{% include hero.html
-   eyebrow="Solutions · Travel & Hospitality"
-   title="A guest who leaves unhappy should never leave unnoticed"
-   subtitle="Travelers spread signals across brands, bookings, apps, and branches, and most systems lose them along the way. Fanfinity unifies them into one profile you own, so you can win back a disappointed traveler before they churn and recognize the same guest whether they research online or book in person."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/solutions-travel.jpg"
-   image_alt="An aircraft at an airport boarding gate" %}
 
-{% include feature-split.html
-   title="Turn a bad trip into a second chance, not a lost customer"
-   body="A single poor experience is where travel loyalty quietly ends, and a satisfaction score is usually the first warning. When that score is connected to a traveler's booking and behavioral history under one profile, you can act on dissatisfaction early with a relevant gesture, instead of discovering the churn a season later when they book with someone else."
-   points=page.winback_points
-   cta_text="See how activation works"
-   cta_url="/platform/activate"
-   icon="bell" %}
+{% raw %}
+<style>
+/* ── Travel & Hospitality — scoped page styles (prefix .tvh-) ───────────── */
+.tvh-eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: .75rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: .18em; color: #7c4dff;
+}
+.tvh-eyebrow::before { content: ""; width: 1.5rem; height: 1px; background: #9969ff; opacity: .55; }
 
-{% include feature-grid.html
-   heading="From scattered bookings to recognized, retained travelers"
-   subheading="The connected platform, tuned to multi-brand travel, where a trip is researched in one place and booked in another."
-   items=page.features
-   columns=3 %}
+/* Hero editorial stamp ornament */
+.tvh-hero-stamp {
+  position: absolute; border: 1.5px solid rgba(124, 77, 255, .28);
+  color: rgba(124, 77, 255, .5); border-radius: .4rem;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: .6rem; letter-spacing: .16em; text-transform: uppercase;
+  padding: .45rem .7rem; line-height: 1.5; pointer-events: none; user-select: none;
+}
+html.dark .tvh-hero-stamp { border-color: rgba(153, 105, 255, .32); color: rgba(182, 148, 255, .55); }
 
-{% include feature-split.html
-   reverse=true
-   title="Recognize the traveler, not just the booking"
-   body="Travel groups run many brands and sell across web, app, call center, and branch, and the same person often researches in one and books in another. Fanfinity resolves those signals into one profile you own, so segmentation, personalization, and loyalty work across the whole portfolio rather than one brand at a time."
-   points=page.research_points
-   cta_text="See how identity works"
-   cta_url="/platform/id"
-   icon="identity" %}
+/* Passport cover (untouched state) */
+.tvh-passport {
+  position: relative; width: 300px; max-width: 100%; aspect-ratio: 5 / 6.6;
+  border-radius: 1.25rem; background: #14082e; overflow: hidden;
+  border: 1px solid rgba(182, 148, 255, .22);
+  box-shadow: 0 30px 70px -24px rgba(30, 8, 70, .55), inset 0 1px 0 rgba(255, 255, 255, .07);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.tvh-passport.tvh-is-done { opacity: 0; transform: translateY(10px) scale(.97); pointer-events: none; }
+.tvh-passport-face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem; padding: 2rem; text-align: center; }
+.tvh-passport-glyph { color: #b694ff; opacity: .9; }
+.tvh-passport-title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; letter-spacing: .34em; text-transform: uppercase; font-size: 1rem; color: #efe6ff; text-indent: .34em; }
+.tvh-passport-sub { font-family: "Geist Mono", ui-monospace, monospace; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(239, 230, 255, .55); line-height: 1.9; }
+.tvh-passport-lines { position: absolute; inset: .65rem; border: 1px solid rgba(182, 148, 255, .18); border-radius: .85rem; pointer-events: none; }
+.tvh-passport-stampzone { position: absolute; inset: 0; }
+.tvh-stamp-svg { position: absolute; width: 33%; left: 0; top: 0; opacity: 0; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35)); }
+
+/* Profile card (revealed state) */
+.tvh-profile {
+  position: relative; width: 330px; max-width: 100%; border-radius: 1.25rem;
+  background: #faf7ff; border: 1px solid #e6dcfb; overflow: hidden;
+  box-shadow: 0 26px 60px -26px rgba(53, 16, 112, .28);
+  opacity: 0; transform: translateY(12px) scale(.98);
+  transition: opacity .55s ease .1s, transform .55s ease .1s;
+}
+.tvh-profile.tvh-is-on { opacity: 1; transform: none; }
+html.dark .tvh-profile { background: #18102a; border-color: #31205a; box-shadow: 0 26px 60px -26px rgba(0, 0, 0, .6); }
+.tvh-profile-head { display: flex; align-items: center; gap: .8rem; padding: 1rem 1.1rem; border-bottom: 1px dashed #d9cbf5; }
+html.dark .tvh-profile-head { border-color: #35225e; }
+.tvh-avatar { width: 2.6rem; height: 2.6rem; border-radius: 9999px; background: #7c4dff; color: #fff; display: grid; place-items: center; font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: .95rem; flex-shrink: 0; }
+.tvh-profile-name { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1rem; color: #1c1030; line-height: 1.2; }
+html.dark .tvh-profile-name { color: #f2ecff; }
+.tvh-profile-id { font-family: "Geist Mono", ui-monospace, monospace; font-size: .62rem; letter-spacing: .1em; color: #7a6f92; margin-top: .15rem; }
+html.dark .tvh-profile-id { color: #9b8cc4; }
+.tvh-live { margin-left: auto; display: inline-flex; align-items: center; gap: .35rem; font-family: "Geist Mono", ui-monospace, monospace; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: #7c4dff; flex-shrink: 0; }
+html.dark .tvh-live { color: #b694ff; }
+.tvh-live-dot { width: .45rem; height: .45rem; border-radius: 9999px; background: #7c4dff; animation: tvh-pulse 2s ease-in-out infinite; }
+html.dark .tvh-live-dot { background: #b694ff; }
+@keyframes tvh-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+.tvh-rows { padding: .35rem 0 .5rem; }
+.tvh-row { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: .55rem 1.1rem; border-bottom: 1px dashed #e9e0fa; transition: background .4s ease; }
+html.dark .tvh-row { border-color: #2a1c4d; }
+.tvh-row:last-child { border-bottom: 0; }
+.tvh-row-k { font-family: "Geist Mono", ui-monospace, monospace; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; color: #857a9e; flex-shrink: 0; }
+html.dark .tvh-row-k { color: #9b8cc4; }
+.tvh-row-v { font-size: .78rem; font-weight: 500; color: #584a75; text-align: right; transition: color .3s ease; }
+html.dark .tvh-row-v { color: #b3a6cf; }
+.tvh-row.tvh-is-set .tvh-row-v { color: #351070; font-weight: 600; }
+html.dark .tvh-row.tvh-is-set .tvh-row-v { color: #e9dfff; }
+.tvh-row.tvh-is-alert { background: #fdf3ec; }
+html.dark .tvh-row.tvh-is-alert { background: rgba(232, 124, 62, .08); }
+.tvh-row.tvh-is-alert .tvh-row-v { color: #c05a1e; }
+html.dark .tvh-row.tvh-is-alert .tvh-row-v { color: #f0a377; }
+.tvh-row.tvh-is-new .tvh-row-v { animation: tvh-set .6s ease; }
+@keyframes tvh-set { 0% { opacity: 0; transform: translateY(5px); } 100% { opacity: 1; transform: none; } }
+.tvh-flash { position: absolute; inset: 0; background: rgba(153, 105, 255, .14); opacity: 0; pointer-events: none; }
+.tvh-flash.tvh-go { animation: tvh-flash .55s ease; }
+@keyframes tvh-flash { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Stamp flight clone */
+.tvh-fly { position: fixed; left: 0; top: 0; width: 92px; z-index: 60; pointer-events: none; will-change: transform, opacity; }
+@media (prefers-reduced-motion: reduce) {
+  .tvh-live-dot { animation: none; }
+  .tvh-fly { display: none; }
+  .tvh-stamp-svg, .tvh-passport, .tvh-profile { transition: none !important; }
+}
+
+/* Journey step grid */
+.tvh-step {
+  display: flex; flex-direction: column; align-items: flex-start; gap: .45rem;
+  text-align: left; border-radius: .9rem; padding: .8rem .85rem;
+  border: 1px solid transparent; background: transparent; cursor: pointer;
+  transition: border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.tvh-step:hover { border-color: var(--color-border); background: var(--color-card); }
+.tvh-step:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px #9969ff; }
+.tvh-step[aria-pressed="true"] { border-color: #dccef8; background: var(--color-card); box-shadow: 0 10px 28px -16px rgba(53, 16, 112, .22); }
+html.dark .tvh-step[aria-pressed="true"] { border-color: #3d2a6e; box-shadow: 0 10px 28px -16px rgba(0, 0, 0, .55); }
+.tvh-step-num { font-family: "Geist Mono", ui-monospace, monospace; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.tvh-step[aria-pressed="true"] .tvh-step-num { color: #7c4dff; }
+html.dark .tvh-step[aria-pressed="true"] .tvh-step-num { color: #b694ff; }
+.tvh-step-name { font-size: .82rem; font-weight: 600; color: var(--color-foreground); line-height: 1.3; }
+.tvh-step-sub { font-size: .68rem; line-height: 1.45; color: var(--color-muted-foreground); }
+
+/* Caption under the stage */
+.tvh-caption { min-height: 4.6rem; transition: opacity .25s ease; }
+.tvh-caption.tvh-swap { opacity: 0; }
+.tvh-caption-title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 600; font-size: 1.05rem; color: var(--color-foreground); }
+.tvh-caption-sub { margin-top: .3rem; font-size: .85rem; line-height: 1.6; color: var(--color-muted-foreground); max-width: 46rem; }
+
+/* Win-back timeline */
+.tvh-track { position: relative; margin-top: 2.75rem; }
+.tvh-track-line { position: absolute; left: 0; right: 0; top: .4rem; height: 1px; background: var(--color-border); }
+.tvh-track-warn { position: absolute; left: 0; top: .4rem; height: 1px; width: 49%; background: repeating-linear-gradient(90deg, #d97a3a 0 7px, transparent 7px 13px); opacity: .6; }
+.tvh-track-good { position: absolute; right: 0; top: .4rem; height: 1px; width: 49%; background: #9969ff; opacity: .55; }
+.tvh-track-grid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.tvh-tstop { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
+.tvh-tdot { width: .85rem; height: .85rem; border-radius: 9999px; border: 2px solid var(--color-border); background: var(--color-card); flex-shrink: 0; }
+.tvh-tstop:nth-child(1) .tvh-tdot { border-color: #d97a3a; }
+.tvh-tstop:nth-child(3) .tvh-tdot { border-color: #7c4dff; background: #7c4dff; }
+html.dark .tvh-tstop:nth-child(3) .tvh-tdot { border-color: #b694ff; background: #b694ff; }
+.tvh-tlabel { font-family: "Geist Mono", ui-monospace, monospace; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.tvh-tstop:nth-child(1) .tvh-tlabel { color: #c05a1e; }
+html.dark .tvh-tstop:nth-child(1) .tvh-tlabel { color: #f0a377; }
+.tvh-tstop:nth-child(3) .tvh-tlabel { color: #7c4dff; }
+html.dark .tvh-tstop:nth-child(3) .tvh-tlabel { color: #b694ff; }
+.tvh-tcard { border: 1px solid var(--color-border); background: var(--color-card); border-radius: 1rem; padding: 1.1rem 1.15rem; }
+.tvh-tcard h3 { font-size: .95rem; font-weight: 600; margin-bottom: .45rem; }
+.tvh-tcard p { font-size: .83rem; line-height: 1.65; color: var(--color-muted-foreground); }
+@media (max-width: 640px) {
+  .tvh-track-line, .tvh-track-warn, .tvh-track-good { display: none; }
+  .tvh-track { margin-top: 1.75rem; }
+  .tvh-track-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .tvh-tstop { position: relative; padding-left: 1.4rem; }
+  .tvh-tstop::before { content: ""; position: absolute; left: .34rem; top: 1.1rem; bottom: -1rem; width: 1px; background: var(--color-border); }
+  .tvh-tstop:last-child::before { display: none; }
+  .tvh-tdot { position: absolute; left: 0; top: .1rem; }
+}
+
+/* Big numeral utilities */
+.tvh-numeral {
+  font-family: "Bricolage Grotesque", sans-serif; font-weight: 600;
+  font-size: clamp(3.4rem, 7vw, 5.2rem); line-height: .9; letter-spacing: -.02em;
+  color: transparent; -webkit-text-stroke: 1.5px rgba(124, 77, 255, .45);
+  user-select: none;
+}
+html.dark .tvh-numeral { -webkit-text-stroke-color: rgba(182, 148, 255, .5); }
+
+/* Framed duotone image treatment */
+.tvh-figure { position: relative; border-radius: 1.5rem; overflow: hidden; border: 1px solid var(--color-border); background: #351070; }
+.tvh-figure img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.06) brightness(.98); mix-blend-mode: luminosity; opacity: .88; }
+.tvh-figure::before { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(124, 77, 255, .55), rgba(53, 16, 112, .78) 70%); mix-blend-mode: multiply; pointer-events: none; }
+.tvh-figure::after { content: ""; position: absolute; inset: .7rem; border: 1px solid rgba(255, 255, 255, .22); border-radius: 1rem; pointer-events: none; }
+.tvh-figure-tag { position: absolute; left: 1.35rem; bottom: 1.25rem; z-index: 2; font-family: "Geist Mono", ui-monospace, monospace; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255, 255, 255, .85); }
+html.dark .tvh-figure { background: #1c0b40; }
+html.dark .tvh-figure::before { background: linear-gradient(160deg, rgba(124, 77, 255, .45), rgba(20, 8, 46, .85) 72%); }
+</style>
+{% endraw %}
+
+<!-- ══════════════ HERO + GUEST PASSPORT CENTERPIECE ══════════════ -->
+<section class="section-sm relative overflow-hidden bg-soft" aria-labelledby="tvh-hero-title">
+  <span class="tvh-hero-stamp hidden lg:block" style="top: 5.5rem; right: 8%; transform: rotate(8deg);" aria-hidden="true">Fanfinity<br>Guest Data</span>
+  <span class="tvh-hero-stamp hidden lg:block" style="bottom: 6rem; left: 5%; transform: rotate(-10deg);" aria-hidden="true">Admit<br>One Guest</span>
+
+  <div class="container-page relative">
+    <div class="max-w-3xl" data-reveal>
+      <p class="eyebrow">Solutions · Travel &amp; Hospitality</p>
+      <h1 id="tvh-hero-title" class="mt-5 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+        A guest who leaves unhappy should never leave unnoticed
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        Travelers spread signals across brands, bookings, apps, and branches, and most systems
+        lose them along the way. Fanfinity unifies them into one profile you own, so you can win
+        back a disappointed traveler before they churn — and recognize the same guest whether
+        they research online or book in person.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+        <a href="/platform" class="btn btn-secondary btn-lg">Explore the platform</a>
+      </div>
+    </div>
+
+    <!-- Centerpiece -->
+    <div id="tvh-passport-app" class="mt-14 md:mt-20" data-reveal>
+      <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:gap-14">
+
+        <!-- Stage: passport → profile -->
+        <div class="mx-auto w-full max-w-[340px]">
+          <div id="tvh-stage" class="relative">
+            <!-- Passport cover -->
+            <div id="tvh-passport" class="tvh-passport" aria-hidden="true">
+              <div class="tvh-passport-lines"></div>
+              <div class="tvh-passport-face">
+                <span class="tvh-passport-glyph">{% include icon.html name="airplane" class="h-12 w-12" %}</span>
+                <span class="tvh-passport-title">Guest Passport</span>
+                <span class="tvh-passport-sub">One profile · every brand<br>every channel · every trip</span>
+              </div>
+              <div id="tvh-stampzone" class="tvh-passport-stampzone"></div>
+            </div>
+
+            <!-- Resolved profile card -->
+            <article id="tvh-profile" class="tvh-profile absolute inset-x-0 top-0 mx-auto" aria-label="Guest profile preview" aria-hidden="true">
+              <div class="tvh-profile-head">
+                <span class="tvh-avatar" aria-hidden="true">A</span>
+                <div>
+                  <p class="tvh-profile-name">Amira</p>
+                  <p class="tvh-profile-id">GUEST-78214 · CONSENTED · IN-KINGDOM</p>
+                </div>
+                <span class="tvh-live"><span class="tvh-live-dot" aria-hidden="true"></span>Live</span>
+              </div>
+              <div class="tvh-rows">
+                <div class="tvh-row" data-row="0"><span class="tvh-row-k">Intent</span><span class="tvh-row-v" data-v>Listening…</span></div>
+                <div class="tvh-row" data-row="1"><span class="tvh-row-k">Channel</span><span class="tvh-row-v" data-v>—</span></div>
+                <div class="tvh-row" data-row="2"><span class="tvh-row-k">Party</span><span class="tvh-row-v" data-v>—</span></div>
+                <div class="tvh-row" data-row="3"><span class="tvh-row-k">Brands</span><span class="tvh-row-v" data-v>—</span></div>
+                <div class="tvh-row" data-row="4"><span class="tvh-row-k">Satisfaction</span><span class="tvh-row-v" data-v>—</span></div>
+                <div class="tvh-row" data-row="5"><span class="tvh-row-k">Loyalty</span><span class="tvh-row-v" data-v>—</span></div>
+              </div>
+              <div class="tvh-flash" id="tvh-flash" aria-hidden="true"></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div>
+          <p class="tvh-eyebrow">The guest passport</p>
+          <h2 class="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Six stamps. One guest.</h2>
+          <p class="mt-3 text-base leading-relaxed text-muted-foreground">
+            Step through one trip across brands and channels. Every stamp is a signal Fanfinity
+            catches in real time — and each one visibly enriches the single profile that travels
+            with the guest.
+          </p>
+
+          <div class="mt-7 grid grid-cols-2 gap-2 sm:grid-cols-3" role="group" aria-label="Journey steps">
+            <button type="button" class="tvh-step" data-step="0" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 01</span>
+              <span class="tvh-step-name">Researches online</span>
+              <span class="tvh-step-sub">Late-night searches for the school break</span>
+            </button>
+            <button type="button" class="tvh-step" data-step="1" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 02</span>
+              <span class="tvh-step-name">Books in-branch</span>
+              <span class="tvh-step-sub">Walks into a high-street agency to pay</span>
+            </button>
+            <button type="button" class="tvh-step" data-step="2" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 03</span>
+              <span class="tvh-step-name">Stays at Brand B</span>
+              <span class="tvh-step-sub">Checks in through the brand's own app</span>
+            </button>
+            <button type="button" class="tvh-step" data-step="3" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 04</span>
+              <span class="tvh-step-name">Scores the stay 4/10</span>
+              <span class="tvh-step-sub">A poor experience, answered in the survey</span>
+            </button>
+            <button type="button" class="tvh-step" data-step="4" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 05</span>
+              <span class="tvh-step-name">The win-back gesture</span>
+              <span class="tvh-step-sub">A WhatsApp apology, timed to intent</span>
+            </button>
+            <button type="button" class="tvh-step" data-step="5" aria-pressed="false">
+              <span class="tvh-step-num">Stamp 06</span>
+              <span class="tvh-step-name">Books again</span>
+              <span class="tvh-step-sub">Next half-term, same group, back with you</span>
+            </button>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <button type="button" id="tvh-play" class="btn btn-primary">
+              <span id="tvh-play-label">Play the journey</span>
+            </button>
+            <button type="button" id="tvh-reset" class="btn btn-secondary">Start over</button>
+          </div>
+
+          <div class="tvh-caption mt-7" id="tvh-caption" aria-live="polite">
+            <p class="tvh-caption-title" id="tvh-caption-title">The trip hasn't started</p>
+            <p class="tvh-caption-sub" id="tvh-caption-sub">Press play — or tap any stamp — and watch the guest's passport fill in.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WIN-BACK TIMELINE ══════════════ -->
+<section class="section" aria-labelledby="tvh-winback-title">
+  <div class="container-page">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-14">
+      <div class="lg:col-span-5" data-reveal>
+        <span class="tvh-numeral" aria-hidden="true">01</span>
+        <p class="eyebrow mt-4">The win-back use case</p>
+        <h2 id="tvh-winback-title" class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+          Turn a bad trip into a second chance, not a lost customer
+        </h2>
+        <p class="mt-5 text-base leading-relaxed text-muted-foreground">
+          A single poor experience is where travel loyalty quietly ends, and a satisfaction score
+          is usually the first warning. When that score is connected to a traveler's booking and
+          behavioral history under one profile, you can act on dissatisfaction early with a
+          relevant gesture — instead of discovering the churn a season later, when they book
+          with someone else.
+        </p>
+        <a href="/platform/activate" class="link-arrow mt-6 inline-flex">
+          See how activation works {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+
+      <div class="lg:col-span-7" data-reveal style="--reveal-delay:120ms">
+        <div class="tvh-track">
+          <div class="tvh-track-line" aria-hidden="true"></div>
+          <div class="tvh-track-warn" aria-hidden="true"></div>
+          <div class="tvh-track-good" aria-hidden="true"></div>
+          <div class="tvh-track-grid">
+            <div class="tvh-tstop">
+              <span class="tvh-tdot" aria-hidden="true"></span>
+              <span class="tvh-tlabel">The warning</span>
+              <div class="tvh-tcard">
+                <h3>One score, full context</h3>
+                <p>Connect a low satisfaction score to that traveler's booking and behavioral history under one profile.</p>
+              </div>
+            </div>
+            <div class="tvh-tstop">
+              <span class="tvh-tdot" aria-hidden="true"></span>
+              <span class="tvh-tlabel">The gesture</span>
+              <div class="tvh-tcard">
+                <h3>Act while it's early</h3>
+                <p>Act on the signal early, with a relevant gesture or offer, before a poor trip becomes a lost customer.</p>
+              </div>
+            </div>
+            <div class="tvh-tstop">
+              <span class="tvh-tdot" aria-hidden="true"></span>
+              <span class="tvh-tlabel">The return</span>
+              <div class="tvh-tcard">
+                <h3>Rebooking intent returns</h3>
+                <p>Reach the traveler on an owned channel, timed to when rebooking intent is most likely to return.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHAT TRAVEL TEAMS DO ══════════════ -->
+<section class="section bg-muted/50" aria-labelledby="tvh-features-title">
+  <div class="container-page">
+    <div class="max-w-3xl" data-reveal>
+      <span class="tvh-numeral" aria-hidden="true">02</span>
+      <p class="eyebrow mt-4">What travel teams do with Fanfinity</p>
+      <h2 id="tvh-features-title" class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+        From scattered bookings to recognized, retained travelers
+      </h2>
+      <p class="mt-5 text-base leading-relaxed text-muted-foreground">
+        The connected platform, tuned to multi-brand travel, where a trip is researched in one
+        place and booked in another.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <article class="card card-hover" data-reveal>
+        <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">One guest across every brand</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Unify booking, loyalty, and app signals across brands and business units into a single
+          profile, so a returning traveler is recognized rather than treated as new.
+        </p>
+      </article>
+      <article class="card card-hover" data-reveal style="--reveal-delay:70ms">
+        <span class="icon-chip">{% include icon.html name="link" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">Online research, offline booking</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Connect the trip a traveler researches online to the booking they complete in a branch
+          or on the phone, so the research trail and the booking finally meet in one record.
+        </p>
+      </article>
+      <article class="card card-hover" data-reveal style="--reveal-delay:140ms">
+        <span class="icon-chip">{% include icon.html name="users" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">Segment by how people book</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Tell school holiday planners from weekend escapers, group organizers from solo
+          travelers, and act on those patterns in real time without an IT ticket.
+        </p>
+      </article>
+      <article class="card card-hover" data-reveal style="--reveal-delay:210ms">
+        <span class="icon-chip">{% include icon.html name="slider" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">Personalize the next trip</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Adapt destinations, upgrades, and offers to each traveler's history and intent, from
+          the first search onward.
+        </p>
+      </article>
+      <article class="card card-hover" data-reveal style="--reveal-delay:280ms">
+        <span class="icon-chip">{% include icon.html name="gift" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">Loyalty across every journey</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Base tiers and rewards on the resolved profile you own, carrying recognition across
+          trips, brands, and channels. (Richer gamified loyalty in Preview.)
+        </p>
+      </article>
+      <article class="card card-hover" data-reveal style="--reveal-delay:350ms">
+        <span class="icon-chip">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+        <h3 class="mt-5 text-lg font-semibold">Reach travelers pre, in, and post-trip</h3>
+        <p class="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+          Activate on WhatsApp, email, and push from the same profile at every stage of the journey.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MULTI-BRAND IDENTITY ══════════════ -->
+<section class="section" aria-labelledby="tvh-identity-title">
+  <div class="container-page">
+    <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-14">
+      <div class="lg:col-span-5" data-reveal>
+        <span class="tvh-numeral" aria-hidden="true">03</span>
+        <p class="eyebrow mt-4">The multi-brand identity use case</p>
+        <h2 id="tvh-identity-title" class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+          Recognize the traveler, not just the booking
+        </h2>
+        <p class="mt-5 text-base leading-relaxed text-muted-foreground">
+          Travel groups run many brands and sell across web, app, call center, and branch — and
+          the same person often researches in one and books in another. Fanfinity resolves those
+          signals into one profile you own, so segmentation, personalization, and loyalty work
+          across the whole portfolio rather than one brand at a time.
+        </p>
+        <a href="/platform/id" class="link-arrow mt-6 inline-flex">
+          See how identity works {% include icon.html name="arrow-right" class="h-4 w-4" %}
+        </a>
+      </div>
+
+      <div class="lg:col-span-7" data-reveal style="--reveal-delay:120ms">
+        <figure class="tvh-figure aspect-[16/9]">
+          <img src="/assets/img/solutions-travel.jpg" alt="An aircraft at an airport boarding gate" loading="lazy" decoding="async">
+          <figcaption class="tvh-figure-tag">Gate B12 · One guest, every channel</figcaption>
+        </figure>
+        <ul class="mt-7 space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              Recognize the traveler who researches online and books through a branch or call
+              center as one person.
+            </p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              Segment on real intent — school holiday planner versus weekend escaper, group
+              versus solo — as signals arrive.
+            </p>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="icon-chip-sm mt-0.5">{% include icon.html name="check" class="h-4 w-4" %}</span>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+              Personalize offers and retention journeys around that intent, across every brand
+              you operate.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% raw %}
+<script>
+(function () {
+  "use strict";
+  var root = document.getElementById("tvh-passport-app");
+  if (!root) return;
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var passport = document.getElementById("tvh-passport");
+  var stampzone = document.getElementById("tvh-stampzone");
+  var profile = document.getElementById("tvh-profile");
+  var flash = document.getElementById("tvh-flash");
+  var playBtn = document.getElementById("tvh-play");
+  var playLabel = document.getElementById("tvh-play-label");
+  var resetBtn = document.getElementById("tvh-reset");
+  var caption = document.getElementById("tvh-caption");
+  var capTitle = document.getElementById("tvh-caption-title");
+  var capSub = document.getElementById("tvh-caption-sub");
+  var stepBtns = Array.prototype.slice.call(root.querySelectorAll(".tvh-step"));
+  var rows = Array.prototype.slice.call(profile.querySelectorAll(".tvh-row"));
+
+  var STEPS = [
+    {
+      cap: "Stamp 01 · Researches online",
+      sub: "Amira compares school holiday flights on your site at 11pm. Anonymous browsing becomes declared intent the moment she signs in.",
+      val: "School holiday planner · 2 adults + 2 kids",
+      rot: -8, x: 6, y: 9, ink: "#7c4dff", kind: "plane", title: "RESEARCH", sub1: "WEB · SIGNED IN", code: "ST-01"
+    },
+    {
+      cap: "Stamp 02 · Books in-branch",
+      sub: "She walks into a high-street branch to pay. The offline booking joins the same record — the research trail and the booking finally meet.",
+      val: "Web research → in-branch booking",
+      rot: 6, x: 55, y: 13, ink: "#1e8a70", kind: "pin", title: "BOOKED", sub1: "BRANCH · CITY CTR", code: "ST-02"
+    },
+    {
+      cap: "Stamp 03 · Stays at Brand B",
+      sub: "The family checks in at a second brand in your portfolio, through its own app. Same person, new brand — the profile crosses over with her.",
+      val: "Family of 4 · adjoining rooms",
+      rot: -5, x: 9, y: 55, ink: "#854dff", kind: "bed", title: "STAY", sub1: "BRAND B · APP", code: "ST-03"
+    },
+    {
+      cap: "Stamp 04 · Scores the stay 4/10",
+      sub: "The post-stay survey lands: 4 out of 10. Linked to her full booking and behavioral history, the score is a warning you can act on.",
+      val: "4/10 · flag raised",
+      rot: 9, x: 57, y: 58, ink: "#c05a1e", kind: "star", title: "CSAT 4/10", sub1: "SURVEY · POST-STAY", code: "ST-04", alert: true
+    },
+    {
+      cap: "Stamp 05 · The win-back gesture",
+      sub: "A WhatsApp apology with a relevant family-upgrade gesture goes out on an owned channel — timed to when rebooking intent is most likely to return.",
+      val: "WhatsApp · family upgrade offer",
+      rot: -7, x: 30, y: 33, ink: "#7c4dff", kind: "chat", title: "WIN-BACK", sub1: "WHATSAPP · OWNED", code: "ST-05"
+    },
+    {
+      cap: "Stamp 06 · Books again",
+      sub: "Next half-term, Amira books again — recognized across every brand, tier and rewards carried over from the resolved profile you own.",
+      val: "Half-term · recognized · tier held",
+      rot: 4, x: 33, y: 74, ink: "#1e8a70", kind: "check", title: "REBOOKED", sub1: "APP · BRAND A", code: "ST-06"
+    }
+  ];
+
+  function stampSvg(s) {
+    var glyphs = {
+      plane: '<path d="M2 16l20-5-8-8 4-2 10 6 6-5c1.6-1.6 4.2 1 2.6 2.6l-5 6 6 10-2 4-8-8-5 20-2.4 1L14 20l-9 3-3-3 3-9z" fill="none" stroke="STROKE" stroke-width="2" stroke-linejoin="round"/>',
+      pin: '<path d="M20 10c0 6-8 14-8 14S4 16 4 10a8 8 0 1 1 16 0z" fill="none" stroke="STROKE" stroke-width="2"/><circle cx="12" cy="10" r="3" fill="none" stroke="STROKE" stroke-width="2"/>',
+      bed: '<path d="M3 18v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8M3 18h18M3 18v2m18-2v2M7 8V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2" fill="none" stroke="STROKE" stroke-width="2" stroke-linecap="round"/>',
+      star: '<path d="M12 3l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2-5.6-3.2-5.6 3.2 1.3-6.2L3 9.5l6.3-.7z" fill="none" stroke="STROKE" stroke-width="2" stroke-linejoin="round"/>',
+      chat: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z" fill="none" stroke="STROKE" stroke-width="2" stroke-linejoin="round"/>',
+      check: '<circle cx="12" cy="12" r="9" fill="none" stroke="STROKE" stroke-width="2"/><path d="M8 12.5l2.7 2.7L16.5 9" fill="none" stroke="STROKE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+    };
+    var g = (glyphs[s.kind] || glyphs.check).split("STROKE").join(s.ink);
+    return '<svg viewBox="0 0 96 96" role="img" aria-hidden="true">'
+      + '<g transform="rotate(' + s.rot + ' 48 48)">'
+      + '<circle cx="48" cy="48" r="43" fill="none" stroke="' + s.ink + '" stroke-width="2.4"/>'
+      + '<circle cx="48" cy="48" r="35.5" fill="none" stroke="' + s.ink + '" stroke-width="1" stroke-dasharray="2.5 3.5"/>'
+      + '<g transform="translate(36,29) scale(1)">' + g + '</g>'
+      + '<text x="48" y="68" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8.2" font-weight="700" letter-spacing="1.5" fill="' + s.ink + '">' + s.title + '</text>'
+      + '<text x="48" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="5.4" letter-spacing="1" fill="' + s.ink + '">' + s.sub1 + '</text>'
+      + '<text x="48" y="19.5" text-anchor="middle" font-family="ui-monospace, monospace" font-size="5" letter-spacing="1.4" fill="' + s.ink + '">FANFINITY · ' + s.code + '</text>'
+      + '</g></svg>';
+  }
+
+  /* Pre-build stamp elements on the passport */
+  var stampEls = STEPS.map(function (s) {
+    var el = document.createElement("span");
+    el.className = "tvh-stamp-svg";
+    el.style.left = s.x + "%";
+    el.style.top = s.y + "%";
+    el.innerHTML = stampSvg(s);
+    stampzone.appendChild(el);
+    return el;
+  });
+
+  var state = { step: -1, playing: false, timer: null };
+  var io = { visible: true };
+  var docVisible = true;
+  var waiters = [];
+
+  function flushWaiters() {
+    if (io.visible && docVisible && waiters.length) {
+      var fns = waiters.slice();
+      waiters.length = 0;
+      fns.forEach(function (fn) { fn(); });
+    }
+  }
+
+  function playWait(ms) {
+    return new Promise(function (resolve) {
+      function arm() {
+        if (io.visible && docVisible) {
+          state.timer = setTimeout(resolve, ms);
+        } else {
+          waiters.push(arm);
+        }
+      }
+      arm();
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      io.visible = entries[0].isIntersecting;
+      flushWaiters();
+    }, { threshold: 0.15 }).observe(root);
+  }
+  document.addEventListener("visibilitychange", function () {
+    docVisible = !document.hidden;
+    flushWaiters();
+  });
+
+  function setCaption(i) {
+    var title = i < 0 ? "The trip hasn't started" : STEPS[i].cap;
+    var sub = i < 0
+      ? "Press play — or tap any stamp — and watch the guest's passport fill in."
+      : STEPS[i].sub;
+    if (reduced) {
+      capTitle.textContent = title;
+      capSub.textContent = sub;
+      return;
+    }
+    caption.classList.add("tvh-swap");
+    setTimeout(function () {
+      capTitle.textContent = title;
+      capSub.textContent = sub;
+      caption.classList.remove("tvh-swap");
+    }, 200);
+  }
+
+  function updatePlayLabel() {
+    if (state.playing) { playLabel.textContent = "Pause"; return; }
+    if (state.step < 0) { playLabel.textContent = "Play the journey"; return; }
+    if (state.step >= STEPS.length - 1) { playLabel.textContent = "Replay the journey"; return; }
+    playLabel.textContent = "Resume the journey";
+  }
+
+  function flyStamp(i, done) {
+    var el = stampEls[i];
+    if (reduced) {
+      el.style.transition = "none";
+      el.style.opacity = "1";
+      done();
+      return;
+    }
+    /* Clone flies from the tapped button to the passport slot */
+    var fromEl = stepBtns[i];
+    var from = fromEl.getBoundingClientRect();
+    var rect = el.getBoundingClientRect();
+    var w = Math.max(rect.width, 1);
+    var clone = document.createElement("div");
+    clone.className = "tvh-fly";
+    clone.innerHTML = el.innerHTML;
+    clone.style.width = w + "px";
+    clone.style.transform = "translate(" + (from.left + from.width / 2 - w / 2) + "px," + (from.top + from.height / 2 - w / 2) + "px) scale(0.42) rotate(0deg)";
+    clone.style.opacity = "0.95";
+    document.body.appendChild(clone);
+    /* Force layout, then animate to target */
+    void clone.offsetWidth;
+    clone.style.transition = "transform .62s cubic-bezier(.3,.7,.25,1), opacity .62s ease";
+    clone.style.transform = "translate(" + rect.left + "px," + rect.top + "px) scale(1) rotate(0deg)";
+    var landed = false;
+    function land() {
+      if (landed) return;
+      landed = true;
+      clone.remove();
+      el.style.transition = "opacity .18s ease, transform .3s cubic-bezier(.2,1.4,.4,1)";
+      el.style.transform = "scale(1.22)";
+      el.style.opacity = "1";
+      setTimeout(function () { el.style.transform = "scale(1)"; }, 40);
+      done();
+    }
+    clone.addEventListener("transitionend", land, { once: true });
+    setTimeout(land, 800); /* safety */
+  }
+
+  function pulseFlash() {
+    if (reduced) return;
+    flash.classList.remove("tvh-go");
+    void flash.offsetWidth;
+    flash.classList.add("tvh-go");
+  }
+
+  function updateRow(i) {
+    var s = STEPS[i];
+    var row = rows[i];
+    row.querySelector("[data-v]").textContent = s.val;
+    row.classList.add("tvh-is-set");
+    row.classList.toggle("tvh-is-alert", !!s.alert);
+    row.classList.remove("tvh-is-new");
+    void row.offsetWidth;
+    row.classList.add("tvh-is-new");
+  }
+
+  function applyFinalIfDone() {
+    var done = state.step >= STEPS.length - 1;
+    passport.classList.toggle("tvh-is-done", done);
+    profile.classList.toggle("tvh-is-on", done);
+    profile.setAttribute("aria-hidden", done ? "false" : "true");
+  }
+
+  function activate(i) {
+    if (i <= state.step || i >= STEPS.length) return;
+    state.step = i;
+    stepBtns.forEach(function (b, bi) {
+      b.setAttribute("aria-pressed", bi === i ? "true" : "false");
+    });
+    setCaption(i);
+    flyStamp(i, function () {
+      updateRow(i);
+      pulseFlash();
+      applyFinalIfDone();
+      updatePlayLabel();
+    });
+  }
+
+  function stopPlaying() {
+    state.playing = false;
+    if (state.timer) { clearTimeout(state.timer); state.timer = null; }
+    updatePlayLabel();
+  }
+
+  function play() {
+    if (state.playing) { stopPlaying(); return; }
+    if (state.step >= STEPS.length - 1) { resetAll(); }
+    state.playing = true;
+    updatePlayLabel();
+    (function next() {
+      if (!state.playing) return;
+      if (state.step >= STEPS.length - 1) { stopPlaying(); return; }
+      activate(state.step + 1);
+      state.timer = null;
+      playWait(1500).then(function () {
+        if (state.playing) next();
+      });
+    })();
+  }
+
+  function resetAll() {
+    stopPlaying();
+    state.step = -1;
+    stepBtns.forEach(function (b) { b.setAttribute("aria-pressed", "false"); });
+    stampEls.forEach(function (el) {
+      el.style.transition = reduced ? "none" : "opacity .3s ease";
+      el.style.opacity = "0";
+      el.style.transform = "";
+    });
+    rows.forEach(function (row, ri) {
+      row.classList.remove("tvh-is-set", "tvh-is-alert", "tvh-is-new");
+      row.querySelector("[data-v]").textContent = ri === 0 ? "Listening…" : "—";
+    });
+    passport.classList.remove("tvh-is-done");
+    profile.classList.remove("tvh-is-on");
+    profile.setAttribute("aria-hidden", "true");
+    setCaption(-1);
+    updatePlayLabel();
+  }
+
+  stepBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      stopPlaying();
+      var i = parseInt(b.getAttribute("data-step"), 10);
+      if (i === state.step) { resetAll(); return; } /* toggle off */
+      /* Stepping backwards or skipping: rebuild up to i instantly, animate last */
+      if (i < state.step) { resetAll(); }
+      for (var k = state.step + 1; k < i; k++) {
+        state.step = k;
+        stampEls[k].style.transition = "none";
+        stampEls[k].style.opacity = "1";
+        updateRow(k);
+      }
+      activate(i);
+    });
+  });
+
+  playBtn.addEventListener("click", play);
+  resetBtn.addEventListener("click", resetAll);
+
+  updatePlayLabel();
+})();
+</script>
+{% endraw %}
 
 {% include cta-band.html
    heading="Recognize every traveler, retain them across every trip"

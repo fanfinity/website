@@ -5,69 +5,1193 @@ permalink: /solutions/retail
 title: Retail & E-commerce
 description: "For retail and e-commerce: stitch the same shopper across web, app, and in-store so one person stops being three anonymous records, then recover carts, suppress recent buyers, and reward loyalty from data you own."
 breadcrumb_parent: { title: Solutions, url: /solutions }
-resolution:
-  - { icon: identity, title: "One shopper, not three records", body: "Stitch online browsing, app activity, and in-store purchases into a single golden profile, so the same person stops appearing as three anonymous shoppers." }
-  - { icon: link,     title: "Web session to till receipt", body: "Connect a web session to a store purchase to a loyalty scan, so online and offline behavior finally meet in one record." }
-  - { icon: stack,    title: "First-party audiences, post-cookie", body: "Build durable, owned audiences from your own data instead of renting reach through third-party cookies you are about to lose." }
-  - { icon: slider,   title: "Personalize from the first visit", body: "Adapt offers and recommendations in real time for known and anonymous shoppers alike, before they have logged in." }
-  - { icon: gift,     title: "Loyalty on data you own", body: "Base tiers, points, and rewards on the resolved profile, with richer gamified loyalty experiences in Preview." }
-  - { icon: target,   title: "Stop paying to reach buyers", body: "Suppress people who just purchased and build lookalikes of your best shoppers, so paid media stops wasting spend." }
-basket_points:
-  - "Recognize an abandoned cart against the resolved profile, not just a browser or an email address."
-  - "Recover the sale with a reminder enriched by what that shopper has bought and browsed before."
-  - "Reach them on WhatsApp, email, or push from one profile, the moment the signal fires."
-  - "Suppress that shopper from acquisition ads once they convert, so budget goes to net-new demand."
-replenish_points:
-  - "Learn each shopper's repurchase rhythm from real purchase history, in store and online."
-  - "Time the reminder or offer to the moment a consumable is likely running low, not to a blanket send."
-  - "Recognize the same person whether the last purchase was a store visit or an app checkout."
-media_points:
-  - "Package consented shopper segments as addressable audiences vendor brands can buy."
-  - "Prove vendor campaigns with verified reach and outcomes on the same graph that ran them."
-  - "Keep every activation consent-scoped, so monetization never outruns permission."
 ---
-{% include hero.html
-   eyebrow="Solutions · Retail & E-commerce"
-   title="The same shopper should not be three anonymous records"
-   subtitle="Retail signals scatter across web, app, and store, so one person shows up as a browser, an order, and a loyalty card that never meet. Fanfinity stitches them into one profile you own, then helps you recover sales, reward loyalty, and spend ad budget on the right people, post-cookie."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/solutions-retail.jpg"
-   image_alt="A shopper carrying bags through a retail store" %}
 
-{% include value-pillars.html
-   eyebrow="Identity resolution"
-   heading="Stitch the shopper across every touch"
-   subheading="The unresolved shopper is the root cause of wasted spend, weak personalization, and loyalty that forgets people. Fanfinity fixes it at the data layer."
-   items=page.resolution %}
+<!-- ═══════════════ HERO — 1 shopper ≠ 3 records ═══════════════ -->
+<section class="rtl-hero">
+  <div class="rtl-hero-bars" aria-hidden="true"></div>
+  <div class="container-page relative">
+    <div class="grid items-center gap-12 py-14 md:py-20 lg:grid-cols-12">
+      <div class="lg:col-span-7" data-reveal>
+        <p class="eyebrow">Solutions · Retail &amp; E-commerce</p>
+        <h1 class="rtl-h1 mt-5">
+          The same shopper should not be
+          <span class="rtl-strike">three anonymous records<svg class="rtl-strike-line" viewBox="0 0 100 14" preserveAspectRatio="none" aria-hidden="true"><path d="M1 10 C 22 4, 46 13, 70 7 S 94 6, 99 8" fill="none" stroke="#9969ff" stroke-width="2.4" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span>
+          <span class="rtl-h1-gold">one golden profile.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-lg text-muted-foreground">Retail signals scatter across web, app, and store — so one person shows up as a browser, an order, and a loyalty card that never meet. Fanfinity stitches them into one golden profile you own, then helps you recover sales, reward loyalty, and spend ad budget on the right people, post-cookie.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/platform" class="btn btn-secondary btn-lg">Explore the platform</a>
+        </div>
+      </div>
+      <div class="lg:col-span-5" data-reveal style="--reveal-delay:120ms">
+        <div class="rtl-hero-fig" aria-hidden="true">
+          <p class="rtl-hero-fig-cap">SIGNALS IN · IDENTITY OUT</p>
+          <div class="rtl-hrow"><span>WEB · #c4f2</span><span class="rtl-hrow-dim">anonymous</span></div>
+          <div class="rtl-hrow"><span>APP · #9021</span><span class="rtl-hrow-dim">anonymous</span></div>
+          <div class="rtl-hrow"><span>STORE · #7731</span><span class="rtl-hrow-dim">anonymous</span></div>
+          <div class="rtl-harrow">↓ stitch ↓</div>
+          <div class="rtl-hgold"><span>FF-2841</span><span>one golden profile</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="rtl-ticker-wrap mask-fade-x" aria-hidden="true">
+    <div class="rtl-ticker animate-ticker">
+      <span>WEB SESSIONS · APP ORDERS · TILL RECEIPTS · LOYALTY SCANS · CART SIGNALS · SUPPRESSION EVENTS · WEB SESSIONS · APP ORDERS · TILL RECEIPTS · LOYALTY SCANS · CART SIGNALS · SUPPRESSION EVENTS · </span><span>WEB SESSIONS · APP ORDERS · TILL RECEIPTS · LOYALTY SCANS · CART SIGNALS · SUPPRESSION EVENTS · WEB SESSIONS · APP ORDERS · TILL RECEIPTS · LOYALTY SCANS · CART SIGNALS · SUPPRESSION EVENTS · </span>
+    </div>
+  </div>
+</section>
 
-{% include feature-split.html
-   title="Recover the sale, then stop paying to re-reach the buyer"
-   body="An abandoned basket is only recoverable if you can recognize the shopper behind it, and a converted shopper is only profitable if you stop buying ads to reach them again. Both depend on one resolved profile spanning browse, cart, purchase, and store, so recovery and suppression run off the same source of truth."
-   points=page.basket_points
-   cta_text="See how activation works"
-   cta_url="/platform/activate"
-   icon="target" %}
+<!-- ═══════════════ PLAYABLE CENTERPIECE — THE STITCH SCANNER ═══════════════ -->
+<section class="section" id="scanner" aria-labelledby="rtl-scanner-h">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal>
+      <p class="eyebrow">Playable · the root cause, fixed live</p>
+      <h2 id="rtl-scanner-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Scan a receipt. Watch three records become one shopper.</h2>
+      <p class="mt-4 text-muted-foreground">A working simulation of Fanfinity's resolution engine. Press <strong class="text-foreground">Scan</strong> — or tap the ticket itself. The first scan stitches three scattered records into one golden profile; every scan after that enriches it — recognition without duplicates, replenishment rhythm, cart recovery, and post-conversion suppression.</p>
+    </div>
 
-{% include feature-split.html
-   reverse=true
-   title="Reach the shopper when the product runs low, not on a blanket send"
-   body="For pharmacy, grocery, and health-and-beauty retail, much of the basket is consumable and repurchased on a rhythm. When online and in-store purchases resolve to one profile, replenishment becomes a timed, per-shopper prompt rather than a mass email, and it works whether the last purchase happened at a till or in the app."
-   points=page.replenish_points
-   cta_text="See how identity works"
-   cta_url="/platform/id"
-   icon="identity" %}
+    <div class="rtl-scanner mt-12" data-rtl-scanner data-reveal>
+      <!-- console top bar -->
+      <div class="rtl-topbar">
+        <span class="rtl-top-dot" aria-hidden="true"></span>
+        <span>RESOLUTION ENGINE · SIMULATION — DEMO DATA</span>
+        <span class="rtl-top-count" id="rtl-scan-count">SCAN 0 / 4</span>
+      </div>
 
-{% include feature-split.html
-   title="Your shopper data is inventory, when you can prove it"
-   body="Retail media only works if the audience is real and the outcome is measurable. Because shopper profiles are resolved, consented, and owned, you can offer vendor brands addressable segments and report exposure to outcome, the same proof loop our sports vertical gives sponsors."
-   points=page.media_points
-   cta_text="See how measurement works"
-   cta_url="/platform/measure"
-   icon="coins" %}
+      <div class="rtl-grid">
+        <!-- scattered anonymous records -->
+        <div class="rtl-signals">
+          <p class="rtl-col-label">Scattered signals · unresolved</p>
+          <div class="rtl-records">
+            <div class="rtl-record" data-pos="0">
+              <span class="rtl-record-icon">{% include icon.html name="broadcast" class="h-4 w-4" %}</span>
+              <span class="rtl-record-meta">
+                <span class="rtl-record-name">WEB SESSION</span>
+                <span class="rtl-record-id">#c4f2</span>
+              </span>
+              <span class="rtl-record-state">ANONYMOUS</span>
+            </div>
+            <div class="rtl-record" data-pos="1">
+              <span class="rtl-record-icon">{% include icon.html name="bolt" class="h-4 w-4" %}</span>
+              <span class="rtl-record-meta">
+                <span class="rtl-record-name">APP ORDER</span>
+                <span class="rtl-record-id">#9021</span>
+              </span>
+              <span class="rtl-record-state">ANONYMOUS</span>
+            </div>
+            <div class="rtl-record" data-pos="2">
+              <span class="rtl-record-icon">{% include icon.html name="identity" class="h-4 w-4" %}</span>
+              <span class="rtl-record-meta">
+                <span class="rtl-record-name">LOYALTY CARD</span>
+                <span class="rtl-record-id">#7731</span>
+              </span>
+              <span class="rtl-record-state">ANONYMOUS</span>
+            </div>
+          </div>
+          <p class="rtl-signals-note">One shopper. Three systems, three partial views — until a scan ties them together.</p>
+        </div>
+
+        <!-- scan bay -->
+        <div class="rtl-bay">
+          <p class="rtl-col-label">Scan bay</p>
+          <button type="button" class="rtl-receipt" id="rtl-receipt" aria-label="Scan the current signal ticket">
+            <span class="rtl-hint" aria-hidden="true">TAP TO SCAN</span>
+            <span class="rtl-ticket">
+              <span class="rtl-laser" aria-hidden="true"></span>
+              <span class="rtl-ticket-head" id="rtl-ticket-tag">TILL RECEIPT · #0482</span>
+              <span class="rtl-ticket-lines" id="rtl-ticket-lines">
+                <span class="rtl-tline"><span>OAT MILK 1L</span><span>2.40</span></span>
+                <span class="rtl-tline"><span>GRANOLA 500G</span><span>4.10</span></span>
+                <span class="rtl-tline"><span>COFFEE BEANS 250G</span><span>7.90</span></span>
+                <span class="rtl-tline rtl-tline-total"><span>TOTAL</span><span>14.40</span></span>
+              </span>
+              <span class="rtl-scanwin">
+                <span class="rtl-barcode" id="rtl-barcode"></span>
+                <span class="rtl-ticket-code" id="rtl-ticket-code">*0482*</span>
+              </span>
+            </span>
+            <svg class="rtl-zigzag" viewBox="0 0 300 10" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H300 L287.5 10 L275 0 L262.5 10 L250 0 L237.5 10 L225 0 L212.5 10 L200 0 L187.5 10 L175 0 L162.5 10 L150 0 L137.5 10 L125 0 L112.5 10 L100 0 L87.5 10 L75 0 L62.5 10 L50 0 L37.5 10 L25 0 L12.5 10 L0 0 Z"/></svg>
+          </button>
+          <div class="rtl-controls">
+            <button type="button" class="rtl-btn-scan" id="rtl-scan-btn">
+              <svg class="rtl-scan-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2M3 12h18"/></svg>
+              <span id="rtl-scan-label">Scan the till receipt</span>
+            </button>
+            <button type="button" class="rtl-btn-reset" id="rtl-reset-btn">Reset</button>
+          </div>
+        </div>
+
+        <!-- golden profile -->
+        <div class="rtl-profile-col">
+          <p class="rtl-col-label">Resolved profile</p>
+          <div class="rtl-profile is-empty" id="rtl-profile">
+            <div class="rtl-profile-head">
+              <span class="rtl-avatar" id="rtl-avatar">?</span>
+              <div class="rtl-profile-id">
+                <p class="rtl-profile-name" id="rtl-profile-name">No golden record yet</p>
+                <p class="rtl-profile-sub" id="rtl-profile-sub">scan a signal to resolve</p>
+              </div>
+              <span class="rtl-profile-badge">GOLDEN RECORD</span>
+            </div>
+            <dl class="rtl-fields">
+              <div class="rtl-field" data-field="channels"><dt>CHANNELS LINKED</dt><dd class="rtl-fval rtl-fval-pending">awaiting signal</dd></div>
+              <div class="rtl-field" data-field="last"><dt>LAST SIGNAL</dt><dd class="rtl-fval rtl-fval-pending">awaiting signal</dd></div>
+              <div class="rtl-field" data-field="rhythm"><dt>REPURCHASE RHYTHM</dt><dd class="rtl-fval rtl-fval-pending">awaiting signal</dd></div>
+              <div class="rtl-field" data-field="cart"><dt>CART SIGNAL</dt><dd class="rtl-fval rtl-fval-pending">awaiting signal</dd></div>
+            </dl>
+            <div class="rtl-suppress" id="rtl-suppress">
+              <span class="rtl-sup-dot" aria-hidden="true"></span>
+              <span id="rtl-suppress-label">ACQUISITION ADS · ACTIVE</span>
+              <span class="rtl-sup-state" id="rtl-suppress-state">spending</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- engine log -->
+      <div class="rtl-log" id="rtl-log" role="log" aria-label="Scan event log">
+        <p class="rtl-log-line"><span class="rtl-log-g">&gt; </span>engine ready · 3 unresolved signals detected</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ROOT CAUSE — IDENTITY RESOLUTION INDEX ═══════════════ -->
+<section class="section rtl-band" id="identity" aria-labelledby="rtl-res-h">
+  <div class="container-page">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-24" data-reveal>
+          <p class="eyebrow">Identity resolution</p>
+          <h2 id="rtl-res-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Stitch the shopper across every touch</h2>
+          <p class="mt-4 text-muted-foreground">The unresolved shopper is the root cause of wasted spend, weak personalization, and loyalty that forgets people. Fanfinity fixes it at the data layer.</p>
+          <div class="rtl-rc-fig" aria-hidden="true">
+            <div class="rtl-rc-side">
+              <span class="rtl-rc-big">1</span>
+              <span class="rtl-rc-cap">shopper</span>
+            </div>
+            <span class="rtl-rc-neq">≠</span>
+            <div class="rtl-rc-side rtl-rc-dim">
+              <span class="rtl-rc-big">3</span>
+              <span class="rtl-rc-cap">anonymous records</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="rtl-idx-row" data-reveal>
+          <span class="rtl-idx-num" aria-hidden="true">01</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">One shopper, not three records</h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Stitch online browsing, app activity, and in-store purchases into a single golden profile, so the same person stops appearing as three anonymous shoppers.</p>
+          </div>
+        </div>
+        <div class="rtl-idx-row" data-reveal>
+          <span class="rtl-idx-num" aria-hidden="true">02</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="link" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">Web session to till receipt</h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Connect a web session to a store purchase to a loyalty scan, so online and offline behavior finally meet in one record.</p>
+          </div>
+        </div>
+        <div class="rtl-idx-row" data-reveal>
+          <span class="rtl-idx-num" aria-hidden="true">03</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="stack" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">First-party audiences, post-cookie</h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Build durable, owned audiences from your own data instead of renting reach through third-party cookies you are about to lose.</p>
+          </div>
+        </div>
+        <div class="rtl-idx-row" data-reveal>
+          <span class="rtl-idx-num" aria-hidden="true">04</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="slider" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">Personalize from the first visit</h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Adapt offers and recommendations in real time for known and anonymous shoppers alike, before they have logged in.</p>
+          </div>
+        </div>
+        <div class="rtl-idx-row" data-reveal>
+          <span class="rtl-idx-num" aria-hidden="true">05</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="gift" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">Loyalty on data you own <span class="badge">(Preview)</span></h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Base tiers, points, and rewards on the resolved profile, with richer gamified loyalty experiences in Preview.</p>
+          </div>
+        </div>
+        <div class="rtl-idx-row" data-reveal style="border-bottom:1px solid var(--color-border)">
+          <span class="rtl-idx-num" aria-hidden="true">06</span>
+          <div>
+            <div class="flex items-center gap-3">
+              <span class="icon-chip-sm">{% include icon.html name="target" class="h-5 w-5" %}</span>
+              <h3 class="text-lg font-semibold">Stop paying to reach buyers</h3>
+            </div>
+            <p class="mt-2 text-muted-foreground">Suppress people who just purchased and build lookalikes of your best shoppers, so paid media stops wasting spend.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ USE CASE 01 — CART RECOVERY + SUPPRESSION ═══════════════ -->
+<section class="section" id="cart-recovery" aria-labelledby="rtl-uc1-h">
+  <div class="container-page">
+    <div class="grid items-start gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5" data-reveal>
+        <p class="eyebrow">The cart recovery use case</p>
+        <h2 id="rtl-uc1-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Recover the sale, then stop paying to reach the buyer again</h2>
+        <p class="mt-4 text-muted-foreground">An abandoned basket is only recoverable if you can recognize the shopper behind it, and a converted shopper is only profitable if you stop buying ads to reach them again. Both depend on one resolved profile spanning browse, cart, purchase, and store — so recovery and suppression run off the same source of truth.</p>
+        <a href="/platform/activate" class="link-arrow mt-6">See how activation works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+      <div class="lg:col-span-7" data-reveal style="--reveal-delay:120ms">
+        <ol class="rtl-rail-list">
+          <li class="rtl-node">
+            <span class="rtl-marker" aria-hidden="true">01</span>
+            <div><p class="rtl-node-tag">ABANDON</p><p class="rtl-node-cap">A basket is left behind — in the web shop or in the app.</p></div>
+          </li>
+          <li class="rtl-node">
+            <span class="rtl-marker" aria-hidden="true">02</span>
+            <div><p class="rtl-node-tag">RECOGNIZE</p><p class="rtl-node-cap">Recognize the abandoned cart against the resolved profile, not just a browser or an email address.</p></div>
+          </li>
+          <li class="rtl-node">
+            <span class="rtl-marker" aria-hidden="true">03</span>
+            <div><p class="rtl-node-tag">RECOVER</p><p class="rtl-node-cap">Recover the sale with a reminder enriched by what that shopper has bought and browsed before.</p></div>
+          </li>
+          <li class="rtl-node">
+            <span class="rtl-marker" aria-hidden="true">04</span>
+            <div><p class="rtl-node-tag">REACH</p><p class="rtl-node-cap">Reach them on WhatsApp, email, or push from one profile, the moment the signal fires.</p></div>
+          </li>
+          <li class="rtl-node">
+            <span class="rtl-marker" aria-hidden="true">05</span>
+            <div><p class="rtl-node-tag">CONVERT</p><p class="rtl-node-cap">The shopper checks out — the same profile closes the loop.</p></div>
+          </li>
+          <li class="rtl-node rtl-node-final">
+            <span class="rtl-marker" aria-hidden="true">06</span>
+            <div>
+              <p class="rtl-node-tag">SUPPRESS</p>
+              <p class="rtl-node-cap">Suppress that shopper from acquisition ads once they convert, so budget goes to net-new demand.</p>
+              <span class="rtl-node-pill">SUPPRESSION ON</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ USE CASE 02 — REPLENISHMENT RHYTHM ═══════════════ -->
+<section class="section" id="replenishment" aria-labelledby="rtl-uc2-h" style="padding-top:0">
+  <div class="container-page">
+    <div class="grid items-start gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5 lg:order-2" data-reveal>
+        <p class="eyebrow">The replenishment use case</p>
+        <h2 id="rtl-uc2-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Reach the shopper when the product runs low, not on a blanket send</h2>
+        <p class="mt-4 text-muted-foreground">For pharmacy, grocery, and health-and-beauty retail, much of the basket is consumable and repurchased on a rhythm. When online and in-store purchases resolve to one profile, replenishment becomes a prompt timed to each shopper rather than a mass email — and it works whether the last purchase happened at a till or in the app.</p>
+        <a href="/platform/id" class="link-arrow mt-6">See how identity works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+      <div class="lg:col-span-7 lg:order-1" data-reveal style="--reveal-delay:120ms">
+        <div class="rtl-chart">
+          <p class="rtl-chart-title">REPURCHASE RHYTHM · ONE SHOPPER · 40 DAYS</p>
+          <p class="rtl-chart-sub">Learned from real purchase history — the till and the app agree on one rhythm.</p>
+          <div class="rtl-track-wrap" aria-hidden="true">
+            <div class="rtl-track">
+              <div class="rtl-window" style="left:82.5%;width:11%">
+                <span class="rtl-window-tag">{% include icon.html name="bell" class="h-3 w-3" %} REMINDER WINDOW</span>
+              </div>
+              <div class="rtl-blanket" style="left:37.5%">
+                <span class="rtl-blanket-tag">BLANKET SEND</span>
+              </div>
+              <div class="rtl-mark rtl-mark-first" style="left:0%">
+                <span class="rtl-mark-tag"><b>DAY 0</b>STORE</span>
+                <span class="rtl-diamond"></span>
+              </div>
+              <div class="rtl-mark" style="left:30%">
+                <span class="rtl-mark-tag"><b>DAY 12</b>APP</span>
+                <span class="rtl-diamond"></span>
+              </div>
+              <div class="rtl-mark" style="left:60%">
+                <span class="rtl-mark-tag"><b>DAY 24</b>STORE</span>
+                <span class="rtl-diamond"></span>
+              </div>
+              <div class="rtl-axis"></div>
+            </div>
+            <div class="rtl-days"><span>DAY 0</span><span>8</span><span>16</span><span>24</span><span>32</span><span>40</span></div>
+          </div>
+          <p class="sr-only">Rhythm chart: this shopper buys the same consumable again roughly every twelve days — day 0 in store, day 12 in the app, day 24 in store. A reminder window opens around day 33, when the product is likely running low, instead of a blanket send on day 15 that ignores the shopper's rhythm.</p>
+          <ul class="rtl-checks">
+            <li>{% include icon.html name="check" class="h-4 w-4" %}<span>Learn each shopper's repurchase rhythm from real purchase history, in store and online.</span></li>
+            <li>{% include icon.html name="check" class="h-4 w-4" %}<span>Time the reminder or offer to the moment a consumable is likely running low, not to a blanket send.</span></li>
+            <li>{% include icon.html name="check" class="h-4 w-4" %}<span>Recognize the same person whether the last purchase was a store visit or an app checkout.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ USE CASE 03 — RETAIL MEDIA PROOF LOOP ═══════════════ -->
+<section class="section" id="retail-media" aria-labelledby="rtl-uc3-h" style="padding-top:0">
+  <div class="container-page">
+    <div class="grid items-start gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5" data-reveal>
+        <p class="eyebrow">The retail media use case</p>
+        <h2 id="rtl-uc3-h" class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Your shopper data is inventory, when you can prove it</h2>
+        <p class="mt-4 text-muted-foreground">Retail media only works if the audience is real and the outcome is measurable. Because shopper profiles are resolved, consented, and owned, you can offer vendor brands addressable segments and report exposure to outcome — the same proof loop our sports vertical gives sponsors.</p>
+        <a href="/platform/measure" class="link-arrow mt-6">See how measurement works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </div>
+      <div class="lg:col-span-7" data-reveal style="--reveal-delay:120ms">
+        <div class="rtl-loop-stage">
+          <svg class="rtl-loop-ring" viewBox="0 0 300 300" aria-hidden="true">
+            <g class="rtl-loop-spin">
+              <circle cx="150" cy="150" r="108" fill="none" stroke-width="1" stroke-dasharray="2 7"/>
+              <path d="M146 34 L158 41 L146 48 Z"/>
+              <path d="M252 146 L259 158 L266 146 Z" transform="rotate(90 259 150)"/>
+              <path d="M146 252 L158 259 L146 266 Z" transform="rotate(180 150 259)"/>
+              <path d="M34 146 L41 158 L48 146 Z" transform="rotate(270 41 150)"/>
+            </g>
+          </svg>
+          <div class="rtl-loop-grid">
+            <div class="rtl-lnode">
+              <span class="rtl-lnum">01</span>
+              <span class="icon-chip-sm">{% include icon.html name="users" class="h-5 w-5" %}</span>
+              <h3>Consented segments</h3>
+              <p>Package consented shopper segments as addressable audiences vendor brands can buy.</p>
+            </div>
+            <div class="rtl-lnode">
+              <span class="rtl-lnum">02</span>
+              <span class="icon-chip-sm">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+              <h3>Vendor campaigns</h3>
+              <p>Vendor brands activate those audiences against real, resolved shoppers.</p>
+            </div>
+            <div class="rtl-lnode">
+              <span class="rtl-lnum">03</span>
+              <span class="icon-chip-sm">{% include icon.html name="gauge" class="h-5 w-5" %}</span>
+              <h3>Verified reach</h3>
+              <p>Reach is verified against resolved profiles, not modeled panels.</p>
+            </div>
+            <div class="rtl-lnode">
+              <span class="rtl-lnum">04</span>
+              <span class="icon-chip-sm">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+              <h3>Outcome report</h3>
+              <p>Prove vendor campaigns with verified reach and outcomes on the same graph that ran them.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rtl-consent">
+          <span class="icon-chip-sm">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+          <p>Keep every activation scoped to consent, so monetization never outruns permission.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% include cta-band.html
    heading="Know every shopper, personalize every journey"
    text="See how Fanfinity stitches shoppers across online and offline, recovers carts, and rewards loyalty from data you own. Book a walkthrough across your online and offline data." %}
+
+{% raw %}
+<style>
+/* ═══ Retail & E-commerce page — scoped styles (.rtl-) ═══ */
+
+/* ── Hero ─────────────────────────────────────────────── */
+.rtl-hero { position: relative; overflow: hidden; background-color: var(--color-background); }
+.rtl-hero-bars {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(124, 77, 255, 0.055) 0 2px, transparent 2px 9px),
+    repeating-linear-gradient(90deg, rgba(124, 77, 255, 0.035) 0 4px, transparent 4px 21px);
+  -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 55%);
+          mask-image: linear-gradient(to left, #000 0%, transparent 55%);
+}
+html.dark .rtl-hero-bars {
+  background-image:
+    repeating-linear-gradient(90deg, rgba(153, 105, 255, 0.07) 0 2px, transparent 2px 9px),
+    repeating-linear-gradient(90deg, rgba(153, 105, 255, 0.045) 0 4px, transparent 4px 21px);
+}
+.rtl-h1 { font-size: clamp(2.5rem, 5.2vw, 3.9rem); line-height: 1.04; letter-spacing: -0.02em; }
+.rtl-strike { position: relative; white-space: nowrap; color: var(--color-muted-foreground); }
+.rtl-strike-line { position: absolute; left: -1%; bottom: 0.04em; width: 102%; height: 0.3em; }
+.rtl-h1-gold { color: #8f6d12; }
+html.dark .rtl-h1-gold { color: #e3c566; }
+
+.rtl-hero-fig {
+  background: var(--color-card); border: 1px solid var(--color-border);
+  border-radius: 1.25rem; padding: 1.1rem; transform: rotate(1.4deg);
+  box-shadow: 0 24px 60px -30px rgba(53, 16, 112, 0.25);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.72rem;
+  max-width: 24rem;
+}
+.rtl-hero-fig-cap { font-size: 0.6rem; letter-spacing: 0.2em; color: var(--color-muted-foreground); margin: 0 0 0.7rem; }
+.rtl-hrow { display: flex; justify-content: space-between; gap: 0.75rem; border: 1px dashed var(--color-border); border-radius: 0.6rem; padding: 0.5rem 0.7rem; margin-top: 0.45rem; color: var(--color-foreground); }
+.rtl-hrow-dim { color: var(--color-muted-foreground); }
+.rtl-harrow { text-align: center; color: #7c4dff; padding: 0.45rem 0 0.1rem; letter-spacing: 0.22em; font-size: 0.6rem; }
+.rtl-hgold {
+  display: flex; justify-content: space-between; gap: 0.75rem; border-radius: 0.6rem; padding: 0.6rem 0.7rem; margin-top: 0.35rem;
+  border: 1px solid rgba(180, 142, 38, 0.55); background: rgba(201, 162, 39, 0.10); color: #7a5f0e; font-weight: 600;
+}
+html.dark .rtl-hgold { color: #e3c566; border-color: rgba(217, 182, 74, 0.5); background: rgba(217, 182, 74, 0.10); }
+
+.rtl-ticker-wrap { border-top: 1px solid var(--color-border); overflow: hidden; }
+.rtl-ticker {
+  display: flex; white-space: nowrap; width: max-content; padding: 0.7rem 0;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.64rem; letter-spacing: 0.3em; color: var(--color-muted-foreground); opacity: 0.8;
+}
+.rtl-ticker span { padding-right: 2rem; }
+
+/* ── Scanner module (always-dark device panel) ────────── */
+.rtl-scanner {
+  --rtl-gold: #d9b64a;
+  --rtl-gold-ink: #241a02;
+  --rtl-paper: #fbf6e9;
+  --rtl-paper-ink: #241b31;
+  position: relative;
+  border-radius: 2rem;
+  background:
+    radial-gradient(80% 90% at 50% -10%, rgba(124, 77, 255, 0.16), transparent 55%),
+    linear-gradient(180deg, #150e20, #0d0913);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f3eefb;
+  box-shadow: 0 30px 80px -40px rgba(53, 16, 112, 0.45);
+  overflow: hidden;
+}
+.rtl-topbar {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.6rem; letter-spacing: 0.18em; color: rgba(243, 238, 251, 0.55);
+}
+.rtl-top-dot { width: 7px; height: 7px; border-radius: 999px; background: var(--rtl-gold); box-shadow: 0 0 8px rgba(217, 182, 74, 0.9); flex: none; }
+.rtl-top-count { margin-left: auto; color: rgba(243, 238, 251, 0.75); }
+
+.rtl-grid { display: grid; gap: 1.5rem; padding: 1.4rem; }
+@media (min-width: 1024px) {
+  .rtl-grid { grid-template-columns: 1fr 1.1fr 1fr; gap: 1.75rem; padding: 1.75rem; align-items: start; }
+}
+.rtl-col-label {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(243, 238, 251, 0.42); margin: 0 0 0.65rem;
+}
+
+/* scattered records */
+.rtl-records { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.6rem; }
+@media (min-width: 1024px) { .rtl-records { grid-template-columns: 1fr; gap: 0.9rem; } }
+.rtl-record {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+  border: 1px dashed rgba(255, 255, 255, 0.22); background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem; padding: 0.7rem 0.75rem;
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), border-color 0.4s, background 0.4s, box-shadow 0.4s;
+}
+.rtl-record[data-pos="0"] { transform: rotate(-2deg) translateY(2px); }
+.rtl-record[data-pos="1"] { transform: rotate(1.6deg); }
+.rtl-record[data-pos="2"] { transform: rotate(-1.4deg) translateY(-2px); }
+.rtl-record.is-linked {
+  transform: none; border-style: solid; border-color: rgba(217, 182, 74, 0.55);
+  background: rgba(217, 182, 74, 0.07);
+  box-shadow: 0 0 0 1px rgba(217, 182, 74, 0.12), 0 12px 30px -18px rgba(217, 182, 74, 0.55);
+}
+.rtl-record-icon {
+  display: grid; place-items: center; width: 1.7rem; height: 1.7rem; flex: none;
+  border-radius: 0.55rem; background: rgba(153, 105, 255, 0.14); color: #c4aaff;
+}
+.rtl-record.is-linked .rtl-record-icon { background: rgba(217, 182, 74, 0.16); color: var(--rtl-gold); }
+.rtl-record-meta { display: flex; flex-direction: column; min-width: 0; }
+.rtl-record-name { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.56rem; letter-spacing: 0.12em; color: #f3eefb; }
+.rtl-record-id { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.56rem; color: rgba(243, 238, 251, 0.45); }
+.rtl-record-state {
+  display: none; margin-left: auto;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.5rem; letter-spacing: 0.16em;
+  border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; padding: 0.14rem 0.45rem;
+  color: rgba(243, 238, 251, 0.5);
+}
+@media (min-width: 640px) { .rtl-record-state { display: inline-block; } }
+.rtl-record.is-linked .rtl-record-state { border-color: rgba(217, 182, 74, 0.55); color: var(--rtl-gold); }
+.rtl-signals-note { margin: 0.9rem 0 0; font-size: 0.78rem; line-height: 1.6; color: rgba(243, 238, 251, 0.5); }
+.rtl-rec-pulse { animation: rtl-recpulse 0.7s ease-out 1; }
+@keyframes rtl-recpulse { 0% { box-shadow: 0 0 0 0 rgba(217, 182, 74, 0.5); } 100% { box-shadow: 0 0 0 14px rgba(217, 182, 74, 0); } }
+
+/* scan bay + receipt ticket */
+.rtl-bay { text-align: center; }
+.rtl-receipt { position: relative; display: inline-block; width: min(100%, 19rem); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; -webkit-tap-highlight-color: transparent; }
+.rtl-receipt:disabled { cursor: default; }
+.rtl-ticket {
+  display: block; position: relative;
+  background: var(--rtl-paper); color: var(--rtl-paper-ink);
+  border-radius: 0.8rem 0.8rem 0 0; padding: 1rem 1.1rem 0.9rem;
+  box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  transition: transform 0.3s ease;
+}
+.rtl-receipt:not(:disabled):hover .rtl-ticket { transform: translateY(-2px); }
+.rtl-hint {
+  position: absolute; z-index: 2; top: 0.5rem; right: 0.4rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.52rem; letter-spacing: 0.14em; font-weight: 700;
+  background: var(--rtl-gold); color: var(--rtl-gold-ink);
+  border-radius: 999px; padding: 0.2rem 0.55rem; pointer-events: none;
+}
+.rtl-scanner.rtl-inview .rtl-hint { animation: rtl-hintpulse 2.4s ease-in-out infinite; }
+@keyframes rtl-hintpulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 182, 74, 0.55); }
+  55% { box-shadow: 0 0 0 10px rgba(217, 182, 74, 0); }
+}
+.rtl-ticket-head { display: block; font-size: 0.66rem; letter-spacing: 0.16em; font-weight: 700; border-bottom: 1px dashed rgba(36, 27, 49, 0.35); padding-bottom: 0.5rem; padding-right: 5.2rem; }
+.rtl-ticket-lines { display: block; padding: 0.5rem 0 0.3rem; transition: opacity 0.22s ease; }
+.rtl-ticket-lines.is-flipping { opacity: 0; }
+.rtl-tline { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.68rem; line-height: 1.9; }
+.rtl-tline-total { font-weight: 700; border-top: 1px dashed rgba(36, 27, 49, 0.35); margin-top: 0.3rem; padding-top: 0.3rem; }
+.rtl-scanwin { display: block; position: relative; margin-top: 0.35rem; }
+.rtl-barcode { display: flex; align-items: stretch; height: 2.6rem; color: var(--rtl-paper-ink); }
+.rtl-barcode:empty {
+  background-image: repeating-linear-gradient(90deg, var(--rtl-paper-ink) 0 2px, transparent 2px 5px, var(--rtl-paper-ink) 5px 8px, transparent 8px 13px);
+}
+.rtl-bar { display: block; height: 100%; background: currentColor; margin-right: 1px; }
+.rtl-bar-1 { width: 1px; } .rtl-bar-2 { width: 2px; } .rtl-bar-3 { width: 3px; } .rtl-bar-4 { width: 5px; }
+.rtl-bar-gap { margin-right: 4px; }
+.rtl-ticket-code { display: block; text-align: center; font-size: 0.6rem; letter-spacing: 0.4em; margin-top: 0.35rem; }
+.rtl-zigzag { display: block; width: 100%; height: 10px; margin-top: -1px; fill: var(--rtl-paper); filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3)); }
+
+.rtl-laser {
+  position: absolute; top: -4px; bottom: -4px; left: 0; width: 3px; border-radius: 2px;
+  opacity: 0; pointer-events: none; z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 80, 70, 0), #ff5046 18%, #ff5046 82%, rgba(255, 80, 70, 0));
+  box-shadow: 0 0 14px 3px rgba(255, 80, 70, 0.5);
+}
+.rtl-scanner.is-scanning .rtl-laser { animation: rtl-sweep 0.9s cubic-bezier(0.4, 0, 0.3, 1) 1; }
+@keyframes rtl-sweep {
+  0% { opacity: 0; transform: translateX(2px); }
+  10% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(var(--rtl-sweep-dist, 260px)); }
+}
+
+.rtl-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.7rem; margin-top: 1.15rem; }
+.rtl-btn-scan {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--rtl-gold); color: var(--rtl-gold-ink); font-weight: 600; font-size: 0.9rem;
+  border: 0; border-radius: 999px; padding: 0.72rem 1.3rem; cursor: pointer;
+  box-shadow: 0 10px 30px -10px rgba(217, 182, 74, 0.55);
+  transition: transform 0.15s ease, background 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.rtl-btn-scan:hover:not(:disabled) { transform: translateY(-1px); background: #e6c669; }
+.rtl-btn-scan:disabled { opacity: 0.45; cursor: not-allowed; box-shadow: none; }
+.rtl-scan-ico { width: 1rem; height: 1rem; }
+.rtl-btn-reset {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(243, 238, 251, 0.55); background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 999px; padding: 0.55rem 0.95rem; cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+}
+.rtl-btn-reset:hover:not(:disabled) { color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.rtl-btn-reset:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* golden profile */
+.rtl-profile {
+  border-radius: 1.25rem; border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03); padding: 1rem;
+  transition: border-color 0.5s, background 0.5s;
+}
+.rtl-profile:not(.is-empty) {
+  border-color: rgba(217, 182, 74, 0.5);
+  background: linear-gradient(180deg, rgba(217, 182, 74, 0.10), rgba(217, 182, 74, 0.03));
+}
+.rtl-profile-head { display: flex; align-items: center; gap: 0.7rem; }
+.rtl-avatar {
+  display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 999px; flex: none;
+  background: linear-gradient(135deg, #e3c566, #b8912a); color: var(--rtl-gold-ink);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-weight: 700; font-size: 0.8rem;
+  transition: background 0.4s, color 0.4s;
+}
+.rtl-profile-id { min-width: 0; }
+.rtl-profile-name { margin: 0; font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 1.02rem; color: #f3eefb; }
+.rtl-profile-sub { margin: 0.1rem 0 0; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.58rem; letter-spacing: 0.08em; color: rgba(243, 238, 251, 0.5); }
+.rtl-profile-badge {
+  margin-left: auto; align-self: flex-start; flex: none;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.5rem; letter-spacing: 0.16em; font-weight: 700;
+  color: var(--rtl-gold-ink); background: var(--rtl-gold); border-radius: 999px; padding: 0.2rem 0.5rem;
+  transition: opacity 0.4s;
+}
+.rtl-profile.is-empty .rtl-avatar { background: rgba(255, 255, 255, 0.08); color: rgba(243, 238, 251, 0.4); }
+.rtl-profile.is-empty .rtl-profile-badge { opacity: 0.18; }
+.rtl-profile.is-empty .rtl-profile-name { color: rgba(243, 238, 251, 0.55); }
+.rtl-fields { margin: 0.9rem 0 0; display: grid; gap: 0.55rem; }
+.rtl-field { border-top: 1px dashed rgba(255, 255, 255, 0.10); padding-top: 0.5rem; border-radius: 0.4rem; opacity: 0.38; transition: opacity 0.4s; }
+.rtl-field.is-on { opacity: 1; }
+.rtl-field dt { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.56rem; letter-spacing: 0.18em; color: rgba(243, 238, 251, 0.5); }
+.rtl-field dd { margin: 0.15rem 0 0; font-size: 0.82rem; color: #f3eefb; }
+.rtl-fval-pending { font-style: italic; color: rgba(243, 238, 251, 0.35); }
+.rtl-suppress {
+  display: flex; align-items: center; gap: 0.55rem; margin-top: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 0.8rem; padding: 0.6rem 0.75rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.6rem; letter-spacing: 0.1em;
+  color: rgba(243, 238, 251, 0.75);
+  transition: border-color 0.4s, background 0.4s, color 0.4s;
+}
+.rtl-sup-dot { width: 8px; height: 8px; border-radius: 999px; background: #4ade80; box-shadow: 0 0 8px rgba(74, 222, 128, 0.7); flex: none; transition: background 0.4s, box-shadow 0.4s; }
+.rtl-suppress.is-on { border-color: rgba(217, 182, 74, 0.55); background: rgba(217, 182, 74, 0.10); color: #ecd58a; }
+.rtl-suppress.is-on .rtl-sup-dot { background: var(--rtl-gold); box-shadow: 0 0 8px rgba(217, 182, 74, 0.8); }
+.rtl-sup-state { margin-left: auto; color: rgba(243, 238, 251, 0.45); }
+.rtl-suppress.is-on .rtl-sup-state { color: #ecd58a; }
+
+/* flying ghosts */
+.rtl-ghost {
+  position: absolute; z-index: 40; pointer-events: none;
+  transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform, opacity;
+}
+.rtl-ghost-label {
+  display: inline-block; border-radius: 0.7rem; padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(217, 182, 74, 0.6); background: rgba(28, 20, 8, 0.94);
+  color: #ecd58a; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.58rem; letter-spacing: 0.12em; white-space: nowrap;
+  box-shadow: 0 8px 24px -8px rgba(217, 182, 74, 0.6);
+}
+
+/* flashes */
+.rtl-profile-flash { animation: rtl-goldflash 1s ease-out 1; }
+@keyframes rtl-goldflash { 0% { box-shadow: 0 0 0 0 rgba(217, 182, 74, 0.55); } 100% { box-shadow: 0 0 0 26px rgba(217, 182, 74, 0); } }
+.rtl-flash { animation: rtl-fieldflash 1.1s ease-out 1; }
+@keyframes rtl-fieldflash { 0% { background: rgba(217, 182, 74, 0.22); } 100% { background: transparent; } }
+
+/* engine log */
+.rtl-log {
+  border-top: 1px solid rgba(255, 255, 255, 0.08); background: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 2rem 2rem; padding: 0.8rem 1.25rem 1rem;
+  max-height: 9rem; overflow-y: auto;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.68rem; line-height: 1.85;
+}
+.rtl-log-line { color: rgba(243, 238, 251, 0.7); margin: 0; }
+.rtl-log-line b { color: var(--rtl-gold); font-weight: 600; }
+.rtl-log-g { color: var(--rtl-gold); }
+.rtl-log-new { animation: rtl-login 0.4s ease-out 1; }
+@keyframes rtl-login { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ── Root-cause band + index ──────────────────────────── */
+.rtl-band { background: var(--color-muted); }
+.rtl-rc-fig { display: flex; align-items: flex-end; gap: 1rem; margin-top: 2.25rem; }
+.rtl-rc-side { display: flex; flex-direction: column; }
+.rtl-rc-big {
+  font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; font-weight: 700;
+  font-size: clamp(3.4rem, 6vw, 5rem); line-height: 0.9; color: var(--color-foreground);
+}
+.rtl-rc-dim .rtl-rc-big { color: var(--color-border); }
+.rtl-rc-cap {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--color-muted-foreground); margin-top: 0.45rem;
+}
+.rtl-rc-neq {
+  font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; font-weight: 700;
+  font-size: 2.2rem; line-height: 1; color: #7c4dff; padding-bottom: 0.4rem;
+}
+.rtl-idx-row { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0 1.1rem; padding: 1.35rem 0; border-top: 1px solid var(--color-border); }
+.rtl-idx-num {
+  font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; font-weight: 700;
+  font-size: 1.55rem; line-height: 1.2; color: #dccfff;
+}
+html.dark .rtl-idx-num { color: #43248c; }
+
+/* ── Use case 01 — rail timeline ──────────────────────── */
+.rtl-rail-list { position: relative; display: grid; gap: 1.9rem; margin: 0; padding: 0; list-style: none; }
+.rtl-rail-list::before { content: ""; position: absolute; background: var(--color-border); left: 1.05rem; top: 0.5rem; bottom: 0.5rem; width: 1px; }
+.rtl-node { position: relative; display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.95rem; align-items: start; }
+.rtl-marker {
+  position: relative; z-index: 1; display: grid; place-items: center;
+  width: 2.2rem; height: 2.2rem; border-radius: 999px;
+  background: var(--color-card); border: 1px solid var(--color-border);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.62rem; color: var(--color-muted-foreground);
+}
+.rtl-node-tag { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.62rem; letter-spacing: 0.2em; font-weight: 700; color: var(--color-foreground); margin: 0.35rem 0 0; }
+.rtl-node-cap { margin: 0.25rem 0 0; font-size: 0.92rem; line-height: 1.6; color: var(--color-muted-foreground); }
+.rtl-node-final .rtl-marker { border-color: rgba(180, 142, 38, 0.6); background: rgba(201, 162, 39, 0.12); color: #8a6d14; }
+.rtl-node-final .rtl-node-tag { color: #8a6d14; }
+.rtl-node-pill {
+  display: inline-block; margin-top: 0.45rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.54rem; letter-spacing: 0.16em;
+  border: 1px solid rgba(180, 142, 38, 0.5); color: #8a6d14;
+  background: rgba(201, 162, 39, 0.10); border-radius: 999px; padding: 0.16rem 0.5rem;
+}
+html.dark .rtl-node-final .rtl-marker { color: #e3c566; border-color: rgba(217, 182, 74, 0.5); background: rgba(217, 182, 74, 0.10); }
+html.dark .rtl-node-final .rtl-node-tag { color: #e3c566; }
+html.dark .rtl-node-pill { color: #e3c566; border-color: rgba(217, 182, 74, 0.45); background: rgba(217, 182, 74, 0.10); }
+@media (min-width: 1024px) {
+  .rtl-rail-list { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.1rem; }
+  .rtl-rail-list::before { left: 0; right: 0; top: 1.05rem; bottom: auto; width: auto; height: 1px; }
+  .rtl-node { grid-template-columns: 1fr; gap: 0.8rem; }
+  .rtl-node-cap { font-size: 0.8rem; }
+  .rtl-node-tag { font-size: 0.58rem; }
+}
+
+/* ── Use case 02 — rhythm chart ───────────────────────── */
+.rtl-chart { border: 1px solid var(--color-border); border-radius: 1.5rem; background: var(--color-card); padding: 1.4rem; }
+.rtl-chart-title { font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.6rem; letter-spacing: 0.2em; font-weight: 700; color: var(--color-foreground); margin: 0; }
+.rtl-chart-sub { font-size: 0.8rem; color: var(--color-muted-foreground); margin: 0.3rem 0 0; }
+.rtl-track-wrap { margin-top: 2.7rem; }
+.rtl-track { position: relative; height: 6.5rem; }
+.rtl-axis { position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--color-border); }
+.rtl-mark { position: absolute; bottom: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.rtl-mark-tag {
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.54rem; letter-spacing: 0.08em;
+  color: var(--color-muted-foreground); text-align: center; margin-bottom: 0.9rem; white-space: nowrap; line-height: 1.5;
+}
+.rtl-mark-tag b { display: block; color: var(--color-foreground); font-weight: 700; }
+.rtl-diamond { width: 10px; height: 10px; transform: rotate(45deg) translateY(-4px); background: #c39a2a; border: 1px solid rgba(0, 0, 0, 0.15); }
+html.dark .rtl-diamond { background: #e3c566; border-color: rgba(0, 0, 0, 0.3); }
+.rtl-mark-first { transform: none; align-items: flex-start; }
+.rtl-mark-first .rtl-mark-tag { text-align: left; }
+.rtl-window {
+  position: absolute; top: 0; bottom: 8px;
+  border: 1px dashed rgba(124, 77, 255, 0.55); background: rgba(124, 77, 255, 0.08); border-radius: 0.7rem;
+}
+html.dark .rtl-window { background: rgba(153, 105, 255, 0.12); border-color: rgba(153, 105, 255, 0.5); }
+.rtl-window-tag {
+  position: absolute; top: -1.75rem; right: 0; display: flex; align-items: center; gap: 0.35rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.54rem; letter-spacing: 0.14em;
+  color: #7c4dff; white-space: nowrap;
+}
+.rtl-blanket { position: absolute; top: 8%; bottom: 8px; width: 0; border-left: 1px dashed var(--color-muted-foreground); opacity: 0.7; }
+.rtl-blanket-tag {
+  position: absolute; top: -1.75rem; left: 50%; transform: translateX(-50%);
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.54rem; letter-spacing: 0.12em;
+  color: var(--color-muted-foreground); white-space: nowrap; text-decoration: line-through;
+}
+.rtl-days {
+  display: flex; justify-content: space-between; margin-top: 0.55rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.54rem; color: var(--color-muted-foreground);
+}
+.rtl-checks { margin: 1.5rem 0 0; padding: 1.1rem 0 0; border-top: 1px solid var(--color-border); display: grid; gap: 0.6rem; list-style: none; }
+.rtl-checks li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.92rem; line-height: 1.55; color: var(--color-muted-foreground); }
+.rtl-checks svg { color: #7c4dff; flex: none; margin-top: 0.18rem; }
+
+/* ── Use case 03 — proof loop ─────────────────────────── */
+.rtl-loop-stage { position: relative; }
+.rtl-loop-ring { display: none; }
+.rtl-loop-grid { position: relative; z-index: 1; display: grid; gap: 2.4rem; }
+.rtl-lnode { position: relative; border: 1px solid var(--color-border); background: var(--color-card); border-radius: 1.25rem; padding: 1.15rem; }
+.rtl-lnum {
+  position: absolute; top: -0.7rem; left: 1rem; background: var(--color-background); padding: 0 0.45rem;
+  font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: #7c4dff;
+}
+.rtl-lnode h3 { font-size: 1rem; margin: 0.55rem 0 0; }
+.rtl-lnode p { margin: 0.35rem 0 0; font-size: 0.9rem; line-height: 1.6; color: var(--color-muted-foreground); }
+.rtl-lnode:not(:first-child)::before {
+  content: "↓"; position: absolute; top: -1.9rem; left: 50%; transform: translateX(-50%);
+  color: var(--color-muted-foreground); font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: 0.8rem;
+}
+@media (min-width: 1024px) {
+  .rtl-loop-ring { display: block; position: absolute; inset: 0; margin: auto; width: min(76%, 25rem); height: auto; z-index: 0; }
+  .rtl-loop-grid { grid-template-columns: 1fr 1fr; gap: 4.5rem 5.5rem; }
+  .rtl-lnode:not(:first-child)::before { display: none; }
+}
+.rtl-loop-ring circle { stroke: var(--color-border); }
+.rtl-loop-ring path { fill: #aa80ff; }
+.rtl-loop-stage.rtl-inview .rtl-loop-spin { animation: rtl-ringspin 46s linear infinite; transform-origin: 150px 150px; }
+@keyframes rtl-ringspin { to { transform: rotate(360deg); } }
+.rtl-consent {
+  margin-top: 2.5rem; display: flex; align-items: center; gap: 0.8rem;
+  border: 1px dashed var(--color-border); border-radius: 1rem; padding: 0.9rem 1.2rem;
+}
+.rtl-consent p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: var(--color-muted-foreground); }
+
+/* ── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .rtl-scanner.rtl-inview .rtl-hint { animation: none; }
+  .rtl-laser { animation: none !important; opacity: 0 !important; }
+  .rtl-ghost { transition: none; }
+  .rtl-flash, .rtl-profile-flash, .rtl-rec-pulse, .rtl-log-new { animation: none; }
+  .rtl-loop-stage.rtl-inview .rtl-loop-spin { animation: none; }
+  .rtl-ticket { transition: none; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  'use strict';
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Retail media ring: only spin while on screen */
+  var stage = document.querySelector('.rtl-loop-stage');
+  if (stage && 'IntersectionObserver' in window) {
+    var ioRing = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { stage.classList.toggle('rtl-inview', e.isIntersecting); });
+    }, { threshold: 0.2 });
+    ioRing.observe(stage);
+  }
+
+  var scanner = document.querySelector('[data-rtl-scanner]');
+  if (!scanner) return;
+
+  var receiptBtn = document.getElementById('rtl-receipt');
+  var scanBtn = document.getElementById('rtl-scan-btn');
+  var scanLabel = document.getElementById('rtl-scan-label');
+  var resetBtn = document.getElementById('rtl-reset-btn');
+  var ticketEl = scanner.querySelector('.rtl-ticket');
+  var ticketTag = document.getElementById('rtl-ticket-tag');
+  var ticketLines = document.getElementById('rtl-ticket-lines');
+  var ticketCode = document.getElementById('rtl-ticket-code');
+  var barcodeEl = document.getElementById('rtl-barcode');
+  var counterEl = document.getElementById('rtl-scan-count');
+  var logEl = document.getElementById('rtl-log');
+  var profile = document.getElementById('rtl-profile');
+  var profileName = document.getElementById('rtl-profile-name');
+  var profileSub = document.getElementById('rtl-profile-sub');
+  var avatar = document.getElementById('rtl-avatar');
+  var suppressEl = document.getElementById('rtl-suppress');
+  var suppressLabel = document.getElementById('rtl-suppress-label');
+  var suppressState = document.getElementById('rtl-suppress-state');
+  var records = Array.prototype.slice.call(scanner.querySelectorAll('.rtl-record'));
+
+  /* Deterministic barcode bars */
+  var PATTERN = [2, 1, 3, 1, 1, 4, 2, 1, 1, 2, 3, 1, 2, 1, 1, 3, 4, 1, 2, 2, 1, 1, 3, 2, 1, 4, 1, 2, 1, 3];
+  if (barcodeEl) {
+    var frag = document.createDocumentFragment();
+    PATTERN.forEach(function (w, i) {
+      var b = document.createElement('span');
+      b.className = 'rtl-bar rtl-bar-' + w + (i % 6 === 4 ? ' rtl-bar-gap' : '');
+      frag.appendChild(b);
+    });
+    barcodeEl.appendChild(frag);
+  }
+
+  /* ── helpers ─────────────────────────────────────────── */
+  function setField(name, value) {
+    var f = profile.querySelector('[data-field="' + name + '"]');
+    if (!f) return;
+    f.classList.add('is-on');
+    var dd = f.querySelector('.rtl-fval');
+    if (dd) { dd.textContent = value; dd.classList.remove('rtl-fval-pending'); }
+    if (!reduced) {
+      f.classList.remove('rtl-flash');
+      void f.offsetWidth;
+      f.classList.add('rtl-flash');
+    }
+  }
+
+  function flashProfile() {
+    if (reduced) return;
+    profile.classList.add('rtl-profile-flash');
+    setTimeout(function () { profile.classList.remove('rtl-profile-flash'); }, 1050);
+  }
+
+  function pulse(rec) {
+    if (reduced || !rec) return;
+    rec.classList.add('rtl-rec-pulse');
+    setTimeout(function () { rec.classList.remove('rtl-rec-pulse'); }, 720);
+  }
+
+  function markLinked(rec) {
+    rec.classList.add('is-linked');
+    var st = rec.querySelector('.rtl-record-state');
+    if (st) st.textContent = 'LINKED';
+  }
+
+  function fly(fromEl, done) {
+    if (reduced) { if (done) done(); return; }
+    var sRect = scanner.getBoundingClientRect();
+    var a = fromEl.getBoundingClientRect();
+    var b = profile.getBoundingClientRect();
+    var nameEl = fromEl.querySelector('.rtl-record-name');
+    var idEl = fromEl.querySelector('.rtl-record-id');
+    var ghost = document.createElement('div');
+    ghost.className = 'rtl-ghost';
+    ghost.setAttribute('aria-hidden', 'true');
+    ghost.innerHTML = '<span class="rtl-ghost-label">' +
+      (nameEl ? nameEl.textContent : 'SIGNAL') + ' · ' + (idEl ? idEl.textContent : '') + '</span>';
+    ghost.style.left = (a.left - sRect.left) + 'px';
+    ghost.style.top = (a.top - sRect.top) + 'px';
+    scanner.appendChild(ghost);
+    var dx = (b.left + b.width / 2) - (a.left + a.width / 2);
+    var dy = (b.top + b.height / 2) - (a.top + 26);
+    void ghost.offsetWidth;
+    ghost.style.transform = 'translate(' + dx + 'px, ' + dy + 'px) scale(0.3)';
+    ghost.style.opacity = '0';
+    var finished = false;
+    function cleanup() {
+      if (finished) return;
+      finished = true;
+      if (ghost.parentNode) ghost.parentNode.removeChild(ghost);
+      if (done) done();
+    }
+    ghost.addEventListener('transitionend', cleanup, { once: true });
+    setTimeout(cleanup, 1100);
+  }
+
+  function flyFrom(index, done) {
+    var rec = records[index];
+    if (!rec) { if (done) done(); return; }
+    pulse(rec);
+    fly(rec, done);
+  }
+
+  function stitchAll(done) {
+    var landed = 0;
+    records.forEach(function (rec, i) {
+      setTimeout(function () {
+        fly(rec, function () {
+          markLinked(rec);
+          landed++;
+          if (landed === records.length) {
+            profile.classList.remove('is-empty');
+            profileName.textContent = 'Shopper FF-2841';
+            profileSub.textContent = 'consent on file · activation-scoped';
+            if (avatar) avatar.textContent = 'FF';
+            flashProfile();
+            setField('channels', '3 / 3 · web + app + store');
+            setField('last', 'Store 12 · Till 4 · receipt #0482');
+            if (done) done();
+          }
+        });
+      }, reduced ? 0 : i * 120);
+    });
+  }
+
+  function suppress() {
+    suppressEl.classList.add('is-on');
+    suppressLabel.textContent = 'ACQUISITION ADS · OFF — SUPPRESSED';
+    suppressState.textContent = 'budget → net-new';
+    if (!reduced) {
+      suppressEl.classList.add('rtl-flash');
+      setTimeout(function () { suppressEl.classList.remove('rtl-flash'); }, 1150);
+    }
+  }
+
+  /* ── scan script ─────────────────────────────────────── */
+  var SCANS = [
+    {
+      tag: 'TILL RECEIPT · #0482',
+      code: '*0482*',
+      btn: 'Scan the till receipt',
+      lines: [
+        { l: 'OAT MILK 1L', r: '2.40' },
+        { l: 'GRANOLA 500G', r: '4.10' },
+        { l: 'COFFEE BEANS 250G', r: '7.90' },
+        { l: 'TOTAL', r: '14.40', c: 'rtl-tline-total' }
+      ],
+      log: [
+        'MATCH web#c4f2 ↔ app#9021 ↔ store#7731 → <b>FF-2841</b> · confidence 98%',
+        'golden record created · consent scope: activation'
+      ],
+      run: function (done) { stitchAll(done); }
+    },
+    {
+      tag: 'APP ORDER · #A-9021',
+      code: '*A9021*',
+      btn: 'Scan the app order',
+      lines: [
+        { l: 'APP ORDER #A-9021', r: '' },
+        { l: 'OAT MILK 1L ×2', r: '4.80' },
+        { l: 'DELIVERY SLOT', r: '18:00' },
+        { l: 'PAID · WALLET', r: '4.80', c: 'rtl-tline-total' }
+      ],
+      log: [
+        'RECOGNIZED app#9021 → <b>FF-2841</b> · no duplicate created',
+        'rhythm learned · oat milk every ~12 days'
+      ],
+      run: function (done) {
+        flyFrom(1, function () {
+          setField('rhythm', 'Oat milk · every ~12 days');
+          setField('last', 'App · order #A-9021 · paid');
+          done();
+        });
+      }
+    },
+    {
+      tag: 'WEB SESSION · #C4F2',
+      code: '*C4F2*',
+      btn: 'Scan the web session',
+      lines: [
+        { l: 'WEB SESSION #C4F2', r: '' },
+        { l: 'CART · 2 ITEMS', r: '9.60' },
+        { l: 'OAT MILK 1L ×2', r: '' },
+        { l: 'CHECKOUT', r: 'ABANDONED', c: 'rtl-tline-total' }
+      ],
+      log: ['SIGNAL cart_abandoned · reminder queued → WhatsApp · email · push'],
+      run: function (done) {
+        flyFrom(0, function () {
+          setField('cart', '2 items · reminder queued');
+          setField('last', 'Web · cart abandoned · 2 items');
+          done();
+        });
+      }
+    },
+    {
+      tag: 'CONVERSION · #A-9055',
+      code: '*A9055*',
+      btn: 'Scan the conversion',
+      lines: [
+        { l: 'ORDER #A-9055', r: '' },
+        { l: 'CART RECOVERED', r: '9.60' },
+        { l: 'CHANNEL', r: 'APP' },
+        { l: 'STATUS', r: 'PAID', c: 'rtl-tline-total' }
+      ],
+      log: [
+        'CONVERTED · <b>FF-2841</b> suppressed from acquisition audiences',
+        'budget reallocated → net-new demand'
+      ],
+      run: function (done) {
+        flyFrom(2, function () {
+          setField('last', 'App · order #A-9055 · paid');
+          suppress();
+          done();
+        });
+      }
+    }
+  ];
+
+  var step = 0;
+  var busy = false;
+
+  function renderTicket(scan) {
+    ticketTag.textContent = scan.tag;
+    ticketCode.textContent = scan.code;
+    ticketLines.classList.add('is-flipping');
+    setTimeout(function () {
+      ticketLines.innerHTML = '';
+      scan.lines.forEach(function (ln) {
+        var row = document.createElement('span');
+        row.className = 'rtl-tline' + (ln.c ? ' ' + ln.c : '');
+        var l = document.createElement('span'); l.textContent = ln.l;
+        var r = document.createElement('span'); r.textContent = ln.r;
+        row.appendChild(l); row.appendChild(r);
+        ticketLines.appendChild(row);
+      });
+      ticketLines.classList.remove('is-flipping');
+    }, reduced ? 0 : 220);
+  }
+
+  function appendLog(lines) {
+    lines.forEach(function (line) {
+      var p = document.createElement('p');
+      p.className = 'rtl-log-line rtl-log-new';
+      p.innerHTML = '<span class="rtl-log-g">&gt; </span>' + line;
+      logEl.appendChild(p);
+    });
+    while (logEl.children.length > 24) { logEl.removeChild(logEl.firstChild); }
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function updateChrome() {
+    counterEl.textContent = 'SCAN ' + step + ' / ' + SCANS.length;
+    if (step < SCANS.length) {
+      scanLabel.textContent = SCANS[step].btn;
+    } else {
+      scanLabel.textContent = 'Profile complete';
+    }
+  }
+
+  function setControls() {
+    var lockScan = busy || step >= SCANS.length;
+    scanBtn.disabled = lockScan;
+    receiptBtn.disabled = lockScan;
+    resetBtn.disabled = busy;
+  }
+
+  function sweep(cb) {
+    if (reduced) { setTimeout(cb, 150); return; }
+    scanner.style.setProperty('--rtl-sweep-dist', (ticketEl.clientWidth - 5) + 'px');
+    scanner.classList.add('is-scanning');
+    var finished = false;
+    function finish() {
+      if (finished) return;
+      finished = true;
+      scanner.classList.remove('is-scanning');
+      cb();
+    }
+    var laser = scanner.querySelector('.rtl-laser');
+    laser.addEventListener('animationend', finish, { once: true });
+    setTimeout(finish, 1150);
+  }
+
+  function runScan() {
+    if (busy || step >= SCANS.length) return;
+    busy = true;
+    setControls();
+    var scan = SCANS[step];
+    renderTicket(scan);
+    sweep(function () {
+      scan.run(function () {
+        appendLog(scan.log);
+        step++;
+        updateChrome();
+        busy = false;
+        setControls();
+      });
+    });
+  }
+
+  function resetDemo() {
+    if (busy) return;
+    step = 0;
+    records.forEach(function (rec) {
+      rec.classList.remove('is-linked');
+      var st = rec.querySelector('.rtl-record-state');
+      if (st) st.textContent = 'ANONYMOUS';
+    });
+    profile.classList.add('is-empty');
+    profileName.textContent = 'No golden record yet';
+    profileSub.textContent = 'scan a signal to resolve';
+    if (avatar) avatar.textContent = '?';
+    Array.prototype.forEach.call(profile.querySelectorAll('.rtl-field'), function (f) {
+      f.classList.remove('is-on', 'rtl-flash');
+      var dd = f.querySelector('.rtl-fval');
+      if (dd) { dd.textContent = 'awaiting signal'; dd.classList.add('rtl-fval-pending'); }
+    });
+    suppressEl.classList.remove('is-on', 'rtl-flash');
+    suppressLabel.textContent = 'ACQUISITION ADS · ACTIVE';
+    suppressState.textContent = 'spending';
+    logEl.innerHTML = '';
+    appendLog(['engine ready · 3 unresolved signals detected']);
+    renderTicket(SCANS[0]);
+    updateChrome();
+    setControls();
+  }
+
+  scanBtn.addEventListener('click', runScan);
+  receiptBtn.addEventListener('click', runScan);
+  resetBtn.addEventListener('click', resetDemo);
+  setControls();
+
+  /* Auto-run the first stitch when the module scrolls into view;
+     also gates ambient (hint pulse) animation to on-screen only. */
+  var autoRan = false;
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        scanner.classList.toggle('rtl-inview', e.isIntersecting);
+        if (e.isIntersecting && !autoRan) {
+          autoRan = true;
+          if (!reduced) {
+            setTimeout(function () { if (step === 0 && !busy) { runScan(); } }, 900);
+          }
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(scanner);
+  } else {
+    scanner.classList.add('rtl-inview');
+  }
+})();
+</script>
+{% endraw %}

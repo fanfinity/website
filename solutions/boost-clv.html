@@ -5,49 +5,723 @@ permalink: /solutions/boost-clv
 title: Boost Customer Lifetime Value
 description: "Fanfinity gives you a complete, real-time view of every fan's relationship with your brand, then activates that data to drive repeat engagement, cross-sell, upsell, and long-term loyalty at every stage of the lifecycle."
 breadcrumb_parent: { title: Solutions, url: /solutions }
-features:
-  - { icon: identity, title: "One complete profile across every touchpoint", body: "Purchase history, content interactions, loyalty points, event attendance, and support contacts resolve into a single fan profile. No more stitching together data from five tools to understand one customer." }
-  - { icon: trophy,   title: "Loyalty programs that drive real behavior", body: "Points economies, status tiers, quests, and streaks keep fans engaged between purchases and between events. Each action accrues to the same profile, so the loyalty system reflects the full relationship, not just transactional history (Preview)." }
-  - { icon: bolt,     title: "React to the moment, not the report", body: "Real-time profile updates mean a fan who just hit a milestone, completed a purchase, or lapsed for the first time triggers the right next step automatically, without waiting for a nightly batch job to catch up." }
-  - { icon: megaphone, title: "Orchestrate across the full lifecycle", body: "Journeys sequence the right message across WhatsApp, email, push, and in-app at each lifecycle stage: onboarding, first repeat, loyalty milestone, lapse risk, and win-back. (Visual journey canvas in design preview.)" }
-  - { icon: chart,    title: "Measure what actually drives revenue", body: "Fanfinity Measure ties engagement activity back to purchases, renewals, and upsell events, so you know which programs move CLV and which are just activity." }
-  - { icon: coins,    title: "Sponsor the lifecycle, not just the moment", body: "Attach sponsor identities to loyalty programs and milestone moments, turning CLV-driving engagement into addressable, measurable inventory a partner can buy and trust." }
-steps:
-  - { icon: identity, title: "Build the complete profile", body: "Every touchpoint (purchase, event, content, support) resolves into one governed fan profile with a full behavioral and transactional history." }
-  - { icon: trophy,   title: "Reward the relationship", body: "Points, tiers, and quests recognize fans at every lifecycle stage, giving them a reason to stay engaged between purchases and between events (Preview)." }
-  - { icon: bolt,     title: "React in real time", body: "Milestone completions, lapse signals, and purchase events trigger next-step journeys automatically, without waiting for a batch window." }
-  - { icon: chart,    title: "Prove what drives value", body: "Attribution ties engagement programs back to revenue outcomes so you can invest in what actually lifts CLV and cut what doesn't." }
 ---
-{% include hero.html
-   eyebrow="Use Case"
-   title="Maximize revenue across the full fan lifecycle"
-   subtitle="Acquisition is the easy part. Fanfinity gives you the complete fan profile, the loyalty infrastructure, and the real-time orchestration to turn a first purchase into a relationship that compounds for years, one partners and sponsors want to be part of."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore Fanfinity Engage"
-   secondary_url="/platform/engage"
-   image="/assets/img/solutions-boost-clv.jpg"
-   image_alt="Two smiling women holding shopping bags in a mall" %}
 
-{% include feature-grid.html
-   heading="The full lifecycle, on one platform"
-   subheading="CLV is not a metric you track. It is a system you build, and Fanfinity is that system."
-   items=page.features
-   columns=3 %}
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="clv-hero bg-soft" aria-labelledby="clv-title">
+  <div class="container-page">
+    <div class="clv-hero-grid">
+      <div data-reveal>
+        <p class="eyebrow">Use Case</p>
+        <h1 id="clv-title" class="clv-h1">Maximize revenue across the <span class="clv-accent">full fan lifecycle</span>.</h1>
+        <p class="clv-sub">Acquisition is the easy part. Fanfinity gives you the complete fan profile, the loyalty infrastructure, and the real-time orchestration to turn a first purchase into a relationship that compounds for years, one partners and sponsors want to be part of.</p>
+        <div class="clv-cta-row">
+          <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="/platform/engage" class="btn btn-secondary btn-lg">Explore Fanfinity Engage</a>
+        </div>
+        <p class="clv-legend font-mono">PROFILE&nbsp;→&nbsp;REWARD&nbsp;→&nbsp;REACT&nbsp;→&nbsp;PROVE&nbsp;&nbsp;↺ <a href="#clv-flywheel" class="clv-legend-link">spin the flywheel ↓</a></p>
+      </div>
 
-{% include feature-split.html
-   reverse=true
-   title="Loyalty that reflects the whole relationship, not just the last transaction"
-   body="Most loyalty programs track purchases. Fanfinity tracks the whole relationship: content consumption, event attendance, poll participation, referrals, and streaks, all accruing to the same profile and feeding the same tier and reward engine. The result is a loyalty system that recognizes what fans actually do, not just what they buy."
-   cta_text="See how Fanfinity Engage works (Preview)"
-   cta_url="/platform/engage"
-   icon="trophy" %}
+      <!-- Fan ledger card -->
+      <div class="clv-ledger" data-reveal style="--reveal-delay:140ms" aria-hidden="true">
+        <div class="clv-ledger-behind"></div>
+        <div class="clv-ledger-card">
+          <div class="clv-ledger-head font-mono">
+            <span class="clv-ledger-id"><i></i>FAN PROFILE · #2481</span>
+            <span class="clv-ledger-tag">IN-KINGDOM</span>
+          </div>
+          <p class="clv-ledger-cap font-mono">SIGNAL COMPLETENESS · ILLUSTRATIVE</p>
+          <div class="clv-row"><span class="clv-row-name">Purchase history</span><span class="clv-bar"><i style="width:86%"></i></span><span class="clv-row-val font-mono">86</span></div>
+          <div class="clv-row"><span class="clv-row-name">Content interactions</span><span class="clv-bar"><i style="width:72%"></i></span><span class="clv-row-val font-mono">72</span></div>
+          <div class="clv-row"><span class="clv-row-name">Event attendance</span><span class="clv-bar"><i style="width:64%"></i></span><span class="clv-row-val font-mono">64</span></div>
+          <div class="clv-row"><span class="clv-row-name">Support contacts</span><span class="clv-bar"><i style="width:91%"></i></span><span class="clv-row-val font-mono">91</span></div>
+          <div class="clv-ledger-foot">
+            <svg class="clv-sparkline" viewBox="0 0 120 36" aria-hidden="true">
+              <path d="M0 34 L0 30 L15 28 L30 29 L45 24 L60 22 L75 16 L90 15 L105 8 L120 4 L120 34 Z" fill="rgba(133,77,255,.12)"/>
+              <path d="M0 30 L15 28 L30 29 L45 24 L60 22 L75 16 L90 15 L105 8 L120 4" fill="none" stroke="#854dff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <div class="clv-odo-wrap">
+              <span class="clv-odo-label font-mono">CLV INDEX</span>
+              <span class="clv-odo font-mono">×2.41</span>
+            </div>
+          </div>
+        </div>
+        <span class="clv-floatchip clv-floatchip-a font-mono">✦ TIER UPGRADE</span>
+        <span class="clv-floatchip clv-floatchip-b font-mono">STREAK +4</span>
+        <span class="clv-note font-mono">every touchpoint resolves into one governed profile</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include value-pillars.html
-   heading="Profile, reward, react, prove"
-   subheading="Four steps from one-time buyer to lifetime fan."
-   items=page.steps %}
+<!-- ═══════════════ THE FLYWHEEL (playable centerpiece) ═══════════════ -->
+<section id="clv-flywheel" class="clv-machine" aria-labelledby="clv-machine-title">
+  <div class="container-page">
+    <div class="clv-machine-head" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">The system · How it works</p>
+      <h2 id="clv-machine-title" class="font-heading">Profile, reward, react, prove</h2>
+      <p class="clv-machine-sub">CLV is not a metric you track. It is a system you build, and Fanfinity is that system. Four steps from one-time buyer to lifetime fan — tap a stage, feed it events, and watch it compound. Slow it down and it keeps turning: that is the point.</p>
+    </div>
+
+    <div class="clv-stages" role="group" aria-label="Flywheel stages" data-reveal>
+      <button type="button" class="clv-stagebtn is-active" data-stagebtn="0" aria-pressed="true"><span class="clv-dot" style="background:#9969ff"></span><span class="clv-num font-mono">01</span> Profile</button>
+      <button type="button" class="clv-stagebtn" data-stagebtn="1" aria-pressed="false"><span class="clv-dot" style="background:#c4a6ff"></span><span class="clv-num font-mono">02</span> Reward</button>
+      <button type="button" class="clv-stagebtn" data-stagebtn="2" aria-pressed="false"><span class="clv-dot" style="background:#854dff"></span><span class="clv-num font-mono">03</span> React</button>
+      <button type="button" class="clv-stagebtn" data-stagebtn="3" aria-pressed="false"><span class="clv-dot" style="background:#7b5cff"></span><span class="clv-num font-mono">04</span> Prove</button>
+    </div>
+
+    <div class="clv-machine-grid">
+      <!-- Wheel -->
+      <div data-reveal>
+        <div class="clv-wheel">
+          <svg id="clvSvg" class="clv-svg" viewBox="0 0 440 440" role="group" aria-label="Playable flywheel. Drag the rim or tap a quadrant to spin it faster.">
+            <defs>
+              <linearGradient id="clvRim" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#574a7a"/>
+                <stop offset=".38" stop-color="#241a3d"/>
+                <stop offset=".62" stop-color="#4a3a72"/>
+                <stop offset="1" stop-color="#1c1430"/>
+              </linearGradient>
+              <radialGradient id="clvHub" cx=".35" cy=".3" r="1">
+                <stop offset="0" stop-color="#2c2149"/>
+                <stop offset="1" stop-color="#120c1f"/>
+              </radialGradient>
+            </defs>
+            <circle cx="220" cy="220" r="198" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <g id="clvRotor">
+              <circle cx="220" cy="220" r="170" fill="none" stroke="url(#clvRim)" stroke-width="26"/>
+              <circle cx="220" cy="220" r="157" fill="none" stroke="rgba(255,255,255,.10)" stroke-width="1"/>
+              <circle cx="220" cy="220" r="183" fill="none" stroke="rgba(0,0,0,.4)" stroke-width="1"/>
+              <!-- quadrants: Profile top, Reward left, React bottom, Prove right (counterclockwise so a clockwise spin cycles them in order) -->
+              <path class="clv-quad" data-stage="0" tabindex="0" role="button" aria-label="Profile stage — spin the flywheel" fill="rgba(153,105,255,.34)" d="M116.3 108.8 A152 152 0 0 1 323.7 108.8 L263.6 173.2 A64 64 0 0 0 176.4 173.2 Z"/>
+              <path class="clv-quad" data-stage="1" tabindex="0" role="button" aria-label="Reward stage — spin the flywheel" fill="rgba(196,165,255,.22)" d="M108.8 323.7 A152 152 0 0 1 108.8 116.3 L173.2 176.4 A64 64 0 0 0 173.2 263.6 Z"/>
+              <path class="clv-quad" data-stage="2" tabindex="0" role="button" aria-label="React stage — spin the flywheel" fill="rgba(133,77,255,.40)" d="M323.7 331.2 A152 152 0 0 1 116.3 331.2 L176.4 266.8 A64 64 0 0 0 263.6 266.8 Z"/>
+              <path class="clv-quad" data-stage="3" tabindex="0" role="button" aria-label="Prove stage — spin the flywheel" fill="rgba(123,92,255,.28)" d="M331.2 116.3 A152 152 0 0 1 331.2 323.7 L266.8 263.6 A64 64 0 0 0 266.8 176.4 Z"/>
+              <!-- gap separators -->
+              <g stroke="#0b0712" stroke-width="3">
+                <line x1="265.7" y1="265.7" x2="327.7" y2="327.7"/>
+                <line x1="174.3" y1="265.7" x2="112.3" y2="327.7"/>
+                <line x1="174.3" y1="174.3" x2="112.3" y2="112.3"/>
+                <line x1="265.7" y1="174.3" x2="327.7" y2="112.3"/>
+              </g>
+              <!-- etched glyphs at quadrant centers -->
+              <g fill="none" stroke="rgba(230,220,255,.55)" stroke-width="2">
+                <circle cx="220" cy="115" r="11"/>
+                <circle cx="220" cy="115" r="3.5" fill="rgba(230,220,255,.55)" stroke="none"/>
+                <polygon points="115,208 127,220 115,232 103,220"/>
+                <polygon points="220,314 231,330 209,330"/>
+                <rect x="317" y="212" width="16" height="16"/>
+              </g>
+              <g id="clvTicks"></g>
+              <!-- hub -->
+              <circle cx="220" cy="220" r="36" fill="url(#clvHub)" stroke="rgba(255,255,255,.14)"/>
+              <polygon points="220,200 226,214 240,220 226,226 220,240 214,226 200,220 214,214" fill="#a98cff"/>
+            </g>
+            <!-- fixed marker at top -->
+            <polygon points="212,20 228,20 220,37" fill="#c9b3ff"/>
+          </svg>
+          <div class="clv-sparks" id="clvSparks" aria-hidden="true"></div>
+        </div>
+        <p class="clv-hint font-mono">Drag the rim · tap a quadrant · feed it events — it never fully stops</p>
+      </div>
+
+      <!-- Instrument panel -->
+      <div class="clv-panel" data-reveal style="--reveal-delay:120ms">
+        <div class="clv-panel-top">
+          <div class="clv-readout">
+            <span class="clv-label">Flywheel speed</span>
+            <span class="clv-rpm font-mono"><span id="clvRpm">2</span><span class="clv-unit">rpm</span></span>
+          </div>
+          <div class="clv-readout">
+            <span class="clv-label">CLV index · illustrative</span>
+            <span class="clv-rpm font-mono"><span id="clvIndex">×1.00</span></span>
+          </div>
+        </div>
+
+        <div class="clv-meter">
+          <div class="clv-meter-head">
+            <span class="clv-label" style="margin:0">Compounding momentum</span>
+            <span class="clv-now font-mono" id="clvNow">NOW · PROFILE</span>
+          </div>
+          <div class="clv-track">
+            <div class="clv-fill" id="clvFill"></div>
+            <span class="clv-mark" data-ms="0" style="left:35%"><i>Tier upgrade</i></span>
+            <span class="clv-mark" data-ms="1" style="left:65%"><i>Cross-sell</i></span>
+            <span class="clv-mark clv-mark-end" data-ms="2" style="left:92%"><i>Renewal</i></span>
+          </div>
+        </div>
+
+        <div class="clv-feed">
+          <span class="clv-label">Feed it fan events</span>
+          <div class="clv-feed-grid">
+            <button type="button" class="clv-ev" data-impulse="90" data-log="purchase event → profile updated in real time">{% include icon.html name="storefront" class="h-4 w-4" %} Purchase <span class="clv-ev-imp font-mono">+15</span></button>
+            <button type="button" class="clv-ev" data-impulse="42" data-log="poll vote → engagement signal resolved">{% include icon.html name="poll" class="h-4 w-4" %} Poll vote <span class="clv-ev-imp font-mono">+7</span></button>
+            <button type="button" class="clv-ev" data-impulse="54" data-log="streak kept → points accrued to tier">{% include icon.html name="arrows-counter-clockwise" class="h-4 w-4" %} Streak kept <span class="clv-ev-imp font-mono">+9</span></button>
+            <button type="button" class="clv-ev" data-impulse="132" data-log="renewal confirmed → lifecycle stage advanced">{% include icon.html name="repeat" class="h-4 w-4" %} Renewal <span class="clv-ev-imp font-mono">+22</span></button>
+          </div>
+        </div>
+
+        <div class="clv-stagecard">
+          <div class="clv-stagepane" data-pane="0">
+            <div class="clv-stagehead">
+              <span class="clv-stageico">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+              <h3 class="font-heading"><span class="clv-num font-mono">01</span> Build the complete profile</h3>
+            </div>
+            <p>Every touchpoint (purchase, event, content, support) resolves into one governed fan profile with a full behavioral and transactional history.</p>
+          </div>
+          <div class="clv-stagepane" data-pane="1" hidden>
+            <div class="clv-stagehead">
+              <span class="clv-stageico">{% include icon.html name="trophy" class="h-5 w-5" %}</span>
+              <h3 class="font-heading"><span class="clv-num font-mono">02</span> Reward the relationship</h3>
+            </div>
+            <p>Points, tiers, and quests recognize fans at every lifecycle stage, giving them a reason to stay engaged between purchases and between events (Preview).</p>
+          </div>
+          <div class="clv-stagepane" data-pane="2" hidden>
+            <div class="clv-stagehead">
+              <span class="clv-stageico">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+              <h3 class="font-heading"><span class="clv-num font-mono">03</span> React in real time</h3>
+            </div>
+            <p>Milestone completions, lapse signals, and purchase events trigger the next journey automatically, without waiting for a batch window.</p>
+          </div>
+          <div class="clv-stagepane" data-pane="3" hidden>
+            <div class="clv-stagehead">
+              <span class="clv-stageico">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+              <h3 class="font-heading"><span class="clv-num font-mono">04</span> Prove what drives value</h3>
+            </div>
+            <p>Attribution ties engagement programs back to revenue outcomes so you can invest in what actually lifts CLV and cut what doesn't.</p>
+          </div>
+        </div>
+
+        <ol class="clv-log font-mono" id="clvLog" aria-live="polite"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CAPABILITIES LEDGER ═══════════════ -->
+<section class="section" aria-labelledby="clv-cap-title">
+  <div class="container-page">
+    <div class="clv-cap-head" data-reveal>
+      <p class="eyebrow">From first purchase to lifetime fan</p>
+      <h2 id="clv-cap-title" class="clv-h2">The full lifecycle, on one platform</h2>
+      <p class="clv-cap-sub">Six capabilities that compound with every lap of the flywheel.</p>
+    </div>
+
+    <div class="clv-feats">
+      <article class="clv-feat" data-reveal>
+        <span class="clv-feat-num font-heading" aria-hidden="true">01</span>
+        <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3>One complete profile across every touchpoint</h3>
+        <p>Purchase history, content interactions, loyalty points, event attendance, and support contacts resolve into a single fan profile. No more stitching together data from five tools to understand one customer.</p>
+      </article>
+
+      <article class="clv-feat" data-reveal style="--reveal-delay:60ms">
+        <span class="clv-feat-num font-heading" aria-hidden="true">02</span>
+        <span class="icon-chip">{% include icon.html name="trophy" class="h-5 w-5" %}</span>
+        <h3>Loyalty programs that drive real behavior</h3>
+        <p>Points economies, status tiers, quests, and streaks keep fans engaged between purchases and between events. Each action accrues to the same profile, so the loyalty system reflects the full relationship, not just transactional history (Preview).</p>
+      </article>
+
+      <article class="clv-feat" data-reveal style="--reveal-delay:120ms">
+        <span class="clv-feat-num font-heading" aria-hidden="true">03</span>
+        <span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+        <h3>React to the moment, not the report</h3>
+        <p>Real-time profile updates mean a fan who just hit a milestone, completed a purchase, or lapsed for the first time triggers the right next step automatically, without waiting for a nightly batch job to catch up.</p>
+      </article>
+
+      <article class="clv-feat" data-reveal style="--reveal-delay:180ms">
+        <span class="clv-feat-num font-heading" aria-hidden="true">04</span>
+        <span class="icon-chip">{% include icon.html name="megaphone" class="h-5 w-5" %}</span>
+        <h3>Orchestrate across the full lifecycle</h3>
+        <p>Journeys sequence the right message across WhatsApp, email, push, and in-app at each lifecycle stage: onboarding, first repeat, loyalty milestone, lapse risk, and win-back. (Visual journey canvas in design preview.)</p>
+      </article>
+
+      <article class="clv-feat" data-reveal style="--reveal-delay:240ms">
+        <span class="clv-feat-num font-heading" aria-hidden="true">05</span>
+        <span class="icon-chip">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+        <h3>Measure what actually drives revenue</h3>
+        <p>Fanfinity Measure ties engagement activity back to purchases, renewals, and upsell events, so you know which programs move CLV and which are just activity.</p>
+        <a href="/platform/measure" class="link-arrow clv-feat-link">See how Fanfinity Measure works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+      </article>
+
+      <article class="clv-feat" data-reveal style="--reveal-delay:300ms">
+        <span class="clv-feat-num font-heading" aria-hidden="true">06</span>
+        <span class="icon-chip">{% include icon.html name="coins" class="h-5 w-5" %}</span>
+        <h3>Sponsor the lifecycle, not just the moment</h3>
+        <p>Attach sponsor identities to loyalty programs and milestone moments, turning engagement that grows CLV into addressable, measurable inventory a partner can buy and trust.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ LOYALTY — THE WHOLE RELATIONSHIP ═══════════════ -->
+<section class="section clv-loyalty" aria-labelledby="clv-loyal-title">
+  <div class="container-page">
+    <div class="clv-loyalty-grid">
+      <div data-reveal>
+        <p class="eyebrow">Loyalty infrastructure</p>
+        <h2 id="clv-loyal-title" class="clv-h2">Loyalty that reflects the whole relationship, not just the last transaction</h2>
+        <p class="clv-loyal-body">Most loyalty programs track purchases. Fanfinity tracks the whole relationship: content consumption, event attendance, poll participation, referrals, and streaks, all accruing to the same profile and feeding the same tier and reward engine. The result is a loyalty system that recognizes what fans actually do, not just what they buy.</p>
+        <a href="/platform/engage" class="btn btn-secondary">See how Fanfinity Engage works (Preview)</a>
+      </div>
+
+      <div data-reveal style="--reveal-delay:140ms">
+        <div class="clv-acc" role="img" aria-label="Diagram: purchase, content, event, poll, referral and streak signals all accruing into one fan profile that feeds a tier and reward engine">
+          <svg class="clv-acc-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <line class="clv-acc-line" x1="50" y1="10" x2="50" y2="50"/>
+            <line class="clv-acc-line" x1="84" y1="29" x2="50" y2="50"/>
+            <line class="clv-acc-line" x1="84" y1="71" x2="50" y2="50"/>
+            <line class="clv-acc-line" x1="50" y1="90" x2="50" y2="50"/>
+            <line class="clv-acc-line" x1="16" y1="71" x2="50" y2="50"/>
+            <line class="clv-acc-line" x1="16" y1="29" x2="50" y2="50"/>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="0s" repeatCount="indefinite" path="M50 10 L50 50"/></circle>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="-0.45s" repeatCount="indefinite" path="M84 29 L50 50"/></circle>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="-0.9s" repeatCount="indefinite" path="M84 71 L50 50"/></circle>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="-1.35s" repeatCount="indefinite" path="M50 90 L50 50"/></circle>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="-1.8s" repeatCount="indefinite" path="M16 71 L50 50"/></circle>
+            <circle class="clv-acc-dot" r="1.3"><animateMotion dur="2.8s" begin="-2.25s" repeatCount="indefinite" path="M16 29 L50 50"/></circle>
+          </svg>
+          <span class="clv-acc-chip font-mono" style="left:50%;top:5%">Purchase history</span>
+          <span class="clv-acc-chip font-mono" style="left:88%;top:25%">Content</span>
+          <span class="clv-acc-chip font-mono" style="left:88%;top:75%">Events</span>
+          <span class="clv-acc-chip font-mono" style="left:50%;top:95%">Streaks</span>
+          <span class="clv-acc-chip font-mono" style="left:12%;top:75%">Referrals</span>
+          <span class="clv-acc-chip font-mono" style="left:12%;top:25%">Polls</span>
+          <div class="clv-acc-core">
+            <span class="icon-chip clv-acc-ico">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+            <span class="clv-acc-name font-heading">One fan profile</span>
+            <span class="clv-acc-tier font-mono">TIER &amp; REWARD ENGINE · PREVIEW</span>
+          </div>
+        </div>
+        <p class="clv-acc-cap font-mono">every action accrues to the same profile</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% include cta-band.html
    heading="Turn every fan into a long-term relationship"
    text="See how Fanfinity builds the complete fan profile, activates loyalty programs across the full lifecycle, and proves which programs drive revenue, all on a first-party fan graph you own and govern." %}
+
+{% raw %}
+<style>
+/* ── Boost CLV bespoke styles (scoped: .clv-) ─────────────────────────── */
+
+/* Hero */
+.clv-hero { padding: 4.5rem 0 5rem; overflow: clip; }
+.clv-hero-grid { display: grid; gap: 3.25rem; align-items: center; }
+@media (min-width: 1024px) { .clv-hero-grid { grid-template-columns: 7fr 5fr; } }
+.clv-h1 { font-size: clamp(2.4rem, 5vw, 3.85rem); line-height: 1.04; letter-spacing: -0.02em; margin: 1.1rem 0 1.25rem; }
+.clv-accent { color: #854dff; }
+html.dark .clv-accent { color: #b493ff; }
+.clv-sub { font-size: 1.125rem; color: var(--color-muted-foreground); max-width: 36rem; line-height: 1.65; }
+.clv-cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.clv-legend { margin-top: 2rem; font-size: .68rem; letter-spacing: .18em; color: var(--color-muted-foreground); }
+.clv-legend-link { color: #854dff; font-weight: 600; letter-spacing: .1em; }
+html.dark .clv-legend-link { color: #b493ff; }
+.clv-legend-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Hero ledger card */
+.clv-ledger { position: relative; width: 100%; max-width: 25rem; margin: 0 auto; padding-bottom: 2.2rem; }
+.clv-ledger-behind { position: absolute; inset: 0 0 2.2rem 0; transform: rotate(3deg) translate(12px, 10px); border: 1px solid var(--color-border); border-radius: 1.25rem; background: var(--color-muted); }
+.clv-ledger-card { position: relative; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 1.25rem; padding: 1.25rem 1.35rem; transform: rotate(-2deg); box-shadow: 0 28px 60px -32px rgba(53,16,112,.28); }
+.clv-ledger-head { display: flex; align-items: center; justify-content: space-between; font-size: .62rem; letter-spacing: .14em; color: var(--color-muted-foreground); }
+.clv-ledger-id { display: inline-flex; align-items: center; gap: .45rem; }
+.clv-ledger-id i { width: .45rem; height: .45rem; border-radius: 99px; background: #854dff; display: inline-block; }
+.clv-ledger-tag { border: 1px solid var(--color-border); border-radius: 99px; padding: .18rem .55rem; font-size: .55rem; }
+.clv-ledger-cap { margin: .9rem 0 .2rem; font-size: .55rem; letter-spacing: .16em; color: var(--color-muted-foreground); opacity: .8; }
+.clv-row { display: flex; align-items: center; gap: .7rem; padding: .55rem 0; border-top: 1px solid var(--color-border); font-size: .8rem; }
+.clv-row-name { width: 8.5rem; flex-shrink: 0; color: var(--color-foreground); font-weight: 500; }
+.clv-bar { flex: 1; height: 4px; border-radius: 99px; background: var(--color-muted); overflow: hidden; }
+.clv-bar i { display: block; height: 100%; border-radius: 99px; background: #9969ff; }
+html.dark .clv-bar i { background: #b493ff; }
+.clv-row-val { font-size: .65rem; color: var(--color-muted-foreground); width: 1.6rem; text-align: right; }
+.clv-ledger-foot { margin-top: 1rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+.clv-sparkline { width: 120px; height: 36px; }
+.clv-odo-wrap { text-align: right; }
+.clv-odo-label { display: block; font-size: .52rem; letter-spacing: .16em; color: var(--color-muted-foreground); }
+.clv-odo { font-size: 1.5rem; line-height: 1.1; color: #854dff; }
+html.dark .clv-odo { color: #b493ff; }
+.clv-floatchip { position: absolute; z-index: 2; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 99px; padding: .32rem .7rem; font-size: .6rem; letter-spacing: .1em; color: var(--color-foreground); box-shadow: 0 10px 24px -14px rgba(53,16,112,.35); animation: clv-float 5.5s ease-in-out infinite; }
+.clv-floatchip-a { top: -0.9rem; right: 6%; color: #854dff; }
+html.dark .clv-floatchip-a { color: #c4a6ff; }
+.clv-floatchip-b { bottom: 3.4rem; left: -0.6rem; animation-delay: -2.7s; }
+.clv-note { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); white-space: nowrap; font-size: .58rem; letter-spacing: .14em; color: var(--color-muted-foreground); }
+@keyframes clv-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+/* ── Flywheel machine band (always dark, intentional in both modes) ── */
+.clv-machine { position: relative; overflow: hidden; background-color: #0b0712; background-image: radial-gradient(72% 92% at 50% -8%, rgba(124,77,255,.22), transparent 62%); color: #fff; padding: 5rem 0 5.5rem; }
+.clv-machine-head { max-width: 46rem; }
+.clv-machine h2 { color: #fff; font-size: clamp(1.9rem, 3.4vw, 2.7rem); letter-spacing: -0.02em; margin-top: .9rem; }
+.clv-machine-sub { color: rgba(255,255,255,.68); margin-top: .9rem; line-height: 1.65; }
+.clv-stages { display: grid; grid-template-columns: repeat(2, 1fr); gap: .6rem; margin: 2.4rem 0 2.6rem; }
+@media (min-width: 768px) { .clv-stages { grid-template-columns: repeat(4, 1fr); } }
+.clv-stagebtn { display: flex; align-items: center; gap: .55rem; padding: .72rem .95rem; border: 1px solid rgba(255,255,255,.14); border-radius: .9rem; background: rgba(255,255,255,.04); color: rgba(255,255,255,.78); font-size: .88rem; font-weight: 600; cursor: pointer; transition: border-color .2s, background .2s, color .2s; text-align: left; }
+.clv-stagebtn:hover { border-color: rgba(196,165,255,.5); color: #fff; }
+.clv-stagebtn[aria-pressed="true"] { background: rgba(153,105,255,.16); border-color: rgba(196,165,255,.65); color: #fff; }
+.clv-num { font-size: .65rem; color: #b493ff; letter-spacing: .08em; }
+.clv-dot { width: .5rem; height: .5rem; border-radius: 99px; flex-shrink: 0; }
+.clv-machine-grid { display: grid; gap: 2.75rem; align-items: start; }
+@media (min-width: 1024px) { .clv-machine-grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); } }
+
+/* Wheel */
+.clv-wheel { position: relative; width: 100%; max-width: 540px; margin: 0 auto; aspect-ratio: 1 / 1; }
+.clv-svg { width: 100%; height: auto; display: block; touch-action: pan-y; cursor: grab; }
+.clv-svg.is-dragging { cursor: grabbing; }
+.clv-quad { transition: filter .25s ease, opacity .25s ease; outline: none; }
+.clv-quad:hover { filter: brightness(1.3); }
+.clv-quad:focus-visible { stroke: #fff; stroke-width: 2.5; }
+.clv-quad.is-active { filter: drop-shadow(0 0 16px rgba(153,105,255,.55)) brightness(1.18); }
+.clv-hint { margin-top: 1.1rem; text-align: center; font-size: .62rem; letter-spacing: .14em; color: rgba(255,255,255,.42); }
+
+/* Sparks */
+.clv-sparks { position: absolute; inset: 0; pointer-events: none; }
+.clv-spark { position: absolute; transform: translate(-50%,-50%); background: rgba(153,105,255,.18); border: 1px solid rgba(196,165,255,.65); color: #e9dcff; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: .58rem; letter-spacing: .14em; padding: .3rem .65rem; border-radius: 99px; white-space: nowrap; box-shadow: 0 0 18px rgba(153,105,255,.45); }
+
+/* Instrument panel */
+.clv-panel { background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.12); border-radius: 1.25rem; padding: 1.4rem 1.4rem 1.2rem; backdrop-filter: blur(6px); }
+.clv-panel-top { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.clv-label { display: block; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: .35rem; }
+.clv-rpm { font-size: 1.9rem; color: #fff; line-height: 1.05; }
+.clv-unit { font-size: .68rem; color: rgba(255,255,255,.5); margin-left: .35rem; letter-spacing: .12em; }
+.clv-meter { margin-top: 1.5rem; }
+.clv-meter-head { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+.clv-now { font-size: .6rem; letter-spacing: .14em; color: #c4a6ff; transition: color .2s; }
+.clv-now.is-pulse { color: #fff; }
+.clv-track { position: relative; height: 12px; border-radius: 99px; background: rgba(255,255,255,.08); margin-top: 1.75rem; }
+.clv-fill { position: absolute; top: 0; bottom: 0; left: 0; width: 2%; min-width: 2%; border-radius: 99px; background: linear-gradient(90deg, #6d3fd4, #9969ff, #c4a6ff); box-shadow: 0 0 12px rgba(153,105,255,.5); transition: width .12s linear; }
+.clv-mark { position: absolute; top: -4px; bottom: -4px; width: 1px; background: rgba(255,255,255,.32); }
+.clv-mark i { position: absolute; top: -1.4rem; left: 50%; transform: translateX(-50%); font-style: normal; font-family: "Geist Mono", ui-monospace, SFMono-Regular, monospace; font-size: .55rem; letter-spacing: .1em; color: rgba(255,255,255,.45); white-space: nowrap; transition: color .25s; }
+.clv-mark-end i { transform: translateX(-92%); }
+.clv-mark.is-hit { background: #c4a6ff; }
+.clv-mark.is-hit i { color: #e9dcff; }
+.clv-feed { margin-top: 2.1rem; }
+.clv-feed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; margin-top: .55rem; }
+.clv-ev { display: flex; align-items: center; gap: .5rem; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); color: rgba(255,255,255,.88); border-radius: .75rem; padding: .6rem .7rem; font-size: .8rem; font-weight: 600; cursor: pointer; transition: border-color .2s, background .2s, transform .12s; }
+.clv-ev:hover { border-color: rgba(196,165,255,.55); background: rgba(153,105,255,.14); }
+.clv-ev:active { transform: scale(.97); }
+.clv-ev-imp { margin-left: auto; font-size: .62rem; color: #b493ff; }
+.clv-stagecard { margin-top: 1.6rem; border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.15rem; }
+.clv-stagepane[hidden] { display: none; }
+.clv-stagehead { display: flex; align-items: center; gap: .7rem; }
+.clv-stagehead h3 { color: #fff; font-size: 1.05rem; }
+.clv-stageico { display: grid; place-items: center; width: 2.35rem; height: 2.35rem; flex-shrink: 0; border-radius: .7rem; background: rgba(153,105,255,.16); color: #c4a6ff; box-shadow: inset 0 0 0 1px rgba(196,165,255,.3); }
+.clv-stagepane p { color: rgba(255,255,255,.66); font-size: .9rem; line-height: 1.62; margin-top: .55rem; }
+.clv-log { margin-top: 1.35rem; border-top: 1px dashed rgba(255,255,255,.14); padding-top: .85rem; font-size: .66rem; line-height: 1.5; color: rgba(255,255,255,.55); list-style: none; display: flex; flex-direction: column; gap: .3rem; min-height: 5.4rem; }
+.clv-log .clv-t { color: #b493ff; margin-right: .55rem; }
+
+/* Capabilities ledger */
+.clv-cap-head { max-width: 44rem; }
+.clv-h2 { font-size: clamp(1.8rem, 3.2vw, 2.5rem); letter-spacing: -0.02em; margin-top: .9rem; }
+.clv-cap-sub { color: var(--color-muted-foreground); margin-top: .9rem; line-height: 1.65; }
+.clv-feats { display: grid; gap: 2.4rem; margin-top: 3.2rem; }
+@media (min-width: 768px) {
+  .clv-feats { grid-template-columns: 1fr 1fr; gap: 3rem 3.25rem; padding-bottom: 2.5rem; }
+  .clv-feats > :nth-child(even) { margin-top: 2.5rem; margin-bottom: -2.5rem; }
+}
+.clv-feat { position: relative; border-top: 1px solid var(--color-border); padding-top: 1.4rem; }
+.clv-feat-num { position: absolute; top: .35rem; right: 0; font-size: 3.6rem; font-weight: 700; line-height: 1; color: rgba(133,77,255,.13); pointer-events: none; }
+html.dark .clv-feat-num { color: rgba(196,165,255,.15); }
+.clv-feat h3 { margin: .9rem 0 .5rem; font-size: 1.12rem; max-width: 25rem; }
+.clv-feat p { color: var(--color-muted-foreground); line-height: 1.66; font-size: .95rem; max-width: 30rem; }
+.clv-feat-link { margin-top: .85rem; }
+
+/* Loyalty accumulator */
+.clv-loyalty { overflow: clip; }
+.clv-loyalty-grid { display: grid; gap: 3.5rem; align-items: center; }
+@media (min-width: 1024px) { .clv-loyalty-grid { grid-template-columns: 1fr 1fr; } }
+.clv-loyal-body { color: var(--color-muted-foreground); line-height: 1.68; margin: 1rem 0 1.6rem; max-width: 34rem; }
+.clv-acc { position: relative; width: 100%; max-width: 28rem; margin: 0 auto; aspect-ratio: 1 / 1; }
+.clv-acc-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.clv-acc-line { stroke: rgba(133,77,255,.35); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+html.dark .clv-acc-line { stroke: rgba(196,165,255,.4); }
+.clv-acc-dot { fill: #854dff; }
+html.dark .clv-acc-dot { fill: #c4a6ff; }
+.clv-acc-chip { position: absolute; transform: translate(-50%,-50%); background: var(--color-card); border: 1px solid var(--color-border); border-radius: 99px; padding: .3rem .65rem; font-size: .58rem; letter-spacing: .08em; color: var(--color-muted-foreground); white-space: nowrap; box-shadow: 0 8px 20px -12px rgba(53,16,112,.25); }
+@media (max-width: 480px) { .clv-acc-chip { font-size: .52rem; padding: .24rem .5rem; } }
+.clv-acc-core { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 11rem; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 1.1rem; padding: 1.05rem .9rem; text-align: center; box-shadow: 0 20px 50px -26px rgba(53,16,112,.3); }
+.clv-acc-ico { margin: 0 auto .55rem; }
+.clv-acc-name { display: block; font-size: .92rem; font-weight: 600; color: var(--color-foreground); }
+.clv-acc-tier { display: inline-block; margin-top: .55rem; font-size: .5rem; letter-spacing: .12em; color: #854dff; border: 1px solid rgba(133,77,255,.35); border-radius: 99px; padding: .22rem .5rem; }
+html.dark .clv-acc-tier { color: #c4a6ff; border-color: rgba(196,165,255,.4); }
+.clv-acc-cap { margin-top: 1.4rem; text-align: center; font-size: .58rem; letter-spacing: .14em; color: var(--color-muted-foreground); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .clv-floatchip { animation: none; }
+  .clv-acc-dot { display: none; }
+  .clv-fill { transition: none; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  "use strict";
+
+  var svg = document.getElementById("clvSvg");
+  var rotor = document.getElementById("clvRotor");
+  var ticksG = document.getElementById("clvTicks");
+  var rpmEl = document.getElementById("clvRpm");
+  var idxEl = document.getElementById("clvIndex");
+  var fillEl = document.getElementById("clvFill");
+  var nowEl = document.getElementById("clvNow");
+  var logEl = document.getElementById("clvLog");
+  var sparksEl = document.getElementById("clvSparks");
+  if (!svg || !rotor || !rpmEl) return;
+
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NS = "http://www.w3.org/2000/svg";
+  var C = 220;
+
+  /* ── rim ticks ── */
+  for (var i = 0; i < 60; i++) {
+    var a = i * 6 * Math.PI / 180;
+    var r1 = 159, r2 = (i % 5 === 0) ? 171 : 166;
+    var ln = document.createElementNS(NS, "line");
+    ln.setAttribute("x1", (C + r1 * Math.cos(a)).toFixed(1));
+    ln.setAttribute("y1", (C + r1 * Math.sin(a)).toFixed(1));
+    ln.setAttribute("x2", (C + r2 * Math.cos(a)).toFixed(1));
+    ln.setAttribute("y2", (C + r2 * Math.sin(a)).toFixed(1));
+    ln.setAttribute("stroke", (i % 5 === 0) ? "rgba(255,255,255,.30)" : "rgba(255,255,255,.16)");
+    ln.setAttribute("stroke-width", (i % 5 === 0) ? "1.6" : "1");
+    ticksG.appendChild(ln);
+  }
+
+  /* ── state ── */
+  var IDLE = 14;          /* deg/s — never fully stops */
+  var MAX = 780;          /* deg/s */
+  var rot = 0, vel = IDLE, clvIdx = 1.0;
+  var STAGES = ["Profile", "Reward", "React", "Prove"];
+  var activeStage = 0, detailStage = 0;
+  var milestones = [
+    { rpm: 45,  label: "✦ TIER UPGRADE", log: "tier upgrade milestone → reward journey triggered", armed: true },
+    { rpm: 85,  label: "✦ CROSS-SELL", log: "cross-sell signal → next-best-offer journey triggered", armed: true },
+    { rpm: 120, label: "✦ RENEWAL",   log: "renewal confirmed → loyalty tier secured", armed: true }
+  ];
+  var marks = document.querySelectorAll(".clv-mark");
+  var panes = document.querySelectorAll(".clv-stagepane");
+  var stageBtns = document.querySelectorAll("[data-stagebtn]");
+  var quads = document.querySelectorAll(".clv-quad");
+  var t0 = null;
+
+  /* ── log ── */
+  function log(text) {
+    if (!logEl) return;
+    if (t0 === null) t0 = performance.now();
+    var li = document.createElement("li");
+    var t = document.createElement("span");
+    t.className = "clv-t";
+    t.textContent = "T+" + ((performance.now() - t0) / 1000).toFixed(1) + "s";
+    li.appendChild(t);
+    li.appendChild(document.createTextNode(text));
+    logEl.appendChild(li);
+    while (logEl.children.length > 5) logEl.removeChild(logEl.firstChild);
+  }
+  log("flywheel engaged · idling at 2 rpm");
+
+  /* ── stage detail ── */
+  function selectStage(n, quiet) {
+    detailStage = n;
+    for (var i = 0; i < panes.length; i++) panes[i].hidden = (i !== n);
+    for (var j = 0; j < stageBtns.length; j++) {
+      var on = (j === n);
+      stageBtns[j].setAttribute("aria-pressed", on ? "true" : "false");
+      stageBtns[j].classList.toggle("is-active", on);
+    }
+    for (var k = 0; k < quads.length; k++) quads[k].classList.toggle("is-active", k === n);
+    if (!quiet) log("stage focus → " + STAGES[n].toLowerCase());
+  }
+  selectStage(0, true);
+
+  function impulse(v) { vel = Math.min(MAX, vel + v); }
+
+  /* ── sparks ── */
+  function spawnSpark(label) {
+    if (reduced || !sparksEl) return;
+    if (sparksEl.childNodes.length > 11) return;
+    var rect = svg.getBoundingClientRect();
+    var scale = rect.width / 440;
+    var el = document.createElement("span");
+    el.className = "clv-spark";
+    el.textContent = label;
+    el.style.left = (C * scale) + "px";
+    el.style.top = (24 * scale) + "px";
+    sparksEl.appendChild(el);
+    var dx = Math.random() * 150 - 75;
+    var dy = -(70 + Math.random() * 90);
+    var rot2 = (Math.random() * 36 - 18);
+    var anim = el.animate([
+      { transform: "translate(-50%,-50%) rotate(0deg)", opacity: 1 },
+      { transform: "translate(calc(-50% + " + dx + "px), calc(-50% + " + dy + "px)) rotate(" + rot2 + "deg)", opacity: 0 }
+    ], { duration: 1150, easing: "cubic-bezier(.2,.7,.3,1)" });
+    anim.onfinish = function () { el.remove(); };
+  }
+
+  /* ── readout render (shared by loop + reduced-motion interactions) ── */
+  function render() {
+    var rpm = vel / 6;
+    rpmEl.textContent = Math.round(rpm);
+    idxEl.textContent = "×" + clvIdx.toFixed(2);
+    fillEl.style.width = Math.max(2, Math.min(100, rpm / 130 * 100)) + "%";
+    /* stage at the top marker */
+    var aa = (((-90 - rot) % 360) + 360) % 360;
+    var st = Math.round(((((-90 - aa) % 360) + 360) % 360) / 90) % 4;
+    if (st !== activeStage) {
+      activeStage = st;
+      nowEl.textContent = "NOW · " + STAGES[st].toUpperCase();
+      nowEl.classList.add("is-pulse");
+      setTimeout(function () { nowEl.classList.remove("is-pulse"); }, 250);
+    }
+    /* milestones */
+    for (var m = 0; m < milestones.length; m++) {
+      var ms = milestones[m];
+      if (ms.armed && rpm >= ms.rpm) {
+        ms.armed = false;
+        spawnSpark(ms.label);
+        log(ms.log);
+        if (marks[m]) marks[m].classList.add("is-hit");
+      } else if (!ms.armed && rpm < ms.rpm * 0.7) {
+        ms.armed = true;
+      }
+    }
+  }
+
+  /* ── physics loop ── */
+  var rafId = null, lastT = null, inView = true;
+  function frame(t) {
+    rafId = null;
+    if (lastT === null) lastT = t;
+    var dt = Math.min(0.05, (t - lastT) / 1000);
+    lastT = t;
+    if (!dragging) {
+      vel += (IDLE - vel) * Math.min(1, dt * 0.45);
+      if (Math.abs(vel - IDLE) < 0.05) vel = IDLE;
+    }
+    rot = (rot + vel * dt) % 360;
+    if (rot < 0) rot += 360;
+    rotor.setAttribute("transform", "rotate(" + rot.toFixed(2) + " 220 220)");
+    clvIdx += (vel / MAX) * 0.055 * dt;
+    render();
+    if (inView) rafId = requestAnimationFrame(frame);
+  }
+  function startLoop() {
+    if (reduced || rafId !== null) return;
+    lastT = null;
+    rafId = requestAnimationFrame(frame);
+  }
+  function stopLoop() {
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      inView = entries[0].isIntersecting;
+      if (inView) startLoop(); else stopLoop();
+    }, { threshold: 0.05 }).observe(svg);
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) stopLoop(); else if (inView) startLoop();
+  });
+  startLoop();
+
+  /* ── reduced motion: interactions still update readouts, no looping ── */
+  function reducedStep() {
+    rot = (rot + 28) % 360;
+    rotor.setAttribute("transform", "rotate(" + rot.toFixed(2) + " 220 220)");
+    clvIdx += vel / MAX * 0.35;
+    render();
+  }
+
+  /* ── drag / tap on the wheel ── */
+  var dragging = false, lastAngle = 0, lastMoveT = 0, moved = 0, downTarget = null;
+  function angleOf(e) {
+    var r = svg.getBoundingClientRect();
+    var x = e.clientX - (r.left + r.width / 2);
+    var y = e.clientY - (r.top + r.height / 2);
+    return Math.atan2(y, x) * 180 / Math.PI;
+  }
+  svg.addEventListener("pointerdown", function (e) {
+    dragging = true; moved = 0;
+    downTarget = e.target;
+    lastAngle = angleOf(e);
+    lastMoveT = performance.now();
+    svg.classList.add("is-dragging");
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!dragging) return;
+    var a = angleOf(e);
+    var d = a - lastAngle;
+    if (d > 180) d -= 360;
+    if (d < -180) d += 360;
+    moved += Math.abs(d);
+    lastAngle = a;
+    var now = performance.now();
+    var dt = (now - lastMoveT) / 1000;
+    lastMoveT = now;
+    if (dt > 0.001) {
+      var inst = d / dt;
+      vel = Math.max(-MAX, Math.min(MAX, vel * 0.5 + inst * 0.5));
+    }
+    rot = (rot + d) % 360;
+    if (rot < 0) rot += 360;
+    rotor.setAttribute("transform", "rotate(" + rot.toFixed(2) + " 220 220)");
+    if (reduced) render();
+  });
+  function endDrag(e) {
+    if (!dragging) return;
+    dragging = false;
+    svg.classList.remove("is-dragging");
+    if (moved < 5) { /* tap, not drag */
+      var q = downTarget && downTarget.closest ? downTarget.closest("[data-stage]") : null;
+      if (q) selectStage(parseInt(q.getAttribute("data-stage"), 10), true);
+      impulse(72);
+      if (reduced) reducedStep();
+    } else if (reduced) {
+      reducedStep();
+    }
+    downTarget = null;
+  }
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", function () { dragging = false; svg.classList.remove("is-dragging"); });
+  window.addEventListener("blur", function () { dragging = false; svg.classList.remove("is-dragging"); });
+
+  /* ── keyboard on quadrants ── */
+  for (var qi = 0; qi < quads.length; qi++) {
+    (function (q) {
+      q.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          selectStage(parseInt(q.getAttribute("data-stage"), 10), true);
+          impulse(72);
+          if (reduced) reducedStep();
+        }
+      });
+    })(quads[qi]);
+  }
+
+  /* ── stage buttons ── */
+  for (var bi = 0; bi < stageBtns.length; bi++) {
+    (function (b) {
+      b.addEventListener("click", function () {
+        selectStage(parseInt(b.getAttribute("data-stagebtn"), 10), true);
+        impulse(90);
+        if (reduced) reducedStep();
+      });
+    })(stageBtns[bi]);
+  }
+
+  /* ── event feed ── */
+  var evBtns = document.querySelectorAll(".clv-ev");
+  for (var ei = 0; ei < evBtns.length; ei++) {
+    (function (b) {
+      b.addEventListener("click", function () {
+        impulse(parseInt(b.getAttribute("data-impulse"), 10));
+        log(b.getAttribute("data-log"));
+        if (reduced) reducedStep();
+      });
+    })(evBtns[ei]);
+  }
+})();
+</script>
+{% endraw %}

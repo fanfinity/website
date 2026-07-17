@@ -3,51 +3,945 @@ layout: page
 cta: false
 permalink: /solutions/optimize-adspend
 title: Optimize Advertising Spend
-description: "Fanfinity pushes real-time suppression lists, high value lookalike seeds, and verified reach data to your ad platforms, so you stop wasting budget on people who already converted and start investing it where it compounds."
+description: "Fanfinity pushes real-time suppression lists, high-value lookalike seeds, and verified reach data to your ad platforms, so you stop wasting budget on people who already converted and start investing it where it compounds."
 breadcrumb_parent: { title: Solutions, url: /solutions }
 features:
   - { icon: target,   title: "Suppress converted users the moment they convert", body: "When a fan completes a purchase, registers, or hits a goal, Fanfinity pushes an update to your ad platforms via Reverse ETL immediately. Not in the next batch window: now. You stop paying to acquire a customer you already have." }
   - { icon: identity, title: "Seed lookalike audiences from your best fans", body: "Your highest-value fans (top-tier loyalty members, multi-event attendees, high-frequency purchasers) form the seed audience for lookalike modeling across paid channels. Better seeds produce better lookalikes." }
   - { icon: users,    title: "Segment before you spend", body: "Audience Builder lets you cut your fan graph by purchase history, engagement depth, event attendance, and tier status before pushing to ad platforms. Every campaign starts with a precise audience, not a demographic guess." }
   - { icon: chart,    title: "Prove what actually drove the conversion", body: "Fanfinity Measure ties ad exposure back to fan actions (not impressions, not clicks) so you can distinguish the campaigns that drove real conversions from the ones that just claimed credit for a fan who was going to convert anyway." }
-  - { icon: coins,    title: "Reduce cost per acquisition, not just cost per click", body: "Suppression removes already-converted fans from prospecting pools. Better seeds improve lookalike quality. Accurate attribution directs budget to campaigns that actually work. Each lever independently reduces CPA; together they compound." }
-  - { icon: shield,   title: "First-party data that ad platforms trust", body: "Fanfinity's fan graph is built on consented, in-region first-party signals, not third-party cookies or inferred data. As signal loss deepens, owned audience data becomes an edge platform-native targeting can't match." }
+  - { icon: coins,    title: "Reduce cost per acquisition, not just cost per click", body: "Suppression removes already converted fans from prospecting pools. Better seeds improve lookalike quality. Accurate attribution directs budget to campaigns that actually work. Each lever independently reduces CPA; together they compound." }
+  - { icon: shield,   title: "First-party data that ad platforms trust", body: "Fanfinity's fan graph is built on consented, in-Kingdom first-party signals, not third-party cookies or inferred data. As signal loss deepens, owned audience data becomes an edge the ad platforms cannot match." }
 steps:
   - { icon: target,   title: "Suppress converted users in real time", body: "Every conversion event pushes an immediate suppression update to your ad platforms, stopping spend on fans you already acquired." }
-  - { icon: identity, title: "Seed lookalikes from your best fans", body: "High value fan segments feed lookalike models with first-party behavioral data, producing better prospecting audiences than platform-native demographics." }
+  - { icon: identity, title: "Seed lookalikes from your best fans", body: "High-value fan segments feed lookalike models with first-party behavioral data, producing better prospecting audiences than the demographics built into ad platforms." }
   - { icon: users,    title: "Segment before you spend", body: "The audience builder defines precise campaign audiences from the fan graph before anything is pushed to paid channels, so every campaign starts informed." }
   - { icon: chart,    title: "Attribute to actions, not impressions", body: "Fanfinity Measure closes the loop by tying ad exposure to real fan behavior, so budget follows the campaigns that actually convert." }
 ---
-{% include hero.html
-   eyebrow="Use Case"
-   title="Stop funding the customers you already have"
-   subtitle="Wasted ad spend follows a pattern: retargeting people who converted yesterday, prospecting with audiences too broad to convert, and attributing results to the last ad rather than the one that did the work. Fanfinity fixes all three with real-time suppression, first-party lookalike seeds, and deterministic attribution."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore Fanfinity Measure"
-   secondary_url="/platform/measure"
-   image="/assets/img/solutions-optimize-adspend.jpg"
-   image_alt="A person working on a laptop with digital marketing analytics" %}
+<div class="oas-page">
 
-{% include feature-grid.html
-   heading="Better data produces better targeting"
-   subheading="Most ad efficiency problems are audience problems. Fanfinity solves them at the data layer."
-   items=page.features
-   columns=3 %}
+  <!-- ── HERO ─────────────────────────────────────────────────────────── -->
+  <section class="oas-hero border-b border-border bg-soft">
+    <div class="container-page section">
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-8">
+        <div class="lg:col-span-7">
+          <p class="eyebrow" data-reveal>Use Case · Advertising</p>
+          <h1 class="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl" data-reveal style="--reveal-delay:60ms">
+            Stop funding the <span class="oas-mark">customers you already have</span>
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground" data-reveal style="--reveal-delay:120ms">
+            Wasted ad spend follows a pattern: retargeting people who converted yesterday, prospecting with audiences too broad to convert, and attributing results to the last ad rather than the one that did the work. Fanfinity fixes all three with real-time suppression, first-party lookalike seeds, and deterministic attribution.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3" data-reveal style="--reveal-delay:180ms">
+            <a href="/demo" class="btn btn-primary btn-lg">Book a Demo</a>
+            <a href="/platform/measure" class="btn btn-secondary btn-lg">Explore Fanfinity Measure</a>
+          </div>
+          <div class="mt-10 flex flex-wrap items-center gap-2" data-reveal style="--reveal-delay:240ms">
+            <span class="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">The three leaks ↓</span>
+            <a class="oas-chip" href="#leaky-funnel"><span class="oas-chip-dot" aria-hidden="true"></span>01 · Retargeting yesterday's converters</a>
+            <a class="oas-chip" href="#leaky-funnel"><span class="oas-chip-dot" style="animation-delay:.5s" aria-hidden="true"></span>02 · Broad demographic prospecting</a>
+            <a class="oas-chip" href="#leaky-funnel"><span class="oas-chip-dot" style="animation-delay:1s" aria-hidden="true"></span>03 · Last-click misattribution</a>
+          </div>
+        </div>
+        <div class="lg:col-span-5" data-reveal style="--reveal-delay:160ms">
+          <figure class="oas-hero-fig" aria-hidden="true">
+            <svg class="oas-hero-svg" viewBox="0 0 220 260" fill="none" focusable="false">
+              <ellipse class="oas-f-rim" cx="110" cy="30" rx="80" ry="9"/>
+              <path class="oas-f-wall" d="M30 30 L95 150 L95 208"/>
+              <path class="oas-f-wall" d="M190 30 L125 150 L125 208"/>
+              <rect class="oas-f-basin" x="66" y="222" width="88" height="16" rx="8"/>
+              <rect class="oas-f-pool" x="70" y="229" width="80" height="6" rx="3"/>
+              <circle class="oas-f-leak" cx="49" cy="66" r="4"/>
+              <circle class="oas-f-leak" cx="156" cy="92" r="4"/>
+              <circle class="oas-f-leak" cx="78" cy="119" r="4"/>
+              <circle class="oas-f-drip" cx="49" cy="74" r="2.6"/>
+              <circle class="oas-f-drip" cx="156" cy="100" r="2.6" style="animation-delay:.7s"/>
+              <circle class="oas-f-drip" cx="78" cy="127" r="2.6" style="animation-delay:1.3s"/>
+              <text class="oas-f-text" x="110" y="14" text-anchor="middle">BUDGET IN</text>
+              <text class="oas-f-text" x="110" y="253" text-anchor="middle">WHAT COMPOUNDS</text>
+            </svg>
+            <figcaption class="oas-hero-figcap font-mono">THE PATTERN — THREE LEAKS, THREE FIXES</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
 
-{% include feature-split.html
-   reverse=true
-   title="Every conversion should stop a spend, not extend it"
-   body="When a fan converts, the worst thing you can do is keep spending to convert them again. Most platforms have a suppression lag of hours or a day, because suppression lists update in batch. Fanfinity's Reverse ETL pushes suppression updates the moment a fan profile changes, so a conversion at 2pm stops paid spend by 2pm, not 2am."
-   cta_text="See how Reverse ETL works"
-   cta_url="/platform/blocks"
-   icon="target" %}
+  <!-- ── PLAYABLE CENTERPIECE: THE LEAKY FUNNEL ───────────────────────── -->
+  <section id="leaky-funnel" class="section">
+    <div class="container-page">
+      <div class="max-w-3xl" data-reveal>
+        <p class="eyebrow">Interactive · Illustrative model</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-balance">Every ad budget has three leaks. Plug them.</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">
+          Budget pours in at the top of the funnel. Three holes drain it before it can compound: retargeting people who converted yesterday, prospecting with audiences too broad to convert, and crediting the last ad instead of the one that did the work. Plug each leak — by hand, below — and watch the waste rate fall while recovered spend compounds.
+        </p>
+      </div>
 
-{% include value-pillars.html
-   heading="Suppress, seed, segment, attribute"
-   subheading="Four steps from budget waste to compound advertising returns."
-   items=page.steps %}
+      <div class="oas-lab mt-10" data-reveal style="--reveal-delay:100ms">
+        <div class="oas-lab-top">
+          <p class="oas-lab-title font-mono">FANFINITY · BUDGET FUNNEL — LIVE MODEL</p>
+          <button type="button" id="oas-reset" class="btn btn-secondary oas-reset">
+            {% include icon.html name="arrows-counter-clockwise" class="h-4 w-4" %} Reset
+          </button>
+        </div>
 
-{% include cta-band.html
-   heading="Make every ad dollar work harder"
-   text="See how Fanfinity pushes real-time suppression lists, seeds lookalike audiences from your best fans, and attributes spend to the campaigns that actually convert, all on a first-party fan graph you own." %}
+        <div class="oas-lab-grid">
+          <!-- Valves: the playable controls -->
+          <div class="oas-valves" role="group" aria-label="Plug the three leaks">
+            <button type="button" class="oas-valve" data-leak="0" aria-pressed="false" aria-label="Leak 01, retargeting yesterday's converters. Toggle to plug with real-time suppression.">
+              <span class="oas-valve-num font-mono" aria-hidden="true">01</span>
+              <span class="oas-valve-body">
+                <span class="oas-valve-title">Retargeting yesterday's converters</span>
+                <span class="oas-valve-fix">{% include icon.html name="target" class="h-4 w-4" %} Plug: real-time suppression</span>
+                <span class="oas-valve-desc">The moment a fan converts, Fanfinity pushes a suppression update to your ad platforms. A 2pm conversion stops 2pm spend — not 2am.</span>
+              </span>
+              <span class="oas-state font-mono" data-state>Leaking</span>
+            </button>
+
+            <button type="button" class="oas-valve" data-leak="1" aria-pressed="false" aria-label="Leak 02, broad demographic prospecting. Toggle to plug with first-party lookalike seeds.">
+              <span class="oas-valve-num font-mono" aria-hidden="true">02</span>
+              <span class="oas-valve-body">
+                <span class="oas-valve-title">Broad demographic prospecting</span>
+                <span class="oas-valve-fix">{% include icon.html name="identity" class="h-4 w-4" %} Plug: first-party lookalike seeds</span>
+                <span class="oas-valve-desc">Your highest-value fans — top-tier loyalty members, multi-event attendees, high-frequency purchasers — form the seed audience. Better seeds produce better lookalikes.</span>
+              </span>
+              <span class="oas-state font-mono" data-state>Leaking</span>
+            </button>
+
+            <button type="button" class="oas-valve" data-leak="2" aria-pressed="false" aria-label="Leak 03, last-click misattribution. Toggle to plug with attribution based on actions.">
+              <span class="oas-valve-num font-mono" aria-hidden="true">03</span>
+              <span class="oas-valve-body">
+                <span class="oas-valve-title">Last-click misattribution</span>
+                <span class="oas-valve-fix">{% include icon.html name="chart" class="h-4 w-4" %} Plug: attribution based on actions</span>
+                <span class="oas-valve-desc">Fanfinity Measure ties ad exposure to real fan actions, so budget follows the campaigns that actually convert — not the ones that just claimed credit.</span>
+              </span>
+              <span class="oas-state font-mono" data-state>Leaking</span>
+            </button>
+          </div>
+
+          <!-- Live canvas -->
+          <div class="oas-stage" id="oas-stage">
+            <canvas id="oas-canvas" aria-hidden="true"></canvas>
+            <p class="sr-only">Animated funnel: budget flows in at the top, and spend leaks out through three holes until you plug them with the controls beside it.</p>
+            <noscript><p class="oas-noscript">This live model needs JavaScript. The three leaks and their fixes are listed alongside.</p></noscript>
+          </div>
+
+          <!-- Counters -->
+          <div class="oas-metrics">
+            <div class="oas-metric">
+              <p class="oas-metric-label font-mono">Waste rate</p>
+              <p class="oas-metric-value font-mono oas-waste-text" id="oas-waste">40%</p>
+              <div class="oas-meter" aria-hidden="true"><span id="oas-waste-bar" style="width:40%"></span></div>
+              <p class="oas-metric-cap">of inflow escaping</p>
+            </div>
+            <div class="oas-metric">
+              <p class="oas-metric-label font-mono">Recovered</p>
+              <p class="oas-metric-value font-mono" id="oas-recovered">$0</p>
+              <p class="oas-metric-cap">reaching campaigns that compound</p>
+            </div>
+            <div class="oas-metric">
+              <p class="oas-metric-label font-mono">Compound return</p>
+              <p class="oas-metric-value font-mono oas-brand-text" id="oas-mult">×1.0</p>
+              <p class="oas-metric-cap">each lever cuts CPA; together they compound</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="oas-lab-foot">
+          <p class="oas-status" id="oas-status" aria-live="polite">All three leaks are open — watch the waste rate.</p>
+          <p class="oas-note font-mono">ILLUSTRATIVE MODEL · THE LEVERS ARE REAL</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUPPRESSION TIMELINE: 2PM VS 2AM ─────────────────────────────── -->
+  <section id="suppression" class="section border-y border-border bg-soft">
+    <div class="container-page">
+      <div class="grid items-center gap-12 lg:grid-cols-12">
+        <div class="lg:col-span-5" data-reveal>
+          <p class="eyebrow">Real-time suppression</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Every conversion should stop a spend, not extend it</h2>
+          <p class="mt-4 leading-relaxed text-muted-foreground">
+            When a fan converts, the worst thing you can do is keep spending to convert them again. Most platforms have a suppression lag of hours or a day, because suppression lists update in batch. Fanfinity's Reverse ETL pushes suppression updates the moment a fan profile changes, so a conversion at 2pm stops paid spend by 2pm, not 2am.
+          </p>
+          <p class="mt-6">
+            <a href="/platform/blocks" class="link-arrow">See how Reverse ETL works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
+          </p>
+        </div>
+
+        <div class="lg:col-span-7" data-reveal style="--reveal-delay:120ms">
+          <div class="oas-clock" id="oas-clock">
+            <div class="oas-scale font-mono" aria-hidden="true">
+              <span style="left:0%">12:00</span>
+              <span style="left:14.29%">14:00</span>
+              <span style="left:28.57%">16:00</span>
+              <span style="left:42.86%">18:00</span>
+              <span style="left:57.14%">20:00</span>
+              <span style="left:71.43%">22:00</span>
+              <span style="left:85.71%">00:00</span>
+              <span class="oas-scale-last" style="left:100%">02:00</span>
+            </div>
+
+            <div class="oas-lane">
+              <div class="oas-lane-head">
+                <span class="oas-lane-tag oas-tag-waste font-mono">BATCH · STATUS QUO</span>
+                <span class="oas-lane-name">Suppression list updates overnight</span>
+                <span class="oas-lane-big"><b class="font-heading">12h</b><i>of spend after the conversion</i></span>
+              </div>
+              <div class="oas-track" aria-hidden="true">
+                <span class="oas-gridline" style="left:14.29%"></span>
+                <span class="oas-gridline" style="left:28.57%"></span>
+                <span class="oas-gridline" style="left:42.86%"></span>
+                <span class="oas-gridline" style="left:57.14%"></span>
+                <span class="oas-gridline" style="left:71.43%"></span>
+                <span class="oas-gridline" style="left:85.71%"></span>
+                <span class="oas-wastebar"></span>
+                <span class="oas-pin" style="left:14.29%">
+                  <span class="oas-pin-dot"></span>
+                  <span class="oas-pin-label font-mono">14:00 · fan converts</span>
+                </span>
+                <span class="oas-pin oas-pin-late oas-pin-r" style="left:100%">
+                  <span class="oas-pin-dot"></span>
+                  <span class="oas-pin-label font-mono">02:00 · suppression lands</span>
+                </span>
+              </div>
+              <p class="oas-lane-cap">The fan converted at 2pm. The ads keep running — and billing — until the next batch window.</p>
+            </div>
+
+            <div class="oas-lane">
+              <div class="oas-lane-head">
+                <span class="oas-lane-tag oas-tag-brand font-mono">FANFINITY · REVERSE ETL</span>
+                <span class="oas-lane-name">Suppression the moment the profile changes</span>
+                <span class="oas-lane-big"><b class="font-heading">0h</b><i>the conversion is the suppression event</i></span>
+              </div>
+              <div class="oas-track" aria-hidden="true">
+                <span class="oas-gridline" style="left:14.29%"></span>
+                <span class="oas-gridline" style="left:28.57%"></span>
+                <span class="oas-gridline" style="left:42.86%"></span>
+                <span class="oas-gridline" style="left:57.14%"></span>
+                <span class="oas-gridline" style="left:71.43%"></span>
+                <span class="oas-gridline" style="left:85.71%"></span>
+                <span class="oas-pin" style="left:14.29%">
+                  <span class="oas-pin-dot"></span>
+                  <span class="oas-pin-ring"></span>
+                  <span class="oas-pin-label font-mono">14:00 · converts → suppressed in the same moment</span>
+                </span>
+              </div>
+              <p class="oas-lane-cap">A 2pm conversion stops 2pm spend. Not in the next batch window: now.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS: FOUR STEPS ─────────────────────────────────────── -->
+  <section id="how-it-works" class="section">
+    <div class="container-page">
+      <div class="max-w-3xl" data-reveal>
+        <p class="eyebrow">How it works</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Suppress, seed, segment, attribute</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Four steps from budget waste to compound advertising returns.</p>
+      </div>
+      <div class="oas-steps mt-12">
+        <article class="oas-step" data-reveal>
+          <p class="oas-step-num font-heading" aria-hidden="true">01</p>
+          <div class="icon-chip mt-4">{% include icon.html name="target" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Suppress converted users in real time</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Every conversion event pushes an immediate suppression update to your ad platforms, stopping spend on fans you already acquired.</p>
+        </article>
+        <article class="oas-step" data-reveal style="--reveal-delay:80ms">
+          <p class="oas-step-num font-heading" aria-hidden="true">02</p>
+          <div class="icon-chip mt-4">{% include icon.html name="identity" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Seed lookalikes from your best fans</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">High-value fan segments feed lookalike models with first-party behavioral data, producing better prospecting audiences than the demographics built into ad platforms.</p>
+        </article>
+        <article class="oas-step" data-reveal style="--reveal-delay:160ms">
+          <p class="oas-step-num font-heading" aria-hidden="true">03</p>
+          <div class="icon-chip mt-4">{% include icon.html name="users" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Segment before you spend</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">The audience builder defines precise campaign audiences from the fan graph before anything is pushed to paid channels, so every campaign starts informed.</p>
+        </article>
+        <article class="oas-step" data-reveal style="--reveal-delay:240ms">
+          <p class="oas-step-num font-heading" aria-hidden="true">04</p>
+          <div class="icon-chip mt-4">{% include icon.html name="chart" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Attribute to actions, not impressions</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Fanfinity Measure closes the loop by tying ad exposure to real fan behavior, so budget follows the campaigns that actually convert.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SIX LEVERS AT THE DATA LAYER ─────────────────────────────────── -->
+  <section id="levers" class="section border-t border-border bg-soft">
+    <div class="container-page">
+      <div class="max-w-3xl" data-reveal>
+        <p class="eyebrow">From wasted spend to compound returns</p>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl text-balance">Better data produces better targeting</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted-foreground">Most ad efficiency problems are audience problems. Fanfinity solves them at the data layer.</p>
+      </div>
+      <div class="oas-feat-grid mt-12">
+        <article class="oas-feat oas-feat-a" data-reveal>
+          <p class="oas-feat-idx font-heading" aria-hidden="true">01</p>
+          <div class="icon-chip">{% include icon.html name="target" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Suppress converted users the moment they convert</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">When a fan completes a purchase, registers, or hits a goal, Fanfinity pushes an update to your ad platforms via Reverse ETL immediately. Not in the next batch window: now. You stop paying to acquire a customer you already have.</p>
+          <p class="mt-4"><a href="/platform/blocks" class="link-arrow">See how Reverse ETL works {% include icon.html name="arrow-right" class="h-4 w-4" %}</a></p>
+        </article>
+        <article class="oas-feat oas-feat-b" data-reveal style="--reveal-delay:80ms">
+          <p class="oas-feat-idx font-heading" aria-hidden="true">02</p>
+          <div class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Seed lookalike audiences from your best fans</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Your highest-value fans (top-tier loyalty members, multi-event attendees, high-frequency purchasers) form the seed audience for lookalike modeling across paid channels. Better seeds produce better lookalikes.</p>
+        </article>
+        <article class="oas-feat oas-feat-c" data-reveal>
+          <p class="oas-feat-idx font-heading" aria-hidden="true">03</p>
+          <div class="icon-chip">{% include icon.html name="users" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Segment before you spend</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Audience Builder lets you cut your fan graph by purchase history, engagement depth, event attendance, and tier status before pushing to ad platforms. Every campaign starts with a precise audience, not a demographic guess.</p>
+        </article>
+        <article class="oas-feat oas-feat-d" data-reveal style="--reveal-delay:80ms">
+          <p class="oas-feat-idx font-heading" aria-hidden="true">04</p>
+          <div class="icon-chip">{% include icon.html name="chart" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Prove what actually drove the conversion</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Fanfinity Measure ties ad exposure back to fan actions (not impressions, not clicks) so you can distinguish the campaigns that drove real conversions from the ones that just claimed credit for a fan who was going to convert anyway.</p>
+          <p class="mt-4"><a href="/platform/measure" class="link-arrow">Explore Fanfinity Measure {% include icon.html name="arrow-right" class="h-4 w-4" %}</a></p>
+        </article>
+        <article class="oas-feat oas-feat-e" data-reveal>
+          <p class="oas-feat-idx font-heading" aria-hidden="true">05</p>
+          <div class="icon-chip">{% include icon.html name="coins" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">Reduce cost per acquisition, not just cost per click</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Suppression removes already converted fans from prospecting pools. Better seeds improve lookalike quality. Accurate attribution directs budget to campaigns that actually work. Each lever independently reduces CPA; together they compound.</p>
+        </article>
+        <article class="oas-feat oas-feat-f" data-reveal style="--reveal-delay:80ms">
+          <p class="oas-feat-idx font-heading" aria-hidden="true">06</p>
+          <div class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</div>
+          <h3 class="mt-4 text-lg font-semibold">First-party data that ad platforms trust</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted-foreground">Fanfinity's fan graph is built on consented, in-Kingdom first-party signals, not third-party cookies or inferred data. As signal loss deepens, owned audience data becomes an edge the ad platforms cannot match.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {% include cta-band.html
+     heading="Make every ad dollar work harder"
+     text="See how Fanfinity pushes real-time suppression lists, seeds lookalike audiences from your best fans, and attributes spend to the campaigns that actually convert, all on a first-party fan graph you own." %}
+</div>
+
+{% raw %}
+<style>
+/* ── Optimize Ad Spend page (oas-) — scoped bespoke styles ───────────── */
+.oas-page {
+  --oas-brand: #854dff;
+  --oas-brand-ink: #7c4dff;
+  --oas-waste: #c2572e;
+  --oas-waste-soft: rgba(194, 87, 46, 0.12);
+  --oas-brand-soft: rgba(133, 77, 255, 0.09);
+  --oas-ghost: #e8e2f6;
+  --oas-line: #ddd7e8;
+  --oas-ink: #251a36;
+  --oas-glass: rgba(133, 77, 255, 0.05);
+}
+html.dark .oas-page {
+  --oas-brand: #a984ff;
+  --oas-brand-ink: #b18cff;
+  --oas-waste: #e08a63;
+  --oas-waste-soft: rgba(224, 138, 99, 0.14);
+  --oas-brand-soft: rgba(169, 132, 255, 0.11);
+  --oas-ghost: #2c2342;
+  --oas-line: #3b3249;
+  --oas-ink: #efe9fa;
+  --oas-glass: rgba(169, 132, 255, 0.07);
+}
+
+/* Hero */
+.oas-mark { background-image: linear-gradient(to top, var(--oas-brand-soft) 36%, transparent 36%); }
+.oas-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--color-border); background: var(--color-card);
+  border-radius: 9999px; padding: 0.4rem 0.85rem;
+  font-family: "Geist Mono", ui-monospace, monospace; font-size: 11px;
+  color: var(--color-muted-foreground); text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.oas-chip:hover { border-color: var(--oas-brand); color: var(--color-foreground); }
+.oas-chip-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--oas-waste); animation: oas-pulse-dot 1.8s ease-in-out infinite; }
+@keyframes oas-pulse-dot { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+.oas-hero-fig {
+  margin: 0; border: 1px solid var(--color-border); border-radius: 1.5rem;
+  background: var(--color-card); padding: 1.5rem 1.5rem 1.1rem;
+  box-shadow: 0 24px 80px -52px rgba(53, 16, 112, 0.35);
+}
+.oas-hero-svg { display: block; width: 100%; height: auto; }
+.oas-f-wall { stroke: var(--oas-line); stroke-width: 2.5; stroke-linecap: round; }
+.oas-f-rim { stroke: var(--oas-line); stroke-width: 2.5; }
+.oas-f-basin { stroke: var(--oas-line); stroke-width: 2.5; }
+.oas-f-pool { fill: var(--oas-brand); opacity: 0.55; }
+.oas-f-leak { fill: var(--oas-waste); }
+.oas-f-drip { fill: var(--oas-waste); animation: oas-drip 2s cubic-bezier(0.45, 0, 0.6, 1) infinite; }
+.oas-f-text { fill: var(--color-muted-foreground); font-family: "Geist Mono", ui-monospace, monospace; font-size: 9px; letter-spacing: 0.16em; }
+@keyframes oas-drip { 0% { transform: translateY(0); opacity: 0; } 18% { opacity: 0.95; } 80% { opacity: 0.85; } 100% { transform: translateY(30px); opacity: 0; } }
+.oas-hero-figcap { margin-top: 0.9rem; font-size: 10px; letter-spacing: 0.18em; color: var(--color-muted-foreground); text-align: center; }
+
+/* Lab shell */
+.oas-lab {
+  border: 1px solid var(--color-border); background: var(--color-card);
+  border-radius: 2rem; overflow: hidden;
+  box-shadow: 0 28px 90px -56px rgba(53, 16, 112, 0.4);
+}
+.oas-lab-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--color-border);
+}
+.oas-lab-title { font-size: 11px; letter-spacing: 0.18em; color: var(--color-muted-foreground); }
+.oas-reset { padding: 0.45rem 0.9rem; font-size: 12px; }
+.oas-lab-grid { display: grid; gap: 1.25rem; padding: 1.25rem; }
+.oas-lab-foot {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  padding: 0.9rem 1.25rem; border-top: 1px solid var(--color-border);
+}
+.oas-status { font-size: 0.875rem; font-weight: 500; color: var(--color-foreground); }
+.oas-note { font-size: 10px; letter-spacing: 0.14em; color: var(--color-muted-foreground); }
+.oas-noscript { padding: 1rem; font-size: 0.85rem; color: var(--color-muted-foreground); }
+
+/* Valves */
+.oas-valves { display: flex; flex-direction: column; gap: 0.75rem; order: 2; }
+.oas-valve {
+  display: flex; gap: 0.9rem; align-items: flex-start; text-align: left; width: 100%;
+  border: 1px solid var(--color-border); background: var(--color-card);
+  border-radius: 1rem; padding: 0.95rem 1rem; cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.oas-valve:hover { border-color: #c9b8f5; }
+.oas-valve.is-plugged { border-color: rgba(133, 77, 255, 0.5); background: var(--oas-brand-soft); box-shadow: 0 10px 34px -22px rgba(124, 77, 255, 0.45); }
+html.dark .oas-valve:hover { border-color: #4c3a75; }
+.oas-valve-num {
+  flex-shrink: 0; margin-top: 0.1rem; font-size: 11px; color: var(--color-muted-foreground);
+  border: 1px solid var(--color-border); border-radius: 0.5rem; padding: 0.15rem 0.45rem;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.oas-valve.is-plugged .oas-valve-num { background: var(--oas-brand); border-color: var(--oas-brand); color: #ffffff; }
+.oas-valve-body { flex: 1; display: flex; flex-direction: column; gap: 0.25rem; }
+.oas-valve-title { font-weight: 600; font-size: 0.95rem; color: var(--color-foreground); }
+.oas-valve-fix { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 600; color: var(--oas-brand-ink); }
+.oas-valve-desc { font-size: 0.8rem; line-height: 1.5; color: var(--color-muted-foreground); }
+.oas-state {
+  flex-shrink: 0; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  border-radius: 9999px; padding: 0.28rem 0.6rem;
+  color: var(--oas-waste); border: 1px solid var(--oas-waste); background: var(--oas-waste-soft);
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+.oas-valve.is-plugged .oas-state { color: var(--oas-brand-ink); border-color: var(--oas-brand); background: var(--oas-brand-soft); }
+
+/* Stage + canvas */
+.oas-stage {
+  order: 1; position: relative; overflow: hidden;
+  aspect-ratio: 4 / 5; min-height: 320px;
+  border: 1px solid var(--color-border); border-radius: 1.25rem;
+  background: var(--color-background);
+}
+.oas-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: pointer; }
+
+/* Metrics */
+.oas-metrics { order: 3; display: grid; gap: 0.6rem; grid-template-columns: 1fr; }
+.oas-metric { border: 1px solid var(--color-border); border-radius: 1rem; padding: 0.9rem; background: var(--color-card); }
+.oas-metric-label { font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.oas-metric-value {
+  margin-top: 0.35rem; font-size: clamp(1.35rem, 4.5vw, 1.9rem); font-weight: 600;
+  color: var(--color-foreground); font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.oas-waste-text { color: var(--oas-waste); }
+.oas-brand-text { color: var(--oas-brand-ink); }
+.oas-metric-cap { margin-top: 0.35rem; font-size: 0.72rem; line-height: 1.4; color: var(--color-muted-foreground); }
+.oas-meter { margin-top: 0.6rem; height: 6px; border-radius: 9999px; background: var(--color-muted); overflow: hidden; }
+.oas-meter > span { display: block; height: 100%; border-radius: inherit; background: var(--oas-waste); transition: width 0.5s ease; }
+
+/* 24h suppression clock */
+.oas-clock { border: 1px solid var(--color-border); border-radius: 1.5rem; background: var(--color-card); padding: 1.4rem 1.25rem 1.1rem; }
+.oas-scale { position: relative; height: 1.1rem; margin: 0 10px; }
+.oas-scale span { position: absolute; transform: translateX(-50%); font-size: 10px; color: var(--color-muted-foreground); }
+.oas-scale span:first-child { transform: none; }
+.oas-scale .oas-scale-last { transform: translateX(-100%); }
+.oas-lane { margin-top: 1.15rem; }
+.oas-lane-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.35rem 0.75rem; }
+.oas-lane-tag { font-size: 10px; letter-spacing: 0.12em; border-radius: 9999px; padding: 0.22rem 0.55rem; }
+.oas-tag-waste { color: var(--oas-waste); border: 1px solid var(--oas-waste); background: var(--oas-waste-soft); }
+.oas-tag-brand { color: var(--oas-brand-ink); border: 1px solid var(--oas-brand); background: var(--oas-brand-soft); }
+.oas-lane-name { font-weight: 600; font-size: 0.95rem; color: var(--color-foreground); }
+.oas-lane-big { margin-left: auto; display: flex; align-items: baseline; gap: 0.4rem; }
+.oas-lane-big b { font-size: 1.75rem; line-height: 1; font-weight: 700; color: var(--color-foreground); }
+.oas-lane-big i { font-style: normal; font-size: 0.72rem; color: var(--color-muted-foreground); }
+.oas-track { position: relative; height: 66px; margin: 0.35rem 10px 0; }
+.oas-track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--color-border); }
+.oas-gridline { position: absolute; top: 8px; bottom: 8px; width: 1px; background: var(--color-border); opacity: 0.55; }
+.oas-wastebar {
+  position: absolute; left: 14.29%; right: 0; top: 50%; height: 10px;
+  border-radius: 9999px; opacity: 0.55;
+  background: repeating-linear-gradient(135deg, var(--oas-waste) 0 6px, transparent 6px 12px);
+  transform: translateY(-50%) scaleX(0); transform-origin: left center;
+  transition: transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.25s;
+}
+.oas-in .oas-wastebar { transform: translateY(-50%) scaleX(1); }
+.oas-pin { position: absolute; top: 0; bottom: 0; width: 0; }
+.oas-pin-dot {
+  position: absolute; top: 50%; left: 0; transform: translate(-50%, -50%);
+  width: 11px; height: 11px; border-radius: 9999px;
+  background: var(--oas-brand); box-shadow: 0 0 0 4px var(--oas-brand-soft);
+}
+.oas-pin-late .oas-pin-dot { background: var(--oas-waste); box-shadow: 0 0 0 4px var(--oas-waste-soft); }
+.oas-pin-ring {
+  position: absolute; top: 50%; left: 0; transform: translate(-50%, -50%);
+  width: 21px; height: 21px; border-radius: 9999px;
+  border: 2px solid var(--oas-brand); opacity: 0.55;
+}
+.oas-pin-label { position: absolute; top: calc(50% + 13px); left: 8px; white-space: nowrap; font-size: 10px; color: var(--color-muted-foreground); }
+.oas-pin-r .oas-pin-label { left: auto; right: 0; }
+.oas-lane-cap { margin-top: 0.45rem; font-size: 0.8rem; line-height: 1.5; color: var(--color-muted-foreground); }
+
+/* Steps */
+.oas-steps { display: grid; gap: 1.75rem 1.25rem; grid-template-columns: 1fr; }
+.oas-step { position: relative; border-top: 2px solid var(--color-border); padding-top: 1.1rem; }
+.oas-step::before { content: ""; position: absolute; top: -2px; left: 0; width: 2.75rem; height: 2px; background: var(--oas-brand); }
+.oas-step-num { font-size: 3rem; font-weight: 700; line-height: 1; color: var(--oas-ghost); user-select: none; }
+
+/* Feature grid */
+.oas-feat-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.oas-feat {
+  position: relative; overflow: hidden;
+  border: 1px solid var(--color-border); border-radius: 1.25rem; background: var(--color-card);
+  padding: 1.5rem; transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.oas-feat:hover { border-color: #cdbcf7; box-shadow: 0 12px 44px -26px rgba(53, 16, 112, 0.3); }
+html.dark .oas-feat:hover { border-color: #4c3a75; }
+.oas-feat-idx { position: absolute; top: 0.8rem; right: 1.1rem; font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--oas-ghost); user-select: none; }
+
+@media (min-width: 640px) {
+  .oas-steps { grid-template-columns: repeat(2, 1fr); }
+  .oas-metrics { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+  .oas-lab-grid { padding: 1.75rem; }
+  .oas-feat-grid { grid-template-columns: repeat(12, 1fr); }
+  .oas-feat-a { grid-column: span 7; }
+  .oas-feat-b { grid-column: span 5; }
+  .oas-feat-c { grid-column: span 5; }
+  .oas-feat-d { grid-column: span 7; }
+  .oas-feat-e { grid-column: span 6; }
+  .oas-feat-f { grid-column: span 6; }
+}
+@media (min-width: 1024px) {
+  .oas-lab-grid {
+    grid-template-columns: minmax(20rem, 0.9fr) minmax(0, 1.35fr);
+    grid-template-areas:
+      "valves stage"
+      "valves metrics";
+    align-items: start;
+  }
+  .oas-valves { grid-area: valves; order: 1; }
+  .oas-stage {
+    grid-area: stage;
+    order: 2;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+  .oas-metrics {
+    grid-area: metrics;
+    order: 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .oas-steps { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oas-chip-dot, .oas-f-drip { animation: none; }
+  .oas-f-drip { opacity: 0; }
+  .oas-wastebar { transition: none; transform: translateY(-50%) scaleX(1); }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  var stage = document.getElementById('oas-stage');
+  if (!stage) return;
+  var canvas = document.getElementById('oas-canvas');
+  var ctx = canvas.getContext('2d');
+  var wasteEl = document.getElementById('oas-waste');
+  var wasteBar = document.getElementById('oas-waste-bar');
+  var recEl = document.getElementById('oas-recovered');
+  var multEl = document.getElementById('oas-mult');
+  var statusEl = document.getElementById('oas-status');
+  var resetBtn = document.getElementById('oas-reset');
+  var valves = Array.prototype.slice.call(document.querySelectorAll('.oas-valve'));
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Three leaks: wall position (t along the slope), side, and share of flow diverted. */
+  var leaks = [
+    { share: 0.16, side: -1, t: 0.30, open: true, x: 0, y: 0 },
+    { share: 0.18, side: 1,  t: 0.52, open: true, x: 0, y: 0 },
+    { share: 0.13, side: -1, t: 0.74, open: true, x: 0, y: 0 }
+  ];
+  var FACTORS = [1, 1.4, 1.9, 2.6];  /* levers compound */
+  var VALUE = 4;                     /* illustrative $ per droplet */
+  var SPAWN = 26;                    /* droplets per second */
+  var POOL_FULL = 3600;
+
+  var STATUS = [
+    'All three leaks are open — watch the waste rate.',
+    'One leak plugged. Two to go — the levers compound.',
+    'Two leaks plugged. One lever left.',
+    'Sealed. Suppression, seeds, and attribution now compound together.'
+  ];
+
+  var W = 0, H = 0, G = null;
+  var particles = [];
+  var recovered = 0;
+  var poolPulse = 0;
+  var running = false, rafId = 0, lastT = 0, spawnAcc = 0, domAcc = 0;
+  var pal = {};
+
+  function readPal() {
+    var cs = getComputedStyle(stage);
+    pal.line = cs.getPropertyValue('--oas-line').trim() || '#ddd7e8';
+    pal.ink = cs.getPropertyValue('--oas-ink').trim() || '#251a36';
+    pal.brand = cs.getPropertyValue('--oas-brand').trim() || '#854dff';
+    pal.waste = cs.getPropertyValue('--oas-waste').trim() || '#c2572e';
+    pal.glass = cs.getPropertyValue('--oas-glass').trim() || 'rgba(133,77,255,0.05)';
+  }
+
+  function computeG() {
+    G = {
+      cx: W / 2,
+      rimY: H * 0.15,
+      rimHalf: Math.min(W * 0.31, H * 0.28),
+      neckY: H * 0.60,
+      neckHalf: Math.max(W * 0.05, 12),
+      stemY: H * 0.78,
+      poolY: H * 0.87,
+      poolHalf: W * 0.22
+    };
+    for (var i = 0; i < leaks.length; i++) {
+      var L = leaks[i];
+      L.y = G.rimY + (G.neckY - G.rimY) * L.t;
+      L.x = G.cx + L.side * (G.rimHalf + (G.neckHalf - G.rimHalf) * L.t);
+    }
+  }
+
+  function resize() {
+    var r = stage.getBoundingClientRect();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, Math.round(r.width));
+    H = Math.max(1, Math.round(r.height));
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    computeG();
+    if (reduceMotion) drawFrame();
+  }
+
+  function leakFraction() {
+    var through = 1;
+    for (var i = 0; i < leaks.length; i++) if (leaks[i].open) through *= (1 - leaks[i].share);
+    return 1 - through;
+  }
+  function pluggedCount() {
+    var n = 0;
+    for (var i = 0; i < leaks.length; i++) if (!leaks[i].open) n++;
+    return n;
+  }
+  function factor() { return FACTORS[pluggedCount()]; }
+
+  function spawn() {
+    if (particles.length > 170) return;
+    particles.push({
+      x: G.cx + (Math.random() * 2 - 1) * G.rimHalf * 0.72,
+      y: G.rimY - 6,
+      vx: 0,
+      vy: 30 + Math.random() * 30,
+      r: 1.8 + Math.random() * 1.7,
+      out: false,
+      prevY: 0
+    });
+  }
+
+  function step(dt) {
+    spawnAcc += dt * SPAWN;
+    while (spawnAcc >= 1) { spawnAcc -= 1; spawn(); }
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.prevY = p.y;
+      p.vy += 300 * dt;
+      p.y += p.vy * dt;
+      p.x += p.vx * dt;
+      if (!p.out) {
+        if (p.y > G.rimY && p.y < G.neckY) {
+          var t = (p.y - G.rimY) / (G.neckY - G.rimY);
+          var hw = G.rimHalf + (G.neckHalf - G.rimHalf) * t - 3;
+          if (p.x < G.cx - hw) p.x = G.cx - hw;
+          if (p.x > G.cx + hw) p.x = G.cx + hw;
+        } else if (p.y >= G.neckY && p.y < G.stemY) {
+          var hw2 = G.neckHalf - 2;
+          if (p.x < G.cx - hw2) p.x = G.cx - hw2;
+          if (p.x > G.cx + hw2) p.x = G.cx + hw2;
+        }
+        for (var j = 0; j < leaks.length; j++) {
+          var L = leaks[j];
+          if (L.open && p.prevY < L.y && p.y >= L.y && Math.random() < L.share) {
+            p.out = true;
+            p.vx = L.side * (50 + Math.random() * 60);
+            p.vy *= 0.4;
+          }
+        }
+        if (p.y >= G.poolY - 3) {
+          recovered += VALUE * factor();
+          poolPulse = 1;
+          particles.splice(i, 1);
+          continue;
+        }
+        if (p.y > H + 30) particles.splice(i, 1);
+      } else if (p.x < -24 || p.x > W + 24 || p.y > H + 24) {
+        particles.splice(i, 1);
+      }
+    }
+    poolPulse = Math.max(0, poolPulse - dt * 2.4);
+  }
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+  }
+
+  function drawLeak(L, idx) {
+    if (L.open) {
+      ctx.beginPath();
+      ctx.arc(L.x, L.y, 6, 0, Math.PI * 2);
+      ctx.fillStyle = pal.waste;
+      ctx.globalAlpha = 0.16;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.beginPath();
+      ctx.arc(L.x, L.y, 3.4, 0, Math.PI * 2);
+      ctx.fillStyle = pal.waste;
+      ctx.fill();
+    } else {
+      ctx.beginPath();
+      ctx.arc(L.x, L.y, 7, 0, Math.PI * 2);
+      ctx.fillStyle = pal.brand;
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.8;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      ctx.moveTo(L.x - 3, L.y + 0.2);
+      ctx.lineTo(L.x - 0.8, L.y + 2.4);
+      ctx.lineTo(L.x + 3.2, L.y - 2.2);
+      ctx.stroke();
+    }
+    ctx.fillStyle = pal.ink;
+    ctx.globalAlpha = 0.6;
+    ctx.font = '600 10px "Geist Mono", ui-monospace, monospace';
+    ctx.textAlign = L.side < 0 ? 'right' : 'left';
+    ctx.fillText('0' + (idx + 1), L.x + L.side * 14, L.y - 8);
+    ctx.textAlign = 'center';
+    ctx.globalAlpha = 1;
+  }
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, W, H);
+    /* glass body */
+    ctx.beginPath();
+    ctx.moveTo(G.cx - G.rimHalf, G.rimY);
+    ctx.lineTo(G.cx + G.rimHalf, G.rimY);
+    ctx.lineTo(G.cx + G.neckHalf, G.neckY);
+    ctx.lineTo(G.cx + G.neckHalf, G.stemY);
+    ctx.lineTo(G.cx - G.neckHalf, G.stemY);
+    ctx.lineTo(G.cx - G.neckHalf, G.neckY);
+    ctx.closePath();
+    ctx.fillStyle = pal.glass;
+    ctx.fill();
+    /* walls + rim */
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = pal.line;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(G.cx - G.rimHalf, G.rimY);
+    ctx.lineTo(G.cx - G.neckHalf, G.neckY);
+    ctx.lineTo(G.cx - G.neckHalf, G.stemY);
+    ctx.moveTo(G.cx + G.rimHalf, G.rimY);
+    ctx.lineTo(G.cx + G.neckHalf, G.neckY);
+    ctx.lineTo(G.cx + G.neckHalf, G.stemY);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(G.cx, G.rimY, G.rimHalf, Math.max(4, G.rimHalf * 0.09), 0, 0, Math.PI * 2);
+    ctx.stroke();
+    /* inflow label */
+    ctx.fillStyle = pal.ink;
+    ctx.globalAlpha = 0.65;
+    ctx.font = '600 10px "Geist Mono", ui-monospace, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('BUDGET IN', G.cx, G.rimY - 18);
+    ctx.strokeStyle = pal.ink;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(G.cx, G.rimY - 13);
+    ctx.lineTo(G.cx, G.rimY - 5);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+    /* leaks */
+    for (var j = 0; j < leaks.length; j++) drawLeak(leaks[j], j);
+    /* pool basin */
+    var basinH = Math.max(10, H * 0.045);
+    ctx.strokeStyle = pal.line;
+    ctx.lineWidth = 2;
+    roundRect(G.cx - G.poolHalf, G.poolY, G.poolHalf * 2, basinH, basinH / 2);
+    ctx.stroke();
+    var lvl = Math.min(1, recovered / POOL_FULL);
+    if (lvl > 0.003) {
+      ctx.save();
+      roundRect(G.cx - G.poolHalf + 2, G.poolY + 2, G.poolHalf * 2 - 4, basinH - 4, (basinH - 4) / 2);
+      ctx.clip();
+      ctx.fillStyle = pal.brand;
+      ctx.globalAlpha = 0.55 + poolPulse * 0.3;
+      var fh = (basinH - 4) * Math.max(0.12, lvl);
+      ctx.fillRect(G.cx - G.poolHalf + 2, G.poolY + basinH - 2 - fh, G.poolHalf * 2 - 4, fh);
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+    ctx.fillStyle = pal.ink;
+    ctx.globalAlpha = 0.65;
+    ctx.font = '600 10px "Geist Mono", ui-monospace, monospace';
+    ctx.fillText('WORKING BUDGET', G.cx, G.poolY + basinH + 15);
+    ctx.globalAlpha = 1;
+    /* droplets */
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.out ? pal.waste : pal.brand;
+      ctx.globalAlpha = p.out ? 0.8 : 0.9;
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function updateDom() {
+    var pct = Math.round(leakFraction() * 100);
+    wasteEl.textContent = pct + '%';
+    wasteBar.style.width = pct + '%';
+    recEl.textContent = '$' + Math.round(recovered).toLocaleString('en-US');
+    multEl.textContent = '×' + factor().toFixed(1);
+    statusEl.textContent = STATUS[pluggedCount()];
+  }
+
+  function loop(t) {
+    if (!running) return;
+    var dt = Math.min(0.05, (t - lastT) / 1000 || 0.016);
+    lastT = t;
+    step(dt);
+    drawFrame();
+    domAcc += dt;
+    if (domAcc > 0.12) { domAcc = 0; updateDom(); }
+    rafId = requestAnimationFrame(loop);
+  }
+  function start() {
+    if (running || reduceMotion || !G) return;
+    running = true;
+    lastT = performance.now();
+    rafId = requestAnimationFrame(loop);
+  }
+  function stop() {
+    running = false;
+    cancelAnimationFrame(rafId);
+  }
+
+  function setLeak(i, open) {
+    leaks[i].open = open;
+    var btn = valves[i];
+    if (btn) {
+      btn.classList.toggle('is-plugged', !open);
+      btn.setAttribute('aria-pressed', String(!open));
+      var st = btn.querySelector('[data-state]');
+      if (st) st.textContent = open ? 'Leaking' : 'Plugged';
+    }
+    if (reduceMotion) {
+      if (!open) recovered += 120 * factor();
+      drawFrame();
+    }
+    updateDom();
+  }
+
+  valves.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { setLeak(i, !leaks[i].open); });
+  });
+
+  canvas.addEventListener('pointerdown', function (e) {
+    if (!G) return;
+    var r = canvas.getBoundingClientRect();
+    var x = e.clientX - r.left;
+    var y = e.clientY - r.top;
+    for (var i = 0; i < leaks.length; i++) {
+      var dx = x - leaks[i].x;
+      var dy = y - leaks[i].y;
+      if (dx * dx + dy * dy < 30 * 30) { setLeak(i, !leaks[i].open); return; }
+    }
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      for (var i = 0; i < leaks.length; i++) setLeak(i, true);
+      recovered = 0;
+      particles.length = 0;
+      updateDom();
+      if (reduceMotion) drawFrame();
+    });
+  }
+
+  /* Re-read palette when the site toggles dark mode. */
+  new MutationObserver(function () {
+    readPal();
+    if (reduceMotion) drawFrame();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  /* Run the droplet loop only while the stage is on screen. */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) start(); else stop(); });
+    }, { threshold: 0.05 }).observe(stage);
+  } else {
+    start();
+  }
+
+  /* Waste bar draws itself when the clock scrolls into view. */
+  var clock = document.getElementById('oas-clock');
+  if (clock && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { clock.classList.add('oas-in'); obs.disconnect(); }
+      });
+    }, { threshold: 0.3 }).observe(clock);
+  } else if (clock) {
+    clock.classList.add('oas-in');
+  }
+
+  if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+  window.addEventListener('resize', resize);
+
+  readPal();
+  resize();
+  updateDom();
+  if (reduceMotion) drawFrame();
+})();
+</script>
+{% endraw %}
