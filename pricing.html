@@ -1,63 +1,1086 @@
 ---
 layout: page
+cta: false
 permalink: /pricing
 title: Pricing
 description: "Pricing scoped to how you actually use Fanfinity: volume-based, not per-active-user, with the modules you need and the same features on any deployment. Talk to us for a quote."
-philosophy:
-  - { icon: chart,  title: "Priced on what you process", body: "The basis is processing volume, not audience size. More fans, and more of them active, is the outcome we want for you, so it isn't the thing we bill." }
-  - { icon: stack,  title: "Adopt modules, not bundles", body: "Turn on the data and identity layer first; add activation and measurement when they earn their place. Every module is complete on its own." }
-  - { icon: shield, title: "Deployment never gates capability", body: "Run it in your cloud, on-premise, or fully managed and the feature set stays the same. Where it runs is an operations choice, not a pricing lever." }
-  - { icon: spark,  title: "Spikes are expected, not punished", body: "A product drop or a holiday peak won't trip an overage. If sustained volume outgrows your band, we'll raise it with you first, not on the invoice." }
-  - { icon: users,  title: "No per-seat meter", body: "Your whole team gets access; headcount isn't a basis we intend to bill on." }
-mechanics:
-  - "Pick your modules. Start with fan identity and data, then add activation and measurement when the timing is right. You're billed for the modules you turn on, not a bundle you don't use yet."
-  - "Priced by volume, not by headcount. The basis is what you process, not how many fans you acquire or how many of them engage. Growing your audience and getting them active shouldn't inflate the bill. The exact volume basis is set in your contract."
-  - "Enterprise needs are scoped in the same quote. SLA, SSO, audit access, and deployment specifics are part of the conversation up front, not add-ons that appear at renewal. Specifics are scoped per contract."
-  - "Talk to us for a quote. We map the platform to your use case and volume, then put the number in writing before you sign. No metered surprises, no add-ons appearing at renewal."
-modules:
-  - { icon: identity,  title: "Data & identity: Blocks + ID (Live)",  body: "Collection, the real-time identity graph, and one consented golden fan profile you own." }
-  - { icon: megaphone, title: "Activation: Fanfinity Activate (Live)", body: "WhatsApp, email, push, paid media, segmentation, and real-time triggers, all from the live profile." }
-  - { icon: chart,     title: "Measurement: Fanfinity Measure (Live)", body: "Verified reach, exposure-to-outcome attribution, and a sponsor / partner portal." }
-  - { icon: bolt,      title: "Engagement: Fanfinity Engage (Design Preview)", body: "Interactivity, gamification, loyalty, and rewards. In Design Preview." }
-  - { icon: shield,    title: "Deploy your way",             body: "Your cloud, on-premise, or fully managed, in-region and PDPL-governed at the data layer." }
-  - { icon: code,      title: "API & SDKs",                  body: "A full REST API and client SDKs. Every capability is programmable." }
-faqs:
-  - q: "Do you charge per active user?"
-    a: "No. Pricing is volume and usage based, not per active user. You pay for what you process, not for every fan you acquire, and the intent is a model that doesn't penalize you for getting fans to engage. The exact volume basis is scoped to your contract and confirmed in writing."
-  - q: "Is pricing different on-premise versus fully managed?"
-    a: "The capability set is identical whether you run in your own cloud, on-premise, or fully managed. Custom deployment work gets scoped into your quote when you need it; core capability is never gated behind where you deploy."
-  - q: "Can we start with one module?"
-    a: "Yes. Modules are adopted independently. Most teams start with the live fan identity and data layer, then add activation and measurement later. The engagement layer is in Design Preview, so it isn't part of a plan you'd run today."
-  - q: "How do we get a quote?"
-    a: "Book a demo. We map the platform to your use case and volume, then put pricing in writing before you commit. Every plan is scoped to your stack and volume, not picked from a generic tier."
 ---
-{% include hero.html
-   eyebrow="Pricing"
-   title="A quote in writing, priced on what you process"
-   subtitle="We scope pricing to your volume and the modules you turn on, then put it in writing. No per-seat fees, no meter on audience size, no surprise overages. Talk to us for a quote."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   image="/assets/img/pricing.jpg"
-   image_alt="Two people shaking hands in a business agreement" %}
 
-{% include feature-grid.html
-   heading="Billing that behaves when your audience doesn't"
-   subheading="The pattern we're avoiding is familiar: an attractive entry price, a meter on every active user, and a renewal full of add-ons. Our model is built the other way around."
-   items=page.philosophy
-   columns=3 %}
+<!-- ============================================================
+     PRICING — bespoke redesign
+     Concept: "the quote is the product". A playable composer turns
+     the four pricing decisions into a written Quote Brief, an
+     invoice audit stamps out everything we never bill for, and the
+     philosophy/modules/FAQ carry the approved copy. No prices are
+     invented anywhere: the model is quote-based by design.
+     ============================================================ -->
 
-{% include feature-split.html
-   icon="scale"
-   title="Four decisions, then a quote in writing"
-   body="Pricing is scoped, not listed. We build the plan around how you actually use the platform, so you know exactly what you're paying for before you commit. Here's the shape of it."
-   points=page.mechanics
-   cta_text="Get a quote"
-   cta_url="/demo" %}
+<section class="prx-hero">
+  <div class="container-page">
+    <div class="prx-hero-grid">
+      <div class="prx-hero-copy" data-reveal>
+        <p class="eyebrow">Pricing</p>
+        <h1 class="prx-h1">
+          Priced on what you process.<br>
+          <span class="prx-accent">Put in writing.<svg class="prx-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="prx-lede">No per-seat fees. No meter on audience size. No surprise overages. We scope pricing to your volume and the modules you turn on, then hand you the number in writing before you sign.</p>
+        <div class="prx-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#compose" class="btn btn-secondary btn-lg">Compose your quote<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="prx-never-strip" aria-label="Never on a Fanfinity invoice">
+          <li>No per-seat meter</li>
+          <li>No MAU meter</li>
+          <li>No overage traps</li>
+          <li>No deployment premium</li>
+        </ul>
+      </div>
 
-{% include feature-grid.html
-   heading="Adopt one module. Add the rest when they earn it."
-   subheading="Each module is priced independently and can be adopted on its own or together. The data and identity layer is Live today; the engagement layer is in Design Preview, and we label it that way."
-   items=page.modules
-   columns=3 %}
+      <div class="prx-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="prx-doc prx-doc-hero">
+          <div class="prx-doc-head">
+            <span class="prx-doc-brand">Fanfinity</span>
+            <span class="prx-doc-kind">Written quote</span>
+          </div>
+          <div class="prx-doc-lines">
+            <span class="prx-doc-line w-70"></span>
+            <span class="prx-doc-line w-45"></span>
+            <span class="prx-doc-line w-60"></span>
+            <span class="prx-doc-line w-35"></span>
+          </div>
+          <div class="prx-doc-rule"></div>
+          <div class="prx-doc-terms">
+            <span>Volume basis · contracted band</span>
+            <span>Modules · only the ones you turn on</span>
+            <span>Spikes · expected, not punished</span>
+          </div>
+          <div class="prx-stamp">In writing<span>before you sign</span></div>
+        </div>
+        <div class="prx-hero-art-note">The quote, not the invoice, is where the number first appears.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include faq.html eyebrow="Pricing FAQ" heading="Questions about pricing" %}
+<!-- ==================== THE COMPOSER (centerpiece) ==================== -->
+<section class="prx-compose" id="compose">
+  <div class="container-page">
+    <div class="prx-sec-head prx-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The deal desk</p>
+      <h2 class="prx-h2">Four decisions.<br>Then a quote in writing.</h2>
+      <p class="prx-sec-sub">This is the whole pricing conversation, made playable. Make the same four decisions you'd make across the table from us — pick modules, set volume, choose a deployment, flag enterprise needs — and watch the brief write itself.</p>
+      <p class="prx-progress"><span class="prx-progress-num" id="prxCount">0</span> of 4 decisions made</p>
+    </div>
+
+    <div class="prx-deal">
+      <!-- LEFT: the four decisions -->
+      <div class="prx-decisions" data-reveal>
+
+        <fieldset class="prx-decision" id="prxD1">
+          <legend><span class="prx-step">01</span> Pick your modules <span class="prx-pick-hint">— adopt independently, billed independently</span></legend>
+          <div class="prx-chips" role="group" aria-label="Modules">
+            <button type="button" class="prx-chip" data-module="identity" aria-pressed="false">
+              <span class="prx-chip-name">Data &amp; Identity</span>
+              <span class="prx-chip-sub">Blocks + ID · collection, identity graph, golden profile</span>
+              <span class="prx-badge prx-badge-live">Live</span>
+            </button>
+            <button type="button" class="prx-chip" data-module="activate" aria-pressed="false">
+              <span class="prx-chip-name">Activation</span>
+              <span class="prx-chip-sub">Fanfinity Activate · WhatsApp, email, push, paid media</span>
+              <span class="prx-badge prx-badge-live">Live</span>
+            </button>
+            <button type="button" class="prx-chip" data-module="measure" aria-pressed="false">
+              <span class="prx-chip-name">Measurement</span>
+              <span class="prx-chip-sub">Fanfinity Measure · verified reach, exposure→outcome</span>
+              <span class="prx-badge prx-badge-live">Live</span>
+            </button>
+            <button type="button" class="prx-chip" data-module="engage" aria-pressed="false">
+              <span class="prx-chip-name">Engagement</span>
+              <span class="prx-chip-sub">Fanfinity Engage · gamification, loyalty, rewards</span>
+              <span class="prx-badge prx-badge-preview">Preview</span>
+            </button>
+          </div>
+          <p class="prx-decision-note">Most teams start with the data and identity layer, then add activation and measurement when they earn their place.</p>
+        </fieldset>
+
+        <fieldset class="prx-decision" id="prxD2">
+          <legend><span class="prx-step">02</span> Set your volume <span class="prx-pick-hint">— priced on what you process, not who you attract</span></legend>
+          <div class="prx-bands" role="group" aria-label="Volume band">
+            <button type="button" class="prx-band" data-band="0" aria-pressed="false"><span class="prx-band-name">First season</span><span class="prx-band-sub">Getting the graph live</span></button>
+            <button type="button" class="prx-band" data-band="1" aria-pressed="false"><span class="prx-band-name">Growing</span><span class="prx-band-sub">Steady week-on-week signal</span></button>
+            <button type="button" class="prx-band" data-band="2" aria-pressed="false"><span class="prx-band-name">Matchday scale</span><span class="prx-band-sub">Big peaks, quiet Tuesdays</span></button>
+            <button type="button" class="prx-band" data-band="3" aria-pressed="false"><span class="prx-band-name">League scale</span><span class="prx-band-sub">Sustained, heavy, always-on</span></button>
+          </div>
+          <div class="prx-spike">
+            <svg viewBox="0 0 560 150" class="prx-spike-svg" aria-hidden="true">
+              <path d="M0 130 C60 128 95 126 140 122 C180 118 205 106 235 86 C255 72 278 66 292 70 C310 76 326 96 350 108 C380 121 420 122 460 120 C500 118 530 116 560 114 L560 150 L0 150 Z" class="prx-spike-fill"/>
+              <path d="M0 130 C60 128 95 126 140 122 C180 118 205 106 235 86 C255 72 278 66 292 70 C310 76 326 96 350 108 C380 121 420 122 460 120 C500 118 530 116 560 114" class="prx-spike-line"/>
+              <line x1="0" y1="82" x2="560" y2="82" class="prx-spike-ceiling"/>
+              <text x="548" y="74" class="prx-spike-ceiling-label" text-anchor="end">your contracted band</text>
+              <circle cx="292" cy="70" r="4" class="prx-spike-peak"/>
+              <text x="292" y="56" class="prx-spike-peak-label" text-anchor="middle">an expected spike</text>
+            </svg>
+            <p class="prx-spike-note" id="prxSpikeNote" aria-live="polite" aria-atomic="true">A product drop or a holiday peak won't trip an overage — if sustained volume outgrows your band, we raise it with you first, not on the invoice.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="prx-decision" id="prxD3">
+          <legend><span class="prx-step">03</span> Choose a deployment <span class="prx-pick-hint">— the feature set never changes</span></legend>
+          <div class="prx-deploys" role="group" aria-label="Deployment">
+            <button type="button" class="prx-deploy" data-deploy="cloud" aria-pressed="false">
+              <span class="prx-deploy-name">Your cloud</span>
+              <span class="prx-deploy-sub">On your keys, your infrastructure</span>
+            </button>
+            <button type="button" class="prx-deploy" data-deploy="onprem" aria-pressed="false">
+              <span class="prx-deploy-name">On-premise</span>
+              <span class="prx-deploy-sub">Inside your own walls</span>
+            </button>
+            <button type="button" class="prx-deploy" data-deploy="managed" aria-pressed="false">
+              <span class="prx-deploy-name">Fully managed</span>
+              <span class="prx-deploy-sub">We run it, you keep the graph</span>
+            </button>
+          </div>
+          <p class="prx-decision-note">Where it runs is an operations choice, not a pricing lever — capability is identical on every deployment.</p>
+        </fieldset>
+
+        <fieldset class="prx-decision" id="prxD4">
+          <legend><span class="prx-step">04</span> Flag enterprise needs <span class="prx-pick-hint">— scoped up front, never added at renewal</span></legend>
+          <div class="prx-ents" role="group" aria-label="Enterprise needs">
+            <button type="button" class="prx-ent" data-ent="sla" aria-pressed="false">SLA</button>
+            <button type="button" class="prx-ent" data-ent="sso" aria-pressed="false">SSO</button>
+            <button type="button" class="prx-ent" data-ent="audit" aria-pressed="false">Audit access</button>
+          </div>
+          <p class="prx-decision-note">In-Kingdom, PDPL-governed at the data layer on every plan — that's the architecture, not an add-on.</p>
+        </fieldset>
+      </div>
+
+      <!-- RIGHT: the brief writes itself -->
+      <div class="prx-brief-col" data-reveal style="--reveal-delay:120ms">
+        <div class="prx-brief" id="prxBrief" aria-live="polite">
+          <div class="prx-brief-head">
+            <div>
+              <p class="prx-brief-kicker">Fanfinity · Quote brief</p>
+              <p class="prx-brief-title">Your scope, drafted</p>
+            </div>
+            <span class="prx-brief-no">Draft № FF-047</span>
+          </div>
+
+          <div class="prx-brief-sec">
+            <p class="prx-brief-label">01 · Modules</p>
+            <ul class="prx-brief-mods" id="prxBriefMods">
+              <li class="prx-brief-empty">Awaiting your first pick…</li>
+            </ul>
+          </div>
+
+          <div class="prx-brief-sec">
+            <p class="prx-brief-label">02 · Volume basis</p>
+            <p class="prx-brief-line" id="prxBriefBand"><span class="prx-brief-empty">Pick a band…</span></p>
+          </div>
+
+          <div class="prx-brief-sec">
+            <p class="prx-brief-label">03 · Deployment</p>
+            <p class="prx-brief-line" id="prxBriefDeploy"><span class="prx-brief-empty">Choose where it runs…</span></p>
+          </div>
+
+          <div class="prx-brief-sec">
+            <p class="prx-brief-label">04 · Enterprise</p>
+            <p class="prx-brief-line" id="prxBriefEnt"><span class="prx-brief-empty">Nothing flagged yet…</span></p>
+            <p class="prx-brief-fixed">In-Kingdom, PDPL-governed data layer · included</p>
+          </div>
+
+          <div class="prx-brief-foot">
+            <p class="prx-brief-promise">Commercial basis confirmed in writing before you sign.</p>
+            <p class="prx-brief-small">Illustrative scope builder — the final quote is scoped with our team.</p>
+            <div class="prx-brief-actions">
+              <a href="{{ '/demo' | relative_url }}" class="btn btn-primary" id="prxBriefCta">Put it in writing →</a>
+              <button type="button" class="prx-reset" id="prxReset">Start over</button>
+            </div>
+          </div>
+          <div class="prx-brief-stamp" id="prxBriefStamp" aria-hidden="true">Scoped<span>in writing</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE INVOICE AUDIT (philosophy) ==================== -->
+<section class="prx-audit-sec">
+  <div class="container-page">
+    <div class="prx-sec-head" data-reveal>
+      <p class="eyebrow">Pricing philosophy</p>
+      <h2 class="prx-h2">Billing that behaves<br>when your audience doesn't.</h2>
+      <p class="prx-sec-sub">The pattern we're avoiding is familiar: an attractive entry price, a meter on every active user, and a renewal full of add-ons. Our model is built the other way around. Run the audit and watch a typical martech invoice lose its lines.</p>
+    </div>
+
+    <div class="prx-audit-grid">
+      <div class="prx-receipt-col" data-reveal>
+        <div class="prx-receipt" id="prxReceipt">
+          <div class="prx-receipt-head">
+            <span class="prx-receipt-title">Typical martech invoice</span>
+            <span class="prx-receipt-meta">AUDIT · FF-01</span>
+          </div>
+          <ul class="prx-receipt-lines" id="prxReceiptLines">
+            <li class="prx-rl"><span class="prx-rl-name">Per-seat licences · 42 seats</span><span class="prx-rl-tag">Not billed</span></li>
+            <li class="prx-rl"><span class="prx-rl-name">Monthly active fan meter</span><span class="prx-rl-tag">Not billed</span></li>
+            <li class="prx-rl"><span class="prx-rl-name">Overage · cup-final spike</span><span class="prx-rl-tag">Not billed</span></li>
+            <li class="prx-rl"><span class="prx-rl-name">Deployment premium · on-prem</span><span class="prx-rl-tag">Not billed</span></li>
+            <li class="prx-rl"><span class="prx-rl-name">Renewal add-on surprises</span><span class="prx-rl-tag">Not billed</span></li>
+          </ul>
+          <div class="prx-receipt-keep" id="prxReceiptKeep">
+            <p class="prx-keep-label">What a Fanfinity invoice actually carries</p>
+            <ul>
+              <li><span class="prx-keep-check" aria-hidden="true">✓</span> Processing volume — your contracted band</li>
+              <li><span class="prx-keep-check" aria-hidden="true">✓</span> The modules you turned on — nothing else</li>
+            </ul>
+          </div>
+          <div class="prx-receipt-foot">
+            <button type="button" class="btn btn-primary" id="prxAuditBtn">Run the audit</button>
+            <button type="button" class="prx-reset prx-reset-dark" id="prxAuditReset" hidden>Reset the invoice</button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="prx-philosophy">
+        <li data-reveal style="--reveal-delay:60ms">
+          <span class="icon-chip-sm">{% include icon.html name="chart" class="h-5 w-5" %}</span>
+          <div><h3>Priced on what you process</h3><p>The basis is processing volume, not audience size. More fans, and more of them active, is the outcome we want for you — so it isn't the thing we bill.</p></div>
+        </li>
+        <li data-reveal style="--reveal-delay:120ms">
+          <span class="icon-chip-sm">{% include icon.html name="stack" class="h-5 w-5" %}</span>
+          <div><h3>Adopt modules, not bundles</h3><p>Turn on the data and identity layer first; add activation and measurement when they earn their place. Every module is complete on its own.</p></div>
+        </li>
+        <li data-reveal style="--reveal-delay:180ms">
+          <span class="icon-chip-sm">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+          <div><h3>Deployment never gates capability</h3><p>Run it in your cloud, on-premise, or fully managed and the feature set stays the same. Where it runs is an operations choice, not a pricing lever.</p></div>
+        </li>
+        <li data-reveal style="--reveal-delay:240ms">
+          <span class="icon-chip-sm">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+          <div><h3>Spikes are expected, not punished</h3><p>A product drop or a holiday peak won't trip an overage. If sustained volume outgrows your band, we'll raise it with you first — not on the invoice.</p></div>
+        </li>
+        <li data-reveal style="--reveal-delay:300ms">
+          <span class="icon-chip-sm">{% include icon.html name="users" class="h-5 w-5" %}</span>
+          <div><h3>No per-seat meter</h3><p>Your whole team gets access; headcount isn't a basis we intend to bill on.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULES ==================== -->
+<section class="prx-mods-sec">
+  <div class="container-page">
+    <div class="prx-sec-head" data-reveal>
+      <p class="eyebrow">Priced by module</p>
+      <h2 class="prx-h2">Adopt one module.<br>Add the rest when they earn it.</h2>
+      <p class="prx-sec-sub">Each module is priced independently and can be adopted on its own or together. The data and identity layer is live today; the engagement layer is in preview, and we label it that way.</p>
+    </div>
+
+    <ol class="prx-path" data-reveal aria-label="Usual adoption path">
+      <li><span class="prx-path-step">Start</span> Data &amp; identity</li>
+      <li aria-hidden="true" class="prx-path-arrow">→</li>
+      <li><span class="prx-path-step">Then</span> Activation</li>
+      <li aria-hidden="true" class="prx-path-arrow">→</li>
+      <li><span class="prx-path-step">Then</span> Measurement</li>
+      <li aria-hidden="true" class="prx-path-arrow">→</li>
+      <li class="prx-path-preview"><span class="prx-path-step">Later</span> Engagement · Preview</li>
+    </ol>
+
+    <ul class="prx-mods">
+      <li class="prx-mod" data-reveal>
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span><span class="prx-badge prx-badge-live">Live</span></div>
+        <h3>Data &amp; identity · Blocks + ID</h3>
+        <p>Collection, the real-time identity graph, and one consented golden fan profile you own.</p>
+        <p class="prx-mod-foot">Priced independently</p>
+      </li>
+      <li class="prx-mod" data-reveal style="--reveal-delay:60ms">
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="megaphone" class="h-5 w-5" %}</span><span class="prx-badge prx-badge-live">Live</span></div>
+        <h3>Activation · Fanfinity Activate</h3>
+        <p>WhatsApp, email, push, paid media, segmentation, and real-time triggers, all from the live profile.</p>
+        <p class="prx-mod-foot">Priced independently</p>
+      </li>
+      <li class="prx-mod" data-reveal style="--reveal-delay:120ms">
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="chart" class="h-5 w-5" %}</span><span class="prx-badge prx-badge-live">Live</span></div>
+        <h3>Measurement · Fanfinity Measure</h3>
+        <p>Verified reach, exposure-to-outcome attribution, and a sponsor / partner portal.</p>
+        <p class="prx-mod-foot">Priced independently</p>
+      </li>
+      <li class="prx-mod prx-mod-preview" data-reveal style="--reveal-delay:180ms">
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span><span class="prx-badge prx-badge-preview">Preview</span></div>
+        <h3>Engagement · Fanfinity Engage</h3>
+        <p>Interactivity, gamification, loyalty, and rewards — in design preview, not yet generally available.</p>
+        <p class="prx-mod-foot">Scoped for later, not billed today</p>
+      </li>
+      <li class="prx-mod" data-reveal style="--reveal-delay:240ms">
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</span></div>
+        <h3>Deploy your way</h3>
+        <p>Your cloud, on-premise, or fully managed — in-Kingdom and PDPL-governed at the data layer.</p>
+        <p class="prx-mod-foot">Same capability everywhere</p>
+      </li>
+      <li class="prx-mod" data-reveal style="--reveal-delay:300ms">
+        <div class="prx-mod-top"><span class="icon-chip">{% include icon.html name="code" class="h-5 w-5" %}</span></div>
+        <h3>API &amp; SDKs</h3>
+        <p>A full REST API and client SDKs. Every capability is programmable.</p>
+        <p class="prx-mod-foot">Included with every module</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== MECHANICS ==================== -->
+<section class="prx-mech-sec">
+  <div class="container-page">
+    <div class="prx-sec-head" data-reveal>
+      <p class="eyebrow">How pricing works</p>
+      <h2 class="prx-h2">The four decisions, in detail</h2>
+      <p class="prx-sec-sub">The composer above is not a toy version of the sales call — it is the sales call. Here is exactly how each decision maps to the commercial basis we put in writing.</p>
+    </div>
+
+    <ol class="prx-mech">
+      <li data-reveal>
+        <span class="prx-mech-num">01</span>
+        <div>
+          <h3>Pick your modules</h3>
+          <p>Start with fan identity and data, then add activation and measurement when the timing is right. You're billed for the modules you turn on, not a bundle you don't use yet.</p>
+        </div>
+      </li>
+      <li data-reveal style="--reveal-delay:60ms">
+        <span class="prx-mech-num">02</span>
+        <div>
+          <h3>Priced by volume, not by headcount</h3>
+          <p>The basis is what you process, not how many fans you acquire or how many of them engage. Growing your audience and getting them active shouldn't inflate the bill. The exact volume basis is set in your contract.</p>
+        </div>
+      </li>
+      <li data-reveal style="--reveal-delay:120ms">
+        <span class="prx-mech-num">03</span>
+        <div>
+          <h3>Enterprise needs are scoped in the same quote</h3>
+          <p>SLA, SSO, audit access, and deployment specifics are part of the conversation up front, not add-ons that appear at renewal. Specifics are scoped per contract.</p>
+        </div>
+      </li>
+      <li data-reveal style="--reveal-delay:180ms">
+        <span class="prx-mech-num">04</span>
+        <div>
+          <h3>Talk to us for a quote</h3>
+          <p>We map the platform to your use case and volume, then put the number in writing before you sign. No metered surprises, no add-ons appearing at renewal.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section class="prx-faq-sec">
+  <div class="container-page">
+    <div class="prx-sec-head" data-reveal>
+      <p class="eyebrow">Pricing FAQ</p>
+      <h2 class="prx-h2">Questions about pricing</h2>
+    </div>
+
+    <div class="prx-faq" data-reveal>
+      <div class="prx-faq-item">
+        <button type="button" class="prx-faq-q" aria-expanded="false">
+          <span>Do you charge per active user?</span>
+          <span class="prx-faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="prx-faq-a" hidden>
+          <p>No. Pricing is volume and usage based, not per active user. You pay for what you process, not for every fan you acquire, and the intent is a model that doesn't penalize you for getting fans to engage. The exact volume basis is scoped to your contract and confirmed in writing.</p>
+        </div>
+      </div>
+      <div class="prx-faq-item">
+        <button type="button" class="prx-faq-q" aria-expanded="false">
+          <span>Is pricing different on-premise versus fully managed?</span>
+          <span class="prx-faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="prx-faq-a" hidden>
+          <p>The capability set is identical whether you run in your own cloud, on-premise, or fully managed. Custom deployment work gets scoped into your quote when you need it; core capability is never gated behind where you deploy.</p>
+        </div>
+      </div>
+      <div class="prx-faq-item">
+        <button type="button" class="prx-faq-q" aria-expanded="false">
+          <span>Can we start with one module?</span>
+          <span class="prx-faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="prx-faq-a" hidden>
+          <p>Yes. Modules are adopted independently. Most teams start with the live fan identity and data layer, then add activation and measurement later. The engagement layer is in design preview, so it isn't part of a plan you'd run today.</p>
+        </div>
+      </div>
+      <div class="prx-faq-item">
+        <button type="button" class="prx-faq-q" aria-expanded="false">
+          <span>How do we get a quote?</span>
+          <span class="prx-faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="prx-faq-a" hidden>
+          <p>Book a demo. We map the platform to your use case and volume, then put pricing in writing before you commit. There's no self-serve sign-up today because we'd rather scope it properly than hand you a generic tier.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Get the number in writing"
+   text="Compose your scope above, bring the brief to a demo, and we'll map the platform to your use case and volume — then put pricing in writing before you commit. No metered surprises, no add-ons at renewal." %}
+
+{% raw %}
+<style>
+/* ================= Pricing page — scoped styles (.prx-) ================= */
+.prx-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.prx-hero-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 1024px) { .prx-hero-grid { grid-template-columns: 1.15fr 0.85fr; gap: 4rem; } }
+
+.prx-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.prx-accent { position: relative; display: inline-block; color: #854dff; }
+.prx-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.prx-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.prx-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+.prx-never-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.prx-never-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.prx-never-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero quote document */
+.prx-hero-art { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.prx-doc { position: relative; width: min(100%, 380px); background: #fff; border: 1px solid var(--color-border); border-radius: 18px; padding: 1.5rem 1.5rem 1.75rem; box-shadow: 0 24px 60px -24px rgba(53,16,112,0.25), 0 2px 6px rgba(53,16,112,0.06); transform: rotate(1.6deg); }
+.prx-doc-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.prx-doc-brand { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.05rem; color: #1a1025; }
+.prx-doc-kind { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.18em; text-transform: uppercase; color: #854dff; }
+.prx-doc-lines { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.25rem; }
+.prx-doc-line { height: 9px; border-radius: 5px; background: linear-gradient(90deg, #ede5ff, #f5f0ff); }
+.prx-doc-line.w-70 { width: 70%; } .prx-doc-line.w-45 { width: 45%; } .prx-doc-line.w-60 { width: 60%; } .prx-doc-line.w-35 { width: 35%; }
+.prx-doc-rule { margin: 1.25rem 0; border-top: 1px dashed #dccfff; }
+.prx-doc-terms { display: flex; flex-direction: column; gap: 0.45rem; }
+.prx-doc-terms span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.02em; color: #4a3d63; }
+.prx-doc-terms span::before { content: "§ "; color: #854dff; }
+.prx-stamp { position: absolute; right: -14px; bottom: 22px; transform: rotate(-8deg); border: 2.5px solid #854dff; color: #854dff; border-radius: 10px; padding: 0.35rem 0.7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.15; text-align: center; background: rgba(255,255,255,0.9); }
+.prx-stamp span { display: block; font-size: 0.56rem; font-weight: 500; letter-spacing: 0.16em; }
+.prx-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; }
+
+/* Section heads */
+.prx-sec-head { max-width: 44rem; margin-bottom: 3rem; }
+.prx-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.prx-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The composer (dark deal desk) ================= */
+.prx-compose { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.prx-compose::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 85% -10%, rgba(133,77,255,0.16), transparent 60%); pointer-events: none; }
+.prx-compose .container-page { position: relative; }
+.prx-on-dark .prx-h2 { color: #fff; }
+.prx-on-dark .prx-sec-sub { color: rgba(244,240,251,0.62); }
+.prx-progress { margin-top: 1.5rem; display: inline-flex; align-items: baseline; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244,240,251,0.55); }
+.prx-progress-num { font-size: 1.6rem; font-weight: 700; color: #aa80ff; letter-spacing: 0; }
+
+.prx-deal { display: grid; gap: 2.5rem; }
+@media (min-width: 1100px) { .prx-deal { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: start; } }
+
+.prx-decisions { display: flex; flex-direction: column; gap: 2.25rem; }
+.prx-decision { border: 0; padding: 0; margin: 0; }
+.prx-decision legend { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.15rem; color: #fff; display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.prx-step { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.16em; color: #aa80ff; }
+.prx-pick-hint { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.04em; color: rgba(244,240,251,0.45); }
+.prx-decision-note { margin-top: 0.9rem; font-size: 0.85rem; line-height: 1.6; color: rgba(244,240,251,0.5); max-width: 34rem; }
+
+.prx-chips { display: grid; gap: 0.65rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .prx-chips { grid-template-columns: 1fr 1fr; } }
+.prx-chip { position: relative; text-align: left; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.9rem 1rem 0.95rem; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.2s; display: flex; flex-direction: column; gap: 0.25rem; }
+.prx-chip:hover { border-color: rgba(170,128,255,0.5); transform: translateY(-1px); }
+.prx-chip[aria-pressed="true"] { border-color: #9969ff; background: rgba(153,105,255,0.14); box-shadow: 0 0 0 1px #9969ff inset; }
+.prx-chip-name { font-weight: 600; font-size: 0.95rem; color: #fff; }
+.prx-chip-sub { font-size: 0.75rem; line-height: 1.45; color: rgba(244,240,251,0.55); }
+.prx-chip .prx-badge { position: absolute; top: 0.8rem; right: 0.8rem; }
+
+.prx-badge { display: inline-flex; align-items: center; border-radius: 9999px; padding: 0.15rem 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.prx-badge-live { background: #854dff; color: #fff; }
+.prx-badge-preview { border: 1px solid rgba(170,128,255,0.55); color: #c4aaff; background: transparent; }
+.prx-mods-sec .prx-badge-preview, .prx-chip .prx-badge-preview { border-color: rgba(133,77,255,0.4); color: #854dff; }
+.prx-compose .prx-badge-preview { border-color: rgba(170,128,255,0.55); color: #c4aaff; }
+
+.prx-bands { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; }
+@media (min-width: 640px) { .prx-bands { grid-template-columns: repeat(4, 1fr); } }
+.prx-band { text-align: left; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.85rem 0.9rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; gap: 0.2rem; }
+.prx-band:hover { border-color: rgba(170,128,255,0.5); }
+.prx-band[aria-pressed="true"] { border-color: #9969ff; background: rgba(153,105,255,0.14); box-shadow: 0 0 0 1px #9969ff inset; }
+.prx-band-name { font-weight: 600; font-size: 0.9rem; color: #fff; }
+.prx-band-sub { font-size: 0.7rem; line-height: 1.4; color: rgba(244,240,251,0.5); }
+
+.prx-spike { margin-top: 1.1rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 1rem 1.1rem; }
+.prx-spike-svg { width: 100%; height: auto; display: block; }
+.prx-spike-fill { fill: rgba(153,105,255,0.14); }
+.prx-spike-line { fill: none; stroke: #9969ff; stroke-width: 2.5; }
+.prx-spike-ceiling { stroke: rgba(244,240,251,0.4); stroke-dasharray: 5 5; stroke-width: 1.5; }
+.prx-spike-ceiling-label { fill: rgba(244,240,251,0.5); font-family: ui-monospace, 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; }
+.prx-spike-peak { fill: #aa80ff; }
+.prx-spike-peak-label { fill: #c4aaff; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; }
+.prx-spike-note { margin: 0.6rem 0 0; font-size: 0.8rem; line-height: 1.6; color: rgba(244,240,251,0.55); }
+
+.prx-deploys { display: grid; grid-template-columns: 1fr; gap: 0.65rem; }
+@media (min-width: 640px) { .prx-deploys { grid-template-columns: repeat(3, 1fr); } }
+.prx-deploy { text-align: left; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 0.85rem 0.9rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; gap: 0.2rem; }
+.prx-deploy:hover { border-color: rgba(170,128,255,0.5); }
+.prx-deploy[aria-pressed="true"] { border-color: #9969ff; background: rgba(153,105,255,0.14); box-shadow: 0 0 0 1px #9969ff inset; }
+.prx-deploy-name { font-weight: 600; font-size: 0.9rem; color: #fff; }
+.prx-deploy-sub { font-size: 0.7rem; line-height: 1.4; color: rgba(244,240,251,0.5); }
+
+.prx-ents { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.prx-ent { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; padding: 0.55rem 1.05rem; cursor: pointer; font-size: 0.85rem; font-weight: 600; color: rgba(244,240,251,0.8); transition: border-color 0.2s, background 0.2s, color 0.2s; }
+.prx-ent:hover { border-color: rgba(170,128,255,0.5); }
+.prx-ent[aria-pressed="true"] { border-color: #9969ff; background: rgba(153,105,255,0.16); color: #fff; box-shadow: 0 0 0 1px #9969ff inset; }
+
+/* The brief */
+.prx-brief-col { position: sticky; top: 6rem; }
+.prx-brief { position: relative; background: #fbf9ff; color: #241735; border-radius: 20px; padding: 1.75rem 1.75rem 1.5rem; box-shadow: 0 40px 90px -30px rgba(0,0,0,0.55); overflow: hidden; }
+.prx-brief::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; background: linear-gradient(90deg, #854dff, #c4aaff); }
+.prx-brief-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px dashed #dccfff; }
+.prx-brief-kicker { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: #854dff; margin: 0; }
+.prx-brief-title { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.4rem; color: #1a1025; margin: 0.25rem 0 0; }
+.prx-brief-no { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.1em; color: #7a6b8f; white-space: nowrap; padding-top: 0.3rem; }
+.prx-brief-sec { padding: 0.95rem 0; border-bottom: 1px dashed #e9e0f7; }
+.prx-brief-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.18em; text-transform: uppercase; color: #854dff; margin: 0 0 0.5rem; }
+.prx-brief-mods { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+.prx-brief-mods li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; font-size: 0.9rem; font-weight: 600; color: #241735; }
+.prx-brief-mods li .prx-mod-badge { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 9999px; padding: 0.12rem 0.5rem; }
+.prx-brief-mods li .is-live { background: #ede5ff; color: #6a30e0; }
+.prx-brief-mods li .is-preview { border: 1px solid #c4aaff; color: #854dff; }
+.prx-brief-empty { font-size: 0.85rem; font-weight: 400 !important; color: #a493bd !important; font-style: italic; }
+.prx-brief-line { margin: 0; font-size: 0.9rem; font-weight: 600; color: #241735; }
+.prx-brief-line small { display: block; font-weight: 400; font-size: 0.78rem; color: #6f6089; margin-top: 0.15rem; }
+.prx-brief-fixed { margin: 0.45rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; letter-spacing: 0.04em; color: #6a30e0; }
+.prx-brief-foot { padding-top: 1.15rem; }
+.prx-brief-promise { margin: 0; font-size: 0.9rem; font-weight: 700; color: #1a1025; }
+.prx-brief-small { margin: 0.3rem 0 0; font-size: 0.72rem; color: #8d7ea6; }
+.prx-brief-actions { display: flex; align-items: center; gap: 1rem; margin-top: 1.05rem; flex-wrap: wrap; }
+.prx-reset { background: none; border: 0; padding: 0; font-size: 0.8rem; font-weight: 600; color: #7a6b8f; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.prx-reset:hover { color: #4a3d63; }
+.prx-brief-stamp { position: absolute; top: 44%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg) scale(1.6); opacity: 0; border: 3px solid #854dff; color: #854dff; border-radius: 12px; padding: 0.5rem 1rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 1rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-align: center; line-height: 1.2; background: rgba(251,249,255,0.92); pointer-events: none; transition: opacity 0.25s, transform 0.25s; }
+.prx-brief-stamp span { display: block; font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em; }
+.prx-brief-stamp.is-on { opacity: 1; transform: translate(-50%, -50%) rotate(-10deg) scale(1); }
+
+/* brief row entrance */
+@keyframes prx-row-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.prx-row-in { animation: prx-row-in 0.3s ease both; }
+
+/* ================= Invoice audit ================= */
+.prx-audit-sec { padding: 6.5rem 0; }
+.prx-audit-grid { display: grid; gap: 3rem; align-items: start; }
+@media (min-width: 1024px) { .prx-audit-grid { grid-template-columns: 0.95fr 1.05fr; gap: 4rem; } }
+
+.prx-receipt { background: #fff; border: 1px solid var(--color-border); border-radius: 18px; box-shadow: 0 24px 60px -28px rgba(53,16,112,0.22); padding: 1.5rem 1.5rem 1.25rem; position: relative; }
+.prx-receipt::after { content: ""; position: absolute; left: 0; right: 0; bottom: -9px; height: 10px; background: radial-gradient(circle at 10px -2px, transparent 7px, #fff 7px); background-size: 20px 10px; opacity: 0.9; }
+.prx-receipt-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-bottom: 0.9rem; border-bottom: 1px dashed #dccfff; }
+.prx-receipt-title { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.05rem; color: #1a1025; }
+.prx-receipt-meta { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.16em; color: #a493bd; }
+.prx-receipt-lines { list-style: none; margin: 0.4rem 0 0; padding: 0; }
+.prx-rl { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.7rem 0; border-bottom: 1px dashed #efe8fa; }
+.prx-rl-name { font-size: 0.9rem; color: #4a3d63; position: relative; transition: color 0.3s; }
+.prx-rl-name::after { content: ""; position: absolute; left: -2%; top: 52%; width: 0; height: 2px; background: #b91c1c; transition: width 0.35s ease; }
+.prx-rl-tag { flex-shrink: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #b91c1c; border: 1.5px solid #b91c1c; border-radius: 6px; padding: 0.16rem 0.45rem; opacity: 0; transform: rotate(-6deg) scale(1.4); transition: opacity 0.25s, transform 0.25s; }
+.prx-rl.is-struck .prx-rl-name { color: #b6a9cc; }
+.prx-rl.is-struck .prx-rl-name::after { width: 104%; }
+.prx-rl.is-struck .prx-rl-tag { opacity: 1; transform: rotate(-6deg) scale(1); }
+
+.prx-receipt-keep { margin-top: 1.1rem; border: 1px solid #dccfff; background: #f8f4ff; border-radius: 12px; padding: 0.95rem 1.05rem; opacity: 0.35; transition: opacity 0.4s; }
+.prx-receipt-keep.is-on { opacity: 1; }
+.prx-keep-label { margin: 0 0 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #854dff; }
+.prx-receipt-keep ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.prx-receipt-keep li { display: flex; gap: 0.55rem; align-items: baseline; font-size: 0.9rem; font-weight: 600; color: #241735; }
+.prx-keep-check { color: #6a30e0; font-weight: 700; }
+.prx-receipt-foot { display: flex; align-items: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
+.prx-reset-dark { color: #7a6b8f; }
+
+.prx-philosophy { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.4rem; }
+.prx-philosophy > li { display: flex; gap: 1rem; align-items: flex-start; }
+.prx-philosophy h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.05rem; margin: 0; }
+.prx-philosophy p { margin: 0.35rem 0 0; font-size: 0.92rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= Modules ================= */
+.prx-mods-sec { padding: 0 0 6.5rem; }
+.prx-path { list-style: none; margin: 0 0 2.5rem; padding: 0.9rem 1.25rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 0.9rem; border: 1px solid var(--color-border); border-radius: 9999px; background: var(--color-card); font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); width: fit-content; max-width: 100%; }
+.prx-path-step { color: #854dff; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.62rem; margin-right: 0.3rem; }
+.prx-path-arrow { color: #c4aaff; }
+.prx-path-preview { opacity: 0.75; }
+
+.prx-mods { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .prx-mods { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .prx-mods { grid-template-columns: repeat(3, 1fr); } }
+.prx-mod { display: flex; flex-direction: column; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.prx-mod:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.prx-mod-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-bottom: 1rem; }
+.prx-mod h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.05rem; margin: 0; }
+.prx-mod p { margin: 0.45rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.prx-mod-foot { margin-top: auto !important; padding-top: 1.1rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem !important; letter-spacing: 0.14em; text-transform: uppercase; color: #854dff !important; }
+.prx-mod-preview { border-style: dashed; }
+
+/* ================= Mechanics ================= */
+.prx-mech-sec { padding: 0 0 6.5rem; }
+.prx-mech { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+.prx-mech > li { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--color-border); align-items: baseline; }
+.prx-mech-num { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #854dff; }
+.prx-mech h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.3rem; margin: 0; }
+.prx-mech p { margin: 0.5rem 0 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 46rem; }
+
+/* ================= FAQ ================= */
+.prx-faq-sec { padding: 0 0 6.5rem; }
+.prx-faq { max-width: 52rem; border-top: 1px solid var(--color-border); }
+.prx-faq-item { border-bottom: 1px solid var(--color-border); }
+.prx-faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; background: none; border: 0; padding: 1.35rem 0; cursor: pointer; text-align: left; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; color: var(--color-foreground); }
+.prx-faq-icon { position: relative; flex-shrink: 0; width: 26px; height: 26px; border-radius: 9999px; border: 1px solid var(--color-border); transition: background 0.2s, border-color 0.2s; }
+.prx-faq-icon::before, .prx-faq-icon::after { content: ""; position: absolute; top: 50%; left: 50%; width: 10px; height: 1.6px; background: currentColor; transform: translate(-50%, -50%); transition: transform 0.25s; }
+.prx-faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+.prx-faq-q[aria-expanded="true"] .prx-faq-icon { background: #854dff; border-color: #854dff; color: #fff; }
+.prx-faq-q[aria-expanded="true"] .prx-faq-icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.prx-faq-a { padding: 0 0 1.5rem; }
+.prx-faq-a p { margin: 0; font-size: 0.95rem; line-height: 1.75; color: var(--color-muted-foreground); max-width: 44rem; }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .prx-doc, html.dark .prx-receipt { background: #17101f; border-color: rgba(255,255,255,0.1); }
+html.dark .prx-doc-brand, html.dark .prx-receipt-title, html.dark .prx-brief-title, html.dark .prx-brief-promise { color: #f4f0fb; }
+html.dark .prx-doc-line { background: linear-gradient(90deg, #2a1d40, #332350); }
+html.dark .prx-doc-terms span { color: #b6a9cc; }
+html.dark .prx-doc-rule, html.dark .prx-receipt-head { border-color: rgba(255,255,255,0.14); }
+html.dark .prx-stamp { background: rgba(23,16,31,0.92); }
+html.dark .prx-receipt::after { background: radial-gradient(circle at 10px -2px, transparent 7px, #17101f 7px); background-size: 20px 10px; }
+html.dark .prx-rl-name { color: #cfc3e2; }
+html.dark .prx-rl { border-color: rgba(255,255,255,0.08); }
+html.dark .prx-brief { background: #17101f; color: #f4f0fb; }
+html.dark .prx-brief-mods li, html.dark .prx-brief-line, html.dark .prx-brief-promise { color: #f4f0fb; }
+html.dark .prx-brief-head { border-color: rgba(255,255,255,0.14); }
+html.dark .prx-brief-sec { border-color: rgba(255,255,255,0.08); }
+html.dark .prx-brief-no, html.dark .prx-brief-small { color: #8d7ea6; }
+html.dark .prx-brief-line small { color: #a493bd; }
+html.dark .prx-brief-mods li .is-live { background: rgba(133,77,255,0.2); color: #c4aaff; }
+html.dark .prx-receipt-keep { background: rgba(133,77,255,0.08); border-color: rgba(133,77,255,0.3); }
+html.dark .prx-receipt-keep li { color: #f4f0fb; }
+html.dark .prx-brief-stamp { background: rgba(23,16,31,0.94); }
+
+/* ================= Reduced motion ================= */
+@media (prefers-reduced-motion: reduce) {
+  .prx-row-in, .prx-rl-name::after, .prx-rl-tag, .prx-brief-stamp, .prx-receipt-keep { animation: none !important; transition: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .prx-hero { padding-top: 4rem; }
+  .prx-brief-col { position: static; }
+  .prx-stamp { right: 6px; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     1 · THE COMPOSER — four decisions → a written quote brief
+     ============================================================ */
+  var MODULE_META = {
+    identity: { name: 'Data & identity · Blocks + ID', badge: 'Live' },
+    activate: { name: 'Activation · Fanfinity Activate', badge: 'Live' },
+    measure:  { name: 'Measurement · Fanfinity Measure', badge: 'Live' },
+    engage:   { name: 'Engagement · Fanfinity Engage', badge: 'Preview' }
+  };
+  var DEFAULT_SPIKE_NOTE = 'A product drop or a holiday peak won’t trip an overage — if sustained volume outgrows your band, we raise it with you first, not on the invoice.';
+  var DEFAULT_CHART = {
+    line: 'M0 130 C60 128 95 126 140 122 C180 118 205 106 235 86 C255 72 278 66 292 70 C310 76 326 96 350 108 C380 121 420 122 460 120 C500 118 530 116 560 114',
+    ceilingY: 82,
+    peakX: 292,
+    peakY: 70,
+    peakLabel: 'an expected spike'
+  };
+  var BAND_META = [
+    {
+      name: 'First season',
+      note: 'Plenty of headroom while the graph fills in — and when the first big moment lands early, the spike is absorbed, not invoiced.',
+      chart: {
+        line: 'M0 132 C50 131 90 130 125 128 C150 126 162 112 180 92 C190 82 198 78 205 80 C216 84 225 110 244 120 C275 130 330 131 390 131 C455 132 515 132 560 132',
+        ceilingY: 98,
+        peakX: 205,
+        peakY: 80,
+        peakLabel: 'the early spike'
+      }
+    },
+    {
+      name: 'Growing',
+      note: 'Steady signal week on week. If sustained volume outgrows the band, we raise it with you first — not on the invoice.',
+      chart: {
+        line: 'M0 128 C55 126 92 120 135 116 C176 112 206 102 245 76 C266 61 286 52 300 56 C318 62 328 88 348 100 C380 116 420 115 458 110 C500 106 530 104 560 102',
+        ceilingY: 70,
+        peakX: 300,
+        peakY: 56,
+        peakLabel: 'the growth spike'
+      }
+    },
+    {
+      name: 'Matchday scale',
+      note: 'Big peaks, quiet Tuesdays. A cup-final spike won’t trip an overage — spikes are expected, not punished.',
+      chart: {
+        line: 'M0 128 C60 126 90 122 130 118 C170 114 185 96 210 60 C225 38 240 30 252 34 C268 40 276 78 292 96 C315 122 360 124 410 125 C470 126 520 127 560 128',
+        ceilingY: 52,
+        peakX: 252,
+        peakY: 34,
+        peakLabel: 'the cup-final spike'
+      }
+    },
+    {
+      name: 'League scale',
+      note: 'Sustained, heavy, always-on volume, priced on what you process — never on how many fans you attract.',
+      chart: {
+        line: 'M0 94 C60 90 105 86 150 78 C200 70 240 58 300 44 C326 38 348 30 360 32 C376 35 394 48 420 54 C458 62 500 60 530 58 C545 57 552 56 560 55',
+        ceilingY: 44,
+        peakX: 360,
+        peakY: 32,
+        peakLabel: 'the always-on peak'
+      }
+    }
+  ];
+  var DEPLOY_META = {
+    cloud:   { name: 'Your cloud',     sub: 'On your keys, your infrastructure — capability identical.' },
+    onprem:  { name: 'On-premise',     sub: 'Inside your own walls — capability identical.' },
+    managed: { name: 'Fully managed',  sub: 'We run it, you keep the graph — capability identical.' }
+  };
+  var ENT_META = { sla: 'SLA', sso: 'SSO', audit: 'Audit access' };
+
+  var state = { modules: [], band: null, deploy: null, ents: [] };
+
+  var els = {
+    count:      document.getElementById('prxCount'),
+    briefMods:  document.getElementById('prxBriefMods'),
+    briefBand:  document.getElementById('prxBriefBand'),
+    briefDeploy:document.getElementById('prxBriefDeploy'),
+    briefEnt:   document.getElementById('prxBriefEnt'),
+    stamp:      document.getElementById('prxBriefStamp'),
+    spikeNote:  document.getElementById('prxSpikeNote'),
+    reset:      document.getElementById('prxReset')
+  };
+  var chartEls = {
+    fill:         document.querySelector('.prx-spike-fill'),
+    line:         document.querySelector('.prx-spike-line'),
+    ceiling:      document.querySelector('.prx-spike-ceiling'),
+    ceilingLabel: document.querySelector('.prx-spike-ceiling-label'),
+    peak:         document.querySelector('.prx-spike-peak'),
+    peakLabel:    document.querySelector('.prx-spike-peak-label')
+  };
+  var chartFrame = null;
+
+  function chartFill(line) {
+    return line + ' L560 150 L0 150 Z';
+  }
+
+  function chartNumber(el, attr) {
+    return parseFloat(el.getAttribute(attr));
+  }
+
+  function currentChart() {
+    return {
+      line: chartEls.line.getAttribute('d'),
+      fill: chartEls.fill.getAttribute('d'),
+      ceilingY: chartNumber(chartEls.ceiling, 'y1'),
+      ceilingLabelY: chartNumber(chartEls.ceilingLabel, 'y'),
+      peakX: chartNumber(chartEls.peak, 'cx'),
+      peakY: chartNumber(chartEls.peak, 'cy'),
+      peakLabelX: chartNumber(chartEls.peakLabel, 'x'),
+      peakLabelY: chartNumber(chartEls.peakLabel, 'y')
+    };
+  }
+
+  function chartTarget(chart) {
+    return {
+      line: chart.line,
+      fill: chartFill(chart.line),
+      ceilingY: chart.ceilingY,
+      ceilingLabelY: chart.ceilingY - 8,
+      peakX: chart.peakX,
+      peakY: chart.peakY,
+      peakLabelX: chart.peakX,
+      peakLabelY: Math.max(14, chart.peakY - 14),
+      peakLabel: chart.peakLabel
+    };
+  }
+
+  function interpolate(from, to, progress) {
+    return from + (to - from) * progress;
+  }
+
+  function interpolatePath(from, to, progress) {
+    var fromNumbers = from.match(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi).map(Number);
+    var numberIndex = 0;
+    return to.replace(/-?\d*\.?\d+(?:e[-+]?\d+)?/gi, function (number) {
+      var value = interpolate(fromNumbers[numberIndex], Number(number), progress);
+      numberIndex++;
+      return value.toFixed(2);
+    });
+  }
+
+  function applyChart(chart) {
+    chartEls.line.setAttribute('d', chart.line);
+    chartEls.fill.setAttribute('d', chart.fill);
+    chartEls.ceiling.setAttribute('y1', chart.ceilingY);
+    chartEls.ceiling.setAttribute('y2', chart.ceilingY);
+    chartEls.ceilingLabel.setAttribute('y', chart.ceilingLabelY);
+    chartEls.peak.setAttribute('cx', chart.peakX);
+    chartEls.peak.setAttribute('cy', chart.peakY);
+    chartEls.peakLabel.setAttribute('x', chart.peakLabelX);
+    chartEls.peakLabel.setAttribute('y', chart.peakLabelY);
+  }
+
+  function animateChart(chart) {
+    var target = chartTarget(chart);
+    var from = currentChart();
+    var startedAt = null;
+
+    if (chartFrame !== null) {
+      window.cancelAnimationFrame(chartFrame);
+      chartFrame = null;
+    }
+    chartEls.peakLabel.textContent = target.peakLabel;
+
+    if (reduceMotion) {
+      applyChart(target);
+      return;
+    }
+
+    function draw(now) {
+      if (startedAt === null) startedAt = now;
+      var progress = Math.min((now - startedAt) / 520, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      applyChart({
+        line: interpolatePath(from.line, target.line, eased),
+        fill: interpolatePath(from.fill, target.fill, eased),
+        ceilingY: interpolate(from.ceilingY, target.ceilingY, eased),
+        ceilingLabelY: interpolate(from.ceilingLabelY, target.ceilingLabelY, eased),
+        peakX: interpolate(from.peakX, target.peakX, eased),
+        peakY: interpolate(from.peakY, target.peakY, eased),
+        peakLabelX: interpolate(from.peakLabelX, target.peakLabelX, eased),
+        peakLabelY: interpolate(from.peakLabelY, target.peakLabelY, eased)
+      });
+      if (progress < 1) {
+        chartFrame = window.requestAnimationFrame(draw);
+      } else {
+        applyChart(target);
+        chartFrame = null;
+      }
+    }
+
+    chartFrame = window.requestAnimationFrame(draw);
+  }
+
+  function decisionsMade() {
+    var n = 0;
+    if (state.modules.length) n++;
+    if (state.band !== null) n++;
+    if (state.deploy) n++;
+    if (state.ents.length) n++;
+    return n;
+  }
+
+  function rowIn(el) {
+    if (reduceMotion || !el) return;
+    el.classList.remove('prx-row-in');
+    void el.offsetWidth; /* restart animation */
+    el.classList.add('prx-row-in');
+  }
+
+  function renderBrief() {
+    /* Modules */
+    els.briefMods.innerHTML = '';
+    if (!state.modules.length) {
+      var empty = document.createElement('li');
+      empty.className = 'prx-brief-empty';
+      empty.textContent = 'Awaiting your first pick…';
+      els.briefMods.appendChild(empty);
+    } else {
+      state.modules.forEach(function (key) {
+        var meta = MODULE_META[key];
+        var li = document.createElement('li');
+        var label = document.createElement('span');
+        label.textContent = meta.name;
+        var badge = document.createElement('span');
+        badge.className = 'prx-mod-badge ' + (meta.badge === 'Live' ? 'is-live' : 'is-preview');
+        badge.textContent = meta.badge === 'Live' ? 'Live' : 'Preview · later';
+        li.appendChild(label);
+        li.appendChild(badge);
+        rowIn(li);
+        els.briefMods.appendChild(li);
+      });
+    }
+
+    /* Volume */
+    if (state.band === null) {
+      els.briefBand.innerHTML = '<span class="prx-brief-empty">Pick a band…</span>';
+      if (els.spikeNote) els.spikeNote.textContent = DEFAULT_SPIKE_NOTE;
+    } else {
+      var b = BAND_META[state.band];
+      els.briefBand.innerHTML = '';
+      els.briefBand.appendChild(document.createTextNode(b.name));
+      var small = document.createElement('small');
+      small.textContent = 'Processing volume · contracted band — spikes expected, not punished.';
+      els.briefBand.appendChild(small);
+      rowIn(els.briefBand);
+      if (els.spikeNote) els.spikeNote.textContent = b.note;
+    }
+
+    /* Deployment */
+    if (!state.deploy) {
+      els.briefDeploy.innerHTML = '<span class="prx-brief-empty">Choose where it runs…</span>';
+    } else {
+      var d = DEPLOY_META[state.deploy];
+      els.briefDeploy.innerHTML = '';
+      els.briefDeploy.appendChild(document.createTextNode(d.name));
+      var dsmall = document.createElement('small');
+      dsmall.textContent = d.sub;
+      els.briefDeploy.appendChild(dsmall);
+      rowIn(els.briefDeploy);
+    }
+
+    /* Enterprise */
+    if (!state.ents.length) {
+      els.briefEnt.innerHTML = '<span class="prx-brief-empty">Nothing flagged yet…</span>';
+    } else {
+      els.briefEnt.innerHTML = '';
+      els.briefEnt.appendChild(document.createTextNode(state.ents.map(function (k) { return ENT_META[k]; }).join(' · ')));
+      var esmall = document.createElement('small');
+      esmall.textContent = 'Scoped in the same quote — never added at renewal.';
+      els.briefEnt.appendChild(esmall);
+      rowIn(els.briefEnt);
+    }
+
+    /* Progress + stamp */
+    var made = decisionsMade();
+    if (els.count) els.count.textContent = made;
+    if (els.stamp) els.stamp.classList.toggle('is-on', made === 4);
+  }
+
+  function toggleInList(list, key) {
+    var i = list.indexOf(key);
+    if (i === -1) { list.push(key); } else { list.splice(i, 1); }
+  }
+
+  function bindToggleGroup(selector, onToggle) {
+    var btns = document.querySelectorAll(selector);
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        onToggle(btn);
+        renderBrief();
+      });
+    });
+  }
+
+  bindToggleGroup('.prx-chip', function (btn) {
+    var key = btn.getAttribute('data-module');
+    toggleInList(state.modules, key);
+    btn.setAttribute('aria-pressed', state.modules.indexOf(key) !== -1 ? 'true' : 'false');
+  });
+
+  bindToggleGroup('.prx-band', function (btn) {
+    var idx = parseInt(btn.getAttribute('data-band'), 10);
+    var selecting = state.band !== idx;
+    state.band = selecting ? idx : null;
+    document.querySelectorAll('.prx-band').forEach(function (b) {
+      b.setAttribute('aria-pressed', selecting && b === btn ? 'true' : 'false');
+    });
+    animateChart(selecting ? BAND_META[idx].chart : DEFAULT_CHART);
+  });
+
+  bindToggleGroup('.prx-deploy', function (btn) {
+    var key = btn.getAttribute('data-deploy');
+    var selecting = state.deploy !== key;
+    state.deploy = selecting ? key : null;
+    document.querySelectorAll('.prx-deploy').forEach(function (b) {
+      b.setAttribute('aria-pressed', selecting && b === btn ? 'true' : 'false');
+    });
+  });
+
+  bindToggleGroup('.prx-ent', function (btn) {
+    var key = btn.getAttribute('data-ent');
+    toggleInList(state.ents, key);
+    btn.setAttribute('aria-pressed', state.ents.indexOf(key) !== -1 ? 'true' : 'false');
+  });
+
+  if (els.reset) {
+    els.reset.addEventListener('click', function () {
+      state.modules = []; state.band = null; state.deploy = null; state.ents = [];
+      document.querySelectorAll('.prx-chip, .prx-band, .prx-deploy, .prx-ent').forEach(function (b) {
+        b.setAttribute('aria-pressed', 'false');
+      });
+      if (els.spikeNote) els.spikeNote.textContent = DEFAULT_SPIKE_NOTE;
+      animateChart(DEFAULT_CHART);
+      renderBrief();
+    });
+  }
+
+  renderBrief();
+
+  /* ============================================================
+     2 · THE INVOICE AUDIT — strike what we never bill
+     ============================================================ */
+  var auditBtn = document.getElementById('prxAuditBtn');
+  var auditReset = document.getElementById('prxAuditReset');
+  var lines = Array.prototype.slice.call(document.querySelectorAll('#prxReceiptLines .prx-rl'));
+  var keep = document.getElementById('prxReceiptKeep');
+  var auditTimers = [];
+
+  function clearAuditTimers() {
+    auditTimers.forEach(function (t) { clearTimeout(t); });
+    auditTimers = [];
+  }
+
+  function runAudit() {
+    clearAuditTimers();
+    lines.forEach(function (li) { li.classList.remove('is-struck'); });
+    if (keep) keep.classList.remove('is-on');
+    if (reduceMotion) {
+      lines.forEach(function (li) { li.classList.add('is-struck'); });
+      if (keep) keep.classList.add('is-on');
+      finishAudit();
+      return;
+    }
+    lines.forEach(function (li, i) {
+      auditTimers.push(setTimeout(function () { li.classList.add('is-struck'); }, 350 + i * 420));
+    });
+    auditTimers.push(setTimeout(function () {
+      if (keep) keep.classList.add('is-on');
+      finishAudit();
+    }, 350 + lines.length * 420 + 200));
+  }
+
+  function finishAudit() {
+    if (auditBtn) auditBtn.hidden = true;
+    if (auditReset) auditReset.hidden = false;
+  }
+
+  function resetAudit() {
+    clearAuditTimers();
+    lines.forEach(function (li) { li.classList.remove('is-struck'); });
+    if (keep) keep.classList.remove('is-on');
+    if (auditBtn) auditBtn.hidden = false;
+    if (auditReset) auditReset.hidden = true;
+  }
+
+  if (auditBtn) auditBtn.addEventListener('click', runAudit);
+  if (auditReset) auditReset.addEventListener('click', resetAudit);
+
+  /* ============================================================
+     3 · FAQ ACCORDION — single-open
+     ============================================================ */
+  var faqBtns = document.querySelectorAll('.prx-faq-q');
+  faqBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      faqBtns.forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        var panel = b.parentElement.querySelector('.prx-faq-a');
+        if (panel) panel.hidden = true;
+      });
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        var panel = btn.parentElement.querySelector('.prx-faq-a');
+        if (panel) panel.hidden = false;
+      }
+    });
+  });
+})();
+</script>
+{% endraw %}
