@@ -1,49 +1,298 @@
 ---
 layout: page
+cta: false
 permalink: /integrations
 title: Integrations
-description: Connect Fanfinity to the ticketing, streaming, CRM, ad platforms, warehouses, and messaging tools you already run.
+description: Collect fan data from 600+ supported sources across ticketing, streaming, CRM, ad platforms, warehouses, messaging, and more, normalized into one governed fan graph.
 categories:
-  - { icon: identity,  title: "Ticketing & CRM",     body: "Webook, Salesforce, HubSpot, and more: bring purchase and membership data into the profile." }
-  - { icon: broadcast, title: "Streaming & OTT",      body: "Major OTT and broadcast platforms: unify viewing behavior with the rest of the fan record." }
-  - { icon: megaphone, title: "Messaging",            body: "WhatsApp Business, email/SMTP, and push providers for omnichannel activation." }
-  - { icon: target,    title: "Ad platforms",         body: "Meta, Google, and TikTok: sync first-party audiences and close the CAPI loop." }
-  - { icon: stack,     title: "Data warehouses",      body: "Snowflake, BigQuery, and Databricks: compose with the warehouse you already run." }
-  - { icon: chart,     title: "Analytics & BI",       body: "Feed resolved events and outcomes into your analytics and reporting stack." }
+  - { icon: identity,  title: "Ticketing & CRM",     body: "Collect purchases, memberships, contacts, and relationship history from the systems fan teams already run.", tint: "#5fc9a7", tag: "source" }
+  - { icon: broadcast, title: "Streaming & OTT",      body: "Bring viewing sessions, content engagement, and subscription behavior into the fan record.", tint: "#7fb4e8", tag: "source" }
+  - { icon: stack,     title: "Warehouses & databases", body: "Read governed records from Snowflake, BigQuery, Databricks, and operational databases.", tint: "#e8c06a", tag: "source" }
+  - { icon: megaphone, title: "Messaging",            body: "Collect delivery, opens, replies, opt-outs, and campaign engagement from messaging platforms.", tint: "#b18cff", tag: "source" }
+  - { icon: target,    title: "Advertising",          body: "Bring clicks, campaign engagement, cost, and conversion signals from paid-media sources.", tint: "#f08a6d", tag: "source" }
+  - { icon: chart,     title: "Analytics & product",  body: "Collect behavioral and product-usage events from analytics tools and digital experiences.", tint: "#7fb4e8", tag: "source" }
 ---
-{% include hero.html
-   variant="gradient"
-   eyebrow="Integrations"
-   title="Connect everything"
-   subtitle="Fanfinity plugs into the tools you already run: ticketing, streaming, CRM, messaging, ad platforms, and your warehouse."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the products"
-   secondary_url="/platform" %}
 
-{% include feature-grid.html
-   heading="Connectors across your stack"
-   subheading="An open connector framework across the categories below. Browse the full connector directory further down."
-   items=page.categories
-   columns=3 %}
+<!-- ============================================================
+     INTEGRATIONS - bespoke redesign
+     Concept: "The Switchboard." A playable patch bay: source systems on
+     both sides, with every signal flowing into the fan graph in the middle.
+     Click a connector to plug it in. A cable animates to the core,
+     packets start flowing inward from every connected source,
+     and a live ticker shows what the pipes are carrying.
+     Scripted illustrative demo; the directory below is the supported source catalog.
+     ============================================================ -->
 
+<section class="in-hero">
+  <div class="container-page">
+    <div class="in-hero-grid">
+      <div class="in-hero-copy" data-reveal>
+        <p class="eyebrow">Integrations</p>
+        <h1 class="in-h1">
+          Every tool you run,<br>
+          <span class="in-accent">one fan graph.<svg class="in-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="in-lede">Fanfinity collects data from the stack you already have: ticketing, CRM, streaming, warehouses, messaging, ads, analytics, and hundreds more. Every supported source feeds one normalized, governed fan graph.</p>
+        <div class="in-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#switchboard" class="btn btn-secondary btn-lg">Play the switchboard<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="in-hero-strip" aria-label="Integration guarantees">
+          <li>{{ site.data.integrations | size }} supported sources</li>
+          <li>Every signal flows in</li>
+          <li>Consent travels with every pipe</li>
+          <li>No rip-and-replace</li>
+        </ul>
+      </div>
+
+      <div class="in-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="in-mini">
+          <div class="in-mini-col">
+            <span class="in-mini-chip" style="--cat:#5fc9a7"><img src="{{ 'assets/integrations/salesforce.svg' | relative_url }}" alt="" loading="lazy"></span>
+            <span class="in-mini-chip" style="--cat:#5fc9a7"><img src="{{ 'assets/integrations/stripe.svg' | relative_url }}" alt="" loading="lazy"></span>
+            <span class="in-mini-chip" style="--cat:#e8c06a"><img src="{{ 'assets/integrations/snowflake.svg' | relative_url }}" alt="" loading="lazy"></span>
+          </div>
+          <svg class="in-mini-cables" viewBox="0 0 60 120" fill="none">
+            <path class="in-mini-flow" d="M0 18 C 30 18, 30 60, 58 60" style="--cat:#5fc9a7"/>
+            <path class="in-mini-flow" d="M0 60 C 34 60, 34 60, 58 60" style="--cat:#5fc9a7; --flow-delay:.4s"/>
+            <path class="in-mini-flow" d="M0 102 C 30 102, 30 60, 58 60" style="--cat:#e8c06a; --flow-delay:.8s"/>
+          </svg>
+          <div class="in-mini-core">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><circle cx="4.5" cy="6" r="1.8" fill="currentColor" opacity=".7"/><circle cx="4.5" cy="18" r="1.8" fill="currentColor" opacity=".7"/><circle cx="19.5" cy="6" r="1.8" fill="currentColor" opacity=".7"/><circle cx="19.5" cy="18" r="1.8" fill="currentColor" opacity=".7"/><path d="M6 7.2 10.3 11M6 16.8 10.3 13M18 7.2 13.7 11M18 16.8 13.7 13" stroke="currentColor" stroke-width="1.4" opacity=".55"/></svg>
+          </div>
+          <svg class="in-mini-cables in-mini-cables-out" viewBox="0 0 60 120" fill="none">
+            <path class="in-mini-flow in-mini-rev" d="M0 60 C 30 60, 30 18, 58 18" style="--cat:#f08a6d"/>
+            <path class="in-mini-flow in-mini-rev" d="M0 60 C 30 60, 30 60, 58 60" style="--cat:#b18cff; --flow-delay:.5s"/>
+            <path class="in-mini-flow in-mini-rev" d="M0 60 C 30 60, 30 102, 58 102" style="--cat:#7fb4e8; --flow-delay:.9s"/>
+          </svg>
+          <div class="in-mini-col">
+            <span class="in-mini-chip" style="--cat:#f08a6d"><img src="{{ 'assets/integrations/facebook-marketing.svg' | relative_url }}" alt="" loading="lazy"></span>
+            <span class="in-mini-chip" style="--cat:#b18cff"><img src="{{ 'assets/integrations/braze.svg' | relative_url }}" alt="" loading="lazy"></span>
+            <span class="in-mini-chip" style="--cat:#7fb4e8"><img src="{{ 'assets/integrations/google-analytics-4-ga4.svg' | relative_url }}" alt="" loading="lazy"></span>
+          </div>
+        </div>
+        <p class="in-hero-art-note">Source data flows in from both sides. The governed fan graph resolves it in the middle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE SWITCHBOARD (playable centerpiece) ==================== -->
+<section class="in-machine" id="switchboard">
+  <div class="container-page">
+    <div class="in-sec-head in-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The switchboard</p>
+      <h2 class="in-h2">Plug your stack in.<br>Watch the graph light up.</h2>
+      <p class="in-sec-sub">Every connector shown here is a <strong>source</strong>. Plug one in and its fan signals begin flowing toward the graph; click it again to pull the plug.</p>
+      <div class="in-board-controls" role="group" aria-label="Switchboard controls">
+        <button type="button" class="in-ctl" id="inPlugAll">⚡ Plug everything in</button>
+        <button type="button" class="in-ctl in-ctl-ghost" id="inClear">Unplug all</button>
+      </div>
+    </div>
+
+    <div class="in-board" id="inBoard" data-reveal style="--reveal-delay:80ms">
+      <svg class="in-cables" id="inCables" aria-hidden="true"></svg>
+
+      <!-- Sources -->
+      <div class="in-rack in-rack-src">
+        <p class="in-rack-label"><span class="in-rack-arrow">→</span> Sources · data flows in</p>
+        <ul class="in-nodes">
+          <li class="in-node" data-key="salesforce" data-side="left" data-rate="240" style="--cat:#5fc9a7">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/salesforce.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Salesforce</span><span class="in-node-cat">CRM</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="hubspot" data-side="left" data-rate="150" style="--cat:#5fc9a7">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/hubspot.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">HubSpot</span><span class="in-node-cat">CRM</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="stripe" data-side="left" data-rate="190" style="--cat:#5fc9a7">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/stripe.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Stripe</span><span class="in-node-cat">Payments</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="snowflake" data-side="left" data-rate="320" style="--cat:#e8c06a">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/snowflake.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Snowflake</span><span class="in-node-cat">Warehouse</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="bigquery" data-side="left" data-rate="280" style="--cat:#e8c06a">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/bigquery.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">BigQuery</span><span class="in-node-cat">Warehouse</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="segment" data-side="left" data-rate="210" style="--cat:#7fb4e8">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/segment.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Segment</span><span class="in-node-cat">Analytics</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Core -->
+      <div class="in-core-wrap">
+        <div class="in-core" id="inCore" aria-hidden="true">
+          <div class="in-core-ring"></div>
+          <div class="in-core-ring in-core-ring-2"></div>
+          <div class="in-core-heart">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><circle cx="4.5" cy="6" r="1.8" fill="currentColor" opacity=".7"/><circle cx="4.5" cy="18" r="1.8" fill="currentColor" opacity=".7"/><circle cx="19.5" cy="6" r="1.8" fill="currentColor" opacity=".7"/><circle cx="19.5" cy="18" r="1.8" fill="currentColor" opacity=".7"/><path d="M6 7.2 10.3 11M6 16.8 10.3 13M18 7.2 13.7 11M18 16.8 13.7 13" stroke="currentColor" stroke-width="1.4" opacity=".55"/></svg>
+          </div>
+          <p class="in-core-label">FANFINITY<br><span>fan graph</span></p>
+        </div>
+        <div class="in-core-stats">
+          <div class="in-stat"><span class="in-stat-num" id="inStatIn">0</span><span class="in-stat-lab">events in / min</span></div>
+          <div class="in-stat"><span class="in-stat-num" id="inStatOut">0</span><span class="in-stat-lab">sources live</span></div>
+          <div class="in-stat"><span class="in-stat-num" id="inStatFans">0</span><span class="in-stat-lab">profiles updated</span></div>
+        </div>
+      </div>
+
+      <!-- More sources -->
+      <div class="in-rack in-rack-dst">
+        <p class="in-rack-label">More sources · data flows in <span class="in-rack-arrow">←</span></p>
+        <ul class="in-nodes">
+          <li class="in-node" data-key="facebook" data-side="right" data-rate="64" style="--cat:#f08a6d">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/facebook-marketing.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Meta</span><span class="in-node-cat">Ads</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="google-ads" data-side="right" data-rate="58" style="--cat:#f08a6d">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/google-ads.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Google Ads</span><span class="in-node-cat">Ads</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="tiktok" data-side="right" data-rate="42" style="--cat:#f08a6d">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/tiktok-marketing.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">TikTok</span><span class="in-node-cat">Ads</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="twilio" data-side="right" data-rate="36" style="--cat:#b18cff">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/twilio.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Twilio</span><span class="in-node-cat">Messaging</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="braze" data-side="right" data-rate="74" style="--cat:#b18cff">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/braze.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Braze</span><span class="in-node-cat">Messaging</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+          <li class="in-node" data-key="klaviyo" data-side="right" data-rate="49" style="--cat:#b18cff">
+            <button type="button" class="in-node-btn" aria-pressed="false">
+              <span class="in-node-logo"><img src="{{ 'assets/integrations/klaviyo.svg' | relative_url }}" alt="" loading="lazy"></span>
+              <span class="in-node-meta"><span class="in-node-name">Klaviyo</span><span class="in-node-cat">Messaging</span></span>
+              <span class="in-node-state">plug</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Live ticker -->
+      <div class="in-ticker-wrap">
+        <p class="in-ticker-label"><span class="in-ticker-dot"></span>Live: what the pipes are carrying</p>
+        <div class="in-ticker" id="inTicker" aria-live="polite">
+          <p class="in-tick in-tick-idle">Board idle. Plug a connector in to start carrying real shapes of fan data.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="in-machine-caption" data-reveal>A connector isn't a logo on a grid. It's a live collection pipe. Purchases, sessions, clicks, deliveries, replies, and campaign signals all flow into the same governed fan graph.</p>
+  </div>
+</section>
+
+<!-- ==================== CATEGORIES ==================== -->
+<section class="in-cats-sec">
+  <div class="container-page">
+    <div class="in-sec-head" data-reveal>
+      <p class="eyebrow">By category</p>
+      <h2 class="in-h2">Six lanes into<br>the fan graph</h2>
+      <p class="in-sec-sub">Supported sources span every part of the fan stack. Each connector collects its system's data and maps it into the same governed event model.</p>
+    </div>
+
+    <ol class="in-cats">
+      {%- for cat in page.categories -%}
+      <li class="in-cat" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms; --cat:{{ cat.tint }}">
+        <span class="in-cat-tag">{{ cat.tag }}</span>
+        <span class="icon-chip">{% include icon.html name=cat.icon class="h-5 w-5" %}</span>
+        <h3>{{ cat.title }}</h3>
+        <p>{{ cat.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== HOW A CONNECTOR WORKS ==================== -->
+<section class="in-how-sec">
+  <div class="container-page">
+    <div class="in-sec-head" data-reveal>
+      <p class="eyebrow">Under the hood</p>
+      <h2 class="in-h2">What "one-click connect"<br>actually means</h2>
+      <p class="in-sec-sub">Every supported source goes through the same three steps before a single record enters the fan graph.</p>
+    </div>
+
+    <div class="in-how-grid">
+      <div class="in-how-card" data-reveal>
+        <p class="in-how-k">Step 01 · Connect</p>
+        <h3>Credentials in, pipe open</h3>
+        <p>OAuth or service credentials with least-privilege scopes. The connector authenticates against your tool and opens a monitored pipe. No CSV exports or nightly zip files.</p>
+        <p class="in-how-eg">OAuth ✓ · scopes: read:purchases, read:members</p>
+      </div>
+      <div class="in-how-card" data-reveal style="--reveal-delay:80ms">
+        <p class="in-how-k">Step 02 · Map</p>
+        <h3>The tool's schema lands on the graph</h3>
+        <p>Fields from each tool are mapped onto the fan graph: events, identifiers, and attributes. A "purchase" means the same thing whether it came from ticketing or the webshop.</p>
+        <p class="in-how-eg">stripe.charge → purchase · seat · value · fan id</p>
+      </div>
+      <div class="in-how-card" data-reveal style="--reveal-delay:160ms">
+        <p class="in-how-k">Step 03 · Govern</p>
+        <h3>Consent checked before anything moves</h3>
+        <p>Residency and consent rules are enforced at the pipe itself. Data that isn't allowed to move stays put, and every record that does move carries its consent state with it.</p>
+        <p class="in-how-eg">consent: email ✓ ads ✗ · residency: in-region ✓</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIRECTORY ==================== -->
 {%- assign source_count = site.data.integrations | size -%}
 {%- if site.data.integrations_featured and site.data.integrations_featured.size > 0 -%}
-<section class="section border-t border-border">
+<section class="in-feat-sec">
   <div class="container-page">
-    <div class="max-w-2xl">
-      <p class="font-mono text-xs uppercase tracking-widest text-brand-foreground">Popular connectors</p>
-      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">The tools fan teams run on</h2>
-      <p class="mt-4 text-lg text-muted-foreground">A snapshot of the most-used connectors across CRM, ad platforms, warehouses, analytics, and messaging. The full catalog of {{ source_count }} is below.</p>
+    <div class="max-w-2xl" data-reveal>
+      <p class="font-mono text-xs uppercase tracking-widest text-brand-foreground">Representative connectors</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">Common tools across the stack</h2>
+      <p class="mt-4 text-lg text-muted-foreground">Recognizable supported sources across CRM, advertising, warehouses, analytics, and messaging. The complete {{ source_count }}-source catalog is organized below.</p>
     </div>
 
     <ul class="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
       {%- for item in site.data.integrations_featured -%}
-      <li class="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 text-center transition hover:border-brand-500/50 hover:shadow-md">
+      <li class="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-card p-5 transition hover:border-brand-500/50 hover:shadow-md" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 30 }}ms">
         <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white ring-1 ring-border/40">
           <img src="{{ item.logo | relative_url }}" alt="{{ item.name }} logo" loading="lazy" width="32" height="32" class="h-8 w-8 object-contain" />
         </span>
-        <span class="text-sm font-medium leading-tight">{{ item.name }}</span>
+        <span class="text-sm font-medium leading-tight text-center">{{ item.name }}</span>
       </li>
       {%- endfor -%}
     </ul>
@@ -51,14 +300,16 @@ categories:
 </section>
 {%- endif -%}
 
-<section class="section border-t border-border">
+<section class="in-dir-sec" id="directory">
   <div class="container-page">
-    <div class="max-w-2xl">
-      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Every connector, one fan graph</h2>
-      <p class="mt-4 text-lg text-muted-foreground">Fanfinity connects to {{ source_count }} tools through our connector framework, spanning sources and destinations: ticketing, streaming, CRM, ad platforms, messaging, and your warehouse. Search the full catalog below.</p>
+    <div class="max-w-2xl" data-reveal>
+      <p class="eyebrow">The full directory</p>
+      <h2 class="in-h2">Every connector,<br>one fan graph</h2>
+      <p class="in-sec-sub">All {{ source_count }} integrations below are supported inbound sources. Fanfinity collects their data, normalizes each source's schema, and feeds the resulting events into one governed fan graph.</p>
+      <p class="in-availability-note">Browse the source catalog alphabetically or search for the system you already run.</p>
     </div>
 
-    <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between" data-reveal>
       <div class="w-full max-w-md">
         <label for="integrations-search" class="sr-only">Search connectors</label>
         <input id="integrations-search" type="search" data-integrations-filter autocomplete="off"
@@ -70,24 +321,453 @@ categories:
       </p>
     </div>
 
-    <div class="mt-6 max-h-[32rem] overflow-y-auto rounded-2xl border border-border bg-card/40 p-4 sm:p-5">
-      <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-        {%- for item in site.data.integrations -%}
-        <li data-integration="{{ item.name | downcase }}" class="group flex flex-col items-center gap-2.5 rounded-xl border border-border bg-card p-4 text-center transition hover:border-brand-500/50 hover:shadow-sm">
-          {%- if item.logo -%}
-          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-border/40">
-            <img src="{{ item.logo | relative_url }}" alt="" loading="lazy" width="28" height="28" class="h-7 w-7 object-contain" />
-          </span>
-          {%- else -%}
-          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-sm font-semibold uppercase text-brand-foreground" aria-hidden="true">{{ item.name | slice: 0, 1 }}</span>
-          {%- endif -%}
-          <span class="line-clamp-2 text-xs font-medium leading-tight text-foreground/90">{{ item.name }}</span>
-        </li>
+    <div class="mt-6 max-h-[32rem] overflow-y-auto rounded-2xl border border-border bg-card/40 p-4 sm:p-5" data-reveal>
+      {%- assign alpha_groups = site.data.integrations | group_by_exp: "item", "item.name | slice: 0, 1 | upcase" -%}
+      <div class="in-alpha-directory">
+        {%- for group in alpha_groups -%}
+        <section class="in-alpha-group" data-integration-group>
+          <h3 class="in-alpha-letter">{{ group.name }}</h3>
+          <ul class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {%- for item in group.items -%}
+            <li data-integration="{{ item.name | downcase }}" class="group flex flex-col items-center gap-2.5 rounded-xl border border-border bg-card p-4 text-center transition hover:border-brand-500/50 hover:shadow-sm">
+              {%- if item.logo -%}
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-border/40">
+                <img src="{{ item.logo | relative_url }}" alt="" loading="lazy" width="28" height="28" class="h-7 w-7 object-contain" />
+              </span>
+              {%- else -%}
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-500/10 text-sm font-semibold uppercase text-brand-foreground" aria-hidden="true">{{ item.name | slice: 0, 1 }}</span>
+              {%- endif -%}
+              <span class="line-clamp-2 text-xs font-medium leading-tight text-foreground/90">{{ item.name }}</span>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </section>
         {%- endfor -%}
-      </ul>
+      </div>
       <p data-integrations-empty hidden class="py-6 text-center text-sm text-muted-foreground">No connectors match that search.</p>
     </div>
 
-    <p class="mt-10 text-muted-foreground">Don't see your tool? New connectors are added through the framework, and custom sources are part of scoping. <a href="{{ '/contact' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Talk to us</a>.</p>
+    <p class="mt-10 text-muted-foreground" data-reveal>Need a source that is not in the directory? We can evaluate a custom collection connector during scoping. <a href="{{ '/contact' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Talk to us</a>.</p>
   </div>
 </section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="in-why-sec">
+  <div class="container-page">
+    <div class="in-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="in-h2">Logos are easy.<br>Pipes are hard.</h2>
+        <p class="in-sec-sub">Anyone can print a grid of logos. What matters is what Fanfinity reliably collects from each source: real fan events and attributes, normalized and governed before they touch the graph.</p>
+        <a href="{{ '/platform/blocks/event-collection' | relative_url }}" class="in-why-link">See how events enter the graph <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="in-why-points" data-reveal style="--reveal-delay:120ms">
+        <li>Every source lands on the same event model, so ticketing, streaming, messaging, and campaign data can be resolved together.</li>
+        <li>Consent and residency are enforced as collected data enters the graph.</li>
+        <li>New source events update the fan profile in real time instead of waiting for a manual export.</li>
+        <li>Custom sources use the same collection framework: connect, map, govern, then ingest.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Plug your stack into the fan graph"
+   text="Bring the tools you already run. We'll show you what flows through them when every pipe lands on one resolved, consented fan profile. Book a walkthrough with our team." %}
+
+{% raw %}
+<style>
+/* ================= Integrations - scoped styles (.in-) ================= */
+.in-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.in-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.in-hero-grid > *, .in-why-grid > *, .in-how-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .in-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.in-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.in-accent { position: relative; display: inline-block; color: #854dff; }
+.in-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.in-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.in-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.in-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.in-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.in-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero mini switchboard */
+.in-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.in-mini { width: min(100%, 430px); display: flex; align-items: stretch; gap: 0.5rem; background: #0f0a1a; border: 1px solid rgba(153,105,255,0.28); border-radius: 22px; padding: 1.4rem 1.1rem; box-shadow: 0 24px 60px -30px rgba(133,77,255,0.45); }
+.in-mini-col { display: flex; flex-direction: column; justify-content: space-between; padding: 2px 0; }
+.in-mini-chip { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 2px var(--cat, #854dff), 0 8px 20px -10px rgba(0,0,0,0.6); }
+.in-mini-chip img { width: 26px; height: 26px; object-fit: contain; }
+.in-mini-cables { flex: 1 1 0; min-width: 34px; }
+.in-mini-flow { stroke: var(--cat, #854dff); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 5 7; animation: in-mini-dash 1.4s linear infinite; animation-delay: var(--flow-delay, 0s); opacity: 0.9; }
+.in-mini-rev { animation-direction: reverse; }
+@keyframes in-mini-dash { to { stroke-dashoffset: -24; } }
+.in-mini-core { align-self: center; flex: 0 0 auto; width: 66px; height: 66px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; color: #fff; background: radial-gradient(circle at 35% 30%, #a67bff, #854dff 65%, #6b34e0); box-shadow: 0 0 0 6px rgba(133,77,255,0.18), 0 0 34px rgba(133,77,255,0.55); animation: in-mini-pulse 2.6s ease-in-out infinite; }
+.in-mini-core svg { width: 34px; height: 34px; }
+@keyframes in-mini-pulse { 0%, 100% { box-shadow: 0 0 0 6px rgba(133,77,255,0.18), 0 0 34px rgba(133,77,255,0.55); } 50% { box-shadow: 0 0 0 10px rgba(133,77,255,0.10), 0 0 44px rgba(133,77,255,0.75); } }
+.in-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.in-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.in-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.in-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The switchboard (dark) ================= */
+.in-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.in-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 50% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.in-machine .container-page { position: relative; }
+.in-on-dark .in-h2 { color: #fff; }
+.in-on-dark .in-sec-sub { color: rgba(244,240,251,0.62); }
+.in-on-dark .in-sec-sub strong { color: #fff; font-weight: 600; }
+
+.in-board-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
+.in-ctl { border: 1px solid rgba(153,105,255,0.55); background: rgba(133,77,255,0.16); color: #e9defc; border-radius: 9999px; padding: 0.55rem 1.15rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background .2s, transform .15s; }
+.in-ctl:hover { background: rgba(133,77,255,0.3); transform: translateY(-1px); }
+.in-ctl-ghost { border-color: rgba(244,240,251,0.2); background: transparent; color: rgba(244,240,251,0.6); }
+.in-ctl-ghost:hover { background: rgba(244,240,251,0.08); }
+
+/* Board layout */
+.in-board { position: relative; display: grid; gap: 2rem; border: 1px solid rgba(153,105,255,0.22); border-radius: 26px; background: rgba(20,12,38,0.55); padding: 1.75rem; }
+@media (min-width: 1024px) {
+  .in-board { grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2.5rem; padding: 2.25rem; }
+}
+.in-cables { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; display: none; }
+@media (min-width: 1024px) { .in-cables { display: block; } }
+.in-cable { fill: none; stroke-width: 2; stroke-linecap: round; opacity: 0.85; }
+.in-packet { pointer-events: none; }
+
+.in-rack-label { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244,240,251,0.5); margin: 0 0 1rem; }
+.in-rack-src .in-rack-label { color: rgba(149,222,192,0.75); }
+.in-rack-dst .in-rack-label { justify-content: flex-end; color: rgba(244,160,140,0.75); }
+@media (max-width: 1023.98px) { .in-rack-dst .in-rack-label { justify-content: flex-start; } }
+.in-rack-arrow { font-size: 0.85rem; }
+
+.in-nodes { display: grid; gap: 0.65rem; margin: 0; padding: 0; list-style: none; grid-template-columns: 1fr 1fr; }
+@media (min-width: 1024px) { .in-nodes { grid-template-columns: 1fr; } }
+.in-node-btn { width: 100%; display: flex; align-items: center; gap: 0.7rem; border: 1px solid rgba(244,240,251,0.14); background: rgba(15,10,26,0.7); border-radius: 14px; padding: 0.55rem 0.7rem; cursor: pointer; text-align: left; color: #f4f0fb; transition: border-color .2s, box-shadow .2s, transform .15s, background .2s; }
+.in-node-btn:hover { transform: translateY(-1px); border-color: var(--cat); }
+.in-node-logo { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 9px; background: #fff; }
+.in-node-logo img { width: 22px; height: 22px; object-fit: contain; }
+.in-node-meta { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+.in-node-name { font-size: 0.82rem; font-weight: 600; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.in-node-cat { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,240,251,0.45); }
+.in-node-state { flex: 0 0 auto; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,240,251,0.4); border: 1px dashed rgba(244,240,251,0.25); border-radius: 9999px; padding: 0.2rem 0.5rem; transition: all .2s; }
+.in-node.is-live .in-node-btn { border-color: var(--cat); box-shadow: 0 0 0 1px var(--cat), 0 10px 26px -14px var(--cat); background: rgba(24,16,44,0.9); }
+.in-node.is-live .in-node-state { color: #0f0a1a; background: var(--cat); border-color: var(--cat); border-style: solid; font-weight: 700; }
+
+/* Core */
+.in-core-wrap { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
+.in-core { position: relative; width: 168px; height: 168px; display: flex; align-items: center; justify-content: center; }
+.in-core-heart { position: relative; z-index: 1; width: 92px; height: 92px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; color: #fff; background: radial-gradient(circle at 35% 30%, #a67bff, #854dff 65%, #6b34e0); box-shadow: 0 0 44px rgba(133,77,255,0.6); }
+.in-core-heart svg { width: 48px; height: 48px; }
+.in-core-ring { position: absolute; inset: 0; border-radius: 9999px; border: 1px solid rgba(153,105,255,0.4); animation: in-ring 3.2s ease-in-out infinite; }
+.in-core-ring-2 { inset: -16px; border-color: rgba(153,105,255,0.18); animation-delay: 1.6s; }
+@keyframes in-ring { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.55; } }
+.in-core-label { position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%); margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.22em; text-align: center; color: rgba(244,240,251,0.75); white-space: nowrap; }
+.in-core-label span { color: #c4aaff; letter-spacing: 0.14em; }
+.in-core-wrap { padding-top: 0.5rem; }
+.in-core { margin-bottom: 2rem; }
+
+.in-core-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.5rem; }
+.in-stat { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; min-width: 5.2rem; }
+.in-stat-num { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.5rem; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+.in-stat-lab { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,240,251,0.45); text-align: center; white-space: nowrap; }
+
+/* Ticker */
+.in-ticker-wrap { margin-top: 0.5rem; }
+@media (min-width: 1024px) { .in-ticker-wrap { grid-column: 1 / -1; margin-top: 1.25rem; } }
+.in-ticker-label { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244,240,251,0.5); margin: 0 0 0.7rem; }
+.in-ticker-dot { width: 7px; height: 7px; border-radius: 9999px; background: #5fc9a7; box-shadow: 0 0 10px #5fc9a7; animation: in-tick-blink 1.6s ease-in-out infinite; }
+@keyframes in-tick-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+.in-ticker { height: 9.5rem; overflow: hidden; border: 1px solid rgba(244,240,251,0.12); border-radius: 16px; background: rgba(9,6,18,0.75); padding: 0.8rem 1rem; display: flex; flex-direction: column; gap: 0.42rem; }
+.in-tick { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 1.5; color: rgba(244,240,251,0.82); display: flex; gap: 0.6rem; align-items: baseline; animation: in-tick-in .35s ease-out; }
+.in-tick::before { content: ""; flex: 0 0 auto; width: 6px; height: 6px; border-radius: 2px; background: var(--cat, rgba(244,240,251,0.3)); align-self: center; }
+.in-tick-idle { color: rgba(244,240,251,0.4); }
+.in-tick-idle::before { background: rgba(244,240,251,0.2); }
+.in-tick-time { color: rgba(244,240,251,0.35); font-size: 0.62rem; flex: 0 0 auto; }
+@keyframes in-tick-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+.in-machine-caption { margin: 2.5rem auto 0; max-width: 44rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+</style>
+{% endraw %}
+
+{% raw %}
+<style>
+/* ================= Categories ================= */
+.in-cats-sec { padding: 6rem 0 4rem; }
+.in-cats { display: grid; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+@media (min-width: 640px) { .in-cats { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .in-cats { grid-template-columns: repeat(3, 1fr); } }
+.in-cat { position: relative; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-card); padding: 1.6rem 1.5rem 1.5rem; transition: border-color .2s, box-shadow .2s, transform .2s; overflow: hidden; }
+.in-cat::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--cat, #854dff); opacity: 0.85; }
+.in-cat:hover { transform: translateY(-3px); border-color: var(--cat, #854dff); box-shadow: 0 18px 40px -24px rgba(23,12,45,0.35); }
+.in-cat-tag { position: absolute; top: 0.9rem; right: 1rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cat, #854dff); border: 1px solid var(--cat, #854dff); border-radius: 9999px; padding: 0.18rem 0.5rem; opacity: 0.8; }
+.in-cat h3 { margin: 1rem 0 0; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.in-cat p { margin: 0.6rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= How a connector works ================= */
+.in-how-sec { padding: 4rem 0 6rem; }
+.in-how-grid { display: grid; gap: 1rem; }
+@media (min-width: 1024px) { .in-how-grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.in-how-card { border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-card); padding: 1.7rem 1.6rem; display: flex; flex-direction: column; }
+.in-how-k { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #854dff; }
+.in-how-card h3 { margin: 0.8rem 0 0; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+.in-how-card > p:not(.in-how-k):not(.in-how-eg) { margin: 0.7rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.in-how-eg { margin: auto 0 0; padding-top: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; color: #854dff; }
+
+/* ================= Featured + directory ================= */
+.in-feat-sec { padding: 5rem 0; border-top: 1px solid var(--color-border); }
+.in-dir-sec { padding: 5rem 0 6rem; border-top: 1px solid var(--color-border); }
+.in-availability-note { max-width: 44rem; margin: 1.25rem 0 0; color: var(--color-foreground); font-size: 0.95rem; line-height: 1.65; font-weight: 600; }
+.in-alpha-directory { display: grid; gap: 2rem; }
+.in-alpha-group { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 1rem; align-items: start; }
+.in-alpha-letter { position: sticky; top: 0; margin: 0; padding-top: 0.25rem; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.4rem; line-height: 1; color: #854dff; }
+@media (max-width: 639.98px) { .in-alpha-group { grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.65rem; } }
+[data-integration][hidden] { display: none; }
+[data-integration-group][hidden] { display: none; }
+
+/* ================= Why it matters ================= */
+.in-why-sec { padding: 6rem 0; border-top: 1px solid var(--color-border); }
+.in-why-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 1024px) { .in-why-grid { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; } }
+.in-why-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.6rem; font-weight: 600; color: #854dff; text-decoration: none; }
+.in-why-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.in-why-points { display: flex; flex-direction: column; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.in-why-points li { position: relative; padding-left: 1.75rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.in-why-points li::before { content: ""; position: absolute; left: 0; top: 0.42em; width: 0.85rem; height: 0.85rem; border-radius: 9999px; background: rgba(133,77,255,0.14); border: 1.5px solid #854dff; }
+
+/* ================= Reveal ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .in-mini-flow, .in-mini-core, .in-core-ring, .in-ticker-dot { animation: none; }
+}
+</style>
+
+<script>
+/* The Switchboard: plug connectors into the fan graph. */
+(function () {
+  'use strict';
+
+  /* ---------- Reveal-on-scroll ---------- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* ---------- Switchboard ---------- */
+  var board = document.getElementById('inBoard');
+  if (!board) return;
+  var svg = document.getElementById('inCables');
+  var core = document.getElementById('inCore');
+  var ticker = document.getElementById('inTicker');
+  var statIn = document.getElementById('inStatIn');
+  var statOut = document.getElementById('inStatOut');
+  var statFans = document.getElementById('inStatFans');
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var mq = window.matchMedia('(min-width: 1024px)');
+
+  var LINES = {
+    'salesforce':   ['contact.upsert → Fan #48211', 'ticket.purchase · seat A-114 · $184', 'member.renewal · Gold tier · Fan #10927'],
+    'hubspot':      ['contact.sync · lifecycle: active', 'deal.closed · hospitality package · $1,240', 'list.update · season-ticket holders'],
+    'stripe':       ['payment.captured · $86.00 · Fan #77120', 'subscription.renewed · membership plus', 'refund.issued · away fixture · $42.00'],
+    'snowflake':    ['rows.synced · 12,400 · table: purchases', 'nightly extract → graph · ok', 'table: attendance → 8,214 records'],
+    'bigquery':     ['stream.insert · 3,204 rows · merch_orders', 'audience extract → graph · ok', 'query complete · 41s · 1.2M rows scanned'],
+    'segment':      ['identify · fan #30211 · app login', 'track · page.view · /tickets/derby', 'track · video.start · highlights'],
+    'facebook':     ['ad.click · campaign: matchday · Fan #48211', 'lead.created · season membership', 'campaign.spend.updated · matchday'],
+    'google-ads':   ['ad.click · campaign: renewal', 'conversion.observed · store visit · Fan #22910', 'campaign.cost.updated · win-back'],
+    'tiktok':       ['video.view · derby highlights · 94%', 'ad.click · new kit · Fan #77120', 'campaign.engagement · matchday'],
+    'twilio':       ['sms.delivered · renewal reminder · Fan #77120', 'sms.reply · matchday gate info', 'contact.opt_out · sms'],
+    'braze':        ['push.open · matchday squad drop · Fan #48211', 'canvas.entered · win-back day 3', 'message.bounced · email'],
+    'klaviyo':      ['email.open · new-kit drop · Fan #10927', 'flow.entered · win-back', 'email.clicked · season renewal']
+  };
+  var NAMES = {
+    'salesforce': 'salesforce', 'hubspot': 'hubspot', 'stripe': 'stripe',
+    'snowflake': 'snowflake', 'bigquery': 'bigquery', 'segment': 'segment',
+    'facebook': 'meta', 'google-ads': 'google ads', 'tiktok': 'tiktok',
+    'twilio': 'twilio', 'braze': 'braze', 'klaviyo': 'klaviyo'
+  };
+
+  var conns = {}; /* key -> { side, rate, color, pathEl, len, dots:[{el,t,speed}] } */
+  var fansTotal = 0;
+
+  function catOf(node) { return getComputedStyle(node).getPropertyValue('--cat').trim() || '#854dff'; }
+
+  function layout() {
+    if (!mq.matches) return;
+    var b = board.getBoundingClientRect();
+    svg.setAttribute('viewBox', '0 0 ' + b.width + ' ' + b.height);
+    var c = core.getBoundingClientRect();
+    var cx = c.left - b.left + c.width / 2;
+    var cy = c.top - b.top + c.height / 2;
+    Object.keys(conns).forEach(function (key) {
+      var conn = conns[key];
+      var node = board.querySelector('.in-node[data-key="' + key + '"]');
+      if (!node) return;
+      var r = node.getBoundingClientRect();
+      var x = (conn.side === 'left') ? (r.right - b.left) : (r.left - b.left);
+      var y = r.top - b.top + r.height / 2;
+      var tx = (conn.side === 'left') ? (cx - 58) : (cx + 58);
+      var d = 'M' + x + ' ' + y + ' C' + (x + (tx - x) * 0.55) + ' ' + y + ', ' + (tx - (tx - x) * 0.55) + ' ' + cy + ', ' + tx + ' ' + cy;
+      conn.pathEl.setAttribute('d', d);
+      conn.len = conn.pathEl.getTotalLength();
+    });
+  }
+
+  function connect(key) {
+    if (conns[key]) return;
+    var node = board.querySelector('.in-node[data-key="' + key + '"]');
+    if (!node) return;
+    var color = catOf(node);
+    var pathEl = document.createElementNS(SVGNS, 'path');
+    pathEl.setAttribute('class', 'in-cable');
+    pathEl.setAttribute('stroke', color);
+    pathEl.setAttribute('stroke-dasharray', '5 7');
+    svg.appendChild(pathEl);
+    var dots = [];
+    for (var i = 0; i < 2; i++) {
+      var dot = document.createElementNS(SVGNS, 'circle');
+      dot.setAttribute('r', '3.4');
+      dot.setAttribute('fill', color);
+      dot.setAttribute('class', 'in-packet');
+      svg.appendChild(dot);
+      dots.push({ el: dot, t: i * 0.5, speed: 0.16 + Math.random() * 0.1 });
+    }
+    conns[key] = { side: node.getAttribute('data-side'), rate: parseInt(node.getAttribute('data-rate'), 10) || 100, color: color, pathEl: pathEl, len: 0, dots: dots };
+    node.classList.add('is-live');
+    node.querySelector('.in-node-btn').setAttribute('aria-pressed', 'true');
+    node.querySelector('.in-node-state').textContent = 'live';
+    layout();
+    emitTick(key, true);
+    refreshStats();
+  }
+
+  function disconnect(key) {
+    var conn = conns[key];
+    if (!conn) return;
+    conn.pathEl.remove();
+    conn.dots.forEach(function (d) { d.el.remove(); });
+    delete conns[key];
+    var node = board.querySelector('.in-node[data-key="' + key + '"]');
+    if (node) {
+      node.classList.remove('is-live');
+      node.querySelector('.in-node-btn').setAttribute('aria-pressed', 'false');
+      node.querySelector('.in-node-state').textContent = 'plug';
+    }
+    refreshStats();
+  }
+
+  function toggle(key) { conns[key] ? disconnect(key) : connect(key); }
+
+  board.querySelectorAll('.in-node').forEach(function (node) {
+    node.querySelector('.in-node-btn').addEventListener('click', function () {
+      toggle(node.getAttribute('data-key'));
+    });
+  });
+
+  /* ---------- Packets ---------- */
+  var last = null;
+  function frame(ts) {
+    if (last == null) last = ts;
+    var dt = Math.min((ts - last) / 1000, 0.1);
+    last = ts;
+    if (mq.matches) {
+      Object.keys(conns).forEach(function (key) {
+        var conn = conns[key];
+        if (!conn.len) return;
+        conn.dots.forEach(function (d) {
+          d.t = (d.t + d.speed * dt) % 1;
+          var p = conn.pathEl.getPointAtLength(d.t * conn.len);
+          d.el.setAttribute('cx', p.x);
+          d.el.setAttribute('cy', p.y);
+        });
+      });
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* ---------- Ticker ---------- */
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function emitTick(key, isConnect) {
+    var idle = ticker.querySelector('.in-tick-idle');
+    if (idle) idle.remove();
+    var line = document.createElement('p');
+    line.className = 'in-tick';
+    var node = board.querySelector('.in-node[data-key="' + key + '"]');
+    line.style.setProperty('--cat', catOf(node));
+    var now = new Date();
+    var time = pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds());
+    var pool = LINES[key] || ['event.synced'];
+    var msg = isConnect
+      ? 'source connected · ' + NAMES[key] + ' → fan graph'
+      : pool[Math.floor(Math.random() * pool.length)];
+    line.innerHTML = '<span class="in-tick-time">' + time + '</span><span>' + msg + '</span>';
+    ticker.insertBefore(line, ticker.firstChild);
+    while (ticker.children.length > 30) ticker.removeChild(ticker.lastChild);
+    fansTotal += 2 + Math.floor(Math.random() * 9);
+    if (statFans) statFans.textContent = fansTotal.toLocaleString('en-US');
+  }
+
+  setInterval(function () {
+    var keys = Object.keys(conns);
+    if (!keys.length) return;
+    emitTick(keys[Math.floor(Math.random() * keys.length)], false);
+  }, 1100);
+
+  /* ---------- Stats ---------- */
+  function refreshStats() {
+    var inRate = 0;
+    Object.keys(conns).forEach(function (key) {
+      inRate += conns[key].rate;
+    });
+    if (statIn) statIn.textContent = inRate.toLocaleString('en-US');
+    if (statOut) statOut.textContent = Object.keys(conns).length.toLocaleString('en-US');
+  }
+
+  /* ---------- Controls ---------- */
+  var plugAll = document.getElementById('inPlugAll');
+  var clearAll = document.getElementById('inClear');
+  if (plugAll) plugAll.addEventListener('click', function () {
+    var keys = Array.prototype.map.call(board.querySelectorAll('.in-node'), function (n) { return n.getAttribute('data-key'); });
+    keys.forEach(function (key, i) { setTimeout(function () { connect(key); }, i * 160); });
+  });
+  if (clearAll) clearAll.addEventListener('click', function () {
+    Object.keys(conns).forEach(function (key) { disconnect(key); });
+  });
+
+  /* ---------- Resize ---------- */
+  var rT;
+  window.addEventListener('resize', function () { clearTimeout(rT); rT = setTimeout(layout, 120); });
+  if (mq.addEventListener) mq.addEventListener('change', layout);
+  window.addEventListener('load', function () { setTimeout(layout, 60); setTimeout(layout, 500); });
+
+  /* ---------- Alphabetical directory groups ---------- */
+  var directorySearch = document.querySelector('[data-integrations-filter]');
+  var directoryGroups = document.querySelectorAll('[data-integration-group]');
+  function updateDirectoryGroups() {
+    directoryGroups.forEach(function (group) {
+      var items = group.querySelectorAll('[data-integration]');
+      var hasVisibleItem = Array.prototype.some.call(items, function (item) { return !item.hidden; });
+      group.hidden = !hasVisibleItem;
+    });
+  }
+  if (directorySearch) directorySearch.addEventListener('input', function () {
+    setTimeout(updateDirectoryGroups, 0);
+  });
+
+  /* ---------- First paint: a few pipes already live ---------- */
+  ['salesforce', 'snowflake', 'facebook', 'klaviyo'].forEach(function (key, i) {
+    setTimeout(function () { connect(key); }, 500 + i * 450);
+  });
+})();
+</script>
+{% endraw %}

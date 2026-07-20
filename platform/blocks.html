@@ -1,53 +1,914 @@
 ---
 layout: page
+cta: false
 permalink: /platform/blocks
 title: Fanfinity Blocks
 description: "The CDI layer that collects every fan signal, stitches identifiers in real time, enriches profiles for AI and activation, and distributes governed data to every tool in your stack."
 breadcrumb_parent: { title: Platform, url: /platform }
-capabilities:
-  - { icon: plug,     title: "Data collection",    body: "Ingest events from every fan touchpoint (web, app, ticketing, streaming, on-site, and offline sources) through an open connector framework. Raw payloads are normalized and validated as they arrive, so the data feeding your profiles is already clean before it reaches Fanfinity ID." }
-  - { icon: stack,    title: "Reverse ETL",         body: "Push governed fan data from your warehouse back to every operational tool in your stack. CRM, ad platforms, email, and support systems all receive the same resolved profile rather than a different export pieced together from each source." }
-  - { icon: identity, title: "Identity stitching",  body: "Match identifiers across devices, channels, and sessions as events land, so stitching runs in real time rather than as a nightly batch job. The resulting graph, its merge rules, and the governed profile live one layer up, in Fanfinity ID." }
-  - { icon: spark,    title: "AI-ready enrichment", body: "Enrich every fan profile with first-party signals and derived attributes before they leave your environment, so downstream models and agents receive governed, structured context instead of raw event logs." }
-  - { icon: link,     title: "Integrations",        body: "Connect your existing marketing, analytics, and data-science tooling through a programmable integration layer. Configuration is API-driven and version-controlled, so integrations behave like infrastructure you own, not a vendor console you depend on." }
-how:
-  - { icon: plug,     title: "Collect every signal",            body: "Client-side SDKs and server-side connectors capture events across every touchpoint and deliver them into a typed, normalized event stream. No custom ETL to write, no parallel database to maintain alongside the sources you already run." }
-  - { icon: identity, title: "Stitch and resolve in real time", body: "Events are deduplicated and matched across identifiers as they arrive. The fan graph grows with every new signal, and every new resolution back-fills history across all linked identifiers, so profiles are always as complete as the data allows." }
-  - { icon: stack,    title: "Distribute to the full stack",    body: "Resolved, enriched profiles flow forward to Fanfinity ID for segmentation and downstream to every operational tool through reverse ETL. One governed source of truth, with no exports to re-sync between systems." }
-enrich_points:
-  - "Profiles are enriched inside your environment before they reach any external surface, so governance and residency rules are honored end to end."
-  - "Derived attributes and scored features land on the same profile that drives segmentation, so AI context and activation context stay in sync."
-  - "Reverse ETL suppresses already-converted fans from ad audiences, so budget reaches people who can still move."
-  - "Every enrichment step runs on data you own and control; no vendor sees the underlying fan graph."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Blocks"
-   title="Connect everything. Enrich every signal."
-   subtitle="Fanfinity Blocks is the CDI layer that brings every fan signal in, stitches it to one identity, enriches it for AI and activation, and distributes governed data to every tool, without rip-and-replace."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/platform-blocks.jpg"
-   image_alt="Blue ethernet network cables in a data infrastructure setup" %}
 
-{% include feature-grid.html
-   heading="Every signal. One governed pipeline."
-   subheading="From collection to enrichment to delivery, Blocks connects your data stack so every downstream system works from the same resolved fan profile."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     FANFINITY BLOCKS — bespoke redesign
+     Concept: the CDI layer made playable. A signal machine lets the
+     visitor fire events from seven touchpoints and watch identifiers
+     stitch into one golden profile in real time (or wait for the
+     02:00 batch). An enrichment before/after slider shows raw events
+     vs governed, structured context. No invented metrics.
+     ============================================================ -->
 
-{% include feature-grid.html
-   heading="Collect, stitch, distribute"
-   subheading="Blocks sits at the base of the Fanfinity platform, normalizing raw signals into typed events, resolving identifiers in real time, and distributing governed data to every tool in your stack."
-   items=page.how
-   columns=3 %}
+<section class="blx-hero">
+  <div class="container-page">
+    <div class="blx-hero-grid">
+      <div class="blx-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity Blocks</p>
+        <h1 class="blx-h1">
+          Connect everything.<br>
+          <span class="blx-accent">Enrich every signal.<svg class="blx-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="blx-lede">Fanfinity Blocks is the CDI layer that brings every fan signal in, stitches it to one identity, enriches it for AI and activation, and distributes governed data to every tool — without rip-and-replace.</p>
+        <div class="blx-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#machine" class="btn btn-secondary btn-lg">Fire a signal<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="blx-hero-strip" aria-label="What the CDI layer guarantees">
+          <li>Typed events</li>
+          <li>Real-time stitch</li>
+          <li>Governed by default</li>
+          <li>No rip-and-replace</li>
+        </ul>
+      </div>
 
-{% include feature-split.html
-   title="Structured context, not raw events"
-   body="Models and agents perform best when they receive governed, structured input, not raw event streams with inconsistent identifiers and missing attributes. Blocks enriches and structures fan data before it reaches any AI surface, so every downstream agent starts from a profile that is already resolved, governed, and enriched."
-   points=page.enrich_points
-   cta_text="See how profiles are segmented"
-   cta_url="/platform/id"
-   icon="spark" %}
+      <div class="blx-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="blx-stack">
+          <div class="blx-stack-layer blx-stack-tools">
+            <span class="blx-stack-label">Your stack</span>
+            <span class="blx-tool">CRM</span><span class="blx-tool">Ads</span><span class="blx-tool">Email</span><span class="blx-tool">Support</span>
+          </div>
+          <div class="blx-stack-bus"><span></span><span></span><span></span></div>
+          <div class="blx-stack-layer blx-stack-blocks">
+            <span class="blx-stack-label">Fanfinity Blocks</span>
+            <span class="blx-blocks-steps">collect → stitch → enrich → distribute</span>
+          </div>
+          <div class="blx-stack-bus"><span></span><span></span><span></span></div>
+          <div class="blx-stack-layer blx-stack-id">
+            <span class="blx-stack-label">Fanfinity ID</span>
+            <span class="blx-id-chip">one golden profile per fan</span>
+          </div>
+        </div>
+        <p class="blx-hero-art-note">The layer slides in underneath — the tools you run stay exactly where they are.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ==================== THE SIGNAL MACHINE (centerpiece) ==================== -->
+<section class="blx-machine" id="machine">
+  <div class="container-page">
+    <div class="blx-sec-head blx-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The pipeline</p>
+      <h2 class="blx-h2">Fire a signal.<br>Watch it become a fan.</h2>
+      <p class="blx-sec-sub">Seven touchpoints, one stream, one identity. Fire events from the sources below and watch identifiers stitch into a golden profile the moment they land. Then flip to the nightly batch and feel what a CDI layer is really for.</p>
+      <div class="blx-mode-row">
+        <div class="blx-mode" role="group" aria-label="Stitching mode">
+          <button type="button" class="blx-mode-btn is-on" id="blxModeRt" aria-pressed="true">Real-time</button>
+          <button type="button" class="blx-mode-btn" id="blxModeBatch" aria-pressed="false">Nightly batch</button>
+          <span class="blx-mode-clock" id="blxClock" hidden>stitches at 02:00</span>
+        </div>
+        <button type="button" class="blx-play" id="blxPlay" aria-pressed="false">▶ Watch the story</button>
+      </div>
+    </div>
+
+    <div class="blx-machine-grid">
+      <!-- 01 · Sources -->
+      <div class="blx-panel" data-reveal>
+        <p class="blx-panel-label">01 · Signals arrive</p>
+        <div class="blx-legend">
+          <span class="blx-idc" data-id="email"><i></i>email</span>
+          <span class="blx-idc" data-id="loyalty №"><i></i>loyalty №</span>
+          <span class="blx-idc" data-id="device"><i></i>device</span>
+          <span class="blx-idc" data-id="cookie"><i></i>cookie</span>
+          <span class="blx-legend-eq">same color = same fan</span>
+        </div>
+        <div class="blx-sources">
+          <button type="button" class="blx-src" data-src="ticket"><span class="blx-src-name">Ticket scan</span><span class="blx-src-ids"><span class="blx-idc" data-id="email"><i></i>email</span></span></button>
+          <button type="button" class="blx-src" data-src="web"><span class="blx-src-name">Web session</span><span class="blx-src-ids"><span class="blx-idc" data-id="cookie"><i></i>cookie</span></span></button>
+          <button type="button" class="blx-src" data-src="app"><span class="blx-src-name">App open</span><span class="blx-src-ids"><span class="blx-idc" data-id="device"><i></i>device</span></span></button>
+          <button type="button" class="blx-src" data-src="onsite"><span class="blx-src-name">On-site purchase</span><span class="blx-src-ids"><span class="blx-idc" data-id="loyalty №"><i></i>loyalty №</span></span></button>
+          <button type="button" class="blx-src" data-src="applogin"><span class="blx-src-name">App login</span><span class="blx-src-ids"><span class="blx-idc" data-id="device"><i></i>device</span><span class="blx-idc" data-id="loyalty №"><i></i>loyalty №</span></span></button>
+          <button type="button" class="blx-src" data-src="newsletter"><span class="blx-src-name">Newsletter click</span><span class="blx-src-ids"><span class="blx-idc" data-id="cookie"><i></i>cookie</span><span class="blx-idc" data-id="email"><i></i>email</span></span></button>
+          <button type="button" class="blx-src" data-src="member"><span class="blx-src-name">Membership link</span><span class="blx-src-ids"><span class="blx-idc" data-id="loyalty №"><i></i>loyalty №</span><span class="blx-idc" data-id="email"><i></i>email</span></span></button>
+        </div>
+        <p class="blx-panel-note">Fire them in any order — or press ▶ Watch the story. When two threads share a colored dot, they merge, and a fan appears in panel 03.</p>
+      </div>
+
+      <!-- 02 · Stream + stitch -->
+      <div class="blx-panel blx-panel-stream" data-reveal style="--reveal-delay:80ms">
+        <p class="blx-panel-label">02 · Threads wait for a match</p>
+        <p class="blx-story" id="blxStory" aria-live="polite">Nothing has happened yet. Each source you fire drops its identifiers here as a <strong>thread</strong>. A thread that shares a colored dot with the fan on the right gets pulled in; one that shares nothing waits.</p>
+        <div class="blx-stream" id="blxStream" aria-live="polite">
+          <div class="blx-stream-empty" id="blxStreamEmpty">Threads land here, colored by the identifiers they carry —<br>fire a signal to start the stream.</div>
+        </div>
+        <div class="blx-queue" id="blxQueue" hidden>
+          <p class="blx-queue-label">Held for the nightly window — nothing resolves until 02:00</p>
+          <ul class="blx-queue-list" id="blxQueueList"></ul>
+        </div>
+        <div class="blx-log" id="blxLog" aria-hidden="true">awaiting first event…</div>
+      </div>
+
+      <!-- 03 · Profile + distribution -->
+      <div class="blx-panel" data-reveal style="--reveal-delay:160ms">
+        <p class="blx-panel-label">03 · One fan emerges</p>
+        <div class="blx-profile" id="blxProfile">
+          <div class="blx-profile-empty" id="blxProfileEmpty">No fan yet.<br><span>The moment two threads share a colored identifier they merge into one known fan here — and their whole history back-fills.</span></div>
+          <div class="blx-profile-card" id="blxProfileCard" hidden>
+            <div class="blx-profile-head">
+              <span class="blx-profile-id">Fan #48211</span>
+              <span class="blx-profile-live" id="blxProfileLive">golden profile</span>
+            </div>
+            <ul class="blx-profile-ids" id="blxProfileIds"></ul>
+            <div class="blx-profile-enrich" id="blxProfileEnrich" hidden>
+              <p class="blx-enrich-label">Derived, in your environment</p>
+              <ul>
+                <li>matchday affinity · high</li>
+                <li>lapse risk · low</li>
+                <li>consent · email + push ✓ · in-region ✓</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="blx-dests" id="blxDests">
+          <p class="blx-dests-label">Same profile, onward to every tool</p>
+          <div class="blx-dests-row">
+            <span class="blx-dest" data-dest="crm">CRM</span>
+            <span class="blx-dest" data-dest="ads">Ads</span>
+            <span class="blx-dest" data-dest="email">Email</span>
+            <span class="blx-dest" data-dest="support">Support</span>
+          </div>
+          <p class="blx-dests-note" id="blxDestsNote">Destinations light up once a profile resolves — each receives the same resolved fan, not a different export.</p>
+        </div>
+        <button type="button" class="blx-reset" id="blxReset">Reset the stream</button>
+      </div>
+    </div>
+
+    <p class="blx-machine-caption" data-reveal>A fan who buys at 19:42 is known at 19:42 — not tomorrow morning. That is the whole argument for stitching in real time.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="blx-caps-sec">
+  <div class="container-page">
+    <div class="blx-sec-head" data-reveal>
+      <p class="eyebrow">What Blocks gives you</p>
+      <h2 class="blx-h2">Every signal.<br>One governed pipeline.</h2>
+      <p class="blx-sec-sub">From collection to enrichment to delivery, Blocks connects your data stack so every downstream system works from the same resolved fan profile.</p>
+    </div>
+
+    <ol class="blx-caps">
+      <li class="blx-cap" data-reveal>
+        <span class="blx-cap-num">01</span>
+        <span class="icon-chip">{% include icon.html name="plug" class="h-5 w-5" %}</span>
+        <h3>Data collection</h3>
+        <p>Ingest events from every fan touchpoint — web, app, ticketing, streaming, on-site, and offline sources — through an open connector framework. Raw payloads are normalized and validated as they arrive, so the data feeding your profiles is already clean before it reaches Fanfinity ID.</p>
+      </li>
+      <li class="blx-cap" data-reveal style="--reveal-delay:60ms">
+        <span class="blx-cap-num">02</span>
+        <span class="icon-chip">{% include icon.html name="identity" class="h-5 w-5" %}</span>
+        <h3>Identity stitching</h3>
+        <p>Match identifiers across devices, channels, and sessions as events land, so stitching runs in real time rather than as a nightly batch job. The resulting graph, its merge rules, and the governed profile live one layer up, in Fanfinity ID.</p>
+      </li>
+      <li class="blx-cap" data-reveal style="--reveal-delay:120ms">
+        <span class="blx-cap-num">03</span>
+        <span class="icon-chip">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+        <h3>AI-ready enrichment</h3>
+        <p>Enrich every fan profile with first-party signals and derived attributes before they leave your environment, so downstream models and agents receive governed, structured context instead of raw event logs.</p>
+      </li>
+      <li class="blx-cap" data-reveal style="--reveal-delay:180ms">
+        <span class="blx-cap-num">04</span>
+        <span class="icon-chip">{% include icon.html name="stack" class="h-5 w-5" %}</span>
+        <h3>Reverse ETL</h3>
+        <p>Push governed fan data from your warehouse back to every operational tool in your stack. CRM, ad platforms, email, and support systems all receive the same resolved profile rather than a different export pieced together from each source.</p>
+      </li>
+      <li class="blx-cap" data-reveal style="--reveal-delay:240ms">
+        <span class="blx-cap-num">05</span>
+        <span class="icon-chip">{% include icon.html name="link" class="h-5 w-5" %}</span>
+        <h3>Integrations</h3>
+        <p>Connect your existing marketing, analytics, and data-science tooling through a programmable integration layer. Configuration is API-driven and version-controlled, so integrations behave like infrastructure you own, not a vendor console you depend on.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== AI ENABLEMENT: before / after ==================== -->
+<section class="blx-ai-sec">
+  <div class="container-page">
+    <div class="blx-ai-grid">
+      <div class="blx-ai-copy" data-reveal>
+        <p class="eyebrow">AI enablement</p>
+        <h2 class="blx-h2">Structured context,<br>not raw events.</h2>
+        <p class="blx-sec-sub">Models and agents perform best when they receive governed, structured input — not raw event streams with inconsistent identifiers and missing attributes. Blocks enriches and structures fan data before it reaches any AI surface, so every downstream agent starts from a profile that is already resolved, governed, and enriched.</p>
+        <ul class="blx-ai-points">
+          <li>Profiles are enriched inside your environment before they reach any external surface, so governance and residency rules are honored end to end.</li>
+          <li>Derived attributes and scored features land on the same profile that drives segmentation, so AI context and activation context stay in sync.</li>
+          <li>Reverse ETL suppresses already-converted fans from ad audiences, so budget reaches people who can still move.</li>
+          <li>Every enrichment step runs on data you own and control; no vendor sees the underlying fan graph.</li>
+        </ul>
+        <a href="{{ '/platform/id' | relative_url }}" class="link-arrow">See how profiles are segmented →</a>
+      </div>
+
+      <div class="blx-ai-art" data-reveal style="--reveal-delay:120ms">
+        <div class="blx-compare" id="blxCompare">
+          <div class="blx-compare-pane blx-compare-raw" aria-hidden="true">
+            <p class="blx-pane-label">Before · raw event log</p>
+            <pre>{"uid":"c_8f2","ev":"page","t":…}
+{"uid":"d_31","ev":"open","t":…}
+{"uid":"7731","ev":"pos","t":…}
+{"uid":"c_8f2","ev":"click","t":…}
+{"uid":"sara@…","ev":"scan","t":…}
+{"uid":"d_31","ev":"view","t":…}</pre>
+            <p class="blx-pane-note">five records · three “people” · no attributes</p>
+          </div>
+          <div class="blx-compare-pane blx-compare-rich" id="blxCompareRich" aria-hidden="true">
+            <p class="blx-pane-label">After · governed context</p>
+            <pre>fan_id:      48211
+identifiers: email · loyalty № · 2 devices
+derived:     matchday-affinity · high
+             lapse-risk · low
+consent:     email ✓ push ✓
+residency:   in-region ✓</pre>
+            <p class="blx-pane-note">one resolved profile · structured · permitted</p>
+          </div>
+          <div class="blx-compare-divider" id="blxDivider" aria-hidden="true"><span class="blx-compare-handle">⇄</span></div>
+          <label class="sr-only" for="blxCompareRange">Compare raw events with enriched profile</label>
+          <input type="range" id="blxCompareRange" class="blx-compare-range" min="0" max="100" value="50" aria-label="Reveal enriched profile">
+        </div>
+        <p class="blx-compare-caption">Drag the divider — enrichment is the difference between a log and a person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<section class="blx-how-sec">
+  <div class="container-page">
+    <div class="blx-sec-head" data-reveal>
+      <p class="eyebrow">How it works</p>
+      <h2 class="blx-h2">Collect, stitch, distribute</h2>
+      <p class="blx-sec-sub">Blocks sits at the base of the Fanfinity platform, normalizing raw signals into typed events, resolving identifiers in real time, and distributing governed data to every tool in your stack.</p>
+    </div>
+
+    <ol class="blx-how">
+      <li data-reveal>
+        <span class="blx-how-num">01</span>
+        <div>
+          <h3>Collect every signal</h3>
+          <p>Client-side SDKs and server-side connectors capture events across every touchpoint and deliver them into a typed, normalized event stream. No custom ETL to write, no parallel database to maintain alongside the sources you already run.</p>
+        </div>
+        <span class="blx-how-arrow" aria-hidden="true">→</span>
+      </li>
+      <li data-reveal style="--reveal-delay:80ms">
+        <span class="blx-how-num">02</span>
+        <div>
+          <h3>Stitch and resolve in real time</h3>
+          <p>Events are deduplicated and matched across identifiers as they arrive. The fan graph grows with every new signal, and every new resolution back-fills history across all linked identifiers, so profiles are always as complete as the data allows.</p>
+        </div>
+        <span class="blx-how-arrow" aria-hidden="true">→</span>
+      </li>
+      <li data-reveal style="--reveal-delay:160ms">
+        <span class="blx-how-num">03</span>
+        <div>
+          <h3>Distribute to the full stack</h3>
+          <p>Resolved, enriched profiles flow forward to Fanfinity ID for segmentation and downstream to every operational tool through reverse ETL. One governed source of truth, with no exports to re-sync between systems.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Connect the stack you already run"
+   text="See Fanfinity Blocks collect, stitch, enrich, and distribute on your own sources. Book a walkthrough and we'll map the pipeline to your tools, your warehouse, and your residency requirements." %}
+
+{% raw %}
+<style>
+/* ================= Blocks page — scoped styles (.blx-) ================= */
+.blx-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.blx-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.blx-hero-grid > *, .blx-machine-grid > *, .blx-ai-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .blx-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.blx-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.blx-accent { position: relative; display: inline-block; color: #854dff; }
+.blx-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.blx-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.blx-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.blx-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.blx-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.blx-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero stack diagram */
+.blx-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.blx-stack { width: min(100%, 400px); display: flex; flex-direction: column; }
+.blx-stack-layer { border-radius: 14px; padding: 0.9rem 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.blx-stack-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; margin-right: auto; }
+.blx-stack-tools { background: var(--color-card); border: 1px solid var(--color-border); }
+.blx-stack-tools .blx-stack-label { color: var(--color-muted-foreground); }
+.blx-tool { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; padding: 0.2rem 0.6rem; border-radius: 9999px; border: 1px solid var(--color-border); color: var(--color-foreground); }
+.blx-stack-bus { display: flex; justify-content: space-around; padding: 0 2rem; height: 26px; }
+.blx-stack-bus span { width: 2px; height: 100%; background: linear-gradient(#c4aaff, #854dff); position: relative; overflow: visible; }
+.blx-stack-bus span::after { content: ""; position: absolute; left: -2.5px; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; animation: blx-pulse 2.4s ease-in-out infinite; }
+.blx-stack-bus span:nth-child(2)::after { animation-delay: 0.6s; }
+.blx-stack-bus span:nth-child(3)::after { animation-delay: 1.2s; }
+@keyframes blx-pulse { 0%, 100% { top: -3px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 50% { top: calc(100% - 4px); } }
+.blx-stack-blocks { background: #0f0a1a; border: 1px solid rgba(153,105,255,0.45); box-shadow: 0 18px 44px -20px rgba(133,77,255,0.45); }
+.blx-stack-blocks .blx-stack-label { color: #c4aaff; }
+.blx-blocks-steps { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; color: #fff; letter-spacing: 0.03em; }
+.blx-stack-id { background: var(--color-card); border: 1px solid var(--color-border); }
+.blx-stack-id .blx-stack-label { color: var(--color-muted-foreground); }
+.blx-id-chip { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: #854dff; font-weight: 600; }
+.blx-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.blx-sec-head { max-width: 46rem; margin-bottom: 3rem; }
+.blx-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.blx-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The signal machine (dark) ================= */
+.blx-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.blx-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 15% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.blx-machine .container-page { position: relative; }
+.blx-on-dark .blx-h2 { color: #fff; }
+.blx-on-dark .blx-sec-sub { color: rgba(244,240,251,0.62); }
+
+.blx-mode { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; padding: 0.3rem; }
+.blx-mode-btn { border: 0; background: transparent; color: rgba(244,240,251,0.65); font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.45rem 1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.blx-mode-btn.is-on { background: #854dff; color: #fff; }
+.blx-mode-clock { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; letter-spacing: 0.08em; color: #c4aaff; padding: 0 0.8rem 0 0.3rem; animation: blx-blink 1.6s ease-in-out infinite; }
+@keyframes blx-blink { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+
+.blx-machine-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 1100px) { .blx-machine-grid { grid-template-columns: 0.9fr 1.25fr 0.95fr; gap: 1.5rem; align-items: start; } }
+
+.blx-panel { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.25rem; }
+.blx-panel-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aa80ff; margin: 0 0 1rem; }
+.blx-panel-note { margin: 0.9rem 0 0; font-size: 0.78rem; line-height: 1.6; color: rgba(244,240,251,0.5); }
+
+.blx-sources { display: grid; gap: 0.55rem; grid-template-columns: 1fr; }
+@media (min-width: 480px) and (max-width: 1099px) { .blx-sources { grid-template-columns: 1fr 1fr; } }
+.blx-src { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; text-align: left; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 0.7rem 0.85rem; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.15s; }
+.blx-src:hover { border-color: rgba(170,128,255,0.6); transform: translateY(-1px); }
+.blx-src:active { transform: translateY(0); }
+.blx-src:disabled { opacity: 0.45; cursor: default; transform: none; }
+.blx-src-name { font-size: 0.85rem; font-weight: 600; color: #fff; }
+.blx-src-ids { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.06em; color: #c4aaff; white-space: nowrap; }
+
+/* Stream */
+.blx-panel-stream { display: flex; flex-direction: column; }
+.blx-stream { position: relative; min-height: 300px; border-radius: 14px; background: rgba(0,0,0,0.25); border: 1px dashed rgba(153,105,255,0.3); padding: 0.85rem; overflow: hidden; }
+.blx-stream-empty { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; font-size: 0.85rem; line-height: 1.7; color: rgba(244,240,251,0.4); padding: 1rem; transition: opacity 0.3s; }
+.blx-stream-empty.is-hidden { opacity: 0; pointer-events: none; }
+.blx-evt { position: absolute; left: 0.85rem; right: 0.85rem; display: flex; align-items: center; gap: 0.6rem; background: #1b1230; border: 1px solid rgba(153,105,255,0.4); border-radius: 10px; padding: 0.55rem 0.75rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: #e7defc; transition: top 0.45s cubic-bezier(0.2,0.7,0.2,1), opacity 0.4s, transform 0.45s cubic-bezier(0.2,0.7,0.2,1), border-color 0.3s, background 0.3s; }
+.blx-evt-dot { width: 7px; height: 7px; border-radius: 9999px; background: #9969ff; flex-shrink: 0; }
+.blx-evt-name { font-weight: 700; color: #fff; }
+.blx-evt-ids { color: #a58fe0; margin-left: auto; text-align: right; }
+.blx-evt.is-orphan { border-color: rgba(255,255,255,0.18); background: #171026; }
+.blx-evt.is-orphan .blx-evt-dot { background: #6f6089; }
+.blx-evt.is-stitching { border-color: #aa80ff; background: rgba(133,77,255,0.22); transform: scale(0.97); opacity: 0.55; }
+.blx-evt.is-absorbed { opacity: 0; transform: scale(0.85) translateY(-6px); }
+
+.blx-queue { margin-top: 0.85rem; border: 1px dashed rgba(196,170,255,0.4); border-radius: 12px; padding: 0.75rem 0.85rem; }
+.blx-queue-label { margin: 0 0 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c4aaff; }
+.blx-queue-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; }
+.blx-queue-list li { display: flex; justify-content: space-between; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: rgba(244,240,251,0.65); }
+.blx-queue-list li span:last-child { color: #a58fe0; }
+
+.blx-log { margin-top: 0.85rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; line-height: 1.6; letter-spacing: 0.02em; color: rgba(244,240,251,0.5); min-height: 2.2em; }
+
+/* Profile */
+.blx-profile { position: relative; }
+.blx-profile-empty { border: 1px dashed rgba(255,255,255,0.18); border-radius: 14px; padding: 1.5rem 1.1rem; text-align: center; font-size: 0.9rem; font-weight: 600; color: rgba(244,240,251,0.6); line-height: 1.6; }
+.blx-profile-empty span { display: block; margin-top: 0.35rem; font-size: 0.75rem; font-weight: 400; color: rgba(244,240,251,0.4); }
+.blx-profile-card { border: 1px solid rgba(153,105,255,0.5); background: linear-gradient(160deg, rgba(133,77,255,0.16), rgba(255,255,255,0.04)); border-radius: 14px; padding: 1rem 1.1rem; }
+.blx-profile-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.blx-profile-id { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.15rem; color: #fff; }
+.blx-profile-live { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0f0a1a; background: #c4aaff; border-radius: 9999px; padding: 0.2rem 0.6rem; }
+.blx-profile-ids { list-style: none; margin: 0.85rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.blx-profile-ids li { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; color: #e7defc; border: 1px solid rgba(153,105,255,0.45); border-radius: 9999px; padding: 0.22rem 0.6rem; animation: blx-chip-in 0.35s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes blx-chip-in { from { opacity: 0; transform: translateY(6px) scale(0.9); } to { opacity: 1; transform: none; } }
+.blx-profile-enrich { margin-top: 0.9rem; border-top: 1px dashed rgba(196,170,255,0.35); padding-top: 0.75rem; }
+.blx-enrich-label { margin: 0 0 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c4aaff; }
+.blx-profile-enrich ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.blx-profile-enrich li { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; color: rgba(244,240,251,0.75); }
+.blx-profile-enrich li::before { content: "+ "; color: #aa80ff; }
+
+.blx-dests { margin-top: 1rem; }
+.blx-dests-label { margin: 0 0 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,240,251,0.5); }
+.blx-dests-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+.blx-dest { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: rgba(244,240,251,0.45); border: 1px solid rgba(255,255,255,0.14); border-radius: 9999px; padding: 0.35rem 0.8rem; transition: color 0.3s, border-color 0.3s, background 0.3s, box-shadow 0.3s; }
+.blx-dest.is-fed { color: #fff; border-color: #9969ff; background: rgba(153,105,255,0.18); box-shadow: 0 0 16px -4px rgba(153,105,255,0.55); }
+.blx-dests-note { margin: 0.6rem 0 0; font-size: 0.75rem; line-height: 1.6; color: rgba(244,240,251,0.45); }
+.blx-reset { margin-top: 1.1rem; background: none; border: 0; padding: 0; font-size: 0.8rem; font-weight: 600; color: #a58fe0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.blx-reset:hover { color: #c4aaff; }
+
+.blx-machine-caption { margin: 2.5rem auto 0; max-width: 40rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+
+/* ================= Capabilities ================= */
+.blx-caps-sec { padding: 6.5rem 0; }
+.blx-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; counter-reset: cap; }
+@media (min-width: 640px) { .blx-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .blx-caps { grid-template-columns: repeat(6, 1fr); } .blx-cap { grid-column: span 2; } .blx-cap:nth-child(4), .blx-cap:nth-child(5) { grid-column: span 3; } }
+.blx-cap { position: relative; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.blx-cap:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.blx-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #c4aaff; }
+.blx-cap .icon-chip { margin-bottom: 1rem; }
+.blx-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.blx-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= AI compare ================= */
+.blx-ai-sec { padding: 0 0 6.5rem; }
+.blx-ai-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 1024px) { .blx-ai-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+.blx-ai-points { list-style: none; margin: 1.75rem 0 1.5rem; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.blx-ai-points li { position: relative; padding-left: 1.4rem; font-size: 0.92rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.blx-ai-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+
+.blx-compare { position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--color-border); box-shadow: 0 24px 60px -28px rgba(53,16,112,0.25); user-select: none; }
+.blx-compare-pane { padding: 1.25rem 1.35rem; min-height: 300px; }
+.blx-pane-label { margin: 0 0 0.85rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.blx-compare-raw { background: #14101d; }
+.blx-compare-raw .blx-pane-label { color: #8d7ea6; }
+.blx-compare-raw pre { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 2; color: #6f6089; white-space: pre-wrap; word-break: break-all; }
+.blx-compare-raw .blx-pane-note { color: #5d5178; }
+.blx-pane-note { margin: 0.9rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; letter-spacing: 0.04em; }
+.blx-compare-rich { position: absolute; inset: 0; background: #f6f1ff; }
+.blx-compare-rich .blx-pane-label { color: #854dff; }
+.blx-compare-rich pre { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 2; color: #3c2a5e; white-space: pre-wrap; }
+.blx-compare-rich .blx-pane-note { color: #854dff; }
+.blx-compare-divider { position: absolute; top: 0; bottom: 0; width: 3px; background: #854dff; left: 50%; transform: translateX(-50%); z-index: 3; }
+.blx-compare-handle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 34px; height: 34px; display: grid; place-items: center; background: #854dff; color: #fff; border-radius: 9999px; font-size: 0.9rem; box-shadow: 0 4px 14px rgba(133,77,255,0.5); }
+.blx-compare-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; z-index: 4; }
+.blx-compare-caption { margin: 0.9rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; }
+
+/* ================= How it works ================= */
+.blx-how-sec { padding: 0 0 6.5rem; }
+.blx-how { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+.blx-how > li { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--color-border); align-items: baseline; }
+.blx-how-num { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #854dff; }
+.blx-how h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.3rem; margin: 0; }
+.blx-how p { margin: 0.5rem 0 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 46rem; }
+.blx-how-arrow { font-size: 1.2rem; color: #c4aaff; }
+@media (max-width: 640px) { .blx-how-arrow { display: none; } }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .blx-stack-tools, html.dark .blx-stack-id { background: #17101f; border-color: rgba(255,255,255,0.1); }
+html.dark .blx-tool { border-color: rgba(255,255,255,0.14); color: #e7defc; }
+html.dark .blx-compare-rich { background: #1d1430; }
+html.dark .blx-compare-rich pre { color: #d9ccf5; }
+html.dark .blx-compare-rich .blx-pane-label, html.dark .blx-compare-rich .blx-pane-note { color: #aa80ff; }
+html.dark .blx-cap:hover { border-color: rgba(153,105,255,0.4); }
+
+/* ================= Identity color-coding & story ================= */
+.blx-mode-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.blx-play { border: 1px solid rgba(170,128,255,0.5); background: rgba(133,77,255,0.14); color: #e7defc; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; padding: 0.55rem 1.1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.blx-play:hover { background: rgba(133,77,255,0.3); border-color: #aa80ff; transform: translateY(-1px); }
+.blx-play.is-on { background: #854dff; color: #fff; border-color: #854dff; }
+
+.blx-idc { display: inline-flex; align-items: center; gap: 0.35rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; letter-spacing: 0.05em; color: var(--idc); white-space: nowrap; }
+.blx-idc i { width: 8px; height: 8px; border-radius: 9999px; background: var(--idc); box-shadow: 0 0 8px var(--idc); flex-shrink: 0; }
+.blx-idc[data-id="email"] { --idc: #a78bff; }
+.blx-idc[data-id="loyalty №"] { --idc: #e8b45a; }
+.blx-idc[data-id="device"] { --idc: #4ec9b0; }
+.blx-idc[data-id="cookie"] { --idc: #9aa8c7; }
+.blx-idc.is-match { text-shadow: 0 0 12px var(--idc); }
+.blx-idc.is-match i { animation: blx-dot-ping 1.6s ease-out infinite; }
+@keyframes blx-dot-ping { 0% { box-shadow: 0 0 0 0 var(--idc); } 70% { box-shadow: 0 0 0 7px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+.blx-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem 0.85rem; margin: 0 0 0.9rem; padding: 0.55rem 0.75rem; border: 1px dashed rgba(255,255,255,0.16); border-radius: 10px; }
+.blx-legend-eq { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,240,251,0.5); margin-left: auto; }
+
+.blx-src-ids { display: inline-flex; flex-wrap: wrap; gap: 0.3rem 0.65rem; justify-content: flex-end; }
+
+.blx-story { margin: 0 0 0.85rem; padding: 0.7rem 0.85rem; border-left: 3px solid #854dff; background: rgba(133,77,255,0.09); border-radius: 0 10px 10px 0; font-size: 0.84rem; line-height: 1.6; color: #ddd2f2; min-height: 3.6em; }
+.blx-story strong { color: #fff; font-weight: 600; }
+
+/* Stream cards: two rows (what happened / which identifiers + fate) */
+.blx-evt { flex-direction: column; align-items: stretch; gap: 0.35rem; padding: 0.6rem 0.75rem; }
+.blx-evt-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.blx-evt-row--meta { padding-left: 1.05rem; justify-content: space-between; gap: 0.4rem 0.75rem; }
+.blx-evt-status { font-size: 0.58rem; letter-spacing: 0.04em; color: #a58fe0; text-align: right; margin-left: auto; }
+
+/* Queue rows carry colored chips too */
+.blx-queue-list .blx-idc { font-size: 0.58rem; }
+
+/* Profile identifier pills colored by identifier */
+.blx-profile-ids li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.blx-profile-ids li i { width: 8px; height: 8px; border-radius: 9999px; background: var(--idc, #9969ff); box-shadow: 0 0 8px var(--idc, #9969ff); }
+.blx-profile-ids li[data-id="email"] { --idc: #a78bff; }
+.blx-profile-ids li[data-id="loyalty №"] { --idc: #e8b45a; }
+.blx-profile-ids li[data-id="device"] { --idc: #4ec9b0; }
+.blx-profile-ids li[data-id="cookie"] { --idc: #9aa8c7; }
+
+/* Flying dot + profile pulse */
+.blx-fly { position: fixed; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 9999px; background: var(--idc, #9969ff); box-shadow: 0 0 16px var(--idc, #9969ff); z-index: 80; pointer-events: none; transition: transform 0.5s cubic-bezier(0.3,0.7,0.3,1), opacity 0.55s; }
+.blx-profile-card.blx-pulse { animation: blx-card-pulse 0.7s ease-out; }
+@keyframes blx-card-pulse { 0% { box-shadow: 0 0 0 0 rgba(153,105,255,0.65); } 100% { box-shadow: 0 0 0 24px transparent; } }
+
+/* ================= Reduced motion ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .blx-stack-bus span::after, .blx-mode-clock, .blx-profile-ids li, .blx-idc.is-match i, .blx-profile-card.blx-pulse { animation: none !important; }
+  .blx-evt, .blx-fly { transition: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .blx-hero { padding-top: 4rem; }
+  .blx-stream { min-height: 260px; }
+}
+</style>
+{% endraw %}
+
+{% raw %}
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     1 · THE SIGNAL MACHINE — fire events, stitch identities
+     ============================================================ */
+  var SOURCES = {
+    ticket:     { name: 'ticket.scan',      label: 'Ticket scan',       ids: ['email'] },
+    web:        { name: 'web.session',      label: 'Web session',       ids: ['cookie'] },
+    app:        { name: 'app.open',         label: 'App open',          ids: ['device'] },
+    onsite:     { name: 'pos.purchase',     label: 'On-site purchase',  ids: ['loyalty №'] },
+    applogin:   { name: 'app.login',        label: 'App login',         ids: ['device', 'loyalty №'] },
+    newsletter: { name: 'email.click',      label: 'Newsletter click',  ids: ['cookie', 'email'] },
+    member:     { name: 'membership.link',  label: 'Membership link',   ids: ['loyalty №', 'email'] }
+  };
+  var ID_LABEL = { 'email': 'email · sara@…', 'cookie': 'cookie · c_8f2', 'device': 'device · d_31', 'loyalty №': 'loyalty № 7731' };
+  var ID_COLOR = { 'email': '#a78bff', 'loyalty №': '#e8b45a', 'device': '#4ec9b0', 'cookie': '#9aa8c7' };
+  var STORY_START = 'Nothing has happened yet. Each source you fire drops its identifiers here as a <strong>thread</strong>. A thread that shares a colored dot with the fan on the right gets pulled in; one that shares nothing waits.';
+
+  function chip(id) { return '<span class="blx-idc" data-id="' + id + '"><i></i>' + id + '</span>'; }
+  function chips(ids) { return ids.map(chip).join(' '); }
+
+  var els = {
+    stream:      document.getElementById('blxStream'),
+    streamEmpty: document.getElementById('blxStreamEmpty'),
+    queue:       document.getElementById('blxQueue'),
+    queueList:   document.getElementById('blxQueueList'),
+    log:         document.getElementById('blxLog'),
+    story:       document.getElementById('blxStory'),
+    play:        document.getElementById('blxPlay'),
+    profileEmpty:document.getElementById('blxProfileEmpty'),
+    profileCard: document.getElementById('blxProfileCard'),
+    profileIds:  document.getElementById('blxProfileIds'),
+    enrich:      document.getElementById('blxProfileEnrich'),
+    destsNote:   document.getElementById('blxDestsNote'),
+    reset:       document.getElementById('blxReset'),
+    modeRt:      document.getElementById('blxModeRt'),
+    modeBatch:   document.getElementById('blxModeBatch'),
+    clock:       document.getElementById('blxClock')
+  };
+
+  var mode = 'rt';                 /* 'rt' | 'batch' */
+  var fired = {};                  /* srcKey -> true */
+  var golden = { ids: [], events: [] };      /* the resolved fan */
+  var pending = [];                /* unresolved clusters: [{ids:[], events:[{key,name}]}] */
+  var queue = [];                  /* batch-held srcKeys */
+  var timers = [];
+
+  function later(fn, ms) {
+    if (reduceMotion) { fn(); return; }
+    timers.push(setTimeout(fn, ms));
+  }
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+  function setLog(msg) { if (els.log) els.log.textContent = msg; }
+  function setStory(html) { if (els.story) els.story.innerHTML = html; }
+
+  /* ---------- match highlighting: which waiting sources share a color ---------- */
+  function updateMatches() {
+    var known = {};
+    golden.ids.forEach(function (id) { known[id] = true; });
+    pending.forEach(function (c) { c.ids.forEach(function (id) { known[id] = true; }); });
+    document.querySelectorAll('.blx-src').forEach(function (btn) {
+      var chipsEls = btn.querySelectorAll('.blx-idc');
+      chipsEls.forEach(function (c) {
+        c.classList.toggle('is-match', !btn.disabled && !!known[c.getAttribute('data-id')]);
+      });
+    });
+  }
+
+  /* ---------- flying dot between panels ---------- */
+  function fly(fromEl, toEl, color) {
+    if (reduceMotion || !fromEl || !toEl) return;
+    var a = fromEl.getBoundingClientRect();
+    var b = toEl.getBoundingClientRect();
+    var d = document.createElement('div');
+    d.className = 'blx-fly';
+    d.style.setProperty('--idc', color || '#9969ff');
+    d.style.left = (a.left + a.width / 2) + 'px';
+    d.style.top = (a.top + a.height / 2) + 'px';
+    document.body.appendChild(d);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var dx = (b.left + b.width / 2) - (a.left + a.width / 2);
+        var dy = (b.top + b.height / 2) - (a.top + a.height / 2);
+        d.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(0.7)';
+        d.style.opacity = '0';
+      });
+    });
+    setTimeout(function () { d.remove(); }, 650);
+  }
+  function pulseProfile() {
+    if (!els.profileCard || reduceMotion) return;
+    els.profileCard.classList.remove('blx-pulse');
+    void els.profileCard.offsetWidth;
+    els.profileCard.classList.add('blx-pulse');
+  }
+
+  /* ---------- rendering ---------- */
+  function renderStream() {
+    /* remove old cluster cards */
+    var old = els.stream.querySelectorAll('.blx-evt');
+    old.forEach(function (n) { n.remove(); });
+    if (els.streamEmpty) {
+      var anything = pending.length || golden.ids.length || queue.length;
+      els.streamEmpty.classList.toggle('is-hidden', !!anything);
+    }
+    pending.forEach(function (cluster, i) {
+      var card = document.createElement('div');
+      card.className = 'blx-evt' + (cluster.ids.length > 1 ? '' : ' is-orphan');
+      card.style.top = (0.85 + i * 3.7) + 'rem';
+
+      var row1 = document.createElement('div'); row1.className = 'blx-evt-row';
+      var dot = document.createElement('span'); dot.className = 'blx-evt-dot';
+      var name = document.createElement('span'); name.className = 'blx-evt-name';
+      name.textContent = cluster.events.map(function (e) { return e.name; }).join(' + ');
+      row1.appendChild(dot); row1.appendChild(name);
+
+      var row2 = document.createElement('div'); row2.className = 'blx-evt-row blx-evt-row--meta';
+      var idWrap = document.createElement('span');
+      idWrap.innerHTML = chips(cluster.ids);
+      var status = document.createElement('span'); status.className = 'blx-evt-status';
+      status.textContent = cluster.ids.length > 1
+        ? 'a thread of ' + cluster.ids.length + ' — not linked to the fan yet'
+        : 'lone signal — unknown';
+      row2.appendChild(idWrap); row2.appendChild(status);
+
+      card.appendChild(row1); card.appendChild(row2);
+      els.stream.appendChild(card);
+    });
+    updateMatches();
+  }
+
+  function renderQueue() {
+    if (!els.queue) return;
+    els.queue.hidden = !(mode === 'batch' && queue.length);
+    els.queueList.innerHTML = '';
+    queue.forEach(function (key) {
+      var s = SOURCES[key];
+      var li = document.createElement('li');
+      var a = document.createElement('span'); a.textContent = s.name;
+      var b = document.createElement('span'); b.innerHTML = chips(s.ids);
+      li.appendChild(a); li.appendChild(b);
+      els.queueList.appendChild(li);
+    });
+  }
+
+  function renderProfile() {
+    var has = golden.ids.length > 0;
+    els.profileEmpty.hidden = has;
+    els.profileCard.hidden = !has;
+    if (!has) return;
+    els.profileIds.innerHTML = '';
+    golden.ids.forEach(function (id) {
+      var li = document.createElement('li');
+      li.setAttribute('data-id', id);
+      var dot = document.createElement('i');
+      li.appendChild(dot);
+      li.appendChild(document.createTextNode(ID_LABEL[id] || id));
+      els.profileIds.appendChild(li);
+    });
+    els.enrich.hidden = golden.ids.length < 3;
+  }
+
+  function feedDestinations() {
+    var dests = document.querySelectorAll('.blx-dest');
+    dests.forEach(function (d, i) {
+      later(function () { d.classList.add('is-fed'); }, reduceMotion ? 0 : i * 260);
+    });
+    if (els.destsNote) els.destsNote.textContent = 'Fan #48211 now flows to every tool — the same resolved profile, not a different export pieced together per source.';
+  }
+
+  /* ---------- stitching engine ---------- */
+  function absorbEvents() {
+    /* animate pending cards that are about to merge */
+    if (!reduceMotion) {
+      var cards = els.stream.querySelectorAll('.blx-evt');
+      cards.forEach(function (c) { c.classList.add('is-stitching'); });
+    }
+  }
+
+  function sharedWith(list, ids) {
+    return ids.filter(function (id) { return list.indexOf(id) !== -1; });
+  }
+
+  function processEvent(key) {
+    var s = SOURCES[key];
+    /* does this event touch the golden profile? */
+    var touchesGolden = golden.ids.length && s.ids.some(function (id) { return golden.ids.indexOf(id) !== -1; });
+    /* which pending clusters does it match, and on which identifiers? */
+    var matched = [], rest = [], matchedIds = [];
+    pending.forEach(function (c) {
+      var shared = sharedWith(c.ids, s.ids);
+      if (shared.length) { matched.push(c); matchedIds = matchedIds.concat(shared); }
+      else rest.push(c);
+    });
+    matchedIds = matchedIds.filter(function (id, i) { return matchedIds.indexOf(id) === i; });
+
+    if (!golden.ids.length && !matched.length && s.ids.length === 1) {
+      /* brand-new orphan */
+      pending.push({ ids: s.ids.slice(), events: [{ key: key, name: s.name }] });
+      setLog(s.name + ' · typed ✓ validated ✓ · ' + s.ids[0] + ' seen for the first time — no match yet');
+      setStory('<strong>' + s.label + '</strong> arrives carrying ' + chips(s.ids) + '. Nothing seen so far carries that color, so it waits here as a <strong>lone thread</strong> — unknown, for now.');
+    } else if (!golden.ids.length && (matched.length || s.ids.length > 1)) {
+      /* first stitch: everything matched becomes the golden fan */
+      absorbEvents();
+      var ids = {}, events = [];
+      matched.forEach(function (c) {
+        c.ids.forEach(function (id) { ids[id] = true; });
+        events = events.concat(c.events);
+      });
+      s.ids.forEach(function (id) { ids[id] = true; });
+      events.push({ key: key, name: s.name });
+      golden.ids = Object.keys(ids);
+      golden.events = events;
+      pending = rest;
+      var bornStory = matched.length
+        ? '<strong>' + s.label + '</strong> shares ' + chips(matchedIds) + ' with a waiting thread — that shared color means <strong>same person</strong>. The threads merge and a fan is born: <strong>Fan #48211</strong>.'
+        : '<strong>' + s.label + '</strong> carries two identifiers at once (' + chips(s.ids) + ') — enough to anchor a fan on its own: <strong>Fan #48211</strong>.';
+      later(function () {
+        fly(els.stream, els.profileCard, '#9969ff');
+        renderProfile();
+        pulseProfile();
+        feedDestinations();
+        updateMatches();
+        setLog(s.name + ' · matched ' + matched.length + ' thread(s) · stitched into Fan #48211 — history back-filled across ' + golden.events.length + ' events');
+        setStory(bornStory + ' Everything those threads saw before now <strong>back-fills</strong> onto the fan.');
+      }, reduceMotion ? 0 : 420);
+    } else if (golden.ids.length && (touchesGolden || matched.length)) {
+      /* merge into golden: pull matching clusters in */
+      absorbEvents();
+      matched.forEach(function (c) {
+        c.ids.forEach(function (id) { if (golden.ids.indexOf(id) === -1) golden.ids.push(id); });
+        golden.events = golden.events.concat(c.events);
+      });
+      s.ids.forEach(function (id) { if (golden.ids.indexOf(id) === -1) golden.ids.push(id); });
+      golden.events.push({ key: key, name: s.name });
+      pending = rest;
+      var viaGolden = touchesGolden ? sharedWith(golden.ids, s.ids) : [];
+      var mergeStory = viaGolden.length
+        ? '<strong>' + s.label + '</strong> shares ' + chips(viaGolden) + ' with <strong>Fan #48211</strong> — it folds straight into the fan' + (matched.length ? ', pulling a waiting thread in with it.' : '.')
+        : '<strong>' + s.label + '</strong> shares ' + chips(matchedIds) + ' with a waiting thread — and that thread already belongs to <strong>Fan #48211</strong>, so both merge in.';
+      later(function () {
+        fly(els.stream, els.profileCard, '#9969ff');
+        renderProfile();
+        pulseProfile();
+        updateMatches();
+        setLog(s.name + ' · matched ' + (matched.length ? 'a pending thread' : 'Fan #48211 directly') + ' · merged — ' + golden.ids.length + ' identifiers, ' + golden.events.length + ' events, history back-filled');
+        setStory(mergeStory + ' The profile now holds <strong>' + golden.ids.length + ' identifiers</strong> across <strong>' + golden.events.length + ' events</strong>.');
+      }, reduceMotion ? 0 : 420);
+    } else {
+      /* golden exists but this event doesn't match it: new orphan thread */
+      pending.push({ ids: s.ids.slice(), events: [{ key: key, name: s.name }] });
+      setLog(s.name + ' · typed ✓ validated ✓ · no shared identifiers with Fan #48211 — held as a separate thread');
+      setStory('<strong>' + s.label + '</strong> shares no colors with <strong>Fan #48211</strong>' + (pending.length > 1 ? ' or the waiting threads' : '') + ' — so it waits as a <strong>separate thread</strong>. Fire a source that shares one of its colors to link it.');
+    }
+    later(function () { renderStream(); }, reduceMotion ? 0 : 80);
+  }
+
+  function fireSource(key, btn) {
+    if (fired[key]) return;
+    fired[key] = true;
+    if (btn) btn.disabled = true;
+    var srcBtn = btn || document.querySelector('.blx-src[data-src="' + key + '"]');
+    fly(srcBtn, els.stream, ID_COLOR[SOURCES[key].ids[0]]);
+    updateMatches();
+    if (mode === 'batch') {
+      queue.push(key);
+      renderQueue();
+      if (els.streamEmpty) els.streamEmpty.classList.add('is-hidden');
+      setLog(SOURCES[key].name + ' · landed, validated ✓ · held for the 02:00 batch window — nothing stitches until then');
+      setStory('<strong>' + SOURCES[key].label + '</strong> is validated… and then it just <strong>sits in the batch queue</strong>. No stitching, no profile, no activation — not until 02:00.');
+      return;
+    }
+    processEvent(key);
+  }
+
+  function flushQueue() {
+    var items = queue.slice();
+    queue = [];
+    renderQueue();
+    if (items.length) {
+      setLog('switching to real-time — flushing ' + items.length + ' held event(s) through the stitcher…');
+      setStory('Back in real-time mode: the <strong>' + items.length + ' held events</strong> now run through the stitcher, one by one — hours after they actually happened.');
+    }
+    items.forEach(function (key, i) {
+      later(function () { processEvent(key); }, reduceMotion ? 0 : i * 480);
+    });
+  }
+
+  /* ---------- mode toggle ---------- */
+  function setMode(next) {
+    if (mode === next) return;
+    mode = next;
+    els.modeRt.classList.toggle('is-on', mode === 'rt');
+    els.modeRt.setAttribute('aria-pressed', mode === 'rt' ? 'true' : 'false');
+    els.modeBatch.classList.toggle('is-on', mode === 'batch');
+    els.modeBatch.setAttribute('aria-pressed', mode === 'batch' ? 'true' : 'false');
+    els.clock.hidden = mode !== 'batch';
+    if (mode === 'rt') flushQueue();
+    else {
+      setLog('batch mode — events still land, but identity waits for the nightly window.');
+      setStory('<strong>Batch mode.</strong> Fire the same sources — every event is held for the 02:00 window. This is what most stacks actually do to your fans.');
+    }
+  }
+  if (els.modeRt) els.modeRt.addEventListener('click', function () { setMode('rt'); });
+  if (els.modeBatch) els.modeBatch.addEventListener('click', function () { setMode('batch'); });
+
+  /* ---------- reset + autoplay ---------- */
+  function resetAll() {
+    stopPlay();
+    clearTimers();
+    fired = {}; golden = { ids: [], events: [] }; pending = []; queue = [];
+    document.querySelectorAll('.blx-src').forEach(function (b) { b.disabled = false; });
+    document.querySelectorAll('.blx-dest').forEach(function (d) { d.classList.remove('is-fed'); });
+    if (els.destsNote) els.destsNote.textContent = 'Destinations light up once a profile resolves — each receives the same resolved fan, not a different export.';
+    renderStream(); renderQueue(); renderProfile();
+    updateMatches();
+    setLog('awaiting first event…');
+    setStory(STORY_START);
+  }
+
+  var playOrder = ['ticket', 'web', 'app', 'onsite', 'applogin', 'newsletter', 'member'];
+  var playTimer = null;
+  function stopPlay() {
+    if (playTimer) { clearTimeout(playTimer); playTimer = null; }
+    if (els.play) {
+      els.play.classList.remove('is-on');
+      els.play.textContent = '▶ Watch the story';
+      els.play.setAttribute('aria-pressed', 'false');
+    }
+  }
+  if (els.play) els.play.addEventListener('click', function () {
+    if (playTimer) { stopPlay(); return; }
+    resetAll();
+    setMode('rt');
+    els.play.classList.add('is-on');
+    els.play.textContent = '■ Stop the story';
+    els.play.setAttribute('aria-pressed', 'true');
+    var i = 0;
+    var gap = reduceMotion ? 250 : 1600;
+    function step() {
+      if (i >= playOrder.length) { stopPlay(); return; }
+      var btn = document.querySelector('.blx-src[data-src="' + playOrder[i] + '"]');
+      if (btn && !btn.disabled) btn.click();
+      i++;
+      playTimer = setTimeout(step, gap);
+    }
+    playTimer = setTimeout(step, reduceMotion ? 100 : 500);
+  });
+
+  /* ---------- sources + reset ---------- */
+  document.querySelectorAll('.blx-src').forEach(function (btn) {
+    btn.addEventListener('click', function () { fireSource(btn.getAttribute('data-src'), btn); });
+  });
+
+  if (els.reset) els.reset.addEventListener('click', resetAll);
+
+  renderStream(); renderQueue();
+
+  /* ============================================================
+     2 · BEFORE / AFTER COMPARE — raw log vs governed context
+     ============================================================ */
+  var compare = document.getElementById('blxCompare');
+  var range = document.getElementById('blxCompareRange');
+  var rich = document.getElementById('blxCompareRich');
+  var divider = document.getElementById('blxDivider');
+
+  function setCompare(v) {
+    var val = Math.max(0, Math.min(100, v));
+    if (rich) rich.style.clipPath = 'inset(0 0 0 ' + val + '%)';
+    if (divider) divider.style.left = val + '%';
+  }
+  if (range) {
+    range.addEventListener('input', function () { setCompare(parseFloat(range.value)); });
+    setCompare(parseFloat(range.value));
+  }
+})();
+</script>
+{% endraw %}

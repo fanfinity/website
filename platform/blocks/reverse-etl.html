@@ -1,40 +1,685 @@
 ---
 layout: page
+cta: false
 permalink: /platform/blocks/reverse-etl
 title: Reverse ETL
-description: "Push governed fan data from your warehouse to every operational tool in your stack with Fanfinity Blocks Reverse ETL."
+description: "Push governed fan profiles from your warehouse to every operational tool in your stack — CRM, email, ads, support, and custom APIs — automatically and in sync."
 breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
-capabilities:
-  - { icon: arrow-right, title: "Push to any platform",       body: "Deliver resolved, enriched fan profiles to CRM, email, ad platforms, support systems, and custom APIs. Every tool receives the same governed profile, not a different export stitched together from each source." }
-  - { icon: sync,        title: "Always in sync",             body: "Changes to fan profiles flow downstream automatically, so activation systems stay current as new signals arrive. No manual syncs or overnight batch jobs to coordinate." }
-  - { icon: lock,        title: "Governed distribution",      body: "Consent and data residency rules are enforced at the data layer, so every downstream system receives only the data the fan has consented to share." }
-  - { icon: settings,    title: "API-driven configuration",   body: "Define destinations, mappings, and transformations through version-controlled APIs, so integrations behave like infrastructure you own, not a vendor console you depend on." }
-benefits:
-  - "Eliminate manual exports by automatically pushing profiles to all downstream tools."
-  - "Reduce sync complexity by distributing one governed profile instead of managing separate exports per system."
-  - "Accelerate campaign speed by activating as soon as signals resolve, not waiting on batch syncs."
-  - "Maintain compliance by enforcing consent at distribution, ensuring only consented data flows downstream."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Blocks"
-   title="Distribute governed profiles everywhere"
-   subtitle="Fanfinity Blocks Reverse ETL pushes resolved, enriched fan profiles from your warehouse to every operational tool in your stack (CRM, email, ad platforms, support systems, and custom APIs) automatically and in sync."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Blocks"
-   secondary_url="/platform/blocks"
-   icon="arrow-right" %}
 
-{% include feature-grid.html
-   heading="One profile, distributed everywhere"
-   subheading="Fanfinity ID resolves fan profiles, Blocks distributes them to every downstream tool through reverse ETL, so your CRM, email, ad platforms, and support systems all work from the same governed golden record."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     REVERSE ETL — bespoke redesign
+     Concept: the control room. One golden profile on the left,
+     consent flags you can flip, and five destinations on the right
+     that each receive a DIFFERENT payload — shaped by consent and
+     per-tool mappings. Destinations left off go visibly stale.
+     Weekly-CSV mode shows what life without live sync feels like.
+     All panel numbers are demo-simulated and labeled as such.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="From one source of truth to many channels"
-   body="Manual exports and sync delays create gaps between systems. Reverse ETL pushes profiles from Fanfinity ID to every activation channel automatically, so new signals reach your CRM, ad platforms, and engagement tools in seconds, not hours or days."
-   points=page.benefits
-   cta_text="See activation in action"
-   cta_url="/platform/activate"
-   icon="arrow-right" %}
+<section class="re-hero">
+  <div class="container-page">
+    <div class="re-hero-grid">
+      <div class="re-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Blocks · Reverse ETL</p>
+        <h1 class="re-h1">
+          One profile.<br>
+          <span class="re-accent">Every tool, in sync.<svg class="re-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="re-lede">Blocks pushes resolved, enriched fan profiles from your warehouse to every operational tool — CRM, email, ad platforms, support, and custom APIs. Every destination gets the same governed truth, shaped by consent, the moment it changes.</p>
+        <div class="re-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#control-room" class="btn btn-secondary btn-lg">Enter the control room<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="re-hero-strip" aria-label="What distribution guarantees">
+          <li>Governed payloads</li>
+          <li>Live sync</li>
+          <li>Any destination</li>
+          <li>Defined as code</li>
+        </ul>
+      </div>
+
+      <div class="re-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="re-mini">
+          <div class="re-mini-fan">
+            <span class="re-mini-fan-label">Fanfinity ID</span>
+            <span class="re-mini-fan-name">Fan #48211 · golden profile</span>
+          </div>
+          <div class="re-mini-bus"><span></span><span></span><span></span></div>
+          <div class="re-mini-dests">
+            <span class="re-mini-dest"><i style="--dc:#a78bff"></i>CRM</span>
+            <span class="re-mini-dest"><i style="--dc:#4ec9b0"></i>Email</span>
+            <span class="re-mini-dest"><i style="--dc:#e8b45a"></i>Ads</span>
+            <span class="re-mini-dest"><i style="--dc:#f27fa0"></i>Support</span>
+          </div>
+          <div class="re-mini-payloads">
+            <p class="re-mini-payload"><i style="--dc:#a78bff"></i>email · tier · affinity <em>✓</em></p>
+            <p class="re-mini-payload"><i style="--dc:#e8b45a"></i>hashed id · affinity <em>consent-shaped</em></p>
+          </div>
+        </div>
+        <p class="re-hero-art-note">Same fan, different payload — every field shaped by consent before it leaves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE CONTROL ROOM (playable centerpiece) ==================== -->
+<section class="re-machine" id="control-room">
+  <div class="container-page">
+    <div class="re-sec-head re-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The control room</p>
+      <h2 class="re-h2">Flip a consent flag.<br>Watch every payload reshape.</h2>
+      <p class="re-sec-sub">A live simulation of governed distribution. New signals land on the fan every few seconds; destinations that are on stay synced, destinations that are off go stale. Then try weekly-CSV mode and feel the gap.</p>
+      <div class="re-controls">
+        <button type="button" class="re-ctl-btn" id="reModeBtn" aria-pressed="false">📦 Try weekly-CSV mode</button>
+        <button type="button" class="re-ctl-btn re-ctl-export" id="reExport" hidden>⇪ Run the Friday export</button>
+      </div>
+    </div>
+
+    <div class="re-machine-grid">
+      <!-- 01 · Golden profile -->
+      <div class="re-panel" data-reveal>
+        <p class="re-panel-label">01 · The golden profile</p>
+        <div class="re-fan" id="reFan">
+          <div class="re-fan-head">
+            <span class="re-fan-name">Fan #48211</span>
+            <span class="re-fan-live">live</span>
+          </div>
+          <ul class="re-fan-attrs" id="reAttrs">
+            <li data-attr="email"><span class="re-attr-k">email</span><span class="re-attr-v">sara@…</span></li>
+            <li data-attr="tier"><span class="re-attr-k">tier</span><span class="re-attr-v" id="reTier">Gold</span></li>
+            <li data-attr="affinity"><span class="re-attr-k">matchday affinity</span><span class="re-attr-v" id="reAffinity">high</span></li>
+            <li data-attr="lapse"><span class="re-attr-k">lapse risk</span><span class="re-attr-v" id="reLapse">low</span></li>
+          </ul>
+          <div class="re-consent">
+            <p class="re-consent-label">Consent — flip and watch payloads reshape</p>
+            <div class="re-consent-row">
+              <span class="re-consent-name">email</span>
+              <button type="button" class="re-switch" data-consent="email" role="switch" aria-checked="true" aria-label="Toggle email consent"><span></span></button>
+            </div>
+            <div class="re-consent-row">
+              <span class="re-consent-name">push</span>
+              <button type="button" class="re-switch" data-consent="push" role="switch" aria-checked="true" aria-label="Toggle push consent"><span></span></button>
+            </div>
+            <div class="re-consent-row">
+              <span class="re-consent-name">ads</span>
+              <button type="button" class="re-switch" data-consent="ads" role="switch" aria-checked="false" aria-label="Toggle ads consent"><span></span></button>
+            </div>
+          </div>
+        </div>
+        <p class="re-panel-note">New signals arrive on their own — watch affinity and lapse risk change, then ripple downstream.</p>
+      </div>
+
+      <!-- 02 · The bus -->
+      <div class="re-panel re-panel-bus" data-reveal style="--reveal-delay:80ms">
+        <p class="re-panel-label">02 · Governed bus</p>
+        <div class="re-bus" id="reBus" aria-hidden="true">
+          <div class="re-bus-filter"><span>consent filter</span></div>
+          <div class="re-bus-lanes"></div>
+        </div>
+        <p class="re-bus-log" id="reLog">live sync — every profile change pushes in under a second…</p>
+      </div>
+
+      <!-- 03 · Destinations -->
+      <div class="re-panel" data-reveal style="--reveal-delay:160ms">
+        <p class="re-panel-label">03 · Destinations</p>
+        <div class="re-dests" id="reDests">
+          <div class="re-dest" data-dest="crm" style="--dc:#a78bff">
+            <div class="re-dest-head">
+              <span class="re-dest-dot"></span><span class="re-dest-name">CRM</span>
+              <button type="button" class="re-switch" role="switch" aria-checked="true" aria-label="Toggle CRM"><span></span></button>
+            </div>
+            <div class="re-dest-payload"></div>
+            <p class="re-dest-clock">synced just now</p>
+          </div>
+          <div class="re-dest" data-dest="email" style="--dc:#4ec9b0">
+            <div class="re-dest-head">
+              <span class="re-dest-dot"></span><span class="re-dest-name">Email platform</span>
+              <button type="button" class="re-switch" role="switch" aria-checked="true" aria-label="Toggle Email platform"><span></span></button>
+            </div>
+            <div class="re-dest-payload"></div>
+            <p class="re-dest-clock">synced just now</p>
+          </div>
+          <div class="re-dest" data-dest="ads" style="--dc:#e8b45a">
+            <div class="re-dest-head">
+              <span class="re-dest-dot"></span><span class="re-dest-name">Ad platform</span>
+              <button type="button" class="re-switch" role="switch" aria-checked="true" aria-label="Toggle Ad platform"><span></span></button>
+            </div>
+            <div class="re-dest-payload"></div>
+            <p class="re-dest-clock">synced just now</p>
+          </div>
+          <div class="re-dest" data-dest="support" style="--dc:#f27fa0">
+            <div class="re-dest-head">
+              <span class="re-dest-dot"></span><span class="re-dest-name">Support</span>
+              <button type="button" class="re-switch" role="switch" aria-checked="true" aria-label="Toggle Support"><span></span></button>
+            </div>
+            <div class="re-dest-payload"></div>
+            <p class="re-dest-clock">synced just now</p>
+          </div>
+          <div class="re-dest" data-dest="api" style="--dc:#9aa8c7">
+            <div class="re-dest-head">
+              <span class="re-dest-dot"></span><span class="re-dest-name">Custom API</span>
+              <button type="button" class="re-switch" role="switch" aria-checked="true" aria-label="Toggle Custom API"><span></span></button>
+            </div>
+            <div class="re-dest-payload"></div>
+            <p class="re-dest-clock">synced just now</p>
+          </div>
+        </div>
+        <p class="re-feed-note">Simulated live — payloads and timings are from this demo.</p>
+      </div>
+    </div>
+
+    <p class="re-machine-caption" data-reveal>Five tools, five payloads, one fan. The difference between them is not an accident of five exports — it is consent, enforced at the data layer.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="re-caps-sec">
+  <div class="container-page">
+    <div class="re-sec-head" data-reveal>
+      <p class="eyebrow">How reverse ETL works</p>
+      <h2 class="re-h2">One profile,<br>distributed everywhere</h2>
+      <p class="re-sec-sub">Fanfinity ID resolves the golden record; Blocks delivers it to every operational tool — so your CRM, email, ad platforms, and support systems all work from the same governed truth.</p>
+    </div>
+
+    <ol class="re-caps">
+      <li class="re-cap" data-reveal>
+        <span class="re-cap-num">01</span>
+        <span class="icon-chip">{% include icon.html name="broadcast" class="h-5 w-5" %}</span>
+        <h3>Push to any platform</h3>
+        <p>Deliver resolved, enriched profiles to CRM, email, ad platforms, support systems, and custom APIs. Every tool receives the same governed profile — not a different export pieced together per source.</p>
+      </li>
+      <li class="re-cap" data-reveal style="--reveal-delay:80ms">
+        <span class="re-cap-num">02</span>
+        <span class="icon-chip">{% include icon.html name="repeat" class="h-5 w-5" %}</span>
+        <h3>Always in sync</h3>
+        <p>Changes flow downstream automatically as new signals arrive, so activation systems stay current. No manual syncs to run, no overnight batch jobs to coordinate.</p>
+      </li>
+      <li class="re-cap" data-reveal style="--reveal-delay:160ms">
+        <span class="re-cap-num">03</span>
+        <span class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+        <h3>Governed distribution</h3>
+        <p>Consent and residency rules are enforced at the data layer, so every downstream system receives only the data the fan has consented to share — and nothing more.</p>
+      </li>
+      <li class="re-cap" data-reveal style="--reveal-delay:240ms">
+        <span class="re-cap-num">04</span>
+        <span class="icon-chip">{% include icon.html name="code" class="h-5 w-5" %}</span>
+        <h3>API-driven configuration</h3>
+        <p>Define destinations, mappings, and transformations through version-controlled APIs — integrations that behave like infrastructure you own, not a vendor console you depend on.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== SAME FAN, DIFFERENT PAYLOAD ==================== -->
+<section class="re-map-sec">
+  <div class="container-page">
+    <div class="re-sec-head" data-reveal>
+      <p class="eyebrow">Mappings</p>
+      <h2 class="re-h2">Same fan, different payload —<br>on purpose</h2>
+      <p class="re-sec-sub">Each destination declares the fields it needs. The consent filter then decides what may actually leave. Three tools, three payloads, zero spreadsheets.</p>
+    </div>
+
+    <div class="re-map-grid" data-reveal>
+      <div class="re-map-card">
+        <p class="re-map-label"><i style="--dc:#a78bff"></i>CRM receives</p>
+        <pre>email:      sara@…
+tier:       Gold
+affinity:   high
+lapse_risk: low</pre>
+        <p class="re-map-note">the full consented record</p>
+      </div>
+      <div class="re-map-card">
+        <p class="re-map-label"><i style="--dc:#e8b45a"></i>Ad platform receives</p>
+        <pre>audience_id: h_9f2a…(hashed)
+affinity:    high
+email:       ✗ withheld — no ads consent</pre>
+        <p class="re-map-note">pseudonymous by default, consent-gated</p>
+      </div>
+      <div class="re-map-card">
+        <p class="re-map-label"><i style="--dc:#f27fa0"></i>Support receives</p>
+        <pre>email: sara@…
+tier:  Gold</pre>
+        <p class="re-map-note">just what an agent needs to help</p>
+      </div>
+    </div>
+    <p class="re-map-caption" data-reveal>Mappings live in version-controlled APIs — reviewable, testable, and owned by your team.</p>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="re-why-sec">
+  <div class="container-page">
+    <div class="re-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="re-h2">From one source of truth<br>to many channels</h2>
+        <p class="re-sec-sub">Manual exports and sync delays create gaps between systems. Reverse ETL pushes profiles to every activation channel automatically, so new signals reach your CRM, ad platforms, and engagement tools in seconds — not hours or days.</p>
+        <a href="{{ '/platform/activate' | relative_url }}" class="re-why-link">See activation in action <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="re-why-points" data-reveal style="--reveal-delay:120ms">
+        <li>Eliminate manual exports by automatically pushing profiles to all downstream tools.</li>
+        <li>Reduce sync complexity by distributing one governed profile instead of managing separate exports per system.</li>
+        <li>Accelerate campaign speed by activating as soon as signals resolve, not waiting on batch syncs.</li>
+        <li>Maintain compliance by enforcing consent at distribution, ensuring only consented data flows downstream.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Put your golden profiles to work"
+   text="See Blocks push governed, consent-shaped profiles from your warehouse into the tools your teams already use — live, mapped, and in sync. Book a walkthrough and we'll map it to your stack." %}
+
+{% raw %}
+<style>
+/* ================= Reverse ETL — scoped styles (.re-) ================= */
+.re-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.re-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.re-hero-grid > *, .re-machine-grid > *, .re-why-grid > *, .re-map-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .re-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.re-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.re-accent { position: relative; display: inline-block; color: #854dff; }
+.re-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.re-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.re-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.re-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.re-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.re-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero mini diagram */
+.re-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.re-mini { width: min(100%, 400px); display: flex; flex-direction: column; }
+.re-mini-fan { background: #0f0a1a; border: 1px solid rgba(153,105,255,0.45); box-shadow: 0 18px 44px -20px rgba(133,77,255,0.45); border-radius: 14px; padding: 0.9rem 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.re-mini-fan-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c4aaff; margin-right: auto; }
+.re-mini-fan-name { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; color: #fff; letter-spacing: 0.03em; }
+.re-mini-bus { display: flex; justify-content: space-around; padding: 0 2.5rem; height: 26px; }
+.re-mini-bus span { width: 2px; height: 100%; background: linear-gradient(#c4aaff, #854dff); position: relative; overflow: visible; }
+.re-mini-bus span::after { content: ""; position: absolute; left: -2.5px; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; animation: re-pulse 2.4s ease-in-out infinite; }
+.re-mini-bus span:nth-child(2)::after { animation-delay: 0.6s; }
+.re-mini-bus span:nth-child(3)::after { animation-delay: 1.2s; }
+@keyframes re-pulse { 0%, 100% { top: -3px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 50% { top: calc(100% - 4px); } }
+.re-mini-dests { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: space-between; }
+.re-mini-dest { display: inline-flex; align-items: center; gap: 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; color: var(--color-foreground); border: 1px solid var(--color-border); background: var(--color-card); border-radius: 9999px; padding: 0.35rem 0.7rem; }
+.re-mini-dest i { width: 8px; height: 8px; border-radius: 9999px; background: var(--dc); box-shadow: 0 0 8px var(--dc); }
+.re-mini-payloads { margin-top: 0.7rem; background: var(--color-card); border: 1px solid var(--color-border); border-radius: 14px; padding: 0.75rem 1rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.re-mini-payload { display: flex; align-items: center; gap: 0.5rem; margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: var(--color-foreground); }
+.re-mini-payload i { width: 7px; height: 7px; border-radius: 9999px; background: var(--dc); }
+.re-mini-payload em { margin-left: auto; font-style: normal; color: #854dff; font-weight: 600; font-size: 0.6rem; }
+.re-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.re-sec-head { max-width: 46rem; margin-bottom: 3rem; }
+.re-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.re-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The control room (dark) ================= */
+.re-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.re-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 50% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.re-machine .container-page { position: relative; }
+.re-on-dark .re-h2 { color: #fff; }
+.re-on-dark .re-sec-sub { color: rgba(244,240,251,0.62); }
+
+.re-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+.re-ctl-btn { border: 1px solid rgba(170,128,255,0.5); background: rgba(133,77,255,0.14); color: #e7defc; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.55rem 1.1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.re-ctl-btn:hover { background: rgba(133,77,255,0.3); border-color: #aa80ff; transform: translateY(-1px); }
+.re-ctl-btn.is-on { background: #854dff; color: #fff; border-color: #854dff; }
+.re-ctl-export { border-color: rgba(232,180,90,0.6); background: rgba(232,180,90,0.12); animation: re-export-pulse 1.8s ease-in-out infinite; }
+@keyframes re-export-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(232,180,90,0.35); } 50% { box-shadow: 0 0 0 8px transparent; } }
+
+.re-machine-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 1100px) { .re-machine-grid { grid-template-columns: 0.95fr 0.8fr 1.25fr; gap: 1.5rem; align-items: start; } }
+
+.re-panel { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.25rem; }
+.re-panel-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aa80ff; margin: 0 0 1rem; }
+.re-panel-note { margin: 0.9rem 0 0; font-size: 0.78rem; line-height: 1.6; color: rgba(244,240,251,0.5); }
+.re-feed-note { margin: 0.7rem 0 0; font-size: 0.7rem; line-height: 1.5; color: rgba(244,240,251,0.35); font-style: italic; }
+
+/* Golden profile */
+.re-fan { border: 1px solid rgba(153,105,255,0.5); background: linear-gradient(160deg, rgba(133,77,255,0.16), rgba(255,255,255,0.04)); border-radius: 14px; padding: 1rem 1.1rem; }
+.re-fan-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.re-fan-name { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.15rem; color: #fff; }
+.re-fan-live { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0f0a1a; background: #c4aaff; border-radius: 9999px; padding: 0.2rem 0.6rem; }
+.re-fan-attrs { list-style: none; margin: 0.85rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.re-fan-attrs li { display: flex; align-items: baseline; justify-content: space-between; gap: 0.75rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; }
+.re-attr-k { color: rgba(244,240,251,0.5); }
+.re-attr-v { color: #fff; font-weight: 600; transition: color 0.3s; }
+.re-fan-attrs li.is-hot .re-attr-v { color: #e8b45a; }
+.re-consent { margin-top: 1rem; border-top: 1px dashed rgba(196,170,255,0.35); padding-top: 0.85rem; }
+.re-consent-label { margin: 0 0 0.6rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c4aaff; }
+.re-consent-row { display: flex; align-items: center; justify-content: space-between; padding: 0.3rem 0; }
+.re-consent-name { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; color: #e7defc; }
+
+.re-switch { width: 38px; height: 22px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); position: relative; cursor: pointer; padding: 0; transition: background 0.2s, border-color 0.2s; flex-shrink: 0; }
+.re-switch span { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 9999px; background: #8d9bb5; transition: transform 0.2s, background 0.2s; }
+.re-switch[aria-checked="true"] { background: rgba(133,77,255,0.5); border-color: #9969ff; }
+.re-switch[aria-checked="true"] span { transform: translateX(16px); background: #fff; }
+
+/* Governed bus */
+.re-panel-bus { display: flex; flex-direction: column; }
+.re-bus { position: relative; height: 300px; border-radius: 14px; background: rgba(0,0,0,0.25); border: 1px dashed rgba(153,105,255,0.3); overflow: hidden; }
+.re-bus-lanes { position: absolute; inset: 0.6rem; background: repeating-linear-gradient(to bottom, transparent 0 48px, rgba(153,105,255,0.08) 48px 49px); border-radius: 8px; }
+.re-bus-filter { position: absolute; top: 0.4rem; left: 50%; transform: translateX(-50%); z-index: 2; }
+.re-bus-filter span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c4aaff; background: rgba(15,10,26,0.85); border: 1px solid rgba(153,105,255,0.35); border-radius: 9999px; padding: 0.15rem 0.55rem; }
+.re-bus-filter::after { content: ""; position: absolute; top: 1.4rem; left: 50%; width: 1px; height: calc(300px - 2.4rem); background: linear-gradient(rgba(153,105,255,0.4), transparent); }
+.re-pkt { position: absolute; left: 0; z-index: 3; display: inline-flex; align-items: center; gap: 0.35rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; color: #fff; background: #1b1230; border: 1px solid var(--dc, #9969ff); border-radius: 8px; padding: 0.22rem 0.45rem; white-space: nowrap; transition: transform 1.1s cubic-bezier(0.3,0.6,0.4,1), opacity 0.3s; will-change: transform; }
+.re-pkt i { width: 6px; height: 6px; border-radius: 9999px; background: var(--dc, #9969ff); flex-shrink: 0; }
+.re-pkt.is-blocked { border-color: #ff6b81; border-style: dashed; }
+.re-pkt.is-blocked i { background: #ff6b81; }
+.re-pkt.is-done { opacity: 0; }
+.re-bus-log { margin: 0.85rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; line-height: 1.6; letter-spacing: 0.02em; color: rgba(244,240,251,0.5); min-height: 2.2em; }
+
+/* Destinations */
+.re-dests { display: grid; gap: 0.55rem; }
+@media (min-width: 480px) and (max-width: 1099px) { .re-dests { grid-template-columns: 1fr 1fr; } }
+.re-dest { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 0.65rem 0.85rem; transition: border-color 0.2s, opacity 0.2s; }
+.re-dest.is-off { opacity: 0.5; }
+.re-dest-head { display: flex; align-items: center; gap: 0.55rem; }
+.re-dest-dot { width: 9px; height: 9px; border-radius: 9999px; background: var(--dc); box-shadow: 0 0 10px var(--dc); flex-shrink: 0; }
+.re-dest.is-off .re-dest-dot { box-shadow: none; }
+.re-dest-name { font-size: 0.85rem; font-weight: 600; color: #fff; margin-right: auto; }
+.re-dest-payload { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.55rem; min-height: 1.5rem; }
+.re-field { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.03em; color: #dff5ea; border: 1px solid rgba(125,208,105,0.4); background: rgba(125,208,105,0.1); border-radius: 6px; padding: 0.15rem 0.4rem; animation: re-field-in 0.3s both; }
+@keyframes re-field-in { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: none; } }
+.re-field.is-withheld { color: #ff8ba0; border-color: rgba(255,107,129,0.45); background: rgba(255,107,129,0.08); text-decoration: line-through; }
+.re-field.is-empty-note { color: rgba(244,240,251,0.45); border-style: dashed; border-color: rgba(255,255,255,0.18); background: transparent; text-decoration: none; }
+.re-dest-clock { margin: 0.45rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em; color: rgba(244,240,251,0.45); }
+.re-dest-clock.is-stale { color: #e8b45a; }
+.re-dest-clock.is-very-stale { color: #ff6b81; }
+.re-dest.is-flash { border-color: var(--dc); box-shadow: 0 0 16px -6px var(--dc); }
+
+.re-machine-caption { margin: 2.5rem auto 0; max-width: 42rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+
+/* ================= Capabilities ================= */
+.re-caps-sec { padding: 6.5rem 0; }
+.re-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .re-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .re-caps { grid-template-columns: repeat(4, 1fr); } }
+.re-cap { position: relative; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.re-cap:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.re-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #c4aaff; }
+.re-cap .icon-chip { margin-bottom: 1rem; }
+.re-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.re-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= Mappings ================= */
+.re-map-sec { padding: 0 0 6.5rem; }
+.re-map-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 900px) { .re-map-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+.re-map-card { border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-card); padding: 1.25rem 1.35rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.re-map-card:hover { border-color: #dccfff; box-shadow: 0 14px 36px -20px rgba(53,16,112,0.25); }
+.re-map-label { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.85rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.re-map-label i { width: 8px; height: 8px; border-radius: 9999px; background: var(--dc); box-shadow: 0 0 8px var(--dc); }
+.re-map-card pre { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 1.9; color: var(--color-foreground); white-space: pre-wrap; word-break: break-word; }
+.re-map-note { margin: 0.85rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.04em; color: #854dff; }
+.re-map-caption { margin: 2rem auto 0; max-width: 38rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= Why it matters ================= */
+.re-why-sec { padding: 0 0 6.5rem; }
+.re-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .re-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.re-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.re-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.re-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.re-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.re-why-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .re-mini-dest, html.dark .re-mini-payloads { background: #17101f; border-color: rgba(255,255,255,0.1); }
+html.dark .re-mini-dest, html.dark .re-mini-payload { color: #e7defc; }
+html.dark .re-cap:hover, html.dark .re-map-card:hover { border-color: rgba(153,105,255,0.4); }
+
+/* ================= Reduced motion ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .re-mini-bus span::after, .re-field, .re-ctl-export { animation: none !important; }
+  .re-pkt { transition: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .re-hero { padding-top: 4rem; }
+  .re-bus { height: 240px; }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     THE CONTROL ROOM — one profile, consent-shaped payloads
+     ============================================================ */
+  var profile = { email: 'sara@…', tier: 'Gold', affinity: 'high', lapse: 'low' };
+  var consent = { email: true, push: true, ads: false };
+
+  var DESTS = {
+    crm:     { label: 'CRM',            fields: ['email', 'tier', 'affinity', 'lapse'] },
+    email:   { label: 'Email platform', fields: ['email', 'affinity'], needs: 'email' },
+    ads:     { label: 'Ad platform',    fields: ['hashed_id', 'affinity'], needs: 'ads' },
+    support: { label: 'Support',        fields: ['email', 'tier'] },
+    api:     { label: 'Custom API',     fields: ['email', 'tier', 'affinity', 'lapse', 'push'] }
+  };
+  var ORDER = ['crm', 'email', 'ads', 'support', 'api'];
+
+  var bus = document.getElementById('reBus');
+  var logEl = document.getElementById('reLog');
+  var modeBtn = document.getElementById('reModeBtn');
+  var exportBtn = document.getElementById('reExport');
+  if (!bus) return;
+
+  var destEls = {};
+  document.querySelectorAll('.re-dest').forEach(function (el) {
+    destEls[el.getAttribute('data-dest')] = el;
+  });
+
+  var destOn = { crm: true, email: true, ads: true, support: true, api: true };
+  var lastSync = {};
+  ORDER.forEach(function (k) { lastSync[k] = Date.now(); });
+  var mode = 'live'; /* 'live' | 'csv' */
+  var timers = [];
+  function later(fn, ms) {
+    if (reduceMotion) { fn(); return; }
+    timers.push(setTimeout(fn, ms));
+  }
+  function setLog(msg) { if (logEl) logEl.textContent = msg; }
+
+  /* ---------- payload computation: consent shapes every field ---------- */
+  function payloadFor(key) {
+    var d = DESTS[key];
+    if (d.needs && !consent[d.needs]) return { blocked: d.needs };
+    var out = [];
+    d.fields.forEach(function (f) {
+      if (f === 'email' && !consent.email) { out.push({ name: 'email', withheld: true }); return; }
+      if (f === 'push' && !consent.push) { out.push({ name: 'push', withheld: true }); return; }
+      if (f === 'hashed_id') { out.push({ name: 'hashed id', value: 'h_9f2a…' }); return; }
+      if (f === 'push') { out.push({ name: 'push', value: 'opt-in' }); return; }
+      out.push({ name: f, value: profile[f] });
+    });
+    return { fields: out };
+  }
+
+  function renderPayload(key) {
+    var el = destEls[key];
+    if (!el) return;
+    var box = el.querySelector('.re-dest-payload');
+    var p = payloadFor(key);
+    box.innerHTML = '';
+    if (p.blocked) {
+      var c = document.createElement('span');
+      c.className = 're-field is-empty-note';
+      c.textContent = '⛔ withheld — no ' + p.blocked + ' consent';
+      box.appendChild(c);
+      return;
+    }
+    p.fields.forEach(function (f) {
+      var chip = document.createElement('span');
+      chip.className = 're-field' + (f.withheld ? ' is-withheld' : '');
+      chip.textContent = f.withheld ? f.name + ' ✗' : f.name + ': ' + f.value;
+      box.appendChild(chip);
+    });
+  }
+
+  /* ---------- packet flight across the bus ---------- */
+  function flyPacket(key, blocked) {
+    if (reduceMotion) return;
+    var el = destEls[key];
+    var color = el ? el.style.getPropertyValue('--dc') : '#9969ff';
+    var lane = ORDER.indexOf(key);
+    var pkt = document.createElement('span');
+    pkt.className = 're-pkt' + (blocked ? ' is-blocked' : '');
+    pkt.style.setProperty('--dc', blocked ? '#ff6b81' : color);
+    pkt.style.top = (34 + lane * 52) + 'px';
+    pkt.innerHTML = '<i></i>' + (blocked ? '✗ consent' : 'fan#48211');
+    bus.appendChild(pkt);
+    var dist = bus.clientWidth - pkt.offsetWidth - 20;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        pkt.style.transform = 'translateX(' + dist + 'px)';
+      });
+    });
+    later(function () { pkt.classList.add('is-done'); }, 1150);
+    later(function () { pkt.remove(); }, 1500);
+  }
+
+  /* ---------- sync one destination ---------- */
+  function syncDest(key, quiet) {
+    if (!destOn[key]) return;
+    var p = payloadFor(key);
+    flyPacket(key, !!p.blocked);
+    renderPayload(key);
+    lastSync[key] = Date.now();
+    var el = destEls[key];
+    if (el && !reduceMotion) {
+      el.classList.add('is-flash');
+      later(function () { el.classList.remove('is-flash'); }, 700);
+    }
+    if (!quiet) {
+      setLog(p.blocked
+        ? DESTS[key].label + ' · push attempted — everything withheld by ' + p.blocked + ' consent. The filter, not the tool, said no.'
+        : DESTS[key].label + ' · pushed ' + (p.fields ? p.fields.filter(function (f) { return !f.withheld; }).length : 0) + ' field(s), shaped by consent.');
+    }
+  }
+
+  function syncAll(stagger, quiet) {
+    ORDER.forEach(function (k, i) {
+      later(function () { syncDest(k, quiet); }, i * (stagger || 0));
+    });
+  }
+
+  /* ---------- clocks ---------- */
+  function tickClocks() {
+    var now = Date.now();
+    ORDER.forEach(function (k) {
+      var el = destEls[k];
+      if (!el) return;
+      var clock = el.querySelector('.re-dest-clock');
+      var age = Math.max(0, Math.round((now - lastSync[k]) / 1000));
+      clock.classList.remove('is-stale', 'is-very-stale');
+      if (!destOn[k]) {
+        clock.textContent = '⏸ off — last synced ' + age + 's ago';
+        clock.classList.add(age > 30 ? 'is-very-stale' : 'is-stale');
+      } else if (mode === 'csv') {
+        clock.textContent = 'STALE · ' + age + 's since last push';
+        if (age > 12) clock.classList.add('is-stale');
+        if (age > 30) clock.classList.add('is-very-stale');
+      } else {
+        clock.textContent = age <= 1 ? 'synced just now' : 'synced ' + age + 's ago';
+      }
+    });
+  }
+  setInterval(tickClocks, 1000);
+
+  /* ---------- live signals land on the fan ---------- */
+  var AFFINITY = ['high', 'rising', 'medium', 'high'];
+  var LAPSE = ['low', 'low', 'medium', 'low'];
+  var beat = 0;
+  function newSignal() {
+    beat++;
+    var a = AFFINITY[beat % AFFINITY.length];
+    var l = LAPSE[beat % LAPSE.length];
+    profile.affinity = a;
+    profile.lapse = l;
+    var aEl = document.getElementById('reAffinity');
+    var lEl = document.getElementById('reLapse');
+    if (aEl) aEl.textContent = a;
+    if (lEl) lEl.textContent = l;
+    ['affinity', 'lapse'].forEach(function (attr) {
+      var li = document.querySelector('.re-fan-attrs li[data-attr="' + attr + '"]');
+      if (li) {
+        li.classList.add('is-hot');
+        later(function () { li.classList.remove('is-hot'); }, 1400);
+      }
+    });
+    if (mode === 'live') {
+      setLog('new signal → affinity "' + a + '", lapse risk "' + l + '" · pushing the delta to every live destination…');
+      syncAll(200, true);
+    } else {
+      setLog('new signal → affinity "' + a + '" landed on the fan — but in CSV mode, nothing moves until the Friday export.');
+    }
+  }
+  setInterval(newSignal, 8000);
+
+  /* ---------- consent toggles ---------- */
+  document.querySelectorAll('.re-switch[data-consent]').forEach(function (sw) {
+    sw.addEventListener('click', function () {
+      var key = sw.getAttribute('data-consent');
+      consent[key] = !consent[key];
+      sw.setAttribute('aria-checked', consent[key] ? 'true' : 'false');
+      if (mode === 'live') {
+        setLog(key + ' consent ' + (consent[key] ? 'granted' : 'revoked') + ' — re-shaping every payload, right now.');
+        syncAll(180, true);
+      } else {
+        setLog(key + ' consent changed — but in CSV mode the tools won’t see it until the export runs.');
+      }
+    });
+  });
+
+  /* ---------- destination toggles ---------- */
+  Object.keys(destEls).forEach(function (key) {
+    var el = destEls[key];
+    var sw = el.querySelector('.re-switch');
+    sw.addEventListener('click', function () {
+      destOn[key] = !destOn[key];
+      sw.setAttribute('aria-checked', destOn[key] ? 'true' : 'false');
+      el.classList.toggle('is-off', !destOn[key]);
+      if (destOn[key] && mode === 'live') {
+        setLog(DESTS[key].label + ' reconnected — catches up instantly, no backfill job.');
+        syncDest(key, true);
+      } else if (!destOn[key]) {
+        setLog(DESTS[key].label + ' disconnected — its clock starts going stale.');
+      }
+    });
+  });
+
+  /* ---------- live vs weekly-CSV mode ---------- */
+  modeBtn.addEventListener('click', function () {
+    mode = (mode === 'live') ? 'csv' : 'live';
+    var csv = mode === 'csv';
+    modeBtn.classList.toggle('is-on', csv);
+    modeBtn.setAttribute('aria-pressed', csv ? 'true' : 'false');
+    modeBtn.textContent = csv ? '⚡ Back to live sync' : '📦 Try weekly-CSV mode';
+    exportBtn.hidden = !csv;
+    if (csv) {
+      setLog('weekly-CSV mode — signals still land on the fan, but tools wait. Watch the clocks go stale…');
+    } else {
+      setLog('live sync restored — destinations catch up in under a second.');
+      syncAll(160, true);
+    }
+    tickClocks();
+  });
+
+  exportBtn.addEventListener('click', function () {
+    setLog('📦 Friday export running — every destination catches up at once. Days of lag, one button.');
+    syncAll(320, true);
+  });
+
+  /* ---------- initial push ---------- */
+  later(function () { syncAll(150, true); }, 600);
+})();
+</script>
+{% endraw %}

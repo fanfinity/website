@@ -1,40 +1,510 @@
 ---
 layout: page
+cta: false
 permalink: /platform/blocks/ai-enrichment
 title: AI Enrichment
-description: "Enrich fan profiles with structured context for AI models and agents within your environment."
+description: "Enrich fan profiles with structured, governed context inside your environment — so AI models and agents reason over people, not raw event logs."
 breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
-capabilities:
-  - { icon: spark,    title: "Structured context, not raw events", body: "Fan profiles are enriched with first-party signals and derived attributes before they leave your environment, so AI models and agents receive governed, structured input instead of raw event logs with missing fields." }
-  - { icon: shield,   title: "Privacy-preserving enrichment",      body: "Enrichment runs inside your environment on data you own and control. No vendor sees the underlying fan graph, and consent rules are enforced at every enrichment step." }
-  - { icon: link,     title: "Context stays in sync",             body: "Enriched attributes land on the same profile that drives segmentation and activation, so AI context and activation context never diverge." }
-  - { icon: code,     title: "Custom and standard attributes",    body: "Apply off-the-shelf derived attributes (predicted churn, propensity to spend, lifecycle stage) or build your own using the API, so context fits your specific models and strategies." }
-benefits:
-  - "Accelerate AI model performance by feeding clean, structured input instead of raw event streams."
-  - "Reduce model training complexity by providing governed, first-party features instead of trying to infer intent from fragmented logs."
-  - "Stay compliant by enriching with consented data in your environment, not a third-party vendor platform."
-  - "Keep profiles fresh by updating enriched attributes in real time as new signals arrive."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Blocks"
-   title="Structured context for every AI model"
-   subtitle="Fanfinity Blocks enriches fan profiles with first-party signals and derived attributes inside your environment, so AI models and agents receive governed, structured context instead of raw events and missing fields."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Blocks"
-   secondary_url="/platform/blocks"
-   icon="spark" %}
 
-{% include feature-grid.html
-   heading="Prepare profiles for intelligent activation"
-   subheading="Fanfinity Blocks enriches profiles with derived attributes, predicted scores, and custom features inside your environment, so every downstream AI model and agent starts from a clean, governed, structured signal."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     AI ENRICHMENT — bespoke redesign
+     Concept: "The Interview." A mock AI assistant answers the same
+     questions twice — once seeing raw event logs, once seeing a
+     governed, enriched profile. The difference between the two answers IS the
+     product. Scripted illustrative demo; no real model involved.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="Transform raw signals into AI-ready intelligence"
-   body="Raw events are noisy and fragmented. Fanfinity Blocks transforms them into clean, structured attributes (predicted churn, propensity to spend, lifecycle stage, custom features) so your AI systems can focus on intelligence, not data cleaning. All enrichment happens inside your environment."
-   points=page.benefits
-   cta_text="See how models use enriched profiles"
-   cta_url="/solutions/ai-agents"
-   icon="spark" %}
+<section class="ai-hero">
+  <div class="container-page">
+    <div class="ai-hero-grid">
+      <div class="ai-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Blocks · AI Enrichment</p>
+        <h1 class="ai-h1">
+          AI is only as smart<br>
+          <span class="ai-accent">as its context.<svg class="ai-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="ai-lede">Blocks enriches fan profiles with first-party signals and derived attributes inside your environment — so your models and agents reason over governed, structured context instead of raw events and missing fields.</p>
+        <div class="ai-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#interview" class="btn btn-secondary btn-lg">Interview the AI<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="ai-hero-strip" aria-label="What enrichment guarantees">
+          <li>Structured context</li>
+          <li>Derived attributes</li>
+          <li>Consent baked in</li>
+          <li>Your environment</li>
+        </ul>
+      </div>
+
+      <div class="ai-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="ai-mini">
+          <p class="ai-mini-q">“Should Sara get the renewal offer?”</p>
+          <div class="ai-mini-a ai-mini-a-raw">
+            <span class="ai-mini-tag">sees raw logs</span>
+            <p>“I see 14 events and a uid… I can’t tell who this is.”</p>
+          </div>
+          <div class="ai-mini-a ai-mini-a-rich">
+            <span class="ai-mini-tag">sees enriched profile</span>
+            <p>“Yes — Gold member, affinity high, lapse risk low. Offer the seat upgrade.”</p>
+          </div>
+        </div>
+        <p class="ai-hero-art-note">Same model. Same question. The context is the difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE INTERVIEW (playable centerpiece) ==================== -->
+<section class="ai-machine" id="interview">
+  <div class="container-page">
+    <div class="ai-sec-head ai-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The interview</p>
+      <h2 class="ai-h2">Ask the AI anything.<br>Then change what it knows.</h2>
+      <p class="ai-sec-sub">A scripted demo assistant answers three real marketing questions. Flip the context switch between <strong>raw logs</strong> and <strong>governed context</strong> — and watch the same model go from shrug to strategy.</p>
+      <div class="ai-mode" role="group" aria-label="Context given to the AI">
+        <button type="button" class="ai-mode-btn is-on" id="aiModeRaw" aria-pressed="true">📄 AI sees: raw logs</button>
+        <button type="button" class="ai-mode-btn" id="aiModeRich" aria-pressed="false">✨ AI sees: enriched profile</button>
+      </div>
+    </div>
+
+    <div class="ai-machine-grid">
+      <!-- What the AI is given -->
+      <div class="ai-panel" data-reveal>
+        <p class="ai-panel-label">What the AI is given</p>
+        <div class="ai-context" id="aiContextRaw">
+          <pre>{"uid":"c_8f2","ev":"click","t":…}
+{"uid":"sara@…","ev":"scan","t":…}
+{"uid":"d_31","ev":"view","t":…}
+{"ev":"purchase","seat":"A-114"}
+{"uid":"c_8f2","ev":"click","t":…}
+… 3,407 more lines …</pre>
+          <p class="ai-context-note">3,412 lines like this · five “people” who are one fan · no consent fields · no attributes</p>
+        </div>
+        <div class="ai-context ai-context-rich" id="aiContextRich" hidden>
+          <div class="ai-profile">
+            <div class="ai-profile-head">
+              <span class="ai-profile-name">Fan #48211</span>
+              <span class="ai-profile-live">golden profile</span>
+            </div>
+            <ul class="ai-profile-rows">
+              <li><span>identity</span><span>email · loyalty № · device · cookie — one person</span></li>
+              <li><span>lifecycle</span><span>Gold member · active</span></li>
+              <li><span>derived</span><span>matchday affinity · high</span></li>
+              <li><span>derived</span><span>lapse risk · low</span></li>
+              <li><span>seat</span><span>A-114 · 9 of last 10 home games</span></li>
+              <li><span>consent</span><span>email ✓ push ✓ ads ✗</span></li>
+              <li><span>residency</span><span>in-region ✓ · your environment</span></li>
+            </ul>
+          </div>
+          <p class="ai-context-note">structured · deduplicated · consented · derived in your environment</p>
+        </div>
+      </div>
+
+      <!-- The chat -->
+      <div class="ai-panel ai-panel-chat" data-reveal style="--reveal-delay:80ms">
+        <p class="ai-panel-label">The interview — demo assistant</p>
+        <div class="ai-chat" id="aiChat" aria-live="polite">
+          <div class="ai-msg ai-msg-sys">Pick a question below. The assistant only knows what the panel on the left gives it — flip the context and ask again.</div>
+        </div>
+        <div class="ai-questions">
+          <button type="button" class="ai-q" data-q="0">Should we offer Sara a renewal discount?</button>
+          <button type="button" class="ai-q" data-q="1">Who gets tonight’s push notification?</button>
+          <button type="button" class="ai-q" data-q="2">Draft the win-back email.</button>
+        </div>
+        <p class="ai-chat-note">Scripted illustrative demo — the point is the context, not the model.</p>
+      </div>
+    </div>
+
+    <p class="ai-machine-caption" data-reveal>Nothing about the model changed between the two answers. The raw logs made it guess; the governed profile let it reason. That gap is what enrichment fills.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="ai-caps-sec">
+  <div class="container-page">
+    <div class="ai-sec-head" data-reveal>
+      <p class="eyebrow">How AI enrichment works</p>
+      <h2 class="ai-h2">Prepare profiles for<br>intelligent activation</h2>
+      <p class="ai-sec-sub">Blocks enriches profiles with derived attributes, predicted scores, and custom features inside your environment — so every downstream model and agent starts from a clean, governed, structured signal.</p>
+    </div>
+
+    <ol class="ai-caps">
+      <li class="ai-cap" data-reveal>
+        <span class="ai-cap-num">01</span>
+        <span class="icon-chip">{% include icon.html name="spark" class="h-5 w-5" %}</span>
+        <h3>Structured context, not raw events</h3>
+        <p>Profiles are enriched with first-party signals and derived attributes before they leave your environment — models receive governed, structured input instead of raw logs with missing fields.</p>
+      </li>
+      <li class="ai-cap" data-reveal style="--reveal-delay:80ms">
+        <span class="ai-cap-num">02</span>
+        <span class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+        <h3>Privacy-preserving enrichment</h3>
+        <p>Enrichment runs inside your environment on data you own and control. No vendor sees the underlying fan graph, and consent rules are enforced at every enrichment step.</p>
+      </li>
+      <li class="ai-cap" data-reveal style="--reveal-delay:160ms">
+        <span class="ai-cap-num">03</span>
+        <span class="icon-chip">{% include icon.html name="link" class="h-5 w-5" %}</span>
+        <h3>Context stays in sync</h3>
+        <p>Enriched attributes land on the same profile that drives segmentation and activation — so AI context and activation context never diverge.</p>
+      </li>
+      <li class="ai-cap" data-reveal style="--reveal-delay:240ms">
+        <span class="ai-cap-num">04</span>
+        <span class="icon-chip">{% include icon.html name="code" class="h-5 w-5" %}</span>
+        <h3>Custom and standard attributes</h3>
+        <p>Apply off-the-shelf derived attributes — predicted churn, propensity to spend, lifecycle stage — or build your own through the API, so context fits your models and strategies.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHAT ENRICHMENT ADDS ==================== -->
+<section class="ai-add-sec">
+  <div class="container-page">
+    <div class="ai-sec-head" data-reveal>
+      <p class="eyebrow">The transformation</p>
+      <h2 class="ai-h2">What enrichment actually adds</h2>
+      <p class="ai-sec-sub">Three layers turn a noisy event log into something an AI can reason over — each one computed inside your environment, on data you own.</p>
+    </div>
+
+    <div class="ai-add-grid">
+      <div class="ai-add-card" data-reveal>
+        <p class="ai-add-k">Layer 01 · Identity</p>
+        <h3>Five records become one person</h3>
+        <p>Events from the cookie, the inbox, the app, and the gate are deduplicated onto a single fan — so the model never counts one supporter as five strangers.</p>
+        <p class="ai-add-eg">5 uids → Fan #48211</p>
+      </div>
+      <div class="ai-add-card" data-reveal style="--reveal-delay:80ms">
+        <p class="ai-add-k">Layer 02 · Derivation</p>
+        <h3>Behavior becomes attributes</h3>
+        <p>Raw scans and sessions are distilled into derived attributes — matchday affinity, lapse risk, propensity to spend, lifecycle stage — that a model can use directly.</p>
+        <p class="ai-add-eg">312 events → affinity: high · lapse risk: low</p>
+      </div>
+      <div class="ai-add-card" data-reveal style="--reveal-delay:160ms">
+        <p class="ai-add-k">Layer 03 · Governance</p>
+        <h3>Consent travels with context</h3>
+        <p>Consent and residency flags are stamped onto the profile itself, so every answer an agent gives is already inside the rules — compliance is an input, not a review meeting.</p>
+        <p class="ai-add-eg">consent: email ✓ push ✓ ads ✗</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="ai-why-sec">
+  <div class="container-page">
+    <div class="ai-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="ai-h2">Raw signals in,<br>AI-ready intelligence out</h2>
+        <p class="ai-sec-sub">Raw events are noisy and fragmented. Blocks transforms them into clean, structured attributes — predicted churn, propensity to spend, lifecycle stage, custom features — so your AI systems focus on intelligence, not data cleaning. All inside your environment.</p>
+        <a href="{{ '/solutions/ai-agents' | relative_url }}" class="ai-why-link">See how agents use enriched profiles <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="ai-why-points" data-reveal style="--reveal-delay:120ms">
+        <li>Accelerate AI model performance by feeding clean, structured input instead of raw event streams.</li>
+        <li>Reduce model training complexity with governed, first-party features instead of inferring intent from fragmented logs.</li>
+        <li>Stay compliant by enriching with consented data in your environment, not a third-party platform.</li>
+        <li>Keep profiles fresh by updating enriched attributes in real time as new signals arrive.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Give your AI context worth reasoning over"
+   text="See Blocks turn raw fan events into governed, enriched profiles inside your environment — and watch what your models can do with them. Book a walkthrough with our team." %}
+
+{% raw %}
+<style>
+/* ================= AI Enrichment — scoped styles (.ai-) ================= */
+.ai-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.ai-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.ai-hero-grid > *, .ai-machine-grid > *, .ai-why-grid > *, .ai-add-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .ai-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.ai-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.ai-accent { position: relative; display: inline-block; color: #854dff; }
+.ai-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.ai-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.ai-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.ai-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.ai-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.ai-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero mini interview */
+.ai-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.ai-mini { width: min(100%, 400px); display: flex; flex-direction: column; gap: 0.6rem; }
+.ai-mini-q { margin: 0; align-self: flex-end; max-width: 85%; background: #854dff; color: #fff; border-radius: 16px 16px 4px 16px; padding: 0.6rem 0.9rem; font-size: 0.82rem; line-height: 1.5; box-shadow: 0 10px 24px -14px rgba(133,77,255,0.6); }
+.ai-mini-a { max-width: 88%; border-radius: 16px 16px 16px 4px; padding: 0.55rem 0.85rem; }
+.ai-mini-a p { margin: 0.3rem 0 0; font-size: 0.8rem; line-height: 1.55; }
+.ai-mini-tag { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.ai-mini-a-raw { background: var(--color-card); border: 1px dashed var(--color-border); }
+.ai-mini-a-raw .ai-mini-tag { color: var(--color-muted-foreground); }
+.ai-mini-a-raw p { color: var(--color-muted-foreground); }
+.ai-mini-a-rich { background: #0f0a1a; border: 1px solid rgba(153,105,255,0.45); box-shadow: 0 16px 40px -22px rgba(133,77,255,0.5); }
+.ai-mini-a-rich .ai-mini-tag { color: #c4aaff; }
+.ai-mini-a-rich p { color: #fff; }
+.ai-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.ai-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.ai-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.ai-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The interview (dark) ================= */
+.ai-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.ai-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 80% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.ai-machine .container-page { position: relative; }
+.ai-on-dark .ai-h2 { color: #fff; }
+.ai-on-dark .ai-sec-sub { color: rgba(244,240,251,0.62); }
+.ai-on-dark .ai-sec-sub strong { color: #e7defc; }
+
+.ai-mode { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 9999px; padding: 0.3rem; }
+.ai-mode-btn { border: 0; background: transparent; color: rgba(244,240,251,0.65); font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; padding: 0.5rem 1.1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.ai-mode-btn.is-on { background: #854dff; color: #fff; }
+
+.ai-machine-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 1100px) { .ai-machine-grid { grid-template-columns: 0.9fr 1.1fr; gap: 1.5rem; align-items: start; } }
+
+.ai-panel { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.25rem; }
+.ai-panel-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aa80ff; margin: 0 0 1rem; }
+
+/* Context panes */
+.ai-context { animation: ai-fade 0.35s both; }
+@keyframes ai-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.ai-context pre { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; line-height: 1.9; color: #6f6089; white-space: pre-wrap; word-break: break-all; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 0.9rem 1rem; }
+.ai-context-note { margin: 0.7rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.04em; color: rgba(244,240,251,0.4); }
+.ai-profile { border: 1px solid rgba(153,105,255,0.5); background: linear-gradient(160deg, rgba(133,77,255,0.16), rgba(255,255,255,0.04)); border-radius: 14px; padding: 0.95rem 1rem; }
+.ai-profile-head { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.ai-profile-name { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; color: #fff; }
+.ai-profile-live { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0f0a1a; background: #c4aaff; border-radius: 9999px; padding: 0.2rem 0.6rem; }
+.ai-profile-rows { list-style: none; margin: 0.8rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.38rem; }
+.ai-profile-rows li { display: flex; justify-content: space-between; gap: 0.75rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; line-height: 1.5; }
+.ai-profile-rows li span:first-child { color: rgba(244,240,251,0.45); flex-shrink: 0; }
+.ai-profile-rows li span:last-child { color: #e7defc; text-align: right; }
+
+/* Chat */
+.ai-panel-chat { display: flex; flex-direction: column; }
+.ai-chat { min-height: 300px; max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.6rem; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 0.9rem; }
+.ai-msg { max-width: 88%; border-radius: 14px; padding: 0.6rem 0.85rem; font-size: 0.84rem; line-height: 1.6; animation: ai-msg-in 0.3s both; }
+@keyframes ai-msg-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.ai-msg-sys { align-self: center; max-width: 95%; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.15); color: rgba(244,240,251,0.55); font-size: 0.75rem; text-align: center; }
+.ai-msg-user { align-self: flex-end; background: #854dff; color: #fff; border-radius: 14px 14px 4px 14px; }
+.ai-msg-bot { align-self: flex-start; background: #1b1230; border: 1px solid rgba(153,105,255,0.35); color: #e7defc; border-radius: 14px 14px 14px 4px; }
+.ai-msg-bot em { color: #c4aaff; font-style: italic; }
+.ai-msg-bot .ai-verdict { display: block; margin-top: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: #aa80ff; }
+.ai-typing { display: inline-flex; gap: 4px; padding: 0.2rem 0; }
+.ai-typing i { width: 6px; height: 6px; border-radius: 9999px; background: #aa80ff; animation: ai-blink 1s ease-in-out infinite; }
+.ai-typing i:nth-child(2) { animation-delay: 0.2s; }
+.ai-typing i:nth-child(3) { animation-delay: 0.4s; }
+@keyframes ai-blink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+.ai-questions { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.85rem; }
+.ai-q { position: relative; text-align: left; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 0.6rem 0.85rem; color: #e7defc; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.15s; }
+.ai-q:hover { border-color: rgba(170,128,255,0.6); background: rgba(133,77,255,0.12); transform: translateY(-1px); }
+.ai-q:disabled { opacity: 0.5; cursor: default; transform: none; }
+.ai-q .ai-q-badge { position: absolute; top: -7px; right: 10px; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; color: #0f0a1a; background: #e8b45a; border-radius: 9999px; padding: 0.1rem 0.45rem; }
+.ai-chat-note { margin: 0.7rem 0 0; font-size: 0.7rem; line-height: 1.5; color: rgba(244,240,251,0.35); font-style: italic; }
+
+.ai-machine-caption { margin: 2.5rem auto 0; max-width: 42rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+
+/* ================= Capabilities ================= */
+.ai-caps-sec { padding: 6.5rem 0; }
+.ai-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .ai-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .ai-caps { grid-template-columns: repeat(4, 1fr); } }
+.ai-cap { position: relative; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.ai-cap:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.ai-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #c4aaff; }
+.ai-cap .icon-chip { margin-bottom: 1rem; }
+.ai-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.ai-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= What enrichment adds ================= */
+.ai-add-sec { padding: 0 0 6.5rem; }
+.ai-add-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 900px) { .ai-add-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+.ai-add-card { border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.ai-add-card:hover { border-color: #dccfff; box-shadow: 0 14px 36px -20px rgba(53,16,112,0.25); }
+.ai-add-k { margin: 0 0 0.7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #854dff; }
+.ai-add-card h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.15rem; margin: 0; }
+.ai-add-card > p:not(.ai-add-k):not(.ai-add-eg) { margin: 0.55rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.ai-add-eg { margin: 0.9rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: #5b2ed6; background: rgba(133,77,255,0.08); border: 1px dashed #dccfff; border-radius: 8px; padding: 0.5rem 0.7rem; }
+
+/* ================= Why it matters ================= */
+.ai-why-sec { padding: 0 0 6.5rem; }
+.ai-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .ai-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.ai-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.ai-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.ai-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.ai-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.ai-why-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .ai-cap:hover, html.dark .ai-add-card:hover { border-color: rgba(153,105,255,0.4); }
+html.dark .ai-mini-a-raw { background: #17101f; border-color: rgba(255,255,255,0.14); }
+html.dark .ai-add-eg { color: #c4aaff; background: rgba(133,77,255,0.14); border-color: rgba(153,105,255,0.4); }
+
+/* ================= Reduced motion ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-typing i, .ai-msg, .ai-context { animation: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .ai-hero { padding-top: 4rem; }
+  .ai-chat { min-height: 260px; }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     THE INTERVIEW — same question, two contexts, two answers
+     ============================================================ */
+  var QA = [
+    {
+      q: 'Should we offer Sara a renewal discount?',
+      raw: 'I can see 14 events from uid c_8f2 and a gate scan tied to an email address — but I can\u2019t tell whether they\u2019re the same person, whether she\u2019s a member, or when any renewal is due. Honest answer: I don\u2019t have enough to act on.',
+      rawVerdict: 'verdict · inconclusive — not enough context',
+      rich: 'No discount needed. Fan #48211 is a Gold member with matchday affinity high and lapse risk low — nine of the last ten home games, seat A-114. Offer the early-bird renewal with a seat upgrade instead, and save the discount for fans whose lapse risk is actually rising.',
+      richVerdict: 'verdict · act — upgrade offer, not a discount'
+    },
+    {
+      q: 'Who gets tonight\u2019s push notification?',
+      raw: 'Tonight\u2019s log holds 3,412 events. There\u2019s no consent field anywhere and no way to tell which device belongs to which fan. Messaging everyone would be spam; messaging anyone specifically would be a guess.',
+      rawVerdict: 'verdict · refuse — can\u2019t build a compliant audience',
+      rich: 'Fans with matchday affinity \u201chigh\u201d and push consent \u2713 — Fan #48211 among them. Consent travels on the profile, so anyone without a push \u2713 is excluded automatically. That\u2019s a compliant audience, not a guess.',
+      richVerdict: 'verdict · send — affinity high + push consent'
+    },
+    {
+      q: 'Draft the win-back email.',
+      raw: '\u201cDear valued customer, we miss you! Here\u2019s 10% off.\u201d That\u2019s the best I can do with timestamps and uids — I don\u2019t know what this person valued, or why they drifted.',
+      rawVerdict: 'verdict · generic — a coupon for a stranger',
+      rich: '\u201cSara — the derby is Saturday, and seat A-114 hasn\u2019t been scanned in three weeks. Here\u2019s early access before general sale.\u201d Written from her actual behavior: team, seat, lapse signal. That\u2019s the difference between context and logs.',
+      richVerdict: 'verdict · personal — grounded in the profile'
+    }
+  ];
+
+  var chat = document.getElementById('aiChat');
+  var modeRawBtn = document.getElementById('aiModeRaw');
+  var modeRichBtn = document.getElementById('aiModeRich');
+  var ctxRaw = document.getElementById('aiContextRaw');
+  var ctxRich = document.getElementById('aiContextRich');
+  var qBtns = document.querySelectorAll('.ai-q');
+  if (!chat) return;
+
+  var mode = 'raw'; /* 'raw' | 'rich' */
+  var asked = [{}, {}, {}]; /* per question: { raw: true, rich: true } */
+  var answering = false;
+
+  function scrollChat() { chat.scrollTop = chat.scrollHeight; }
+
+  function addMsg(cls, html) {
+    var m = document.createElement('div');
+    m.className = 'ai-msg ' + cls;
+    m.innerHTML = html;
+    chat.appendChild(m);
+    scrollChat();
+    return m;
+  }
+
+  function setButtons(disabled) {
+    qBtns.forEach(function (b) { b.disabled = disabled; });
+  }
+
+  function markAsked(i) {
+    asked[i][mode] = true;
+    if (asked[i].raw && asked[i].rich) {
+      var b = qBtns[i];
+      if (!b.querySelector('.ai-q-badge')) {
+        var badge = document.createElement('span');
+        badge.className = 'ai-q-badge';
+        badge.textContent = 'compared ✓';
+        b.appendChild(badge);
+      }
+    }
+  }
+
+  function answer(i) {
+    if (answering) return;
+    answering = true;
+    setButtons(true);
+    var item = QA[i];
+    addMsg('ai-msg-user', item.q);
+    markAsked(i);
+
+    var typing = addMsg('ai-msg-bot', '<span class="ai-typing"><i></i><i></i><i></i></span>');
+    var full = mode === 'raw' ? item.raw : item.rich;
+    var verdict = mode === 'raw' ? item.rawVerdict : item.richVerdict;
+
+    function finish(textNode, bubble) {
+      var v = document.createElement('span');
+      v.className = 'ai-verdict';
+      v.textContent = verdict;
+      bubble.appendChild(v);
+      scrollChat();
+      answering = false;
+      setButtons(false);
+    }
+
+    var delay = reduceMotion ? 0 : 650;
+    setTimeout(function () {
+      typing.remove();
+      var bubble = addMsg('ai-msg-bot', '');
+      if (reduceMotion) {
+        bubble.textContent = full;
+        finish(null, bubble);
+        return;
+      }
+      var pos = 0;
+      var text = document.createTextNode('');
+      bubble.appendChild(text);
+      var t = setInterval(function () {
+        pos += 2;
+        text.textContent = full.slice(0, pos);
+        scrollChat();
+        if (pos >= full.length) {
+          clearInterval(t);
+          finish(text, bubble);
+        }
+      }, 14);
+    }, delay);
+  }
+
+  qBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      answer(parseInt(b.getAttribute('data-q'), 10));
+    });
+  });
+
+  function setMode(next) {
+    if (mode === next) return;
+    mode = next;
+    var raw = mode === 'raw';
+    modeRawBtn.classList.toggle('is-on', raw);
+    modeRawBtn.setAttribute('aria-pressed', raw ? 'true' : 'false');
+    modeRichBtn.classList.toggle('is-on', !raw);
+    modeRichBtn.setAttribute('aria-pressed', !raw ? 'true' : 'false');
+    ctxRaw.hidden = !raw;
+    ctxRich.hidden = raw;
+    var shown = raw ? ctxRaw : ctxRich;
+    shown.style.animation = 'none';
+    void shown.offsetWidth;
+    shown.style.animation = '';
+    addMsg('ai-msg-sys', raw
+      ? 'Context switched — the assistant now sees only the raw event log. Ask the same question again and compare.'
+      : 'Context switched — the assistant now receives the governed, enriched profile. Ask the same question again.');
+  }
+  if (modeRawBtn) modeRawBtn.addEventListener('click', function () { setMode('raw'); });
+  if (modeRichBtn) modeRichBtn.addEventListener('click', function () { setMode('rich'); });
+})();
+</script>
+{% endraw %}
