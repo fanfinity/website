@@ -1,40 +1,708 @@
 ---
 layout: page
+cta: false
 permalink: /platform/blocks/event-collection
 title: Event Collection
-description: "Capture and normalize every fan signal across web, app, ticketing, streaming, and on-site sources through Fanfinity Blocks."
+description: "Capture and normalize every fan signal across web, app, ticketing, streaming, and on-site sources — validated against a typed schema the moment it arrives."
 breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
-capabilities:
-  - { icon: plug,     title: "Open connector framework",    body: "Ingest events from web, app, ticketing, streaming, on-site, and offline sources without custom ETL. Raw payloads are normalized and validated as they arrive." }
-  - { icon: zap,      title: "Real-time ingestion",         body: "Events are captured and processed as they happen, not batched overnight. Fan signals reach your identity graph immediately, so recognition and response happen in real time." }
-  - { icon: check,    title: "Schema validation",           body: "Every event is validated against a typed schema as it arrives, so graph hygiene is enforced on the way in rather than repaired by nightly cleanup jobs." }
-  - { icon: database, title: "No parallel databases",        body: "Events flow directly into your Fanfinity warehouse. No vendor silo to sync or reconcile with your sources: one normalized event stream, one resolved graph." }
-benefits:
-  - "Reduce time-to-insight from days to seconds by capturing signals as fans act."
-  - "Lower integration cost by leveraging a shared connector framework instead of custom ETL per source."
-  - "Improve data quality by validating schemas on arrival rather than patching errors downstream."
-  - "Maintain data ownership by storing events in your environment, not a vendor platform."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Blocks"
-   title="Capture every signal in real time"
-   subtitle="Fanfinity Blocks ingests fan events from every touchpoint (web, app, ticketing, streaming, on-site, and offline) through an open connector framework that normalizes, validates, and delivers them to a unified event stream."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Blocks"
-   secondary_url="/platform/blocks"
-   icon="plug" %}
 
-{% include feature-grid.html
-   heading="From every touchpoint to one normalized stream"
-   subheading="Client-side SDKs and server-side connectors capture signals across every fan interaction, validate them against a schema, and deliver them into a typed, normalized event stream."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     EVENT COLLECTION — bespoke redesign
+     Concept: the firehose made playable. Six switchable sources emit
+     raw payloads that fly through normalize → validate → type gates
+     and land in one typed stream. Broken payloads bounce out at the
+     schema gate with a reason. All panel numbers are demo-simulated
+     and labeled as such. No invented product metrics.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="The source of truth for real-time response"
-   body="Fan data is most valuable the moment it arrives. Fanfinity Blocks captures every signal in real time, so your identity graph updates instantly, segmentation engines respond immediately, and activation systems can act within seconds of a fan interaction."
-   points=page.benefits
-   cta_text="See how signals are resolved"
-   cta_url="/platform/blocks/identity-stitching"
-   icon="zap" %}
+<section class="ec-hero">
+  <div class="container-page">
+    <div class="ec-hero-grid">
+      <div class="ec-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Blocks · Event Collection</p>
+        <h1 class="ec-h1">
+          Every touchpoint.<br>
+          <span class="ec-accent">One live stream.<svg class="ec-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="ec-lede">Client-side SDKs and server-side connectors capture fan signals across web, app, ticketing, streaming, on-site, and offline — then normalize, validate, and type every event the moment it arrives. No custom ETL, no nightly cleanup.</p>
+        <div class="ec-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#collector" class="btn btn-secondary btn-lg">Watch it flow<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="ec-hero-strip" aria-label="What collection guarantees">
+          <li>Typed events</li>
+          <li>Schema-validated</li>
+          <li>Real-time</li>
+          <li>Your warehouse</li>
+        </ul>
+      </div>
+
+      <div class="ec-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="ec-mini">
+          <div class="ec-mini-srcs">
+            <span class="ec-mini-src"><i style="--sc:#a78bff"></i>web</span>
+            <span class="ec-mini-src"><i style="--sc:#e8b45a"></i>ticketing</span>
+            <span class="ec-mini-src"><i style="--sc:#4ec9b0"></i>app</span>
+          </div>
+          <div class="ec-mini-bus"><span></span><span></span><span></span></div>
+          <div class="ec-mini-gate">
+            <span class="ec-mini-gate-label">Fanfinity Blocks</span>
+            <span class="ec-mini-gate-steps">normalize → validate → type</span>
+          </div>
+          <div class="ec-mini-bus"><span></span><span></span><span></span></div>
+          <div class="ec-mini-stream">
+            <p class="ec-mini-line"><i style="--sc:#a78bff"></i>page.view <em>✓</em></p>
+            <p class="ec-mini-line"><i style="--sc:#e8b45a"></i>ticket.scan <em>✓</em></p>
+            <p class="ec-mini-line"><i style="--sc:#4ec9b0"></i>app.login <em>✓</em></p>
+          </div>
+        </div>
+        <p class="ec-hero-art-note">Raw in, typed out — validated on arrival, not repaired at 02:00.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE COLLECTOR (playable centerpiece) ==================== -->
+<section class="ec-machine" id="collector">
+  <div class="container-page">
+    <div class="ec-sec-head ec-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The firehose</p>
+      <h2 class="ec-h2">Switch sources on.<br>Watch clean events come out.</h2>
+      <p class="ec-sec-sub">This is a live simulation of the collection layer. Toggle sources, inject a broken payload, and watch the schema gate do the job a nightly cleanup job used to do.</p>
+      <div class="ec-controls">
+        <button type="button" class="ec-ctl-btn" id="ecInject">⚡ Inject a broken payload</button>
+        <button type="button" class="ec-ctl-btn" id="ecPause" aria-pressed="false">⏸ Pause the firehose</button>
+      </div>
+    </div>
+
+    <div class="ec-machine-grid">
+      <!-- 01 · Sources -->
+      <div class="ec-panel" data-reveal>
+        <p class="ec-panel-label">01 · Sources</p>
+        <div class="ec-srcs" id="ecSrcs">
+          <div class="ec-src" data-src="web" style="--sc:#a78bff">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">Web SDK</span>
+            <span class="ec-src-note">page · click · session</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="true" aria-label="Toggle Web SDK"><span></span></button>
+          </div>
+          <div class="ec-src" data-src="app" style="--sc:#4ec9b0">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">App SDK</span>
+            <span class="ec-src-note">open · view · login</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="true" aria-label="Toggle App SDK"><span></span></button>
+          </div>
+          <div class="ec-src" data-src="ticket" style="--sc:#e8b45a">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">Ticketing API</span>
+            <span class="ec-src-note">scan · purchase</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="true" aria-label="Toggle Ticketing API"><span></span></button>
+          </div>
+          <div class="ec-src" data-src="stream" style="--sc:#f27fa0">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">Streaming</span>
+            <span class="ec-src-note">start · watch · drop</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="true" aria-label="Toggle Streaming"><span></span></button>
+          </div>
+          <div class="ec-src" data-src="onsite" style="--sc:#7dd069">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">On-site POS</span>
+            <span class="ec-src-note">purchase · gate entry</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="true" aria-label="Toggle On-site POS"><span></span></button>
+          </div>
+          <div class="ec-src" data-src="offline" style="--sc:#9aa8c7">
+            <span class="ec-src-dot"></span>
+            <span class="ec-src-name">Offline import</span>
+            <span class="ec-src-note">csv · crm sync</span>
+            <button type="button" class="ec-switch" role="switch" aria-checked="false" aria-label="Toggle Offline import"><span></span></button>
+          </div>
+        </div>
+        <p class="ec-panel-note">Six connectors, one framework. Flip a source off and watch its color leave the stream — that is the whole integration effort.</p>
+      </div>
+
+      <!-- 02 · Pipeline -->
+      <div class="ec-panel ec-panel-pipe" data-reveal style="--reveal-delay:80ms">
+        <p class="ec-panel-label">02 · Normalize → validate → type</p>
+        <div class="ec-pipe" id="ecPipe" aria-hidden="true">
+          <div class="ec-gate" style="left:12%"><span>normalize</span></div>
+          <div class="ec-gate" style="left:47%"><span>validate</span></div>
+          <div class="ec-gate" style="left:80%"><span>type</span></div>
+          <div class="ec-pipe-lanes"></div>
+          <div class="ec-bin" id="ecBin"><span class="ec-bin-label">rejected</span><span class="ec-bin-count" id="ecBinCount">0</span></div>
+        </div>
+        <p class="ec-pipe-log" id="ecLog">listening on 5 sources…</p>
+      </div>
+
+      <!-- 03 · Stream -->
+      <div class="ec-panel" data-reveal style="--reveal-delay:160ms">
+        <p class="ec-panel-label">03 · One typed stream</p>
+        <div class="ec-stats">
+          <div class="ec-stat"><span class="ec-stat-num" id="ecCaptured">0</span><span class="ec-stat-label">captured</span></div>
+          <div class="ec-stat"><span class="ec-stat-num" id="ecValid">100%</span><span class="ec-stat-label">schema-valid</span></div>
+          <div class="ec-stat"><span class="ec-stat-num" id="ecRejected">0</span><span class="ec-stat-label">rejected</span></div>
+        </div>
+        <div class="ec-feed" id="ecFeed" aria-live="polite">
+          <p class="ec-feed-empty" id="ecFeedEmpty">Typed events land here the moment they clear the gates…</p>
+        </div>
+        <p class="ec-feed-note">Simulated live — every number on this panel is from this demo.</p>
+      </div>
+    </div>
+
+    <p class="ec-machine-caption" data-reveal>A signal that fails the schema never touches your graph. It bounces here, with the reason attached — not in a warehouse table next quarter.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="ec-caps-sec">
+  <div class="container-page">
+    <div class="ec-sec-head" data-reveal>
+      <p class="eyebrow">How event collection works</p>
+      <h2 class="ec-h2">From every touchpoint<br>to one normalized stream</h2>
+      <p class="ec-sec-sub">Signals arrive messy — different SDKs, different payloads, different clocks. Blocks turns all of it into one typed, validated stream before anything touches your graph.</p>
+    </div>
+
+    <ol class="ec-caps">
+      <li class="ec-cap" data-reveal>
+        <span class="ec-cap-num">01</span>
+        <span class="icon-chip">{% include icon.html name="plug" class="h-5 w-5" %}</span>
+        <h3>Open connector framework</h3>
+        <p>Ingest events from web, app, ticketing, streaming, on-site, and offline sources without custom ETL. Raw payloads are normalized and validated as they arrive.</p>
+      </li>
+      <li class="ec-cap" data-reveal style="--reveal-delay:80ms">
+        <span class="ec-cap-num">02</span>
+        <span class="icon-chip">{% include icon.html name="bolt" class="h-5 w-5" %}</span>
+        <h3>Real-time ingestion</h3>
+        <p>Events are captured and processed as they happen, not batched overnight. Fan signals reach your identity graph immediately, so recognition and response happen in real time.</p>
+      </li>
+      <li class="ec-cap" data-reveal style="--reveal-delay:160ms">
+        <span class="ec-cap-num">03</span>
+        <span class="icon-chip">{% include icon.html name="check" class="h-5 w-5" %}</span>
+        <h3>Schema validation</h3>
+        <p>Every event is validated against a typed schema as it arrives, so graph hygiene is enforced on the way in rather than repaired by nightly cleanup jobs.</p>
+      </li>
+      <li class="ec-cap" data-reveal style="--reveal-delay:240ms">
+        <span class="ec-cap-num">04</span>
+        <span class="icon-chip">{% include icon.html name="stack" class="h-5 w-5" %}</span>
+        <h3>No parallel databases</h3>
+        <p>Events flow directly into your Fanfinity warehouse. No vendor silo to sync or reconcile with your sources: one normalized event stream, one resolved graph.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== ANATOMY OF AN EVENT ==================== -->
+<section class="ec-anat-sec" id="anatomy">
+  <div class="container-page">
+    <div class="ec-sec-head" data-reveal>
+      <p class="eyebrow">Under the hood</p>
+      <h2 class="ec-h2">Anatomy of an event,<br>before and after</h2>
+      <p class="ec-sec-sub">A real raw payload from a ticketing app — and what it becomes after the normalizer runs. Press the button and watch each field find its place.</p>
+    </div>
+
+    <div class="ec-anat" data-reveal>
+      <div class="ec-anat-pane ec-anat-raw">
+        <p class="ec-anat-label">Before · raw payload</p>
+        <pre>{"ev":"scan","uid":"c_8f2",
+ "t":1739482621,"src":"app_v3",
+ "seat":"A-114","px":"49.5"}</pre>
+        <p class="ec-anat-note">five fields · no types · epoch time · who knows what "px" is</p>
+      </div>
+
+      <div class="ec-anat-mid">
+        <button type="button" class="ec-anat-run" id="ecRun">Run the normalizer →</button>
+        <ul class="ec-anat-map" id="ecMap" aria-live="polite">
+          <li data-step="0"><span class="ec-map-from">ev</span><span class="ec-map-arrow">→</span><span class="ec-map-to">event: <b>ticket.scan</b> · typed</span></li>
+          <li data-step="1"><span class="ec-map-from">uid</span><span class="ec-map-arrow">→</span><span class="ec-map-to">user_id: <b>c_8f2</b> · string</span></li>
+          <li data-step="2"><span class="ec-map-from">t</span><span class="ec-map-arrow">→</span><span class="ec-map-to">timestamp: <b>2026-02-13T19:43:41Z</b> · UTC</span></li>
+          <li data-step="3"><span class="ec-map-from">seat, px</span><span class="ec-map-arrow">→</span><span class="ec-map-to">properties: <b>seat · price_usd</b> · typed</span></li>
+          <li data-step="4"><span class="ec-map-from">src</span><span class="ec-map-arrow">→</span><span class="ec-map-to">source: <b>ticketing/app v3</b> · connector</span></li>
+        </ul>
+      </div>
+
+      <div class="ec-anat-pane ec-anat-clean" id="ecClean" aria-hidden="true">
+        <p class="ec-anat-label">After · typed event <span class="ec-anat-badge" id="ecBadge" hidden>✓ schema v2 · validated</span></p>
+        <pre>event:      ticket.scan
+user_id:    c_8f2
+timestamp:  2026-02-13T19:43:41Z
+source:     ticketing/app v3
+properties: { seat: "A-114", price_usd: 49.50 }
+schema:     v2 · validated ✓</pre>
+        <p class="ec-anat-note">one typed record · queryable · safe to stitch</p>
+      </div>
+    </div>
+    <p class="ec-anat-caption" data-reveal>Validation happens on arrival — so "repair" is a job nobody has to run.</p>
+  </div>
+</section>
+
+<!-- ==================== CONNECTORS BAND ==================== -->
+<section class="ec-conn-sec">
+  <div class="container-page">
+    <div class="ec-conn" data-reveal>
+      <p class="ec-conn-title">One framework, every source</p>
+      <ul class="ec-conn-chips" aria-label="Connector types">
+        <li>Web SDK</li>
+        <li>iOS SDK</li>
+        <li>Android SDK</li>
+        <li>Ticketing API</li>
+        <li>Streaming</li>
+        <li>POS / On-site</li>
+        <li>Offline import</li>
+        <li>Webhooks</li>
+      </ul>
+      <p class="ec-conn-note">New sources land as connectors, not projects — the schema gate treats them all the same.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY REAL-TIME ==================== -->
+<section class="ec-why-sec">
+  <div class="container-page">
+    <div class="ec-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="ec-h2">The source of truth for<br>real-time response</h2>
+        <p class="ec-sec-sub">Fan data is most valuable the moment it arrives. Blocks captures every signal in real time, so your identity graph updates instantly, segmentation responds immediately, and activation can act within seconds of a fan interaction.</p>
+        <a href="{{ '/platform/blocks/identity-stitching' | relative_url }}" class="ec-why-link">See how signals are resolved <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="ec-why-points" data-reveal style="--reveal-delay:120ms">
+        <li>Reduce time-to-insight from days to seconds by capturing signals as fans act.</li>
+        <li>Lower integration cost with a shared connector framework instead of custom ETL per source.</li>
+        <li>Improve data quality by validating schemas on arrival rather than patching errors downstream.</li>
+        <li>Maintain data ownership by storing events in your environment, not a vendor platform.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Capture every signal your fans already send"
+   text="See Blocks collect, validate, and stream events from your own sources — web, app, ticketing, and on-site — into one typed stream. Book a walkthrough and we'll map it to your stack." %}
+
+{% raw %}
+<style>
+/* ================= Event Collection — scoped styles (.ec-) ================= */
+.ec-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.ec-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.ec-hero-grid > *, .ec-machine-grid > *, .ec-why-grid > *, .ec-anat > * { min-width: 0; }
+@media (min-width: 1024px) { .ec-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.ec-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.ec-accent { position: relative; display: inline-block; color: #854dff; }
+.ec-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.ec-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.ec-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.ec-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.ec-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.ec-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero mini pipeline */
+.ec-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.ec-mini { width: min(100%, 380px); display: flex; flex-direction: column; }
+.ec-mini-srcs { display: flex; justify-content: space-between; gap: 0.5rem; }
+.ec-mini-src { display: inline-flex; align-items: center; gap: 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; color: var(--color-foreground); border: 1px solid var(--color-border); background: var(--color-card); border-radius: 9999px; padding: 0.35rem 0.75rem; }
+.ec-mini-src i { width: 8px; height: 8px; border-radius: 9999px; background: var(--sc); box-shadow: 0 0 8px var(--sc); }
+.ec-mini-bus { display: flex; justify-content: space-around; padding: 0 2.5rem; height: 26px; }
+.ec-mini-bus span { width: 2px; height: 100%; background: linear-gradient(#c4aaff, #854dff); position: relative; overflow: visible; }
+.ec-mini-bus span::after { content: ""; position: absolute; left: -2.5px; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; animation: ec-pulse 2.4s ease-in-out infinite; }
+.ec-mini-bus span:nth-child(2)::after { animation-delay: 0.6s; }
+.ec-mini-bus span:nth-child(3)::after { animation-delay: 1.2s; }
+@keyframes ec-pulse { 0%, 100% { top: -3px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 50% { top: calc(100% - 4px); } }
+.ec-mini-gate { background: #0f0a1a; border: 1px solid rgba(153,105,255,0.45); box-shadow: 0 18px 44px -20px rgba(133,77,255,0.45); border-radius: 14px; padding: 0.9rem 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.ec-mini-gate-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c4aaff; margin-right: auto; }
+.ec-mini-gate-steps { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; color: #fff; letter-spacing: 0.03em; }
+.ec-mini-stream { background: var(--color-card); border: 1px solid var(--color-border); border-radius: 14px; padding: 0.8rem 1.1rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.ec-mini-line { display: flex; align-items: center; gap: 0.5rem; margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; color: var(--color-foreground); }
+.ec-mini-line i { width: 7px; height: 7px; border-radius: 9999px; background: var(--sc); }
+.ec-mini-line em { margin-left: auto; font-style: normal; color: #854dff; font-weight: 700; }
+.ec-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.ec-sec-head { max-width: 46rem; margin-bottom: 3rem; }
+.ec-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.ec-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The collector (dark) ================= */
+.ec-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.ec-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 85% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.ec-machine .container-page { position: relative; }
+.ec-on-dark .ec-h2 { color: #fff; }
+.ec-on-dark .ec-sec-sub { color: rgba(244,240,251,0.62); }
+
+.ec-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+.ec-ctl-btn { border: 1px solid rgba(170,128,255,0.5); background: rgba(133,77,255,0.14); color: #e7defc; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.55rem 1.1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.ec-ctl-btn:hover { background: rgba(133,77,255,0.3); border-color: #aa80ff; transform: translateY(-1px); }
+.ec-ctl-btn.is-on { background: #854dff; color: #fff; border-color: #854dff; }
+
+.ec-machine-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 1100px) { .ec-machine-grid { grid-template-columns: 0.95fr 1.3fr 0.95fr; gap: 1.5rem; align-items: start; } }
+
+.ec-panel { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.1); border-radius: 18px; padding: 1.25rem; }
+.ec-panel-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aa80ff; margin: 0 0 1rem; }
+.ec-panel-note { margin: 0.9rem 0 0; font-size: 0.78rem; line-height: 1.6; color: rgba(244,240,251,0.5); }
+
+/* Sources */
+.ec-srcs { display: grid; gap: 0.55rem; }
+@media (min-width: 480px) and (max-width: 1099px) { .ec-srcs { grid-template-columns: 1fr 1fr; } }
+.ec-src { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "dot name switch" "dot note switch"; align-items: center; column-gap: 0.6rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 0.65rem 0.85rem; transition: border-color 0.2s, opacity 0.2s; }
+.ec-src-dot { grid-area: dot; width: 9px; height: 9px; border-radius: 9999px; background: var(--sc); box-shadow: 0 0 10px var(--sc); }
+.ec-src-name { grid-area: name; font-size: 0.85rem; font-weight: 600; color: #fff; }
+.ec-src-note { grid-area: note; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; letter-spacing: 0.04em; color: rgba(244,240,251,0.45); }
+.ec-src.is-off { opacity: 0.45; }
+.ec-src.is-off .ec-src-dot { box-shadow: none; }
+.ec-switch { grid-area: switch; width: 38px; height: 22px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); position: relative; cursor: pointer; padding: 0; transition: background 0.2s, border-color 0.2s; }
+.ec-switch span { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 9999px; background: #8d9bb5; transition: transform 0.2s, background 0.2s; }
+.ec-switch[aria-checked="true"] { background: rgba(133,77,255,0.5); border-color: #9969ff; }
+.ec-switch[aria-checked="true"] span { transform: translateX(16px); background: #fff; }
+
+/* Pipeline */
+.ec-panel-pipe { display: flex; flex-direction: column; }
+.ec-pipe { position: relative; height: 220px; border-radius: 14px; background: rgba(0,0,0,0.25); border: 1px dashed rgba(153,105,255,0.3); overflow: hidden; }
+.ec-pipe-lanes { position: absolute; inset: 0.6rem 0.6rem 3.2rem; background: repeating-linear-gradient(to bottom, transparent 0 52px, rgba(153,105,255,0.08) 52px 53px); border-radius: 8px; }
+.ec-gate { position: absolute; top: 0.35rem; transform: translateX(-50%); z-index: 2; }
+.ec-gate span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #c4aaff; background: rgba(15,10,26,0.85); border: 1px solid rgba(153,105,255,0.35); border-radius: 9999px; padding: 0.15rem 0.55rem; }
+.ec-gate::after { content: ""; position: absolute; top: 1.4rem; left: 50%; width: 1px; height: calc(220px - 4.6rem); background: linear-gradient(rgba(153,105,255,0.4), transparent); }
+.ec-fly { position: absolute; left: 0; z-index: 3; display: inline-flex; align-items: center; gap: 0.35rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; color: #fff; background: #1b1230; border: 1px solid var(--sc, #9969ff); border-radius: 8px; padding: 0.25rem 0.5rem; white-space: nowrap; transition: transform 1.9s linear, opacity 0.35s, box-shadow 0.3s; will-change: transform; }
+.ec-fly i { width: 6px; height: 6px; border-radius: 9999px; background: var(--sc, #9969ff); flex-shrink: 0; }
+.ec-fly.is-bad { border-color: #ff6b81; }
+.ec-fly.is-bad i { background: #ff6b81; }
+.ec-fly.is-rejected { transition: transform 0.45s cubic-bezier(0.4,0,0.6,1), opacity 0.45s; opacity: 0; }
+.ec-fly.is-ok { box-shadow: 0 0 14px -2px var(--sc, #9969ff); }
+.ec-bin { position: absolute; right: 0.6rem; bottom: 0.55rem; display: inline-flex; align-items: center; gap: 0.45rem; border: 1px dashed rgba(255,107,129,0.5); border-radius: 9px; padding: 0.3rem 0.6rem; }
+.ec-bin-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: #ff8ba0; }
+.ec-bin-count { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 700; color: #ff6b81; }
+.ec-pipe-log { margin: 0.85rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; line-height: 1.6; letter-spacing: 0.02em; color: rgba(244,240,251,0.5); min-height: 2.2em; }
+
+/* Stream feed + stats */
+.ec-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 0.85rem; }
+.ec-stat { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 0.55rem 0.7rem; }
+.ec-stat-num { display: block; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.15rem; color: #fff; font-variant-numeric: tabular-nums; }
+.ec-stat-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,240,251,0.45); }
+.ec-feed { position: relative; height: 264px; overflow: hidden; border-radius: 12px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.08); padding: 0.6rem 0.7rem; display: flex; flex-direction: column; gap: 0.32rem; }
+.ec-feed-empty { margin: auto; font-size: 0.8rem; line-height: 1.6; text-align: center; color: rgba(244,240,251,0.4); padding: 0 1rem; }
+.ec-line { display: flex; align-items: baseline; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; color: #e7defc; animation: ec-line-in 0.35s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes ec-line-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.ec-line i { width: 7px; height: 7px; border-radius: 9999px; background: var(--sc); flex-shrink: 0; align-self: center; box-shadow: 0 0 8px var(--sc); }
+.ec-line b { color: #fff; font-weight: 600; }
+.ec-line em { font-style: normal; color: #7dd069; }
+.ec-line time { margin-left: auto; color: rgba(244,240,251,0.4); font-size: 0.6rem; }
+.ec-feed-note { margin: 0.6rem 0 0; font-size: 0.7rem; line-height: 1.5; color: rgba(244,240,251,0.35); font-style: italic; }
+
+.ec-machine-caption { margin: 2.5rem auto 0; max-width: 40rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+
+/* ================= Capabilities ================= */
+.ec-caps-sec { padding: 6.5rem 0; }
+.ec-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .ec-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .ec-caps { grid-template-columns: repeat(4, 1fr); } }
+.ec-cap { position: relative; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.ec-cap:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.ec-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #c4aaff; }
+.ec-cap .icon-chip { margin-bottom: 1rem; }
+.ec-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.ec-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= Anatomy of an event ================= */
+.ec-anat-sec { padding: 0 0 6.5rem; }
+.ec-anat { display: grid; gap: 1.25rem; align-items: stretch; }
+@media (min-width: 1024px) { .ec-anat { grid-template-columns: 1fr 0.9fr 1fr; gap: 1.5rem; } }
+.ec-anat-pane { border-radius: 18px; padding: 1.25rem 1.35rem; border: 1px solid var(--color-border); }
+.ec-anat-raw { background: #14101d; border-color: rgba(255,255,255,0.08); }
+.ec-anat-raw .ec-anat-label { color: #8d7ea6; }
+.ec-anat-raw pre { color: #6f6089; }
+.ec-anat-raw .ec-anat-note { color: #5d5178; }
+.ec-anat-clean { background: #f6f1ff; border-color: #dccfff; opacity: 0.35; transition: opacity 0.5s, box-shadow 0.5s; }
+.ec-anat-clean.is-done { opacity: 1; box-shadow: 0 18px 44px -22px rgba(133,77,255,0.35); }
+.ec-anat-clean .ec-anat-label { color: #854dff; }
+.ec-anat-clean pre { color: #3c2a5e; }
+.ec-anat-clean .ec-anat-note { color: #854dff; }
+.ec-anat-label { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 0.85rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.ec-anat-badge { font-size: 0.58rem; letter-spacing: 0.06em; text-transform: none; color: #0f0a1a; background: #c4aaff; border-radius: 9999px; padding: 0.15rem 0.55rem; animation: ec-line-in 0.35s both; }
+.ec-anat-pane pre { margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 1.9; white-space: pre-wrap; word-break: break-word; }
+.ec-anat-note { margin: 0.9rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; letter-spacing: 0.04em; }
+
+.ec-anat-mid { display: flex; flex-direction: column; gap: 1rem; justify-content: center; }
+.ec-anat-run { align-self: flex-start; border: 1px solid #c4aaff; background: rgba(133,77,255,0.1); color: #5b2ed6; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.6rem 1.2rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+.ec-anat-run:hover { background: rgba(133,77,255,0.2); transform: translateY(-1px); }
+.ec-anat-run:disabled { opacity: 0.55; cursor: default; transform: none; }
+.ec-anat-map { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.ec-anat-map li { display: flex; align-items: baseline; gap: 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; opacity: 0; transform: translateY(8px); transition: opacity 0.4s, transform 0.4s; }
+.ec-anat-map li.is-in { opacity: 1; transform: none; }
+.ec-map-from { color: #8d7ea6; background: rgba(20,16,29,0.06); border-radius: 6px; padding: 0.15rem 0.45rem; }
+.ec-map-arrow { color: #854dff; font-weight: 700; }
+.ec-map-to { color: var(--color-foreground); }
+.ec-map-to b { color: #5b2ed6; }
+.ec-anat-caption { margin: 2rem auto 0; max-width: 38rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= Connectors band ================= */
+.ec-conn-sec { padding: 0 0 6.5rem; }
+.ec-conn { border: 1px solid var(--color-border); border-radius: 18px; background: var(--color-card); padding: 2rem; text-align: center; }
+.ec-conn-title { margin: 0; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.35rem; }
+.ec-conn-chips { list-style: none; margin: 1.25rem auto 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; max-width: 44rem; }
+.ec-conn-chips li { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--color-foreground); border: 1px solid var(--color-border); border-radius: 9999px; padding: 0.4rem 0.9rem; transition: border-color 0.2s, color 0.2s; }
+.ec-conn-chips li:hover { border-color: #9969ff; color: #5b2ed6; }
+.ec-conn-note { margin: 1.1rem auto 0; font-size: 0.85rem; color: var(--color-muted-foreground); max-width: 34rem; }
+
+/* ================= Why real-time ================= */
+.ec-why-sec { padding: 0 0 6.5rem; }
+.ec-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .ec-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.ec-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.ec-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.ec-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.ec-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.ec-why-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .ec-mini-src, html.dark .ec-mini-stream { background: #17101f; border-color: rgba(255,255,255,0.1); }
+html.dark .ec-mini-src, html.dark .ec-mini-line { color: #e7defc; }
+html.dark .ec-anat-clean { background: #1d1430; border-color: rgba(153,105,255,0.4); }
+html.dark .ec-anat-clean pre { color: #d9ccf5; }
+html.dark .ec-map-from { background: rgba(255,255,255,0.08); }
+html.dark .ec-map-to { color: #e7defc; }
+html.dark .ec-cap:hover { border-color: rgba(153,105,255,0.4); }
+
+/* ================= Reduced motion ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ec-mini-bus span::after, .ec-line { animation: none !important; }
+  .ec-fly { transition: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .ec-hero { padding-top: 4rem; }
+  .ec-pipe { height: 190px; }
+  .ec-feed { height: 230px; }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     1 · THE COLLECTOR — sources emit, gates validate, stream types
+     ============================================================ */
+  var SOURCES = {
+    web:     { label: 'Web SDK',       evs: ['page.view', 'cta.click', 'web.session'] },
+    app:     { label: 'App SDK',       evs: ['app.open', 'app.view', 'app.login'] },
+    ticket:  { label: 'Ticketing API', evs: ['ticket.scan', 'ticket.buy'] },
+    stream:  { label: 'Streaming',     evs: ['stream.start', 'stream.watch'] },
+    onsite:  { label: 'On-site POS',   evs: ['pos.purchase', 'gate.entry'] },
+    offline: { label: 'Offline import',evs: ['csv.import', 'crm.sync'] }
+  };
+  var REASONS = [
+    'missing field: user_id',
+    'timestamp not UTC',
+    'event name not typed',
+    'unknown schema: v0',
+    'properties.price wrong type'
+  ];
+
+  var pipe = document.getElementById('ecPipe');
+  var feed = document.getElementById('ecFeed');
+  var feedEmpty = document.getElementById('ecFeedEmpty');
+  var logEl = document.getElementById('ecLog');
+  var elCaptured = document.getElementById('ecCaptured');
+  var elValid = document.getElementById('ecValid');
+  var elRejected = document.getElementById('ecRejected');
+  var elBinCount = document.getElementById('ecBinCount');
+  var injectBtn = document.getElementById('ecInject');
+  var pauseBtn = document.getElementById('ecPause');
+  if (!pipe || !feed) return;
+
+  var srcEls = {};
+  document.querySelectorAll('.ec-src').forEach(function (el) {
+    srcEls[el.getAttribute('data-src')] = el;
+  });
+
+  var on = { web: true, app: true, ticket: true, stream: true, onsite: true, offline: false };
+  var timers = [];
+  var paused = false;
+  var captured = 0, ok = 0, rejected = 0;
+
+  function later(fn, ms) {
+    if (reduceMotion) { fn(); return null; }
+    var t = setTimeout(fn, ms);
+    timers.push(t);
+    return t;
+  }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  function setLog(msg) { if (logEl) logEl.textContent = msg; }
+
+  function updateStats() {
+    elCaptured.textContent = captured;
+    elRejected.textContent = rejected;
+    elBinCount.textContent = rejected;
+    var total = ok + rejected;
+    elValid.textContent = total ? Math.round((ok / total) * 100) + '%' : '100%';
+  }
+
+  function appendFeedLine(srcKey, evName) {
+    if (feedEmpty) feedEmpty.remove();
+    var line = document.createElement('p');
+    line.className = 'ec-line';
+    line.style.setProperty('--sc', colorOf(srcKey));
+    var ms = 18 + Math.floor(Math.random() * 79);
+    line.innerHTML = '<i></i><b>' + evName + '</b><span>' +
+      'uid_' + Math.random().toString(36).slice(2, 6) + '</span><em>✓ v2</em><time>+' + ms + 'ms</time>';
+    feed.insertBefore(line, feed.firstChild);
+    while (feed.children.length > 11) feed.removeChild(feed.lastChild);
+  }
+  function colorOf(key) {
+    var el = srcEls[key];
+    return el ? el.style.getPropertyValue('--sc') : '#9969ff';
+  }
+
+  function spawn(srcKey, broken) {
+    if (!on[srcKey]) return;
+    var evName = broken ? '???.' + pick(['scan', 'view', 'click']) : pick(SOURCES[srcKey].evs);
+    captured++;
+    updateStats();
+
+    if (reduceMotion) {
+      /* no flight — resolve immediately */
+      if (broken) rejectNow(srcKey, evName);
+      else { ok++; appendFeedLine(srcKey, evName); setLog(evName + ' · typed ✓ validated ✓ · in the stream'); }
+      updateStats();
+      return;
+    }
+
+    var card = document.createElement('span');
+    card.className = 'ec-fly' + (broken ? ' is-bad' : '');
+    card.style.setProperty('--sc', broken ? '#ff6b81' : colorOf(srcKey));
+    card.style.top = (18 + Math.floor(Math.random() * 3) * 55) + 'px';
+    card.innerHTML = '<i></i>' + evName;
+    pipe.appendChild(card);
+
+    var dist = pipe.clientWidth - card.offsetWidth - 24;
+    /* launch on next frame */
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        card.style.transform = 'translateX(' + dist + 'px)';
+      });
+    });
+
+    if (broken) {
+      /* bounce out at the validate gate (~47% across) */
+      later(function () {
+        card.style.transform = 'translateX(' + Math.round(dist * 0.47) + 'px) translateY(52px) scale(0.75)';
+        card.classList.add('is-rejected');
+      }, 950);
+      later(function () {
+        card.remove();
+        rejectNow(srcKey, evName);
+      }, 1420);
+    } else {
+      later(function () { card.classList.add('is-ok'); }, 1250);
+      later(function () {
+        card.remove();
+        ok++;
+        appendFeedLine(srcKey, evName);
+        setLog(evName + ' · normalized ✓ validated ✓ typed ✓ · joined the stream');
+        updateStats();
+      }, 2000);
+    }
+  }
+
+  function rejectNow(srcKey, evName) {
+    rejected++;
+    updateStats();
+    setLog('✗ ' + evName + ' from ' + SOURCES[srcKey].label + ' rejected at the schema gate — ' + pick(REASONS) + '. Your graph never saw it.');
+  }
+
+  /* per-source emit loops */
+  function loopSource(key) {
+    function tick() {
+      if (!paused && on[key]) spawn(key, false);
+      timers.push(setTimeout(tick, 900 + Math.random() * 1700));
+    }
+    timers.push(setTimeout(tick, 300 + Math.random() * 900));
+  }
+  Object.keys(SOURCES).forEach(loopSource);
+
+  /* ambient broken payload every so often, so the gate shows its work */
+  (function badLoop() {
+    timers.push(setTimeout(function () {
+      if (!paused) {
+        var active = Object.keys(SOURCES).filter(function (k) { return on[k]; });
+        if (active.length) spawn(pick(active), true);
+      }
+      badLoop();
+    }, 14000 + Math.random() * 8000));
+  })();
+
+  /* controls */
+  document.querySelectorAll('.ec-src').forEach(function (el) {
+    var key = el.getAttribute('data-src');
+    var sw = el.querySelector('.ec-switch');
+    sw.addEventListener('click', function () {
+      on[key] = !on[key];
+      sw.setAttribute('aria-checked', on[key] ? 'true' : 'false');
+      el.classList.toggle('is-off', !on[key]);
+      var count = Object.keys(SOURCES).filter(function (k) { return on[k]; }).length;
+      setLog(on[key]
+        ? SOURCES[key].label + ' connected — events flowing. No deploy, no ETL.'
+        : SOURCES[key].label + ' disconnected — its color leaves the stream.');
+      if (!count) setLog('all sources off — the stream is quiet. Flip one back on.');
+    });
+  });
+
+  if (injectBtn) injectBtn.addEventListener('click', function () {
+    var active = Object.keys(SOURCES).filter(function (k) { return on[k]; });
+    if (!active.length) { setLog('no sources are on — turn one on, then break things.'); return; }
+    spawn(pick(active), true);
+  });
+
+  if (pauseBtn) pauseBtn.addEventListener('click', function () {
+    paused = !paused;
+    pauseBtn.classList.toggle('is-on', paused);
+    pauseBtn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+    pauseBtn.textContent = paused ? '▶ Resume the firehose' : '⏸ Pause the firehose';
+    setLog(paused ? 'paused — sources hold their events.' : 'listening again…');
+  });
+
+  updateStats();
+
+  /* ============================================================
+     2 · ANATOMY — run the normalizer over one raw payload
+     ============================================================ */
+  var runBtn = document.getElementById('ecRun');
+  var mapRows = document.querySelectorAll('#ecMap li');
+  var cleanPane = document.getElementById('ecClean');
+  var badge = document.getElementById('ecBadge');
+  var running = false;
+
+  function resetAnatomy() {
+    mapRows.forEach(function (li) { li.classList.remove('is-in'); });
+    if (cleanPane) cleanPane.classList.remove('is-done');
+    if (badge) badge.hidden = true;
+  }
+
+  if (runBtn) runBtn.addEventListener('click', function () {
+    if (running) return;
+    running = true;
+    runBtn.disabled = true;
+    resetAnatomy();
+    mapRows.forEach(function (li, i) {
+      setTimeout(function () {
+        li.classList.add('is-in');
+        if (i === mapRows.length - 1) {
+          setTimeout(function () {
+            if (cleanPane) cleanPane.classList.add('is-done');
+            if (badge) badge.hidden = false;
+            runBtn.textContent = '↺ Replay the normalizer';
+            runBtn.disabled = false;
+            running = false;
+          }, reduceMotion ? 0 : 500);
+        }
+      }, (reduceMotion ? 0 : 550) * i);
+    });
+  });
+})();
+</script>
+{% endraw %}

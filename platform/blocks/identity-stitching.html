@@ -1,40 +1,543 @@
 ---
 layout: page
+cta: false
 permalink: /platform/blocks/identity-stitching
 title: Identity Stitching
-description: "Match identifiers across devices, channels, and sessions in real time with Fanfinity Blocks."
+description: "Match identifiers across devices, channels, and sessions in real time — so every appearance of the same fan reads as one relationship, from first touch to now."
 breadcrumb_parent: { title: Fanfinity Blocks, url: /platform/blocks }
-capabilities:
-  - { icon: link,     title: "Real-time graph building",      body: "As events arrive, identifiers are matched and profiles are merged in real time, so the fan graph grows and evolves with every new signal, not overnight in a batch job." }
-  - { icon: users,    title: "Multi-identifier matching",     body: "Match on email, device ID, app ID, ticket number, loyalty ID, custom identifiers, or any combination. Resolution connects events across devices and channels instead of forcing identity on one hard key that is often missing." }
-  - { icon: repeat,   title: "Automatic history backfill",    body: "When profiles merge, new resolutions backfill history across all linked identifiers, so the complete relationship read as one story from first touch to present." }
-  - { icon: shield,   title: "Guardrails against false merges", body: "Per-identifier limits stop a shared device from over-merging distinct fans. When a limit would be crossed, records hold apart instead of guessing, so correct identity beats complete-but-wrong identity." }
-benefits:
-  - "Recognize fans instantly across all touchpoints, not after a nightly batch matches yesterday's events."
-  - "Reduce abandoned profiles by matching on multiple identifier types instead of one hard key."
-  - "Improve targeting accuracy by preserving distinct identities and preventing false merges."
-  - "Accelerate response by updating profiles in real time as fans switch devices or channels."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Blocks"
-   title="One fan, recognized across every device"
-   subtitle="Fanfinity Blocks stitches identifiers across devices, channels, and sessions in real time. The same fan shows up as a phone at the gate, a laptop on the stream, and an anonymous browser, and Blocks joins them into one profile instantly."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Blocks"
-   secondary_url="/platform/blocks"
-   icon="link" %}
 
-{% include feature-grid.html
-   heading="Real-time graph resolution"
-   subheading="As signals arrive, Blocks matches identifiers, merges profiles, and backfills history across all linked IDs. The fan graph evolves in real time, not overnight, and guardrails prevent false merges across distinct fans."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     IDENTITY STITCHING — bespoke redesign
+     Concept: "A week in the life of one fan." A draggable timeline
+     scrubs through six real moments; anonymous silhouettes snap
+     together into one golden fan as shared identifiers land, and
+     past events turn gold as history back-fills. A shared-device
+     moment shows guardrails holding a false merge apart.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="From fragmented signals to one unified identity"
-   body="Fans shift between devices and channels constantly. Fanfinity Blocks stitches these appearances together in real time, so one person across multiple devices, channels, and sessions reads as one relationship from first touch to now, and activation can target them wherever they appear next."
-   points=page.benefits
-   cta_text="See how resolution works"
-   cta_url="/platform/id"
-   icon="link" %}
+<section class="sx-hero">
+  <div class="container-page">
+    <div class="sx-hero-grid">
+      <div class="sx-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Blocks · Identity Stitching</p>
+        <h1 class="sx-h1">
+          Every device.<br>
+          <span class="sx-accent">One fan, instantly.<svg class="sx-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="sx-lede">The same fan shows up as a phone at the gate, a laptop on the stream, and an anonymous browser. Blocks matches identifiers across devices, channels, and sessions in real time — and joins them into one profile the moment evidence lands.</p>
+        <div class="sx-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#week" class="btn btn-secondary btn-lg">Scrub the week<span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="sx-hero-strip" aria-label="What stitching guarantees">
+          <li>Multi-identifier</li>
+          <li>Real-time merge</li>
+          <li>History back-fill</li>
+          <li>False-merge guardrails</li>
+        </ul>
+      </div>
+
+      <div class="sx-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="sx-mini">
+          <div class="sx-mini-anons">
+            <span class="sx-mini-anon"><i style="--ic:#9aa8c7"></i>cookie c_8f2</span>
+            <span class="sx-mini-anon"><i style="--ic:#a78bff"></i>sara@…</span>
+            <span class="sx-mini-anon"><i style="--ic:#4ec9b0"></i>device d_31</span>
+          </div>
+          <div class="sx-mini-bus"><span></span><span></span><span></span></div>
+          <div class="sx-mini-fan">
+            <span class="sx-mini-fan-label">Fanfinity ID</span>
+            <span class="sx-mini-fan-name">Fan #48211 · one relationship</span>
+          </div>
+          <p class="sx-mini-note">three records your tools counted → one person</p>
+        </div>
+        <p class="sx-hero-art-note">Resolution isn't a nightly job here — it happens between one heartbeat and the next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== A WEEK IN THE LIFE (playable centerpiece) ==================== -->
+<section class="sx-machine" id="week">
+  <div class="container-page">
+    <div class="sx-sec-head sx-on-dark" data-reveal>
+      <p class="eyebrow eyebrow-on-dark">Playable · The stitch</p>
+      <h2 class="sx-h2">A week in the life of one fan.<br>Drag through it.</h2>
+      <p class="sx-sec-sub">Six real moments, six days. Scrub the timeline — or press play — and watch three "anonymous" records snap into one golden fan, history back-filling in gold as they merge. One moment refuses to merge. That's the guardrail.</p>
+      <div class="sx-controls">
+        <button type="button" class="sx-ctl-btn" id="sxPlay" aria-pressed="false">▶ Play the week</button>
+        <button type="button" class="sx-ctl-btn" id="sxRestart">↺ Restart</button>
+      </div>
+    </div>
+
+    <div class="sx-stage-wrap" data-reveal>
+      <div class="sx-stats">
+        <div class="sx-stat">
+          <span class="sx-stat-num" id="sxRecords">0</span>
+          <span class="sx-stat-label">records your tools count</span>
+        </div>
+        <div class="sx-stat sx-stat-gold">
+          <span class="sx-stat-num" id="sxPeople">0</span>
+          <span class="sx-stat-label">resolved people</span>
+        </div>
+      </div>
+
+      <div class="sx-stage" id="sxStage" aria-live="polite">
+        <p class="sx-stage-empty" id="sxStageEmpty">Monday hasn't happened yet — press play, or drag the week below.</p>
+      </div>
+
+      <p class="sx-story" id="sxStory">Every appearance starts as a separate record in your tools. Watch the two numbers above disagree — until the stitching begins.</p>
+
+      <!-- timeline -->
+      <div class="sx-tl">
+        <input type="range" class="sx-tl-range" id="sxRange" min="0" max="6" step="1" value="0" aria-label="Scrub through the week">
+        <ol class="sx-tl-dots" id="sxDots">
+          <li data-step="1"><i></i><span class="sx-tl-when">Mon 19:41</span><span class="sx-tl-what">web visit</span></li>
+          <li data-step="2"><i></i><span class="sx-tl-when">Wed 12:03</span><span class="sx-tl-what">ticket scan</span></li>
+          <li data-step="3"><i></i><span class="sx-tl-when">Thu 08:17</span><span class="sx-tl-what">newsletter click</span></li>
+          <li data-step="4"><i></i><span class="sx-tl-when">Fri 19:43</span><span class="sx-tl-what">app login</span></li>
+          <li data-step="5"><i></i><span class="sx-tl-when">Sat 14:02</span><span class="sx-tl-what">on-site purchase</span></li>
+          <li data-step="6"><i></i><span class="sx-tl-when">Sat 18:55</span><span class="sx-tl-what">shared kiosk</span></li>
+        </ol>
+      </div>
+      <p class="sx-feed-note">An illustrative simulation — the mechanics (match, merge, back-fill, guardrail) are the real product behavior.</p>
+    </div>
+
+    <p class="sx-machine-caption" data-reveal>When Thu's click stitched the cookie to the inbox, Monday's "anonymous" session stopped being anonymous — retroactively. That is what back-fill means.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="sx-caps-sec">
+  <div class="container-page">
+    <div class="sx-sec-head" data-reveal>
+      <p class="eyebrow">How identity stitching works</p>
+      <h2 class="sx-h2">Real-time graph resolution</h2>
+      <p class="sx-sec-sub">As signals arrive, Blocks matches identifiers, merges profiles, and back-fills history across all linked IDs — and guardrails make sure the graph never merges two different fans into one.</p>
+    </div>
+
+    <ol class="sx-caps">
+      <li class="sx-cap" data-reveal>
+        <span class="sx-cap-num">01</span>
+        <span class="icon-chip">{% include icon.html name="link" class="h-5 w-5" %}</span>
+        <h3>Real-time graph building</h3>
+        <p>As events arrive, identifiers are matched and profiles merged in real time — the fan graph grows with every new signal, not overnight in a batch job.</p>
+      </li>
+      <li class="sx-cap" data-reveal style="--reveal-delay:80ms">
+        <span class="sx-cap-num">02</span>
+        <span class="icon-chip">{% include icon.html name="users" class="h-5 w-5" %}</span>
+        <h3>Multi-identifier matching</h3>
+        <p>Match on email, device ID, app ID, ticket number, loyalty ID, custom identifiers, or any combination — instead of forcing identity onto one hard key that is often missing.</p>
+      </li>
+      <li class="sx-cap" data-reveal style="--reveal-delay:160ms">
+        <span class="sx-cap-num">03</span>
+        <span class="icon-chip">{% include icon.html name="repeat" class="h-5 w-5" %}</span>
+        <h3>Automatic history back-fill</h3>
+        <p>When profiles merge, new resolutions back-fill history across all linked identifiers — the complete relationship reads as one story from first touch to present.</p>
+      </li>
+      <li class="sx-cap" data-reveal style="--reveal-delay:240ms">
+        <span class="sx-cap-num">04</span>
+        <span class="icon-chip">{% include icon.html name="shield" class="h-5 w-5" %}</span>
+        <h3>Guardrails against false merges</h3>
+        <p>Per-identifier limits stop a shared device from over-merging distinct fans. When a limit would be crossed, records hold apart instead of guessing — correct beats complete-but-wrong.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<section class="sx-how-sec">
+  <div class="container-page">
+    <div class="sx-sec-head" data-reveal>
+      <p class="eyebrow">Under the hood</p>
+      <h2 class="sx-h2">Match, merge, back-fill</h2>
+    </div>
+
+    <ol class="sx-how">
+      <li data-reveal>
+        <span class="sx-how-num">01</span>
+        <div>
+          <h3>Match on evidence, not hope</h3>
+          <p>Every event carries the identifiers its source can see. When a new event shares an identifier with an existing thread — a login, a loyalty scan, a clicked email — that is evidence, and evidence is the only thing that ever joins two records.</p>
+        </div>
+        <span class="sx-how-arrow" aria-hidden="true">→</span>
+      </li>
+      <li data-reveal style="--reveal-delay:80ms">
+        <span class="sx-how-num">02</span>
+        <div>
+          <h3>Merge in the moment</h3>
+          <p>The matched profiles fold into one golden record immediately — identifiers, attributes, and consent state combined — so the very next event anywhere in your stack already sees the full fan.</p>
+        </div>
+        <span class="sx-how-arrow" aria-hidden="true">→</span>
+      </li>
+      <li data-reveal style="--reveal-delay:160ms">
+        <span class="sx-how-num">03</span>
+        <div>
+          <h3>Back-fill the past</h3>
+          <p>Everything the separate records saw before the merge is rewritten onto the fan: Monday's anonymous session becomes <em>their</em> session. And when a shared device would cross a per-identifier limit, the records hold apart — because a smaller true graph beats a bigger wrong one.</p>
+        </div>
+        <span class="sx-how-arrow" aria-hidden="true">→</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="sx-why-sec">
+  <div class="container-page">
+    <div class="sx-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="sx-h2">From fragmented signals<br>to one unified identity</h2>
+        <p class="sx-sec-sub">Fans shift between devices and channels constantly. Blocks stitches these appearances together in real time, so one person reads as one relationship from first touch to now — and activation can reach them wherever they appear next.</p>
+        <a href="{{ '/platform/id' | relative_url }}" class="sx-why-link">See how resolution works <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="sx-why-points" data-reveal style="--reveal-delay:120ms">
+        <li>Recognize fans instantly across all touchpoints, not after a nightly batch matches yesterday's events.</li>
+        <li>Reduce abandoned profiles by matching on multiple identifier types instead of one hard key.</li>
+        <li>Improve targeting accuracy by preserving distinct identities and preventing false merges.</li>
+        <li>Accelerate response by updating profiles in real time as fans switch devices or channels.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="See your anonymous traffic become known fans"
+   text="Watch Blocks stitch devices, channels, and sessions into one governed profile — live, on your own data. Book a walkthrough and we'll trace a real fan journey from your stack." %}
+
+{% raw %}
+<style>
+/* ================= Identity Stitching — scoped styles (.sx-) ================= */
+.sx-hero { padding: 5.5rem 0 4.5rem; overflow: hidden; }
+.sx-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.sx-hero-grid > *, .sx-why-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .sx-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.sx-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.sx-accent { position: relative; display: inline-block; color: #854dff; }
+.sx-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.sx-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.sx-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.sx-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.sx-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.sx-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+
+/* Hero mini merge diagram */
+.sx-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.sx-mini { width: min(100%, 400px); display: flex; flex-direction: column; }
+.sx-mini-anons { display: flex; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap; }
+.sx-mini-anon { display: inline-flex; align-items: center; gap: 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; color: var(--color-foreground); border: 1px dashed var(--color-border); background: var(--color-card); border-radius: 9999px; padding: 0.35rem 0.7rem; }
+.sx-mini-anon i { width: 8px; height: 8px; border-radius: 9999px; background: var(--ic); box-shadow: 0 0 8px var(--ic); }
+.sx-mini-bus { display: flex; justify-content: space-around; padding: 0 2.5rem; height: 26px; }
+.sx-mini-bus span { width: 2px; height: 100%; background: linear-gradient(#c4aaff, #854dff); position: relative; overflow: visible; }
+.sx-mini-bus span::after { content: ""; position: absolute; left: -2.5px; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; animation: sx-pulse 2.4s ease-in-out infinite; }
+.sx-mini-bus span:nth-child(2)::after { animation-delay: 0.6s; }
+.sx-mini-bus span:nth-child(3)::after { animation-delay: 1.2s; }
+@keyframes sx-pulse { 0%, 100% { top: -3px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 50% { top: calc(100% - 4px); } }
+.sx-mini-fan { background: #0f0a1a; border: 1px solid rgba(153,105,255,0.45); box-shadow: 0 18px 44px -20px rgba(133,77,255,0.45); border-radius: 14px; padding: 0.9rem 1.1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.sx-mini-fan-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #c4aaff; margin-right: auto; }
+.sx-mini-fan-name { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; color: #fff; letter-spacing: 0.03em; }
+.sx-mini-note { margin: 0.6rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.06em; color: var(--color-muted-foreground); }
+.sx-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* Section heads */
+.sx-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.sx-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.sx-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ================= The week (dark) ================= */
+.sx-machine { background: #0f0a1a; color: #f4f0fb; padding: 6rem 0; position: relative; overflow: hidden; }
+.sx-machine::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60rem 30rem at 20% -10%, rgba(133,77,255,0.14), transparent 60%); pointer-events: none; }
+.sx-machine .container-page { position: relative; }
+.sx-on-dark .sx-h2 { color: #fff; }
+.sx-on-dark .sx-sec-sub { color: rgba(244,240,251,0.62); }
+
+.sx-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.75rem; }
+.sx-ctl-btn { border: 1px solid rgba(170,128,255,0.5); background: rgba(133,77,255,0.14); color: #e7defc; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.55rem 1.1rem; border-radius: 9999px; cursor: pointer; transition: background 0.2s, border-color 0.2s, transform 0.15s; }
+.sx-ctl-btn:hover { background: rgba(133,77,255,0.3); border-color: #aa80ff; transform: translateY(-1px); }
+.sx-ctl-btn.is-on { background: #854dff; color: #fff; border-color: #854dff; }
+
+.sx-stage-wrap { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 1.5rem; }
+
+.sx-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.sx-stat { flex: 1; min-width: 140px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.7rem 0.9rem; }
+.sx-stat-num { display: block; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.5rem; color: #fff; font-variant-numeric: tabular-nums; transition: color 0.3s; }
+.sx-stat-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,240,251,0.45); }
+.sx-stat-gold { border-color: rgba(232,180,90,0.4); }
+.sx-stat-gold .sx-stat-num { color: #e8b45a; }
+
+/* Stage */
+.sx-stage { position: relative; min-height: 250px; margin-top: 1.1rem; border-radius: 14px; background: rgba(0,0,0,0.25); border: 1px dashed rgba(153,105,255,0.3); display: flex; align-items: center; justify-content: center; gap: 1.1rem; flex-wrap: wrap; padding: 1.5rem 1.1rem; }
+.sx-stage-empty { margin: 0; font-size: 0.9rem; line-height: 1.6; text-align: center; color: rgba(244,240,251,0.4); max-width: 26rem; }
+
+.sx-card { width: 200px; background: #171026; border: 1px dashed rgba(255,255,255,0.22); border-radius: 14px; padding: 0.95rem 1rem; text-align: center; animation: sx-card-in 0.5s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes sx-card-in { from { opacity: 0; transform: translateY(14px) scale(0.92); } to { opacity: 1; transform: none; } }
+.sx-card-avatar { width: 44px; height: 44px; margin: 0 auto 0.55rem; border-radius: 9999px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; color: rgba(244,240,251,0.55); background: rgba(255,255,255,0.07); border: 1px dashed rgba(255,255,255,0.25); }
+.sx-card-name { margin: 0; font-size: 0.85rem; font-weight: 600; color: #fff; }
+.sx-card-sub { margin: 0.2rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(244,240,251,0.4); }
+.sx-card-ids { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.3rem; margin-top: 0.6rem; }
+.sx-idchip { display: inline-flex; align-items: center; gap: 0.3rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.04em; color: var(--ic); white-space: nowrap; }
+.sx-idchip i { width: 7px; height: 7px; border-radius: 9999px; background: var(--ic); box-shadow: 0 0 8px var(--ic); }
+.sx-idchip[data-id="email"] { --ic: #a78bff; }
+.sx-idchip[data-id="loyalty"] { --ic: #e8b45a; }
+.sx-idchip[data-id="device"] { --ic: #4ec9b0; }
+.sx-idchip[data-id="cookie"] { --ic: #9aa8c7; }
+
+.sx-card.is-fan { border: 1px solid rgba(232,180,90,0.55); background: linear-gradient(160deg, rgba(232,180,90,0.12), rgba(133,77,255,0.14)); animation: sx-fan-in 0.6s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes sx-fan-in { 0% { opacity: 0; transform: scale(0.8); box-shadow: 0 0 0 0 rgba(232,180,90,0.6); } 60% { box-shadow: 0 0 0 18px transparent; } 100% { opacity: 1; transform: none; box-shadow: 0 0 0 0 transparent; } }
+.sx-card.is-fan .sx-card-avatar { color: #0f0a1a; background: #e8b45a; border-color: #e8b45a; }
+.sx-card-crown { display: inline-block; margin-top: 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #0f0a1a; background: #e8b45a; border-radius: 9999px; padding: 0.18rem 0.6rem; }
+
+.sx-card.is-held { border: 1px dashed rgba(255,107,129,0.6); background: rgba(255,107,129,0.06); }
+.sx-card.is-held .sx-card-avatar { color: #ff8ba0; border-color: rgba(255,107,129,0.5); }
+.sx-held-note { margin: 0.5rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; line-height: 1.5; letter-spacing: 0.03em; color: #ff8ba0; }
+
+.sx-link-badge { align-self: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; letter-spacing: 0.04em; color: #0f0a1a; background: #c4aaff; border-radius: 9999px; padding: 0.35rem 0.8rem; animation: sx-card-in 0.4s both; }
+
+.sx-story { margin: 1.1rem 0 0; padding: 0.7rem 0.85rem; border-left: 3px solid #854dff; background: rgba(133,77,255,0.09); border-radius: 0 10px 10px 0; font-size: 0.86rem; line-height: 1.6; color: #ddd2f2; min-height: 3.2em; }
+.sx-story strong { color: #fff; font-weight: 600; }
+
+/* Timeline */
+.sx-tl { margin-top: 1.4rem; }
+.sx-tl-range { width: 100%; margin: 0; appearance: none; -webkit-appearance: none; height: 4px; border-radius: 9999px; background: linear-gradient(to right, #854dff var(--fill, 0%), rgba(255,255,255,0.14) var(--fill, 0%)); outline: none; cursor: pointer; }
+.sx-tl-range::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 9999px; background: #fff; border: 3px solid #854dff; box-shadow: 0 0 12px rgba(133,77,255,0.7); cursor: grab; }
+.sx-tl-range::-moz-range-thumb { width: 16px; height: 16px; border-radius: 9999px; background: #fff; border: 3px solid #854dff; box-shadow: 0 0 12px rgba(133,77,255,0.7); cursor: grab; }
+.sx-tl-dots { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.4rem; }
+.sx-tl-dots li { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; text-align: center; cursor: pointer; }
+.sx-tl-dots li i { width: 10px; height: 10px; border-radius: 9999px; background: rgba(255,255,255,0.18); border: 2px solid transparent; transition: background 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.sx-tl-when { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.06em; color: rgba(244,240,251,0.55); }
+.sx-tl-what { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.02em; color: rgba(244,240,251,0.35); }
+.sx-tl-dots li.is-past i { background: #9969ff; }
+.sx-tl-dots li.is-past .sx-tl-what { color: rgba(244,240,251,0.6); }
+.sx-tl-dots li.is-gold i { background: #e8b45a; box-shadow: 0 0 10px rgba(232,180,90,0.7); }
+.sx-tl-dots li.is-gold .sx-tl-what { color: #e8b45a; }
+.sx-tl-dots li.is-now i { border-color: #fff; }
+.sx-tl-dots li.is-now .sx-tl-when { color: #fff; }
+.sx-tl-dots li.is-held i { background: transparent; border: 2px dashed #ff6b81; }
+.sx-tl-dots li.is-held .sx-tl-what { color: #ff8ba0; }
+.sx-feed-note { margin: 1rem 0 0; font-size: 0.7rem; line-height: 1.5; color: rgba(244,240,251,0.35); font-style: italic; }
+
+.sx-machine-caption { margin: 2.5rem auto 0; max-width: 42rem; text-align: center; font-size: 0.95rem; line-height: 1.7; color: rgba(244,240,251,0.55); }
+
+/* ================= Capabilities ================= */
+.sx-caps-sec { padding: 6.5rem 0; }
+.sx-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .sx-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .sx-caps { grid-template-columns: repeat(4, 1fr); } }
+.sx-cap { position: relative; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-card); padding: 1.4rem; transition: border-color 0.2s, box-shadow 0.2s; }
+.sx-cap:hover { border-color: #dccfff; box-shadow: 0 10px 30px -18px rgba(53,16,112,0.25); }
+.sx-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #c4aaff; }
+.sx-cap .icon-chip { margin-bottom: 1rem; }
+.sx-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.sx-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ================= How it works ================= */
+.sx-how-sec { padding: 0 0 6.5rem; }
+.sx-how { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); }
+.sx-how > li { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid var(--color-border); align-items: baseline; }
+.sx-how-num { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #854dff; }
+.sx-how h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.3rem; margin: 0; }
+.sx-how p { margin: 0.5rem 0 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 46rem; }
+.sx-how-arrow { font-size: 1.2rem; color: #c4aaff; }
+@media (max-width: 640px) { .sx-how-arrow { display: none; } }
+
+/* ================= Why it matters ================= */
+.sx-why-sec { padding: 0 0 6.5rem; }
+.sx-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .sx-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.sx-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.sx-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.sx-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.sx-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.sx-why-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ================= Dark-mode reconciliation ================= */
+html.dark .sx-mini-anon { background: #17101f; border-color: rgba(255,255,255,0.14); color: #e7defc; }
+html.dark .sx-cap:hover { border-color: rgba(153,105,255,0.4); }
+
+/* ================= Reduced motion ================= */
+.js [data-reveal] { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sx-mini-bus span::after, .sx-card, .sx-card.is-fan, .sx-link-badge { animation: none !important; }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+  .sx-hero { padding-top: 4rem; }
+  .sx-stage { min-height: 210px; padding: 1.1rem 0.7rem; }
+  .sx-card { width: 165px; padding: 0.8rem 0.7rem; }
+  .sx-tl-what { display: none; }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ============================================================
+     A WEEK IN THE LIFE — scrub six moments, watch the stitch
+     ============================================================ */
+  var stage = document.getElementById('sxStage');
+  var stageEmpty = document.getElementById('sxStageEmpty');
+  var storyEl = document.getElementById('sxStory');
+  var recordsEl = document.getElementById('sxRecords');
+  var peopleEl = document.getElementById('sxPeople');
+  var range = document.getElementById('sxRange');
+  var dots = document.querySelectorAll('#sxDots li');
+  var playBtn = document.getElementById('sxPlay');
+  var restartBtn = document.getElementById('sxRestart');
+  if (!stage || !range) return;
+
+  var step = 0;
+  var playTimer = null;
+
+  function chip(id, label) {
+    return '<span class="sx-idchip" data-id="' + id + '"><i></i>' + label + '</span>';
+  }
+
+  var STORIES = [
+    'Every appearance starts as a separate record in your tools. Watch the two numbers above disagree — until the stitching begins.',
+    '<strong>Mon 19:41 · web visit.</strong> A browser lands on the site carrying ' + chip('cookie', 'cookie c_8f2') + '. Your tools open record #1: "anonymous".',
+    '<strong>Wed 12:03 · ticket scan.</strong> A gate scan carries ' + chip('email', 'sara@…') + '. Record #2 opens. To your stack, these are two strangers.',
+    '<strong>Thu 08:17 · newsletter click.</strong> One click carries both ' + chip('cookie', 'cookie') + ' and ' + chip('email', 'email') + ' — evidence. The two "strangers" were one person all along: <strong>Fan #48211</strong>. Monday\'s anonymous session back-fills onto the fan — watch the dots turn gold.',
+    '<strong>Fri 19:43 · app login.</strong> A third thread appears: ' + chip('device', 'device d_31') + ' + ' + chip('loyalty', 'loyalty №7731') + '. Real identifiers — but not yet linked to the fan.',
+    '<strong>Sat 14:02 · on-site purchase.</strong> The loyalty swipe carries ' + chip('loyalty', 'loyalty №7731') + ' — shared evidence. The app thread folds in: four identifiers, one fan, and Friday\'s "unknown app user" retroactively becomes them too.',
+    '<strong>Sat 18:55 · shared stadium kiosk.</strong> A login from kiosk device d_88. Matching here would merge <em>different fans</em> who share the tablet — so the guardrail holds it apart. <strong>Correct beats complete.</strong>'
+  ];
+
+  /* records = profiles your tools would count · people = resolved fans */
+  var RECORDS = [0, 1, 2, 3, 4, 5, 6];
+  var PEOPLE = [0, 0, 0, 1, 1, 1, 1];
+
+  function anonCard(name, sub, idsHtml) {
+    var d = document.createElement('div');
+    d.className = 'sx-card';
+    d.innerHTML = '<div class="sx-card-avatar">?</div>' +
+      '<p class="sx-card-name">' + name + '</p>' +
+      '<p class="sx-card-sub">' + sub + '</p>' +
+      '<div class="sx-card-ids">' + idsHtml + '</div>';
+    return d;
+  }
+
+  function fanCard(idsHtml, crownText) {
+    var d = document.createElement('div');
+    d.className = 'sx-card is-fan';
+    d.innerHTML = '<div class="sx-card-avatar">★</div>' +
+      '<p class="sx-card-name">Fan #48211</p>' +
+      '<p class="sx-card-sub">golden profile · one person</p>' +
+      '<div class="sx-card-ids">' + idsHtml + '</div>' +
+      '<span class="sx-card-crown">' + crownText + '</span>';
+    return d;
+  }
+
+  function heldCard() {
+    var d = document.createElement('div');
+    d.className = 'sx-card is-held';
+    d.innerHTML = '<div class="sx-card-avatar">⛔</div>' +
+      '<p class="sx-card-name">Shared kiosk</p>' +
+      '<p class="sx-card-sub">device d_88 · many fans use it</p>' +
+      '<p class="sx-held-note">Per-identifier limit crossed — held apart, not guessed.</p>';
+    return d;
+  }
+
+  var IDS_FAN_2 = chip('cookie', 'cookie c_8f2') + chip('email', 'sara@…');
+  var IDS_FAN_4 = IDS_FAN_2 + chip('device', 'device d_31') + chip('loyalty', 'loyalty №7731');
+
+  function render() {
+    /* stage */
+    stage.querySelectorAll('.sx-card').forEach(function (c) { c.remove(); });
+    if (stageEmpty) stageEmpty.style.display = step === 0 ? '' : 'none';
+
+    if (step === 1) {
+      stage.appendChild(anonCard('anonymous browser', 'record #1 · web', chip('cookie', 'cookie c_8f2')));
+    } else if (step === 2) {
+      stage.appendChild(anonCard('anonymous browser', 'record #1 · web', chip('cookie', 'cookie c_8f2')));
+      stage.appendChild(anonCard('ticket buyer', 'record #2 · ticketing', chip('email', 'sara@…')));
+    } else if (step === 3) {
+      stage.appendChild(fanCard(IDS_FAN_2, '✦ stitched · 2 identifiers'));
+    } else if (step === 4) {
+      stage.appendChild(fanCard(IDS_FAN_2, '✦ stitched · 2 identifiers'));
+      stage.appendChild(anonCard('app user', 'record #4 · app', chip('device', 'device d_31') + chip('loyalty', 'loyalty №7731')));
+    } else if (step === 5) {
+      stage.appendChild(fanCard(IDS_FAN_4, '✦ stitched · 4 identifiers'));
+    } else if (step === 6) {
+      stage.appendChild(fanCard(IDS_FAN_4, '✦ stitched · 4 identifiers'));
+      stage.appendChild(heldCard());
+    }
+
+    /* stats */
+    recordsEl.textContent = RECORDS[step];
+    peopleEl.textContent = PEOPLE[step];
+
+    /* story */
+    storyEl.innerHTML = STORIES[step];
+
+    /* range fill */
+    range.value = step;
+    range.style.setProperty('--fill', (step / 6 * 100) + '%');
+
+    /* dots */
+    dots.forEach(function (li) {
+      var n = parseInt(li.getAttribute('data-step'), 10);
+      li.classList.toggle('is-past', step >= n);
+      li.classList.toggle('is-now', step === n);
+      var gold = (step >= 3 && n <= 3) || (step >= 5 && n >= 4 && n <= 5);
+      li.classList.toggle('is-gold', gold);
+      li.classList.toggle('is-held', step >= 6 && n === 6);
+    });
+  }
+
+  function setStep(n) {
+    step = Math.max(0, Math.min(6, n));
+    render();
+  }
+
+  function stopPlay() {
+    if (playTimer) { clearInterval(playTimer); playTimer = null; }
+    playBtn.classList.remove('is-on');
+    playBtn.textContent = '▶ Play the week';
+    playBtn.setAttribute('aria-pressed', 'false');
+  }
+
+  range.addEventListener('input', function () {
+    stopPlay();
+    setStep(parseInt(range.value, 10));
+  });
+
+  dots.forEach(function (li) {
+    li.addEventListener('click', function () {
+      stopPlay();
+      setStep(parseInt(li.getAttribute('data-step'), 10));
+    });
+  });
+
+  playBtn.addEventListener('click', function () {
+    if (playTimer) { stopPlay(); return; }
+    if (step >= 6) setStep(0);
+    playBtn.classList.add('is-on');
+    playBtn.textContent = '■ Stop';
+    playBtn.setAttribute('aria-pressed', 'true');
+    var advance = function () {
+      if (step >= 6) { stopPlay(); return; }
+      setStep(step + 1);
+    };
+    if (reduceMotion) { setStep(6); stopPlay(); return; }
+    setTimeout(advance, 700);
+    playTimer = setInterval(advance, 2100);
+  });
+
+  restartBtn.addEventListener('click', function () {
+    stopPlay();
+    setStep(0);
+  });
+
+  render();
+})();
+</script>
+{% endraw %}
