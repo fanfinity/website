@@ -1,5 +1,6 @@
 ---
 layout: page
+cta: false
 permalink: /platform/id/single-fan-view
 title: Single Fan View
 description: "Resolve fragmented touchpoints into one consented, governed fan profile with Fanfinity ID."
@@ -15,26 +16,680 @@ benefits:
   - "Accelerate retention by recognizing fans who start anonymous and identifying later, so lifecycle targeting starts from day one."
   - "Reduce data confusion by making one profile the source of truth, not multiple conflicting records."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity ID"
-   title="One profile. One truth."
-   subtitle="Fanfinity ID resolves every fan touchpoint (anonymous, authenticated, cross-device, cross-channel) into one consented, governed golden profile that all systems trust and activate from."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity ID"
-   secondary_url="/platform/id"
-   icon="identity" %}
 
-{% include feature-grid.html
-   heading="Every fan, one profile"
-   subheading="Fanfinity ID stitches fragmented signals into one authoritative golden record that updates in real time, so every downstream system (CRM, analytics, segmentation, activation) reads from the same truth."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     SINGLE FAN VIEW - bespoke redesign ("The living profile")
+     Concept: open Fan #48211's dossier on graph paper, then
+     press Play the Saturday. Seven matchday moments land on the
+     single fan view the second they happen: the affinity meter
+     moves, lapse risk flips, segments appear and expire, the
+     timeline prepends, CLV ticks Silver → Gold. Real-time
+     profile updates you can watch, not read about.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="From fragmented signals to unified intelligence"
-   body="Fans interact across devices, channels, and time. Without a single view, you lose track. Fanfinity ID joins all these appearances into one profile, so you recognize fans wherever they go, understand the full relationship, and activate more effectively."
-   points=page.benefits
-   cta_text="See how profiles are segmented"
-   cta_url="/platform/id/audience-builder"
-   icon="identity" %}
+<div class="sfv-paper">
+
+<section class="sfv-hero">
+  <div class="container-page">
+    <div class="sfv-hero-grid">
+      <div class="sfv-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity ID · Single Fan View</p>
+        <h1 class="sfv-h1">
+          One profile.<br>
+          <span class="sfv-accent">One truth.<svg class="sfv-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="sfv-lede">Fanfinity ID resolves every fan touchpoint (anonymous, authenticated, cross-device, cross-channel) into one consented, governed golden profile that all systems trust and activate from.</p>
+        <div class="sfv-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#living" class="btn btn-secondary btn-lg">Watch a profile come alive <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="sfv-hero-strip" aria-label="What the single fan view guarantees">
+          <li>Golden record</li>
+          <li>Real-time updates</li>
+          <li>Complete history</li>
+          <li>Consented</li>
+        </ul>
+      </div>
+
+      <div class="sfv-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="sfv-mini">
+          <div class="sfv-mini-head">
+            <span class="sfv-live"><i></i>live</span>
+            <span class="sfv-mini-fig">fig. 00 · the dossier</span>
+          </div>
+          <div class="sfv-mini-top">
+            <span class="sfv-mini-avatar">S</span>
+            <div><b>Fan #48211 · Sara</b><span>golden profile</span></div>
+          </div>
+          <ul class="sfv-mini-tl" id="sfvMiniTl">
+            <li>18:41 · gate scan - she's here</li>
+            <li>17:58 · push tapped - win-back worked</li>
+            <li>15:40 · cart abandoned - risk noted</li>
+          </ul>
+          <p class="sfv-mini-note">the profile isn't a record - it's alive</p>
+        </div>
+        <p class="sfv-hero-art-note">Every signal lands on the single fan view the moment it happens. Below: a whole Saturday, playable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE LIVING PROFILE (playable centerpiece) ==================== -->
+<section class="sfv-living-sec" id="living">
+  <div class="container-page">
+    <div class="sfv-sec-head" data-reveal>
+      <p class="eyebrow">Playable · The living profile</p>
+      <h2 class="sfv-h2">Open Sara's profile.<br>Watch a Saturday happen.</h2>
+      <p class="sfv-sec-sub">Seven real moments from one matchday. Press play - each signal lands on the single fan view the moment it happens: attributes shift, segments flip, the timeline grows. No batch. No waiting.</p>
+    </div>
+
+    <div class="sfv-living" data-reveal>
+
+      <!-- player column -->
+      <div class="sfv-player">
+        <div class="sfv-player-head">
+          <span class="sfv-player-title">Saturday · matchday</span>
+          <span class="sfv-player-count" id="sfvStep">moment 0 of 7</span>
+        </div>
+        <div class="sfv-controls">
+          <button type="button" class="sfv-ctl" id="sfvPlay" aria-pressed="false">▶ Play the day</button>
+          <button type="button" class="sfv-ctl" id="sfvReset">↺ Reset</button>
+        </div>
+        <ol class="sfv-queue" id="sfvQueue">
+          <li data-i="0" role="button" tabindex="0"><span class="sfv-q-time">09:12</span><span class="sfv-q-icon">📱</span><span class="sfv-q-title">App open · phone</span><span class="sfv-q-mark"></span></li>
+          <li data-i="1" role="button" tabindex="0"><span class="sfv-q-time">11:03</span><span class="sfv-q-icon">🛍</span><span class="sfv-q-title">Browses away kits ×3</span><span class="sfv-q-mark"></span></li>
+          <li data-i="2" role="button" tabindex="0"><span class="sfv-q-time">15:40</span><span class="sfv-q-icon">🛒</span><span class="sfv-q-title">Ticket in cart, abandoned</span><span class="sfv-q-mark"></span></li>
+          <li data-i="3" role="button" tabindex="0"><span class="sfv-q-time">17:58</span><span class="sfv-q-icon">📣</span><span class="sfv-q-title">Push tapped: "your seat is waiting"</span><span class="sfv-q-mark"></span></li>
+          <li data-i="4" role="button" tabindex="0"><span class="sfv-q-time">18:41</span><span class="sfv-q-icon">🏟</span><span class="sfv-q-title">Gate scan · turnstile B</span><span class="sfv-q-mark"></span></li>
+          <li data-i="5" role="button" tabindex="0"><span class="sfv-q-time">19:12</span><span class="sfv-q-icon">🧾</span><span class="sfv-q-title">Kiosk purchase · away jersey</span><span class="sfv-q-mark"></span></li>
+          <li data-i="6" role="button" tabindex="0"><span class="sfv-q-time">21:47</span><span class="sfv-q-icon">🎉</span><span class="sfv-q-title">Shares the winning clip</span><span class="sfv-q-mark"></span></li>
+        </ol>
+        <div class="sfv-story" id="sfvStory" aria-live="polite">The profile is open. Press play - or tap any moment to jump straight to it.</div>
+      </div>
+
+      <!-- the dossier -->
+      <div class="sfv-doc" id="sfvDoc">
+        <div class="sfv-doc-head">
+          <span class="sfv-doc-brand">Fanfinity ID · single fan view</span>
+          <span class="sfv-live sfv-live-doc"><i></i>live · <span id="sfvUpdated">updated just now</span></span>
+        </div>
+
+        <div class="sfv-doc-id">
+          <span class="sfv-doc-avatar">S</span>
+          <div class="sfv-doc-fields">
+            <div class="sfv-doc-field"><label>holder</label><span>Sara</span></div>
+            <div class="sfv-doc-field"><label>fan №</label><span>48211</span></div>
+          </div>
+          <span class="sfv-doc-stamp">golden profile</span>
+        </div>
+
+        <div class="sfv-doc-row">
+          <p class="sfv-doc-label">identifiers</p>
+          <div class="sfv-chips">
+            <span class="sfv-chip" data-c="email"><i></i>email</span>
+            <span class="sfv-chip" data-c="loyalty"><i></i>loyalty №</span>
+            <span class="sfv-chip" data-c="ticket"><i></i>ticket №</span>
+            <span class="sfv-chip" data-c="device"><i></i>device ×2</span>
+            <span class="sfv-chip" data-c="cookie"><i></i>cookie</span>
+          </div>
+        </div>
+
+        <div class="sfv-doc-row">
+          <p class="sfv-doc-label">consent</p>
+          <div class="sfv-consent">
+            <span class="is-ok">email ✓</span><span class="is-ok">push ✓</span><span class="is-no">ads ✕</span>
+          </div>
+        </div>
+
+        <div class="sfv-doc-row sfv-doc-attrs">
+          <div class="sfv-attr" id="sfvAttrAffinity">
+            <p class="sfv-doc-label">matchday affinity</p>
+            <div class="sfv-meter"><span class="sfv-meter-fill" id="sfvAffinity"></span></div>
+            <p class="sfv-attr-val"><b id="sfvAffinityVal">62%</b> interest index</p>
+          </div>
+          <div class="sfv-attr" id="sfvAttrLapse">
+            <p class="sfv-doc-label">lapse risk</p>
+            <span class="sfv-risk is-low" id="sfvLapse">low</span>
+          </div>
+          <div class="sfv-attr" id="sfvAttrClv">
+            <p class="sfv-doc-label">clv band</p>
+            <span class="sfv-band" id="sfvClv">silver</span>
+          </div>
+        </div>
+
+        <div class="sfv-doc-row" id="sfvRowDevices">
+          <p class="sfv-doc-label">known devices</p>
+          <div class="sfv-chips" id="sfvDevices">
+            <span class="sfv-chip" data-c="device"><i></i>💻 laptop d_311</span>
+            <span class="sfv-chip" data-c="device"><i></i>📱 phone d_900</span>
+          </div>
+        </div>
+
+        <div class="sfv-doc-row" id="sfvRowSegs">
+          <p class="sfv-doc-label">segments right now</p>
+          <div class="sfv-chips" id="sfvSegments"></div>
+        </div>
+
+        <div class="sfv-doc-row" id="sfvRowTags">
+          <p class="sfv-doc-label">interests &amp; signals</p>
+          <div class="sfv-chips" id="sfvTags"><span class="sfv-none">none yet today</span></div>
+        </div>
+
+        <div class="sfv-doc-row sfv-doc-tlrow">
+          <p class="sfv-doc-label">timeline · latest first</p>
+          <ul class="sfv-tl" id="sfvTimeline"></ul>
+        </div>
+
+        <div class="sfv-doc-spec">
+          <span>events today: <b id="sfvCountEvents">0</b></span>
+          <span>segments: <b id="sfvCountSegs">2</b></span>
+          <span>sources: app · web · pos · gate</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="sfv-feed-note" data-reveal>An illustrative simulation - the mechanics (live attribute derivation, segment entry and exit, the growing timeline) are the real product behavior.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="sfv-caps-sec">
+  <div class="container-page">
+    <div class="sfv-sec-head" data-reveal>
+      <p class="eyebrow">How single fan view works</p>
+      <h2 class="sfv-h2">Every fan, one profile</h2>
+      <p class="sfv-sec-sub">Fanfinity ID stitches fragmented signals into one authoritative golden record that updates in real time, so every downstream system (CRM, analytics, segmentation, activation) reads from the same truth.</p>
+    </div>
+
+    <ol class="sfv-caps">
+      {%- for c in page.capabilities -%}
+      <li class="sfv-cap" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="sfv-cap-num">0{{ forloop.index }}</span>
+        <span class="icon-chip">{% include icon.html name=c.icon class="h-5 w-5" %}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="sfv-why-sec">
+  <div class="container-page">
+    <div class="sfv-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="sfv-h2">From fragmented signals<br>to unified intelligence</h2>
+        <p class="sfv-sec-sub">Fans interact across devices, channels, and time. Without a single view, you lose track. Fanfinity ID joins all these appearances into one profile, so you recognize fans wherever they go, understand the full relationship, and activate more effectively.</p>
+        <a href="{{ '/platform/id/audience-builder' | relative_url }}" class="sfv-why-link">See how profiles are segmented <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="sfv-why-points" data-reveal style="--reveal-delay:120ms">
+        {%- for b in page.benefits -%}
+        <li>{{ b }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /sfv-paper -->
+
+{% include cta-band.html
+   heading="See a profile update itself, live"
+   text="Book a walkthrough and we'll open a single fan view on your own data - watch events land, attributes shift, and segments flip the moment your fans act." %}
+
+{% raw %}
+<style>
+/* ================= Single Fan View - "living profile × blueprint" styles (.sfv-) ================= */
+.sfv-paper {
+  background: #ffffff;
+  overflow-x: clip;
+}
+
+/* ---------- hero ---------- */
+.sfv-hero { padding: 5.5rem 0 4rem; }
+.sfv-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.sfv-hero-grid > *, .sfv-why-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .sfv-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.sfv-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.sfv-accent { position: relative; display: inline-block; color: #854dff; }
+.sfv-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.sfv-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.sfv-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.sfv-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.sfv-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.sfv-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+.sfv-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.sfv-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* ---------- live dot ---------- */
+.sfv-live { display: inline-flex; align-items: center; gap: 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7c3aed; }
+.sfv-live i { width: 8px; height: 8px; border-radius: 9999px; background: #6f55a6; }
+@keyframes sfv-live { 0%, 100% { box-shadow: 0 0 0 0 rgba(133,77,255,0.5); } 55% { box-shadow: 0 0 0 6px transparent; } }
+
+/* ---------- hero mini dossier ---------- */
+.sfv-mini { width: min(100%, 400px); background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1rem 1.1rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); position: relative; }
+.sfv-mini::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; pointer-events: none; }
+.sfv-mini-head { display: flex; justify-content: space-between; align-items: baseline; }
+.sfv-mini-fig { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.sfv-mini-top { display: flex; align-items: center; gap: 0.65rem; margin-top: 0.8rem; }
+.sfv-mini-avatar { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; color: #2b2145; background: #e8c77b; }
+.sfv-mini-top b { display: block; font-size: 0.88rem; color: #2b2145; }
+.sfv-mini-top span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: #b8860b; }
+.sfv-mini-tl { list-style: none; margin: 0.85rem 0 0; padding: 0.7rem 0 0; border-top: 1px dashed rgba(43,33,69,0.3); display: flex; flex-direction: column; gap: 0.35rem; min-height: 4.6rem; }
+.sfv-mini-tl li { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; letter-spacing: 0.02em; color: rgba(43,33,69,0.65); animation: sfv-mini-in 0.5s both; }
+.sfv-mini-tl li:first-child { color: #7c3aed; font-weight: 700; }
+@keyframes sfv-mini-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.sfv-mini-note { margin: 0.75rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.45); }
+
+/* ---------- section heads ---------- */
+.sfv-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.sfv-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.sfv-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ---------- the living profile: layout ---------- */
+.sfv-living-sec { padding: 1rem 0 6.5rem; }
+.sfv-living { display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 1080px) {
+  .sfv-living { grid-template-columns: 360px minmax(0, 1fr); gap: 1.5rem; }
+  .sfv-player { position: sticky; top: 92px; }
+}
+
+/* ---------- player ---------- */
+.sfv-player { background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1.05rem 1.1rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.sfv-player-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; }
+.sfv-player-title { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,69,0.55); }
+.sfv-player-count { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; color: #7c3aed; }
+.sfv-controls { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+.sfv-ctl { border: 1.5px solid #2b2145; background: #fff; color: #2b2145; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.2s, color 0.2s; }
+.sfv-ctl:hover { background: rgba(124,58,237,0.07); color: #5b21b6; }
+.sfv-ctl.is-on { background: #854dff; border-color: #854dff; color: #fff; }
+.sfv-queue { list-style: none; margin: 0.95rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.sfv-queue li { display: grid; grid-template-columns: auto auto 1fr auto; gap: 0.55rem; align-items: center; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; padding: 0.45rem 0.6rem; cursor: pointer; transition: border-color 0.2s, background 0.2s, opacity 0.2s; }
+.sfv-queue li:hover { background: rgba(124,58,237,0.05); }
+.sfv-queue li:focus-visible { outline: 2px solid #854dff; outline-offset: 2px; }
+.sfv-q-time { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; color: rgba(43,33,69,0.5); }
+.sfv-q-icon { font-size: 0.85rem; }
+.sfv-q-title { font-size: 0.76rem; font-weight: 600; color: #2b2145; }
+.sfv-q-mark { width: 14px; height: 14px; border-radius: 9999px; border: 1.5px dashed rgba(43,33,69,0.4); display: grid; place-items: center; font-size: 0.55rem; color: #fff; }
+.sfv-queue li.is-done { opacity: 0.55; }
+.sfv-queue li.is-done .sfv-q-mark { background: #0d9488; border: 1.5px solid #0d9488; }
+.sfv-queue li.is-done .sfv-q-mark::after { content: "✓"; }
+.sfv-queue li.is-now { border: 1.5px solid #854dff; background: rgba(133,77,255,0.07); animation: sfv-now 1.2s ease-in-out 2; }
+@keyframes sfv-now { 0%, 100% { box-shadow: 0 0 0 0 rgba(133,77,255,0); } 50% { box-shadow: 0 0 0 5px rgba(133,77,255,0.18); } }
+.sfv-story { margin-top: 0.95rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.7rem; line-height: 1.65; color: #2b2145; border-left: 3px solid #854dff; background: rgba(133,77,255,0.07); border-radius: 0 8px 8px 0; padding: 0.6rem 0.8rem; min-height: 3.4em; }
+.sfv-story strong { color: #7c3aed; }
+
+/* ---------- the dossier ---------- */
+.sfv-doc { position: relative; background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 18px; padding: 1.15rem 1.25rem 0.85rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); }
+.sfv-doc::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.3); border-radius: 12px; pointer-events: none; }
+.sfv-doc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.sfv-doc-brand { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.sfv-live-doc { font-size: 0.54rem; }
+.sfv-doc-id { display: flex; align-items: center; gap: 0.8rem; margin-top: 0.9rem; position: relative; }
+.sfv-doc-avatar { width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.2rem; color: #2b2145; background: #e8c77b; border: 1.5px solid #a87616; flex-shrink: 0; }
+.sfv-doc-fields { display: flex; gap: 1.5rem; min-width: 0; }
+.sfv-doc-field label { display: block; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.sfv-doc-field span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 1rem; font-weight: 700; color: #2b2145; border-bottom: 1px dashed rgba(43,33,69,0.45); }
+.sfv-doc-stamp { margin-left: auto; transform: rotate(-8deg); border: 2px solid #b8860b; color: #b8860b; border-radius: 6px; padding: 0.14em 0.5em; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; flex-shrink: 0; }
+
+.sfv-doc-row { margin-top: 0.85rem; }
+.sfv-doc-label { margin: 0 0 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.sfv-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sfv-chip { display: inline-flex; align-items: center; gap: 0.3rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.02em; color: var(--ic); border: 1px dashed var(--ic); border-radius: 9999px; padding: 0.22rem 0.55rem; background: #fff; }
+.sfv-chip i { width: 7px; height: 7px; border-radius: 9999px; background: var(--ic); }
+.sfv-chip[data-c="email"] { --ic: #7c3aed; }
+.sfv-chip[data-c="loyalty"] { --ic: #b8860b; }
+.sfv-chip[data-c="ticket"] { --ic: #2563eb; }
+.sfv-chip[data-c="device"] { --ic: #0d9488; }
+.sfv-chip[data-c="cookie"] { --ic: #64748b; }
+.sfv-chip[data-c="seg"] { --ic: #854dff; }
+.sfv-chip[data-c="tag"] { --ic: #2f6fed; }
+.sfv-chip.is-live-seg { --ic: #8a6515; border-style: solid; background: rgba(232,180,90,0.12); }
+@keyframes sfv-seg-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(232,180,90,0.5); } 55% { box-shadow: 0 0 0 5px transparent; } }
+.sfv-chip.is-new { animation: sfv-ink 0.45s cubic-bezier(0.2,0.7,0.2,1) both; }
+.sfv-none { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; color: rgba(43,33,69,0.4); }
+
+.sfv-consent { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.sfv-consent span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; border-radius: 9999px; padding: 0.22rem 0.55rem; border: 1px dashed rgba(43,33,69,0.35); background: #fff; }
+.sfv-consent .is-ok { color: #0d9488; border-color: #0d9488; }
+.sfv-consent .is-no { color: #d93b54; border-color: #d93b54; }
+
+.sfv-doc-attrs { display: grid; grid-template-columns: 1fr; gap: 0.6rem; }
+@media (min-width: 640px) { .sfv-doc-attrs { grid-template-columns: 1.4fr 0.8fr 0.8fr; } }
+.sfv-attr { border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; padding: 0.55rem 0.65rem; background: #fff; }
+.sfv-meter { height: 10px; border: 1px dashed rgba(43,33,69,0.45); border-radius: 9999px; overflow: hidden; background: repeating-linear-gradient(90deg, rgba(124,58,237,0.06) 0 8px, transparent 8px 16px); }
+.sfv-meter-fill { display: block; height: 100%; width: 62%; border-radius: 9999px; background: linear-gradient(90deg, #c4aaff, #854dff); transition: width 0.9s cubic-bezier(0.2,0.7,0.2,1); }
+.sfv-attr-val { margin: 0.35rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.04em; color: rgba(43,33,69,0.55); }
+.sfv-attr-val b { color: #7c3aed; }
+.sfv-risk, .sfv-band { display: inline-block; margin-top: 0.3rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 9999px; padding: 0.25rem 0.7rem; border: 1.5px solid; }
+.sfv-risk.is-low { color: #0d9488; border-color: #0d9488; }
+.sfv-risk.is-rise { color: #c2410c; border-color: #c2410c; animation: sfv-risk-blink 1.4s ease-in-out infinite; }
+@keyframes sfv-risk-blink { 0%, 100% { box-shadow: 0 0 0 0 rgba(194,65,12,0.4); } 55% { box-shadow: 0 0 0 5px transparent; } }
+.sfv-band.is-silver { color: #64748b; border-color: #64748b; }
+.sfv-band.is-gold { color: #b8860b; border-color: #b8860b; background: linear-gradient(150deg, rgba(232,180,90,0.18), transparent); }
+
+/* ---------- timeline ---------- */
+.sfv-doc-tlrow { border-top: 1px dashed rgba(43,33,69,0.3); padding-top: 0.8rem; }
+.sfv-tl { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+.sfv-tl li { display: flex; gap: 0.6rem; align-items: baseline; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.01em; color: #2b2145; }
+.sfv-tl li .sfv-tl-t { flex-shrink: 0; font-weight: 700; color: #7c3aed; }
+.sfv-tl li.is-history { color: rgba(43,33,69,0.45); }
+.sfv-tl li.is-history .sfv-tl-t { color: rgba(43,33,69,0.4); font-weight: 400; }
+.sfv-tl li.is-backfill .sfv-tl-tag { color: #0d9488; border-color: #0d9488; }
+.sfv-tl-tag { font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px dashed #0d9488; border-radius: 4px; padding: 0 0.3rem; }
+.sfv-tl li.is-new { animation: sfv-tl-in 0.5s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes sfv-tl-in { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+
+.sfv-doc-spec { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.4rem 1rem; margin-top: 0.9rem; padding: 0.6rem 0 0.3rem; border-top: 1px dashed rgba(43,33,69,0.3); font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.06em; color: rgba(43,33,69,0.5); }
+.sfv-doc-spec b { color: #7c3aed; }
+
+/* ---------- change flash + fly dot ---------- */
+.sfv-flash { animation: sfv-flash 0.9s ease-out; }
+@keyframes sfv-flash { 0% { background: rgba(232,180,90,0.35); } 100% { background: transparent; } }
+.sfv-fly { position: fixed; z-index: 70; width: 10px; height: 10px; border-radius: 9999px; background: #6f55a6; pointer-events: none; transition: transform 0.55s cubic-bezier(0.3,0.6,0.3,1), opacity 0.55s; }
+
+.sfv-feed-note { margin: 1.25rem 0 0; font-size: 0.72rem; line-height: 1.5; color: var(--color-muted-foreground); font-style: italic; }
+
+/* ---------- capabilities ---------- */
+.sfv-caps-sec { padding: 0 0 6.5rem; }
+.sfv-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .sfv-caps { grid-template-columns: 1fr 1fr; } }
+.sfv-cap { position: relative; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.4rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.18s; }
+.sfv-cap:hover { background: rgba(43,33,69,0.025); }
+.sfv-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.sfv-cap .icon-chip { margin-bottom: 1rem; }
+.sfv-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.sfv-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- why it matters ---------- */
+.sfv-why-sec { padding: 0 0 6.5rem; }
+.sfv-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .sfv-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.sfv-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.sfv-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.sfv-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.sfv-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.sfv-why-link:hover { color: #5b21b6; }
+
+/* ---------- dark-mode reconciliation ---------- */
+html.dark .sfv-paper { background-color: #120d1e; }
+html.dark .sfv-mini, html.dark .sfv-player, html.dark .sfv-doc, html.dark .sfv-cap { background: #1b1429; border-color: rgba(221,210,242,0.5); box-shadow: 0 2px 4px -3px rgba(221,210,242,0.2); }
+html.dark .sfv-mini::before, html.dark .sfv-doc::before { border-color: rgba(221,210,242,0.3); }
+html.dark .sfv-mini-top b, html.dark .sfv-doc-field span, html.dark .sfv-q-title, html.dark .sfv-story, html.dark .sfv-tl li { color: #efe9fb; }
+html.dark .sfv-chip, html.dark .sfv-attr, html.dark .sfv-consent span { background: #241a38; }
+html.dark .sfv-queue li { border-color: rgba(221,210,242,0.35); }
+html.dark .sfv-queue li:hover { background: rgba(133,77,255,0.12); }
+html.dark .sfv-ctl { background: #241a38; color: #e7defc; border-color: rgba(221,210,242,0.5); box-shadow: none; }
+html.dark .sfv-ctl.is-on { background: #854dff; color: #fff; border-color: #854dff; }
+html.dark .sfv-doc-tlrow, html.dark .sfv-doc-spec, html.dark .sfv-mini-tl { border-color: rgba(221,210,242,0.25); }
+html.dark .sfv-tl li.is-history { color: rgba(221,210,242,0.4); }
+html.dark .sfv-story { background: rgba(133,77,255,0.14); }
+html.dark .sfv-why-link { color: #b98cff; }
+html.dark .sfv-flash { animation: none; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .sfv-live i, .sfv-chip.is-live-seg, .sfv-risk.is-rise { animation: none !important; }
+  .sfv-tl li.is-new, .sfv-chip.is-new, .sfv-mini-tl li, .sfv-queue li.is-now, .sfv-flash { animation: none !important; }
+  .sfv-fly { display: none !important; }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 480px) {
+  .sfv-hero { padding-top: 4rem; }
+  .sfv-doc { padding: 0.9rem 0.85rem 0.75rem; }
+  .sfv-doc-fields { gap: 1rem; }
+  .sfv-doc-stamp { font-size: 0.46rem; }
+}
+</style>
+
+<script>
+/* ================= The living profile - engine ================= */
+(function () {
+  'use strict';
+  var doc = document.getElementById('sfvDoc');
+  if (!doc) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var els = {
+    step: document.getElementById('sfvStep'),
+    play: document.getElementById('sfvPlay'),
+    reset: document.getElementById('sfvReset'),
+    queue: document.getElementById('sfvQueue'),
+    story: document.getElementById('sfvStory'),
+    updated: document.getElementById('sfvUpdated'),
+    affinity: document.getElementById('sfvAffinity'),
+    affinityVal: document.getElementById('sfvAffinityVal'),
+    lapse: document.getElementById('sfvLapse'),
+    clv: document.getElementById('sfvClv'),
+    devices: document.getElementById('sfvDevices'),
+    segments: document.getElementById('sfvSegments'),
+    tags: document.getElementById('sfvTags'),
+    timeline: document.getElementById('sfvTimeline'),
+    countEvents: document.getElementById('sfvCountEvents'),
+    countSegs: document.getElementById('sfvCountSegs'),
+    attrAffinity: document.getElementById('sfvAttrAffinity'),
+    attrLapse: document.getElementById('sfvAttrLapse'),
+    attrClv: document.getElementById('sfvAttrClv')
+  };
+  var rows = Array.prototype.slice.call(els.queue.querySelectorAll('li'));
+
+  var HISTORY = [
+    { t: 'Fri', text: 'gate loyalty scan · l_2210' },
+    { t: 'Thu', text: 'stream login · laptop d_311' },
+    { t: 'Wed', text: 'ticket purchase · t_8841' },
+    { t: 'Mon', text: 'anonymous web visit · back-filled', backfill: true }
+  ];
+  var BASE_SEGS = ['season-ticket holder', 'email reachable'];
+
+  var EVENTS = [
+    { t: '09:12', line: 'app open · phone d_900',
+      story: 'The day starts. The profile already knows <strong>which phone</strong> this is - no login needed to recognize her.',
+      affinity: 62, flash: ['timeline', 'devices'] },
+    { t: '11:03', line: 'browses away kits ×3 · web',
+      story: 'Three product pages in one session. An interest forms <strong>live</strong> - watch the affinity index climb.',
+      affinity: 74, addTags: ['away kits'], flash: ['affinity', 'tags', 'timeline'] },
+    { t: '15:40', line: 'ticket added to cart - abandoned · app',
+      story: 'A signal nobody wants - captured <strong>the moment it happens</strong>, not in tomorrow\u2019s report.',
+      affinity: 74, lapse: 'rising', addSegs: ['cart abandoner'], flash: ['lapse', 'segments', 'timeline'] },
+    { t: '17:58', line: 'push tapped: "your seat is waiting"',
+      story: 'The win-back worked because it read a profile <strong>an hour old</strong>, not a day old. Risk settles back down.',
+      affinity: 74, lapse: 'low', remSegs: ['cart abandoner'], flash: ['lapse', 'segments', 'timeline'] },
+    { t: '18:41', line: 'gate scan · turnstile B',
+      story: 'She\u2019s here. Every screen in the building <strong>could know</strong> - the segment flips while she\u2019s still walking in.',
+      affinity: 80, addSegs: ['in-stadium now'], liveSeg: 'in-stadium now', addDevice: '🚪 turnstile B', flash: ['segments', 'devices', 'timeline'] },
+    { t: '19:12', line: 'kiosk purchase · away jersey SAR-7',
+      story: 'The interest she showed at 11:03 ends in a sale at 19:12 - <strong>one story, one profile</strong>. The CLV band ticks up.',
+      affinity: 86, clv: 'gold', remTags: ['away kits'], addTags: ['owns the away kit'], flash: ['clv', 'tags', 'affinity', 'timeline'] },
+    { t: '21:47', line: 'shares the winning clip · app',
+      story: 'The day ends richer than it started. The stadium segment expires on its own - <strong>nothing waited for a batch</strong>.',
+      affinity: 86, remSegs: ['in-stadium now'], addTags: ['amplifier'], flash: ['segments', 'tags', 'timeline'] }
+  ];
+
+  var current = -1;
+  var playing = false;
+  var timer = null;
+
+  function stateAt(idx) {
+    var s = { affinity: 62, lapse: 'low', clv: 'silver', segs: BASE_SEGS.slice(), tags: [], devices: null, liveSeg: null, events: [] };
+    for (var k = 0; k <= idx; k++) {
+      var e = EVENTS[k];
+      s.affinity = e.affinity;
+      if (e.lapse) s.lapse = e.lapse;
+      if (e.clv) s.clv = e.clv;
+      (e.addSegs || []).forEach(function (g) { if (s.segs.indexOf(g) < 0) s.segs.push(g); });
+      (e.remSegs || []).forEach(function (g) { var i = s.segs.indexOf(g); if (i >= 0) s.segs.splice(i, 1); });
+      (e.addTags || []).forEach(function (g) { if (s.tags.indexOf(g) < 0) s.tags.push(g); });
+      (e.remTags || []).forEach(function (g) { var i = s.tags.indexOf(g); if (i >= 0) s.tags.splice(i, 1); });
+      if (e.addDevice) s.devices = e.addDevice;
+      s.liveSeg = e.liveSeg && s.segs.indexOf(e.liveSeg) >= 0 ? e.liveSeg : (s.segs.indexOf('in-stadium now') >= 0 ? 'in-stadium now' : null);
+      s.events.unshift({ t: e.t, text: e.line });
+    }
+    return s;
+  }
+
+  function chip(kind, label, extra) {
+    return '<span class="sfv-chip' + (extra || '') + '" data-c="' + kind + '"><i></i>' + label + '</span>';
+  }
+
+  function flashEl(el) {
+    if (!el || reduceMotion) return;
+    el.classList.remove('sfv-flash');
+    void el.offsetWidth;
+    el.classList.add('sfv-flash');
+  }
+
+  function render(idx) {
+    var s = stateAt(idx);
+    var e = idx >= 0 ? EVENTS[idx] : null;
+
+    // attributes
+    els.affinity.style.width = s.affinity + '%';
+    els.affinityVal.textContent = s.affinity + '%';
+    els.lapse.textContent = s.lapse;
+    els.lapse.className = 'sfv-risk ' + (s.lapse === 'low' ? 'is-low' : 'is-rise');
+    els.clv.textContent = s.clv;
+    els.clv.className = 'sfv-band ' + (s.clv === 'gold' ? 'is-gold' : 'is-silver');
+
+    // devices
+    els.devices.innerHTML = chip('device', '💻 laptop d_311') + chip('device', '📱 phone d_900') +
+      (s.devices ? chip('device', s.devices, ' is-new') : '');
+
+    // segments
+    els.segments.innerHTML = s.segs.map(function (g) {
+      var live = s.liveSeg === g;
+      var isNew = e && (e.addSegs || []).indexOf(g) >= 0;
+      return chip('seg', g, (live ? ' is-live-seg' : '') + (isNew ? ' is-new' : ''));
+    }).join('');
+    els.countSegs.textContent = s.segs.length;
+
+    // tags
+    els.tags.innerHTML = s.tags.length
+      ? s.tags.map(function (g) {
+          var isNew = e && (e.addTags || []).indexOf(g) >= 0;
+          return chip('tag', g, isNew ? ' is-new' : '');
+        }).join('')
+      : '<span class="sfv-none">none yet today</span>';
+
+    // timeline
+    var items = s.events.map(function (ev, i2) {
+      return '<li' + (i2 === 0 ? ' class="is-new"' : '') + '><span class="sfv-tl-t">' + ev.t + '</span><span>' + ev.text + '</span></li>';
+    }).concat(HISTORY.map(function (h) {
+      return '<li class="is-history' + (h.backfill ? ' is-backfill' : '') + '"><span class="sfv-tl-t">' + h.t + '</span><span>' + h.text + (h.backfill ? ' <span class="sfv-tl-tag">back-filled</span>' : '') + '</span></li>';
+    }));
+    els.timeline.innerHTML = items.join('');
+
+    // counters + meta
+    els.countEvents.textContent = idx + 1;
+    els.step.textContent = 'moment ' + (idx + 1) + ' of 7';
+    els.updated.textContent = e ? ('updated ' + e.t + ' · just now') : 'updated just now';
+    els.story.innerHTML = e ? e.story : 'The profile is open. Press play - or tap any moment to jump straight to it.';
+
+    // queue marks
+    rows.forEach(function (row, i2) {
+      row.classList.toggle('is-done', i2 <= idx);
+      row.classList.toggle('is-now', i2 === idx);
+    });
+
+    // flashes
+    if (e) {
+      e.flash.forEach(function (key) {
+        if (key === 'affinity') flashEl(els.attrAffinity);
+        else if (key === 'lapse') flashEl(els.attrLapse);
+        else if (key === 'clv') flashEl(els.attrClv);
+        else if (key === 'segments') flashEl(els.segments);
+        else if (key === 'tags') flashEl(els.tags);
+        else if (key === 'devices') flashEl(els.devices);
+        else if (key === 'timeline') flashEl(els.timeline);
+      });
+    }
+  }
+
+  function flyDot(idx) {
+    if (reduceMotion || idx < 0) return;
+    var row = rows[idx];
+    if (!row) return;
+    var from = row.getBoundingClientRect();
+    var to = doc.getBoundingClientRect();
+    var dot = document.createElement('span');
+    dot.className = 'sfv-fly';
+    dot.style.left = (from.left + from.width / 2 - 5) + 'px';
+    dot.style.top = (from.top + from.height / 2 - 5) + 'px';
+    document.body.appendChild(dot);
+    void dot.offsetWidth;
+    var dx = (to.left + to.width / 2) - (from.left + from.width / 2);
+    var dy = (to.top + 60) - (from.top + from.height / 2);
+    dot.style.transform = 'translate(' + dx + 'px,' + dy + 'px) scale(1.6)';
+    dot.style.opacity = '0';
+    window.setTimeout(function () { dot.remove(); }, 650);
+  }
+
+  function goTo(idx) {
+    current = Math.max(-1, Math.min(EVENTS.length - 1, idx));
+    render(current);
+    flyDot(current);
+  }
+
+  function pause() {
+    playing = false;
+    if (timer) { window.clearInterval(timer); timer = null; }
+    els.play.textContent = current >= EVENTS.length - 1 ? '▶ Play again' : (current >= 0 ? '▶ Resume' : '▶ Play the day');
+    els.play.classList.remove('is-on');
+    els.play.setAttribute('aria-pressed', 'false');
+  }
+
+  function play() {
+    if (current >= EVENTS.length - 1) goTo(-1);
+    playing = true;
+    els.play.textContent = '⏸ Pause';
+    els.play.classList.add('is-on');
+    els.play.setAttribute('aria-pressed', 'true');
+    timer = window.setInterval(function () {
+      if (current >= EVENTS.length - 1) { pause(); return; }
+      goTo(current + 1);
+    }, 2400);
+    goTo(current + 1);
+  }
+
+  els.play.addEventListener('click', function () { playing ? pause() : play(); });
+  els.reset.addEventListener('click', function () { pause(); els.play.textContent = '▶ Play the day'; goTo(-1); });
+  rows.forEach(function (row) {
+    function selectMoment() {
+      pause();
+      goTo(parseInt(row.getAttribute('data-i'), 10));
+    }
+    row.addEventListener('click', selectMoment);
+    row.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        selectMoment();
+      }
+    });
+  });
+
+  /* hero mini timeline cycle */
+  var mini = document.getElementById('sfvMiniTl');
+  if (mini && !reduceMotion) {
+    var miniLines = [
+      '19:12 · away jersey - interest became a sale',
+      '18:41 · gate scan - she\u2019s here',
+      '11:03 · away kits ×3 - interest forming',
+      '21:47 · shared the clip - amplifier'
+    ];
+    var mi = 0;
+    window.setInterval(function () {
+      mini.insertAdjacentHTML('afterbegin', '<li>' + miniLines[mi % miniLines.length] + '</li>');
+      mi++;
+      while (mini.children.length > 3) mini.removeChild(mini.lastElementChild);
+    }, 3000);
+  }
+
+  render(-1);
+})();
+</script>
+{% endraw %}

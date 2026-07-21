@@ -1,8 +1,9 @@
 ---
 layout: page
+cta: false
 permalink: /platform/id
 title: Fanfinity ID
-description: "A sovereign CDP and real-time identity graph that resolves every touchpoint into one consented, governed fan profile, in-region and yours to own."
+description: "A sovereign CDP and real-time identity graph that resolves every touchpoint into one consented, governed fan profile, in-Kingdom and yours to own."
 breadcrumb_parent: { title: Platform, url: /platform }
 pillars:
   - { icon: identity, title: "Recognize more fans, in real time", body: "The same fan shows up as a phone at the gate, a laptop on the stream, and an anonymous browser in between. Fanfinity ID joins those appearances into one profile, so recognition survives every device switch." }
@@ -18,7 +19,7 @@ govern_points:
 connect_points:
   - "An open connector framework ingests events from ticketing, streaming, app, web, on-site, and social, with no parallel database to maintain."
   - "Map your existing user IDs with custom identifiers and attributes, so the profile fits the data you already keep."
-  - "Stream to a columnar analytical warehouse you self-manage in-region, so the platform stays composable with your stack."
+  - "Stream to a columnar analytical warehouse you self-manage in-Kingdom, so the platform stays composable with your stack."
   - "A clean REST API and client SDKs cover anything custom, so every capability is programmable."
 resolve:
   - { icon: hash,     title: "Identifiers, not one hard key", body: "Email, device, app ID, ticket or order number, loyalty ID, custom IDs: each is a first-class identifier with its own merge rules. Resolution connects events on any of them, so you are not forced to hang identity on a single field that is often missing." }
@@ -30,62 +31,786 @@ faqs:
   - q: "Deterministic or probabilistic matching?"
     a: "The model is graph-based and rule-driven: it connects events on shared identifiers you define, with per-identifier merge limits and priorities you control. That keeps resolution explainable and auditable rather than a black-box score."
   - q: "How does consent fit in?"
-    a: "Consent is captured and enforced at the profile itself, not patched on downstream. The same governed record that powers activation is the one that keeps you compliant, and it is resolved and stored in-region, PDPL-governed at the data layer."
+    a: "Consent is captured and enforced at the profile itself, not patched on downstream. The same governed record that powers activation is the one that keeps you compliant, and it is resolved and stored in-Kingdom, PDPL-governed at the data layer."
   - q: "Do we have to move our data to you?"
-    a: "No. Fanfinity ID sits on an open connector framework and a warehouse you self-manage in-region. Bring the sources you already have, keep the data in your environment, and stay composable with the rest of your stack."
+    a: "No. Fanfinity ID sits on an open connector framework and a warehouse you self-manage in-Kingdom. Bring the sources you already have, keep the data in your environment, and stay composable with the rest of your stack."
   - q: "What keeps the graph from getting polluted by dirty data?"
     a: "Resolution runs alongside schema validation as events land, so graph hygiene is enforced on the way in rather than repaired by a nightly cleanup job. You apply your own data-quality rules (normalizing formats, catching typos, filtering internal test traffic), and per-identifier limits hold contested records apart instead of guessing a merge."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity ID"
-   title="Know every fan. One consented profile."
-   subtitle="Fanfinity ID is a sovereign CDP and real-time identity graph. It resolves fragmented, anonymous touchpoints into one governed golden fan profile, in-region, consented, and yours to own."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/platform-id.jpg"
-   image_alt="Black metal turnstiles in a building lobby" %}
 
-{% include feature-grid.html
-   heading="Identity that holds up under audit"
-   subheading="From the first anonymous visit to one governed profile, Fanfinity ID keeps resolution accurate, explainable, and current at every stage."
-   items=page.pillars
-   columns=3 %}
+<!-- ============================================================
+     FANFINITY ID - bespoke redesign ("The Fan Card" × blueprint)
+     Concept: the whole page is graph paper. A blank Fan Card is
+     pinned beside a scroll story; each beat inks something onto
+     the card - a cookie, a name, a device - until gold foil turns
+     it into a golden profile. A side scene shows the family
+     tablet being HELD APART by the guardrail. No dark band, no
+     configuration: one card, one story, then "what if?" replays.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   reverse=true
-   title="Governed at the data layer, not bolted on"
-   body="The hardest part of a fan graph isn't collecting data; it's owning it responsibly. Consent, residency, and deployment are built into Fanfinity ID from the profile up, so the same record that powers activation is also the one that keeps you compliant."
-   points=page.govern_points
-   cta_text="See data residency"
-   cta_url="/platform/data-residency"
-   icon="shield" %}
+<div class="idr-paper">
 
-{% include feature-split.html
-   title="Connect every source, keep it yours"
-   body="Fanfinity ID sits on an open connector framework and a warehouse you self-manage. Bring the touchpoints you already have, with no rip-and-replace and no vendor holding your fan data hostage."
-   points=page.connect_points
-   cta_text="Read the developer docs"
-   cta_url="/developers"
-   icon="stack" %}
-
-{% include feature-grid.html
-   heading="A graph that gets identity right, not just complete"
-   subheading="Resolution matches signals on any identifier, merges them into one golden record, and applies guardrails so distinct fans stay distinct."
-   items=page.resolve
-   columns=3 %}
-
-<section class="section-sm">
+<section class="idr-hero">
   <div class="container-page">
-    <div class="card flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between" data-reveal>
+    <div class="idr-hero-grid">
+      <div class="idr-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity ID</p>
+        <h1 class="idr-h1">
+          Know every fan.<br>
+          <span class="idr-accent">One consented profile.<svg class="idr-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="idr-lede">Fanfinity ID is a sovereign CDP and real-time identity graph. It resolves fragmented, anonymous touchpoints into one governed golden fan profile, in-Kingdom, consented, and yours to own.</p>
+        <div class="idr-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#story" class="btn btn-secondary btn-lg">Watch a stranger become a fan <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="idr-hero-strip" aria-label="What Fanfinity ID guarantees">
+          <li>Real-time graph</li>
+          <li>Multi-identifier</li>
+          <li>In-Kingdom · PDPL</li>
+          <li>Yours to own</li>
+        </ul>
+      </div>
+
+      <div class="idr-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="idr-fc idr-fc-static" data-state="0">
+          <div class="idr-fc-head"><span class="idr-fc-brand">Fanfinity ID · fan card</span><span class="idr-fc-figno">fig. 00</span></div>
+          <div class="idr-fc-bodyrow">
+            <div class="idr-fc-photo"><span>?</span></div>
+            <div class="idr-fc-fields">
+              <div class="idr-fc-field"><label>holder</label><span class="idr-fc-value">-</span></div>
+              <div class="idr-fc-field"><label>fan №</label><span class="idr-fc-value">-</span></div>
+            </div>
+          </div>
+          <div class="idr-fc-chips"><span class="idr-fc-chipslot">identifiers - none yet</span></div>
+          <p class="idr-fc-note">every fan starts blank</p>
+        </div>
+        <p class="idr-hero-art-note">This card is the whole product. Scroll, and watch the week fill it in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE STORY (sticky Fan Card) ==================== -->
+<section class="idr-story-sec" id="story">
+  <div class="container-page">
+    <div class="idr-sec-head" data-reveal>
+      <p class="eyebrow">One week, one fan</p>
+      <h2 class="idr-h2">The story of Sara,<br>as the graph sees it</h2>
+      <p class="idr-sec-sub">Six ordinary moments from one week. No configuration, no rules to learn - just scroll, and watch a blank card become a person. The card on the right is the only thing to follow.</p>
+    </div>
+
+    <div class="idr-story">
+      <!-- beats column -->
+      <div class="idr-beats">
+
+        <article class="idr-beat" data-state="1">
+          <p class="idr-fig">fig. 01 · monday</p>
+          <h3>A stranger browses.</h3>
+          <p>Someone reads two pages on the website and leaves. No login, no name - the only thing anyone saw is a cookie: <span class="idr-mono">c_9f2</span>. Your analytics counts a "visitor". That's the whole relationship so far.</p>
+          <p class="idr-beat-ink">→ the card gets its first mark: one dashed chip, and an <b>UNSIGNED</b> stamp.</p>
+        </article>
+
+        <article class="idr-beat" data-state="2">
+          <p class="idr-fig">fig. 02 · wednesday</p>
+          <h3>A ticket buys a name.</h3>
+          <p>At the box office, someone buys a ticket - and gives an email: <span class="idr-mono">sara@…</span>. Now the card has a holder: <b>Sara</b>. The ticket number <span class="idr-mono">t_8841</span> is stapled on with it.</p>
+          <p class="idr-beat-ink">→ the HOLDER field writes itself in. Stamp: <b>IDENTIFIED</b>.</p>
+        </article>
+
+        <article class="idr-beat" data-state="3">
+          <p class="idr-fig">fig. 03 · thursday</p>
+          <h3>The cookie gives her away.</h3>
+          <p>Evening: a stream login from a laptop - carrying the <b>same cookie</b> as Monday's stranger. So Monday was never a stranger. It was Sara, before we knew her. History rewrites itself onto her card.</p>
+          <p class="idr-beat-ink">→ the cookie chip pulses: Monday's visit back-fills into Sara's story.</p>
+        </article>
+
+        <article class="idr-beat" data-state="4">
+          <p class="idr-fig">fig. 04 · friday</p>
+          <h3>The phone joins too.</h3>
+          <p>The app opens on a phone, then logs in with the same email. A loyalty scan follows at the stadium gate. Phone, laptop, inbox, ticket, gate - five ways she shows up, one person behind all of them.</p>
+          <p class="idr-beat-ink">→ gold foil slides on. Stamp: <b>GOLDEN PROFILE</b>. Fan № 48211.</p>
+        </article>
+
+        <article class="idr-beat" data-state="5">
+          <p class="idr-fig">fig. 05 · saturday</p>
+          <h3>The tablet tempts the graph.</h3>
+          <p>A family tablet: kids' shows all afternoon, then <b>Khalid</b> logs in, then <b>Lama</b>. One device, two different people. A greedy graph would fuse them into one "fan" and call it complete. This one refuses.</p>
+          <p class="idr-beat-ink">→ the shared device tries to bridge two cards. The guardrail blocks it: <b>HELD APART</b>.</p>
+        </article>
+
+        <article class="idr-beat idr-beat-final" data-state="6">
+          <p class="idr-fig">fig. 06 · the count</p>
+          <h3>One week. Nine records. Three people.</h3>
+          <p>Your tools counted nine separate records this week. The graph holds three fans - and one honest "we don't know yet". Nobody invented, nobody merged by mistake, every join can show its evidence.</p>
+          <div class="idr-count">
+            <div class="idr-count-box"><b id="idrCountA">0</b><span>records your tools counted</span></div>
+            <div class="idr-count-box is-gold"><b id="idrCountB">0</b><span>resolved fans</span></div>
+            <div class="idr-count-box is-red"><b id="idrCountC">0</b><span>held apart, on purpose</span></div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- sticky card column -->
+      <div class="idr-story-visual">
+        <div class="idr-fc" id="idrCard" data-state="0" aria-live="polite">
+          <div class="idr-fc-head"><span class="idr-fc-brand">Fanfinity ID · fan card</span><span class="idr-fc-figno" id="idrFig">fig. 00</span></div>
+          <div class="idr-fc-bodyrow">
+            <div class="idr-fc-photo" id="idrFcPhoto"><span id="idrFcInitial">?</span></div>
+            <div class="idr-fc-fields">
+              <div class="idr-fc-field"><label>holder</label><span class="idr-fc-value" id="idrFcName">-</span></div>
+              <div class="idr-fc-field"><label>fan №</label><span class="idr-fc-value" id="idrFcNum">-</span></div>
+            </div>
+          </div>
+          <div class="idr-fc-chips" id="idrFcChips">
+            <span class="idr-fc-chipslot" id="idrChipSlot">identifiers - none yet</span>
+            <span class="idr-fc-chip" data-chip="cookie"><i></i>cookie c_9f2</span>
+            <span class="idr-fc-chip" data-chip="email"><i></i>email sara@…</span>
+            <span class="idr-fc-chip" data-chip="ticket"><i></i>ticket t_8841</span>
+            <span class="idr-fc-chip" data-chip="devlap"><i></i>device d_311</span>
+            <span class="idr-fc-chip" data-chip="devphone"><i></i>device d_900</span>
+            <span class="idr-fc-chip" data-chip="loyalty"><i></i>loyalty l_2210</span>
+          </div>
+          <p class="idr-fc-note" id="idrFcNote">waiting for the first touch…</p>
+          <div class="idr-fc-foil" aria-hidden="true"></div>
+          <span class="idr-fc-stamp" id="idrFcStamp"></span>
+          <p class="idr-fc-spec" id="idrFcSpec">ids: 0 · status: blank</p>
+        </div>
+
+        <!-- the tablet side-scene -->
+        <div class="idr-tab" id="idrTab" aria-hidden="true">
+          <p class="idr-tab-cap">meanwhile, elsewhere in the graph -</p>
+          <div class="idr-tab-scene">
+            <div class="idr-tab-card">
+              <span class="idr-tab-avatar">K</span>
+              <span class="idr-tab-mail">khalid@…</span>
+              <span class="idr-tab-stamp">held apart</span>
+            </div>
+            <div class="idr-tab-bridge" aria-hidden="true">
+              <span class="idr-tab-line"></span>
+              <span class="idr-tab-dev">device d_tab</span>
+              <span class="idr-tab-shield">🛡</span>
+              <span class="idr-tab-line"></span>
+            </div>
+            <div class="idr-tab-card">
+              <span class="idr-tab-avatar">L</span>
+              <span class="idr-tab-mail">lama@…</span>
+              <span class="idr-tab-stamp">held apart</span>
+            </div>
+          </div>
+          <p class="idr-tab-note">one shared device, two real people - kept two. Correct beats complete.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHAT IF? ==================== -->
+<section class="idr-wif-sec" id="what-if">
+  <div class="container-page">
+    <div class="idr-sec-head" data-reveal>
+      <p class="eyebrow">Same records, different rules</p>
+      <h2 class="idr-h2">What if?</h2>
+      <p class="idr-sec-sub">The story you just watched is the graph under Fanfinity ID's defaults. Flip each scenario to see the same week resolve a different way - because the rules are yours to define.</p>
+    </div>
+
+    <div class="idr-wifs">
+
+      <div class="idr-wif" data-reveal>
+        <div class="idr-wif-head">
+          <h3>If email weren't evidence…</h3>
+          <button type="button" class="idr-wif-toggle" aria-pressed="false"><span class="idr-wif-on">see it</span><span class="idr-wif-off">back</span></button>
+        </div>
+        <div class="idr-wif-stage">
+          <div class="idr-wif-view idr-wif-a">
+            <div class="idr-mini-card is-gold"><b>Fan #48211 · Sara</b><span>email · loyalty · ticket · 2 devices · cookie</span><em>⚡ golden profile</em></div>
+            <p class="idr-wif-tag">with email as evidence: one fan</p>
+          </div>
+          <div class="idr-wif-view idr-wif-b">
+            <div class="idr-mini-card"><b>web + stream</b><span>cookie c_9f2</span><em>nameless</em></div>
+            <div class="idr-mini-card"><b>ticket t_8841</b><span>no linkable evidence</span><em>nameless</em></div>
+            <div class="idr-mini-card"><b>app + gate</b><span>device d_900 · loyalty l_2210</span><em>nameless</em></div>
+            <p class="idr-wif-tag is-red">same week, three "strangers"</p>
+          </div>
+        </div>
+        <p class="idr-wif-copy">Take one identifier away and one fan lands as three separate records. This is why identity can't hang on a single hard key.</p>
+      </div>
+
+      <div class="idr-wif" data-reveal style="--reveal-delay:80ms">
+        <div class="idr-wif-head">
+          <h3>If the guardrail were off…</h3>
+          <button type="button" class="idr-wif-toggle" aria-pressed="false"><span class="idr-wif-on">see it</span><span class="idr-wif-off">back</span></button>
+        </div>
+        <div class="idr-wif-stage">
+          <div class="idr-wif-view idr-wif-a">
+            <div class="idr-mini-pair">
+              <div class="idr-mini-card"><b>Khalid</b><span>khalid@…</span><em>held apart</em></div>
+              <div class="idr-mini-card"><b>Lama</b><span>lama@…</span><em>held apart</em></div>
+            </div>
+            <p class="idr-wif-tag">guardrail on: two people, kept two</p>
+          </div>
+          <div class="idr-wif-view idr-wif-b">
+            <div class="idr-mini-card is-bad"><b>khalid@… + lama@…</b><span>fused by shared device d_tab</span><em>⚠ over-merged</em></div>
+            <p class="idr-wif-tag is-red">two real people, one wrong profile</p>
+          </div>
+        </div>
+        <p class="idr-wif-copy">Without the guardrail, the family tablet collapses a marriage into one "fan" - and every message downstream is wrong for one of them.</p>
+      </div>
+
+      <div class="idr-wif" data-reveal style="--reveal-delay:160ms">
+        <div class="idr-wif-head">
+          <h3>If a fan is a household…</h3>
+          <button type="button" class="idr-wif-toggle" aria-pressed="false"><span class="idr-wif-on">see it</span><span class="idr-wif-off">back</span></button>
+        </div>
+        <div class="idr-wif-stage">
+          <div class="idr-wif-view idr-wif-a">
+            <div class="idr-mini-pair">
+              <div class="idr-mini-card"><b>Khalid</b><span>khalid@…</span><em>held apart</em></div>
+              <div class="idr-mini-card"><b>Lama</b><span>lama@…</span><em>held apart</em></div>
+            </div>
+            <p class="idr-wif-tag">definition: one person</p>
+          </div>
+          <div class="idr-wif-view idr-wif-b">
+            <div class="idr-mini-card is-house"><b>🏠 Household H-07</b><span>khalid@… · lama@… · shared tablet</span><em>one season-pass household</em></div>
+            <p class="idr-wif-tag">definition: household - merged on purpose</p>
+          </div>
+        </div>
+        <p class="idr-wif-copy">Decide what a fan means for your business - one person, a family sharing a season pass, a corporate box - and resolution follows your model.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PILLARS ==================== -->
+<section class="idr-caps-sec">
+  <div class="container-page">
+    <div class="idr-sec-head" data-reveal>
+      <p class="eyebrow">How it works</p>
+      <h2 class="idr-h2">Identity that holds up under audit</h2>
+      <p class="idr-sec-sub">From the first anonymous visit to one governed profile, Fanfinity ID keeps resolution accurate, explainable, and current at every stage.</p>
+    </div>
+
+    <ol class="idr-caps idr-caps-5">
+      {%- for p in page.pillars -%}
+      <li class="idr-cap" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="idr-cap-num">0{{ forloop.index }}</span>
+        <span class="icon-chip">{% include icon.html name=p.icon class="h-5 w-5" %}</span>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== GOVERNED AT THE DATA LAYER ==================== -->
+<section class="idr-gov-sec">
+  <div class="container-page">
+    <div class="idr-gov-grid">
+      <div data-reveal>
+        <p class="eyebrow">Consent &amp; residency</p>
+        <h2 class="idr-h2">Governed at the data layer,<br>not bolted on</h2>
+        <p class="idr-sec-sub">The hardest part of a fan graph isn't collecting data; it's owning it responsibly. Consent, residency, and deployment are built into Fanfinity ID from the profile up, so the same record that powers activation is also the one that keeps you compliant.</p>
+        <ul class="idr-gov-points">
+          {%- for g in page.govern_points -%}
+          <li>{{ g }}</li>
+          {%- endfor -%}
+        </ul>
+        <a href="{{ '/platform/data-residency' | relative_url }}" class="idr-why-link">See data residency <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="idr-gov-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="idr-gov-card">
+          <div class="idr-gov-top">
+            <span class="idr-gov-avatar">S</span>
+            <div>
+              <p class="idr-gov-name">Fan #48211 · Sara</p>
+              <p class="idr-gov-sub">golden record · governed at the profile</p>
+            </div>
+          </div>
+          <ul class="idr-gov-flags">
+            <li class="is-ok"><span>email</span><b>consented ✓</b></li>
+            <li class="is-ok"><span>push</span><b>consented ✓</b></li>
+            <li class="is-no"><span>ads</span><b>withheld ✕</b></li>
+          </ul>
+          <p class="idr-gov-note">Consent is enforced on the record itself - every activation reads the same flags.</p>
+          <div class="idr-gov-stamp">resolved &amp; stored in-Kingdom · PDPL-governed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONNECT YOUR DATA ==================== -->
+<section class="idr-connect-sec">
+  <div class="container-page">
+    <div class="idr-sec-head" data-reveal>
+      <p class="eyebrow">Connect your data</p>
+      <h2 class="idr-h2">Connect every source, keep it yours</h2>
+      <p class="idr-sec-sub">Fanfinity ID sits on an open connector framework and a warehouse you self-manage. Bring the touchpoints you already have, with no rip-and-replace and no vendor holding your fan data hostage.</p>
+    </div>
+
+    <ul class="idr-connect">
+      {%- for c in page.connect_points -%}
+      <li data-reveal style="--reveal-delay:{{ forloop.index0 | times: 60 }}ms">
+        <span class="idr-connect-num">0{{ forloop.index }}</span>
+        <p>{{ c }}</p>
+      </li>
+      {%- endfor -%}
+    </ul>
+    <a href="{{ '/developers' | relative_url }}" class="idr-why-link" data-reveal>Read the developer docs <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ==================== HOW RESOLUTION WORKS ==================== -->
+<section class="idr-how-sec">
+  <div class="container-page">
+    <div class="idr-sec-head" data-reveal>
+      <p class="eyebrow">How resolution works</p>
+      <h2 class="idr-h2">A graph that gets identity right,<br>not just complete</h2>
+      <p class="idr-sec-sub">Resolution matches signals on any identifier, merges them into one golden record, and applies guardrails so distinct fans stay distinct.</p>
+    </div>
+
+    <ol class="idr-how">
+      {%- for r in page.resolve -%}
+      <li data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="idr-how-num">0{{ forloop.index }}</span>
+        <div>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.body }}</p>
+        </div>
+        <span class="icon-chip idr-how-icon">{% include icon.html name=r.icon class="h-5 w-5" %}</span>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== PUT THE PROFILE TO WORK ==================== -->
+<section class="idr-next-sec">
+  <div class="container-page">
+    <div class="idr-next" data-reveal>
       <div>
-        <h2 class="text-xl font-semibold tracking-tight">Put the profile to work</h2>
-        <p class="mt-1 text-muted-foreground">One resolved profile drives segmentation, journeys, and paid audiences in Fanfinity Activate.</p>
+        <h2>Put the profile to work</h2>
+        <p>One resolved profile drives segmentation, journeys, and paid audiences in Fanfinity Activate.</p>
       </div>
       <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary shrink-0">See Fanfinity Activate {% include icon.html name="arrow-right" class="h-4 w-4" %}</a>
     </div>
   </div>
 </section>
 
-{% include faq.html heading="Identity questions engineers ask" %}
+</div><!-- /idr-paper -->
+
+{% include faq.html eyebrow="Questions" heading="Identity questions engineers ask" %}
+
+{% include cta-band.html
+   heading="Know the fan in front of you - while they're still in front of you"
+   text="Bring your messiest export to a walkthrough. We'll run it through Fanfinity ID live and show you the golden profiles, the merge evidence behind every one of them, and the records the guardrail refused to guess on." %}
+
+{% raw %}
+<style>
+/* ================= Fanfinity ID - "Fan Card × blueprint" styles (.idr-) ================= */
+.idr-paper {
+  background: #ffffff;
+  overflow-x: clip; /* sticky-safe: clip does not become a scroll container */
+}
+
+/* ---------- hero ---------- */
+.idr-hero { padding: 5.5rem 0 4rem; }
+.idr-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.idr-hero-grid > *, .idr-gov-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .idr-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.idr-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.idr-accent { position: relative; display: inline-block; color: #854dff; }
+.idr-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.idr-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.idr-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.idr-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.idr-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.idr-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+.idr-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.idr-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* ---------- section heads ---------- */
+.idr-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.idr-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.idr-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ---------- the Fan Card ---------- */
+.idr-fc {
+  position: relative; width: min(100%, 420px); margin: 0 auto;
+  background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px;
+  padding: 1.05rem 1.15rem 2.35rem;
+  box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45);
+  transition: border-color 0.5s, box-shadow 0.5s;
+}
+.idr-fc::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; pointer-events: none; }
+.idr-fc-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,69,0.55); }
+.idr-fc-figno { color: #7c3aed; font-weight: 700; }
+.idr-fc-bodyrow { display: flex; gap: 0.9rem; align-items: center; margin-top: 0.9rem; }
+.idr-fc-photo { width: 58px; height: 58px; border-radius: 12px; border: 1.5px dashed rgba(43,33,69,0.45); display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.35rem; color: rgba(43,33,69,0.4); background: rgba(124,58,237,0.05); transition: color 0.4s, background 0.4s, border-color 0.4s; flex-shrink: 0; }
+.idr-fc.s2 .idr-fc-photo, .idr-fc.s3 .idr-fc-photo { color: #2b2145; border-style: solid; }
+.idr-fc.s4 .idr-fc-photo, .idr-fc.s5 .idr-fc-photo, .idr-fc.s6 .idr-fc-photo { color: #2b2145; background: #e8c77b; border: 1.5px solid #a87616; }
+.idr-fc-fields { display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; flex: 1; }
+.idr-fc-field label { display: block; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.52rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.idr-fc-value { display: inline-block; min-width: 7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.92rem; font-weight: 700; color: #2b2145; border-bottom: 1px dashed rgba(43,33,69,0.45); padding-bottom: 0.1rem; }
+.idr-fc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.95rem; min-height: 1.9rem; }
+.idr-fc-chipslot { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.06em; color: rgba(43,33,69,0.4); align-self: center; }
+.idr-fc-chip { display: none; align-items: center; gap: 0.32rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.02em; color: var(--ic); border: 1px dashed var(--ic); border-radius: 9999px; padding: 0.22rem 0.55rem; background: #fff; }
+.idr-fc-chip i { width: 7px; height: 7px; border-radius: 9999px; background: var(--ic); }
+.idr-fc-chip.is-on { display: inline-flex; animation: idr-ink 0.45s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes idr-ink { from { opacity: 0; transform: translateY(7px) scale(0.9); } to { opacity: 1; transform: none; } }
+.idr-fc-chip[data-chip="email"] { --ic: #7c3aed; }
+.idr-fc-chip[data-chip="loyalty"] { --ic: #b8860b; }
+.idr-fc-chip[data-chip="ticket"] { --ic: #2563eb; }
+.idr-fc-chip[data-chip="devlap"], .idr-fc-chip[data-chip="devphone"] { --ic: #0d9488; }
+.idr-fc-chip[data-chip="cookie"] { --ic: #64748b; }
+.idr-fc-chip.is-hot { background: rgba(100,116,139,0.12); border-style: solid; }
+.idr-fc-note { margin: 0.8rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; line-height: 1.5; letter-spacing: 0.03em; color: rgba(43,33,69,0.6); }
+.idr-fc-foil { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(135deg, rgba(232,180,90,0.22), rgba(232,180,90,0.06) 45%, transparent 70%); opacity: 0; transition: opacity 0.7s; pointer-events: none; }
+.idr-fc.s4 .idr-fc-foil, .idr-fc.s5 .idr-fc-foil, .idr-fc.s6 .idr-fc-foil { opacity: 1; }
+.idr-fc.s4, .idr-fc.s5, .idr-fc.s6 { border-color: #a87616; box-shadow: 0 3px 8px -6px rgba(168,118,22,0.55); }
+.idr-fc-stamp { position: absolute; top: 3rem; right: 1rem; transform: rotate(-8deg); border: 2px solid currentColor; border-radius: 6px; padding: 0.14em 0.5em; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0; pointer-events: none; }
+.idr-fc-stamp.is-in { opacity: 1; animation: idr-stamp 0.32s cubic-bezier(0.2,0.7,0.2,1); }
+@keyframes idr-stamp { from { transform: rotate(-8deg) scale(1.6); opacity: 0; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
+.idr-fc-stamp.is-slate { color: #64748b; }
+.idr-fc-stamp.is-purple { color: #7c3aed; }
+.idr-fc-stamp.is-gold { color: #b8860b; }
+.idr-fc-spec { position: absolute; left: 1.15rem; right: 1.15rem; bottom: 0.75rem; margin: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.45); }
+.idr-fc-static { pointer-events: none; }
+
+/* ---------- story layout ---------- */
+.idr-story-sec { padding: 5.5rem 0 6rem; }
+.idr-story { display: flex; flex-direction: column; }
+.idr-story-visual { order: -1; position: sticky; top: 64px; z-index: 6; padding: 0.55rem 0.55rem 0.75rem; background: #ffffff; border-radius: 14px; box-shadow: 0 14px 30px -20px rgba(43,33,69,0.45); }
+@media (min-width: 1024px) {
+  .idr-story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 450px); gap: 4.5rem; align-items: start; }
+  .idr-story-visual { order: 0; grid-column: 2; grid-row: 1; top: 92px; background: transparent; box-shadow: none; padding: 0 0 1rem; }
+  .idr-beats { grid-column: 1; grid-row: 1; }
+}
+
+/* ---------- beats ---------- */
+.idr-beat { padding: 3rem 0; border-top: 1px dashed rgba(43,33,69,0.28); }
+.idr-beat:first-child { border-top: 0; padding-top: 1rem; }
+@media (min-width: 1024px) {
+  .idr-beat { min-height: 76vh; display: flex; flex-direction: column; justify-content: center; padding: 2rem 0; }
+  .idr-beat:first-child { padding-top: 2rem; }
+}
+.idr-fig { margin: 0 0 0.7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #7c3aed; }
+.idr-beat h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.015em; font-size: clamp(1.55rem, 2.6vw, 2.15rem); margin: 0; }
+.idr-beat p { margin: 0.95rem 0 0; font-size: 1.02rem; line-height: 1.75; color: var(--color-muted-foreground); max-width: 36rem; }
+.idr-mono { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.86em; color: #7c3aed; }
+.idr-beat-ink { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.72rem; line-height: 1.6; color: #2b2145; border-left: 3px solid #854dff; background: rgba(133,77,255,0.07); border-radius: 0 8px 8px 0; padding: 0.6rem 0.85rem; }
+.idr-beat-ink b { color: #7c3aed; }
+
+/* ---------- finale counters ---------- */
+.idr-count { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
+.idr-count-box { flex: 1; min-width: 130px; border: 1.5px solid #2b2145; border-radius: 12px; background: #fffdf8; padding: 0.85rem 0.7rem; text-align: center; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.idr-count-box b { display: block; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 2.3rem; line-height: 1; color: #2b2145; font-variant-numeric: tabular-nums; }
+.idr-count-box span { display: block; margin-top: 0.4rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.55); }
+.idr-count-box.is-gold b { color: #b8860b; }
+.idr-count-box.is-red b { color: #d93b54; }
+
+/* ---------- tablet side-scene ---------- */
+.idr-tab { margin-top: 1.1rem; opacity: 0; transform: translateY(10px); transition: opacity 0.5s, transform 0.5s; pointer-events: none; }
+.idr-tab.is-in { opacity: 1; transform: none; }
+.idr-tab-cap { margin: 0 0 0.55rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.idr-tab-scene { display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.5rem; align-items: center; }
+.idr-tab-card { background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 12px; padding: 0.6rem 0.55rem; display: flex; flex-direction: column; align-items: center; gap: 0.25rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.idr-tab-avatar { width: 30px; height: 30px; border-radius: 9999px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 0.8rem; color: #2b2145; border: 1.5px dashed rgba(43,33,69,0.45); }
+.idr-tab-mail { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; color: #7c3aed; }
+.idr-tab-stamp { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.5rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #d93b54; border: 1.5px solid #d93b54; border-radius: 5px; padding: 0.1em 0.4em; transform: rotate(-5deg); }
+.idr-tab-bridge { display: flex; align-items: center; gap: 0.3rem; }
+.idr-tab-line { width: 26px; border-top: 2px dashed #d93b54; }
+.idr-tab-dev { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.5rem; letter-spacing: 0.04em; color: #0d9488; border: 1px dashed #0d9488; border-radius: 9999px; padding: 0.15rem 0.4rem; background: #fff; white-space: nowrap; }
+.idr-tab-shield { font-size: 0.9rem; filter: grayscale(0.2); }
+.idr-tab-note { margin: 0.65rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; line-height: 1.55; color: rgba(43,33,69,0.55); }
+
+/* ---------- what if ---------- */
+.idr-wif-sec { padding: 0 0 6.5rem; }
+.idr-wifs { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 1024px) { .idr-wifs { grid-template-columns: repeat(3, 1fr); } }
+.idr-wif { border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.15rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); display: flex; flex-direction: column; }
+.idr-wif-head { display: flex; justify-content: space-between; align-items: start; gap: 0.75rem; }
+.idr-wif-head h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.05rem; margin: 0; }
+.idr-wif-toggle { flex-shrink: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #7c3aed; border: 1.5px dashed #7c3aed; border-radius: 9999px; background: transparent; padding: 0.3rem 0.7rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.idr-wif-toggle:hover { background: rgba(124,58,237,0.08); }
+.idr-wif-toggle .idr-wif-off { display: none; }
+.idr-wif.is-alt .idr-wif-toggle { color: #d93b54; border-color: #d93b54; border-style: solid; }
+.idr-wif.is-alt .idr-wif-toggle .idr-wif-on { display: none; }
+.idr-wif.is-alt .idr-wif-toggle .idr-wif-off { display: inline; }
+.idr-wif-stage { position: relative; height: 216px; margin-top: 1rem; }
+.idr-wif-view { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 0.45rem; justify-content: center; transition: opacity 0.35s, transform 0.35s; }
+.idr-wif-b { opacity: 0; transform: translateY(9px); pointer-events: none; }
+.idr-wif.is-alt .idr-wif-a { opacity: 0; transform: translateY(-9px); pointer-events: none; }
+.idr-wif.is-alt .idr-wif-b { opacity: 1; transform: none; }
+.idr-mini-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; }
+.idr-mini-card { border: 1px dashed rgba(43,33,69,0.5); border-radius: 10px; background: #fff; padding: 0.5rem 0.6rem; display: flex; flex-direction: column; gap: 0.12rem; }
+.idr-mini-card b { font-size: 0.72rem; color: #2b2145; }
+.idr-mini-card span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.02em; color: rgba(43,33,69,0.55); }
+.idr-mini-card em { font-family: ui-monospace, 'Geist Mono', monospace; font-style: normal; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.idr-mini-card.is-gold { border: 1px solid #b8860b; background: linear-gradient(150deg, rgba(232,180,90,0.14), #fff 60%); }
+.idr-mini-card.is-gold em { color: #b8860b; }
+.idr-mini-card.is-bad { border: 1.5px solid #d93b54; }
+.idr-mini-card.is-bad em { color: #d93b54; }
+.idr-mini-card.is-house { border: 1.5px solid #0d9488; }
+.idr-mini-card.is-house em { color: #0d9488; }
+.idr-wif-tag { margin: auto 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.06em; color: rgba(43,33,69,0.5); }
+.idr-wif-tag.is-red { color: #d93b54; }
+.idr-wif-copy { margin: 1rem 0 0; font-size: 0.85rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- pillars ---------- */
+.idr-caps-sec { padding: 0 0 6.5rem; }
+.idr-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .idr-caps { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .idr-caps-5 { grid-template-columns: repeat(3, 1fr); } }
+.idr-cap { position: relative; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.4rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.18s; }
+.idr-cap:hover { background: rgba(43,33,69,0.025); }
+.idr-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.idr-cap .icon-chip { margin-bottom: 1rem; }
+.idr-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.idr-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- governed ---------- */
+.idr-gov-sec { padding: 0 0 6.5rem; }
+.idr-gov-grid { display: grid; gap: 2.5rem; align-items: center; }
+@media (min-width: 1024px) { .idr-gov-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.idr-gov-points { list-style: none; margin: 1.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.idr-gov-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.idr-gov-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.idr-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.idr-why-link:hover { color: #5b21b6; }
+.idr-gov-art { display: flex; justify-content: center; }
+.idr-gov-card { width: min(100%, 390px); background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1.25rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); }
+.idr-gov-top { display: flex; align-items: center; gap: 0.7rem; }
+.idr-gov-avatar { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1rem; color: #2b2145; background: #e8c77b; flex-shrink: 0; }
+.idr-gov-name { margin: 0; font-size: 0.9rem; font-weight: 600; color: #2b2145; }
+.idr-gov-sub { margin: 0.15rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.idr-gov-flags { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.45rem; }
+.idr-gov-flags li { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1px dashed rgba(43,33,69,0.4); border-radius: 10px; padding: 0.45rem 0.7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; color: #2b2145; }
+.idr-gov-flags li b { font-weight: 700; }
+.idr-gov-flags li.is-ok b { color: #0d9488; }
+.idr-gov-flags li.is-no b { color: #d93b54; }
+.idr-gov-note { margin: 0.9rem 0 0; font-size: 0.72rem; line-height: 1.55; color: var(--color-muted-foreground); }
+.idr-gov-stamp { margin-top: 0.9rem; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #b8860b; border: 1.5px dashed #b8860b; border-radius: 9999px; padding: 0.4rem 0.6rem; }
+
+/* ---------- connect ---------- */
+.idr-connect-sec { padding: 0 0 6.5rem; }
+.idr-connect { list-style: none; margin: 0; padding: 0; border-top: 1px dashed rgba(43,33,69,0.35); }
+.idr-connect li { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px dashed rgba(43,33,69,0.35); align-items: baseline; }
+.idr-connect-num { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.idr-connect p { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 52rem; }
+
+/* ---------- how resolution works ---------- */
+.idr-how-sec { padding: 0 0 6.5rem; }
+.idr-how { list-style: none; margin: 0; padding: 0; border-top: 1px dashed rgba(43,33,69,0.35); }
+.idr-how > li { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px dashed rgba(43,33,69,0.35); align-items: baseline; }
+.idr-how-num { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.idr-how h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.3rem; margin: 0; }
+.idr-how p { margin: 0.5rem 0 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 46rem; }
+@media (max-width: 640px) { .idr-how-icon { display: none; } }
+
+/* ---------- next ---------- */
+.idr-next-sec { padding: 0 0 6.5rem; }
+.idr-next { display: flex; flex-direction: column; gap: 1rem; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.6rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+@media (min-width: 640px) { .idr-next { flex-direction: row; align-items: center; justify-content: space-between; } }
+.idr-next h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; margin: 0; }
+.idr-next p { margin: 0.3rem 0 0; font-size: 0.95rem; color: var(--color-muted-foreground); }
+
+/* ---------- dark-mode reconciliation ---------- */
+html.dark .idr-paper { background-color: #120d1e; }
+html.dark .idr-fc, html.dark .idr-wif, html.dark .idr-count-box, html.dark .idr-gov-card, html.dark .idr-cap, html.dark .idr-next, html.dark .idr-tab-card { background: #1b1429; border-color: rgba(221,210,242,0.5); box-shadow: 0 2px 4px -3px rgba(221,210,242,0.2); }
+html.dark .idr-fc::before { border-color: rgba(221,210,242,0.3); }
+html.dark .idr-fc-head, html.dark .idr-fc-note, html.dark .idr-fc-spec, html.dark .idr-fc-chipslot, html.dark .idr-tab-cap, html.dark .idr-tab-note, html.dark .idr-wif-tag, html.dark .idr-gov-sub { color: rgba(221,210,242,0.55); }
+html.dark .idr-fc-value, html.dark .idr-gov-name, html.dark .idr-mini-card b, html.dark .idr-count-box b { color: #efe9fb; }
+html.dark .idr-fc-photo { color: rgba(221,210,242,0.6); border-color: rgba(221,210,242,0.4); background: rgba(167,139,255,0.08); }
+html.dark .idr-fc-chip { background: #241a38; }
+html.dark .idr-mini-card { background: #241a38; border-color: rgba(221,210,242,0.4); }
+html.dark .idr-mini-card.is-gold { background: linear-gradient(150deg, rgba(232,180,90,0.16), #241a38 60%); }
+html.dark .idr-beat { border-color: rgba(221,210,242,0.25); }
+html.dark .idr-beat-ink { color: #e7defc; background: rgba(133,77,255,0.14); }
+html.dark .idr-beat-ink b, html.dark .idr-mono { color: #b98cff; }
+html.dark .idr-gov-flags li { background: #241a38; border-color: rgba(221,210,242,0.35); color: #e7defc; }
+html.dark .idr-connect, html.dark .idr-connect li, html.dark .idr-how, html.dark .idr-how > li { border-color: rgba(221,210,242,0.25); }
+html.dark .idr-story-visual { background: #120d1e; }
+@media (min-width: 1024px) { html.dark .idr-story-visual { background: transparent; } }
+html.dark .idr-why-link { color: #b98cff; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .idr-fc-chip.is-on, .idr-fc-stamp.is-in, .idr-fc-chip.is-hot { animation: none !important; }
+  .idr-tab, .idr-wif-view { transition: none !important; }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 480px) {
+  .idr-hero { padding-top: 4rem; }
+  .idr-fc { padding: 0.85rem 0.85rem 2.2rem; }
+  .idr-fc-stamp { top: 2.6rem; right: 0.75rem; }
+  .idr-tab-dev { font-size: 0.44rem; }
+  .idr-tab-line { width: 14px; }
+  .idr-wif-stage { height: 232px; }
+}
+</style>
+
+<script>
+/* ================= The Fan Card - scroll engine ================= */
+(function () {
+  'use strict';
+  var card = document.getElementById('idrCard');
+  if (!card) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = {
+    fig: document.getElementById('idrFig'),
+    name: document.getElementById('idrFcName'),
+    num: document.getElementById('idrFcNum'),
+    initial: document.getElementById('idrFcInitial'),
+    note: document.getElementById('idrFcNote'),
+    stamp: document.getElementById('idrFcStamp'),
+    spec: document.getElementById('idrFcSpec'),
+    slot: document.getElementById('idrChipSlot'),
+    tab: document.getElementById('idrTab')
+  };
+  var chipEls = {};
+  Array.prototype.forEach.call(card.querySelectorAll('.idr-fc-chip'), function (c) {
+    chipEls[c.getAttribute('data-chip')] = c;
+  });
+
+  var STATES = [
+    { fig: 'fig. 00', name: '-', num: '-', initial: '?', note: 'waiting for the first touch…', spec: 'ids: 0 · status: blank', stamp: null, chips: [] },
+    { fig: 'fig. 01', name: '-', num: '-', initial: '?', note: 'no name, no login - just a cookie', spec: 'ids: 1 · status: unsigned', stamp: { t: 'unsigned', c: 'is-slate' }, chips: ['cookie'] },
+    { fig: 'fig. 02', name: 'Sara', num: '-', initial: 'S', note: 'the card has a holder', spec: 'ids: 3 · status: identified', stamp: { t: 'identified', c: 'is-purple' }, chips: ['cookie', 'email', 'ticket'] },
+    { fig: 'fig. 03', name: 'Sara', num: '-', initial: 'S', note: 'monday = sara, all along', spec: 'ids: 4 · status: identified', stamp: { t: 'identified', c: 'is-purple' }, chips: ['cookie', 'email', 'ticket', 'devlap'], hot: 'cookie' },
+    { fig: 'fig. 04', name: 'Sara', num: '48211', initial: 'S', note: 'one person, every channel', spec: 'ids: 6 · status: golden', stamp: { t: 'golden profile', c: 'is-gold' }, chips: ['cookie', 'email', 'ticket', 'devlap', 'devphone', 'loyalty'] },
+    { fig: 'fig. 05', name: 'Sara', num: '48211', initial: 'S', note: 'elsewhere: the tablet refuses to merge', spec: 'ids: 6 · status: golden', stamp: { t: 'golden profile', c: 'is-gold' }, chips: ['cookie', 'email', 'ticket', 'devlap', 'devphone', 'loyalty'], tab: true },
+    { fig: 'fig. 06', name: 'Sara', num: '48211', initial: 'S', note: '9 records → 3 fans · 1 held apart', spec: 'ids: 6 · status: golden', stamp: { t: 'golden profile', c: 'is-gold' }, chips: ['cookie', 'email', 'ticket', 'devlap', 'devphone', 'loyalty'], tab: true }
+  ];
+
+  var current = -1;
+  var typeTimer = null;
+
+  function typeName(text) {
+    if (typeTimer) { window.clearInterval(typeTimer); typeTimer = null; }
+    if (reduceMotion || text === '-') { els.name.textContent = text; return; }
+    var i = 0;
+    els.name.textContent = '';
+    typeTimer = window.setInterval(function () {
+      i++;
+      els.name.textContent = text.slice(0, i);
+      if (i >= text.length) { window.clearInterval(typeTimer); typeTimer = null; }
+    }, 90);
+  }
+
+  function applyState(n) {
+    if (n === current) return;
+    var prev = current;
+    current = n;
+    var s = STATES[n];
+    card.className = 'idr-fc s' + n;
+    els.fig.textContent = s.fig;
+    els.note.textContent = s.note;
+    els.spec.textContent = s.spec;
+    els.num.textContent = s.num;
+    els.initial.textContent = s.initial;
+    if (s.name !== '-' && (prev < 2 || els.name.textContent === '-')) typeName(s.name);
+    else if (s.name === '-') { if (typeTimer) { window.clearInterval(typeTimer); typeTimer = null; } els.name.textContent = '-'; }
+    // stamp
+    els.stamp.className = 'idr-fc-stamp';
+    els.stamp.textContent = '';
+    if (s.stamp) {
+      els.stamp.textContent = s.stamp.t;
+      void els.stamp.offsetWidth; /* restart slam animation */
+      els.stamp.className = 'idr-fc-stamp is-in ' + s.stamp.c;
+    }
+    // chips
+    Object.keys(chipEls).forEach(function (k) {
+      chipEls[k].classList.toggle('is-on', s.chips.indexOf(k) >= 0);
+      chipEls[k].classList.remove('is-hot');
+    });
+    els.slot.style.display = s.chips.length ? 'none' : '';
+    if (s.hot && chipEls[s.hot]) {
+      void chipEls[s.hot].offsetWidth;
+      chipEls[s.hot].classList.add('is-hot');
+    }
+    // tablet side-scene
+    els.tab.classList.toggle('is-in', !!s.tab);
+    els.tab.setAttribute('aria-hidden', s.tab ? 'false' : 'true');
+  }
+
+  /* ---------- beat detection: whichever beat holds the viewport center ---------- */
+  var beats = Array.prototype.slice.call(document.querySelectorAll('.idr-beat'));
+  var ticking = false;
+  var counted = false;
+
+  function activeBeat() {
+    var center = window.innerHeight * 0.5;
+    for (var i = 0; i < beats.length; i++) {
+      var r = beats[i].getBoundingClientRect();
+      if (r.top <= center && r.bottom >= center) return beats[i];
+    }
+    return null;
+  }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      ticking = false;
+      var b = activeBeat();
+      var s;
+      if (b) {
+        s = parseInt(b.getAttribute('data-state'), 10);
+      } else {
+        // deep-link / fast-scroll fallback: past the last beat → final state; before the first → blank card
+        var center = window.innerHeight * 0.5;
+        var last = beats[beats.length - 1].getBoundingClientRect();
+        var first = beats[0].getBoundingClientRect();
+        if (center > last.bottom) s = 6;
+        else if (center < first.top) s = 0;
+        else return;
+      }
+      applyState(s);
+      if (s === 6 && !counted) { counted = true; runCounters(); }
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+
+  /* ---------- finale counters ---------- */
+  function countUp(el, target, ms) {
+    if (reduceMotion) { el.textContent = target; return; }
+    var t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / ms);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
+  function runCounters() {
+    countUp(document.getElementById('idrCountA'), 9, 750);
+    countUp(document.getElementById('idrCountB'), 3, 950);
+    countUp(document.getElementById('idrCountC'), 1, 1150);
+  }
+
+  /* ---------- what-if toggles ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.idr-wif'), function (wif) {
+    var btn = wif.querySelector('.idr-wif-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var alt = wif.classList.toggle('is-alt');
+      btn.setAttribute('aria-pressed', alt ? 'true' : 'false');
+    });
+  });
+
+  /* ---------- init ---------- */
+  applyState(0);
+  onScroll();
+})();
+</script>
+{% endraw %}

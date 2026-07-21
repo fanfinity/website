@@ -1,5 +1,6 @@
 ---
 layout: page
+cta: false
 permalink: /platform/id/audience-builder
 title: Audience Builder
 description: "Segment fans on any attribute or behavior and activate them across channels with Fanfinity ID Audience Builder."
@@ -15,26 +16,349 @@ benefits:
   - "Reduce operational overhead by defining segments once and distributing them to all channels."
   - "Increase conversion by activating audiences while behavior is fresh, not days after signals arrive."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity ID"
-   title="Segment any way you want"
-   subtitle="Fanfinity ID Audience Builder lets you create, test, and activate fan segments on any attribute (demographic, behavioral, predictive) in real time. Build once, activate everywhere."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity ID"
-   secondary_url="/platform/id"
-   icon="filter" %}
 
-{% include feature-grid.html
-   heading="Flexible segmentation, real-time activation"
-   subheading="Define audiences on any profile attribute or behavior, combine them with complex logic, and activate them across all channels. Segments update in real time as fans match or leave criteria."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     AUDIENCE BUILDER - bespoke redesign ("The Roster")
+     Concept: ten named fans with visible traits. Pick rules (or
+     a one-click recipe) and every card flips IN with its reason -
+     or dims OUT with what it's missing. Fire a live signal and a
+     fan qualifies mid-demo (real-time membership), then the
+     activation row lights up every channel at once. White
+     blueprint family, no dark band.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="From profile data to activated audiences"
-   body="A clean fan profile is only valuable if you can act on it. Fanfinity ID Audience Builder makes segmentation fast and flexible, so you can respond to fan behavior in real time, test new strategies constantly, and activate consistently across all channels."
-   points=page.benefits
-   cta_text="See how to reach fans"
-   cta_url="/platform/activate"
-   icon="filter" %}
+<div class="ab-paper">
+
+<section class="ab-hero">
+  <div class="container-page">
+    <div class="ab-hero-grid">
+      <div class="ab-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity ID · Audience Builder</p>
+        <h1 class="ab-h1">
+          Segment<br>
+          <span class="ab-accent">any way you want.<svg class="ab-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="ab-lede">Fanfinity ID Audience Builder lets you create, test, and activate fan segments on any attribute (demographic, behavioral, predictive) in real time. Build once, activate everywhere.</p>
+        <div class="ab-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#builder" class="btn btn-secondary btn-lg">Build an audience <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="ab-hero-strip" aria-label="What the audience builder guarantees">
+          <li>Any attribute</li>
+          <li>Real-time membership</li>
+          <li>AND · OR · NOT</li>
+          <li>Every channel</li>
+        </ul>
+      </div>
+
+      <div class="ab-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="ab-mini">
+          <div class="ab-mini-head"><span>fig. 00 · same push, different fit</span></div>
+          <div class="ab-mini-phones">
+            <div class="ab-mini-phone is-warm"><b>Sara</b><span>📩 ordered Friday ✓</span></div>
+            <div class="ab-mini-phone is-sour"><b>Tariq</b><span>😤 just bought it - full price</span></div>
+          </div>
+          <p class="ab-mini-note">who it's for changes everything</p>
+        </div>
+        <p class="ab-hero-art-note">Eight named fans are waiting below. Send one push, two ways - and watch them answer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SAME CAMPAIGN, TWO WAYS (playable centerpiece) ==================== -->
+<section class="ab-ways-sec" id="builder">
+  <div class="container-page">
+    <div class="ab-sec-head" data-reveal>
+      <p class="eyebrow">Playable · The away-kit push</p>
+      <h2 class="ab-h2">Same campaign.<br>Two ways to send it.</h2>
+      <p class="ab-sec-sub">The away kit drops Friday and the push is written: <i>"The away kit is here - early access for you."</i> The only question is who gets it. Press send - both ways - and watch the same eight fans answer.</p>
+      <div class="ab-controls">
+        <button type="button" class="ab-ctl" id="abPlay">▶ Send it - both ways</button>
+        <button type="button" class="ab-ctl" id="abReplay">↺ Again</button>
+      </div>
+    </div>
+
+    <div class="ab-ways" data-reveal>
+      <!-- blast lane -->
+      <div class="ab-lane is-blast">
+        <div class="ab-lane-head"><span class="ab-badge">🔊 blast · everyone on the list</span><span class="ab-lane-sub" id="abBlastCount">8 of 8 phones buzz</span></div>
+        <div class="ab-phones" id="abPhonesBlast">
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Sara</b><span>circling the kit all week</span></div><p class="ab-react is-good">📩 ordered Friday ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Noura</b><span>checked sizes twice</span></div><p class="ab-react is-good">📩 added to cart ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Reem</b><span>watched the reveal video</span></div><p class="ab-react is-good">📩 ordered Sunday ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Huda</b><span>asked about away colors</span></div><p class="ab-react is-good">🔖 saved for payday</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Tariq</b><span>bought the kit on Thursday</span></div><p class="ab-react is-sour">😤 "I just bought this - full price"</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Lama</b><span>no match in two years</span></div><p class="ab-react is-sour">🚪 unsubscribed</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Khalid</b><span>home-kit loyal</span></div><p class="ab-react is-sour">🙄 "not for me" - ignored</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Sultan</b><span>first buy yesterday</span></div><p class="ab-react is-sour">😕 "paid full price yesterday"</p></div>
+        </div>
+        <div class="ab-strip is-sour" id="abStripBlast">8 reached · 4 mattered · 2 annoyed · 1 unsubscribe - and you paid for all 8</div>
+        <p class="ab-lane-caption">Everyone got it. Half of them felt it.</p>
+      </div>
+
+      <!-- segment lane -->
+      <div class="ab-lane is-seg">
+        <div class="ab-lane-head"><span class="ab-badge">🎯 segment · away-kit intenders</span><span class="ab-lane-sub" id="abSegCount">4 of 8 phones buzz</span></div>
+        <div class="ab-phones" id="abPhonesSeg">
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Sara</b><span>circling the kit all week</span></div><p class="ab-react is-good">📩 ordered Friday ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Noura</b><span>checked sizes twice</span></div><p class="ab-react is-good">📩 added to cart ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Reem</b><span>watched the reveal video</span></div><p class="ab-react is-good">📩 ordered Sunday ✓</p></div>
+          <div class="ab-phone" data-seg="1"><div class="ab-phone-top"><b>Huda</b><span>asked about away colors</span></div><p class="ab-react is-good">🔖 saved for payday</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Tariq</b><span>bought the kit on Thursday</span></div><p class="ab-react is-quiet">correctly left alone ✓</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Lama</b><span>no match in two years</span></div><p class="ab-react is-quiet">correctly left alone ✓</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Khalid</b><span>home-kit loyal</span></div><p class="ab-react is-quiet">correctly left alone ✓</p></div>
+          <div class="ab-phone" data-seg="0"><div class="ab-phone-top"><b>Sultan</b><span>first buy yesterday</span></div><p class="ab-react is-quiet">correctly left alone ✓</p></div>
+        </div>
+        <div class="ab-strip is-good" id="abStripSeg">4 reached · 4 mattered · 3 orders · 0 annoyed - and the other 4 still like you</div>
+        <p class="ab-lane-caption">The right four got it. The other four barely noticed you exist - which is the point.</p>
+      </div>
+    </div>
+
+    <p class="ab-how" data-reveal>How did the segment know? Fanfinity ID already did: <b>browsed the away kit ✓ · doesn't own it ✓ · push consented ✓</b> - read from live profiles, not a spreadsheet.</p>
+    <p class="ab-punch" data-reveal>Segmentation isn't a filter. It's deciding who the message is <b>for</b> - and who it isn't.</p>
+    <p class="ab-feed-note">An illustrative simulation - the mechanics (criteria from live profiles, membership in real time, one definition activated everywhere) are the real product behavior.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="ab-caps-sec">
+  <div class="container-page">
+    <div class="ab-sec-head" data-reveal>
+      <p class="eyebrow">How audience builder works</p>
+      <h2 class="ab-h2">Flexible segmentation,<br>real-time activation</h2>
+      <p class="ab-sec-sub">Define audiences on any profile attribute or behavior, combine them with complex logic, and activate them across all channels. Segments update in real time as fans match or leave criteria.</p>
+    </div>
+
+    <ol class="ab-caps">
+      {%- for c in page.capabilities -%}
+      <li class="ab-cap" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="ab-cap-num">0{{ forloop.index }}</span>
+        <span class="icon-chip">{% include icon.html name=c.icon class="h-5 w-5" %}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="ab-why-sec">
+  <div class="container-page">
+    <div class="ab-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="ab-h2">From profile data<br>to activated audiences</h2>
+        <p class="ab-sec-sub">A clean fan profile is only valuable if you can act on it. Fanfinity ID Audience Builder makes segmentation fast and flexible, so you can respond to fan behavior in real time, test new strategies constantly, and activate consistently across all channels.</p>
+        <a href="{{ '/platform/activate' | relative_url }}" class="ab-why-link">See how to reach fans <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="ab-why-points" data-reveal style="--reveal-delay:120ms">
+        {%- for b in page.benefits -%}
+        <li>{{ b }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /ab-paper -->
+
+{% include cta-band.html
+   heading="Build your first audience in minutes"
+   text="Bring a campaign idea to a walkthrough. We'll open the builder on your own profiles, define the segment together, and watch fans qualify in real time - then push it to every channel at once." %}
+
+{% raw %}
+<style>
+/* ================= Audience Builder - "The Roster" styles (.ab-) ================= */
+.ab-paper { background-color: #ffffff; overflow-x: clip; }
+
+/* ---------- hero ---------- */
+.ab-hero { padding: 5.5rem 0 4rem; }
+.ab-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.ab-hero-grid > *, .ab-why-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .ab-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.ab-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.ab-accent { position: relative; display: inline-block; color: #854dff; }
+.ab-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.ab-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.ab-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.ab-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.ab-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.ab-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+.ab-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.ab-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* ---------- hero mini ---------- */
+.ab-mini { width: min(100%, 400px); background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1rem 1.1rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); position: relative; }
+.ab-mini::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; pointer-events: none; }
+.ab-mini-head { display: flex; justify-content: space-between; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.ab-mini-count { color: #7c3aed; font-weight: 700; }
+.ab-mini-phones { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.7rem; }
+.ab-mini-phone { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; border: 1px dashed rgba(43,33,69,0.35); border-radius: 9px; padding: 0.45rem 0.6rem; background: #fff; font-size: 0.72rem; }
+.ab-mini-phone b { color: #2b2145; }
+.ab-mini-phone span { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; }
+.ab-mini-phone.is-warm { border: 1.5px solid #854dff; }
+.ab-mini-phone.is-warm span { color: #7c3aed; font-weight: 700; }
+.ab-mini-phone.is-sour span { color: #b03a4e; }
+.ab-mini-note { margin: 0.7rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.45); }
+
+/* ---------- section heads ---------- */
+.ab-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.ab-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.ab-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ---------- same campaign, two ways ---------- */
+.ab-ways-sec { padding: 1rem 0 6.5rem; }
+.ab-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.ab-ctl { border: 1.5px solid #2b2145; background: #fff; color: #2b2145; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.2s, color 0.2s; }
+.ab-ctl:hover { background: rgba(124,58,237,0.07); color: #5b21b6; }
+
+.ab-ways { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
+@media (min-width: 1000px) { .ab-ways { grid-template-columns: 1fr 1fr; gap: 1.4rem; } }
+.ab-lane { border-radius: 18px; padding: 1.05rem 1.15rem 0.95rem; }
+.ab-lane.is-blast { background: #fbfbfa; border: 1.5px dashed rgba(43,33,69,0.4); }
+.ab-lane.is-seg { background: rgba(133,77,255,0.06); border: 1.5px solid #6f55a6; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.4); }
+.ab-lane-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.ab-badge { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.ab-lane.is-seg .ab-badge { color: #7c3aed; }
+.ab-lane.is-blast .ab-badge { color: rgba(43,33,69,0.5); }
+.ab-lane-sub { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; color: rgba(43,33,69,0.5); }
+
+.ab-phones { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.9rem; }
+.ab-phone { border: 1px dashed rgba(43,33,69,0.35); border-radius: 12px; background: #fff; padding: 0.55rem 0.65rem; }
+.ab-phone-top b { display: block; font-size: 0.78rem; color: #2b2145; }
+.ab-phone-top span { display: block; margin-top: 0.1rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; color: rgba(43,33,69,0.5); }
+.ab-react { margin: 0.45rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; line-height: 1.5; }
+.ab-react.is-good { color: #0d9488; font-weight: 700; }
+.ab-react.is-sour { color: #b03a4e; }
+.ab-react.is-quiet { color: rgba(13,148,136,0.75); }
+
+/* hidden-until-played (armed by JS only) */
+.ab-armed .ab-phone, .ab-armed .ab-strip { opacity: 0; transform: translateY(10px); }
+.ab-armed .ab-phone.is-in, .ab-armed .ab-strip.is-in { opacity: 1; transform: none; transition: opacity 0.45s cubic-bezier(0.2,0.7,0.2,1), transform 0.45s cubic-bezier(0.2,0.7,0.2,1); }
+.ab-armed .ab-phone.is-in.is-dimmed { opacity: 0.42; }
+
+.ab-strip { margin-top: 0.9rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.03em; line-height: 1.55; text-align: center; border-radius: 10px; padding: 0.5rem 0.7rem; }
+.ab-strip.is-sour { color: #b03a4e; border: 1.5px dashed #b03a4e; background: rgba(217,59,84,0.05); }
+.ab-strip.is-good { color: #0d9488; border: 1.5px solid #0d9488; background: rgba(13,148,136,0.06); }
+.ab-lane-caption { margin: 0.7rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.05em; color: rgba(43,33,69,0.5); }
+
+.ab-how { margin: 1.6rem auto 0; max-width: 44rem; text-align: center; font-size: 0.88rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.ab-how b { color: #7c3aed; }
+.ab-punch { margin: 1.75rem auto 0; max-width: 40rem; text-align: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.7rem); letter-spacing: -0.01em; color: #2b2145; }
+.ab-punch b { color: #7c3aed; }
+.ab-feed-note { margin: 1rem auto 0; max-width: 34rem; text-align: center; font-size: 0.72rem; line-height: 1.5; color: var(--color-muted-foreground); font-style: italic; }
+
+.ab-feed-note { margin: 1.25rem 0 0; font-size: 0.72rem; line-height: 1.5; color: var(--color-muted-foreground); font-style: italic; }
+
+/* ---------- capabilities ---------- */
+.ab-caps-sec { padding: 0 0 6.5rem; }
+.ab-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .ab-caps { grid-template-columns: 1fr 1fr; } }
+.ab-cap { position: relative; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.4rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.18s; }
+.ab-cap:hover { background: rgba(43,33,69,0.025); }
+.ab-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.ab-cap .icon-chip { margin-bottom: 1rem; }
+.ab-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.ab-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- why it matters ---------- */
+.ab-why-sec { padding: 0 0 6.5rem; }
+.ab-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .ab-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.ab-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.ab-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.ab-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.ab-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.ab-why-link:hover { color: #5b21b6; }
+
+/* ---------- dark-mode reconciliation ---------- */
+html.dark .ab-paper { background-color: #120d1e; }
+html.dark .ab-mini, html.dark .ab-cap { background: #1b1429; border-color: rgba(221,210,242,0.5); box-shadow: 0 2px 4px -3px rgba(221,210,242,0.2); }
+html.dark .ab-mini::before { border-color: rgba(221,210,242,0.3); }
+html.dark .ab-lane.is-blast { background: #171226; border-color: rgba(221,210,242,0.35); }
+html.dark .ab-lane.is-seg { background: linear-gradient(170deg, rgba(133,77,255,0.16), rgba(133,77,255,0.05) 55%); }
+html.dark .ab-phone, html.dark .ab-mini-phone, html.dark .ab-ctl { background: #241a38; }
+html.dark .ab-phone-top b, html.dark .ab-mini-phone b, html.dark .ab-punch { color: #efe9fb; }
+html.dark .ab-mini-head, html.dark .ab-mini-note, html.dark .ab-lane-sub, html.dark .ab-lane-caption, html.dark .ab-phone-top span { color: rgba(221,210,242,0.55); }
+html.dark .ab-why-link { color: #b98cff; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ab-armed .ab-phone.is-in, .ab-armed .ab-strip.is-in { transition: none !important; }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 480px) {
+  .ab-hero { padding-top: 4rem; }
+  .ab-phones { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+/* ================= Same campaign, two ways - play engine ================= */
+(function () {
+  'use strict';
+  var sec = document.getElementById('builder');
+  if (!sec) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var els = {
+    play: document.getElementById('abPlay'),
+    replay: document.getElementById('abReplay'),
+    stripBlast: document.getElementById('abStripBlast'),
+    stripSeg: document.getElementById('abStripSeg')
+  };
+  var blastPhones = Array.prototype.slice.call(document.querySelectorAll('#abPhonesBlast .ab-phone'));
+  var segPhones = Array.prototype.slice.call(document.querySelectorAll('#abPhonesSeg .ab-phone'));
+  var timers = [];
+  var armed = false;
+
+  function arm() { if (!armed) { armed = true; sec.classList.add('ab-armed'); } }
+
+  function clearAll() {
+    timers.forEach(window.clearTimeout); timers = [];
+    blastPhones.concat(segPhones).forEach(function (p) { p.classList.remove('is-in', 'is-dimmed'); });
+    [els.stripBlast, els.stripSeg].forEach(function (s) { s.classList.remove('is-in'); });
+    els.play.textContent = '▶ Send it - both ways';
+  }
+
+  function later(fn, ms) { timers.push(window.setTimeout(fn, reduceMotion ? 0 : ms)); }
+
+  function play() {
+    arm();
+    clearAll();
+    els.play.textContent = '… sending';
+    for (var i = 0; i < 8; i++) {
+      (function (i2) {
+        later(function () {
+          blastPhones[i2].classList.add('is-in');
+          segPhones[i2].classList.add('is-in');
+          if (segPhones[i2].getAttribute('data-seg') === '0') segPhones[i2].classList.add('is-dimmed');
+        }, 400 + i2 * 480);
+      })(i);
+    }
+    later(function () { els.stripBlast.classList.add('is-in'); }, 400 + 8 * 480 + 300);
+    later(function () { els.stripSeg.classList.add('is-in'); els.play.textContent = '▶ Send it - both ways'; }, 400 + 8 * 480 + 900);
+  }
+
+  els.play.addEventListener('click', play);
+  els.replay.addEventListener('click', play);
+
+  /* auto-play once when scrolled into view */
+  if (typeof window.IntersectionObserver === 'function') {
+    var auto = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !auto) { auto = true; later(play, 500); io.disconnect(); }
+      });
+    }, { threshold: 0.25 });
+    io.observe(sec);
+  }
+
+})();
+</script>
+{% endraw %}
