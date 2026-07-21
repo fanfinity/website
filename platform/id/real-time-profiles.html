@@ -1,5 +1,6 @@
 ---
 layout: page
+cta: false
 permalink: /platform/id/real-time-profiles
 title: Real-time Profiles
 description: "Fan profiles that update in real time as events arrive with Fanfinity ID."
@@ -15,26 +16,423 @@ benefits:
   - "Improve ad performance by suppressing fans who've already converted before the campaign runs."
   - "Simplify operations by eliminating batch schedules and relying on real-time data flow."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity ID"
-   title="Profiles that move at fan speed"
-   subtitle="Fanfinity ID updates profiles in real time as events arrive, so you see fan behavior as it happens. Activation systems always work from the current state, not a batch snapshot from hours ago."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity ID"
-   secondary_url="/platform/id"
-   icon="zap" %}
 
-{% include feature-grid.html
-   heading="From event to intelligence to action, in seconds"
-   subheading="As signals arrive, profiles are updated instantly and distributed to every downstream system. Activation sees the current state and can respond in real time."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     REAL-TIME PROFILES - bespoke redesign ("One moment, two fates")
+     Concept: no dashboard, no dossier - cinema. 19:42: Sara adds
+     a ticket to her cart and hesitates. Press play and two lanes
+     run the same moment in parallel: the real-time lane answers
+     in seconds (warm push, converted) while the batch lane queues
+     until 02:00 and answers cold, next morning, too late.
+     Interest has a half-life - you watch it cool.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="Urgency meets timing in real-time engagement"
-   body="Fan behavior is time-sensitive. Interest fades, intent changes, and opportunities close. Real-time profiles let you see fans as they act and respond instantly, so your activation systems work at the speed of fan behavior, not batch schedules."
-   points=page.benefits
-   cta_text="See real-time activation"
-   cta_url="/platform/activate"
-   icon="zap" %}
+<div class="rtp-paper">
+
+<section class="rtp-hero">
+  <div class="container-page">
+    <div class="rtp-hero-grid">
+      <div class="rtp-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity ID · Real-time Profiles</p>
+        <h1 class="rtp-h1">
+          Profiles that move<br>
+          <span class="rtp-accent">at fan speed.<svg class="rtp-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="rtp-lede">Fanfinity ID updates profiles in real time as events arrive, so you see fan behavior as it happens. Activation systems always work from the current state, not a batch snapshot from hours ago.</p>
+        <div class="rtp-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#moment" class="btn btn-secondary btn-lg">See one moment, two fates <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="rtp-hero-strip" aria-label="What real-time profiles guarantee">
+          <li>Seconds, not hours</li>
+          <li>Current state, always</li>
+          <li>History + live together</li>
+        </ul>
+      </div>
+
+      <div class="rtp-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="rtp-mini">
+          <div class="rtp-mini-head"><span>fig. 00 · freshness</span></div>
+          <div class="rtp-mini-lanes">
+            <div class="rtp-mini-lane is-warm"><i></i><span>19:42:03 · knows now</span></div>
+            <div class="rtp-mini-lane is-cold"><i></i><span>02:00 · learns it tomorrow</span></div>
+          </div>
+          <p class="rtp-mini-note">interest has a half-life</p>
+        </div>
+        <p class="rtp-hero-art-note">Same fan, same moment - two very different mornings after. Play it below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ONE MOMENT, TWO FATES (playable centerpiece) ==================== -->
+<section class="rtp-moment-sec" id="moment">
+  <div class="container-page">
+    <div class="rtp-sec-head" data-reveal>
+      <p class="eyebrow">Playable · The 19:42 moment</p>
+      <h2 class="rtp-h2">One moment.<br>Two fates.</h2>
+      <p class="rtp-sec-sub">19:42. Sara adds a ticket to her cart - and hesitates. This is the moment, and it lasts minutes, not hours. Press play: the same hesitation, run through two different kinds of profile.</p>
+      <div class="rtp-controls">
+        <button type="button" class="rtp-ctl" id="rtpPlay">▶ Play both fates</button>
+        <button type="button" class="rtp-ctl" id="rtpReplay">↺ Replay</button>
+      </div>
+    </div>
+
+    <div class="rtp-setup" data-reveal>
+      <span class="rtp-setup-t">19:42</span>
+      <span class="rtp-setup-text">🛒 ticket <b>t_8841</b> in cart · Sara hesitates…</span>
+      <span class="rtp-setup-halo" aria-hidden="true"></span>
+    </div>
+
+    <div class="rtp-lanes" data-reveal>
+      <!-- real-time lane -->
+      <div class="rtp-lane is-live">
+        <div class="rtp-lane-head">
+          <span class="rtp-badge">with Fanfinity ID · real-time</span>
+          <span class="rtp-lane-clock" id="rtpClockLive">19:42:00</span>
+        </div>
+        <ol class="rtp-beats" id="rtpBeatsLive">
+          <li><span class="rtp-t">19:42:03</span><p>the hesitation lands on her profile - <b>as it happens</b></p></li>
+          <li><span class="rtp-t">19:42:04</span><p>lapse risk recalculates · she's eligible, <b>right now</b></p></li>
+          <li><span class="rtp-t">19:42:31</span><p>still hesitating → the win-back rule fires</p></li>
+        </ol>
+        <div class="rtp-phone" id="rtpPhoneLive" aria-hidden="true">
+          <div class="rtp-phone-notch"></div>
+          <div class="rtp-push is-warm">
+            <b>🔔 Fanfinity United</b>
+            <span>Your seat is waiting, Sara - block B, row 7. Held for 20 min.</span>
+            <em>19:43 · while she's still deciding</em>
+          </div>
+        </div>
+        <div class="rtp-outcome is-good" id="rtpOutLive">converted · 19:51 · while it mattered</div>
+        <p class="rtp-lane-caption">The moment is still warm when you respond.</p>
+      </div>
+
+      <!-- batch lane -->
+      <div class="rtp-lane is-batch">
+        <div class="rtp-lane-head">
+          <span class="rtp-badge">with the nightly batch</span>
+          <span class="rtp-lane-clock" id="rtpClockBatch">19:42:00</span>
+        </div>
+        <ol class="rtp-beats" id="rtpBeatsBatch">
+          <li><span class="rtp-t">19:42:03</span><p>the hesitation happens… <b>and waits in the queue</b></p></li>
+          <li><span class="rtp-t">02:00</span><p>the nightly job runs - the profile <b>finally</b> learns it</p></li>
+          <li><span class="rtp-t">09:00</span><p>the win-back fires - <b>11 hours and 18 minutes cold</b></p></li>
+        </ol>
+        <div class="rtp-clockface" id="rtpClockface" aria-hidden="true">
+          <span class="rtp-hand-h"></span>
+          <span class="rtp-hand-m"></span>
+          <span class="rtp-clockface-dot"></span>
+        </div>
+        <div class="rtp-phone" id="rtpPhoneBatch" aria-hidden="true">
+          <div class="rtp-phone-notch"></div>
+          <div class="rtp-push is-cold">
+            <b>🔔 Fanfinity United</b>
+            <span>Your seat is waiting, Sara - block B, row 7. Held for 20 min.</span>
+            <em>09:14 · next morning · the hold expired hours ago</em>
+          </div>
+        </div>
+        <div class="rtp-outcome is-missed" id="rtpOutBatch">ignored · the moment had cooled</div>
+        <p class="rtp-lane-caption">You learn about the moment after it has cooled.</p>
+      </div>
+    </div>
+
+    <p class="rtp-punch" data-reveal>Interest has a half-life. Real-time profiles mean you always act <b>while it counts</b>.</p>
+    <p class="rtp-feed-note">An illustrative simulation - the timings are the point: profiles that update as events arrive, versus profiles that wait for a batch.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="rtp-caps-sec">
+  <div class="container-page">
+    <div class="rtp-sec-head" data-reveal>
+      <p class="eyebrow">How real-time profiles work</p>
+      <h2 class="rtp-h2">From event to intelligence<br>to action, in seconds</h2>
+      <p class="rtp-sec-sub">As signals arrive, profiles are updated instantly and distributed to every downstream system. Activation sees the current state and can respond in real time.</p>
+    </div>
+
+    <ol class="rtp-caps">
+      {%- for c in page.capabilities -%}
+      <li class="rtp-cap" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="rtp-cap-num">0{{ forloop.index }}</span>
+        <span class="icon-chip">{% include icon.html name=c.icon class="h-5 w-5" %}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="rtp-why-sec">
+  <div class="container-page">
+    <div class="rtp-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="rtp-h2">Urgency meets timing in<br>real-time engagement</h2>
+        <p class="rtp-sec-sub">Fan behavior is time-sensitive. Interest fades, intent changes, and opportunities close. Real-time profiles let you see fans as they act and respond instantly, so your activation systems work at the speed of fan behavior, not batch schedules.</p>
+        <a href="{{ '/platform/activate' | relative_url }}" class="rtp-why-link">See real-time activation <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="rtp-why-points" data-reveal style="--reveal-delay:120ms">
+        {%- for b in page.benefits -%}
+        <li>{{ b }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /rtp-paper -->
+
+{% include cta-band.html
+   heading="Watch a profile move at fan speed"
+   text="In a walkthrough, we'll fire a real event from your own stack and time how long it takes to land on the profile - then compare it with the batch you're running today. Bring a stopwatch; you won't need it." %}
+
+{% raw %}
+<style>
+/* ================= Real-time Profiles - "One moment, two fates" styles (.rtp-) ================= */
+.rtp-paper { background-color: #ffffff; overflow-x: clip; }
+
+/* ---------- hero ---------- */
+.rtp-hero { padding: 5.5rem 0 4rem; }
+.rtp-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.rtp-hero-grid > *, .rtp-why-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .rtp-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.rtp-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.rtp-accent { position: relative; display: inline-block; color: #854dff; }
+.rtp-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.rtp-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.rtp-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.rtp-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.rtp-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.rtp-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+.rtp-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.rtp-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* ---------- hero mini ---------- */
+.rtp-mini { width: min(100%, 400px); background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1rem 1.1rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); position: relative; }
+.rtp-mini::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; pointer-events: none; }
+.rtp-mini-head { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.rtp-mini-lanes { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.7rem; }
+.rtp-mini-lane { display: flex; align-items: center; gap: 0.55rem; border: 1px dashed rgba(43,33,69,0.35); border-radius: 9px; padding: 0.45rem 0.6rem; background: #fff; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; color: #2b2145; }
+.rtp-mini-lane i { width: 10px; height: 10px; border-radius: 9999px; flex-shrink: 0; }
+.rtp-mini-lane.is-warm i { background: #6f55a6; }
+.rtp-mini-lane.is-warm { border-color: #854dff; color: #7c3aed; font-weight: 700; }
+.rtp-mini-lane.is-cold i { background: transparent; border: 1.5px dashed #94a3b8; }
+.rtp-mini-lane.is-cold { color: rgba(43,33,69,0.45); }
+@keyframes rtp-warm { 0%, 100% { box-shadow: 0 0 6px 0 rgba(133,77,255,0.7); } 50% { box-shadow: 0 0 14px 4px rgba(133,77,255,0.35); } }
+.rtp-mini-note { margin: 0.65rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.45); }
+
+/* ---------- section heads ---------- */
+.rtp-sec-head { max-width: 48rem; margin-bottom: 2.5rem; }
+.rtp-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.rtp-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+.rtp-controls { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+.rtp-ctl { border: 1.5px solid #2b2145; background: #fff; color: #2b2145; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.04em; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.2s, color 0.2s; }
+.rtp-ctl:hover { background: rgba(124,58,237,0.07); color: #5b21b6; }
+
+/* ---------- the setup beat ---------- */
+.rtp-moment-sec { padding: 1rem 0 6.5rem; }
+.rtp-setup { position: relative; width: fit-content; margin: 0 auto 1.5rem; display: flex; align-items: baseline; gap: 0.7rem; background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 10px; padding: 0.6rem 1.2rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.rtp-setup-t { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.35rem; color: #7c3aed; }
+.rtp-setup-text { font-size: 0.9rem; color: #2b2145; }
+.rtp-setup-halo { position: absolute; inset: -4px; border-radius: 9999px; border: 2px solid rgba(232,180,90,0.55); animation: rtp-halo 2.4s ease-out infinite; pointer-events: none; }
+@keyframes rtp-halo { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(1.12); opacity: 0; } }
+
+/* ---------- lanes ---------- */
+.rtp-lanes { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
+@media (min-width: 1000px) { .rtp-lanes { grid-template-columns: 1fr 1fr; gap: 1.4rem; } }
+.rtp-lane { position: relative; border-radius: 18px; padding: 1.05rem 1.15rem 0.95rem; }
+.rtp-lane.is-live { background: rgba(133,77,255,0.06); border: 1.5px solid #6f55a6; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.4); }
+.rtp-lane.is-batch { background: #fbfbfa; border: 1.5px dashed rgba(43,33,69,0.4); }
+.rtp-lane-head { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; }
+.rtp-badge { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.rtp-lane.is-live .rtp-badge { color: #7c3aed; }
+.rtp-lane.is-batch .rtp-badge { color: rgba(43,33,69,0.5); }
+.rtp-lane-clock { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.66rem; font-weight: 700; color: #2b2145; font-variant-numeric: tabular-nums; }
+
+.rtp-beats { list-style: none; margin: 0.9rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; min-height: 9.2rem; }
+.rtp-beats li { display: flex; gap: 0.6rem; align-items: baseline; background: #fffdf8; border: 1px dashed rgba(43,33,69,0.3); border-radius: 10px; padding: 0.45rem 0.6rem; }
+.rtp-lane.is-batch .rtp-beats li { background: #fff; }
+.rtp-t { flex-shrink: 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; font-weight: 700; color: #7c3aed; }
+.rtp-lane.is-batch .rtp-t { color: rgba(43,33,69,0.45); }
+.rtp-beats p { margin: 0; font-size: 0.8rem; line-height: 1.5; color: var(--color-muted-foreground); }
+.rtp-beats b { color: #2b2145; }
+
+/* hidden-until-played (armed by JS only) */
+.rtp-armed .rtp-beats li, .rtp-armed .rtp-phone, .rtp-armed .rtp-outcome, .rtp-armed .rtp-clockface { opacity: 0; transform: translateY(10px); }
+.rtp-armed .rtp-beats li.is-in, .rtp-armed .rtp-phone.is-in, .rtp-armed .rtp-outcome.is-in, .rtp-armed .rtp-clockface.is-in { opacity: 1; transform: none; transition: opacity 0.45s cubic-bezier(0.2,0.7,0.2,1), transform 0.45s cubic-bezier(0.2,0.7,0.2,1); }
+
+/* ---------- phone mock ---------- */
+.rtp-phone { width: 210px; margin: 0.9rem auto 0; background: #17121f; border: 1.5px solid #2b2145; border-radius: 22px; padding: 0.55rem 0.55rem 0.8rem; box-shadow: 0 14px 30px -18px rgba(23,18,31,0.6); }
+.rtp-phone-notch { width: 64px; height: 5px; margin: 0.1rem auto 0.5rem; border-radius: 9999px; background: rgba(255,255,255,0.22); }
+.rtp-push { background: #fff; border-radius: 12px; padding: 0.55rem 0.65rem; }
+.rtp-push b { display: block; font-size: 0.66rem; color: #2b2145; }
+.rtp-push span { display: block; margin-top: 0.2rem; font-size: 0.68rem; line-height: 1.45; color: #2b2145; }
+.rtp-push em { display: block; margin-top: 0.3rem; font-family: ui-monospace, 'Geist Mono', monospace; font-style: normal; font-size: 0.52rem; letter-spacing: 0.04em; }
+.rtp-push.is-warm { border-left: 3px solid #6f55a6; background: #251d31; }
+.rtp-push.is-warm em { color: #7c3aed; }
+.rtp-push.is-cold { background: #f1f1ef; }
+.rtp-push.is-cold b, .rtp-push.is-cold span { color: rgba(43,33,69,0.5); }
+.rtp-push.is-cold em { color: #b03a4e; }
+
+/* ---------- clockface ---------- */
+.rtp-clockface { position: relative; width: 72px; height: 72px; margin: 0.9rem auto 0; border: 1.5px solid rgba(43,33,69,0.45); border-radius: 9999px; background: #fff; }
+.rtp-clockface-dot { position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 9999px; background: #2b2145; }
+.rtp-hand-h, .rtp-hand-m { position: absolute; left: 50%; bottom: 50%; width: 3px; border-radius: 9999px; background: #2b2145; transform-origin: bottom center; margin-left: -1.5px; transition: transform 1.8s cubic-bezier(0.65,0,0.2,1); }
+.rtp-hand-h { height: 18px; transform: rotate(210deg); }
+.rtp-hand-m { height: 26px; transform: rotate(128deg); }
+.rtp-clockface.is-spun .rtp-hand-h { transform: rotate(60deg); }
+.rtp-clockface.is-spun .rtp-hand-m { transform: rotate(1008deg); }
+@media (max-width: 999px) { .rtp-clockface { display: none !important; } }
+
+/* ---------- outcomes ---------- */
+.rtp-outcome { width: fit-content; margin: 0.9rem auto 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 9999px; padding: 0.4rem 0.85rem; }
+.rtp-outcome.is-good { color: #0d9488; border: 2px solid #0d9488; transform: rotate(-2deg); background: rgba(13,148,136,0.07); }
+.rtp-outcome.is-missed { color: #b03a4e; border: 2px dashed #b03a4e; transform: rotate(2deg); }
+.rtp-armed .rtp-outcome.is-in { animation: rtp-stamp 0.35s cubic-bezier(0.2,0.7,0.2,1); }
+@keyframes rtp-stamp { from { transform: scale(1.5) rotate(-2deg); opacity: 0; } to { opacity: 1; } }
+.rtp-lane-caption { margin: 0.75rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; letter-spacing: 0.05em; color: rgba(43,33,69,0.5); }
+
+.rtp-punch { margin: 2.25rem auto 0; max-width: 40rem; text-align: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: clamp(1.3rem, 2.4vw, 1.7rem); letter-spacing: -0.01em; color: #2b2145; }
+.rtp-punch b { color: #7c3aed; }
+.rtp-feed-note { margin: 1rem auto 0; max-width: 34rem; text-align: center; font-size: 0.72rem; line-height: 1.5; color: var(--color-muted-foreground); font-style: italic; }
+
+/* ---------- capabilities ---------- */
+.rtp-caps-sec { padding: 0 0 6.5rem; }
+.rtp-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .rtp-caps { grid-template-columns: 1fr 1fr; } }
+.rtp-cap { position: relative; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.4rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.18s; }
+.rtp-cap:hover { background: rgba(43,33,69,0.025); }
+.rtp-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.rtp-cap .icon-chip { margin-bottom: 1rem; }
+.rtp-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.rtp-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- why it matters ---------- */
+.rtp-why-sec { padding: 0 0 6.5rem; }
+.rtp-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .rtp-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.rtp-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.rtp-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.rtp-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.rtp-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.rtp-why-link:hover { color: #5b21b6; }
+
+/* ---------- dark-mode reconciliation ---------- */
+html.dark .rtp-paper { background-color: #120d1e; }
+html.dark .rtp-mini, html.dark .rtp-setup, html.dark .rtp-cap { background: #1b1429; border-color: rgba(221,210,242,0.5); box-shadow: 0 2px 4px -3px rgba(221,210,242,0.2); }
+html.dark .rtp-mini::before { border-color: rgba(221,210,242,0.3); }
+html.dark .rtp-lane.is-live { background: linear-gradient(170deg, rgba(133,77,255,0.16), rgba(133,77,255,0.05) 55%); }
+html.dark .rtp-lane.is-batch { background: #171226; border-color: rgba(221,210,242,0.35); }
+html.dark .rtp-beats li, html.dark .rtp-mini-lane, html.dark .rtp-clockface, html.dark .rtp-ctl { background: #241a38; }
+html.dark .rtp-lane-clock, html.dark .rtp-beats b, html.dark .rtp-punch, html.dark .rtp-setup-text { color: #efe9fb; }
+html.dark .rtp-why-link { color: #b98cff; }
+html.dark .rtp-push { background: #efe9fb; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rtp-setup-halo, .rtp-mini-lane.is-warm i { animation: none !important; }
+  .rtp-hand-h, .rtp-hand-m { transition: none !important; }
+  .rtp-armed .rtp-beats li.is-in, .rtp-armed .rtp-phone.is-in, .rtp-armed .rtp-outcome.is-in, .rtp-armed .rtp-clockface.is-in { transition: none !important; }
+  .rtp-armed .rtp-outcome.is-in { animation: none !important; }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 480px) {
+  .rtp-hero { padding-top: 4rem; }
+  .rtp-phone { width: 190px; }
+}
+</style>
+
+<script>
+/* ================= One moment, two fates - play engine ================= */
+(function () {
+  'use strict';
+  var sec = document.getElementById('moment');
+  if (!sec) return;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var els = {
+    play: document.getElementById('rtpPlay'),
+    replay: document.getElementById('rtpReplay'),
+    clockLive: document.getElementById('rtpClockLive'),
+    clockBatch: document.getElementById('rtpClockBatch'),
+    clockface: document.getElementById('rtpClockface'),
+    phoneLive: document.getElementById('rtpPhoneLive'),
+    phoneBatch: document.getElementById('rtpPhoneBatch'),
+    outLive: document.getElementById('rtpOutLive'),
+    outBatch: document.getElementById('rtpOutBatch')
+  };
+  var liveBeats = Array.prototype.slice.call(document.querySelectorAll('#rtpBeatsLive li'));
+  var batchBeats = Array.prototype.slice.call(document.querySelectorAll('#rtpBeatsBatch li'));
+  var timers = [];
+  var armed = false;
+
+  function arm() {
+    if (!armed) { armed = true; sec.classList.add('rtp-armed'); }
+  }
+
+  function clearAll() {
+    timers.forEach(window.clearTimeout); timers = [];
+    liveBeats.concat(batchBeats).forEach(function (li) { li.classList.remove('is-in'); });
+    [els.phoneLive, els.phoneBatch, els.outLive, els.outBatch, els.clockface].forEach(function (e) {
+      e.classList.remove('is-in');
+    });
+    els.clockface.classList.remove('is-spun');
+    els.clockLive.textContent = '19:42:00';
+    els.clockBatch.textContent = '19:42:00';
+    els.play.textContent = '▶ Play both fates';
+  }
+
+  function later(fn, ms) { timers.push(window.setTimeout(fn, reduceMotion ? 0 : ms)); }
+
+  function play() {
+    arm();
+    clearAll();
+    els.play.textContent = '… playing';
+    later(function () {
+      liveBeats[0].classList.add('is-in');
+      batchBeats[0].classList.add('is-in');
+      els.clockLive.textContent = '19:42:03';
+      els.clockBatch.textContent = '19:42:03';
+    }, 300);
+    later(function () { liveBeats[1].classList.add('is-in'); els.clockLive.textContent = '19:42:04'; }, 1500);
+    later(function () { liveBeats[2].classList.add('is-in'); els.clockLive.textContent = '19:42:31'; }, 2700);
+    later(function () { els.phoneLive.classList.add('is-in'); els.clockLive.textContent = '19:43'; }, 3700);
+    later(function () { els.outLive.classList.add('is-in'); els.clockLive.textContent = '19:51'; }, 5100);
+    later(function () {
+      els.clockface.classList.add('is-in');
+      void els.clockface.offsetWidth;
+      els.clockface.classList.add('is-spun');
+    }, 5900);
+    later(function () { batchBeats[1].classList.add('is-in'); els.clockBatch.textContent = '02:00:00'; }, 7800);
+    later(function () { batchBeats[2].classList.add('is-in'); els.clockBatch.textContent = '09:00:00'; }, 8900);
+    later(function () { els.phoneBatch.classList.add('is-in'); }, 9800);
+    later(function () { els.outBatch.classList.add('is-in'); els.play.textContent = '▶ Play both fates'; }, 10900);
+  }
+
+  els.play.addEventListener('click', play);
+  els.replay.addEventListener('click', play);
+
+  /* auto-play once when the section scrolls into view */
+  if (typeof window.IntersectionObserver === 'function') {
+    var auto = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !auto) {
+          auto = true;
+          later(play, 500);
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    io.observe(sec);
+  }
+
+})();
+</script>
+{% endraw %}

@@ -1,12 +1,13 @@
 ---
 layout: page
+cta: false
 permalink: /platform/id/consent-governance
 title: Consent & Governance
 description: "Manage consent and data residency at the profile layer with Fanfinity ID for PDPL compliance."
 breadcrumb_parent: { title: Fanfinity ID, url: /platform/id }
 capabilities:
   - { icon: shield,   title: "Consent at the profile layer",   body: "Consent is captured and enforced on the fan profile itself, not patched onto downstream systems. The same record that powers activation keeps you compliant." }
-  - { icon: lock,     title: "In-Kingdom data residency",      body: "Fan data is resolved and stored in-region, fully governed at the data layer. No vendor holds your data hostage; it stays in your jurisdiction, on your terms." }
+  - { icon: lock,     title: "In-Kingdom data residency",      body: "Fan data is resolved and stored in-Kingdom, fully governed at the data layer. No vendor holds your data hostage; it stays in your jurisdiction, on your terms." }
   - { icon: check,    title: "Real-time consent enforcement",  body: "Consent changes are reflected immediately in audience eligibility and activation rules. Fans who withdraw consent are removed from segments and campaigns instantly." }
   - { icon: settings, title: "Flexible deployment options",    body: "Deploy in your own cloud, on-premise, or fully managed. Your data, your environment, your choice, with PDPL compliance built in at every layer." }
 benefits:
@@ -15,26 +16,502 @@ benefits:
   - "Reduce legal and compliance overhead by making governance automatic and auditable."
   - "Keep data sovereign by choosing your deployment and keeping profiles in your environment."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity ID"
-   title="Compliance built in, not bolted on"
-   subtitle="Fanfinity ID enforces consent and data residency at the profile layer. PDPL governance, in-Kingdom deployment, and real-time consent enforcement are built into the data architecture, not patched on top."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity ID"
-   secondary_url="/platform/id"
-   icon="shield" %}
 
-{% include feature-grid.html
-   heading="Consent and residency at the core"
-   subheading="Fan profiles are captured, resolved, and stored in-region with consent baked into the data layer. Every activation, every segment, every query respects the fan's consent choices in real time."
-   items=page.capabilities
-   columns=2 %}
+<!-- ============================================================
+     CONSENT & GOVERNANCE - bespoke redesign ("The Consent Desk")
+     Concept: one fan's consent switches, wired straight to the
+     consequences. Flip email off and the email channel slams to
+     BLOCKED, Sara drops out of its audiences, and a signed audit
+     ledger entry stamps itself - instantly. The red moment:
+     "Sara withdraws all consent" halts everything with a paper
+     trail. All inside an in-Kingdom residency zone.
+     All content is an illustrative simulation.
+     ============================================================ -->
 
-{% include feature-split.html
-   title="The foundation of responsible fan engagement"
-   body="Building fan trust requires real consent and real control. Fanfinity ID makes governance a feature, not a compliance burden, so you can activate confidently, fans stay in control, and your business operates within the law."
-   points=page.benefits
-   cta_text="See deployment options"
-   cta_url="/platform/data-residency"
-   icon="shield" %}
+<div class="cg-paper">
+
+<section class="cg-hero">
+  <div class="container-page">
+    <div class="cg-hero-grid">
+      <div class="cg-hero-copy" data-reveal>
+        <p class="eyebrow">Platform · Fanfinity ID · Consent &amp; Governance</p>
+        <h1 class="cg-h1">
+          Compliance built in,<br>
+          <span class="cg-accent">not bolted on.<svg class="cg-scribble" viewBox="0 0 260 14" fill="none" aria-hidden="true"><path d="M3 10.5C48 4 96 3.2 130 6.8c38 4 82 3.4 127-3" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg></span>
+        </h1>
+        <p class="cg-lede">Fanfinity ID enforces consent and data residency at the profile layer. PDPL governance, in-Kingdom deployment, and real-time consent enforcement are built into the data architecture, not patched on top.</p>
+        <div class="cg-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#desk" class="btn btn-secondary btn-lg">Flip a consent switch <span aria-hidden="true">↓</span></a>
+        </div>
+        <ul class="cg-hero-strip" aria-label="What consent governance guarantees">
+          <li>Profile-layer consent</li>
+          <li>In-Kingdom · PDPL</li>
+          <li>Instant enforcement</li>
+          <li>Audit trail</li>
+        </ul>
+      </div>
+
+      <div class="cg-hero-art" data-reveal style="--reveal-delay:120ms" aria-hidden="true">
+        <div class="cg-mini">
+          <div class="cg-mini-head"><span>fig. 00 · the consent desk</span><span class="cg-mini-pdpl">PDPL ✓</span></div>
+          <div class="cg-mini-row"><span class="cg-lbl"><svg class="h-4 w-4" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="48" width="208" height="160" rx="16"/><path d="M28 72l100 72 100-72"/></svg>email</span><b class="is-on">allowed</b></div>
+          <div class="cg-mini-row"><span class="cg-lbl">{% include icon.html name="bell" class="h-4 w-4" %}push</span><b class="is-on">allowed</b></div>
+          <div class="cg-mini-row"><span class="cg-lbl">{% include icon.html name="megaphone" class="h-4 w-4" %}ads</span><b class="is-off">withheld</b></div>
+          <div class="cg-mini-ledger">15:42:07 · consent.ads = false · signed ✓ #7c2a</div>
+          <p class="cg-mini-note">every choice enforced instantly - and on the record</p>
+        </div>
+        <p class="cg-hero-art-note">Below: one fan's consent, wired straight to the consequences. Flip the switches yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== THE CONSENT DESK (playable centerpiece) ==================== -->
+<section class="cg-desk-sec" id="desk">
+  <div class="container-page">
+    <div class="cg-sec-head" data-reveal>
+      <p class="eyebrow">Playable · The consent desk</p>
+      <h2 class="cg-h2">One fan flips a switch.<br>Everything obeys. Instantly.</h2>
+      <p class="cg-sec-sub">This is Sara's consent, captured on her profile. Change it and watch the consequences propagate in real time - channels close, audiences update, the audit ledger grows. Nothing downstream ever sees what she hasn't allowed.</p>
+    </div>
+
+    <div class="cg-zone" data-reveal>
+      <p class="cg-zone-label">🇸🇦 residency zone · resolved &amp; stored in-Kingdom · PDPL-governed</p>
+
+      <div class="cg-desk">
+        <!-- profile + switches -->
+        <div class="cg-profile" id="cgProfile">
+          <div class="cg-profile-top">
+            <span class="cg-avatar">S</span>
+            <div class="cg-profile-fields">
+              <p class="cg-name">Fan #48211 · Sara</p>
+              <p class="cg-sub">golden profile · consent lives here</p>
+            </div>
+            <span class="cg-restricted" id="cgRestricted">restricted · no processing</span>
+          </div>
+
+          <div class="cg-switches" id="cgSwitches">
+            <button type="button" class="cg-switch is-on" data-ch="email" aria-pressed="true">
+              <span class="cg-sw-track" aria-hidden="true"></span>
+              <span class="cg-sw-label"><svg class="h-4 w-4" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="48" width="208" height="160" rx="16"/><path d="M28 72l100 72 100-72"/></svg>email</span>
+              <span class="cg-sw-state">allowed</span>
+            </button>
+            <button type="button" class="cg-switch is-on" data-ch="push" aria-pressed="true">
+              <span class="cg-sw-track" aria-hidden="true"></span>
+              <span class="cg-sw-label">{% include icon.html name="bell" class="h-4 w-4" %}push</span>
+              <span class="cg-sw-state">allowed</span>
+            </button>
+            <button type="button" class="cg-switch" data-ch="ads" aria-pressed="false">
+              <span class="cg-sw-track" aria-hidden="true"></span>
+              <span class="cg-sw-label">{% include icon.html name="megaphone" class="h-4 w-4" %}paid ads</span>
+              <span class="cg-sw-state">withheld</span>
+            </button>
+          </div>
+
+          <div class="cg-withdraw">
+            <button type="button" class="cg-withdraw-btn" id="cgWithdraw">✕ Sara withdraws all consent</button>
+            <button type="button" class="cg-restore-btn" id="cgRestore" hidden>↺ she re-consents</button>
+          </div>
+        </div>
+
+        <!-- enforcement: channels -->
+        <div class="cg-enforce">
+          <div class="cg-comp" id="cgComp"><b id="cgCompN">2</b> of 3 channels consented · every activation is covered ✓</div>
+          <div class="cg-tiles">
+            <div class="cg-tile" data-ch="email">
+              <div class="cg-tile-head"><span class="cg-lbl"><svg class="h-4 w-4" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="24" y="48" width="208" height="160" rx="16"/><path d="M28 72l100 72 100-72"/></svg>email</span><b class="cg-tile-state">open</b></div>
+              <p class="cg-tile-aud">win-back journey · <span class="cg-tile-fan">Sara ✓ eligible</span></p>
+            </div>
+            <div class="cg-tile" data-ch="push">
+              <div class="cg-tile-head"><span class="cg-lbl">{% include icon.html name="bell" class="h-4 w-4" %}push</span><b class="cg-tile-state">open</b></div>
+              <p class="cg-tile-aud">lapsing loyalists · <span class="cg-tile-fan">Sara ✓ eligible</span></p>
+            </div>
+            <div class="cg-tile" data-ch="ads">
+              <div class="cg-tile-head"><span class="cg-lbl">{% include icon.html name="megaphone" class="h-4 w-4" %}paid ads</span><b class="cg-tile-state">open</b></div>
+              <p class="cg-tile-aud">away-kit intenders · <span class="cg-tile-fan">Sara ✓ eligible</span></p>
+            </div>
+          </div>
+          <p class="cg-enforce-note" id="cgNote">Sara has never consented to ads - so ads has never seen her. Flip a switch and watch.</p>
+        </div>
+      </div>
+
+      <!-- audit ledger -->
+      <div class="cg-ledger-wrap">
+        <p class="cg-ledger-label">audit ledger · signed &amp; timestamped</p>
+        <ul class="cg-ledger" id="cgLedger"></ul>
+      </div>
+
+      <!-- deployment -->
+      <div class="cg-deploy">
+        <span class="cg-deploy-label">activation runs inside:</span>
+        <div class="cg-deploy-chips" id="cgDeploy" role="group" aria-label="Deployment model">
+          <button type="button" class="is-on" data-dep="your cloud" aria-pressed="true">your cloud</button>
+          <button type="button" data-dep="on-prem" aria-pressed="false">on-prem</button>
+          <button type="button" data-dep="managed" aria-pressed="false">fully managed</button>
+        </div>
+        <span class="cg-deploy-note" id="cgDeployNote">deployment: your cloud (KSA) - the data never leaves your environment</span>
+      </div>
+    </div>
+
+    <p class="cg-feed-note" data-reveal>An illustrative simulation - the mechanics (profile-layer enforcement, instant audience removal, the signed audit trail) are the real product behavior.</p>
+  </div>
+</section>
+
+<!-- ==================== CAPABILITIES ==================== -->
+<section class="cg-caps-sec">
+  <div class="container-page">
+    <div class="cg-sec-head" data-reveal>
+      <p class="eyebrow">How governance works</p>
+      <h2 class="cg-h2">Consent and residency at the core</h2>
+      <p class="cg-sec-sub">Fan profiles are captured, resolved, and stored in-Kingdom with consent baked into the data layer. Every activation, every segment, every query respects the fan's consent choices in real time.</p>
+    </div>
+
+    <ol class="cg-caps">
+      {%- for c in page.capabilities -%}
+      <li class="cg-cap" data-reveal style="--reveal-delay:{{ forloop.index0 | times: 80 }}ms">
+        <span class="cg-cap-num">0{{ forloop.index }}</span>
+        <span class="icon-chip">{% include icon.html name=c.icon class="h-5 w-5" %}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.body }}</p>
+      </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== WHY IT MATTERS ==================== -->
+<section class="cg-why-sec">
+  <div class="container-page">
+    <div class="cg-why-grid">
+      <div data-reveal>
+        <p class="eyebrow">Why it matters</p>
+        <h2 class="cg-h2">The foundation of responsible<br>fan engagement</h2>
+        <p class="cg-sec-sub">Building fan trust requires real consent and real control. Fanfinity ID makes governance a feature, not a compliance burden, so you can activate confidently, fans stay in control, and your business operates within the law.</p>
+        <a href="{{ '/platform/data-residency' | relative_url }}" class="cg-why-link">See deployment options <span aria-hidden="true">→</span></a>
+      </div>
+      <ul class="cg-why-points" data-reveal style="--reveal-delay:120ms">
+        {%- for b in page.benefits -%}
+        <li>{{ b }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+
+</div><!-- /cg-paper -->
+
+{% include cta-band.html
+   heading="Prove to yourself that withdrawn means withdrawn"
+   text="In a walkthrough, we'll flip a real fan's consent on your own data and watch every channel, segment, and campaign obey it in real time - with the audit trail your legal team will ask for." %}
+
+{% raw %}
+<style>
+/* ================= Consent & Governance - "The Consent Desk" styles (.cg-) ================= */
+.cg-paper { background-color: #ffffff; overflow-x: clip; }
+
+/* ---------- hero ---------- */
+.cg-hero { padding: 5.5rem 0 4rem; }
+.cg-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.cg-hero-grid > *, .cg-why-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .cg-hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; } }
+
+.cg-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.4rem); margin: 1.1rem 0 0; }
+.cg-accent { position: relative; display: inline-block; color: #854dff; }
+.cg-scribble { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.22em; color: #aa80ff; }
+.cg-lede { margin-top: 1.4rem; font-size: 1.125rem; line-height: 1.7; color: var(--color-muted-foreground); max-width: 34rem; }
+.cg-hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+.cg-hero-strip { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin: 2.25rem 0 0; padding: 0; list-style: none; }
+.cg-hero-strip li { display: flex; align-items: center; gap: 0.5rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted-foreground); }
+.cg-hero-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 9999px; background: #854dff; }
+.cg-hero-art { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.cg-hero-art-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--color-muted-foreground); text-align: center; max-width: 22rem; margin: 0; }
+
+/* ---------- hero mini ---------- */
+.cg-mini { width: min(100%, 400px); background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1rem 1.1rem; box-shadow: 0 3px 8px -6px rgba(43,33,69,0.45); position: relative; }
+.cg-mini::before { content: ""; position: absolute; inset: 7px; border: 1px dashed rgba(43,33,69,0.35); border-radius: 10px; pointer-events: none; }
+.cg-mini-head { display: flex; justify-content: space-between; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.cg-mini-pdpl { color: #0d9488; font-weight: 700; }
+.cg-mini-row { display: flex; justify-content: space-between; align-items: center; margin-top: 0.45rem; background: #fff; border: 1px dashed rgba(43,33,69,0.35); border-radius: 9px; padding: 0.4rem 0.6rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; color: #2b2145; }
+.cg-mini-row b { font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.cg-mini-row b.is-on { color: #0d9488; }
+.cg-mini-row b.is-off { color: #d93b54; }
+.cg-mini-ledger { margin-top: 0.7rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; color: #7c3aed; }
+.cg-mini-note { margin: 0.55rem 0 0; text-align: center; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.45); }
+
+/* ---------- section heads ---------- */
+.cg-sec-head { max-width: 48rem; margin-bottom: 3rem; }
+.cg-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; font-size: clamp(2rem, 3.6vw, 3rem); margin: 1rem 0 0; }
+.cg-sec-sub { margin-top: 1rem; font-size: 1.05rem; line-height: 1.7; color: var(--color-muted-foreground); }
+
+/* ---------- residency zone ---------- */
+.cg-desk-sec { padding: 1rem 0 6.5rem; }
+.cg-zone { position: relative; border: 1.5px dashed rgba(13,148,136,0.55); border-radius: 20px; padding: 2.1rem 1.25rem 1.25rem; background: linear-gradient(180deg, rgba(13,148,136,0.035), transparent 30%); }
+.cg-zone-label { position: absolute; top: -0.62rem; left: 1.25rem; background: #fff; padding: 0 0.6rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0d9488; }
+
+/* ---------- desk layout ---------- */
+.cg-desk { display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 1080px) { .cg-desk { grid-template-columns: 370px minmax(0, 1fr); gap: 1.5rem; } }
+
+/* ---------- profile ---------- */
+.cg-profile { background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1.05rem 1.1rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: opacity 0.3s; position: relative; }
+.cg-profile-top { display: flex; align-items: center; gap: 0.7rem; }
+.cg-avatar { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1rem; color: #2b2145; background: #e8c77b; flex-shrink: 0; }
+.cg-name { margin: 0; font-size: 0.9rem; font-weight: 600; color: #2b2145; }
+.cg-sub { margin: 0.15rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.cg-restricted { display: none; margin-left: auto; transform: rotate(-8deg); border: 2px solid #d93b54; color: #d93b54; border-radius: 6px; padding: 0.12em 0.45em; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.5rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.cg-profile.is-restricted .cg-restricted { display: block; animation: cg-stamp 0.32s cubic-bezier(0.2,0.7,0.2,1); }
+@keyframes cg-stamp { from { transform: rotate(-8deg) scale(1.6); opacity: 0; } to { transform: rotate(-8deg) scale(1); opacity: 1; } }
+.cg-profile.is-restricted .cg-switches, .cg-profile.is-restricted .cg-sub { opacity: 0.45; }
+
+.cg-switches { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+.cg-switch { display: flex; align-items: center; gap: 0.7rem; width: 100%; text-align: left; background: #fff; border: 1.5px dashed rgba(43,33,69,0.4); border-radius: 12px; padding: 0.55rem 0.7rem; cursor: pointer; transition: border-color 0.2s, background 0.2s, opacity 0.2s; }
+.cg-sw-track { width: 34px; height: 20px; border-radius: 9999px; background: rgba(43,33,69,0.18); position: relative; flex-shrink: 0; transition: background 0.2s; }
+.cg-sw-track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 9999px; background: #fff; box-shadow: 0 1px 3px rgba(43,33,69,0.35); transition: left 0.2s; }
+.cg-switch.is-on .cg-sw-track { background: #854dff; }
+.cg-switch.is-on .cg-sw-track::after { left: 16px; }
+.cg-sw-label { font-size: 0.8rem; font-weight: 600; color: #2b2145; }
+.cg-lbl, .cg-sw-label { display: inline-flex; align-items: center; gap: 0.4rem; }
+.cg-lbl svg, .cg-sw-label svg { flex-shrink: 0; color: #7c3aed; }
+.cg-sw-state { margin-left: auto; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(43,33,69,0.4); }
+.cg-switch.is-on { border-color: #854dff; }
+.cg-switch.is-on .cg-sw-state { color: #0d9488; }
+.cg-switch:not(.is-on) .cg-sw-state { color: #d93b54; }
+.cg-profile.is-restricted .cg-switch { pointer-events: none; }
+
+.cg-withdraw { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.cg-withdraw-btn { flex: 1; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em; color: #d93b54; border: 1.5px solid #d93b54; border-radius: 9999px; background: #fff; padding: 0.5rem 0.8rem; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.cg-withdraw-btn:hover { background: rgba(217,59,84,0.08); }
+.cg-restore-btn { flex: 1; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em; color: #0d9488; border: 1.5px solid #0d9488; border-radius: 9999px; background: #fff; padding: 0.5rem 0.8rem; cursor: pointer; transition: background 0.2s; }
+.cg-restore-btn:hover { background: rgba(13,148,136,0.08); }
+
+/* ---------- enforcement ---------- */
+.cg-enforce { background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1.05rem 1.1rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.cg-comp { font-size: 0.88rem; color: var(--color-muted-foreground); }
+.cg-comp b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.6rem; color: #2b2145; font-variant-numeric: tabular-nums; }
+.cg-comp.is-good b { color: #0d9488; }
+.cg-comp.is-warn b { color: #c2410c; }
+.cg-comp.is-halt b { color: #d93b54; }
+.cg-tiles { display: grid; gap: 0.55rem; grid-template-columns: 1fr; margin-top: 0.85rem; }
+@media (min-width: 720px) { .cg-tiles { grid-template-columns: repeat(3, 1fr); } }
+.cg-tile { border: 1.5px dashed rgba(43,33,69,0.4); border-radius: 12px; background: #fff; padding: 0.6rem 0.7rem; transition: border-color 0.25s, background 0.25s; }
+.cg-tile-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; font-weight: 600; color: #2b2145; }
+.cg-tile-state { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.52rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0d9488; }
+.cg-tile-aud { margin: 0.4rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; line-height: 1.5; color: rgba(43,33,69,0.6); }
+.cg-tile-fan { color: #0d9488; }
+.cg-tile.is-blocked { border: 1.5px dashed #d93b54; background: rgba(217,59,84,0.05); }
+.cg-tile.is-blocked .cg-tile-state { color: #d93b54; }
+.cg-tile.is-blocked .cg-tile-fan { color: #d93b54; }
+.cg-tile.is-flip { animation: cg-flip 0.8s ease-out; }
+@keyframes cg-flip { 0% { box-shadow: 0 0 0 5px rgba(217,59,84,0.25); } 100% { box-shadow: none; } }
+.cg-enforce-note { margin: 0.85rem 0 0; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.64rem; line-height: 1.6; color: #2b2145; border-left: 3px solid #854dff; background: rgba(133,77,255,0.07); border-radius: 0 8px 8px 0; padding: 0.6rem 0.8rem; min-height: 3em; }
+.cg-enforce-note strong { color: #7c3aed; }
+
+/* ---------- ledger ---------- */
+.cg-ledger-wrap { margin-top: 1.25rem; background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 16px; padding: 1.05rem 1.1rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); }
+.cg-ledger-label { margin: 0 0 0.6rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.54rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.cg-ledger { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.35rem; max-height: 12.5rem; overflow: hidden; }
+.cg-ledger li { display: flex; flex-wrap: wrap; gap: 0.3rem 0.7rem; align-items: baseline; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.62rem; color: #2b2145; border-bottom: 1px dashed rgba(43,33,69,0.2); padding-bottom: 0.3rem; }
+.cg-ledger li.is-new { animation: cg-led-in 0.5s cubic-bezier(0.2,0.7,0.2,1) both; }
+@keyframes cg-led-in { from { opacity: 0; transform: translateY(-9px); } to { opacity: 1; transform: none; } }
+.cg-ledger .cg-led-t { color: #7c3aed; font-weight: 700; }
+.cg-ledger .cg-led-sig { margin-left: auto; color: #0d9488; font-size: 0.54rem; }
+.cg-ledger li.is-halt { color: #d93b54; font-weight: 700; }
+
+/* ---------- deployment ---------- */
+.cg-deploy { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; margin-top: 1.25rem; }
+.cg-deploy-label { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(43,33,69,0.5); }
+.cg-deploy-chips { display: flex; background: #fffdf8; border: 1.5px solid #2b2145; border-radius: 9999px; padding: 3px; }
+.cg-deploy-chips button { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.6rem; padding: 0.35rem 0.8rem; border-radius: 7px; color: rgba(43,33,69,0.55); background: transparent; border: 0; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.cg-deploy-chips button.is-on { background: #854dff; color: #fff; }
+.cg-deploy-note { font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.56rem; color: #0d9488; }
+
+.cg-feed-note { margin: 1.25rem 0 0; font-size: 0.72rem; line-height: 1.5; color: var(--color-muted-foreground); font-style: italic; }
+
+/* ---------- capabilities ---------- */
+.cg-caps-sec { padding: 0 0 6.5rem; }
+.cg-caps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .cg-caps { grid-template-columns: 1fr 1fr; } }
+.cg-cap { position: relative; border: 1.5px solid #2b2145; border-radius: 16px; background: #fffdf8; padding: 1.4rem; box-shadow: 0 2px 4px -3px rgba(43,33,69,0.35); transition: background 0.18s; }
+.cg-cap:hover { background: rgba(43,33,69,0.025); }
+.cg-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, 'Geist Mono', monospace; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: #7c3aed; }
+.cg-cap .icon-chip { margin-bottom: 1rem; }
+.cg-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.cg-cap p { margin: 0.5rem 0 0; font-size: 0.9rem; line-height: 1.65; color: var(--color-muted-foreground); }
+
+/* ---------- why it matters ---------- */
+.cg-why-sec { padding: 0 0 6.5rem; }
+.cg-why-grid { display: grid; gap: 2.5rem; align-items: start; }
+@media (min-width: 1024px) { .cg-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 4rem; } }
+.cg-why-points { list-style: none; margin: 0.5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.cg-why-points li { position: relative; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.65; color: var(--color-muted-foreground); }
+.cg-why-points li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 7px; height: 7px; border-radius: 9999px; background: #854dff; }
+.cg-why-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.75rem; font-weight: 600; font-size: 0.95rem; color: #5b2ed6; text-decoration: none; }
+.cg-why-link:hover { color: #5b21b6; }
+
+/* ---------- dark-mode reconciliation ---------- */
+html.dark .cg-paper { background-color: #120d1e; }
+html.dark .cg-zone { border-color: rgba(13,148,136,0.5); background: linear-gradient(180deg, rgba(13,148,136,0.07), transparent 30%); }
+html.dark .cg-zone-label { background: #120d1e; }
+html.dark .cg-mini, html.dark .cg-profile, html.dark .cg-enforce, html.dark .cg-ledger-wrap, html.dark .cg-cap, html.dark .cg-deploy-chips { background: #1b1429; border-color: rgba(221,210,242,0.5); box-shadow: 0 2px 4px -3px rgba(221,210,242,0.2); }
+html.dark .cg-mini::before { border-color: rgba(221,210,242,0.3); }
+html.dark .cg-mini-row, html.dark .cg-switch, html.dark .cg-tile, html.dark .cg-withdraw-btn, html.dark .cg-restore-btn { background: #241a38; }
+html.dark .cg-name, html.dark .cg-tile-head, html.dark .cg-sw-label, html.dark .cg-ledger li, html.dark .cg-enforce-note { color: #efe9fb; }
+html.dark .cg-sub, html.dark .cg-mini-head, html.dark .cg-mini-note, html.dark .cg-ledger-label, html.dark .cg-deploy-label, html.dark .cg-tile-aud { color: rgba(221,210,242,0.55); }
+html.dark .cg-sw-track { background: rgba(221,210,242,0.25); }
+html.dark .cg-why-link { color: #b98cff; }
+html.dark .cg-comp b { color: #efe9fb; }
+html.dark .cg-comp.is-good b { color: #2dd4bf; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cg-ledger li.is-new, .cg-tile.is-flip, .cg-profile.is-restricted .cg-restricted { animation: none !important; }
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 480px) {
+  .cg-hero { padding-top: 4rem; }
+  .cg-zone { padding: 1.8rem 0.85rem 0.85rem; }
+}
+</style>
+
+<script>
+/* ================= The Consent Desk - engine ================= */
+(function () {
+  'use strict';
+  var profile = document.getElementById('cgProfile');
+  if (!profile) return;
+
+  var els = {
+    switches: Array.prototype.slice.call(document.querySelectorAll('.cg-switch')),
+    tiles: Array.prototype.slice.call(document.querySelectorAll('.cg-tile')),
+    comp: document.getElementById('cgComp'),
+    note: document.getElementById('cgNote'),
+    ledger: document.getElementById('cgLedger'),
+    withdraw: document.getElementById('cgWithdraw'),
+    restore: document.getElementById('cgRestore'),
+    deploy: document.getElementById('cgDeploy'),
+    deployNote: document.getElementById('cgDeployNote')
+  };
+
+  var consent = { email: true, push: true, ads: false };
+  var restricted = false;
+  var clock = 15 * 3600 + 42 * 60 + 7; // 15:42:07
+  var CH_LABEL = { email: 'email', push: 'push', ads: 'paid ads' };
+  var DEPLOY_NOTES = {
+    'your cloud': 'deployment: your cloud (KSA) - the data never leaves your environment',
+    'on-prem': 'deployment: on-prem (KSA) - your servers, your keys, your rules',
+    'managed': 'deployment: fully managed (KSA) - we run it, inside your jurisdiction'
+  };
+
+  function stamp() {
+    clock += 11 + Math.floor(Math.random() * 41);
+    var h = Math.floor(clock / 3600), m = Math.floor((clock % 3600) / 60), s = clock % 60;
+    var t = (h < 10 ? '0' : '') + h + ':' + (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    var hash = Math.floor(Math.random() * 65535).toString(16).padStart(4, '0');
+    return { t: t, h: hash };
+  }
+
+  function ledgerAdd(text, halt) {
+    var s = stamp();
+    var li = document.createElement('li');
+    li.className = 'is-new' + (halt ? ' is-halt' : '');
+    li.innerHTML = '<span class="cg-led-t">' + s.t + '</span><span>' + text + '</span><span class="cg-led-sig">signed ✓ #' + s.h + '</span>';
+    els.ledger.insertBefore(li, els.ledger.firstChild);
+    while (els.ledger.children.length > 6) els.ledger.removeChild(els.ledger.lastChild);
+    Array.prototype.forEach.call(els.ledger.children, function (c, i) { if (i > 0) c.classList.remove('is-new'); });
+  }
+
+  function render(changedCh) {
+    var allowed = 0;
+    ['email', 'push', 'ads'].forEach(function (ch) {
+      var on = consent[ch];
+      if (on) allowed++;
+    });
+    // switches
+    els.switches.forEach(function (sw) {
+      var ch = sw.getAttribute('data-ch');
+      var on = consent[ch];
+      sw.classList.toggle('is-on', on);
+      sw.setAttribute('aria-pressed', on ? 'true' : 'false');
+      sw.querySelector('.cg-sw-state').textContent = on ? 'allowed' : 'withheld';
+    });
+    // tiles
+    els.tiles.forEach(function (tile) {
+      var ch = tile.getAttribute('data-ch');
+      var on = consent[ch];
+      tile.classList.toggle('is-blocked', !on);
+      if (changedCh === ch) {
+        tile.classList.remove('is-flip');
+        void tile.offsetWidth;
+        tile.classList.add('is-flip');
+      }
+      tile.querySelector('.cg-tile-state').textContent = on ? 'open' : 'withheld';
+      tile.querySelector('.cg-tile-fan').textContent = on ? 'Sara ✓ eligible' : 'Sara ✕ removed just now';
+    });
+    // compliance strip
+    els.comp.className = 'cg-comp ' + (restricted ? 'is-halt' : allowed === 3 ? 'is-good' : allowed === 0 ? 'is-halt' : 'is-warn');
+    if (restricted) els.comp.innerHTML = '<b>0</b> of 3 channels consented · processing halted - withdrawn means withdrawn';
+    else if (allowed === 3) els.comp.innerHTML = '<b>3</b> of 3 channels consented · every activation is covered ✓';
+    else els.comp.innerHTML = '<b>' + allowed + '</b> of 3 channels consented · ' + (3 - allowed) + ' withheld by consent';
+  }
+
+  /* switches */
+  els.switches.forEach(function (sw) {
+    sw.addEventListener('click', function () {
+      if (restricted) return;
+      var ch = sw.getAttribute('data-ch');
+      consent[ch] = !consent[ch];
+      render(ch);
+      ledgerAdd('consent.' + ch + ' = ' + consent[ch] + ' · enforced instantly');
+      if (!consent[ch]) {
+        els.note.innerHTML = 'Sara revoked ' + CH_LABEL[ch] + '. The channel closed <strong>this second</strong> - she was pulled from its audiences before the next send. No sync lag, no leakage.';
+      } else {
+        els.note.innerHTML = CH_LABEL[ch] + ' allowed again. The channel reopens - and every future send respects it from now on. The ledger kept both events.';
+      }
+    });
+  });
+
+  /* full withdrawal / restore */
+  els.withdraw.addEventListener('click', function () {
+    if (restricted) return;
+    restricted = true;
+    consent = { email: false, push: false, ads: false };
+    profile.classList.add('is-restricted');
+    els.withdraw.hidden = true;
+    els.restore.hidden = false;
+    render();
+    ledgerAdd('consent.withdraw_all = true · profile restricted · processing halted', true);
+    els.note.innerHTML = 'Full withdrawal. Every channel closed, every audience dropped her, every processing job sees <strong>restricted</strong> - instantly, and with a signed entry your legal team can point to.';
+  });
+  els.restore.addEventListener('click', function () {
+    if (!restricted) return;
+    restricted = false;
+    consent = { email: true, push: true, ads: false };
+    profile.classList.remove('is-restricted');
+    els.withdraw.hidden = false;
+    els.restore.hidden = true;
+    render();
+    ledgerAdd('consent.restore · email + push re-granted · profile active');
+    els.note.innerHTML = 'She\u2019s back - on her terms. Email and push reopen; <strong>ads still waits for its own yes</strong>. Consent is per-channel, not all-or-nothing.';
+  });
+
+  /* deployment chips */
+  Array.prototype.forEach.call(els.deploy.querySelectorAll('button'), function (btn) {
+    btn.addEventListener('click', function () {
+      Array.prototype.forEach.call(els.deploy.querySelectorAll('button'), function (b) {
+        b.classList.toggle('is-on', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      els.deployNote.textContent = DEPLOY_NOTES[btn.getAttribute('data-dep')] || DEPLOY_NOTES['your cloud'];
+    });
+  });
+
+  /* init: two historical entries + render */
+  ledgerAdd('consent.push = true · captured in app · onboarding v2');
+  ledgerAdd('consent.email = true · captured at signup · web form');
+  render();
+  els.note.textContent = 'Sara has never consented to ads - so ads has never seen her. Flip a switch and watch.';
+})();
+</script>
+{% endraw %}
