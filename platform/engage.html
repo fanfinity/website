@@ -2,62 +2,701 @@
 layout: page
 permalink: /platform/engage
 title: Fanfinity Engage
-description: "The designed engagement layer that turns passive audiences into active, returning communities: live interactivity, gamification, loyalty, and rewards on top of a real fan graph. In design preview, not yet generally available."
+description: "The engagement layer that turns passive audiences into active, returning communities: live interactivity, gamification, loyalty, and rewards on top of a real fan graph."
+cta: false
 breadcrumb_parent: { title: Platform, url: /platform }
 designed:
-  - { icon: poll,   title: "Live interactivity", body: "Polls, predictions, quizzes, and reactions designed to turn a passive audience into active participants the instant a moment happens." }
-  - { icon: trophy, title: "Gamification", body: "Streaks, quests, badges, and leaderboards designed to build recurring habits rather than one-time spikes." }
-  - { icon: gift,   title: "Loyalty & rewards", body: "A points-and-rewards economy designed to incentivize the exact behaviors you value, then rank fans as they earn." }
-  - { icon: slider, title: "Programs & themes", body: "Sponsorable programs and on-brand theming designed to turn engagement into inventory you can monetize." }
+  - { icon: poll,   title: "Live interactivity", body: "Polls, predictions, quizzes, and reactions that turn a passive audience into active participants the instant a moment happens." }
+  - { icon: trophy, title: "Gamification", body: "Streaks, quests, badges, and leaderboards that build recurring habits rather than one-time spikes." }
+  - { icon: gift,   title: "Loyalty & rewards", body: "A points-and-rewards economy that incentivizes the exact behaviors you value, then ranks fans as they earn." }
+  - { icon: slider, title: "Programs & themes", body: "Sponsorable programs and on-brand theming that turn engagement into inventory you can monetize." }
 walkthrough:
-  - { icon: identity, title: "A known fan arrives", body: "Someone opens a live stream or a page you own. Because Fanfinity ID already resolves signals into one profile, the design assumes a known fan rather than an anonymous session from the first second." }
-  - { icon: poll,     title: "A moment goes interactive", body: "At a point you author, an interactive element is designed to appear: a poll, a prediction, or a quiz, inviting participation while attention is still on the screen. This surface is a Preview mockup, not a shipped widget." }
-  - { icon: gift,     title: "Participation earns something", body: "The design ties that action into a points-and-rewards economy: streaks, quests, and status that are meant to give a reason to come back, not just react once." }
-  - { icon: chart,    title: "It writes back to the record", body: "Every interaction is designed to feed the same profile and analytics layer the rest of the platform reads, so engagement, loyalty, and reporting stay in sync by design instead of by integration." }
-live_points:
-  - "The layers beneath Engage (Fanfinity Blocks, ID, Activate, and Measure) are live today."
-  - "Every widget visual across this site is a design mockup, not a shipped feature."
-  - "The engagement layer is in active design and not yet generally available."
-  - "Book a demo to see the designs; design partners get a real say in what ships first."
+  - { icon: identity, title: "A known fan arrives", body: "Someone opens a live stream or a page you own. Because Fanfinity ID already resolves signals into one profile, Engage knows the fan from the first second - no anonymous sessions." }
+  - { icon: poll,     title: "A moment goes interactive", body: "At a point you author, an interactive element appears: a poll, a prediction, or a quiz, inviting participation while attention is still on the screen." }
+  - { icon: gift,     title: "Participation earns something", body: "That action feeds a points-and-rewards economy: streaks, quests, and status that give fans a reason to come back, not just react once." }
+  - { icon: chart,    title: "It writes back to the record", body: "Every interaction feeds the same profile and analytics layer the rest of the platform reads, so engagement, loyalty, and reporting stay in sync by design instead of by integration." }
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Engage"
-   title="Turn watching into playing."
-   subtitle="Fanfinity Engage is the engagement layer designed to sit on top of your live fan graph: live interactivity, gamification, loyalty, and rewards. It is in design preview and not yet generally available."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/platform-engage.jpg"
-   image_alt="Fans watching a football match at night in a packed stadium" %}
 
-<section class="section">
+<!-- ================= HERO ================= -->
+<section class="eng-hero">
   <div class="container-page">
-    <div class="mx-auto max-w-2xl rounded-4xl border border-border bg-soft px-6 py-8 text-center" data-reveal>
-      <span class="badge">Preview</span>
-      <p class="mt-3 text-muted-foreground">The capabilities below describe what Fanfinity Engage is <em>designed</em> to do. They are not yet generally available, and the widget visuals shown across this site are mockups. What is live today is the platform beneath Engage: <a href="{{ '/platform' | relative_url }}" class="font-medium text-brand-foreground underline underline-offset-2">Blocks, ID, Activate, and Measure</a>.</p>
+    <div class="eng-hero-grid">
+      <div class="eng-hero-copy">
+        <p class="eng-eyebrow">Platform · Fanfinity Engage</p>
+        <h1 class="eng-h1">Turn watching into <span class="eng-accent">playing.</span></h1>
+        <p class="eng-sub">Fanfinity Engage is the engagement layer on top of your live fan graph: live interactivity, gamification, loyalty, and rewards.</p>
+        <div class="eng-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+        </div>
+      </div>
+      <div class="eng-hero-visual" aria-hidden="true">
+        <div class="eng-tri eng-tri-match">
+          <span class="eng-tri-tag">{% include icon.html name="whistle" class="h-3.5 w-3.5" %} THE MATCH</span>
+          <span class="eng-tri-big">2–1</span>
+          <span class="eng-tri-small">78' · prediction open</span>
+        </div>
+        <div class="eng-tri eng-tri-gig">
+          <span class="eng-tri-tag">{% include icon.html name="broadcast" class="h-3.5 w-3.5" %} THE LIVESTREAM</span>
+          <span class="eng-tri-bars"><i style="height:62%"></i><i style="height:28%"></i><i style="height:14%"></i></span>
+          <span class="eng-tri-small">encore vote · live</span>
+        </div>
+        <div class="eng-tri eng-tri-drop">
+          <span class="eng-tri-tag">{% include icon.html name="storefront" class="h-3.5 w-3.5" %} THE DROP</span>
+          <span class="eng-tri-stub">EARLY ACCESS</span>
+          <span class="eng-tri-small">150 pts · members</span>
+        </div>
+        <svg class="eng-tri-wires" viewBox="0 0 320 90" fill="none" aria-hidden="true">
+          <path class="eng-wire" d="M60 6 C 60 50, 150 40, 158 78" />
+          <path class="eng-wire" d="M160 6 C 160 40, 160 44, 160 78" />
+          <path class="eng-wire" d="M260 6 C 260 50, 170 40, 162 78" />
+          <circle class="eng-wiredot" r="3"><animateMotion dur="2.6s" repeatCount="indefinite" path="M60 6 C 60 50, 150 40, 158 78" /></circle>
+          <circle class="eng-wiredot" r="3"><animateMotion dur="2.2s" repeatCount="indefinite" path="M160 6 C 160 40, 160 44, 160 78" /></circle>
+          <circle class="eng-wiredot" r="3"><animateMotion dur="3s" repeatCount="indefinite" path="M260 6 C 260 50, 170 40, 162 78" /></circle>
+        </svg>
+        <div class="eng-tri-fan">
+          <span class="eng-tri-avatar">S</span>
+          <span class="eng-tri-fanmeta"><b>Sara</b> · Fan #48211<i class="eng-tierdot"></i></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-{% include feature-grid.html
-   heading="An engagement layer, grounded in identity"
-   subheading="Interactivity, gamification, loyalty, and rewards, designed to run on the same real-time profile that Fanfinity ID resolves, so engagement is always tied to a known fan."
-   items=page.designed
-   columns=2 %}
+<!-- ================= CENTERPIECE · ONE SATURDAY, THREE WORLDS ================= -->
+<section class="eng-play" id="engPlay">
+  <div class="container-page">
+    <div class="eng-play-head" data-reveal>
+      <p class="eng-eyebrow">Play it yourself</p>
+      <h2 class="eng-h2">One Saturday. Three worlds. <span class="eng-accent">One fan.</span></h2>
+      <p class="eng-lead">You're Sara for a night - a match, a livestream, a drop. Play all three moments yourself. Everything you do lands on one record, because the engagement layer sits on one fan graph.</p>
+      <p class="eng-sim-note">An interactive simulation - tap, vote, redeem, and watch her record keep up.</p>
+    </div>
 
-{% include feature-grid.html
-   heading="How one moment is designed to play out"
-   subheading="The design principle is simple: engagement should never float free of the fan it belongs to. This is the intended experience end to end; the interactive surfaces are mockups, and the identity underneath them is real."
-   items=page.walkthrough
-   columns=2 %}
+    <div class="eng-play-grid">
+      <!-- THE PHONE -->
+      <div class="eng-phone" id="engPhone" data-reveal>
+        <div class="eng-phone-top">
+          <span class="eng-clock" id="engClock">20:21</span>
+          <div class="eng-chapters" id="engChapters">
+            <span class="eng-ch is-active" data-ch="0">1 · Match</span>
+            <span class="eng-ch" data-ch="1">2 · Stream</span>
+            <span class="eng-ch" data-ch="2">3 · Drop</span>
+          </div>
+          <div class="eng-pills">
+            <span class="eng-pill eng-pill-pts" title="Points balance">{% include icon.html name="coins" class="h-3.5 w-3.5" %} <b id="engPts">0</b></span>
+            <span class="eng-pill eng-pill-streak" title="Streak">{% include icon.html name="bolt" class="h-3.5 w-3.5" %} <b id="engStreak">0</b></span>
+          </div>
+        </div>
 
-{% include feature-split.html
-   reverse=true
-   title="The data layer is live. The engagement layer is in design."
-   body="We label this honestly everywhere. The fan graph that would power Engage is built and running now; the interactive layer on top of it is still being designed with our partners."
-   points=page.live_points
-   cta_text="See Fanfinity ID (live)"
-   cta_url="/platform/id"
-   icon="bolt" %}
+        <div class="eng-stage" id="engStage">
+          <!-- SCENE 1 · THE MATCH -->
+          <div class="eng-scene eng-scene-match is-active" data-scene="0">
+            <div class="eng-board" id="engBoard">
+              <div class="eng-board-top"><span>LEAGUE NIGHT · WEEK 24</span><span class="eng-min" id="engMin">78'</span></div>
+              <div class="eng-score">2<span class="eng-dash">–</span>1</div>
+              <div class="eng-board-sub">Home ahead · away pressing · tension everywhere</div>
+              <div class="eng-ft-stamp" id="engFtStamp">FULL TIME · 3–1<span>№ 9 got the winner</span></div>
+            </div>
+            <div class="eng-widget" id="engW1">
+              <div class="eng-widget-tag">{% include icon.html name="quiz" class="h-3.5 w-3.5" %} PREDICTION · authored moment</div>
+              <p class="eng-widget-q">Who scores the winner?</p>
+              <div class="eng-opts" id="engOpts1">
+                <button type="button" class="eng-opt" data-pick="9" aria-pressed="false">№ 9 · the striker</button>
+                <button type="button" class="eng-opt" data-pick="7" aria-pressed="false">№ 7 · the winger</button>
+                <button type="button" class="eng-opt" data-pick="0" aria-pressed="false">No one - 2–1 holds</button>
+              </div>
+              <div class="eng-splitbars" id="engSplit" aria-hidden="true">
+                <div class="eng-sbar"><i style="--w:58%"></i><span>№ 9 · 58%</span></div>
+                <div class="eng-sbar"><i style="--w:31%"></i><span>№ 7 · 31%</span></div>
+                <div class="eng-sbar"><i style="--w:11%"></i><span>2–1 holds · 11%</span></div>
+              </div>
+              <p class="eng-widget-foot" id="engW1Foot" role="status" aria-live="polite" aria-atomic="true">Tap your call - it's a prediction, there's a stake.</p>
+            </div>
+            <button type="button" class="eng-next" data-next="1">Next world · the livestream →</button>
+          </div>
 
+          <!-- SCENE 2 · THE LIVESTREAM -->
+          <div class="eng-scene eng-scene-gig" data-scene="1">
+            <div class="eng-gigboard">
+              <div class="eng-beams"><i></i><i></i><i></i></div>
+              <div class="eng-gig-top"><span class="eng-live-dot"></span> LIVE · 41,208 watching</div>
+              <div class="eng-gig-title">Arena tour · night 3</div>
+            </div>
+            <div class="eng-widget" id="engW2">
+              <div class="eng-widget-tag">{% include icon.html name="poll" class="h-3.5 w-3.5" %} POLL · authored moment</div>
+              <p class="eng-widget-q">Last song. Pick the encore.</p>
+              <div class="eng-opts" id="engOpts2">
+                <button type="button" class="eng-opt" data-pick="neon" aria-pressed="false">“Neon Skyline”</button>
+                <button type="button" class="eng-opt" data-pick="gravity" aria-pressed="false">“Gravity”</button>
+                <button type="button" class="eng-opt" data-pick="arabesque" aria-pressed="false">“Arabesque”</button>
+              </div>
+              <div class="eng-splitbars eng-gigbars" id="engGigBars" aria-hidden="true">
+                <div class="eng-sbar" data-bar="neon"><i style="--w:61%"></i><span>“Neon Skyline” · 61%</span></div>
+                <div class="eng-sbar" data-bar="gravity"><i style="--w:27%"></i><span>“Gravity” · 27%</span></div>
+                <div class="eng-sbar" data-bar="arabesque"><i style="--w:12%"></i><span>“Arabesque” · 12%</span></div>
+              </div>
+              <p class="eng-widget-foot" id="engW2Foot" role="status" aria-live="polite" aria-atomic="true">One tap, and you're part of the setlist.</p>
+            </div>
+            <button type="button" class="eng-next" data-next="2">Next world · the drop →</button>
+          </div>
+
+          <!-- SCENE 3 · THE DROP -->
+          <div class="eng-scene eng-scene-drop" data-scene="2">
+            <div class="eng-dropcard" id="engDropCard">
+              <span class="eng-drop-tag">{% include icon.html name="storefront" class="h-3.5 w-3.5" %} THE COLLAB · DROP 001</span>
+              <div class="eng-drop-tile"><i></i></div>
+              <div class="eng-drop-meta"><b>Members' early access</b><span>General sale opens tomorrow · tonight it's fans only</span></div>
+              <div class="eng-drop-stamp" id="engDropStamp">EARLY ACCESS<span>unlocked with points</span></div>
+            </div>
+            <div class="eng-widget" id="engW3">
+              <div class="eng-widget-tag">{% include icon.html name="gift" class="h-3.5 w-3.5" %} REWARD · your points are good here</div>
+              <p class="eng-widget-q">Unlock tonight's early access for <b>150 pts</b>?</p>
+              <div class="eng-opts">
+                <button type="button" class="eng-opt eng-opt-claim" id="engClaim" aria-pressed="false">Redeem 150 pts · let me in</button>
+              </div>
+              <p class="eng-widget-foot" id="engW3Foot" role="status" aria-live="polite" aria-atomic="true">Earned at the match and the show - spent here. Same balance.</p>
+            </div>
+            <button type="button" class="eng-next" data-next="3">See Sara's Saturday →</button>
+          </div>
+
+          <!-- RECAP -->
+          <div class="eng-scene eng-scene-recap" data-scene="3">
+            <div class="eng-recap-card">
+              <span class="eng-recap-tag">SARA'S SATURDAY · ONE RECORD</span>
+              <div class="eng-recap-big" id="engRecapBig">3 moments played</div>
+              <ul class="eng-recap-rows">
+                <li><span>Points earned</span><b id="engRecapEarned">+250</b></li>
+                <li><span>Points redeemed</span><b id="engRecapSpent">−150</b></li>
+                <li><span>Streak</span><b id="engRecapStreak">3 nights</b></li>
+                <li><span>Tier</span><b id="engRecapTier">Gold</b></li>
+              </ul>
+              <p class="eng-recap-note">A match, a show, a store - three different worlds, one balance, one streak, one record. That's what an engagement layer on a fan graph is for.</p>
+              <button type="button" class="eng-replay" id="engReplay">{% include icon.html name="arrows-counter-clockwise" class="h-4 w-4" %} Play it again</button>
+            </div>
+          </div>
+
+          <div class="eng-toasts" id="engToasts" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- SARA'S RECORD -->
+      <aside class="eng-record" data-reveal>
+        <div class="eng-rec-head">
+          <span class="eng-avatar">S</span>
+          <div class="eng-rec-id">
+            <b>Sara <i class="eng-tierchip" id="engTier">Silver</i></b>
+            <span>Fan #48211 · resolved by Fanfinity ID</span>
+          </div>
+          <span class="eng-rec-live"><i></i> her record</span>
+        </div>
+        <div class="eng-rec-stats" role="status" aria-live="polite" aria-atomic="true" aria-label="Sara's engagement totals">
+          <div class="eng-rec-stat"><span>Balance</span><b id="engRecPts">0</b></div>
+          <div class="eng-rec-stat"><span>Streak</span><b id="engRecStreak">0</b></div>
+          <div class="eng-rec-stat"><span>Lifetime</span><b id="engRecLife">0</b></div>
+        </div>
+        <div class="eng-rec-logwrap">
+          <span class="eng-rec-logtag">WRITE-BACK · LIVE</span>
+          <ul class="eng-rec-log" id="engLog">
+            <li class="eng-log-dim">19:02 · id.resolved → 3 identifiers, one profile ✓</li>
+            <li class="eng-log-dim">19:02 · consent → email · push ✓</li>
+          </ul>
+        </div>
+        <div class="eng-rec-derived" id="engDerived">
+          <span class="eng-der-tag">DERIVED</span>
+          <div class="eng-der-chips" id="engDerChips">
+            <span class="eng-der-chip eng-der-wait">waiting for the night to unfold…</span>
+          </div>
+        </div>
+        <p class="eng-rec-cap">Every play on the left writes back to the same profile the rest of the platform reads - engagement, loyalty, and reporting in sync by design, not by integration. Interactive simulation.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="section" id="engCapabilities">
+  <div class="container-page">
+    <div class="eng-sec-head" data-reveal>
+      <p class="eng-eyebrow">What Engage does</p>
+      <h2 class="eng-h2">An engagement layer, <span class="eng-accent">grounded in identity</span></h2>
+      <p class="eng-lead">Interactivity, gamification, loyalty, and rewards running on the same real-time profile that Fanfinity ID resolves, so engagement is always tied to a known fan.</p>
+    </div>
+    <div class="eng-cap-grid">
+      {% for item in page.designed %}
+      {% case forloop.index %}
+      {% when 1 %}{% assign cap_url = '/platform/engage/live-widgets' %}
+      {% when 2 %}{% assign cap_url = '/platform/engage/gamification' %}
+      {% when 3 %}{% assign cap_url = '/platform/engage/loyalty-rewards' %}
+      {% when 4 %}{% assign cap_url = '/platform/engage/programs-themes' %}
+      {% endcase %}
+      <a class="eng-cap" href="{{ cap_url | relative_url }}" data-reveal>
+        <span class="eng-cap-num">0{{ forloop.index }}</span>
+        <span class="eng-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+        <span class="eng-cap-link">See it in action {% include icon.html name="arrow-right" class="h-3.5 w-3.5" %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= WALKTHROUGH ================= -->
+<section class="eng-walk">
+  <div class="container-page">
+    <div class="eng-sec-head" data-reveal>
+      <p class="eng-eyebrow">How it works</p>
+      <h2 class="eng-h2">How one moment <span class="eng-accent">plays out</span></h2>
+      <p class="eng-lead">The principle is simple: engagement never floats free of the fan it belongs to. Known fan in, interactive moment, earned reward, and everything written back to the record - end to end.</p>
+    </div>
+    <ol class="eng-timeline">
+      {% for step in page.walkthrough %}
+      <li class="eng-tl-step" data-reveal>
+        <span class="eng-tl-dot"><span class="eng-tl-num">0{{ forloop.index }}</span></span>
+        <span class="eng-tl-icon">{% include icon.html name=step.icon class="h-5 w-5" %}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Turn your audience into players"
+   text="Book a demo and see live interactivity, gamification, loyalty, and rewards running on a real fan graph - yours." %}
+
+{% raw %}
+<style>
+/* ================= Engage page - scoped styles (.eng-) ================= */
+.eng-hero { padding: 5.5rem 0 4rem; overflow-x: clip; }
+.eng-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.eng-hero-grid > *, .eng-play-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .eng-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+
+.eng-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #7c3aed; display: flex; align-items: center; gap: .6rem; }
+.eng-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.7rem, 5.6vw, 4.5rem); margin: 1rem 0 0; color: #1c1533; }
+.eng-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #1c1533; }
+.eng-accent { position: relative; display: inline-block; color: #854dff; white-space: nowrap; }
+.eng-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23854dff' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.eng-sub, .eng-lead { font-size: 1.08rem; line-height: 1.65; color: #4b4365; margin-top: 1.2rem; max-width: 34rem; }
+.eng-sec-head .eng-lead, .eng-play-head .eng-lead { margin-left: auto; margin-right: auto; }
+.eng-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+
+/* --- hero triptych --- */
+.eng-hero-visual { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; padding-bottom: 6.4rem; }
+.eng-tri { background: #fff; border: 2px solid #2b2145; border-radius: 1.1rem; padding: .9rem .8rem 1rem; display: flex; flex-direction: column; gap: .45rem; box-shadow: 0 4px 12px rgba(43,33,69,.12); }
+.eng-tri-match { transform: rotate(-3deg) translateY(.6rem); }
+.eng-tri-gig { transform: rotate(1.5deg); }
+.eng-tri-drop { transform: rotate(3deg) translateY(.8rem); }
+.eng-tri-tag { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; color: #6b6486; }
+.eng-tri-big { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 2.2rem; line-height: 1; color: #12805c; }
+.eng-tri-small { font-family: ui-monospace, monospace; font-size: .62rem; color: #8b84a6; }
+.eng-tri-bars { display: flex; align-items: flex-end; gap: .35rem; height: 2.6rem; }
+.eng-tri-bars i { flex: 1; background: linear-gradient(180deg, #c026d3, #7c3aed); border-radius: .25rem .25rem 0 0; }
+.eng-tri-stub { align-self: flex-start; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .12em; color: #b8860b; border: 1.5px dashed #b8860b; border-radius: .4rem; padding: .35rem .5rem; transform: rotate(-2deg); }
+.eng-tri-wires { position: absolute; left: 0; right: 0; bottom: 3.4rem; width: 100%; height: 5.4rem; }
+.eng-wire { stroke: #b9aee0; stroke-width: 1.6; stroke-dasharray: 4 5; fill: none; }
+.eng-wiredot { fill: #7c3aed; }
+.eng-tri-fan { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); display: flex; align-items: center; gap: .6rem; background: #fff; border: 2px solid #2b2145; border-radius: 999px; padding: .45rem .95rem .45rem .5rem; box-shadow: 0 4px 12px rgba(43,33,69,.14); }
+.eng-tri-avatar, .eng-avatar { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 999px; background: #7c3aed; color: #fff; font-weight: 700; font-size: .9rem; }
+.eng-tri-fanmeta { font-size: .82rem; color: #2b2145; display: inline-flex; align-items: center; gap: .4rem; }
+.eng-tierdot { width: .55rem; height: .55rem; border-radius: 999px; background: #b8860b; display: inline-block; }
+@media (max-width: 640px) { .eng-hero-visual { gap: .55rem; } .eng-tri { padding: .7rem .6rem .8rem; } .eng-tri-big { font-size: 1.6rem; } .eng-tri-tag { font-size: .53rem; letter-spacing: .06em; } .eng-tri-stub { font-size: .52rem; letter-spacing: .08em; padding: .3rem .35rem; } .eng-tri-small { font-size: .56rem; } }
+
+/* ================= CENTERPIECE ================= */
+.eng-play { padding: 4.5rem 0 5rem; background: linear-gradient(180deg, #fdfcff, #f8f5ff 60%, #fdfcff); border-top: 1px solid #eee9fa; border-bottom: 1px solid #eee9fa; overflow-x: clip; }
+.eng-play-head, .eng-sec-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.eng-play-head .eng-eyebrow, .eng-sec-head .eng-eyebrow { justify-content: center; }
+.eng-sim-note { margin-top: .9rem; font-family: ui-monospace, monospace; font-size: .74rem; letter-spacing: .04em; color: #7c3aed; }
+.eng-play-grid { display: grid; gap: 2.2rem; align-items: start; }
+@media (min-width: 1024px) { .eng-play-grid { grid-template-columns: minmax(0, 26.5rem) 1fr; gap: 2.8rem; } .eng-record { position: sticky; top: 6rem; } }
+
+/* --- the phone --- */
+.eng-phone { background: #fff; border: 2.5px solid #2b2145; border-radius: 2rem; box-shadow: 0 4px 12px rgba(43,33,69,.1); overflow: hidden; max-width: 27rem; margin: 0 auto; width: 100%; }
+.eng-phone-top { display: flex; align-items: center; justify-content: space-between; gap: .5rem .6rem; padding: .7rem .9rem; border-bottom: 2px solid #2b2145; background: #fbf9ff; flex-wrap: wrap; }
+.eng-clock { font-family: ui-monospace, monospace; font-size: .78rem; font-weight: 600; color: #2b2145; min-width: 3rem; }
+.eng-chapters { display: flex; gap: .3rem; flex-wrap: wrap; }
+.eng-ch { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .05em; color: #9a93b5; border: 1.5px solid #e4ddf5; border-radius: 999px; padding: .2rem .5rem; transition: all .3s; white-space: nowrap; }
+.eng-ch.is-active { color: #fff; background: #7c3aed; border-color: #7c3aed; }
+.eng-ch.is-done { color: #12805c; border-color: #9fd9c2; background: #effaf5; }
+@media (max-width: 480px) {
+  .eng-ch { font-size: .55rem; padding: .16rem .42rem; }
+  .eng-pill { font-size: .68rem; padding: .22rem .48rem; }
+}
+.eng-pills { display: flex; gap: .35rem; }
+.eng-pill { display: inline-flex; align-items: center; gap: .3rem; font-family: ui-monospace, monospace; font-size: .74rem; font-weight: 700; border-radius: 999px; padding: .25rem .55rem; border: 1.5px solid #2b2145; }
+.eng-pill-pts { color: #8a6408; background: #fdf6e3; border-color: #e3cf96; }
+.eng-pill-streak { color: #c2410c; background: #fff4ec; border-color: #f2cfa8; }
+.eng-pill.bump { animation: eng-bump .45s ease; }
+@keyframes eng-bump { 40% { transform: scale(1.14); } }
+
+.eng-stage { position: relative; padding: 1rem; }
+.eng-scene { display: flex; flex-direction: column; gap: .9rem; }
+.eng-armed .eng-scene { display: none; }
+.eng-armed .eng-scene.is-active { display: flex; animation: eng-scenein .5s ease; }
+@keyframes eng-scenein { from { opacity: 0; transform: translateY(14px); } }
+
+/* scene 1 · match */
+.eng-board { position: relative; border-radius: 1.2rem; border: 2px solid #0d5c40; background: linear-gradient(150deg, #149a6b, #0b6b4a 70%, #09543b); color: #eafff6; padding: 1.1rem 1.1rem 1.2rem; overflow: hidden; }
+.eng-board::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 2.2rem, transparent 2.2rem 4.4rem); pointer-events: none; }
+.eng-board-top { display: flex; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .14em; opacity: .85; }
+.eng-min { font-weight: 700; }
+.eng-score { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 4.6rem; line-height: 1; text-align: center; margin: .5rem 0 .35rem; letter-spacing: .02em; text-shadow: 0 3px 0 rgba(0,0,0,.18); }
+.eng-dash { opacity: .55; font-weight: 400; }
+.eng-board-sub { text-align: center; font-size: .74rem; opacity: .8; }
+.eng-ft-stamp { position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%) rotate(-8deg) scale(3); opacity: 0; border: 3px solid #ffd166; color: #ffd166; border-radius: .6rem; padding: .5rem .9rem; font-family: ui-monospace, monospace; font-weight: 700; font-size: 1rem; letter-spacing: .1em; text-align: center; background: rgba(9,84,59,.82); pointer-events: none; }
+.eng-ft-stamp span { display: block; font-size: .6rem; letter-spacing: .16em; margin-top: .25rem; }
+.eng-ft-stamp.show { animation: eng-stamp .5s cubic-bezier(.2,1.6,.4,1) forwards; }
+@keyframes eng-stamp { to { opacity: 1; transform: translate(-50%,-50%) rotate(-8deg) scale(1); } }
+
+/* widgets */
+.eng-widget { background: #fff; border: 2px solid #2b2145; border-radius: 1.2rem; padding: 1rem 1rem 1.05rem; box-shadow: 0 4px 12px rgba(43,33,69,.1); }
+.eng-armed .eng-widget { animation: eng-slideup .55s .25s cubic-bezier(.2,1.2,.4,1) backwards; }
+@keyframes eng-slideup { from { opacity: 0; transform: translateY(120%); } }
+.eng-widget-tag { display: inline-flex; align-items: center; gap: .4rem; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .12em; color: #7c3aed; }
+.eng-widget-q { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.25rem; color: #1c1533; margin: .45rem 0 .8rem; }
+.eng-opts { display: flex; flex-direction: column; gap: .5rem; }
+.eng-opt { text-align: left; font-size: .92rem; font-weight: 600; color: #2b2145; background: #fbfaff; border: 1.5px solid #cfc6ea; border-radius: .8rem; padding: .65rem .85rem; cursor: pointer; transition: all .18s; }
+.eng-opt:hover { border-color: #7c3aed; background: #f4efff; }
+.eng-opt.is-picked { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+.eng-opt.is-correct { background: #12805c; border-color: #12805c; color: #fff; }
+.eng-opt.is-dim { opacity: .45; }
+.eng-opt:disabled { cursor: default; }
+.eng-widget-foot { margin-top: .75rem; font-size: .8rem; color: #6b6486; }
+.eng-widget-foot b { color: #12805c; }
+
+.eng-splitbars { display: none; flex-direction: column; gap: .4rem; margin-top: .8rem; }
+.eng-splitbars.show { display: flex; }
+.eng-sbar { position: relative; height: 1.5rem; border-radius: .45rem; background: #f1edfb; overflow: hidden; }
+.eng-sbar i { position: absolute; inset: 0 auto 0 0; width: 0; background: linear-gradient(90deg, #a78bfa, #7c3aed); border-radius: .45rem; transition: width 1s cubic-bezier(.2,.8,.2,1); }
+.eng-sbar span { position: relative; z-index: 1; display: inline-block; padding: .22rem .55rem; font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; color: #2b2145; }
+.eng-splitbars.show .eng-sbar i { width: var(--w); }
+.eng-sbar.is-winner i { background: linear-gradient(90deg, #34d399, #12805c); }
+
+.eng-next { display: none; align-items: center; justify-content: center; gap: .4rem; font-weight: 700; font-size: .9rem; color: #fff; background: #2b2145; border-radius: .9rem; padding: .75rem 1rem; cursor: pointer; transition: all .18s; }
+.eng-next:hover { background: #7c3aed; }
+.eng-scene.is-done .eng-next { display: flex; animation: eng-scenein .45s; }
+
+/* scene 2 · gig */
+.eng-gigboard { position: relative; border-radius: 1.2rem; border: 2px solid #3b1d63; background: radial-gradient(120% 130% at 50% 0%, #5b21b6 0%, #2a1052 62%, #1b0a38 100%); color: #f3e8ff; padding: 1.1rem; overflow: hidden; min-height: 8.2rem; display: flex; flex-direction: column; justify-content: flex-end; }
+.eng-beams { position: absolute; inset: 0; overflow: hidden; }
+.eng-beams i { position: absolute; top: -30%; width: 26%; height: 130%; background: linear-gradient(180deg, rgba(232,121,249,.5), rgba(232,121,249,0) 75%); clip-path: polygon(42% 0, 58% 0, 100% 100%, 0 100%); animation: eng-beam 5s ease-in-out infinite alternate; }
+.eng-beams i:nth-child(1) { left: 2%; transform-origin: top; }
+.eng-beams i:nth-child(2) { left: 37%; animation-delay: -1.8s; background: linear-gradient(180deg, rgba(167,139,250,.55), rgba(167,139,250,0) 75%); }
+.eng-beams i:nth-child(3) { right: 2%; animation-delay: -3.2s; }
+@keyframes eng-beam { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+.eng-gig-top { position: relative; display: inline-flex; align-items: center; gap: .4rem; font-family: ui-monospace, monospace; font-size: .64rem; letter-spacing: .12em; opacity: .9; }
+.eng-live-dot { width: .5rem; height: .5rem; border-radius: 999px; background: #f43f5e; animation: eng-pulse 1.4s infinite; }
+@keyframes eng-pulse { 50% { opacity: .3; } }
+.eng-gig-title { position: relative; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 1.7rem; margin-top: .3rem; }
+
+/* scene 3 · drop */
+.eng-dropcard { position: relative; border: 2px solid #2b2145; border-radius: 1.2rem; background: #fff; padding: 1rem 1.1rem 1.1rem; overflow: hidden; }
+.eng-drop-tag { display: inline-flex; align-items: center; gap: .4rem; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .12em; color: #6b6486; }
+.eng-drop-tile { margin: .7rem auto .6rem; width: 5.2rem; height: 5.2rem; border-radius: 1rem; border: 2px solid #2b2145; background: linear-gradient(140deg, #f3f0ff, #e2d9fb); display: flex; align-items: center; justify-content: center; }
+.eng-drop-tile i { width: 2.4rem; height: 2.4rem; border-radius: .55rem; background: #2b2145; position: relative; transform: rotate(-6deg); }
+.eng-drop-tile i::after { content: "001"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #fff; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .08em; }
+.eng-drop-meta { text-align: center; }
+.eng-drop-meta b { display: block; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.05rem; color: #1c1533; }
+.eng-drop-meta span { font-size: .76rem; color: #6b6486; }
+.eng-drop-stamp { position: absolute; right: .9rem; top: 2.4rem; transform: rotate(10deg) scale(3); opacity: 0; border: 2.5px dashed #b8860b; color: #b8860b; border-radius: .6rem; padding: .45rem .7rem; font-family: ui-monospace, monospace; font-weight: 700; font-size: .8rem; letter-spacing: .1em; text-align: center; background: rgba(253,246,227,.92); pointer-events: none; }
+.eng-drop-stamp span { display: block; font-size: .52rem; letter-spacing: .12em; margin-top: .2rem; }
+.eng-drop-stamp.show { animation: eng-stamp2 .5s cubic-bezier(.2,1.6,.4,1) forwards; }
+@keyframes eng-stamp2 { to { opacity: 1; transform: rotate(10deg) scale(1); } }
+.eng-opt-claim { text-align: center; background: #fdf6e3; border-color: #e3cf96; color: #8a6408; }
+.eng-opt-claim:hover { background: #faedd0; border-color: #b8860b; }
+
+/* recap */
+.eng-recap-card { border: 2px solid #b8860b; background: linear-gradient(160deg, #fffdf4, #fdf6e3); border-radius: 1.3rem; padding: 1.3rem 1.2rem; text-align: center; }
+.eng-recap-tag { font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .16em; color: #8a6408; }
+.eng-recap-big { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 1.9rem; color: #1c1533; margin: .5rem 0 .9rem; }
+.eng-recap-rows { list-style: none; margin: 0 0 1rem; padding: 0; display: grid; gap: .45rem; }
+.eng-recap-rows li { display: flex; justify-content: space-between; align-items: center; background: #fff; border: 1.5px solid #eadfc2; border-radius: .7rem; padding: .55rem .8rem; font-size: .86rem; }
+.eng-recap-rows b { font-family: ui-monospace, monospace; color: #2b2145; }
+.eng-recap-note { font-size: .82rem; line-height: 1.55; color: #5a5378; margin-bottom: 1rem; }
+.eng-replay { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; font-size: .88rem; color: #fff; background: #7c3aed; border-radius: .8rem; padding: .65rem 1.1rem; cursor: pointer; transition: background .18s; }
+.eng-replay:hover { background: #6d28d9; }
+
+/* toasts */
+.eng-toasts { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.eng-toast { position: absolute; left: 50%; bottom: 34%; transform: translateX(-50%); font-family: ui-monospace, monospace; font-weight: 700; font-size: 1.05rem; color: #12805c; animation: eng-toast 1.6s ease forwards; text-shadow: 0 1px 0 #fff; }
+.eng-toast.spend { color: #b8860b; }
+@keyframes eng-toast { 0% { opacity: 0; transform: translate(-50%, 12px); } 18% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -46px); } }
+
+/* --- Sara's record --- */
+.eng-record { background: #fff; border: 2px solid #2b2145; border-radius: 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.09); padding: 1.2rem 1.2rem 1.1rem; }
+.eng-rec-head { display: flex; align-items: center; gap: .7rem; padding-bottom: .9rem; border-bottom: 1.5px dashed #ddd5f0; }
+.eng-rec-id { flex: 1; min-width: 0; }
+.eng-rec-id b { display: flex; align-items: center; gap: .45rem; font-size: .98rem; color: #1c1533; }
+.eng-rec-id > span { font-size: .74rem; color: #8b84a6; font-family: ui-monospace, monospace; }
+.eng-tierchip { font-style: normal; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; padding: .14rem .5rem; border-radius: 999px; border: 1.5px solid #c9ced6; color: #6b7280; background: #f6f7f9; transition: all .4s; }
+.eng-tierchip.gold { border-color: #b8860b; color: #8a6408; background: #fdf6e3; animation: eng-bump .5s ease; }
+.eng-rec-live { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; color: #12805c; }
+.eng-rec-live i { width: .45rem; height: .45rem; border-radius: 999px; background: #12805c; animation: eng-pulse 1.6s infinite; }
+.eng-rec-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; margin: .95rem 0; }
+.eng-rec-stat { background: #fbf9ff; border: 1.5px solid #ece5f9; border-radius: .8rem; padding: .55rem .6rem; text-align: center; }
+.eng-rec-stat span { display: block; font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .12em; color: #8b84a6; }
+.eng-rec-stat b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.35rem; color: #2b2145; }
+.eng-rec-logwrap { background: #17102b; border-radius: .95rem; padding: .8rem .9rem .85rem; }
+.eng-rec-logtag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .16em; color: #8f83c9; }
+.eng-rec-log { list-style: none; margin: .5rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .34rem; font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.45; color: #d8d0f5; max-height: 11.5rem; overflow-y: auto; }
+.eng-rec-log li.eng-log-dim { color: #6e639e; }
+.eng-rec-log li.eng-log-new { animation: eng-login .45s ease; color: #a7f3d0; }
+.eng-rec-log li.eng-log-gold { color: #fcd34d; }
+@keyframes eng-login { from { opacity: 0; transform: translateX(-8px); } }
+.eng-rec-derived { margin-top: .9rem; }
+.eng-der-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .16em; color: #8b84a6; }
+.eng-der-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .45rem; }
+.eng-der-chip { font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; border-radius: 999px; padding: .3rem .65rem; border: 1.5px solid #e3cf96; background: #fdf6e3; color: #8a6408; animation: eng-scenein .4s ease; }
+.eng-der-chip.eng-der-wait { border-style: dashed; border-color: #ddd5f0; background: transparent; color: #9a93b5; font-weight: 400; }
+.eng-rec-cap { margin-top: .95rem; font-size: .76rem; line-height: 1.55; color: #8b84a6; }
+
+/* ================= CAPABILITIES ================= */
+.eng-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .eng-cap-grid { grid-template-columns: 1fr 1fr; } }
+.eng-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fff; border: 2px solid #2b2145; border-radius: 1.3rem; padding: 1.5rem 1.4rem 1.3rem; box-shadow: 0 4px 12px rgba(43,33,69,.08); transition: border-color .2s, background-color .2s; }
+.eng-cap:hover { border-color: #7c3aed; background: #fdfcff; }
+.eng-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #c5bce4; }
+.eng-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #f4efff; border: 1.5px solid #e0d6f8; color: #7c3aed; }
+.eng-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.25rem; color: #1c1533; margin: .2rem 0 0; }
+.eng-cap p { font-size: .92rem; line-height: 1.6; color: #5a5378; flex: 1; }
+.eng-cap-link { display: inline-flex; align-items: center; gap: .4rem; font-size: .84rem; font-weight: 700; color: #7c3aed; }
+.eng-cap-link svg { transition: transform .2s; }
+.eng-cap:hover .eng-cap-link svg { transform: translateX(4px); }
+
+/* ================= WALKTHROUGH ================= */
+.eng-walk { padding: 4.5rem 0; background: #fbf9ff; border-top: 1px solid #eee9fa; border-bottom: 1px solid #eee9fa; }
+.eng-timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; counter-reset: tl; }
+@media (min-width: 1024px) {
+  .eng-timeline { grid-template-columns: repeat(4, 1fr); gap: 1.2rem; position: relative; }
+  .eng-timeline::before { content: ""; position: absolute; top: 1.45rem; left: 4%; right: 4%; border-top: 2px dashed #cfc6ea; }
+}
+.eng-tl-step { position: relative; display: flex; flex-direction: column; gap: .5rem; }
+.eng-tl-dot { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; width: 2.9rem; height: 2.9rem; border-radius: 999px; background: #fff; border: 2px solid #7c3aed; }
+.eng-tl-num { font-family: ui-monospace, monospace; font-weight: 700; font-size: .8rem; color: #7c3aed; }
+.eng-tl-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.2rem; height: 2.2rem; border-radius: .7rem; background: #fff; border: 1.5px solid #e0d6f8; color: #2b2145; margin-top: .35rem; }
+.eng-tl-step h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.12rem; color: #1c1533; margin: .2rem 0 0; }
+.eng-tl-step p { font-size: .88rem; line-height: 1.6; color: #5a5378; }
+
+@media (prefers-reduced-motion: reduce) {
+  .eng-beams i, .eng-live-dot, .eng-rec-live i, .eng-wiredot { animation: none !important; }
+  .eng-armed .eng-scene.is-active, .eng-armed .eng-widget, .eng-toast, .eng-ft-stamp.show, .eng-drop-stamp.show { animation-duration: .01s !important; }
+}
+/* Keep content readable if the shared reveal script is delayed or unavailable. */
+[data-reveal] { opacity: 1 !important; transform: none !important; }
+</style>
+
+<script>
+/* ================= Engage page - "One Saturday, three worlds" engine ================= */
+(function () {
+  var play = document.getElementById('engPlay');
+  if (!play) return;
+  play.classList.add('eng-armed');
+
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  function $(id) { return document.getElementById(id); }
+  var ptsEl = $('engPts'), streakEl = $('engStreak'), clockEl = $('engClock'), minEl = $('engMin');
+  var recPts = $('engRecPts'), recStreak = $('engRecStreak'), recLife = $('engRecLife');
+  var logEl = $('engLog'), derChips = $('engDerChips'), tierEl = $('engTier'), toasts = $('engToasts');
+  var scenes = play.querySelectorAll('.eng-scene');
+  var chapters = play.querySelectorAll('.eng-ch');
+  var CLOCKS = ['20:21', '21:30', '23:05', '23:12'];
+
+  var baseLogHTML = logEl.innerHTML;
+  var baseDerHTML = derChips.innerHTML;
+  var footTexts = {
+    w1: $('engW1Foot').innerHTML,
+    w2: $('engW2Foot').innerHTML,
+    w3: $('engW3Foot').innerHTML
+  };
+
+  var state;
+  function resetState() { state = { pts: 0, lifetime: 0, streak: 0, scene: 0, pick: null }; }
+  resetState();
+
+  function bump(el) { var p = el.closest('.eng-pill'); if (p) { p.classList.remove('bump'); void p.offsetWidth; p.classList.add('bump'); } }
+  function setStats() {
+    ptsEl.textContent = state.pts; recPts.textContent = state.pts;
+    streakEl.textContent = state.streak; recStreak.textContent = state.streak;
+    recLife.textContent = state.lifetime;
+  }
+  function toast(txt, cls) {
+    var t = document.createElement('span');
+    t.className = 'eng-toast' + (cls ? ' ' + cls : '');
+    t.textContent = txt;
+    toasts.appendChild(t);
+    run(function () { if (t.parentNode) t.parentNode.removeChild(t); }, 1700);
+  }
+  function earn(n, label) {
+    state.pts += n;
+    if (n > 0) state.lifetime += n;
+    setStats(); bump(ptsEl);
+    toast((n > 0 ? '+' : '') + n, n < 0 ? 'spend' : '');
+    if (label) log(label, n < 0 ? 'eng-log-gold' : 'eng-log-new');
+  }
+  function addStreak() { state.streak += 1; setStats(); bump(streakEl); }
+  function log(text, cls) {
+    var li = document.createElement('li');
+    li.className = cls || 'eng-log-new';
+    li.textContent = text;
+    logEl.appendChild(li);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+  function lockOpts(container, chosen) {
+    var btns = container.querySelectorAll('.eng-opt');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].disabled = true;
+      btns[i].setAttribute('aria-pressed', btns[i] === chosen ? 'true' : 'false');
+      if (btns[i] !== chosen) btns[i].classList.add('is-dim');
+    }
+  }
+  function sceneDone(n) {
+    scenes[n].classList.add('is-done');
+    chapters[n].classList.remove('is-active');
+    chapters[n].classList.add('is-done');
+  }
+  function goScene(n) {
+    state.scene = n;
+    for (var i = 0; i < scenes.length; i++) scenes[i].classList.toggle('is-active', i === n);
+    for (var j = 0; j < chapters.length; j++) {
+      chapters[j].classList.toggle('is-active', j === n);
+    }
+    clockEl.textContent = CLOCKS[n];
+    if (n === 3) fillRecap();
+  }
+
+  /* ---------- Scene 1 · the match ---------- */
+  var opts1 = $('engOpts1'), split = $('engSplit'), w1Foot = $('engW1Foot'), ftStamp = $('engFtStamp');
+  opts1.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.eng-opt') : null;
+    if (!btn || btn.disabled) return;
+    state.pick = btn.getAttribute('data-pick');
+    btn.classList.add('is-picked');
+    lockOpts(opts1, btn);
+    split.classList.add('show');
+    w1Foot.textContent = 'Locked in. No editing - that\u2019s the point of a stake.';
+    earn(50, '20:21 \u00B7 prediction.lock \u2192 "winner: \u2116 ' + (state.pick === '0' ? 'none' : state.pick) + '" +50 \u2713');
+    addStreak();
+    run(function () {
+      minEl.textContent = '90\u2032';
+      ftStamp.classList.add('show');
+      run(function () {
+        if (state.pick === '9') {
+          btn.classList.remove('is-picked');
+          btn.classList.add('is-correct');
+          earn(150, '20:36 \u00B7 prediction.won \u2192 \u2116 9 scored \u00B7 bonus +150 \u2713');
+          w1Foot.innerHTML = 'FT 3\u20131 - \u2116 9 got it, and you called it. <b>+200 earned</b>.';
+        } else {
+          log('20:36 \u00B7 prediction.settled \u2192 winner was \u2116 9 \u00B7 no bonus', 'eng-log-new');
+          w1Foot.innerHTML = 'FT 3\u20131 - \u2116 9 got it. Not your call, but the play still counts: <b>+50 earned</b>.';
+        }
+        sceneDone(0);
+      }, 1400);
+    }, 1900);
+  });
+
+  /* ---------- Scene 2 · the livestream ---------- */
+  var opts2 = $('engOpts2'), gigBars = $('engGigBars'), w2Foot = $('engW2Foot');
+  opts2.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.eng-opt') : null;
+    if (!btn || btn.disabled) return;
+    var pick = btn.getAttribute('data-pick');
+    btn.classList.add('is-picked');
+    lockOpts(opts2, btn);
+    gigBars.classList.add('show');
+    var winnerBar = gigBars.querySelector('[data-bar="neon"]');
+    if (winnerBar) winnerBar.classList.add('is-winner');
+    earn(100, '21:30 \u00B7 poll.vote \u2192 encore: "' + btn.textContent.replace(/[\u201C\u201D"]/g, '') + '" +100 \u2713');
+    addStreak();
+    run(function () {
+      w2Foot.innerHTML = pick === 'neon'
+        ? 'The crowd agreed with you - \u201CNeon Skyline\u201D took 61%. <b>+100 earned</b>.'
+        : 'The crowd went with \u201CNeon Skyline\u201D (61%) - your vote still made the count. <b>+100 earned</b>.';
+      sceneDone(1);
+    }, 1100);
+  });
+
+  /* ---------- Scene 3 · the drop ---------- */
+  var claim = $('engClaim'), dropStamp = $('engDropStamp'), w3Foot = $('engW3Foot');
+  claim.addEventListener('click', function () {
+    if (claim.disabled) return;
+    claim.disabled = true;
+    claim.setAttribute('aria-pressed', 'true');
+    claim.classList.add('is-picked');
+    claim.textContent = 'Redeemed \u00B7 you\u2019re in';
+    dropStamp.classList.add('show');
+    earn(-150, '23:05 \u00B7 reward.redeem \u2192 early access (drop 001) \u2212150 \u2713');
+    addStreak();
+    run(function () {
+      if (state.lifetime >= 200 && tierEl.textContent !== 'Gold') {
+        tierEl.textContent = 'Gold';
+        tierEl.classList.add('gold');
+        log('23:05 \u00B7 tier.up \u2192 Gold \u2713', 'eng-log-gold');
+      }
+      w3Foot.innerHTML = 'Early access unlocked - earned across two worlds, spent in a third. <b>Same balance.</b>';
+      sceneDone(2);
+    }, 900);
+  });
+
+  /* ---------- Recap + replay ---------- */
+  function fillRecap() {
+    $('engRecapBig').textContent = '3 moments played';
+    $('engRecapEarned').textContent = '+' + state.lifetime;
+    $('engRecapSpent').textContent = '\u2212150';
+    $('engRecapStreak').textContent = state.streak + ' nights';
+    $('engRecapTier').textContent = tierEl.textContent;
+    derChips.innerHTML = '';
+    var chips = ['affinity: live events', 'engagement: high', 'plays across: 3 worlds'];
+    if (state.lifetime >= 200) chips.push('tier: gold');
+    for (var i = 0; i < chips.length; i++) {
+      var c = document.createElement('span');
+      c.className = 'eng-der-chip';
+      c.textContent = chips[i];
+      derChips.appendChild(c);
+    }
+    log('23:12 \u00B7 profile.derived \u2192 affinity: live events \u00B7 engagement: high \u2713', 'eng-log-gold');
+  }
+
+  var nextBtns = play.querySelectorAll('.eng-next');
+  for (var n = 0; n < nextBtns.length; n++) {
+    nextBtns[n].addEventListener('click', function () {
+      goScene(parseInt(this.getAttribute('data-next'), 10));
+    });
+  }
+
+  $('engReplay').addEventListener('click', function () {
+    for (var t = 0; t < timers.length; t++) window.clearTimeout(timers[t]);
+    timers.length = 0;
+    resetState(); setStats();
+    logEl.innerHTML = baseLogHTML;
+    derChips.innerHTML = baseDerHTML;
+    tierEl.textContent = 'Silver';
+    tierEl.classList.remove('gold');
+    $('engW1Foot').innerHTML = footTexts.w1;
+    $('engW2Foot').innerHTML = footTexts.w2;
+    $('engW3Foot').innerHTML = footTexts.w3;
+    minEl.textContent = '78\u2032';
+    ftStamp.classList.remove('show');
+    dropStamp.classList.remove('show');
+    split.classList.remove('show');
+    gigBars.classList.remove('show');
+    var allOpts = play.querySelectorAll('.eng-opt');
+    for (var i = 0; i < allOpts.length; i++) {
+      allOpts[i].disabled = false;
+      allOpts[i].setAttribute('aria-pressed', 'false');
+      allOpts[i].classList.remove('is-picked', 'is-correct', 'is-dim');
+    }
+    claim.textContent = 'Redeem 150 pts \u00B7 let me in';
+    for (var s = 0; s < scenes.length; s++) scenes[s].classList.remove('is-done');
+    for (var c = 0; c < chapters.length; c++) chapters[c].classList.remove('is-done');
+    goScene(0);
+  });
+
+  goScene(0);
+})();
+</script>
+{% endraw %}
