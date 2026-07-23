@@ -2,42 +2,557 @@
 layout: page
 permalink: /platform/engage/gamification
 title: Gamification
-description: "Streaks, quests, badges, and leaderboards to deepen fan engagement. (Design Preview)"
+description: "Streaks, quests, badges, and leaderboards that deepen fan engagement."
+cta: false
 breadcrumb_parent: { title: Fanfinity Engage, url: /platform/engage }
 capabilities:
   - { icon: trophy,   title: "Streaks and quests",             body: "Create multi-day engagement challenges. Daily streaks encourage consistent return, while quests define larger goals that reward fans for sustained participation." }
   - { icon: award,    title: "Badges and achievements",        body: "Visual rewards for fan milestones. Badges are meaningful (not busywork) and create a sense of progression that keeps fans coming back." }
   - { icon: chart,    title: "Leaderboards",                   body: "Local and global leaderboards tap into competitive instinct. Fans compete for status, and you gather signals about who the power users are." }
   - { icon: link,     title: "Progressive rewards",            body: "Tie gamification mechanics to loyalty points, tier status, or exclusive perks. Mechanics compound over time, so long-term engagement pays off." }
-notes:
-  - "This feature is in Design Preview: not yet in production."
-  - "Mechanics, progression models, and reward integration are being finalized with design partners."
 benefits:
   - "Increase frequency by creating daily reasons to return (streaks, quests, challenges)."
   - "Identify power users and VIP segments through participation and leaderboard status."
   - "Build loyalty that compounds: fans who gamify stay longer and spend more."
   - "Create content opportunities: leaderboard leaders become brand ambassadors and sponsors see engaged fans."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Engage: Design Preview"
-   title="Make engagement a game fans want to play"
-   subtitle="Fanfinity Engage Gamification layers streaks, quests, badges, and leaderboards onto fan engagement. Fans stay active longer, you gather richer behavior signals, and sponsorships become the highlight of the experience."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Engage"
-   secondary_url="/platform/engage"
-   icon="trophy" %}
 
-{% include feature-grid.html
-   heading="Psychology meets data collection"
-   subheading="Gamification mechanics (streaks, quests, badges, leaderboards) tap into the same psychological drivers that make games addictive. Fans stay engaged, you gather behavioral data, and loyalty compounds."
-   items=page.capabilities
-   columns=2 %}
+<!-- ================= HERO ================= -->
+<section class="gm-hero">
+  <div class="container-page">
+    <div class="gm-hero-grid">
+      <div class="gm-hero-copy">
+        <p class="gm-eyebrow">Platform · Fanfinity Engage · Gamification</p>
+        <h1 class="gm-h1">Make engagement a game fans <span class="gm-accent">want to play.</span></h1>
+        <p class="gm-sub">Streaks, quests, badges, and leaderboards layered onto every interaction - so fans build habits that stick, and you build a graph of exactly who shows up.</p>
+        <div class="gm-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+        </div>
+      </div>
+      <div class="gm-hero-visual" aria-hidden="true">
+        <div class="gm-mini">
+          <div class="gm-mini-head">
+            <span class="gm-mini-avatar">N</span>
+            <span class="gm-mini-id"><b>Noura</b><i>Fan #51973 · <b class="gm-mini-gold">Gold</b></i></span>
+            <span class="gm-mini-streak">{% include icon.html name="bolt" class="h-4 w-4" %} 30</span>
+          </div>
+          <div class="gm-mini-badges">
+            <span>{% include icon.html name="poll" class="h-3.5 w-3.5" %}</span>
+            <span>{% include icon.html name="bolt" class="h-3.5 w-3.5" %}</span>
+            <span>{% include icon.html name="shield" class="h-3.5 w-3.5" %}</span>
+            <span>{% include icon.html name="target" class="h-3.5 w-3.5" %}</span>
+            <span>{% include icon.html name="trophy" class="h-3.5 w-3.5" %}</span>
+            <span>{% include icon.html name="identity" class="h-3.5 w-3.5" %}</span>
+          </div>
+          <div class="gm-mini-ladder">
+            <div class="gm-mini-row"><span>#3</span><b>Omar</b><i>2,780</i></div>
+            <div class="gm-mini-row gm-mini-her"><span>#4</span><b>Noura</b><i>2,750</i></div>
+            <div class="gm-mini-row"><span>#5</span><b>Lina</b><i>2,560</i></div>
+          </div>
+        </div>
+        <span class="gm-mini-chip gm-chip-a">{% include icon.html name="trophy" class="h-3.5 w-3.5" %} 6 badges</span>
+        <span class="gm-mini-chip gm-chip-b">{% include icon.html name="bolt" class="h-3.5 w-3.5" %} 30-day streak</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-split.html
-   title="The next generation of fan engagement (Coming soon)"
-   body="These features are in Design Preview and not yet in production. We're working with design partners to finalize mechanics, progression models, and reward integration. Final timing and form are subject to change based on feedback. Interested? Book a demo to see the concepts and timeline."
-   points=page.notes
-   cta_text="Schedule a design walkthrough"
-   cta_url="/demo"
-   icon="trophy" %}
+<!-- ================= CENTERPIECE · THE COMPOUNDING MONTH ================= -->
+<section class="gm-play" id="gmPlay">
+  <div class="container-page">
+    <div class="gm-play-head" data-reveal>
+      <p class="gm-eyebrow">The compounding month</p>
+      <h2 class="gm-h2">Watch a casual fan become <span class="gm-accent">a regular.</span></h2>
+      <p class="gm-lead">Thirty days of Noura - a match, a concert, a finale, a drop. Every check-in, vote, and quest compounds: a streak she protects, badges she collects, a board she climbs. Press play - or drag the month yourself. Simulated fan; the mechanics are the product.</p>
+    </div>
+
+    <div class="gm-play-grid">
+      <!-- CALENDAR -->
+      <div class="gm-calwrap" data-reveal>
+        <div class="gm-cal-head">
+          <span class="gm-cal-title">NOVEMBER · NOURA'S MONTH</span>
+          <span class="gm-day-label" id="gmDayLabel">Day 30 of 30</span>
+        </div>
+        <div class="gm-cal" id="gmCal" role="grid" aria-label="Noura's 30-day activity calendar">
+          {% for d in (1..30) %}
+          <div class="gm-day is-filled" data-day="{{ d }}" role="gridcell"><span>{{ d }}</span></div>
+          {% endfor %}
+        </div>
+        <div class="gm-controls">
+          <button type="button" class="gm-playbtn" id="gmPlayBtn" aria-controls="gmCal gmLog" aria-pressed="false">{% include icon.html name="bolt" class="h-4 w-4" %} <b>Replay the month</b></button>
+          <input type="range" class="gm-slider" id="gmSlider" min="0" max="30" step="1" value="30" aria-label="Scrub the month">
+        </div>
+        <span class="sr-only" id="gmStatus" role="status" aria-live="polite" aria-atomic="true"></span>
+        <ul class="gm-log" id="gmLog">
+          <li class="gm-log-dim">the month's story appears here as it unfolds…</li>
+        </ul>
+      </div>
+
+      <!-- PLAYER CARD -->
+      <aside class="gm-card" data-reveal>
+        <div class="gm-card-head">
+          <span class="gm-avatar">N</span>
+          <div class="gm-card-id">
+            <b>Noura <i class="gm-tier" id="gmTier">Gold</i></b>
+            <span>Fan #51973 · known since day one</span>
+          </div>
+          <span class="gm-rankchip" id="gmRank">#4</span>
+        </div>
+
+        <div class="gm-card-stats">
+          <div class="gm-stat gm-stat-streak"><span>{% include icon.html name="bolt" class="h-3.5 w-3.5" %} STREAK</span><b id="gmStreak">30</b></div>
+          <div class="gm-stat"><span>POINTS</span><b id="gmPts">2,750</b></div>
+          <div class="gm-stat"><span>BADGES</span><b id="gmBadgeCount">6</b></div>
+        </div>
+
+        <div class="gm-quest">
+          <div class="gm-quest-top"><span>{% include icon.html name="target" class="h-3.5 w-3.5" %} QUEST · engage in 4 different worlds</span><b id="gmQuestCount">4/4</b></div>
+          <div class="gm-quest-bar"><i id="gmQuestBar" style="width:100%"></i></div>
+        </div>
+
+        <div class="gm-badges" id="gmBadges">
+          <span class="gm-badge is-earned" data-badge="first" title="First Call - cast your first vote">{% include icon.html name="poll" class="h-4 w-4" %}<i>First Call</i></span>
+          <span class="gm-badge is-earned" data-badge="week" title="Week One - a 7-day streak">{% include icon.html name="bolt" class="h-4 w-4" %}<i>Week One</i></span>
+          <span class="gm-badge is-earned" data-badge="saver" title="Streak Saver - came back at 22:47">{% include icon.html name="shield" class="h-4 w-4" %}<i>Streak Saver</i></span>
+          <span class="gm-badge is-earned" data-badge="quest" title="All-Worlds - engaged in 4 different worlds">{% include icon.html name="target" class="h-4 w-4" %}<i>All-Worlds</i></span>
+          <span class="gm-badge is-earned" data-badge="hat" title="On a Roll - three predictions in a row">{% include icon.html name="trophy" class="h-4 w-4" %}<i>On a Roll</i></span>
+          <span class="gm-badge is-earned" data-badge="regular" title="The Regular - 30 days straight">{% include icon.html name="identity" class="h-4 w-4" %}<i>The Regular</i></span>
+        </div>
+
+        <div class="gm-board">
+          <span class="gm-board-tag">LEADERBOARD · THIS MONTH</span>
+          <ul class="gm-ladder" id="gmLadder"></ul>
+          <div class="gm-pinned" id="gmPinned"></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="gm-recap" id="gmRecap">
+      <span class="gm-recap-tag">DAY 30 · WHAT THE MONTH BUILT</span>
+      <p class="gm-recap-line"><b>30/30 check-ins · 6 badges · 2,750 pts · #4 on the board · Gold.</b> A fan who used to show up twice a year now has a habit - and you have thirty days of signals on her profile.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="section" id="gmCapabilities">
+  <div class="container-page">
+    <div class="gm-sec-head" data-reveal>
+      <p class="gm-eyebrow">The mechanics</p>
+      <h2 class="gm-h2">Psychology meets <span class="gm-accent">data collection</span></h2>
+      <p class="gm-lead">Streaks, quests, badges, and leaderboards tap into the same drivers that make games hard to put down. Fans stay engaged, you gather behavioral data, and loyalty compounds.</p>
+    </div>
+    <div class="gm-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="gm-cap" data-reveal>
+        <span class="gm-cap-num">0{{ forloop.index }}</span>
+        <span class="gm-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS / COMPOUNDING CURVE ================= -->
+<section class="gm-benefits">
+  <div class="container-page">
+    <div class="gm-ben-grid">
+      <div class="gm-ben-copy" data-reveal>
+        <p class="gm-eyebrow">Why it compounds</p>
+        <h2 class="gm-h2">Habits are worth more than <span class="gm-accent">spikes</span></h2>
+        <ul class="gm-ben-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+      </div>
+      <div class="gm-curve" data-reveal aria-hidden="true">
+        <div class="gm-curve-card">
+          <span class="gm-curve-tag">A FAN'S VALUE OVER A SEASON</span>
+          <svg viewBox="0 0 320 170" class="gm-curve-svg">
+            <line x1="30" y1="140" x2="305" y2="140" stroke="#e4ddf5" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="30" y2="140" stroke="#e4ddf5" stroke-width="1.5"/>
+            <path class="gm-curve-flat" d="M30 118 C 110 112, 210 116, 305 110" fill="none" stroke="#b9aee0" stroke-width="2.5" stroke-dasharray="5 6"/>
+            <path class="gm-curve-rise" d="M30 122 C 90 116, 130 96, 175 74 C 220 52, 265 34, 305 24" fill="none" stroke="#b8860b" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="305" cy="24" r="5" fill="#b8860b"/>
+            <circle cx="305" cy="110" r="4" fill="#b9aee0"/>
+          </svg>
+          <div class="gm-curve-legend">
+            <span><i class="gm-dot gm-dot-gold"></i> with streaks, quests &amp; badges</span>
+            <span><i class="gm-dot gm-dot-grey"></i> one campaign a season</span>
+          </div>
+          <p class="gm-curve-cap">Same fan, same season. Mechanics don't add moments - they compound them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Make your fans' loyalty a game worth playing"
+   text="Book a demo and see streaks, quests, badges, and leaderboards running on your live fan graph - tuned to the behaviors you value most." %}
+
+{% raw %}
+<style>
+/* ================= Gamification page - scoped styles (.gm-) ================= */
+.gm-hero { padding: 5.5rem 0 4rem; overflow-x: clip; }
+.gm-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.gm-hero-grid > *, .gm-play-grid > *, .gm-ben-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .gm-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+
+.gm-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #7c3aed; display: flex; align-items: center; gap: .6rem; }
+.gm-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.7rem, 5.6vw, 4.5rem); margin: 1rem 0 0; color: #1c1533; }
+.gm-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #1c1533; }
+.gm-accent { position: relative; display: inline-block; color: #854dff; white-space: nowrap; }
+.gm-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23854dff' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.gm-sub, .gm-lead { font-size: 1.08rem; line-height: 1.65; color: #4b4365; margin-top: 1.2rem; max-width: 34rem; }
+.gm-sec-head .gm-lead, .gm-play-head .gm-lead { margin-left: auto; margin-right: auto; }
+.gm-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+
+/* --- hero mini player card --- */
+.gm-hero-visual { position: relative; max-width: 24rem; margin: 0 auto; width: 100%; }
+.gm-mini { background: #fff; border: 2.5px solid #2b2145; border-radius: 1.4rem; padding: 1.2rem; box-shadow: 0 4px 12px rgba(43,33,69,.1); }
+.gm-mini-head { display: flex; align-items: center; gap: .7rem; padding-bottom: .8rem; border-bottom: 1.5px dashed #ddd5f0; }
+.gm-mini-avatar, .gm-avatar { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; border-radius: 999px; background: #7c3aed; color: #fff; font-weight: 700; }
+.gm-mini-id { flex: 1; font-size: .9rem; color: #2b2145; }
+.gm-mini-id i { display: block; font-style: normal; font-family: ui-monospace, monospace; font-size: .66rem; color: #8b84a6; }
+.gm-mini-gold { color: #8a6408; }
+.gm-mini-streak { display: inline-flex; align-items: center; gap: .3rem; font-family: ui-monospace, monospace; font-weight: 700; font-size: .95rem; color: #c2410c; background: #fff4ec; border: 1.5px solid #f2cfa8; border-radius: 999px; padding: .3rem .6rem; }
+.gm-mini-badges { display: flex; gap: .45rem; margin: .9rem 0; }
+.gm-mini-badges span { display: inline-flex; align-items: center; justify-content: center; width: 2.1rem; height: 2.1rem; border-radius: 999px; background: #fdf6e3; border: 1.5px solid #e3cf96; color: #b8860b; }
+.gm-mini-ladder { display: flex; flex-direction: column; gap: .35rem; }
+.gm-mini-row { display: grid; grid-template-columns: 1.8rem 1fr auto; gap: .5rem; align-items: center; font-size: .82rem; color: #4b4365; background: #fbf9ff; border: 1.5px solid #ece5f9; border-radius: .55rem; padding: .4rem .6rem; }
+.gm-mini-row span { font-family: ui-monospace, monospace; font-weight: 700; color: #8b84a6; }
+.gm-mini-row i { font-family: ui-monospace, monospace; font-style: normal; font-size: .74rem; color: #8b84a6; }
+.gm-mini-her { background: #fdf6e3; border-color: #b8860b; }
+.gm-mini-her span, .gm-mini-her i { color: #8a6408; }
+.gm-mini-chip { position: absolute; display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; color: #2b2145; background: #fff; border: 2px solid #2b2145; border-radius: 999px; padding: .35rem .7rem; box-shadow: 0 4px 12px rgba(43,33,69,.12); }
+.gm-chip-a { top: -1rem; right: 8%; transform: rotate(4deg); }
+.gm-chip-b { bottom: -1rem; left: 6%; transform: rotate(-3deg); }
+
+/* ================= CENTERPIECE ================= */
+.gm-play { padding: 4.5rem 0 5rem; background: linear-gradient(180deg, #fdfcff, #f8f5ff 60%, #fdfcff); border-top: 1px solid #eee9fa; border-bottom: 1px solid #eee9fa; overflow-x: clip; }
+.gm-play-head, .gm-sec-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.gm-play-head .gm-eyebrow, .gm-sec-head .gm-eyebrow { justify-content: center; }
+.gm-play-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 1024px) { .gm-play-grid { grid-template-columns: 1fr minmax(0, 24rem); gap: 2.4rem; } .gm-card { position: sticky; top: 6rem; } }
+
+/* --- calendar --- */
+.gm-calwrap { background: #fff; border: 2px solid #2b2145; border-radius: 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.09); padding: 1.2rem; }
+.gm-cal-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; margin-bottom: .9rem; }
+.gm-cal-title { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .14em; color: #8b84a6; }
+.gm-day-label { font-family: ui-monospace, monospace; font-size: .74rem; font-weight: 700; color: #7c3aed; }
+.gm-cal { display: grid; grid-template-columns: repeat(6, 1fr); gap: .5rem; }
+@media (max-width: 480px) { .gm-cal { grid-template-columns: repeat(5, 1fr); } }
+.gm-day { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; border: 1.5px dashed #ddd5f0; border-radius: .65rem; background: #fdfcff; transition: all .3s; }
+.gm-day span { font-family: ui-monospace, monospace; font-size: .68rem; color: #b7aed4; }
+.gm-day.is-filled { border-style: solid; border-color: #cfc6ea; background: #f4efff; }
+.gm-day.is-filled span { color: #7c3aed; font-weight: 700; }
+.gm-day.is-miss { border-color: #e3cf96; background: #fdf6e3; animation: gm-misspulse 1.6s ease-in-out 2; }
+.gm-day.is-miss span { color: #8a6408; }
+@keyframes gm-misspulse { 50% { background: #fdf6e3; } }
+.gm-day.has-badge { border-color: #b8860b; background: #fffdf4; }
+.gm-day.has-badge::after { content: ""; position: absolute; top: .22rem; right: .22rem; width: .42rem; height: .42rem; border-radius: 999px; background: #b8860b; }
+.gm-day.is-current { box-shadow: 0 0 0 2.5px #2b2145; }
+.gm-controls { display: flex; align-items: center; gap: .9rem; margin-top: 1rem; flex-wrap: wrap; }
+.gm-playbtn { display: inline-flex; align-items: center; gap: .45rem; font-weight: 700; font-size: .88rem; color: #fff; background: #2b2145; border-radius: .8rem; padding: .6rem 1rem; cursor: pointer; transition: background .18s; }
+.gm-playbtn:hover { background: #7c3aed; }
+.gm-slider { flex: 1; min-width: 10rem; accent-color: #7c3aed; height: 1.4rem; cursor: pointer; }
+.gm-log { list-style: none; margin: 1rem 0 0; padding: .8rem .95rem; background: #fbf9ff; border: 1.5px dashed #ddd5f0; border-radius: .9rem; display: flex; flex-direction: column; gap: .32rem; font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.5; color: #4b4365; min-height: 4.6rem; }
+.gm-log li.gm-log-dim { color: #9a93b5; }
+.gm-log li b { color: #7c3aed; }
+.gm-log li.gm-log-gold b, .gm-log li.gm-log-gold { color: #8a6408; }
+.gm-log li { animation: gm-linein .3s ease; }
+@keyframes gm-linein { from { opacity: 0; transform: translateX(-6px); } }
+
+/* --- player card --- */
+.gm-card { background: #fff; border: 2px solid #2b2145; border-radius: 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.09); padding: 1.15rem; }
+.gm-card-head { display: flex; align-items: center; gap: .7rem; padding-bottom: .85rem; border-bottom: 1.5px dashed #ddd5f0; }
+.gm-card-id { flex: 1; min-width: 0; }
+.gm-card-id b { display: flex; align-items: center; gap: .45rem; font-size: .98rem; color: #1c1533; }
+.gm-card-id > span { font-size: .72rem; color: #8b84a6; font-family: ui-monospace, monospace; }
+.gm-tier { font-style: normal; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; padding: .14rem .5rem; border-radius: 999px; border: 1.5px solid #c9ced6; color: #6b7280; background: #f6f7f9; transition: all .3s; }
+.gm-tier.silver { border-color: #9aa3b2; color: #525d6e; background: #eef2f6; }
+.gm-tier.gold { border-color: #b8860b; color: #8a6408; background: #fdf6e3; }
+.gm-rankchip { font-family: ui-monospace, monospace; font-weight: 700; font-size: .95rem; color: #2b2145; border: 2px solid #2b2145; border-radius: .7rem; padding: .3rem .6rem; background: #fff; }
+.gm-card-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; margin: .9rem 0; }
+.gm-stat { background: #fbf9ff; border: 1.5px solid #ece5f9; border-radius: .8rem; padding: .55rem .6rem; text-align: center; }
+.gm-stat span { display: inline-flex; align-items: center; gap: .25rem; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .1em; color: #8b84a6; }
+.gm-stat b { display: block; font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.35rem; color: #2b2145; }
+.gm-stat-streak b { color: #c2410c; }
+.gm-quest { margin-bottom: .95rem; }
+.gm-quest-top { display: flex; align-items: center; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .06em; color: #6b6486; margin-bottom: .35rem; }
+.gm-quest-top span { display: inline-flex; align-items: center; gap: .35rem; }
+.gm-quest-top b { color: #7c3aed; }
+.gm-quest-bar { height: .7rem; border-radius: 999px; background: #f1edfb; overflow: hidden; }
+.gm-quest-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #a78bfa, #7c3aed); border-radius: 999px; transition: width .6s cubic-bezier(.2,.8,.2,1); }
+.gm-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; margin-bottom: 1rem; }
+.gm-badge { display: flex; flex-direction: column; align-items: center; gap: .25rem; padding: .55rem .3rem; border-radius: .8rem; border: 1.5px dashed #ddd5f0; color: #c5bce4; background: #fdfcff; transition: all .3s; }
+.gm-badge i { font-style: normal; font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .04em; text-align: center; }
+.gm-badge.is-earned { border-style: solid; border-color: #e3cf96; background: #fdf6e3; color: #b8860b; animation: gm-stamp .45s cubic-bezier(.2,1.5,.4,1); }
+.gm-badge.is-earned i { color: #8a6408; }
+@keyframes gm-stamp { 0% { transform: scale(1.35); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+.gm-board { background: #17102b; border-radius: .95rem; padding: .8rem .9rem .85rem; }
+.gm-board-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .16em; color: #8f83c9; }
+.gm-ladder { list-style: none; margin: .55rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.gm-ladder li { display: grid; grid-template-columns: 2rem 1fr auto; gap: .5rem; align-items: center; font-family: ui-monospace, monospace; font-size: .72rem; color: #d8d0f5; padding: .3rem .45rem; border-radius: .45rem; }
+.gm-ladder li span { color: #8f83c9; font-weight: 700; }
+.gm-ladder li i { font-style: normal; color: #8f83c9; }
+.gm-ladder li.gm-her { background: rgba(184,134,11,.16); border: 1px solid rgba(184,134,11,.5); color: #fcd34d; animation: gm-linein .4s ease; }
+.gm-ladder li.gm-her span, .gm-ladder li.gm-her i { color: #fcd34d; }
+.gm-pinned { margin-top: .45rem; font-family: ui-monospace, monospace; font-size: .68rem; color: #a99dd6; border-top: 1px dashed #3d2f6b; padding-top: .45rem; }
+.gm-pinned:empty { display: none; }
+
+/* --- recap --- */
+.gm-recap { margin-top: 2rem; max-width: 46rem; margin-left: auto; margin-right: auto; text-align: center; background: #fffdf4; border: 2px solid #b8860b; border-radius: 1.2rem; padding: 1.3rem 1.6rem; }
+.gm-armed .gm-recap { display: none; }
+.gm-armed .gm-recap.show { display: block; animation: gm-linein .5s ease; }
+.gm-recap-tag { font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .16em; color: #8a6408; font-weight: 700; }
+.gm-recap-line { margin-top: .55rem; font-size: .98rem; line-height: 1.6; color: #4b4365; }
+.gm-recap-line b { color: #1c1533; }
+
+/* ================= CAPABILITIES ================= */
+.gm-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .gm-cap-grid { grid-template-columns: 1fr 1fr; } }
+.gm-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fff; border: 2px solid #2b2145; border-radius: 1.3rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.08); }
+.gm-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #c5bce4; }
+.gm-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #f4efff; border: 1.5px solid #e0d6f8; color: #7c3aed; }
+.gm-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.25rem; color: #1c1533; margin: .2rem 0 0; }
+.gm-cap p { font-size: .92rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= BENEFITS / CURVE ================= */
+.gm-benefits { padding: 4.5rem 0; background: #fbf9ff; border-top: 1px solid #eee9fa; }
+.gm-ben-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .gm-ben-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.gm-ben-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.gm-ben-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #4b4365; }
+.gm-ben-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.gm-curve { max-width: 28rem; margin: 0 auto; width: 100%; }
+.gm-curve-card { background: #fff; border: 2.5px solid #2b2145; border-radius: 1.3rem; padding: 1.3rem; box-shadow: 0 4px 12px rgba(43,33,69,.1); }
+.gm-curve-tag { font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .14em; color: #8b84a6; }
+.gm-curve-svg { width: 100%; height: auto; margin: .7rem 0 .5rem; }
+.gm-curve-rise { stroke-dasharray: 460; stroke-dashoffset: 0; animation: gm-draw 2.4s ease; }
+@keyframes gm-draw { from { stroke-dashoffset: 460; } }
+.gm-curve-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-family: ui-monospace, monospace; font-size: .66rem; color: #6b6486; }
+.gm-curve-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.gm-dot { width: .6rem; height: .6rem; border-radius: 999px; display: inline-block; }
+.gm-dot-gold { background: #b8860b; }
+.gm-dot-grey { background: #b9aee0; }
+.gm-curve-cap { margin-top: .8rem; font-size: .84rem; color: #8b84a6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gm-day.is-miss, .gm-curve-rise { animation: none !important; }
+  .gm-log li, .gm-badge.is-earned, .gm-armed .gm-recap.show, .gm-ladder li.gm-her { animation-duration: .01s !important; }
+}
+/* Keep content readable if the shared reveal script is delayed or unavailable. */
+[data-reveal] { opacity: 1 !important; transform: none !important; }
+</style>
+
+<script>
+/* ================= Gamification - "the compounding month" engine ================= */
+(function () {
+  var play = document.getElementById('gmPlay');
+  if (!play) return;
+  play.classList.add('gm-armed');
+
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+  function clearAll() { for (var i = 0; i < timers.length; i++) window.clearTimeout(timers[i]); timers.length = 0; }
+  function $(id) { return document.getElementById(id); }
+
+  /* One entry per day. p = points earned, q = quest progress, badge = badge id earned. */
+  var DAYS = [
+    { p: 60,  n: 'checks in · casts her first vote', badge: 'first' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 35,  n: 'matchday · votes man of the match', q: 1 },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 35,  n: 'concert stream · picks the encore', q: 1 },
+    { p: 110, n: '7-day streak · loyalty bonus +100', badge: 'week' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 35,  n: 'finale night · rates the twist', q: 1 },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: '22:47 · streak-saver push - she made it back', miss: true, badge: 'saver' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 675, n: 'drop day · quest complete +500 · 14-day bonus +150', q: 1, badge: 'quest' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 360, n: 'refers a friend · +350' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 35,  n: 'matchday · votes man of the match' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 410, n: 'three predictions in a row +200 · 21-day bonus +200', badge: 'hat' },
+    { p: 35,  n: 'livestream · picks the encore' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 260, n: 'bonus quest · festival-week challenge +250 - cracks the board' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 185, n: 'finale night · prediction lands +150' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 10,  n: 'daily check-in' },
+    { p: 345, n: '30-day bonus +300 · The Regular', badge: 'regular' }
+  ];
+  /* Rival monthly totals: base + drift per day - they play too, so her climb is earned. */
+  var RIVALS = [
+    { name: 'Faisal', base: 2800, drift: 11 },
+    { name: 'Huda',   base: 2600, drift: 11 },
+    { name: 'Omar',   base: 2450, drift: 11 },
+    { name: 'Lina',   base: 2200, drift: 12 },
+    { name: 'Reem',   base: 2050, drift: 12 },
+    { name: 'Tariq',  base: 1900, drift: 12 },
+    { name: 'Sultan', base: 1750, drift: 12 },
+    { name: 'Dalia',  base: 1600, drift: 13 }
+  ];
+  var SILVER_AT = 1000, GOLD_AT = 2700;
+
+  var cells = play.querySelectorAll('.gm-day');
+  var badgeEls = play.querySelectorAll('.gm-badge');
+  var dayLabel = $('gmDayLabel'), streakEl = $('gmStreak'), ptsEl = $('gmPts'), badgeCountEl = $('gmBadgeCount');
+  var tierEl = $('gmTier'), rankEl = $('gmRank'), questCount = $('gmQuestCount'), questBar = $('gmQuestBar');
+  var ladder = $('gmLadder'), pinned = $('gmPinned'), logEl = $('gmLog'), recap = $('gmRecap');
+  var slider = $('gmSlider'), playBtn = $('gmPlayBtn'), statusEl = $('gmStatus');
+
+  var state = { day: 30, playing: false };
+
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+  function totalsAt(day) {
+    var pts = 0, q = 0, badges = 0;
+    for (var i = 0; i < day; i++) {
+      pts += DAYS[i].p;
+      if (DAYS[i].q) q += DAYS[i].q;
+      if (DAYS[i].badge) badges += 1;
+    }
+    return { pts: pts, quest: Math.min(q, 4), badges: badges };
+  }
+
+  function render(day) {
+    state.day = day;
+    var t = totalsAt(day);
+
+    for (var i = 0; i < cells.length; i++) {
+      var d = i + 1, cell = cells[i];
+      cell.classList.toggle('is-filled', d <= day);
+      cell.classList.toggle('has-badge', d <= day && !!DAYS[i].badge);
+      cell.classList.toggle('is-miss', d <= day && !!DAYS[i].miss);
+      cell.classList.toggle('is-current', d === day);
+    }
+    for (var b = 0; b < badgeEls.length; b++) {
+      var earned = false;
+      for (var j = 0; j < day; j++) if (DAYS[j].badge === badgeEls[b].getAttribute('data-badge')) earned = true;
+      badgeEls[b].classList.toggle('is-earned', earned);
+    }
+
+    dayLabel.textContent = day === 0 ? 'Before day 1' : 'Day ' + day + ' of 30';
+    streakEl.textContent = day;
+    ptsEl.textContent = fmt(t.pts);
+    badgeCountEl.textContent = t.badges;
+
+    var tier = t.pts >= GOLD_AT ? 'Gold' : t.pts >= SILVER_AT ? 'Silver' : 'Bronze';
+    tierEl.textContent = tier;
+    tierEl.classList.toggle('silver', tier === 'Silver');
+    tierEl.classList.toggle('gold', tier === 'Gold');
+
+    questCount.textContent = t.quest + '/4';
+    questBar.style.width = (t.quest * 25) + '%';
+
+    /* leaderboard */
+    var entries = [];
+    for (var r = 0; r < RIVALS.length; r++) {
+      entries.push({ name: RIVALS[r].name, pts: RIVALS[r].base + RIVALS[r].drift * day, her: false });
+    }
+    entries.push({ name: 'Noura', pts: t.pts, her: true });
+    entries.sort(function (a, b) { return b.pts - a.pts; });
+    var herRank = 0;
+    for (var e = 0; e < entries.length; e++) if (entries[e].her) herRank = e + 1;
+    rankEl.textContent = '#' + herRank;
+
+    ladder.innerHTML = '';
+    var top = entries.slice(0, 8);
+    for (var k = 0; k < top.length; k++) {
+      var li = document.createElement('li');
+      if (top[k].her) li.className = 'gm-her';
+      var rk = document.createElement('span'); rk.textContent = '#' + (k + 1);
+      var nm = document.createElement('b'); nm.textContent = top[k].name;
+      var pt = document.createElement('i'); pt.textContent = fmt(top[k].pts);
+      li.appendChild(rk); li.appendChild(nm); li.appendChild(pt);
+      ladder.appendChild(li);
+    }
+    pinned.textContent = herRank > 8 ? '#' + herRank + ' · Noura · ' + fmt(t.pts) + ' - closing in…' : '';
+
+    /* story log - last 5 days */
+    logEl.innerHTML = '';
+    if (day === 0) {
+      var dim = document.createElement('li');
+      dim.className = 'gm-log-dim';
+      dim.textContent = 'the month hasn\u2019t started - press play.';
+      logEl.appendChild(dim);
+    } else {
+      var from = Math.max(0, day - 5);
+      for (var g = from; g < day; g++) {
+        var row = document.createElement('li');
+        if (DAYS[g].badge || DAYS[g].miss) row.className = 'gm-log-gold';
+        row.textContent = 'Day ' + (g + 1) + ' · ' + DAYS[g].n;
+        logEl.appendChild(row);
+      }
+    }
+
+    recap.classList.toggle('show', day === 30);
+    slider.value = day;
+    slider.setAttribute('aria-valuetext', day === 0 ? 'Before day 1' : 'Day ' + day + ' of 30');
+    setBtn();
+  }
+
+  function setBtn() {
+    var b = playBtn.querySelector('b');
+    if (!b) return;
+    b.textContent = state.playing ? 'Pause' : (state.day >= 30 ? 'Replay the month' : state.day === 0 ? 'Play the month' : 'Resume');
+    playBtn.setAttribute('aria-pressed', state.playing ? 'true' : 'false');
+  }
+
+  function step() {
+    if (!state.playing) return;
+    if (state.day >= 30) {
+      state.playing = false;
+      setBtn();
+      statusEl.textContent = 'Monthly replay complete: 30-day streak, 2,750 points, 6 badges, rank 4, Gold tier.';
+      return;
+    }
+    render(state.day + 1);
+    run(step, 420);
+  }
+
+  function startPlaying() {
+    clearAll();
+    if (state.day >= 30) render(0);
+    state.playing = true;
+    setBtn();
+    statusEl.textContent = 'Monthly replay started.';
+    run(step, 300);
+  }
+
+  playBtn.addEventListener('click', function () {
+    if (state.playing) {
+      state.playing = false;
+      clearAll();
+      setBtn();
+      statusEl.textContent = 'Monthly replay paused at day ' + state.day + '.';
+    }
+    else startPlaying();
+  });
+
+  slider.addEventListener('input', function () {
+    state.playing = false;
+    clearAll();
+    render(parseInt(slider.value, 10) || 0);
+  });
+
+  render(30);
+})();
+</script>
+{% endraw %}

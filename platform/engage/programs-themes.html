@@ -2,42 +2,490 @@
 layout: page
 permalink: /platform/engage/programs-themes
 title: Programs & Themes
-description: "Sponsorable programs and themed experiences for fans. (Design Preview)"
+description: "Sponsorable programs and themed fan experiences across every world you run."
+cta: false
 breadcrumb_parent: { title: Fanfinity Engage, url: /platform/engage }
 capabilities:
-  - { icon: palette,  title: "Themed campaigns",               body: "Create multi-week engagement campaigns around matchdays, tournaments, sponsor moments, or seasonal themes. Theming ties engagement to real moments in the fan calendar." }
+  - { icon: palette,  title: "Themed campaigns",               body: "Create multi-week engagement campaigns around matchdays, festivals, finales, drops, or seasonal themes. Theming ties engagement to the real moments in your fan calendar." }
   - { icon: megaphone, title: "Sponsor-branded experiences",   body: "Embed sponsor brands into engagement experiences: sponsored polls, sponsor-funded rewards, branded leaderboards. Fans see sponsorship as value, not intrusion." }
   - { icon: star,     title: "Program progression",            body: "Programs evolve over weeks: introduce new mechanics, escalate stakes, reveal surprises. Fans stay engaged and come back to see what's next." }
   - { icon: target,   title: "Measurable sponsor impact",      body: "Track impression, engagement, and redemption per sponsor. Prove campaign impact to sponsors so they fund the next program." }
-notes:
-  - "This feature is in Design Preview: not yet in production."
-  - "Program templates, sponsor integration, and measurement are being finalized with partners."
 benefits:
   - "Create sponsorship value: give sponsors owned moments inside the fan experience, not just banner ads."
   - "Sustain fan engagement: themed campaigns give fans milestones to look forward to."
   - "Build sponsor ROI: programs are measurable, sponsor-branded, and directly tied to fan revenue."
   - "Differentiate from competitors: curated, theme-driven engagement feels like brand experience, not a third-party plugin."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Engage: Design Preview"
-   title="Engagement moments sponsors fund"
-   subtitle="Fanfinity Engage Programs & Themes creates multi-week fan campaigns around sponsors, teams, and tournament moments. Sponsors get owned experiences, fans get meaningful engagement, and you tie sponsorship to fan value."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Engage"
-   secondary_url="/platform/engage"
-   icon="palette" %}
 
-{% include feature-grid.html
-   heading="From moment to memory to revenue"
-   subheading="Programs are themed campaigns that evolve over weeks, sponsor-funded, and sponsor-branded. Fans see engagement as value, sponsors see measurable ROI, and you own the experience."
-   items=page.capabilities
-   columns=2 %}
+<!-- ================= HERO ================= -->
+<section class="pt-hero">
+  <div class="container-page">
+    <div class="pt-hero-grid">
+      <div class="pt-hero-copy">
+        <p class="pt-eyebrow">Platform · Fanfinity Engage · Programs &amp; Themes</p>
+        <h1 class="pt-h1">Engagement moments <span class="pt-accent">sponsors fund.</span></h1>
+        <p class="pt-sub">Multi-week fan campaigns, themed to any brand and sponsorable end to end. Fans get moments worth returning for, sponsors get owned experiences - and you get engagement that pays for itself.</p>
+        <div class="pt-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+        </div>
+      </div>
+      <div class="pt-hero-visual" aria-hidden="true">
+        <span class="pt-hero-stamp">SOLD</span>
+        <div class="pt-fan pt-fan-a">
+          <span class="pt-fan-world">SATURDAY MATCHDAY</span>
+          <b>The Predictor</b>
+          <span class="pt-fan-slot">presented by Volt Mobile</span>
+        </div>
+        <div class="pt-fan pt-fan-b">
+          <span class="pt-fan-world">FESTIVAL WEEKEND</span>
+          <b>Trivia Night</b>
+          <span class="pt-fan-slot">presented by Roast &amp; Co</span>
+        </div>
+        <div class="pt-fan pt-fan-c">
+          <span class="pt-fan-world">FINALE NIGHT</span>
+          <b>Fan of the Month</b>
+          <span class="pt-fan-slot pt-fan-slot-empty">sponsor slot · unsold</span>
+        </div>
+        <p class="pt-hero-ledger"><span>THIS WEEK</span> 3 programs · 2 sold · <b>1 open slot</b></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-split.html
-   title="The next generation of fan engagement (Coming soon)"
-   body="These features are in Design Preview and not yet in production. We're working with design partners to finalize program templates, sponsor integration, and measurement patterns. Final timing and form are subject to change based on feedback. Interested? Book a demo to see the concepts and timeline."
-   points=page.notes
-   cta_text="Schedule a design walkthrough"
-   cta_url="/demo"
-   icon="palette" %}
+<!-- ================= CENTERPIECE · THE PROGRAM STUDIO ================= -->
+<section class="pt-play" id="ptPlay">
+  <div class="container-page">
+    <div class="pt-play-head" data-reveal>
+      <p class="pt-eyebrow">The program studio</p>
+      <h2 class="pt-h2">One format. Any brand. <span class="pt-accent">Sold weekly.</span></h2>
+      <p class="pt-lead">Build a sponsorable program in three moves: pick the format, pick the world, slot the sponsor. The card on the right is what fans see; the strip below it is what sponsors pay for. Illustrative simulation.</p>
+    </div>
+
+    <div class="pt-play-grid">
+      <!-- CONSOLE -->
+      <div class="pt-console" data-reveal>
+        <div class="pt-step">
+          <span class="pt-step-num">01 · Pick the format</span>
+          <div class="pt-formats" id="ptFormats" role="group" aria-label="Program format">
+            <button type="button" class="pt-format is-active" data-program="predictor" aria-pressed="true">{% include icon.html name="target" class="h-4 w-4" %} <span><b>The Predictor</b><i>call the outcome before it happens</i></span></button>
+            <button type="button" class="pt-format" data-program="trivia" aria-pressed="false">{% include icon.html name="quiz" class="h-4 w-4" %} <span><b>Trivia Night</b><i>five live questions against the crowd</i></span></button>
+            <button type="button" class="pt-format" data-program="streak" aria-pressed="false">{% include icon.html name="bolt" class="h-4 w-4" %} <span><b>The Season Streak</b><i>show up every week, keep the flame</i></span></button>
+            <button type="button" class="pt-format" data-program="fotm" aria-pressed="false">{% include icon.html name="trophy" class="h-4 w-4" %} <span><b>Fan of the Month</b><i>everything you do climbs the board</i></span></button>
+          </div>
+        </div>
+
+        <div class="pt-step">
+          <span class="pt-step-num">02 · Pick the world</span>
+          <div class="pt-worlds" id="ptWorlds" role="group" aria-label="Program theme">
+            <button type="button" class="pt-world is-active" data-world="club" aria-pressed="true"><i style="--c:#7c3aed"></i> The Club</button>
+            <button type="button" class="pt-world" data-world="festival" aria-pressed="false"><i style="--c:#c026d3"></i> The Festival</button>
+            <button type="button" class="pt-world" data-world="stream" aria-pressed="false"><i style="--c:#d93b54"></i> The Stream</button>
+            <button type="button" class="pt-world" data-world="brand" aria-pressed="false"><i style="--c:#b8860b"></i> The Brand</button>
+          </div>
+        </div>
+
+        <div class="pt-step">
+          <span class="pt-step-num">03 · Slot the sponsor</span>
+          <div class="pt-sponsors" id="ptSponsors" role="group" aria-label="Program sponsor">
+            <button type="button" class="pt-sponsor" data-sponsor="volt" aria-pressed="false">Volt Mobile</button>
+            <button type="button" class="pt-sponsor" data-sponsor="meridian" aria-pressed="false">Meridian Air</button>
+            <button type="button" class="pt-sponsor" data-sponsor="roast" aria-pressed="false">Roast &amp; Co</button>
+          </div>
+          <button type="button" class="pt-unsell" id="ptUnsell" aria-pressed="true">or leave the slot empty - unsold inventory</button>
+        </div>
+      </div>
+
+      <!-- STAGE -->
+      <div class="pt-stage" data-reveal>
+        <div class="pt-card" id="ptCard" role="status" aria-live="polite" aria-atomic="true">
+          <div class="pt-card-top"><span id="ptWorldLabel">SATURDAY MATCHDAY</span><span class="pt-cadence" id="ptCadence">WEEKLY</span></div>
+          <h3 class="pt-title" id="ptTitle">The Predictor</h3>
+          <p class="pt-mech" id="ptMech">Call the outcome before it happens - every week, all season.</p>
+          <div class="pt-prize"><span>GRAND PRIZE</span><b id="ptPrize">signed merch + 2,000 pts</b></div>
+          <ol class="pt-arc" id="ptArc">
+            <li><b>W1</b><span>Launch week - first call</span></li>
+            <li><b>W2</b><span>Double-points week</span></li>
+            <li><b>W3</b><span>Rival week - higher stakes</span></li>
+            <li><b>W4</b><span>Final - grand predictor crowned</span></li>
+          </ol>
+          <div class="pt-slot" id="ptSlot">
+            <span class="pt-slot-text" id="ptSlotText">SPONSOR SLOT · your logo here</span>
+            <span class="pt-sold" id="ptSold">SOLD</span>
+          </div>
+        </div>
+
+        <div class="pt-inventory" id="ptInventory">
+          <div class="pt-inv-head">
+            <span>WHAT THE SPONSOR BOUGHT</span>
+            <span class="pt-inv-stamp" id="ptInvStamp">UNSOLD INVENTORY</span>
+          </div>
+          <div class="pt-inv-stats">
+            <div class="pt-inv-stat"><span>ENTRIES / WEEK</span><b id="ptInv1">8,214</b></div>
+            <div class="pt-inv-stat"><span>BRAND MOMENTS / FAN</span><b id="ptInv2">3.2</b></div>
+            <div class="pt-inv-stat"><span>PRIZE REDEMPTIONS</span><b id="ptInv3">412</b></div>
+            <div class="pt-inv-stat"><span>WEEKS LEFT</span><b id="ptInv4">6</b></div>
+          </div>
+          <p class="pt-inv-cap">Measured per sponsor, per program - impressions, engagement, redemption. Illustrative numbers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="section" id="ptCapabilities">
+  <div class="container-page">
+    <div class="pt-sec-head" data-reveal>
+      <p class="pt-eyebrow">How programs &amp; themes work</p>
+      <h2 class="pt-h2">From moment to memory to <span class="pt-accent">revenue</span></h2>
+      <p class="pt-lead">Programs are themed campaigns that evolve over weeks, sponsor-funded and sponsor-branded. Fans see engagement as value, sponsors see measurable ROI, and you own the experience.</p>
+    </div>
+    <div class="pt-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="pt-cap" data-reveal>
+        <span class="pt-cap-num">0{{ forloop.index }}</span>
+        <span class="pt-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFITS / OWNED VS RENTED ================= -->
+<section class="pt-benefits">
+  <div class="container-page">
+    <div class="pt-ben-grid">
+      <div class="pt-ben-copy" data-reveal>
+        <p class="pt-eyebrow">Why sponsors fund programs</p>
+        <h2 class="pt-h2">Owned moments beat <span class="pt-accent">rented banners</span></h2>
+        <ul class="pt-ben-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+      </div>
+      <div class="pt-compare" data-reveal aria-hidden="true">
+        <div class="pt-cmp pt-cmp-bad">
+          <span class="pt-cmp-tag">THE OLD WAY</span>
+          <div class="pt-cmp-banner">BANNER AD · 0.4% click · skipped</div>
+          <p>A rectangle nobody asked for, next to the thing fans actually came for.</p>
+        </div>
+        <div class="pt-cmp-arrow">{% include icon.html name="arrow-right" class="h-5 w-5" %}</div>
+        <div class="pt-cmp pt-cmp-good">
+          <span class="pt-cmp-tag">THE PROGRAM WAY</span>
+          <div class="pt-cmp-card">
+            <span class="pt-cmp-world">FESTIVAL WEEKEND</span>
+            <b>Trivia Night</b>
+            <span class="pt-cmp-slot">presented by Roast &amp; Co</span>
+          </div>
+          <p>The sponsor is the reason the moment exists - played weekly, measured per fan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Sell the moment, not the banner"
+   text="Book a demo and design your first sponsorable program - themed to your brand, funded by your sponsors, measured per fan." %}
+
+{% raw %}
+<style>
+/* ================= Programs & Themes page - scoped styles (.pt-) ================= */
+.pt-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background:
+  radial-gradient(52rem 30rem at 88% -12%, rgba(133,77,255,.10), transparent 62%),
+  radial-gradient(40rem 26rem at -12% 112%, rgba(184,134,11,.07), transparent 62%); }
+.pt-hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(124,58,237,.12) 1px, transparent 1.5px); background-size: 22px 22px; -webkit-mask-image: radial-gradient(58rem 32rem at 72% 18%, #000 0%, transparent 72%); mask-image: radial-gradient(58rem 32rem at 72% 18%, #000 0%, transparent 72%); pointer-events: none; }
+.pt-hero .container-page { position: relative; }
+.pt-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.pt-hero-grid > *, .pt-play-grid > *, .pt-ben-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .pt-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+
+.pt-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #7c3aed; display: flex; align-items: center; gap: .6rem; }
+.pt-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.7rem, 5.6vw, 4.5rem); margin: 1rem 0 0; color: #1c1533; }
+.pt-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #1c1533; }
+.pt-accent { position: relative; display: inline-block; color: #854dff; white-space: nowrap; }
+.pt-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23854dff' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.pt-sub, .pt-lead { font-size: 1.08rem; line-height: 1.65; color: #4b4365; margin-top: 1.2rem; max-width: 34rem; }
+.pt-sec-head .pt-lead, .pt-play-head .pt-lead { margin-left: auto; margin-right: auto; }
+.pt-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+
+/* --- hero fan of mini program cards --- */
+.pt-hero-visual { position: relative; display: flex; flex-direction: column; gap: .8rem; max-width: 23rem; margin: 0 auto; width: 100%; }
+.pt-fan { border: 2.5px solid #2b2145; border-radius: 1.1rem; padding: .85rem 1rem; color: #fff; display: flex; flex-direction: column; gap: .2rem; box-shadow: 0 4px 12px rgba(43,33,69,.12); }
+@keyframes pt-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+.pt-fan b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.2rem; }
+.pt-fan-world { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; opacity: .85; }
+.pt-fan-slot { align-self: flex-start; margin-top: .35rem; font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4); border-radius: 999px; padding: .22rem .6rem; }
+.pt-fan-slot-empty { background: transparent; border-style: dashed; opacity: .85; }
+.pt-fan-a { background: linear-gradient(140deg, #7c3aed, #4c1d95); transform: rotate(-1.5deg); }
+.pt-fan-b { background: linear-gradient(140deg, #c026d3, #701a75); transform: rotate(1.2deg) translateX(1.4rem); }
+.pt-fan-c { background: linear-gradient(140deg, #d93b54, #7f1d2e); transform: rotate(-.8deg); }
+.pt-hero-stamp { position: absolute; top: -1.3rem; right: 5%; z-index: 2; font-family: ui-monospace, monospace; font-size: .8rem; font-weight: 700; letter-spacing: .16em; color: #b8860b; border: 2.5px solid #b8860b; border-radius: .5rem; padding: .3rem .7rem; transform: rotate(8deg); background: rgba(255,251,235,.92); box-shadow: 0 4px 12px rgba(184,134,11,.25); }
+.pt-hero-ledger { display: flex; align-items: center; justify-content: center; gap: .55rem; margin: 1rem 0 0; font-family: ui-monospace, monospace; font-size: .68rem; letter-spacing: .1em; color: #6b6486; }
+.pt-hero-ledger span { color: #7c3aed; font-weight: 700; letter-spacing: .14em; }
+.pt-hero-ledger b { color: #b8860b; }
+
+/* ================= CENTERPIECE ================= */
+.pt-play { padding: 4.5rem 0 5rem; background: linear-gradient(180deg, #fdfcff, #f8f5ff 60%, #fdfcff); border-top: 1px solid #eee9fa; border-bottom: 1px solid #eee9fa; overflow-x: clip; }
+.pt-play-head, .pt-sec-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.pt-play-head .pt-eyebrow, .pt-sec-head .pt-eyebrow { justify-content: center; }
+.pt-play-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 1024px) { .pt-play-grid { grid-template-columns: minmax(0, 23rem) 1fr; gap: 2.4rem; } }
+
+/* --- console --- */
+.pt-console { background: #fff; border: 2px solid #2b2145; border-radius: 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.09); padding: 1.2rem; display: flex; flex-direction: column; gap: 1.15rem; }
+.pt-step { display: flex; flex-direction: column; gap: .55rem; }
+.pt-step + .pt-step { border-top: 1.5px dashed #e4ddf5; padding-top: 1.05rem; }
+.pt-step-num { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .12em; color: #7c3aed; font-weight: 700; }
+.pt-formats { display: flex; flex-direction: column; gap: .5rem; }
+.pt-format { display: flex; align-items: center; gap: .6rem; text-align: left; background: #fbfaff; border: 1.5px solid #cfc6ea; border-radius: .85rem; padding: .6rem .75rem; cursor: pointer; transition: all .16s; color: #2b2145; }
+.pt-format svg { color: #7c3aed; flex: none; }
+.pt-format span { display: flex; flex-direction: column; }
+.pt-format b { font-size: .9rem; }
+.pt-format i { font-style: normal; font-size: .72rem; color: #8b84a6; }
+.pt-format:hover { border-color: #7c3aed; }
+.pt-format.is-active { background: #f4efff; border-color: #7c3aed; box-shadow: 0 0 0 2px rgba(124,58,237,.18), 0 4px 12px rgba(124,58,237,.15); }
+.pt-worlds { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.pt-world { display: inline-flex; align-items: center; justify-content: center; gap: .45rem; font-size: .84rem; font-weight: 700; color: #2b2145; background: #fbfaff; border: 1.5px solid #cfc6ea; border-radius: .75rem; padding: .55rem .4rem; cursor: pointer; transition: all .16s; }
+.pt-world i { width: .75rem; height: .75rem; border-radius: 999px; background: var(--c); }
+.pt-world:hover { border-color: #7c3aed; }
+.pt-world.is-active { background: #2b2145; border-color: #2b2145; color: #fff; }
+.pt-sponsors { display: flex; flex-wrap: wrap; gap: .5rem; }
+.pt-sponsor { font-size: .84rem; font-weight: 700; color: #8a6408; background: #fdf6e3; border: 1.5px solid #e3cf96; border-radius: 999px; padding: .45rem .8rem; cursor: pointer; transition: all .16s; }
+.pt-sponsor:hover { border-color: #b8860b; }
+.pt-sponsor.is-active { background: #b8860b; border-color: #b8860b; color: #fff; }
+.pt-unsell { align-self: flex-start; background: none; border: none; padding: 0; font-size: .78rem; color: #8b84a6; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.pt-unsell:hover { color: #d93b54; }
+
+/* --- program card --- */
+.pt-stage { display: flex; flex-direction: column; gap: 1rem; }
+.pt-card { position: relative; overflow: hidden; border-radius: 1.4rem; border: 2px solid #2b2145; background: linear-gradient(150deg, var(--pt1, #7c3aed), var(--pt2, #4c1d95)); color: #fff; padding: 1.3rem 1.4rem 1.2rem; box-shadow: 0 4px 12px rgba(43,33,69,.14); transition: background .45s; }
+.pt-card::after { content: ""; position: absolute; inset: 0; background: radial-gradient(26rem 13rem at 18% -22%, rgba(255,255,255,.22), transparent 55%); pointer-events: none; }
+.pt-card > * { position: relative; }
+@keyframes pt-pulse { 0%, 100% { border-color: #2b2145; } 50% { border-color: #ffd166; } }
+.pt-card.pt-pulse { animation: pt-pulse .5s ease-out; }
+@keyframes pt-flip { 0% { opacity: 0; translate: 0 6px; } 100% { opacity: 1; translate: 0 0; } }
+.pt-inv-stat b.pt-flip { display: inline-block; animation: pt-flip .35s ease-out; }
+.pt-card-top { display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .14em; opacity: .9; }
+.pt-cadence { border: 1.5px solid rgba(255,255,255,.5); border-radius: 999px; padding: .16rem .55rem; font-weight: 700; }
+.pt-title { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 2rem; margin: .55rem 0 .2rem; color: #fff; }
+.pt-mech { font-size: .92rem; opacity: .9; }
+.pt-prize { display: flex; align-items: center; gap: .6rem; margin-top: .85rem; background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.3); border-radius: .75rem; padding: .55rem .75rem; }
+.pt-prize span { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; opacity: .85; }
+.pt-prize b { font-size: .9rem; }
+.pt-arc { list-style: none; margin: .95rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .45rem; }
+.pt-arc li { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: .6rem; padding: .45rem .5rem; display: flex; flex-direction: column; gap: .15rem; }
+.pt-arc b { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; opacity: .85; }
+.pt-arc span { font-size: .68rem; line-height: 1.35; }
+@media (max-width: 560px) { .pt-arc { grid-template-columns: 1fr 1fr; } }
+.pt-slot { margin-top: .95rem; display: flex; align-items: center; justify-content: space-between; gap: .7rem; border: 2px dashed rgba(255,255,255,.55); border-radius: .8rem; padding: .6rem .8rem; transition: all .3s; }
+.pt-slot-text { font-family: ui-monospace, monospace; font-size: .7rem; letter-spacing: .1em; font-weight: 700; }
+.pt-sold { font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; letter-spacing: .14em; color: #ffd166; border: 2px solid #ffd166; border-radius: .4rem; padding: .2rem .5rem; transform: rotate(-6deg) scale(2); opacity: 0; }
+.pt-card.is-sold .pt-slot { border-style: solid; background: rgba(255,255,255,.12); }
+.pt-card.is-sold .pt-sold { animation: pt-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+@keyframes pt-stamp { to { opacity: 1; transform: rotate(-6deg) scale(1); } }
+
+/* --- inventory strip --- */
+.pt-inventory { background: #fff; border: 2px solid #2b2145; border-radius: 1.2rem; box-shadow: 0 4px 12px rgba(43,33,69,.09); padding: 1rem 1.15rem; }
+.pt-inv-head { display: flex; align-items: center; justify-content: space-between; gap: .7rem; flex-wrap: wrap; }
+.pt-inv-head > span:first-child { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .14em; color: #7c3aed; font-weight: 700; }
+.pt-inv-stamp { font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; letter-spacing: .1em; color: #8a6408; border: 1.5px dashed #b8860b; border-radius: .4rem; padding: .22rem .55rem; transform: rotate(1.5deg); }
+.pt-inv-stamp.is-sold { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+.pt-inv-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: .55rem; margin-top: .8rem; }
+@media (min-width: 640px) { .pt-inv-stats { grid-template-columns: repeat(4, 1fr); } }
+.pt-inv-stat { background: #fbf9ff; border: 1.5px solid #ece5f9; border-radius: .75rem; padding: .55rem .6rem; text-align: center; }
+.pt-inv-stat span { display: block; font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .1em; color: #8b84a6; }
+.pt-inv-stat b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.3rem; color: #2b2145; }
+.pt-inv-cap { margin-top: .75rem; font-size: .76rem; color: #8b84a6; }
+
+/* ================= CAPABILITIES ================= */
+.pt-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .pt-cap-grid { grid-template-columns: 1fr 1fr; } }
+.pt-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fff; border: 2px solid #2b2145; border-radius: 1.3rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 0 4px 12px rgba(43,33,69,.08); transition: border-color .18s ease, background-color .18s ease; }
+.pt-cap:hover { border-color: #7c3aed; background: #fdfcff; }
+@media (max-width: 640px) { .pt-fan-b { transform: rotate(1.2deg) translateX(.25rem); } }
+.pt-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #c5bce4; }
+.pt-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #f4efff; border: 1.5px solid #e0d6f8; color: #7c3aed; transition: all .18s ease; }
+.pt-cap:hover .pt-cap-icon { background: #7c3aed; border-color: #7c3aed; color: #fff; }
+.pt-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.25rem; color: #1c1533; margin: .2rem 0 0; }
+.pt-cap p { font-size: .92rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= BENEFITS / COMPARE ================= */
+.pt-benefits { padding: 4.5rem 0; background: #fbf9ff; border-top: 1px solid #eee9fa; }
+.pt-ben-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .pt-ben-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.pt-ben-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.pt-ben-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #4b4365; }
+.pt-ben-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.pt-compare { display: grid; gap: .9rem; max-width: 26rem; margin: 0 auto; width: 100%; }
+.pt-cmp { border-radius: 1.1rem; padding: 1rem 1.1rem; }
+.pt-cmp-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; font-weight: 700; }
+.pt-cmp-bad { background: #fff; border: 2px dashed #cfc6ea; }
+.pt-cmp-bad .pt-cmp-tag { color: #9a93b5; }
+.pt-cmp-banner { margin: .6rem 0; font-family: ui-monospace, monospace; font-size: .74rem; color: #9a93b5; background: #f4f2fa; border: 1.5px solid #e4ddf5; border-radius: .55rem; padding: .8rem .9rem; text-align: center; text-decoration: line-through; text-decoration-color: rgba(217,59,84,.65); text-decoration-thickness: 2px; }
+.pt-cmp p { font-size: .84rem; color: #6b6486; }
+.pt-cmp-arrow { justify-self: center; color: #7c3aed; transform: rotate(90deg); }
+.pt-cmp-good { background: #fff; border: 2px solid #2b2145; box-shadow: 0 4px 12px rgba(43,33,69,.1); }
+.pt-cmp-good .pt-cmp-tag { color: #7c3aed; }
+.pt-cmp-card { margin: .6rem 0; border-radius: .8rem; background: linear-gradient(140deg, #c026d3, #701a75); color: #fff; padding: .8rem .9rem; display: flex; flex-direction: column; gap: .15rem; }
+.pt-cmp-card b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.15rem; }
+.pt-cmp-world { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; opacity: .85; }
+.pt-cmp-slot { align-self: flex-start; margin-top: .3rem; font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.4); border-radius: 999px; padding: .18rem .55rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-card.is-sold .pt-sold { animation-duration: .01s !important; }
+  .pt-fan { animation: none; }
+  .pt-card.pt-pulse, .pt-inv-stat b.pt-flip { animation-duration: .01s !important; }
+}
+/* Keep content readable if the shared reveal script is delayed or unavailable. */
+[data-reveal] { opacity: 1 !important; transform: none !important; }
+</style>
+
+<script>
+/* ================= Programs & Themes - program studio engine ================= */
+(function () {
+  var play = document.getElementById('ptPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+
+  var PROGRAMS = {
+    predictor: {
+      title: 'The Predictor', mech: 'Call the outcome before it happens - every week, all season.',
+      cadence: 'WEEKLY', prize: 'signed merch + 2,000 pts',
+      arc: ['Launch week - first call', 'Double-points week', 'Rival week - higher stakes', 'Final - grand predictor crowned'],
+      inv: ['8,214', '3.2', '412', '6']
+    },
+    trivia: {
+      title: 'Trivia Night', mech: 'Five live questions against the crowd - fastest correct answer wins.',
+      cadence: 'WEEKLY', prize: 'VIP upgrade + 1,500 pts',
+      arc: ['Pub-style opener', 'Picture round', 'Guest quizmaster week', 'Final - champion\u2019s table'],
+      inv: ['5,930', '2.8', '288', '4']
+    },
+    streak: {
+      title: 'The Season Streak', mech: 'Show up every week, keep the flame alive all season long.',
+      cadence: 'SEASON-LONG', prize: 'tier fast-track + 5,000 pts',
+      arc: ['First flame', 'Milestone bonuses begin', 'Streak-saver week', 'Season finale - legends tier'],
+      inv: ['11,402', '5.1', '1,140', '18']
+    },
+    fotm: {
+      title: 'Fan of the Month', mech: 'Everything you do climbs the board - votes, streaks, referrals.',
+      cadence: 'MONTHLY', prize: 'backstage experience',
+      arc: ['Board opens', 'Mid-month surge', 'Head-to-head week', 'Crowning - then it resets'],
+      inv: ['9,870', '4.4', '655', '3']
+    }
+  };
+  var WORLDS = {
+    club:     { label: 'SATURDAY MATCHDAY', c1: '#7c3aed', c2: '#4c1d95' },
+    festival: { label: 'FESTIVAL WEEKEND',  c1: '#c026d3', c2: '#701a75' },
+    stream:   { label: 'FINALE NIGHT',      c1: '#d93b54', c2: '#7f1d2e' },
+    brand:    { label: 'DROP DAY',          c1: '#b8860b', c2: '#6b4e08' }
+  };
+  var SPONSORS = { volt: 'Volt Mobile', meridian: 'Meridian Air', roast: 'Roast & Co' };
+
+  var card = $('ptCard'), worldLabel = $('ptWorldLabel'), cadenceEl = $('ptCadence');
+  var titleEl = $('ptTitle'), mechEl = $('ptMech'), prizeEl = $('ptPrize'), arcEl = $('ptArc');
+  var slotText = $('ptSlotText'), invStamp = $('ptInvStamp');
+  var invEls = [$('ptInv1'), $('ptInv2'), $('ptInv3'), $('ptInv4')];
+
+  var state = { program: 'predictor', world: 'club', sponsor: null };
+  var firstRender = true;
+
+  function render() {
+    var p = PROGRAMS[state.program], w = WORLDS[state.world];
+    titleEl.textContent = p.title;
+    mechEl.textContent = p.mech;
+    prizeEl.textContent = p.prize;
+    cadenceEl.textContent = p.cadence;
+    worldLabel.textContent = w.label;
+    card.style.setProperty('--pt1', w.c1);
+    card.style.setProperty('--pt2', w.c2);
+    if (!firstRender) {
+      card.classList.remove('pt-pulse');
+      void card.offsetWidth;
+      card.classList.add('pt-pulse');
+    }
+
+    arcEl.innerHTML = '';
+    for (var i = 0; i < p.arc.length; i++) {
+      var li = document.createElement('li');
+      var wk = document.createElement('b'); wk.textContent = 'W' + (i + 1);
+      var tx = document.createElement('span'); tx.textContent = p.arc[i];
+      li.appendChild(wk); li.appendChild(tx);
+      arcEl.appendChild(li);
+    }
+
+    if (state.sponsor) {
+      var name = SPONSORS[state.sponsor];
+      slotText.textContent = 'PRESENTED BY · ' + name;
+      card.classList.add('is-sold');
+      invStamp.textContent = 'SOLD · ' + name;
+      invStamp.classList.add('is-sold');
+    } else {
+      slotText.textContent = 'SPONSOR SLOT · your logo here';
+      card.classList.remove('is-sold');
+      invStamp.textContent = 'UNSOLD INVENTORY';
+      invStamp.classList.remove('is-sold');
+    }
+
+    for (var v = 0; v < invEls.length; v++) {
+      if (invEls[v].textContent !== p.inv[v]) {
+        invEls[v].textContent = p.inv[v];
+        invEls[v].classList.remove('pt-flip');
+        void invEls[v].offsetWidth;
+        invEls[v].classList.add('pt-flip');
+      }
+    }
+    firstRender = false;
+  }
+
+  function pick(container, sel, btn) {
+    var all = container.querySelectorAll(sel);
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+  }
+
+  $('ptFormats').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.pt-format') : null;
+    if (!btn) return;
+    pick($('ptFormats'), '.pt-format', btn);
+    state.program = btn.getAttribute('data-program');
+    render();
+  });
+  $('ptWorlds').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.pt-world') : null;
+    if (!btn) return;
+    pick($('ptWorlds'), '.pt-world', btn);
+    state.world = btn.getAttribute('data-world');
+    render();
+  });
+  $('ptSponsors').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.pt-sponsor') : null;
+    if (!btn) return;
+    pick($('ptSponsors'), '.pt-sponsor', btn);
+    state.sponsor = btn.getAttribute('data-sponsor');
+    $('ptUnsell').setAttribute('aria-pressed', 'false');
+    render();
+  });
+  $('ptUnsell').addEventListener('click', function () {
+    var all = $('ptSponsors').querySelectorAll('.pt-sponsor');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    state.sponsor = null;
+    this.setAttribute('aria-pressed', 'true');
+    render();
+  });
+
+  render();
+})();
+</script>
+{% endraw %}
