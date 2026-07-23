@@ -3,38 +3,452 @@ layout: page
 permalink: /platform/activate/audience-segmentation
 title: Audience Segmentation
 description: "Build targeted audiences once and activate them everywhere with Fanfinity Activate."
+cta: false
 breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
 capabilities:
-  - { icon: people,   title: "Build once, activate everywhere", body: "Define a segment in Fanfinity ID. Activate it through messaging, ads, CRM, and custom APIs without re-building per tool. One source of truth, unlimited activation channels." }
-  - { icon: shuffle,  title: "Sync across all channels",       body: "Changes to segment membership flow instantly to all destination systems. New fans entering a segment start seeing campaigns the same day, not after overnight syncs." }
-  - { icon: filter,   title: "Complex, nested logic",         body: "Combine attributes with AND, OR, NOT logic. Create sophisticated cohorts based on multiple conditions, and nest segments so advanced logic is reusable." }
-  - { icon: monitor,  title: "Real-time segmentation status",  body: "See segment size, churn, and composition in real time. Monitor which cohorts are growing or shrinking, so you stay aligned with actual fan behavior." }
+  - { icon: users,  title: "Build once, activate everywhere", body: "Define a segment in Fanfinity ID. Activate it through messaging, ads, CRM, and custom APIs without re-building per tool. One source of truth, unlimited activation channels." }
+  - { icon: repeat, title: "Sync across all channels",       body: "Changes to segment membership flow instantly to all destination systems. New fans entering a segment start seeing campaigns the same day, not after overnight syncs." }
+  - { icon: slider, title: "Complex, nested logic",         body: "Combine attributes with AND, OR, NOT logic. Create sophisticated cohorts based on multiple conditions, and nest segments so advanced logic is reusable." }
+  - { icon: chart,  title: "Real-time segmentation status", body: "See segment size, churn, and composition in real time. Monitor which cohorts are growing or shrinking, so you stay aligned with actual fan behavior." }
 benefits:
   - "Speed activation by defining segments once instead of recreating per tool."
   - "Improve consistency by ensuring all channels target the same audience definition."
   - "Reduce lift-and-shift cost by syncing directly to CRM, ad platforms, and email systems."
   - "Stay agile by updating segments in real time and seeing changes propagate instantly."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Activate"
-   title="Build once. Activate everywhere."
-   subtitle="Fanfinity Activate Audience Segmentation makes one segment definition reach every channel: messaging, ads, CRM, custom APIs. Update it in Fanfinity, watch changes propagate in real time."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Activate"
-   secondary_url="/platform/activate"
-   icon="people" %}
 
-{% include feature-grid.html
-   heading="Single source of truth for targeting"
-   subheading="Define audiences in Fanfinity ID with any logic. Audience Segmentation syncs them to all downstream systems instantly, so every campaign, every email, every ad targets the same people."
-   items=page.capabilities
-   columns=2 %}
+{% include activate-family-nav.html %}
 
-{% include feature-split.html
-   title="From concept to activated audience, in minutes"
-   body="One audience definition that powers messaging, ads, CRM, and custom workflows. Changes propagate instantly, so new targeting logic reaches all channels the same day. Faster activation, fewer errors, and one source of truth."
-   points=page.benefits
-   cta_text="See audience builder"
-   cta_url="/platform/id/audience-builder"
-   icon="people" %}
+<!-- ================= HERO ================= -->
+<section class="sg-hero">
+  <div class="container-page">
+    <div class="sg-hero-grid">
+      <div class="sg-hero-copy">
+        <p class="sg-eyebrow">Platform · Fanfinity Activate · Audience Segmentation</p>
+        <h1 class="sg-h1">Build once. <span class="sg-accent">Activate everywhere.</span></h1>
+        <p class="sg-sub">Fanfinity Activate makes one segment definition reach every channel: messaging, ads, CRM, custom APIs. Update it in Fanfinity and watch the change propagate in real time — every campaign, every email, every ad targets the same people.</p>
+        <div class="sg-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary">Back to Fanfinity Activate</a>
+        </div>
+      </div>
+      <div class="sg-hero-visual" aria-hidden="true">
+        <div class="sg-defcard">
+          <span class="sg-defcard-tag">ONE DEFINITION · lives in Fanfinity ID</span>
+          <b>Win-back candidates · high value</b>
+          <div class="sg-defcard-rules">
+            <span>ANY world event ≥ 1 / 90d</span><i>AND</i>
+            <span>lapse risk = high</span><i>AND</i>
+            <span>consent ≠ withdrawn</span>
+          </div>
+        </div>
+        <div class="sg-hero-wires"><i></i><i></i><i></i><i></i></div>
+        <div class="sg-hero-dests">
+          <span class="sg-hdest" style="--c:#12805c">{% include icon.html name="chat" class="h-3.5 w-3.5" %} WhatsApp</span>
+          <span class="sg-hdest" style="--c:#2f5fb3">{% include icon.html name="megaphone" class="h-3.5 w-3.5" %} Email</span>
+          <span class="sg-hdest" style="--c:#b8860b">{% include icon.html name="target" class="h-3.5 w-3.5" %} Meta Ads</span>
+          <span class="sg-hdest" style="--c:#7c3aed">{% include icon.html name="address-book" class="h-3.5 w-3.5" %} CRM</span>
+        </div>
+        <span class="sg-postmark sg-postmark-a">IN AGREEMENT<br>4 / 4</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CENTERPIECE · THE FAN RIVER ================= -->
+<section class="sg-play" id="sgPlay">
+  <div class="container-page">
+    <div class="sg-play-head" data-reveal>
+      <p class="sg-eyebrow">The fan river</p>
+      <h2 class="sg-h2">The segment <span class="sg-accent">fills itself.</span></h2>
+      <p class="sg-lead">Your fans never sit still — they scan in, go quiet, come back, withdraw consent. The river below is that stream. The gate is your definition. The pool is your segment: it re-fills the moment the fans or the rules change. Simulated fans; the evaluation is the product.</p>
+    </div>
+
+    <div class="sg-aquarium" data-reveal>
+      <!-- THE GATE · your definition -->
+      <div class="sg-gate">
+        <span class="sg-gate-label">THE GATE · your definition</span>
+        <div class="sg-rules" id="sgRules">
+          <button type="button" class="sg-rule is-on" data-rule="r1" aria-pressed="true"><span class="sg-rule-k">RULE 1 · recent</span>ANY world event · last 90 days<span class="sg-rule-state">ON</span></button>
+          <i class="sg-and">AND</i>
+          <button type="button" class="sg-rule is-on" data-rule="r2" aria-pressed="true"><span class="sg-rule-k">RULE 2 · lapse</span>lapse risk = high<span class="sg-rule-state">ON</span></button>
+          <i class="sg-and">AND</i>
+          <button type="button" class="sg-rule sg-rule-not is-on" data-rule="r3" aria-pressed="true"><span class="sg-rule-k">RULE 3 · exclusion</span>NOT consent withdrawn<span class="sg-rule-state">ON</span></button>
+        </div>
+        <button type="button" class="sg-pause" id="sgPause">Pause the river</button>
+      </div>
+
+      <!-- THE RIVER -->
+      <div class="sg-river" id="sgRiver" aria-hidden="true">
+        <div class="sg-river-flow"></div>
+        <span class="sg-river-intake">FANS · live events</span>
+        <span class="sg-river-out">doesn&rsquo;t match → flows past</span>
+      </div>
+
+      <!-- THE POOL · the segment -->
+      <div class="sg-pool">
+        <div class="sg-pool-head">
+          <span class="sg-pool-tag">THE POOL · win-back candidates</span>
+          <span class="sg-pool-countwrap">IN SEGMENT <b id="sgCount">0</b></span>
+        </div>
+        <div class="sg-pool-tokens" id="sgTokens"></div>
+        <p class="sg-pool-note" id="sgPoolNote">evaluated 10 fans in 0.4 ms · re-evaluates on every change</p>
+      </div>
+
+      <!-- SYNC STRIP -->
+      <div class="sg-sync">
+        <span class="sg-sync-tag">THE SAME POOL, EVERYWHERE</span>
+        <div class="sg-sync-chips">
+          <span class="sg-sync-chip" style="--c:#12805c">{% include icon.html name="chat" class="h-3.5 w-3.5" %} WhatsApp · <b id="sgSync-wa">0</b></span>
+          <span class="sg-sync-chip" style="--c:#2f5fb3">{% include icon.html name="megaphone" class="h-3.5 w-3.5" %} Email · <b id="sgSync-email">0</b></span>
+          <span class="sg-sync-chip" style="--c:#b8860b">{% include icon.html name="target" class="h-3.5 w-3.5" %} Meta Ads · <b id="sgSync-ads">0</b></span>
+          <span class="sg-sync-chip" style="--c:#7c3aed">{% include icon.html name="address-book" class="h-3.5 w-3.5" %} CRM · <b id="sgSync-crm">0</b></span>
+        </div>
+      </div>
+
+      <p class="sg-log" id="sgLog">the river is running — fans who match the gate settle into the pool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="sg-capabilities">
+  <div class="container-page">
+    <div class="sg-sec-head" data-reveal>
+      <p class="sg-eyebrow">How audience segmentation works</p>
+      <h2 class="sg-h2">Single source of truth <span class="sg-accent">for targeting</span></h2>
+      <p class="sg-lead">Define audiences in Fanfinity ID with any logic. Audience Segmentation syncs them to all downstream systems instantly — so every campaign, every email, every ad targets the same people.</p>
+    </div>
+    <div class="sg-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="sg-cap" data-reveal>
+        <span class="sg-cap-num">0{{ forloop.index }}</span>
+        <span class="sg-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEFINITION TRAVELS ================= -->
+<section class="sg-split">
+  <div class="container-page">
+    <div class="sg-split-grid">
+      <div class="sg-split-copy" data-reveal>
+        <p class="sg-eyebrow">From concept to activated audience</p>
+        <h2 class="sg-h2">The definition travels. <span class="sg-accent">The errors don't.</span></h2>
+        <p class="sg-lead">One audience definition that powers messaging, ads, CRM, and custom workflows. Changes propagate instantly, so new targeting logic reaches all channels the same day — faster activation, fewer errors, and one source of truth.</p>
+        <ul class="sg-split-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/id/audience-builder' | relative_url }}" class="btn btn-secondary">See the audience builder</a>
+      </div>
+      <div class="sg-split-visual" data-reveal aria-hidden="true">
+        <div class="sg-travel">
+          <div class="sg-travel-def">
+            <span class="sg-travel-tag">DEFINED ONCE · in Fanfinity ID</span>
+            <b>lapse risk = high AND consent ≠ withdrawn</b>
+          </div>
+          <div class="sg-travel-rows">
+            <div class="sg-travel-row"><span>WhatsApp flow · step 2</span><b>SAME DEFINITION ✓</b></div>
+            <div class="sg-travel-row"><span>Meta custom audience</span><b>SAME DEFINITION ✓</b></div>
+            <div class="sg-travel-row"><span>CRM view · win-back</span><b>SAME DEFINITION ✓</b></div>
+            <div class="sg-travel-row"><span>Custom API · /segments/412</span><b>SAME DEFINITION ✓</b></div>
+          </div>
+          <p class="sg-travel-cap">No per-tool rebuilds, no quietly drifting copies — every destination references the one definition.</p>
+        </div>
+        <span class="sg-postmark sg-postmark-b">ONE SOURCE<br>OF TRUTH</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="One definition, every channel, same day"
+   text="Book a walkthrough and we'll change a live segment on your own data — and watch every destination land on the same number in the same second." %}
+
+{% raw %}
+<style>
+/* ================= Audience Segmentation page — scoped styles (.sg-) · air-mail family ================= */
+.sg-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #2f5fb3; display: flex; align-items: center; gap: .6rem; }
+.sg-eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .35rem, transparent .35rem .55rem); }
+.sg-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.3rem); margin: 1rem 0 0; color: #2a1f45; }
+.sg-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #2a1f45; }
+.sg-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.sg-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.sg-sub, .sg-lead { font-size: 1.08rem; line-height: 1.65; color: #54496e; margin-top: 1.2rem; max-width: 34rem; }
+.sg-sec-head .sg-lead, .sg-play-head .sg-lead { margin-left: auto; margin-right: auto; }
+.sg-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.sg-sec-head, .sg-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.sg-sec-head .sg-eyebrow, .sg-play-head .sg-eyebrow { justify-content: center; }
+
+/* --- hero --- */
+.sg-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background:
+  repeating-linear-gradient(0deg, transparent 0 27px, rgba(47,95,179,.05) 27px 28px),
+  radial-gradient(50rem 30rem at 88% -10%, rgba(124,58,237,.07), transparent 60%),
+  #f7f4fd; }
+.sg-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.sg-hero-grid > *, .sg-play-grid > *, .sg-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .sg-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.sg-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1rem 0; }
+.sg-defcard { background: #2a1f45; color: #f5f0ff; border-radius: 1.1rem; padding: 1rem 1.1rem; box-shadow: 6px 7px 0 rgba(42,31,69,.16); transform: rotate(-1deg); }
+.sg-defcard-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; color: #b7aee6; }
+.sg-defcard b { display: block; margin: .4rem 0 .7rem; font-size: 1.05rem; }
+.sg-defcard-rules, .sg-segcard-rules { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; }
+.sg-defcard-rules span, .sg-segcard-rules span { font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; border-radius: 999px; padding: .22rem .55rem; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); }
+.sg-defcard-rules i, .sg-segcard-rules i { font-style: normal; font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .1em; opacity: .7; }
+.sg-hero-wires { display: flex; justify-content: space-around; padding: 0 1.4rem; }
+.sg-hero-wires i { width: 0; height: 1.5rem; border-left: 2px dashed #b3a8d1; }
+.sg-hero-dests { display: flex; flex-wrap: wrap; gap: .45rem; justify-content: center; }
+.sg-hdest { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .64rem; font-weight: 700; color: var(--c); background: #fdfcff; border: 1.5px solid var(--c); border-radius: 999px; padding: .32rem .65rem; box-shadow: 2px 3px 0 rgba(42,31,69,.1); }
+.sg-postmark { position: absolute; display: inline-flex; align-items: center; justify-content: center; text-align: center; width: 4.6rem; height: 4.6rem; border: 2px solid #2a1f45; border-radius: 999px; outline: 1.5px dashed rgba(42,31,69,.55); outline-offset: 3px; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .12em; line-height: 1.5; background: rgba(253,252,255,.9); }
+.sg-postmark-a { top: -.8rem; right: 2%; transform: rotate(9deg); color: #12805c; border-color: #12805c; outline-color: rgba(18,128,92,.5); }
+.sg-postmark-b { top: -1rem; right: 4%; transform: rotate(8deg); color: #2f5fb3; border-color: #2f5fb3; outline-color: rgba(47,95,179,.5); }
+
+/* ================= CENTERPIECE ================= */
+.sg-play { padding: 4.5rem 0 5rem; background: #fdfcff; border-top: 1px solid #e9e2f8; border-bottom: 1px solid #e9e2f8; overflow-x: clip; }
+/* --- the aquarium --- */
+.sg-aquarium { position: relative; background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.4rem; box-shadow: 6px 7px 0 rgba(42,31,69,.12); padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.sg-aquarium::before { content: ""; position: absolute; top: -2px; left: 1.2rem; right: 1.2rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .5rem, transparent .5rem .8rem); }
+
+/* --- the gate --- */
+.sg-gate { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.sg-gate-label { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; flex-basis: 100%; }
+.sg-rules { display: flex; align-items: stretch; gap: .5rem; flex-wrap: wrap; flex: 1; min-width: 0; }
+.sg-and { align-self: center; font-style: normal; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .1em; color: #9a93b5; }
+.sg-rule { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .2rem .55rem; background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: .8rem; padding: .5rem .7rem; cursor: pointer; transition: all .16s; font-weight: 700; font-size: .8rem; color: #2a1f45; }
+.sg-rule-k { flex-basis: 100%; font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; }
+.sg-rule-state { margin-left: auto; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; color: #9a93b5; }
+.sg-rule:hover { transform: translateY(-1px); }
+.sg-rule.is-on { border-color: #12805c; background: #effaf5; }
+.sg-rule.is-on .sg-rule-state { color: #12805c; }
+.sg-rule:not(.is-on) { opacity: .55; }
+.sg-rule-not.is-on { border-color: #d93b54; background: #fdf0f2; }
+.sg-rule-not.is-on .sg-rule-state { color: #a82540; }
+.sg-pause { font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; color: #6b6486; background: none; border: 1.5px dashed #cfc4e8; border-radius: .7rem; padding: .5rem .8rem; cursor: pointer; align-self: center; }
+.sg-pause:hover { color: #7c3aed; border-color: #7c3aed; }
+
+/* --- fan tokens --- */
+.sg-token { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; border-radius: 999px; padding: .22rem .55rem .22rem .3rem; border: 1.5px solid; animation: sg-tokenin .4s ease; }
+.sg-token::before { content: ""; width: .95rem; height: .95rem; border-radius: 999px; background: var(--fc, currentColor); }
+.sg-pool .sg-token { color: #e9defc; border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.08); }
+.sg-token.sg-out { animation: sg-tokenout .4s ease forwards; }
+@keyframes sg-tokenin { from { opacity: 0; transform: scale(.6); } }
+@keyframes sg-tokenout { to { opacity: 0; transform: scale(.6); } }
+@keyframes sg-bump { 40% { transform: scale(1.18); } }
+
+/* --- the river --- */
+.sg-river { position: relative; height: 9.5rem; border-radius: 1rem; background: linear-gradient(180deg, #efe9fd, #e6dcfa); border: 2px solid #2a1f45; overflow: hidden; }
+.sg-river-flow { position: absolute; inset: -1rem 0; background: repeating-linear-gradient(90deg, rgba(124,58,237,.09) 0 2rem, transparent 2rem 4rem); animation: sg-flow 2.6s linear infinite; }
+@keyframes sg-flow { to { transform: translateX(4rem); } }
+.sg-river-intake, .sg-river-out { position: absolute; font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .12em; color: #8b84a6; z-index: 1; }
+.sg-river-intake { left: .8rem; top: .55rem; }
+.sg-river-out { right: .8rem; bottom: .45rem; }
+.sg-fan { position: absolute; top: 50%; left: -16%; transform: translateY(-50%); z-index: 1; display: flex; align-items: center; gap: .5rem; background: #fff; border: 2px solid #2a1f45; border-radius: 999px; padding: .35rem .8rem .35rem .4rem; box-shadow: 3px 4px 0 rgba(42,31,69,.14); white-space: nowrap; transition: left 6.2s linear, translate .8s cubic-bezier(.3,.7,.4,1), scale .8s, opacity .55s .25s; }
+.sg-fan-av { display: inline-flex; align-items: center; justify-content: center; width: 1.7rem; height: 1.7rem; flex: none; border-radius: 999px; background: var(--c, #7c3aed); color: #fff; font-size: .68rem; font-weight: 700; }
+.sg-fan-meta { display: flex; flex-direction: column; }
+.sg-fan-meta b { font-size: .78rem; color: #2a1f45; }
+.sg-fan-meta i { font-style: normal; font-family: ui-monospace, monospace; font-size: .58rem; color: #9a93b5; }
+.sg-fan.is-moving { left: 110%; }
+.sg-fan.is-caught { translate: 0 4.8rem; scale: .5; opacity: 0; }
+
+/* --- the pool --- */
+.sg-pool { background: #2a1f45; color: #f5f0ff; border-radius: 1rem; border: 2px solid #2a1f45; padding: .95rem 1rem; }
+.sg-pool-head { display: flex; justify-content: space-between; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.sg-pool-tag, .sg-pool-countwrap { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; color: #b7aee6; }
+.sg-pool-countwrap b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.5rem; color: #fff; margin-left: .3rem; }
+.sg-pool-countwrap b.bump { display: inline-block; animation: sg-bump .4s ease; }
+.sg-pool-tokens { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .65rem; min-height: 1.9rem; }
+.sg-pool-note { margin-top: .6rem; font-family: ui-monospace, monospace; font-size: .6rem; color: #8f83c9; }
+
+/* --- sync strip --- */
+.sg-sync { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; background: #fdfcff; border: 1.5px dashed #ddd3f0; border-radius: .9rem; padding: .6rem .8rem; }
+.sg-sync-tag { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; }
+.sg-sync-chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.sg-sync-chip { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .64rem; font-weight: 700; color: var(--c); border: 1.5px solid var(--c); border-radius: 999px; padding: .28rem .6rem; background: #fff; }
+.sg-sync-chip b { color: #2a1f45; }
+.sg-sync-chip b.bump { display: inline-block; animation: sg-bump .4s ease; }
+
+.sg-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #54496e; background: #f7f4fd; border: 1.5px dashed #ddd3f0; border-radius: .8rem; padding: .6rem .8rem; }
+
+@media (max-width: 640px) {
+  .sg-river { height: 8rem; }
+  .sg-fan-meta b { font-size: .72rem; }
+  .sg-fan-meta i { font-size: .52rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sg-river-flow { animation: none !important; }
+  .sg-fan { transition-duration: .01s !important; }
+  .sg-token, .sg-token.sg-out, .sg-pool-countwrap b.bump, .sg-sync-chip b.bump { animation-duration: .01s !important; }
+}
+
+/* ================= CAPABILITIES · dark band ================= */
+.sg-capabilities { padding: 4.5rem 0; background: #241a3a; border-top: 2px solid #2a1f45; }
+.sg-capabilities .sg-eyebrow { color: #b7aee6; }
+.sg-capabilities .sg-eyebrow::before { background: repeating-linear-gradient(90deg, #b7aee6 0 .35rem, transparent .35rem .55rem); }
+.sg-capabilities .sg-h2 { color: #fff; }
+.sg-capabilities .sg-lead { color: #cfc6ea; }
+.sg-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .sg-cap-grid { grid-template-columns: 1fr 1fr; } }
+.sg-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 4px 5px 0 rgba(0,0,0,.3); transition: transform .18s ease, box-shadow .18s ease; }
+.sg-cap:hover { transform: translateY(-3px); box-shadow: 6px 8px 0 rgba(0,0,0,.38); }
+.sg-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #cfc4e8; }
+.sg-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #eef3fd; border: 1.5px solid #cdd9f2; color: #2f5fb3; transition: all .18s ease; }
+.sg-cap:hover .sg-cap-icon { background: #2f5fb3; border-color: #2f5fb3; color: #fff; }
+.sg-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #2a1f45; margin: .2rem 0 0; }
+.sg-cap p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= SPLIT ================= */
+.sg-split { padding: 4.5rem 0; background: #fdfcff; border-top: 1px solid #e9e2f8; }
+.sg-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .sg-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.sg-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.sg-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #54496e; }
+.sg-split-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.sg-split-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.4rem; }
+.sg-travel { background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.3rem; box-shadow: 6px 7px 0 rgba(42,31,69,.1); padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .7rem; }
+.sg-travel-def { background: #2a1f45; color: #f5f0ff; border-radius: .9rem; padding: .75rem .85rem; }
+.sg-travel-def b { display: block; margin-top: .3rem; font-size: .92rem; }
+.sg-travel-tag { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; color: #b7aee6; }
+.sg-travel-rows { display: flex; flex-direction: column; gap: .5rem; }
+.sg-travel-row { display: flex; align-items: center; justify-content: space-between; gap: .7rem; background: #fff; border: 1.5px solid #e6def7; border-radius: .75rem; padding: .55rem .7rem; }
+.sg-travel-row span { font-size: .82rem; color: #54496e; }
+.sg-travel-row b { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .08em; color: #0d5c40; }
+.sg-travel-cap { font-size: .76rem; line-height: 1.5; color: #9a93b5; }
+
+@media (max-width: 480px) {
+  .sg-h1 { font-size: 2.2rem; }
+  .sg-accent { display: block; font-size: .85em; }
+  .sg-postmark { width: 3.9rem; height: 3.9rem; font-size: .48rem; }
+}
+</style>
+
+<script>
+/* ================= Audience Segmentation page — fan river engine ================= */
+(function () {
+  var play = document.getElementById('sgPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var CAST = [
+    { id: 'noura',  name: 'Noura',  c: '#7c3aed', ev: 'quiet 34 d \u00b7 was Gold',      recent: true,  lapse: true,  withdrawn: false },
+    { id: 'fahad',  name: 'Fahad',  c: '#d93b54', ev: 'quiet 30 d',                     recent: true,  lapse: true,  withdrawn: false },
+    { id: 'sara',   name: 'Sara',   c: '#b8860b', ev: 'big spender \u00b7 quiet 60 d',  recent: true,  lapse: true,  withdrawn: false },
+    { id: 'reem',   name: 'Reem',   c: '#c026d3', ev: 'quiet 45 d',                     recent: true,  lapse: true,  withdrawn: false },
+    { id: 'salman', name: 'Salman', c: '#8d6e63', ev: 'quiet 90 d',                     recent: true,  lapse: true,  withdrawn: false },
+    { id: 'omar',   name: 'Omar',   c: '#6b6486', ev: 'withdrew consent \u00b7 lapsing', recent: true,  lapse: true,  withdrawn: true },
+    { id: 'dana',   name: 'Dana',   c: '#12805c', ev: 'lapsing \u00b7 consent off',     recent: true,  lapse: true,  withdrawn: true },
+    { id: 'khalid', name: 'Khalid', c: '#2f5fb3', ev: 'last seen 120 d ago',            recent: false, lapse: true,  withdrawn: false },
+    { id: 'lina',   name: 'Lina',   c: '#0e7490', ev: 'active tonight',                 recent: true,  lapse: false, withdrawn: false },
+    { id: 'maha',   name: 'Maha',   c: '#db2777', ev: 'active yesterday',               recent: true,  lapse: false, withdrawn: false }
+  ];
+  var CAST_INITIAL = JSON.parse(JSON.stringify(CAST));
+
+  var AMBIENT = [
+    { id: 'khalid', ev: 'just scanned in \u00b7 tonight', mut: function (f) { f.recent = true; }, log: 'Khalid just scanned in — the gate re-checks him, and he settles into the pool.' },
+    { id: 'dana',   ev: 're-consented \u00b7 lapsing',    mut: function (f) { f.withdrawn = false; }, log: 'Dana re-consented — the NOT rule stops excluding her.' },
+    { id: 'noura',  ev: 'came back tonight \u00b7 active', mut: function (f) { f.lapse = false; }, log: 'Noura came back tonight — no longer lapsing, so the pool lets her go.' },
+    { id: null, mut: function () { CAST = JSON.parse(JSON.stringify(CAST_INITIAL)); }, log: 'a new week begins — the river resets, the pool re-evaluates everyone.' }
+  ];
+
+  var rules = { r1: true, r2: true, r3: true };
+  var paused = false, castIdx = 0, ambIdx = 0;
+
+  function eligible(f) {
+    return (!rules.r1 || f.recent) && (!rules.r2 || f.lapse) && (!rules.r3 || !f.withdrawn);
+  }
+
+  var countEl = $('sgCount'), tokensEl = $('sgTokens'), noteEl = $('sgPoolNote');
+  var logEl = $('sgLog'), riverEl = $('sgRiver'), pauseBtn = $('sgPause');
+  var syncEls = [$('sgSync-wa'), $('sgSync-email'), $('sgSync-ads'), $('sgSync-crm')];
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function bump(node) { node.classList.remove('bump'); void node.offsetWidth; node.classList.add('bump'); }
+
+  function renderPool() {
+    var inPool = CAST.filter(eligible);
+    tokensEl.innerHTML = '';
+    inPool.forEach(function (f) {
+      var t = el('span', 'sg-token', f.name);
+      t.style.setProperty('--fc', f.c);
+      tokensEl.appendChild(t);
+    });
+    countEl.textContent = inPool.length;
+    bump(countEl);
+    for (var i = 0; i < syncEls.length; i++) {
+      syncEls[i].textContent = inPool.length;
+      bump(syncEls[i]);
+    }
+    noteEl.textContent = 'evaluated ' + CAST.length + ' fans in 0.4 ms \u00b7 re-evaluates on every change';
+  }
+
+  /* --- the river: fan cards drift through the gate --- */
+  function spawn() {
+    if (paused) return;
+    var f = CAST[castIdx % CAST.length]; castIdx++;
+    var card = el('div', 'sg-fan');
+    card.style.setProperty('--c', f.c);
+    card.appendChild(el('span', 'sg-fan-av', f.name.charAt(0)));
+    var meta = el('span', 'sg-fan-meta');
+    meta.appendChild(el('b', null, f.name));
+    meta.appendChild(el('i', null, f.ev));
+    card.appendChild(meta);
+    riverEl.appendChild(card);
+    run(function () { card.classList.add('is-moving'); }, 30);
+    run(function () { if (eligible(f)) card.classList.add('is-caught'); }, 2800);
+    run(function () { if (card.parentNode) card.parentNode.removeChild(card); }, 7000);
+  }
+
+  /* --- ambient life: fans change mid-stream --- */
+  function ambient() {
+    if (paused) return;
+    var step = AMBIENT[ambIdx % AMBIENT.length]; ambIdx++;
+    if (step.id) {
+      for (var i = 0; i < CAST.length; i++) {
+        if (CAST[i].id === step.id) { step.mut(CAST[i]); CAST[i].ev = step.ev; }
+      }
+    } else {
+      step.mut();
+    }
+    renderPool();
+    logEl.textContent = step.log;
+  }
+
+  $('sgRules').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.sg-rule') : null;
+    if (!btn) return;
+    var r = btn.getAttribute('data-rule');
+    rules[r] = !rules[r];
+    btn.classList.toggle('is-on', rules[r]);
+    btn.setAttribute('aria-pressed', rules[r] ? 'true' : 'false');
+    var st = btn.querySelector('.sg-rule-state');
+    if (st) st.textContent = rules[r] ? 'ON' : 'OFF';
+    renderPool();
+    var n = CAST.filter(eligible).length;
+    logEl.textContent = 'definition changed \u2192 the gate re-evaluates everyone instantly: ' + n + ' fan' + (n === 1 ? '' : 's') + ' in segment.';
+  });
+
+  pauseBtn.addEventListener('click', function () {
+    paused = !paused;
+    pauseBtn.textContent = paused ? 'Resume the river' : 'Pause the river';
+    logEl.textContent = paused ? 'river paused — the pool holds its current members.' : 'the river is running — fans who match the gate settle into the pool.';
+  });
+
+  renderPool();
+  if (!RM) {
+    timers.push(window.setInterval(spawn, 1500));
+    timers.push(window.setInterval(ambient, 7000));
+  } else {
+    logEl.textContent = 'reduced motion — the pool is rendered statically; toggle the rules to re-evaluate.';
+  }
+})();
+</script>
+{% endraw %}

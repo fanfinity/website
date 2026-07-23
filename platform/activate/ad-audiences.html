@@ -3,38 +3,460 @@ layout: page
 permalink: /platform/activate/ad-audiences
 title: Ad Audiences
 description: "Lookalikes and convert-suppression for paid ads with Fanfinity Activate."
+cta: false
 breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
 capabilities:
-  - { icon: target,   title: "Custom lookalike audiences",     body: "Build lookalike audiences from your best fans. Fanfinity learns patterns from high-lifetime-value cohorts and finds similar audiences at scale across ad platforms." }
-  - { icon: not,      title: "Smart suppression",             body: "Suppress fans who've already converted, are at risk of churn (better to retain than acquire), or fall outside your target profile. Avoid wasted spend on wrong audiences." }
-  - { icon: bar,      title: "Real-time audience updates",     body: "Lookalikes and suppression audiences update as fan behavior changes. New converters are suppressed immediately, new high value fans generate fresh lookalikes." }
-  - { icon: trending, title: "Multi-platform distribution",    body: "Sync the same audience to Meta, Google, TikTok, and other ad platforms. Update once in Fanfinity, reach all channels. Consistent targeting, one source of truth." }
+  - { icon: target,    title: "Custom lookalike audiences",   body: "Build lookalike audiences from your best fans. Fanfinity learns patterns from high-lifetime-value cohorts and finds similar audiences at scale across ad platforms." }
+  - { icon: shield,    title: "Smart suppression",           body: "Suppress fans who've already converted, are at risk of churn (better to retain than acquire), or fall outside your target profile. Avoid wasted spend on wrong audiences." }
+  - { icon: chart,     title: "Real-time audience updates",   body: "Lookalikes and suppression audiences update as fan behavior changes. New converters are suppressed immediately, new high-value fans generate fresh lookalikes." }
+  - { icon: broadcast, title: "Multi-platform distribution", body: "Sync the same audience to Meta, Google, TikTok, and other ad platforms. Update once in Fanfinity, reach all channels. Consistent targeting, one source of truth." }
 benefits:
   - "Improve ad ROI by targeting lookalikes of your best customers instead of broad demographic buckets."
   - "Reduce wasted spend by suppressing fans who've already converted or are better served by retention."
   - "Accelerate growth by reaching new fans who match your best existing cohorts at scale."
   - "Simplify operations by syncing one audience definition to all ad platforms instead of recreating per tool."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Activate"
-   title="Ad audiences built on real fan value"
-   subtitle="Fanfinity Activate Ad Audiences turns your best fans into lookalikes and builds smart suppression lists. Every ad dollar reaches high-potential fans, not wasted on already-converted or low-fit audiences."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Activate"
-   secondary_url="/platform/activate"
-   icon="target" %}
 
-{% include feature-grid.html
-   heading="Smarter targeting, better ROI"
-   subheading="Lookalikes find fans similar to your converters. Suppression prevents wasted spend on wrong-fit audiences. Both update in real time as behavior changes."
-   items=page.capabilities
-   columns=2 %}
+{% include activate-family-nav.html %}
 
-{% include feature-split.html
-   title="From spend to smarter spend"
-   body="Lookalike audiences outperform broad demographic targeting because they're built on real fan value. Suppression lists eliminate wasted impressions on fans who can't convert. Together, they shift budget toward fans most likely to engage, retain, and spend."
-   points=page.benefits
-   cta_text="See audience segmentation"
-   cta_url="/platform/activate/audience-segmentation"
-   icon="target" %}
+<!-- ================= HERO ================= -->
+<section class="aa-hero">
+  <div class="container-page">
+    <div class="aa-hero-grid">
+      <div class="aa-hero-copy">
+        <p class="aa-eyebrow">Platform · Fanfinity Activate · Ad Audiences</p>
+        <h1 class="aa-h1">Every ad dollar reaches <span class="aa-accent">a real fan.</span></h1>
+        <p class="aa-sub">Fanfinity Activate turns your best fans into lookalikes and builds suppression lists that update in real time. Budget flows to high-potential audiences — not to people who already converted, opted out, or should be retained, not re-acquired.</p>
+        <div class="aa-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary">Back to Fanfinity Activate</a>
+        </div>
+      </div>
+      <div class="aa-hero-visual" aria-hidden="true">
+        <div class="aa-board">
+          <span class="aa-board-tag">TONIGHT&rsquo;S AUCTION · same 12 people</span>
+          <div class="aa-board-row"><span>pixel sees: “18–34 · sports interest”</span><b class="aa-stamp-bid">BID</b></div>
+          <div class="aa-board-row aa-board-truth"><span>truth: converted yesterday</span><b class="aa-stamp-waste">WASTED</b></div>
+          <div class="aa-board-row"><span>first-party sync checks the graph…</span><b class="aa-stamp-skip">SKIP</b></div>
+          <div class="aa-board-saved">$10 of $24 stays with real fans</div>
+        </div>
+        <span class="aa-postmark aa-postmark-a">SAME PEOPLE<br>TWO RUNS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CENTERPIECE · THE IMPRESSION CONVEYOR ================= -->
+<section class="aa-play" id="aaPlay">
+  <div class="container-page">
+    <div class="aa-play-head" data-reveal>
+      <p class="aa-eyebrow">The impression conveyor</p>
+      <h2 class="aa-h2">Same twelve people. <span class="aa-accent">Two very different runs.</span></h2>
+      <p class="aa-lead">Twelve ad impressions go up for auction tonight. Run it with the pixel's guess — then run the same twelve with first-party sync and watch the waste never happen. Simulated auction; the suppression is the product.</p>
+    </div>
+
+    <div class="aa-aquarium" data-reveal>
+      <div class="aa-topbar">
+        <div class="aa-mode" id="aaMode">
+          <button type="button" class="aa-modebtn is-active" data-mode="pixel">RUN 1 · PIXEL ONLY<span>bids on guesses</span></button>
+          <button type="button" class="aa-modebtn" data-mode="sync">RUN 2 · FIRST-PARTY SYNC<span>bids on knowledge</span></button>
+        </div>
+        <button type="button" class="aa-run" id="aaRun">▶ Run the 12 impressions</button>
+        <div class="aa-counters">
+          <span class="aa-counter">BOUGHT <b id="aaBought">0</b></span>
+          <span class="aa-counter aa-counter-waste">WASTED <b id="aaWasted">$0</b></span>
+          <span class="aa-counter aa-counter-saved">SAVED <b id="aaSaved">$0</b></span>
+        </div>
+      </div>
+
+      <div class="aa-track" id="aaTrack">
+        <p class="aa-track-empty" id="aaEmpty">the conveyor is empty — pick a run and press play.</p>
+      </div>
+
+      <div class="aa-receipts" id="aaReceipts"></div>
+
+      <p class="aa-log" id="aaLog">tonight&rsquo;s queue: 12 impressions across Meta, Google, and TikTok — same people, two ways to bid.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="aa-capabilities">
+  <div class="container-page">
+    <div class="aa-sec-head" data-reveal>
+      <p class="aa-eyebrow">How ad audiences work</p>
+      <h2 class="aa-h2">Smarter targeting, <span class="aa-accent">better ROI</span></h2>
+      <p class="aa-lead">Lookalikes find fans similar to your converters. Suppression prevents wasted spend on wrong-fit audiences. Both update in real time as behavior changes.</p>
+    </div>
+    <div class="aa-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="aa-cap" data-reveal>
+        <span class="aa-cap-num">0{{ forloop.index }}</span>
+        <span class="aa-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= TWO LISTS SPLIT ================= -->
+<section class="aa-split">
+  <div class="container-page">
+    <div class="aa-split-grid">
+      <div class="aa-split-copy" data-reveal>
+        <p class="aa-eyebrow">From spend to smarter spend</p>
+        <h2 class="aa-h2">One list that grows you. <span class="aa-accent">One that protects you.</span></h2>
+        <p class="aa-lead">Lookalike audiences outperform broad demographic targeting because they're built on real fan value. Suppression lists eliminate wasted impressions on fans who can't convert. Together, they shift budget toward fans most likely to engage, retain, and spend.</p>
+        <ul class="aa-split-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/activate/audience-segmentation' | relative_url }}" class="btn btn-secondary">See audience segmentation</a>
+      </div>
+      <div class="aa-split-visual" data-reveal aria-hidden="true">
+        <div class="aa-lists">
+          <div class="aa-list aa-list-grow">
+            <span class="aa-list-tag">LIST 1 · LOOKALIKE — grow</span>
+            <div class="aa-list-row"><span>Seed: Gold fans · 90 d value</span><b>2,140</b></div>
+            <div class="aa-list-row"><span>Lookalikes across platforms</span><b>148,000</b></div>
+            <div class="aa-list-row"><span>Refreshes when new Gold fans appear</span><b>live</b></div>
+          </div>
+          <div class="aa-list aa-list-protect">
+            <span class="aa-list-tag">LIST 2 · SUPPRESS — protect</span>
+            <div class="aa-list-row"><span>Converted (any window you set)</span><b>blocked</b></div>
+            <div class="aa-list-row"><span>Opted out / consent withdrawn</span><b>blocked</b></div>
+            <div class="aa-list-row"><span>Churn-risk · retain, don't re-acquire</span><b>blocked</b></div>
+          </div>
+          <p class="aa-lists-cap">Both lists update the moment behavior changes — a fan who converts at lunch is off the auction by dinner.</p>
+        </div>
+        <span class="aa-postmark aa-postmark-b">GROW +<br>PROTECT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Run your next auction on knowledge, not guesses"
+   text="Book a walkthrough and we'll sync one of your live segments to an ad platform — then watch converted fans fall out of the auction in real time, and lookalikes of your best fans take their place." %}
+
+{% raw %}
+<style>
+/* ================= Ad Audiences page — scoped styles (.aa-) · air-mail family ================= */
+.aa-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #2f5fb3; display: flex; align-items: center; gap: .6rem; }
+.aa-eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .35rem, transparent .35rem .55rem); }
+.aa-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.3rem); margin: 1rem 0 0; color: #2a1f45; }
+.aa-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #2a1f45; }
+.aa-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.aa-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.aa-sub, .aa-lead { font-size: 1.08rem; line-height: 1.65; color: #54496e; margin-top: 1.2rem; max-width: 34rem; }
+.aa-sec-head .aa-lead, .aa-play-head .aa-lead { margin-left: auto; margin-right: auto; }
+.aa-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.aa-sec-head, .aa-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.aa-sec-head .aa-eyebrow, .aa-play-head .aa-eyebrow { justify-content: center; }
+
+/* --- hero --- */
+.aa-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background:
+  repeating-linear-gradient(0deg, transparent 0 27px, rgba(47,95,179,.05) 27px 28px),
+  radial-gradient(50rem 30rem at 88% -10%, rgba(124,58,237,.07), transparent 60%),
+  #f7f4fd; }
+.aa-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.aa-hero-grid > *, .aa-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .aa-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.aa-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1rem 0; }
+.aa-board { background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; box-shadow: 7px 8px 0 rgba(42,31,69,.12); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .55rem; transform: rotate(-.8deg); }
+.aa-board-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; }
+.aa-board-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; background: #fff; border: 1.5px solid #e6def7; border-radius: .7rem; padding: .5rem .65rem; font-size: .78rem; color: #54496e; }
+.aa-board-truth { border-color: #f2b8c4; background: #fdf0f2; }
+.aa-stamp-bid, .aa-stamp-waste, .aa-stamp-skip { font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .1em; border-radius: .35rem; padding: .2rem .45rem; transform: rotate(-4deg); }
+.aa-stamp-bid { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+.aa-stamp-waste { color: #a82540; border: 1.5px solid #d93b54; background: #fdf0f2; }
+.aa-stamp-skip { color: #8a6408; border: 1.5px dashed #b8860b; background: #fdf6e3; }
+.aa-board-saved { text-align: center; font-family: ui-monospace, monospace; font-size: .64rem; font-weight: 700; color: #0d5c40; background: #effaf5; border: 1.5px solid #9fd9c2; border-radius: .6rem; padding: .45rem .6rem; }
+.aa-postmark { position: absolute; display: inline-flex; align-items: center; justify-content: center; text-align: center; width: 4.6rem; height: 4.6rem; border: 2px solid #2a1f45; border-radius: 999px; outline: 1.5px dashed rgba(42,31,69,.55); outline-offset: 3px; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .12em; line-height: 1.5; background: rgba(253,252,255,.9); }
+.aa-postmark-a { top: -.8rem; right: 2%; transform: rotate(9deg); color: #d93b54; border-color: #d93b54; outline-color: rgba(217,59,84,.5); }
+.aa-postmark-b { top: -1rem; right: 4%; transform: rotate(8deg); color: #12805c; border-color: #12805c; outline-color: rgba(18,128,92,.5); }
+
+/* ================= CENTERPIECE ================= */
+.aa-play { padding: 4.5rem 0 5rem; background: #fdfcff; border-top: 1px solid #e9e2f8; border-bottom: 1px solid #e9e2f8; overflow-x: clip; }
+.aa-aquarium { position: relative; background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.4rem; box-shadow: 6px 7px 0 rgba(42,31,69,.12); padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.aa-aquarium::before { content: ""; position: absolute; top: -2px; left: 1.2rem; right: 1.2rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .5rem, transparent .5rem .8rem); }
+
+/* topbar */
+.aa-topbar { display: flex; align-items: center; gap: .8rem 1rem; flex-wrap: wrap; }
+.aa-mode { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; flex: 1; min-width: 16rem; }
+.aa-modebtn { display: flex; flex-direction: column; gap: .15rem; align-items: flex-start; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; letter-spacing: .06em; color: #8b84a6; background: #fdfcff; border: 1.5px dashed #ddd3f0; border-radius: .75rem; padding: .55rem .65rem; cursor: pointer; transition: all .16s; }
+.aa-modebtn span { font-weight: 400; font-size: .6rem; color: #9a93b5; }
+.aa-modebtn[data-mode="pixel"].is-active { color: #a82540; border: 1.5px solid #d93b54; background: #fdf0f2; }
+.aa-modebtn[data-mode="sync"].is-active { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+.aa-run { font-weight: 800; font-size: .92rem; color: #fdfcff; background: #2a1f45; border-radius: .8rem; padding: .7rem 1.1rem; cursor: pointer; transition: all .18s; }
+.aa-run:hover:not(:disabled) { background: #d93b54; }
+.aa-run:disabled { opacity: .55; cursor: default; }
+.aa-counters { display: flex; gap: .5rem; flex-wrap: wrap; margin-left: auto; }
+.aa-counter { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .1em; color: #9a93b5; background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: 999px; padding: .3rem .65rem; }
+.aa-counter b { color: #2a1f45; font-size: .78rem; margin-left: .2rem; }
+.aa-counter-waste b { color: #a82540; }
+.aa-counter-saved b { color: #12805c; }
+.aa-counter b.bump { display: inline-block; animation: aa-bump .4s ease; }
+@keyframes aa-bump { 40% { transform: scale(1.25); } }
+
+/* the track */
+.aa-track { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; min-height: 12rem; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.1rem; padding: .9rem; }
+@media (min-width: 700px) { .aa-track { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1024px) { .aa-track { grid-template-columns: repeat(4, 1fr); } }
+.aa-track-empty { grid-column: 1 / -1; align-self: center; text-align: center; font-family: ui-monospace, monospace; font-size: .7rem; color: #b3a8d1; padding: 2rem 0; }
+.aa-card { position: relative; display: flex; flex-direction: column; gap: .25rem; background: #fff; border: 2px solid #2a1f45; border-radius: .9rem; padding: .6rem .65rem .65rem; box-shadow: 3px 4px 0 rgba(42,31,69,.09); animation: aa-cardin .5s cubic-bezier(.2,1.1,.3,1) backwards; overflow: hidden; }
+@keyframes aa-cardin { from { opacity: 0; transform: translateX(-2.4rem) rotate(-3deg); } }
+.aa-card-plat { align-self: flex-start; font-family: ui-monospace, monospace; font-size: .54rem; font-weight: 700; letter-spacing: .12em; color: var(--pc, #2f5fb3); border: 1.5px solid var(--pc, #2f5fb3); border-radius: .35rem; padding: .12rem .4rem; }
+.aa-card-who { font-weight: 700; font-size: .8rem; color: #2a1f45; }
+.aa-card-guess { font-family: ui-monospace, monospace; font-size: .58rem; color: #9a93b5; }
+.aa-card-stamp { position: absolute; right: .5rem; top: .5rem; font-family: ui-monospace, monospace; font-size: .52rem; font-weight: 700; letter-spacing: .1em; border-radius: .35rem; padding: .2rem .42rem; transform: rotate(6deg) scale(1.9); opacity: 0; }
+.aa-card.is-resolved .aa-card-stamp { animation: aa-stamp .4s cubic-bezier(.2,1.5,.4,1) forwards; }
+@keyframes aa-stamp { to { opacity: 1; transform: rotate(6deg) scale(1); } }
+.aa-card-stamp-bought { color: #2f5fb3; border: 1.5px solid #2f5fb3; background: #eef3fd; }
+.aa-card-stamp-bid { color: #8a6408; border: 1.5px solid #b8860b; background: #fdf6e3; }
+.aa-card-stamp-wasted { color: #a82540; border: 1.5px solid #d93b54; background: #fdf0f2; }
+.aa-card-stamp-skip { color: #8a6408; border: 1.5px dashed #b8860b; background: #fdf6e3; }
+.aa-card-truth { display: none; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; margin-top: .2rem; }
+.aa-card.is-truth .aa-card-truth { display: block; animation: aa-truth .4s ease; }
+@keyframes aa-truth { from { opacity: 0; } }
+.aa-card.is-truth.aa-bad { border-color: #d93b54; background: #fdf7f8; }
+.aa-card.is-truth.aa-bad .aa-card-truth { color: #a82540; }
+.aa-card.is-truth.aa-good .aa-card-truth { color: #0d5c40; }
+.aa-card.is-look { border-color: #b8860b; background: #fffdf4; }
+
+/* receipts */
+.aa-receipts { display: grid; gap: .7rem; }
+@media (min-width: 700px) { .aa-receipts { grid-template-columns: 1fr 1fr; } }
+.aa-receipt { background: #fffdf6; border: 2px solid #2a1f45; border-radius: .2rem; box-shadow: 4px 5px 0 rgba(42,31,69,.1); padding: .8rem .95rem; font-family: ui-monospace, monospace; animation: aa-truth .5s ease; position: relative; }
+.aa-receipt::before, .aa-receipt::after { content: ""; position: absolute; left: 0; right: 0; height: .35rem; background: radial-gradient(circle at .35rem .35rem, transparent .25rem, #fffdf6 .26rem); background-size: .7rem .35rem; }
+.aa-receipt::before { top: -.35rem; transform: rotate(180deg); }
+.aa-receipt::after { bottom: -.35rem; }
+.aa-receipt-tag { font-size: .56rem; letter-spacing: .14em; font-weight: 700; }
+.aa-receipt-pixel .aa-receipt-tag { color: #a82540; }
+.aa-receipt-sync .aa-receipt-tag { color: #0d5c40; }
+.aa-receipt-rows { margin-top: .45rem; display: flex; flex-direction: column; gap: .2rem; }
+.aa-receipt-row { display: flex; justify-content: space-between; font-size: .66rem; color: #54496e; }
+.aa-receipt-row b { color: #2a1f45; }
+.aa-receipt-row.aa-r-bad b { color: #a82540; }
+.aa-receipt-row.aa-r-good b { color: #0d5c40; }
+.aa-receipt-total { margin-top: .45rem; padding-top: .4rem; border-top: 1.5px dashed #cbb89a; display: flex; justify-content: space-between; font-size: .72rem; font-weight: 700; color: #2a1f45; }
+
+.aa-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #54496e; background: #f7f4fd; border: 1.5px dashed #ddd3f0; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= CAPABILITIES · dark band ================= */
+.aa-capabilities { padding: 4.5rem 0; background: #241a3a; border-top: 2px solid #2a1f45; }
+.aa-capabilities .aa-eyebrow { color: #b7aee6; }
+.aa-capabilities .aa-eyebrow::before { background: repeating-linear-gradient(90deg, #b7aee6 0 .35rem, transparent .35rem .55rem); }
+.aa-capabilities .aa-h2 { color: #fff; }
+.aa-capabilities .aa-lead { color: #cfc6ea; }
+.aa-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .aa-cap-grid { grid-template-columns: 1fr 1fr; } }
+.aa-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 4px 5px 0 rgba(0,0,0,.3); transition: transform .18s ease, box-shadow .18s ease; }
+.aa-cap:hover { transform: translateY(-3px); box-shadow: 6px 8px 0 rgba(0,0,0,.38); }
+.aa-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #cfc4e8; }
+.aa-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #eef3fd; border: 1.5px solid #cdd9f2; color: #2f5fb3; transition: all .18s ease; }
+.aa-cap:hover .aa-cap-icon { background: #2f5fb3; border-color: #2f5fb3; color: #fff; }
+.aa-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #2a1f45; margin: .2rem 0 0; }
+.aa-cap p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= SPLIT ================= */
+.aa-split { padding: 4.5rem 0; background: #fdfcff; border-top: 1px solid #e9e2f8; }
+.aa-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .aa-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.aa-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.aa-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #54496e; }
+.aa-split-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.aa-split-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.4rem; }
+.aa-lists { display: flex; flex-direction: column; gap: .7rem; }
+.aa-list { background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.1rem; box-shadow: 5px 6px 0 rgba(42,31,69,.1); padding: .9rem 1rem; display: flex; flex-direction: column; gap: .5rem; }
+.aa-list-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; font-weight: 700; }
+.aa-list-grow .aa-list-tag { color: #0d5c40; }
+.aa-list-protect .aa-list-tag { color: #a82540; }
+.aa-list-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; background: #fff; border: 1.5px solid #e6def7; border-radius: .65rem; padding: .45rem .65rem; font-size: .78rem; color: #54496e; }
+.aa-list-row b { font-family: ui-monospace, monospace; font-size: .64rem; color: #2a1f45; }
+.aa-list-protect .aa-list-row b { color: #a82540; }
+.aa-lists-cap { font-size: .76rem; line-height: 1.5; color: #9a93b5; }
+
+@media (max-width: 480px) {
+  .aa-postmark { width: 3.9rem; height: 3.9rem; font-size: .48rem; }
+  .aa-mode { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-card, .aa-card.is-resolved .aa-card-stamp, .aa-card-truth, .aa-receipt, .aa-counter b.bump { animation-duration: .01s !important; }
+}
+</style>
+
+<script>
+/* ================= Ad Audiences page — impression conveyor engine ================= */
+(function () {
+  var play = document.getElementById('aaPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var PRICE = 2;
+  var CAST = [
+    { plat: 'META',    pc: '#2f5fb3', who: 'night scroller · 22:14',   guess: 'pixel: 18–34 · sports',   truth: null,                             look: true },
+    { plat: 'GOOGLE',  pc: '#12805c', who: 'search: “away tickets”',   guess: 'pixel: travel interest',  truth: 'converted yesterday',            look: false },
+    { plat: 'TIKTOK',  pc: '#d93b54', who: 'watches highlights',       guess: 'pixel: 16–24 · viral',    truth: null,                             look: false },
+    { plat: 'META',    pc: '#2f5fb3', who: 'lookalike pool B',         guess: 'pixel: similar to buyers', truth: 'converted last week',            look: false },
+    { plat: 'GOOGLE',  pc: '#12805c', who: 'search: “season pass”',    guess: 'pixel: high intent',      truth: null,                             look: true },
+    { plat: 'TIKTOK',  pc: '#d93b54', who: 'dance challenges',         guess: 'pixel: 16–24',            truth: 'opted out of ads',               look: false },
+    { plat: 'META',    pc: '#2f5fb3', who: 'festival hashtags',        guess: 'pixel: music interest',   truth: null,                             look: false },
+    { plat: 'GOOGLE',  pc: '#12805c', who: 'search: “merch store”',    guess: 'pixel: shopping',         truth: 'churn-risk · retain first',      look: false },
+    { plat: 'TIKTOK',  pc: '#d93b54', who: 'matchday clips',           guess: 'pixel: sports',           truth: null,                             look: false },
+    { plat: 'META',    pc: '#2f5fb3', who: 'broad: all adults',        guess: 'pixel: 18+',              truth: 'converted this morning',         look: false },
+    { plat: 'GOOGLE',  pc: '#12805c', who: 'search: “concert dates”',  guess: 'pixel: events',           truth: null,                             look: false },
+    { plat: 'TIKTOK',  pc: '#d93b54', who: 'sneaker drops',            guess: 'pixel: fashion',          truth: null,                             look: false }
+  ];
+
+  var state = { mode: 'pixel', running: false };
+  var track = $('aaTrack'), emptyNote = $('aaEmpty'), logEl = $('aaLog'), runBtn = $('aaRun');
+  var boughtEl = $('aaBought'), wastedEl = $('aaWasted'), savedEl = $('aaSaved'), receiptsEl = $('aaReceipts');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function bump(node) { node.classList.remove('bump'); void node.offsetWidth; node.classList.add('bump'); }
+
+  function buildCard(p, i) {
+    var card = el('div', 'aa-card');
+    card.setAttribute('data-i', i);
+    card.style.setProperty('--pc', p.pc);
+    card.appendChild(el('span', 'aa-card-plat', p.plat));
+    card.appendChild(el('span', 'aa-card-who', p.who));
+    card.appendChild(el('span', 'aa-card-guess', p.guess));
+    card.appendChild(el('b', 'aa-card-stamp', ''));
+    card.appendChild(el('span', 'aa-card-truth', ''));
+    return card;
+  }
+
+  function resolvePixel(card, p, counters) {
+    var stamp = card.querySelector('.aa-card-stamp');
+    stamp.textContent = 'BOUGHT';
+    stamp.classList.add('aa-card-stamp-bought');
+    card.classList.add('is-resolved');
+    counters.bought++;
+    boughtEl.textContent = counters.bought; bump(boughtEl);
+    if (p.truth) {
+      run(function () {
+        stamp.textContent = 'WASTED';
+        stamp.classList.remove('aa-card-stamp-bought');
+        stamp.classList.add('aa-card-stamp-wasted');
+        card.classList.add('is-truth', 'aa-bad');
+        card.querySelector('.aa-card-truth').textContent = p.truth + ' · wasted $' + PRICE;
+        counters.wasted += PRICE;
+        wastedEl.textContent = '$' + counters.wasted; bump(wastedEl);
+      }, 650);
+    }
+  }
+
+  function resolveSync(card, p, counters) {
+    var stamp = card.querySelector('.aa-card-stamp');
+    card.classList.add('is-resolved');
+    if (p.truth) {
+      stamp.textContent = 'SKIPPED';
+      stamp.classList.add('aa-card-stamp-skip');
+      card.classList.add('is-truth', 'aa-good');
+      card.querySelector('.aa-card-truth').textContent = 'suppressed · ' + p.truth + ' · saved $' + PRICE;
+      counters.saved += PRICE;
+      savedEl.textContent = '$' + counters.saved; bump(savedEl);
+    } else {
+      stamp.textContent = p.look ? 'BID ★' : 'BID';
+      stamp.classList.add(p.look ? 'aa-card-stamp-bid' : 'aa-card-stamp-bought');
+      if (p.look) {
+        card.classList.add('is-look', 'is-truth', 'aa-good');
+        card.querySelector('.aa-card-truth').textContent = 'lookalike of your Gold fans';
+      }
+      counters.bought++;
+      boughtEl.textContent = counters.bought; bump(boughtEl);
+    }
+  }
+
+  function receipt(mode, counters) {
+    var old = receiptsEl.querySelector('.aa-receipt-' + mode);
+    if (old) receiptsEl.removeChild(old);
+    var r = el('div', 'aa-receipt aa-receipt-' + mode);
+    r.appendChild(el('span', 'aa-receipt-tag', mode === 'pixel' ? 'RECEIPT · RUN 1 — PIXEL ONLY' : 'RECEIPT · RUN 2 — FIRST-PARTY SYNC'));
+    var rows = el('div', 'aa-receipt-rows');
+    function row(label, val, cls) {
+      var d = el('div', 'aa-receipt-row' + (cls ? ' ' + cls : ''));
+      d.appendChild(document.createTextNode(label));
+      d.appendChild(el('b', null, val));
+      rows.appendChild(d);
+    }
+    if (mode === 'pixel') {
+      row('impressions bought', '12 · $24');
+      row('already converted', '4 · $8', 'aa-r-bad');
+      row('opted out / retain-first', '1 · $2', 'aa-r-bad');
+      row('reach on real fans', '7', 'aa-r-good');
+      var t1 = el('div', 'aa-receipt-total');
+      t1.appendChild(document.createTextNode('waste'));
+      t1.appendChild(el('b', null, '$' + counters.wasted + ' · 42% burned'));
+      r.appendChild(rows); r.appendChild(t1);
+    } else {
+      row('impressions bought', '7 · $14');
+      row('suppressed before spend', '5', 'aa-r-good');
+      row('lookalikes prioritized', '2', 'aa-r-good');
+      row('reach on real fans', '7', 'aa-r-good');
+      var t2 = el('div', 'aa-receipt-total');
+      t2.appendChild(document.createTextNode('saved for real fans'));
+      t2.appendChild(el('b', null, '$' + counters.saved));
+      r.appendChild(rows); r.appendChild(t2);
+    }
+    receiptsEl.appendChild(r);
+  }
+
+  function runAuction() {
+    if (state.running) return;
+    state.running = true;
+    runBtn.disabled = true;
+    track.innerHTML = '';
+    var counters = { bought: 0, wasted: 0, saved: 0 };
+    boughtEl.textContent = '0'; wastedEl.textContent = '$0'; savedEl.textContent = '$0';
+    var mode = state.mode;
+
+    CAST.forEach(function (p, i) {
+      run(function () {
+        var card = buildCard(p, i);
+        track.appendChild(card);
+        run(function () {
+          if (mode === 'pixel') resolvePixel(card, p, counters);
+          else resolveSync(card, p, counters);
+        }, 420);
+      }, i * 260);
+    });
+
+    run(function () {
+      receipt(mode, counters);
+      state.running = false;
+      runBtn.disabled = false;
+      var both = receiptsEl.querySelectorAll('.aa-receipt').length === 2;
+      logEl.textContent = mode === 'pixel'
+        ? 'run 1 done: the pixel bought all 12 — then the truth arrived. Flip to first-party sync and run the same twelve again.'
+        : 'run 2 done: 5 impressions never happened — $10 stayed for real fans, and 2 lookalikes of Gold fans got the budget instead.' + (both ? ' Compare the receipts.' : '');
+    }, CAST.length * 260 + 1400);
+  }
+
+  $('aaMode').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.aa-modebtn') : null;
+    if (!btn) return;
+    var all = $('aaMode').querySelectorAll('.aa-modebtn');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('is-active');
+    btn.classList.add('is-active');
+    state.mode = btn.getAttribute('data-mode');
+    if (!state.running) {
+      logEl.textContent = state.mode === 'sync'
+        ? 'first-party sync armed — same twelve people. Run it and watch suppression happen before money moves.'
+        : 'pixel mode — the platform bids on guesses. Run it and watch the waste appear after.';
+    }
+  });
+
+  runBtn.addEventListener('click', runAuction);
+})();
+</script>
+{% endraw %}
