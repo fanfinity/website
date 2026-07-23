@@ -3,38 +3,516 @@ layout: page
 permalink: /platform/activate/omnichannel-messaging
 title: Omnichannel Messaging
 description: "Reach fans on WhatsApp, email, and push with Fanfinity Activate."
+cta: false
 breadcrumb_parent: { title: Fanfinity Activate, url: /platform/activate }
 capabilities:
-  - { icon: msgcircle, title: "WhatsApp, email, push",         body: "Send messages across every channel fans prefer: WhatsApp for urgency, email for rich content, push for timely alerts. One platform drives all three." }
-  - { icon: person,   title: "Personalized at scale",         body: "Every message is personalized to the fan: their name, history, preferences, and real-time signals. Bulk messaging that feels one-to-one." }
-  - { icon: zap,      title: "Real-time message delivery",    body: "Send immediately when conditions are met (fan checks out of retention, scores high on propensity). Response happens at the right moment, not days later." }
-  - { icon: bar,      title: "Detailed engagement metrics",   body: "Track opens, clicks, unsubscribes, and conversions per fan per message. See which channels and templates drive the most value for different cohorts." }
+  - { icon: chat,  title: "WhatsApp, email, push",      body: "Send messages across every channel fans prefer: WhatsApp for urgency, email for rich content, push for timely alerts. One platform drives all three." }
+  - { icon: users, title: "Personalized at scale",      body: "Every message is personalized to the fan: their name, history, preferences, and real-time signals. Bulk messaging that feels one-to-one." }
+  - { icon: bolt,  title: "Real-time message delivery", body: "Send immediately when conditions are met (fan checks out of retention, scores high on propensity). Response happens at the right moment, not days later." }
+  - { icon: chart, title: "Detailed engagement metrics", body: "Track opens, clicks, unsubscribes, and conversions per fan per message. See which channels and templates drive the most value for different cohorts." }
 benefits:
   - "Reach fans where they are: different channels for different preferences, one orchestration engine."
   - "Improve deliverability by respecting fan channel preferences and frequency caps."
   - "Increase response by sending the right message at the right moment through the right channel."
   - "Reduce cost per conversion by A/B testing templates, channels, and timing across thousands of fans."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Activate"
-   title="Reach fans on their channel of choice"
-   subtitle="Fanfinity Activate Omnichannel Messaging sends personalized campaigns across WhatsApp, email, and push. Every fan gets the message they want, on the channel they prefer, at the moment that matters most."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Activate"
-   secondary_url="/platform/activate"
-   icon="msgcircle" %}
 
-{% include feature-grid.html
-   heading="One orchestration engine, multiple channels"
-   subheading="Define a journey once. Fanfinity routes each fan to the right channel based on their preferences, history, and behavior. WhatsApp for high-urgency, email for rich content, push for real-time moments."
-   items=page.capabilities
-   columns=2 %}
+{% include activate-family-nav.html %}
 
-{% include feature-split.html
-   title="Deliver the right message through the right channel"
-   body="Fan preferences vary: some want WhatsApp urgency, others prefer email depth. Omnichannel Messaging respects these preferences while ensuring no fan falls through the cracks. Send once, reach everywhere, with the channel and cadence that works for each person."
-   points=page.benefits
-   cta_text="See journey orchestration"
-   cta_url="/platform/activate/journey-orchestration"
-   icon="msgcircle" %}
+<!-- ================= HERO ================= -->
+<section class="oc-hero">
+  <div class="container-page">
+    <div class="oc-hero-grid">
+      <div class="oc-hero-copy">
+        <p class="oc-eyebrow">Platform · Fanfinity Activate · Omnichannel Messaging</p>
+        <h1 class="oc-h1">One message. <span class="oc-accent">Every inbox.</span></h1>
+        <p class="oc-sub">Fanfinity Activate sends personalized campaigns across WhatsApp, email, and push. Every fan gets the message they want, on the channel they prefer, at the moment that matters most — and the moment they answer, the other channels know to go quiet.</p>
+        <div class="oc-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary">Back to Fanfinity Activate</a>
+        </div>
+      </div>
+      <div class="oc-hero-visual" aria-hidden="true">
+        <div class="oc-compose-mini">
+          <span class="oc-compose-tag">CAMPAIGN · one message</span>
+          <p>“Early bird passes drop tomorrow 10:00. Noura gets the first window.”</p>
+        </div>
+        <div class="oc-hero-wires"><i></i><i></i><i></i></div>
+        <div class="oc-hero-inboxes">
+          <div class="oc-hin oc-hin-wa"><span>{% include icon.html name="chat" class="h-3.5 w-3.5" %} WhatsApp</span><p class="oc-hin-bubble">Noura, your window opens 10:00 ✨</p></div>
+          <div class="oc-hin oc-hin-email"><span>{% include icon.html name="megaphone" class="h-3.5 w-3.5" %} Email</span><p class="oc-hin-subject">Your early window, Noura</p></div>
+          <div class="oc-hin oc-hin-push"><span>{% include icon.html name="bell" class="h-3.5 w-3.5" %} Lock screen</span><p class="oc-hin-notif">Early bird: your window opens 10:00</p></div>
+        </div>
+        <span class="oc-postmark oc-postmark-a">EVERY<br>INBOX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CENTERPIECE · THE INBOX EVENING ================= -->
+<section class="oc-play" id="ocPlay">
+  <div class="container-page">
+    <div class="oc-play-head" data-reveal>
+      <p class="oc-eyebrow">The inbox evening</p>
+      <h2 class="oc-h2">Send it once. <span class="oc-accent">Watch her answer once.</span></h2>
+      <p class="oc-lead">Compose one piece of news and deliver it to Noura's three inboxes — each rendered natively, each personalized. Then watch what happens the moment she replies: every other channel stands down. Simulated fan; the coordination is the product.</p>
+    </div>
+
+    <div class="oc-play-grid">
+      <!-- CONSOLE -->
+      <div class="oc-console" data-reveal>
+        <div class="oc-step">
+          <span class="oc-step-num">01 · What's the news?</span>
+          <div class="oc-news" id="ocNews">
+            <button type="button" class="oc-newsbtn is-active" data-news="festival"><i style="--c:#c026d3"></i><span><b>Early-bird passes, tomorrow 10:00</b><em>the festival · she attended 2 editions</em></span></button>
+            <button type="button" class="oc-newsbtn" data-news="stream"><i style="--c:#4f46e5"></i><span><b>Season finale lands tonight 21:00</b><em>the stream · she's 8 episodes in</em></span></button>
+            <button type="button" class="oc-newsbtn" data-news="brand"><i style="--c:#b8860b"></i><span><b>The jacket she viewed is −20%</b><em>the brand · size M, almost gone</em></span></button>
+          </div>
+        </div>
+
+        <div class="oc-step">
+          <span class="oc-step-num">02 · When does it go out?</span>
+          <div class="oc-when" id="ocWhen">
+            <button type="button" class="oc-whenbtn is-active" data-when="now">Send now<span>21:14 · inside her hours</span></button>
+            <button type="button" class="oc-whenbtn" data-when="late">Schedule 23:40<span>quiet hours 22:00–08:00</span></button>
+          </div>
+        </div>
+
+        <button type="button" class="oc-send" id="ocSend">Send to her three inboxes →</button>
+        <p class="oc-note" id="ocNote">WhatsApp is her preferred channel — the profile knows.</p>
+      </div>
+
+      <!-- INBOXES -->
+      <div class="oc-stage" data-reveal>
+        <div class="oc-inboxes">
+          <div class="oc-inbox oc-inbox-wa" data-ch="wa">
+            <div class="oc-inbox-head">{% include icon.html name="chat" class="h-4 w-4" %} WhatsApp <span class="oc-inbox-who">Noura · preferred</span></div>
+            <div class="oc-inbox-body" id="ocBody-wa"><p class="oc-idle">nothing yet — compose and send.</p></div>
+            <div class="oc-inbox-stamp" id="ocStamp-wa"></div>
+          </div>
+          <div class="oc-inbox oc-inbox-email" data-ch="email">
+            <div class="oc-inbox-head">{% include icon.html name="megaphone" class="h-4 w-4" %} Email <span class="oc-inbox-who">Inbox · Noura</span></div>
+            <div class="oc-inbox-body" id="ocBody-email"><p class="oc-idle">nothing yet — compose and send.</p></div>
+            <div class="oc-inbox-stamp" id="ocStamp-email"></div>
+          </div>
+          <div class="oc-inbox oc-inbox-push" data-ch="push">
+            <div class="oc-inbox-head">{% include icon.html name="bell" class="h-4 w-4" %} Lock screen <span class="oc-inbox-who">23:40 …</span></div>
+            <div class="oc-inbox-body" id="ocBody-push"><p class="oc-idle">nothing yet — compose and send.</p></div>
+            <div class="oc-inbox-stamp" id="ocStamp-push"></div>
+          </div>
+        </div>
+
+        <div class="oc-metrics" id="ocMetrics">
+          <div class="oc-metric"><span>DELIVERED</span><b id="ocMetDel">—</b></div>
+          <div class="oc-metric"><span>READ / OPENED</span><b id="ocMetRead">—</b></div>
+          <div class="oc-metric"><span>REPLIED</span><b id="ocMetRep">—</b></div>
+          <div class="oc-metric"><span>SUPPRESSED</span><b id="ocMetSup">—</b></div>
+        </div>
+
+        <p class="oc-log" id="ocLog">21:14 · desk ready — pick the news and send.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="oc-capabilities">
+  <div class="container-page">
+    <div class="oc-sec-head" data-reveal>
+      <p class="oc-eyebrow">How omnichannel messaging works</p>
+      <h2 class="oc-h2">One orchestration engine, <span class="oc-accent">multiple channels</span></h2>
+      <p class="oc-lead">Define the message once. Fanfinity routes each fan to the right channel based on their preferences, history, and behavior — WhatsApp for urgency, email for depth, push for the live moment.</p>
+    </div>
+    <div class="oc-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="oc-cap" data-reveal>
+        <span class="oc-cap-num">0{{ forloop.index }}</span>
+        <span class="oc-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= DELIVERABILITY SPLIT ================= -->
+<section class="oc-deliver">
+  <div class="container-page">
+    <div class="oc-del-grid">
+      <div class="oc-del-copy" data-reveal>
+        <p class="oc-eyebrow">Right channel, right moment</p>
+        <h2 class="oc-h2">Deliverability is <span class="oc-accent">respect, engineered</span></h2>
+        <p class="oc-lead">Fan preferences vary: some want WhatsApp urgency, others prefer email depth. Omnichannel Messaging respects these preferences while ensuring no fan falls through the cracks — send once, reach everywhere, with the channel and cadence that works for each person.</p>
+        <ul class="oc-del-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/activate/journey-orchestration' | relative_url }}" class="btn btn-secondary">See journey orchestration</a>
+      </div>
+      <div class="oc-del-visual" data-reveal aria-hidden="true">
+        <div class="oc-respect">
+          <div class="oc-respect-top"><span>HER EVENING · respected by default</span></div>
+          <div class="oc-respect-row"><span class="oc-respect-k">{% include icon.html name="chat" class="h-4 w-4" %} Preferred channel</span><b>WhatsApp · 3× more replies</b></div>
+          <div class="oc-respect-row"><span class="oc-respect-k">{% include icon.html name="bell" class="h-4 w-4" %} Quiet hours</span><b>22:00 – 08:00 · push holds</b></div>
+          <div class="oc-respect-row"><span class="oc-respect-k">{% include icon.html name="gauge" class="h-4 w-4" %} Frequency this week</span><b>2 of 3 · one more allowed</b></div>
+          <div class="oc-respect-row"><span class="oc-respect-k">{% include icon.html name="repeat" class="h-4 w-4" %} After a reply</span><b>other channels stand down</b></div>
+          <p class="oc-respect-cap">All four rules read from the same governed profile at send time — not from settings copied into each tool.</p>
+        </div>
+        <span class="oc-postmark oc-postmark-b">NO DOUBLE<br>NUDGING</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="One message, every inbox — answered once"
+   text="Book a walkthrough and we'll send a real campaign to a test profile across WhatsApp, email, and push — and watch the channels coordinate around her reply." %}
+
+{% raw %}
+<style>
+/* ================= Omnichannel Messaging page — scoped styles (.oc-) · air-mail family ================= */
+.oc-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #2f5fb3; display: flex; align-items: center; gap: .6rem; }
+.oc-eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .35rem, transparent .35rem .55rem); }
+.oc-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.3rem); margin: 1rem 0 0; color: #2a1f45; }
+.oc-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #2a1f45; }
+.oc-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.oc-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.oc-sub, .oc-lead { font-size: 1.08rem; line-height: 1.65; color: #54496e; margin-top: 1.2rem; max-width: 34rem; }
+.oc-sec-head .oc-lead, .oc-play-head .oc-lead { margin-left: auto; margin-right: auto; }
+.oc-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.oc-sec-head, .oc-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.oc-sec-head .oc-eyebrow, .oc-play-head .oc-eyebrow { justify-content: center; }
+
+/* --- hero --- */
+.oc-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background:
+  repeating-linear-gradient(0deg, transparent 0 27px, rgba(47,95,179,.05) 27px 28px),
+  radial-gradient(50rem 30rem at 88% -10%, rgba(124,58,237,.07), transparent 60%),
+  #f7f4fd; }
+.oc-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.oc-hero-grid > *, .oc-play-grid > *, .oc-del-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .oc-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.oc-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1rem 0; }
+.oc-compose-mini { background: #2a1f45; color: #f5f0ff; border-radius: 1rem; padding: .9rem 1rem; box-shadow: 6px 7px 0 rgba(42,31,69,.16); transform: rotate(-1deg); }
+.oc-compose-tag { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; color: #b7aee6; }
+.oc-compose-mini p { margin-top: .35rem; font-size: .92rem; line-height: 1.5; }
+.oc-hero-wires { display: flex; justify-content: space-around; padding: 0 2rem; }
+.oc-hero-wires i { width: 0; height: 1.5rem; border-left: 2px dashed #b3a8d1; }
+.oc-hero-inboxes { display: grid; gap: .6rem; }
+.oc-hin { background: #fdfcff; border: 2px solid #2a1f45; border-radius: .95rem; padding: .6rem .8rem; box-shadow: 4px 5px 0 rgba(42,31,69,.09); }
+.oc-hin span { display: inline-flex; align-items: center; gap: .4rem; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .12em; font-weight: 700; }
+.oc-hin-wa span { color: #0d5c40; }
+.oc-hin-email span { color: #2f5fb3; }
+.oc-hin-push span { color: #7c3aed; }
+.oc-hin p { margin-top: .4rem; font-size: .8rem; color: #2a1f45; }
+.oc-hin-bubble { background: #e7f6ec; border: 1.5px solid #b9e2c8; border-radius: .2rem .7rem .7rem .7rem; padding: .4rem .6rem; }
+.oc-hin-subject { font-weight: 700; }
+.oc-hin-notif { background: #2a1f45; color: #f5f0ff; border-radius: .6rem; padding: .4rem .6rem; font-size: .76rem; }
+.oc-hin p.oc-hin-notif { color: #f5f0ff; }
+.oc-hin-wa { transform: rotate(.8deg); }
+.oc-hin-email { transform: rotate(-.7deg) translateX(.8rem); }
+.oc-hin-push { transform: rotate(.5deg); }
+.oc-postmark { position: absolute; display: inline-flex; align-items: center; justify-content: center; text-align: center; width: 4.6rem; height: 4.6rem; border: 2px solid #2a1f45; border-radius: 999px; outline: 1.5px dashed rgba(42,31,69,.55); outline-offset: 3px; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .12em; line-height: 1.5; background: rgba(253,252,255,.9); }
+.oc-postmark-a { top: -.6rem; right: 2%; transform: rotate(9deg); color: #d93b54; border-color: #d93b54; outline-color: rgba(217,59,84,.5); }
+.oc-postmark-b { top: -1rem; right: 4%; transform: rotate(8deg); color: #12805c; border-color: #12805c; outline-color: rgba(18,128,92,.5); }
+
+/* ================= CENTERPIECE ================= */
+.oc-play { padding: 4.5rem 0 5rem; background: #fdfcff; border-top: 1px solid #e9e2f8; border-bottom: 1px solid #e9e2f8; overflow-x: clip; }
+.oc-play-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 1024px) { .oc-play-grid { grid-template-columns: minmax(0, 23rem) 1fr; gap: 2.4rem; } }
+
+/* --- console --- */
+.oc-console { position: relative; background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.3rem; box-shadow: 6px 7px 0 rgba(42,31,69,.12); padding: 1.2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.oc-console::before { content: ""; position: absolute; top: -2px; left: 1.2rem; right: 1.2rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .5rem, transparent .5rem .8rem); }
+.oc-step { display: flex; flex-direction: column; gap: .55rem; }
+.oc-step + .oc-step { border-top: 1.5px dashed #ddd3f0; padding-top: 1rem; }
+.oc-step-num { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .12em; color: #2f5fb3; font-weight: 700; }
+.oc-news { display: flex; flex-direction: column; gap: .5rem; }
+.oc-newsbtn { display: flex; align-items: center; gap: .6rem; text-align: left; background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: .85rem; padding: .55rem .7rem; cursor: pointer; transition: all .16s; color: #2a1f45; }
+.oc-newsbtn i { width: .75rem; height: .75rem; flex: none; border-radius: 999px; background: var(--c); }
+.oc-newsbtn span { display: flex; flex-direction: column; min-width: 0; }
+.oc-newsbtn b { font-size: .86rem; line-height: 1.3; }
+.oc-newsbtn em { font-style: normal; font-family: ui-monospace, monospace; font-size: .64rem; color: #9a93b5; }
+.oc-newsbtn:hover { border-color: #d93b54; transform: translateY(-1px); }
+.oc-newsbtn.is-active { background: #fff; border-color: #d93b54; box-shadow: 0 0 0 2px rgba(217,59,84,.16), 3px 3px 0 rgba(217,59,84,.14); }
+.oc-when { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.oc-whenbtn { display: flex; flex-direction: column; gap: .15rem; align-items: flex-start; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; letter-spacing: .06em; color: #8b84a6; background: #fdfcff; border: 1.5px dashed #ddd3f0; border-radius: .75rem; padding: .55rem .65rem; cursor: pointer; transition: all .16s; }
+.oc-whenbtn span { font-weight: 400; font-size: .6rem; color: #9a93b5; }
+.oc-whenbtn[data-when="now"].is-active { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+.oc-whenbtn[data-when="late"].is-active { color: #8a6408; border: 1.5px solid #b8860b; background: #fdf6e3; }
+.oc-send { font-weight: 800; font-size: 1rem; color: #fdfcff; background: #2a1f45; border-radius: .9rem; padding: .9rem 1rem; cursor: pointer; transition: all .18s; }
+.oc-send:hover { background: #d93b54; }
+.oc-send:active { transform: translateY(1px); }
+.oc-note { font-family: ui-monospace, monospace; font-size: .68rem; color: #9a93b5; }
+
+/* --- inboxes --- */
+.oc-stage { display: flex; flex-direction: column; gap: 1rem; }
+.oc-inboxes { display: grid; gap: .9rem; }
+@media (min-width: 900px) { .oc-inboxes { grid-template-columns: repeat(3, 1fr); } }
+.oc-inbox { position: relative; background: #fff; border: 2px solid #2a1f45; border-radius: 1.1rem; box-shadow: 4px 5px 0 rgba(42,31,69,.09); padding: .9rem .95rem 1rem; overflow: hidden; transition: all .3s; }
+.oc-inbox-head { display: flex; align-items: center; gap: .45rem; font-weight: 700; font-size: .9rem; color: #2a1f45; padding-bottom: .55rem; border-bottom: 1.5px dashed #e6def7; }
+.oc-inbox-wa .oc-inbox-head svg { color: #0d5c40; }
+.oc-inbox-email .oc-inbox-head svg { color: #2f5fb3; }
+.oc-inbox-push .oc-inbox-head svg { color: #7c3aed; }
+.oc-inbox-who { margin-left: auto; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 400; letter-spacing: .06em; color: #9a93b5; }
+.oc-inbox-body { margin-top: .6rem; min-height: 6.4rem; display: flex; flex-direction: column; gap: .5rem; }
+.oc-idle { font-family: ui-monospace, monospace; font-size: .7rem; color: #b3a8d1; padding-top: .6rem; }
+.oc-inbox-stamp { position: absolute; right: .8rem; bottom: .8rem; font-family: ui-monospace, monospace; font-size: .52rem; font-weight: 700; letter-spacing: .1em; text-align: center; line-height: 1.5; padding: .3rem .45rem; border-radius: .4rem; transform: rotate(-6deg) scale(1.8); opacity: 0; pointer-events: none; }
+.oc-inbox.is-suppressed { border-color: #b3a8d1; background: #fbfaff; }
+.oc-inbox.is-suppressed .oc-inbox-stamp { color: #6b6486; border: 1.5px dashed #9a93b5; background: rgba(247,244,253,.95); animation: oc-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+.oc-inbox.is-replied .oc-inbox-stamp { color: #0d5c40; border: 1.5px solid #12805c; background: rgba(239,250,245,.94); animation: oc-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+.oc-inbox.is-held .oc-inbox-stamp { color: #8a6408; border: 1.5px dashed #b8860b; background: rgba(253,246,227,.94); animation: oc-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+@keyframes oc-stamp { to { opacity: 1; transform: rotate(-6deg) scale(1); } }
+.oc-inbox.is-suppressed .oc-msg { opacity: .45; filter: saturate(.4); }
+
+/* message renderings */
+.oc-msg { animation: oc-msgin .45s ease; font-size: .8rem; line-height: 1.5; color: #2a1f45; }
+@keyframes oc-msgin { from { opacity: 0; transform: translateY(8px); } }
+.oc-typing { display: inline-flex; gap: .3rem; padding: .4rem .2rem; }
+.oc-typing i { width: .4rem; height: .4rem; border-radius: 999px; background: #b9e2c8; animation: oc-typing .9s ease-in-out infinite; }
+.oc-typing i:nth-child(2) { animation-delay: .15s; }
+.oc-typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes oc-typing { 50% { transform: translateY(-4px); background: #12805c; } }
+.oc-bubble { background: #e7f6ec; border: 1.5px solid #b9e2c8; border-radius: .2rem .8rem .8rem .8rem; padding: .55rem .7rem; }
+.oc-bubble-ticks { display: flex; justify-content: flex-end; gap: .2rem; font-family: ui-monospace, monospace; font-size: .6rem; color: #9a93b5; }
+.oc-bubble-ticks.is-read { color: #2f9de2; }
+.oc-reply { align-self: flex-end; background: #dcf3e5; border: 1.5px solid #9fd9c2; border-radius: .8rem .2rem .8rem .8rem; padding: .55rem .7rem; animation: oc-msgin .45s ease; }
+.oc-reply span { display: block; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .1em; color: #0d5c40; margin-top: .3rem; }
+.oc-emailcard { border: 1.5px solid #cdd9f2; border-radius: .7rem; overflow: hidden; }
+.oc-emailcard span { display: block; font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .08em; color: #2f5fb3; background: #eef3fd; padding: .35rem .6rem; border-bottom: 1.5px solid #cdd9f2; }
+.oc-emailcard b { display: block; padding: .5rem .6rem .2rem; font-size: .86rem; }
+.oc-emailcard p { padding: 0 .6rem .55rem; font-size: .76rem; color: #54496e; }
+.oc-notif { display: flex; gap: .5rem; align-items: flex-start; background: #2a1f45; color: #f5f0ff; border-radius: .8rem; padding: .55rem .65rem; font-size: .76rem; }
+.oc-notif::before { content: ""; width: .8rem; height: .8rem; flex: none; margin-top: .15rem; border-radius: .25rem; background: #7c3aed; }
+.oc-held-note { font-family: ui-monospace, monospace; font-size: .64rem; color: #8a6408; background: #fdf6e3; border: 1.5px dashed #e3cf96; border-radius: .6rem; padding: .45rem .6rem; }
+
+/* metrics + log */
+.oc-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: .55rem; }
+@media (min-width: 640px) { .oc-metrics { grid-template-columns: repeat(4, 1fr); } }
+.oc-metric { background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: .75rem; padding: .5rem .6rem; text-align: center; }
+.oc-metric span { display: block; font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .1em; color: #9a93b5; }
+.oc-metric b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.25rem; color: #2a1f45; }
+.oc-metric.bump b { animation: oc-bump .4s ease; }
+@keyframes oc-bump { 40% { transform: scale(1.18); } }
+.oc-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #54496e; background: #f7f4fd; border: 1.5px dashed #ddd3f0; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= CAPABILITIES ================= */
+.oc-capabilities { padding: 4.5rem 0; background: #f7f4fd; }
+.oc-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .oc-cap-grid { grid-template-columns: 1fr 1fr; } }
+.oc-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 4px 5px 0 rgba(42,31,69,.08); transition: transform .18s ease, box-shadow .18s ease; }
+.oc-cap:hover { transform: translateY(-3px); box-shadow: 6px 8px 0 rgba(42,31,69,.13); }
+.oc-cap-num { position: absolute; top: 1.1rem; right: 1.2rem; font-family: ui-monospace, monospace; font-size: .72rem; color: #cfc4e8; }
+.oc-cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #eef3fd; border: 1.5px solid #cdd9f2; color: #2f5fb3; transition: all .18s ease; }
+.oc-cap:hover .oc-cap-icon { background: #2f5fb3; border-color: #2f5fb3; color: #fff; }
+.oc-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #2a1f45; margin: .2rem 0 0; }
+.oc-cap p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= DELIVERABILITY ================= */
+.oc-deliver { padding: 4.5rem 0; background: #fdfcff; border-top: 1px solid #e9e2f8; }
+.oc-del-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .oc-del-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.oc-del-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.oc-del-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #54496e; }
+.oc-del-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.oc-del-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.4rem; }
+.oc-respect { background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.3rem; box-shadow: 6px 7px 0 rgba(42,31,69,.1); padding: 1.1rem 1.15rem; display: flex; flex-direction: column; gap: .6rem; }
+.oc-respect-top span { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; }
+.oc-respect-row { display: flex; align-items: center; justify-content: space-between; gap: .7rem; background: #fff; border: 1.5px solid #e6def7; border-radius: .75rem; padding: .55rem .7rem; }
+.oc-respect-k { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; color: #54496e; }
+.oc-respect-k svg { color: #7c3aed; flex: none; }
+.oc-respect-row b { font-family: ui-monospace, monospace; font-size: .68rem; color: #2a1f45; text-align: right; }
+.oc-respect-cap { font-size: .76rem; line-height: 1.5; color: #9a93b5; }
+
+@media (max-width: 480px) {
+  .oc-postmark { width: 3.9rem; height: 3.9rem; font-size: .48rem; }
+  .oc-when { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oc-typing i { animation: none !important; }
+  .oc-msg, .oc-reply, .oc-inbox.is-suppressed .oc-inbox-stamp, .oc-inbox.is-replied .oc-inbox-stamp, .oc-inbox.is-held .oc-inbox-stamp, .oc-metric.bump b { animation-duration: .01s !important; }
+}
+</style>
+
+<script>
+/* ================= Omnichannel page — inbox evening engine ================= */
+(function () {
+  var play = document.getElementById('ocPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var NEWS = {
+    festival: {
+      label: 'early-bird announcement',
+      wa: 'Noura — early-bird for the festival opens 10:00 tomorrow. Your window unlocks first (2 editions attended) ✨',
+      email: { from: 'The Festival · passes', subject: 'Your early window opens 10:00, Noura', snippet: 'Two editions with us — this one\u2019s early-bird for you first…' },
+      push: 'Early-bird 10:00 tomorrow — your window opens first',
+      reply: 'Just got mine — see you at the gates! 🎉'
+    },
+    stream: {
+      label: 'finale reminder',
+      wa: 'The finale lands 21:00 tonight, Noura — you\u2019re 8 episodes in. No spoilers here. Watch party?',
+      email: { from: 'The Stream · tonight', subject: 'Finale tonight 21:00 — you left off at ep 8', snippet: 'One episode left. Tonight at 21:00, it ends…' },
+      push: 'Finale tonight 21:00 — one episode left',
+      reply: 'Watching tonight!! No spoilers please 😅'
+    },
+    brand: {
+      label: 'price drop',
+      wa: 'The limited jacket you viewed (size M) just went −20%, Noura — only a few left in your size.',
+      email: { from: 'The Brand · price drop', subject: '−20% on the jacket you viewed — size M', snippet: 'Almost gone in M. Your price holds until Sunday…' },
+      push: '−20%: the jacket in size M — almost gone',
+      reply: 'Ordered! Thanks for the heads up 🙌'
+    }
+  };
+
+  var state = { news: 'festival', when: 'now', sending: false };
+  var logEl = $('ocLog'), sendBtn = $('ocSend');
+  var metDel = $('ocMetDel'), metRead = $('ocMetRead'), metRep = $('ocMetRep'), metSup = $('ocMetSup');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function inbox(ch) { return play.querySelector('.oc-inbox[data-ch="' + ch + '"]'); }
+  function body(ch) { return $('ocBody-' + ch); }
+  function stamp(ch) { return $('ocStamp-' + ch); }
+
+  function setStamp(ch, html) {
+    var s = stamp(ch);
+    s.innerHTML = '';
+    var parts = html.split('|');
+    for (var i = 0; i < parts.length; i++) {
+      if (i) s.appendChild(document.createElement('br'));
+      s.appendChild(document.createTextNode(parts[i]));
+    }
+  }
+
+  function resetInbox(ch) {
+    var c = inbox(ch);
+    c.classList.remove('is-suppressed', 'is-replied', 'is-held');
+    stamp(ch).textContent = '';
+    var b = body(ch);
+    b.innerHTML = '';
+    b.appendChild(el('p', 'oc-idle', 'nothing yet — compose and send.'));
+  }
+
+  function setMetric(elm, val) {
+    elm.textContent = val;
+    var card = elm.parentNode;
+    if (card && card.classList) {
+      card.classList.remove('bump');
+      void card.offsetWidth;
+      card.classList.add('bump');
+    }
+  }
+
+  function send() {
+    if (state.sending) return;
+    state.sending = true;
+    var n = NEWS[state.news];
+    var late = state.when === 'late';
+    ['wa', 'email', 'push'].forEach(resetInbox);
+
+    /* WhatsApp · typing → bubble → read ticks */
+    run(function () {
+      var b = body('wa'); b.innerHTML = '';
+      var t = el('span', 'oc-typing'); t.appendChild(el('i')); t.appendChild(el('i')); t.appendChild(el('i'));
+      b.appendChild(t);
+    }, 150);
+    run(function () {
+      var b = body('wa'); b.innerHTML = '';
+      var msg = el('div', 'oc-msg');
+      msg.appendChild(el('div', 'oc-bubble', n.wa));
+      var ticks = el('span', 'oc-bubble-ticks', '✓✓ 21:14');
+      ticks.setAttribute('id', 'ocTicks');
+      msg.appendChild(ticks);
+      b.appendChild(msg);
+      setMetric(metDel, late ? 2 : 3);
+    }, 900);
+    run(function () {
+      var ticks = $('ocTicks');
+      if (ticks) ticks.classList.add('is-read');
+      setMetric(metRead, late ? 2 : 3);
+    }, 1750);
+
+    /* Email */
+    run(function () {
+      var b = body('email'); b.innerHTML = '';
+      var card = el('div', 'oc-msg oc-emailcard');
+      card.appendChild(el('span', null, 'FROM · ' + n.email.from.toUpperCase()));
+      card.appendChild(el('b', null, n.email.subject));
+      card.appendChild(el('p', null, n.email.snippet));
+      b.appendChild(card);
+    }, 550);
+
+    /* Push · live or held by quiet hours */
+    run(function () {
+      var b = body('push'); b.innerHTML = '';
+      if (late) {
+        inbox('push').classList.add('is-held');
+        b.appendChild(el('div', 'oc-held-note', 'queued · quiet hours 22:00–08:00 — scheduled for 08:00 tomorrow.'));
+        setStamp('push', 'HELD|QUIET HOURS');
+      } else {
+        b.appendChild(el('div', 'oc-msg oc-notif', n.push));
+      }
+    }, 350);
+
+    /* She replies on WhatsApp */
+    run(function () {
+      var b = body('wa');
+      var rep = el('div', 'oc-reply');
+      rep.appendChild(document.createTextNode(n.reply));
+      rep.appendChild(el('span', null, 'NOURA · 21:16'));
+      b.appendChild(rep);
+      inbox('wa').classList.add('is-replied');
+      setStamp('wa', 'REPLIED|21:16');
+      setMetric(metRep, 1);
+    }, 2450);
+
+    /* Every other channel stands down */
+    run(function () {
+      inbox('email').classList.add('is-suppressed');
+      setStamp('email', 'SUPPRESSED|REPLIED ON WHATSAPP');
+      if (late) {
+        setStamp('push', 'CANCELLED|SHE REPLIED FIRST');
+      } else {
+        inbox('push').classList.add('is-suppressed');
+        setStamp('push', 'SUPPRESSED|REPLIED ON WHATSAPP');
+      }
+      setMetric(metSup, 2);
+      logEl.textContent = '21:14–21:16 · ' + n.label + ' → delivered ' + (late ? '2 (+1 queued)' : '3') +
+        ' · read ' + (late ? '2' : '3') + ' · she replied on WhatsApp · 2 channels stood down. One conversation, not three pings.';
+      state.sending = false;
+    }, 3100);
+  }
+
+  $('ocNews').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.oc-newsbtn') : null;
+    if (!btn) return;
+    var all = $('ocNews').querySelectorAll('.oc-newsbtn');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('is-active');
+    btn.classList.add('is-active');
+    state.news = btn.getAttribute('data-news');
+    ['wa', 'email', 'push'].forEach(resetInbox);
+    setMetric(metDel, '—'); setMetric(metRead, '—'); setMetric(metRep, '—'); setMetric(metSup, '—');
+    logEl.textContent = '21:14 · news armed — send when ready.';
+  });
+
+  $('ocWhen').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.oc-whenbtn') : null;
+    if (!btn) return;
+    var all = $('ocWhen').querySelectorAll('.oc-whenbtn');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('is-active');
+    btn.classList.add('is-active');
+    state.when = btn.getAttribute('data-when');
+    $('ocNote').textContent = state.when === 'late'
+      ? '23:40 is inside her quiet hours — push will hold for 08:00.'
+      : 'WhatsApp is her preferred channel — the profile knows.';
+  });
+
+  sendBtn.addEventListener('click', send);
+})();
+</script>
+{% endraw %}

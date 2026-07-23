@@ -3,6 +3,7 @@ layout: page
 permalink: /platform/activate
 title: Fanfinity Activate
 description: "Reach known fans across WhatsApp, email, push, and paid media. Segment on live behavior and orchestrate journeys that react in real time, all from one governed profile."
+cta: false
 breadcrumb_parent: { title: Platform, url: /platform }
 channels:
   - { icon: chat,      title: "WhatsApp", body: "The leading messenger across the region. Trigger personalized conversations from real-time fan behavior, with consent enforced from the same governed profile." }
@@ -17,7 +18,7 @@ data_points:
   - "Data is validated before activation, so messages don't go out on broken or missing fields."
   - "Marketing and data teams read the same governed profile, with delivery history you can query."
 journey_points:
-  - "Multi-step, multi-channel journeys triggered off live events and attributes. (The visual drag-and-drop canvas is in design preview.)"
+  - "Multi-step, multi-channel journeys triggered off live events and attributes."
   - "Each fan is routed on what they just did, not on where a batch schedule left them."
   - "Journeys and one-off sends draw from the same segment definitions, so nothing is rebuilt per channel."
   - "Messages draw on the whole governed profile at send time, so gaps and stale fields don't quietly creep in."
@@ -26,43 +27,741 @@ segment:
   - { icon: bolt,   title: "Membership updates in real time", body: "Segments are evaluated against the live profile, so a fan enters or leaves the moment their behavior changes rather than at the next nightly rebuild. A high-intent or lapsing audience reflects what is true now, not last night." }
   - { icon: target, title: "Sync audiences to owned and paid", body: "One audience pushes to email, push, messaging, on-site experiences, and ad platforms at once. Because it is built on the resolved first-party profile, the same fan is addressed consistently everywhere instead of as a different record per tool." }
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Activate"
-   title="Reach the right fan, everywhere."
-   subtitle="Fanfinity Activate turns one governed fan profile into real-time engagement across WhatsApp, email, push, and paid media. Segment on live behavior and orchestrate journeys that react the moment a fan does."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/platform-activate.jpg"
-   image_alt="A person unlocking their smartphone" %}
 
-{% include feature-split.html
-   title="Activation inherits the quality of the profile under it"
-   body="When campaigns underperform, the cause usually sits upstream, in audiences built on yesterday's exports and identities that never got resolved. Activate reads the live profile at the moment of send, so what reaches the fan reflects what is actually true."
-   points=page.data_points
-   cta_text="See Fanfinity ID"
-   cta_url="/platform/id"
-   icon="link" %}
+{% include activate-family-nav.html %}
 
-{% include feature-grid.html
-   heading="Reach every fan, on every channel"
-   subheading="Every channel is powered by the same real-time profile, so the message a fan gets reflects who they actually are right now."
-   items=page.channels
-   columns=3 %}
+<!-- ================= HERO ================= -->
+<section class="act-hero">
+  <div class="container-page">
+    <div class="act-hero-grid">
+      <div class="act-hero-copy">
+        <p class="act-eyebrow">Platform · Fanfinity Activate</p>
+        <h1 class="act-h1">Reach the right fan, <span class="act-accent">everywhere.</span></h1>
+        <p class="act-sub">Fanfinity Activate turns one governed fan profile into real-time engagement across WhatsApp, email, push, and paid media. Segment on live behavior and orchestrate journeys that react the moment a fan does.</p>
+        <div class="act-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform' | relative_url }}" class="btn btn-secondary">Explore the platform</a>
+        </div>
+        <p class="act-hero-note">{% include icon.html name="check" class="h-4 w-4" %} Every channel reads the same profile — at the moment of send, not the night before.</p>
+      </div>
+      <div class="act-hero-visual" aria-hidden="true">
+        <div class="act-env">
+          <div class="act-env-stripe"></div>
+          <div class="act-env-inner">
+            <div class="act-env-top"><span>FANFINITY POST</span><span>KNOWN FANS ONLY</span></div>
+            <div class="act-env-fan">
+              <span class="act-env-avatar">N</span>
+              <span class="act-env-meta"><b>Noura · Fan #51136</b><i>one profile · every address she has</i></span>
+            </div>
+            <div class="act-env-routes">
+              <span class="act-env-route" style="--c:#12805c">{% include icon.html name="chat" class="h-3.5 w-3.5" %} WhatsApp</span>
+              <span class="act-env-route" style="--c:#2f5fb3">{% include icon.html name="megaphone" class="h-3.5 w-3.5" %} Email</span>
+              <span class="act-env-route" style="--c:#7c3aed">{% include icon.html name="bell" class="h-3.5 w-3.5" %} Push</span>
+              <span class="act-env-route" style="--c:#b8860b">{% include icon.html name="target" class="h-3.5 w-3.5" %} Paid</span>
+            </div>
+          </div>
+          <div class="act-env-stripe"></div>
+        </div>
+        <span class="act-postmark act-postmark-a">DISPATCHED<br>21:14</span>
+        <span class="act-postmark act-postmark-b">LIVE<br>PROFILE</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-grid.html
-   heading="Build the audience once, activate it everywhere"
-   subheading="Segments are composed visually, evaluated against the live profile, and synced to every channel from one definition, so the same fan is addressed consistently across owned and paid."
-   items=page.segment
-   columns=3 %}
+<!-- ================= CENTERPIECE · THE DISPATCH DESK ================= -->
+<section class="act-desk" id="actDesk">
+  <div class="container-page">
+    <div class="act-desk-head" data-reveal>
+      <p class="act-eyebrow">The dispatch desk</p>
+      <h2 class="act-h2">One fan acts. <span class="act-accent">Every channel answers.</span></h2>
+      <p class="act-lead">Pick what Noura just did, set her consent, and dispatch. Watch each channel receive the version that fits her right now — then flip to yesterday's export and watch it go wrong. Simulated fan; the routing is the product.</p>
+    </div>
 
-{% include feature-split.html
-   reverse=true
-   title="Journeys that keep up with the fan"
-   body="Sequence messages across channels off live profile state: build the flow once and let each fan's behavior steer their own path through it. The visual canvas for composing these flows is in design preview."
-   points=page.journey_points
-   cta_text="Prove the outcome with Measure"
-   cta_url="/platform/measure"
-   icon="megaphone" %}
+    <div class="act-desk-grid">
+      <!-- CONSOLE -->
+      <div class="act-console" data-reveal>
+        <div class="act-step">
+          <span class="act-step-num">01 · What did Noura just do?</span>
+          <div class="act-triggers" id="actTriggers">
+            <button type="button" class="act-trigger is-active" data-trigger="scan"><i style="--c:#7c3aed"></i><span><b>Scanned into the stadium</b><em>the club · tonight 20:58</em></span></button>
+            <button type="button" class="act-trigger" data-trigger="encore"><i style="--c:#c026d3"></i><span><b>Voted for the encore</b><em>the livestream · 22:41</em></span></button>
+            <button type="button" class="act-trigger" data-trigger="finale"><i style="--c:#4f46e5"></i><span><b>Abandoned the finale · 38 min</b><em>the streaming app · yesterday</em></span></button>
+            <button type="button" class="act-trigger" data-trigger="landed"><i style="--c:#0e7490"></i><span><b>Landed for the weekend</b><em>Meridian Air · seat 14A · 1 h ago</em></span></button>
+            <button type="button" class="act-trigger" data-trigger="cart"><i style="--c:#b8860b"></i><span><b>Left checkout with the jacket</b><em>the brand store · 1 h ago</em></span></button>
+            <button type="button" class="act-trigger" data-trigger="quiet"><i style="--c:#d93b54"></i><span><b>Went quiet for 30 days</b><em>everywhere · lapse risk high</em></span></button>
+          </div>
+        </div>
 
+        <div class="act-step">
+          <span class="act-step-num">02 · Her consent, right now</span>
+          <div class="act-consents" id="actConsents">
+            <button type="button" class="act-consent is-on" data-ch="wa" aria-pressed="true"><span class="act-sw"></span>{% include icon.html name="chat" class="h-3.5 w-3.5" %} WhatsApp</button>
+            <button type="button" class="act-consent is-on" data-ch="email" aria-pressed="true"><span class="act-sw"></span>{% include icon.html name="megaphone" class="h-3.5 w-3.5" %} Email</button>
+            <button type="button" class="act-consent" data-ch="push" aria-pressed="false"><span class="act-sw"></span>{% include icon.html name="bell" class="h-3.5 w-3.5" %} Push</button>
+            <button type="button" class="act-consent is-on" data-ch="ads" aria-pressed="true"><span class="act-sw"></span>{% include icon.html name="target" class="h-3.5 w-3.5" %} Paid ads</button>
+          </div>
+        </div>
+
+        <div class="act-step">
+          <span class="act-step-num">03 · Which profile do you send from?</span>
+          <div class="act-mode" id="actMode" role="group" aria-label="Profile freshness">
+            <button type="button" class="act-modebtn is-active" data-mode="live">LIVE PROFILE<span>read at 21:14:07 · true now</span></button>
+            <button type="button" class="act-modebtn" data-mode="stale">NIGHTLY EXPORT<span>read 03:00 · yesterday's truth</span></button>
+          </div>
+        </div>
+
+        <button type="button" class="act-send" id="actSend">Dispatch to her channels →</button>
+        <p class="act-freq">Frequency cap · <b id="actFreq">1</b> of 3 messages this week <span id="actFreqNote"></span></p>
+      </div>
+
+      <!-- ROUTES -->
+      <div class="act-routes" data-reveal>
+        <div class="act-fanchip" id="actFanChip">
+          <span class="act-env-avatar">N</span>
+          <span class="act-fanchip-meta"><b>Noura · Fan #51136</b><i id="actFanSeg">at the venue · tonight</i></span>
+          <span class="act-fanchip-live" id="actFanLive"><i></i> live</span>
+        </div>
+
+        <div class="act-chgrid">
+          <div class="act-ch" data-ch="wa">
+            <div class="act-ch-route"><i></i></div>
+            <div class="act-ch-head">{% include icon.html name="chat" class="h-4 w-4" %} WhatsApp <span class="act-ch-state" id="actState-wa">idle</span></div>
+            <div class="act-ch-body" id="actBody-wa"><p class="act-ch-idle">waiting for a moment…</p></div>
+            <div class="act-ch-stamp" id="actStamp-wa"></div>
+          </div>
+          <div class="act-ch" data-ch="email">
+            <div class="act-ch-route"><i></i></div>
+            <div class="act-ch-head">{% include icon.html name="megaphone" class="h-4 w-4" %} Email <span class="act-ch-state" id="actState-email">idle</span></div>
+            <div class="act-ch-body" id="actBody-email"><p class="act-ch-idle">waiting for a moment…</p></div>
+            <div class="act-ch-stamp" id="actStamp-email"></div>
+          </div>
+          <div class="act-ch" data-ch="push">
+            <div class="act-ch-route"><i></i></div>
+            <div class="act-ch-head">{% include icon.html name="bell" class="h-4 w-4" %} Push <span class="act-ch-state" id="actState-push">idle</span></div>
+            <div class="act-ch-body" id="actBody-push"><p class="act-ch-idle">waiting for a moment…</p></div>
+            <div class="act-ch-stamp" id="actStamp-push"></div>
+          </div>
+          <div class="act-ch" data-ch="ads">
+            <div class="act-ch-route"><i></i></div>
+            <div class="act-ch-head">{% include icon.html name="target" class="h-4 w-4" %} Paid ads <span class="act-ch-state" id="actState-ads">idle</span></div>
+            <div class="act-ch-body" id="actBody-ads"><p class="act-ch-idle">waiting for a moment…</p></div>
+            <div class="act-ch-stamp" id="actStamp-ads"></div>
+          </div>
+        </div>
+
+        <p class="act-log" id="actLog">21:14:07 · desk ready — pick a moment and dispatch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY IT WORKS ================= -->
+<section class="act-why">
+  <div class="container-page">
+    <div class="act-why-grid">
+      <div class="act-why-copy" data-reveal>
+        <p class="act-eyebrow">Why it works</p>
+        <h2 class="act-h2">Activation inherits the quality of the <span class="act-accent">profile under it</span></h2>
+        <p class="act-lead">When campaigns underperform, the cause usually sits upstream — audiences built on yesterday's exports and identities that never got resolved. Activate reads the live profile at the moment of send, so what reaches the fan reflects what is actually true.</p>
+        <a href="{{ '/platform/id' | relative_url }}" class="btn btn-secondary">See Fanfinity ID</a>
+      </div>
+      <ul class="act-ledger" data-reveal>
+        {% for p in page.data_points %}
+        <li><span class="act-ledger-num">0{{ forloop.index }}</span><p>{{ p }}</p></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHANNELS ================= -->
+<section class="act-channels">
+  <div class="container-page">
+    <div class="act-sec-head" data-reveal>
+      <p class="act-eyebrow">Channels</p>
+      <h2 class="act-h2">Reach every fan, <span class="act-accent">on every route</span></h2>
+      <p class="act-lead">Every channel is powered by the same real-time profile, so the message a fan gets reflects who they actually are right now.</p>
+    </div>
+    <div class="act-route-grid">
+      {% for item in page.channels %}
+      <div class="act-route-card" data-reveal>
+        <span class="act-route-num">ROUTE 0{{ forloop.index }}</span>
+        <span class="act-route-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEGMENTATION ================= -->
+<section class="act-segment">
+  <div class="container-page">
+    <div class="act-sec-head" data-reveal>
+      <p class="act-eyebrow">How segmentation works</p>
+      <h2 class="act-h2">Build the audience once, <span class="act-accent">activate it everywhere</span></h2>
+      <p class="act-lead">Segments are composed visually, evaluated against the live profile, and synced to every channel from one definition — so the same fan is addressed consistently across owned and paid.</p>
+    </div>
+    <div class="act-seg-grid">
+      {% for item in page.segment %}
+      <div class="act-seg-card" data-reveal>
+        <span class="act-seg-step">STEP 0{{ forloop.index }}</span>
+        <span class="act-route-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEYS ================= -->
+<section class="act-journeys">
+  <div class="container-page">
+    <div class="act-jour-grid">
+      <div class="act-jour-copy" data-reveal>
+        <p class="act-eyebrow">Journeys</p>
+        <h2 class="act-h2">Journeys that <span class="act-accent">keep up with the fan</span></h2>
+        <p class="act-lead">Sequence messages across channels off live profile state: build the flow once and let each fan's behavior steer their own path through it.</p>
+        <ul class="act-jour-list">
+          {% for p in page.journey_points %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ p }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/measure' | relative_url }}" class="btn btn-secondary">Prove the outcome with Measure</a>
+      </div>
+      <div class="act-jour-visual" data-reveal aria-hidden="true">
+        <div class="act-jflow">
+          <div class="act-jnode"><span class="act-jnode-tag">TRIGGER</span><b>Finale abandoned · 38 min</b></div>
+          <span class="act-jwire"></span>
+          <div class="act-jnode"><span class="act-jnode-tag">DECIDE</span><b>Read the live profile</b><i>segment · consent · frequency</i></div>
+          <span class="act-jwire"></span>
+          <div class="act-jnode act-jnode-fork">
+            <div><span class="act-jnode-tag">PATH A · still lapsing</span><b>Email · the recap, tonight</b></div>
+            <div><span class="act-jnode-tag">PATH B · came back</span><b>Exit journey · suppress win-back</b></div>
+          </div>
+        </div>
+        <span class="act-postmark act-postmark-c">ROUTED<br>LIVE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Send like you know her — because you do"
+   text="Book a walkthrough and we'll wire one of your own triggers to a live profile: watch consent, frequency, and send-time context shape what every channel delivers." %}
+
+{% raw %}
+<style>
+/* ================= Activate page — scoped styles (.act-) · "dispatch / air-mail" language ================= */
+.act-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #2f5fb3; display: flex; align-items: center; gap: .6rem; }
+.act-eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .35rem, transparent .35rem .55rem); }
+.act-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.7rem, 5.6vw, 4.5rem); margin: 1rem 0 0; color: #2a1f45; }
+.act-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #2a1f45; }
+.act-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.act-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.act-sub, .act-lead { font-size: 1.08rem; line-height: 1.65; color: #54496e; margin-top: 1.2rem; max-width: 34rem; }
+.act-sec-head .act-lead, .act-desk-head .act-lead { margin-left: auto; margin-right: auto; }
+.act-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.act-sec-head, .act-desk-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.act-sec-head .act-eyebrow, .act-desk-head .act-eyebrow { justify-content: center; }
+
+/* --- hero: lavender paper + ledger lines --- */
+.act-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background:
+  repeating-linear-gradient(0deg, transparent 0 27px, rgba(47,95,179,.05) 27px 28px),
+  radial-gradient(50rem 30rem at 88% -10%, rgba(124,58,237,.07), transparent 60%),
+  #f7f4fd; }
+.act-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.act-hero-grid > *, .act-desk-grid > *, .act-why-grid > *, .act-jour-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .act-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.act-hero-note { display: flex; align-items: flex-start; gap: .5rem; margin-top: 1.4rem; font-size: .88rem; color: #54496e; }
+.act-hero-note svg { flex: none; color: #12805c; margin-top: .15rem; }
+
+/* --- the envelope --- */
+.act-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1.2rem 0; }
+.act-env { background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; box-shadow: 8px 9px 0 rgba(42,31,69,.14); overflow: hidden; transform: rotate(-1.2deg); }
+.act-env-stripe { height: .65rem; background: repeating-linear-gradient(45deg, #d93b54 0 .9rem, #fdfcff .9rem 1.8rem, #2f5fb3 1.8rem 2.7rem, #fdfcff 2.7rem 3.6rem); }
+.act-env-inner { padding: 1.2rem 1.3rem 1.3rem; }
+.act-env-top { display: flex; justify-content: space-between; gap: .6rem; flex-wrap: wrap; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .16em; color: #8b84a6; }
+.act-env-fan { display: flex; align-items: center; gap: .7rem; margin-top: .9rem; background: #f7f4fd; border: 1.5px dashed #cfc4e8; border-radius: .9rem; padding: .7rem .8rem; }
+.act-env-avatar { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; flex: none; border-radius: 999px; background: #7c3aed; color: #fff; font-weight: 700; }
+.act-env-meta b { display: block; font-size: .95rem; color: #2a1f45; }
+.act-env-meta i { font-style: normal; font-family: ui-monospace, monospace; font-size: .66rem; color: #8b84a6; }
+.act-env-routes { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .9rem; }
+.act-env-route { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; color: var(--c); border: 1.5px solid var(--c); border-radius: 999px; padding: .3rem .6rem; background: #fdfcff; }
+
+/* --- postmarks --- */
+.act-postmark { position: absolute; display: inline-flex; align-items: center; justify-content: center; text-align: center; width: 4.6rem; height: 4.6rem; border: 2px solid #2a1f45; border-radius: 999px; outline: 1.5px dashed rgba(42,31,69,.55); outline-offset: 3px; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .12em; line-height: 1.5; color: #2a1f45; background: rgba(253,252,255,.88); }
+.act-postmark-a { top: -.4rem; right: 4%; transform: rotate(9deg); color: #d93b54; border-color: #d93b54; outline-color: rgba(217,59,84,.5); }
+.act-postmark-b { bottom: 0; left: -1%; transform: rotate(-7deg); color: #2f5fb3; border-color: #2f5fb3; outline-color: rgba(47,95,179,.5); }
+.act-postmark-c { top: -.8rem; right: 6%; transform: rotate(8deg); color: #12805c; border-color: #12805c; outline-color: rgba(18,128,92,.5); }
+
+/* ================= CENTERPIECE · THE DISPATCH DESK ================= */
+.act-desk { padding: 4.5rem 0 5rem; background: #fdfcff; border-top: 1px solid #e9e2f8; border-bottom: 1px solid #e9e2f8; overflow-x: clip; }
+.act-desk-grid { display: grid; gap: 2rem; align-items: start; }
+@media (min-width: 1024px) { .act-desk-grid { grid-template-columns: minmax(0, 24rem) 1fr; gap: 2.4rem; } }
+
+/* --- console: the desk pad --- */
+.act-console { position: relative; background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.3rem; box-shadow: 6px 7px 0 rgba(42,31,69,.12); padding: 1.2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.act-console::before { content: ""; position: absolute; top: -2px; left: 1.2rem; right: 1.2rem; height: 2px; background: repeating-linear-gradient(90deg, #d93b54 0 .5rem, transparent .5rem .8rem); }
+.act-step { display: flex; flex-direction: column; gap: .55rem; }
+.act-step + .act-step { border-top: 1.5px dashed #ddd3f0; padding-top: 1rem; }
+.act-step-num { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .12em; color: #2f5fb3; font-weight: 700; }
+.act-triggers { display: flex; flex-direction: column; gap: .5rem; }
+.act-trigger { display: flex; align-items: center; gap: .6rem; text-align: left; background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: .85rem; padding: .55rem .7rem; cursor: pointer; transition: all .16s; color: #2a1f45; }
+.act-trigger i { width: .75rem; height: .75rem; flex: none; border-radius: 999px; background: var(--c); }
+.act-trigger span { display: flex; flex-direction: column; min-width: 0; }
+.act-trigger b { font-size: .86rem; line-height: 1.3; }
+.act-trigger em { font-style: normal; font-family: ui-monospace, monospace; font-size: .64rem; color: #9a93b5; }
+.act-trigger:hover { border-color: #d93b54; transform: translateY(-1px); }
+.act-trigger.is-active { background: #fff; border-color: #d93b54; box-shadow: 0 0 0 2px rgba(217,59,84,.16), 3px 3px 0 rgba(217,59,84,.14); }
+
+.act-consents { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.act-consent { display: inline-flex; align-items: center; gap: .45rem; font-size: .8rem; font-weight: 700; color: #8b84a6; background: #fdfcff; border: 1.5px solid #ddd3f0; border-radius: .75rem; padding: .5rem .6rem; cursor: pointer; transition: all .16s; }
+.act-consent svg { flex: none; }
+.act-sw { position: relative; width: 1.7rem; height: .95rem; flex: none; border-radius: 999px; background: #e6def7; transition: background .2s; }
+.act-sw::after { content: ""; position: absolute; top: .14rem; left: .14rem; width: .67rem; height: .67rem; border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgba(42,31,69,.3); transition: translate .2s; }
+.act-consent.is-on { color: #0d5c40; border-color: #9fd9c2; background: #effaf5; }
+.act-consent.is-on .act-sw { background: #12805c; }
+.act-consent.is-on .act-sw::after { translate: .75rem 0; }
+
+.act-mode { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.act-modebtn { display: flex; flex-direction: column; gap: .15rem; align-items: flex-start; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; letter-spacing: .08em; color: #8b84a6; background: #fdfcff; border: 1.5px dashed #ddd3f0; border-radius: .75rem; padding: .55rem .65rem; cursor: pointer; transition: all .16s; }
+.act-modebtn span { font-weight: 400; letter-spacing: 0; color: #9a93b5; font-size: .6rem; }
+.act-modebtn[data-mode="live"].is-active { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+.act-modebtn[data-mode="stale"].is-active { color: #a82540; border: 1.5px solid #d93b54; background: #fdf0f2; }
+.act-send { font-weight: 800; font-size: 1rem; color: #fdfcff; background: #2a1f45; border-radius: .9rem; padding: .9rem 1rem; cursor: pointer; transition: all .18s; letter-spacing: .01em; }
+.act-send:hover { background: #d93b54; }
+.act-send:active { transform: translateY(1px); }
+.act-freq { font-family: ui-monospace, monospace; font-size: .68rem; color: #9a93b5; }
+.act-freq b { color: #2a1f45; }
+
+/* --- routes: fan chip + channel cards --- */
+.act-routes { display: flex; flex-direction: column; gap: 1rem; }
+.act-fanchip { display: flex; align-items: center; gap: .7rem; background: #fff; border: 2px solid #2a1f45; border-radius: 999px; padding: .5rem 1rem .5rem .55rem; box-shadow: 4px 5px 0 rgba(42,31,69,.1); }
+.act-fanchip-meta { flex: 1; min-width: 0; }
+.act-fanchip-meta b { display: block; font-size: .92rem; color: #2a1f45; }
+.act-fanchip-meta i { font-style: normal; font-family: ui-monospace, monospace; font-size: .66rem; color: #7c3aed; }
+.act-fanchip-live { display: inline-flex; align-items: center; gap: .35rem; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; color: #12805c; }
+.act-fanchip-live i { width: .45rem; height: .45rem; border-radius: 999px; background: #12805c; animation: act-pulse 1.6s infinite; }
+.act-fanchip.is-stale .act-fanchip-live { color: #a82540; }
+.act-fanchip.is-stale .act-fanchip-live i { background: #d93b54; animation: none; }
+@keyframes act-pulse { 50% { opacity: .3; } }
+
+.act-chgrid { display: grid; gap: .9rem; }
+@media (min-width: 640px) { .act-chgrid { grid-template-columns: 1fr 1fr; } }
+.act-ch { position: relative; background: #fff; border: 2px solid #2a1f45; border-radius: 1.1rem; box-shadow: 4px 5px 0 rgba(42,31,69,.09); padding: .95rem 1rem 1rem; overflow: hidden; transition: border-color .3s; }
+.act-ch-route { position: relative; height: .9rem; margin-bottom: .55rem; border-bottom: 2px dashed #ddd3f0; }
+.act-ch-route i { position: absolute; left: 0; bottom: -.31rem; width: .6rem; height: .6rem; border-radius: 999px; background: #2f5fb3; opacity: 0; }
+.act-ch.is-sending .act-ch-route i { opacity: 1; animation: act-route .7s cubic-bezier(.3,.7,.4,1) forwards; }
+.act-ch.is-blocked .act-ch-route i { opacity: 1; background: #d93b54; animation: act-bounce .55s ease forwards; }
+@keyframes act-route { from { left: 0; } to { left: calc(100% - .6rem); } }
+@keyframes act-bounce { 0% { left: 0; } 55% { left: 38%; } 100% { left: 12%; } }
+.act-ch-head { display: flex; align-items: center; gap: .45rem; font-weight: 700; font-size: .92rem; color: #2a1f45; }
+.act-ch-head svg { color: #2f5fb3; }
+.act-ch-state { margin-left: auto; font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; letter-spacing: .1em; color: #9a93b5; border: 1px solid #e6def7; border-radius: 999px; padding: .16rem .5rem; }
+.act-ch.is-sent .act-ch-state { color: #0d5c40; border-color: #9fd9c2; background: #effaf5; }
+.act-ch.is-stale .act-ch-state { color: #a82540; border-color: #f2b8c4; background: #fdf0f2; }
+.act-ch.is-skipped .act-ch-state, .act-ch.is-held .act-ch-state { color: #8a6408; border-color: #e3cf96; background: #fdf6e3; }
+.act-ch-body { margin-top: .6rem; min-height: 4.2rem; }
+.act-ch-idle { font-family: ui-monospace, monospace; font-size: .7rem; color: #b3a8d1; padding-top: .8rem; }
+.act-ch-stamp { position: absolute; right: .8rem; bottom: .8rem; font-family: ui-monospace, monospace; font-size: .52rem; font-weight: 700; letter-spacing: .1em; text-align: center; line-height: 1.5; padding: .3rem .45rem; border-radius: .4rem; transform: rotate(-6deg) scale(1.8); opacity: 0; pointer-events: none; }
+.act-ch.is-sent .act-ch-stamp { color: #0d5c40; border: 1.5px solid #12805c; background: rgba(239,250,245,.94); animation: act-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+.act-ch.is-stale .act-ch-stamp { color: #a82540; border: 1.5px solid #d93b54; background: rgba(253,240,242,.94); animation: act-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+.act-ch.is-skipped .act-ch-stamp, .act-ch.is-held .act-ch-stamp { color: #8a6408; border: 1.5px dashed #b8860b; background: rgba(253,246,227,.94); animation: act-stamp .45s cubic-bezier(.2,1.5,.4,1) forwards; }
+@keyframes act-stamp { to { opacity: 1; transform: rotate(-6deg) scale(1); } }
+
+/* message renderings */
+.act-msg { animation: act-msgin .45s ease; font-size: .82rem; line-height: 1.5; color: #2a1f45; }
+@keyframes act-msgin { from { opacity: 0; transform: translateY(8px); } }
+.act-msg-wa { background: #e7f6ec; border: 1.5px solid #b9e2c8; border-radius: .2rem .8rem .8rem .8rem; padding: .55rem .7rem; }
+.act-msg-wa b { color: #0d5c40; }
+.act-msg-email { border: 1.5px solid #cdd9f2; border-radius: .7rem; overflow: hidden; }
+.act-msg-email span { display: block; font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .08em; color: #2f5fb3; background: #eef3fd; padding: .35rem .6rem; border-bottom: 1.5px solid #cdd9f2; }
+.act-msg-email b { display: block; padding: .5rem .6rem .55rem; font-size: .86rem; }
+.act-msg-push { display: flex; gap: .5rem; align-items: flex-start; background: #2a1f45; color: #f5f0ff; border-radius: .8rem; padding: .55rem .65rem; font-size: .78rem; }
+.act-msg-push::before { content: ""; width: .8rem; height: .8rem; flex: none; margin-top: .15rem; border-radius: .25rem; background: #7c3aed; }
+.act-msg-ads { font-family: ui-monospace, monospace; font-size: .7rem; line-height: 1.55; color: #6b4e08; background: #fdf6e3; border: 1.5px dashed #e3cf96; border-radius: .6rem; padding: .55rem .65rem; }
+.act-msg.is-wrong { opacity: .92; }
+.act-msg.is-wrong .act-wrong { display: inline-block; margin-top: .35rem; font-family: ui-monospace, monospace; font-size: .58rem; font-weight: 700; letter-spacing: .06em; color: #a82540; }
+
+.act-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #54496e; background: #f7f4fd; border: 1.5px dashed #ddd3f0; border-radius: .8rem; padding: .6rem .8rem; }
+.act-log b { color: #2a1f45; }
+
+/* ================= WHY · ledger ================= */
+.act-why { padding: 4.5rem 0; background: #f7f4fd; }
+.act-why-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .act-why-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.act-why-copy .btn { margin-top: 1.6rem; }
+.act-ledger { list-style: none; margin: 0; padding: 0; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; box-shadow: 6px 7px 0 rgba(42,31,69,.1); overflow: hidden; }
+.act-ledger li { display: flex; gap: .9rem; align-items: flex-start; padding: 1rem 1.2rem; }
+.act-ledger li + li { border-top: 1.5px dashed #e6def7; }
+.act-ledger-num { font-family: ui-monospace, monospace; font-size: .7rem; font-weight: 700; color: #d93b54; padding-top: .15rem; }
+.act-ledger p { font-size: .92rem; line-height: 1.55; color: #54496e; }
+
+/* ================= CHANNELS · route cards ================= */
+.act-channels { padding: 4.5rem 0; background: #fdfcff; }
+.act-route-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 640px) { .act-route-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px) { .act-route-grid { grid-template-columns: repeat(3, 1fr); } }
+.act-route-card { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fff; border: 2px solid #2a1f45; border-radius: 1.2rem; padding: 1.6rem 1.4rem 1.4rem; box-shadow: 4px 5px 0 rgba(42,31,69,.08); transition: transform .18s ease, box-shadow .18s ease; overflow: hidden; }
+.act-route-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: .45rem; background: repeating-linear-gradient(45deg, #d93b54 0 .7rem, #fdfcff .7rem 1.4rem, #2f5fb3 1.4rem 2.1rem, #fdfcff 2.1rem 2.8rem); }
+.act-route-card:hover { transform: translateY(-3px); box-shadow: 6px 8px 0 rgba(42,31,69,.13); }
+.act-route-num { position: absolute; top: .95rem; right: 1.1rem; font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .14em; color: #b3a8d1; }
+.act-route-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.6rem; height: 2.6rem; border-radius: .8rem; background: #eef3fd; border: 1.5px solid #cdd9f2; color: #2f5fb3; }
+.act-route-card h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #2a1f45; margin: .2rem 0 0; }
+.act-route-card p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= SEGMENTATION ================= */
+.act-segment { padding: 4.5rem 0; background: #f7f4fd; border-top: 1px solid #e9e2f8; }
+.act-seg-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 1024px) { .act-seg-grid { grid-template-columns: repeat(3, 1fr); } }
+.act-seg-card { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcff; border: 2px solid #2a1f45; border-radius: 1.2rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 4px 5px 0 rgba(42,31,69,.08); }
+.act-seg-step { font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .14em; font-weight: 700; color: #d93b54; }
+.act-seg-card h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #2a1f45; margin: .2rem 0 0; }
+.act-seg-card p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= JOURNEYS ================= */
+.act-journeys { padding: 4.5rem 0; background: #fdfcff; border-top: 1px solid #e9e2f8; }
+.act-jour-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .act-jour-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.act-jour-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.act-jour-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #54496e; }
+.act-jour-list svg { flex: none; color: #12805c; margin-top: .2rem; }
+.act-jour-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.2rem; }
+.act-jflow { display: flex; flex-direction: column; align-items: stretch; gap: 0; background: #f7f4fd; border: 2px solid #2a1f45; border-radius: 1.3rem; box-shadow: 6px 7px 0 rgba(42,31,69,.1); padding: 1.2rem; }
+.act-jnode { background: #fff; border: 1.5px solid #2a1f45; border-radius: .85rem; padding: .7rem .85rem; display: flex; flex-direction: column; gap: .15rem; }
+.act-jnode-tag { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; font-weight: 700; color: #2f5fb3; }
+.act-jnode b { font-size: .9rem; color: #2a1f45; }
+.act-jnode i { font-style: normal; font-family: ui-monospace, monospace; font-size: .62rem; color: #9a93b5; }
+.act-jwire { align-self: center; width: 0; height: 1.4rem; border-left: 2px dashed #b3a8d1; }
+.act-jnode-fork { gap: .55rem; border-color: #b8860b; background: #fdfbee; }
+.act-jnode-fork > div { display: flex; flex-direction: column; gap: .1rem; background: #fff; border: 1.5px dashed #e3cf96; border-radius: .65rem; padding: .55rem .65rem; }
+.act-jnode-fork .act-jnode-tag { color: #8a6408; }
+
+@media (max-width: 480px) {
+  .act-postmark { width: 3.9rem; height: 3.9rem; font-size: .48rem; }
+  .act-consents { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .act-fanchip-live i { animation: none !important; }
+  .act-ch.is-sending .act-ch-route i, .act-ch.is-blocked .act-ch-route i,
+  .act-ch.is-sent .act-ch-stamp, .act-ch.is-stale .act-ch-stamp, .act-ch.is-skipped .act-ch-stamp, .act-ch.is-held .act-ch-stamp,
+  .act-msg { animation-duration: .01s !important; }
+}
+</style>
+
+<script>
+/* ================= Activate page — dispatch desk engine ================= */
+(function () {
+  var desk = document.getElementById('actDesk');
+  if (!desk) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var ORDER = ['wa', 'email', 'push', 'ads'];
+  var CH_NAME = { wa: 'WhatsApp', email: 'Email', push: 'Push', ads: 'Paid ads' };
+
+  var TRIGGERS = {
+    scan: {
+      seg: 'at the venue · tonight', event: 'ticket.scanned · gate B · 20:58',
+      live: {
+        wa: 'You\u2019re in, Noura — Gate B. Your seat upgrade for tonight is one tap away \u2192',
+        email: { from: 'The Club \u00b7 ticket office', subject: 'Tonight: your seat, upgraded' },
+        push: 'Seat upgrade unlocked — tap before kickoff',
+        ads: 'audience.sync \u2192 remove from \u201csell tickets \u00b7 tonight\u201d \u2713 stop spending'
+      },
+      stale: {
+        wa: 'Hi fan — tickets for tonight are still on sale. Get yours \u2192',
+        email: { from: 'The Club \u00b7 newsletter', subject: 'Tickets still available for tonight' },
+        push: 'Tickets for tonight — still available',
+        ads: 'audience.sync \u2192 keep in \u201csell tickets \u00b7 tonight\u201d'
+      },
+      wrong: {
+        wa: 'she\u2019s already through the gate',
+        email: 'she doesn\u2019t need a ticket — she\u2019s inside',
+        push: 'irrelevant the moment it lands',
+        ads: 'paying to reach someone who already bought'
+      }
+    },
+    encore: {
+      seg: 'at the livestream · high intent', event: 'poll.answered \u00b7 \u201cNeon Skyline\u201d \u00b7 22:41',
+      live: {
+        wa: 'Your encore pick won, Noura \u2014 \u201cNeon Skyline\u201d it is. Presale for the next night opens for voters first \u2192',
+        email: { from: 'The Festival \u00b7 live', subject: 'You called the encore. Here\u2019s your reward' },
+        push: '\u201cNeon Skyline\u201d wins the encore — presale early access is yours',
+        ads: 'audience.sync \u2192 add to \u201cnext-night presale \u00b7 voters\u201d \u2713'
+      },
+      stale: {
+        wa: 'Hi fan — did you catch the show last night?',
+        email: { from: 'The Festival \u00b7 newsletter', subject: 'Thanks for joining the livestream' },
+        push: 'Thanks for watching the livestream',
+        ads: 'audience.sync \u2192 generic \u201cconcertgoers\u201d segment'
+      },
+      wrong: {
+        wa: 'she answered it an hour ago — this reads like a stranger wrote it',
+        email: 'no mention of the vote she just cast',
+        push: 'a thank-you with nothing in it',
+        ads: 'her vote said exactly what to sell her — this ignores it'
+      }
+    },
+    finale: {
+      seg: 'finale abandoned \u00b7 38 min', event: 'playback.exited \u00b7 ep 9 \u00b7 38:12',
+      live: {
+        wa: 'You stopped at 38:12, Noura — the twist lands at 41. Pick up where you left off \u2192',
+        email: { from: 'The Stream \u00b7 continue watching', subject: 'Ep 9: you left at the good part (38:12)' },
+        push: 'Ep 9 waits at 38:12 — 4 min to the twist',
+        ads: 'audience.sync \u2192 \u201cfinish the finale\u201d \u00b7 suppress \u201cstart the series\u201d \u2713'
+      },
+      stale: {
+        wa: 'Hi fan — a new season of your show is out now!',
+        email: { from: 'The Stream \u00b7 recommendations', subject: 'New shows we think you\u2019ll like' },
+        push: 'New season out now — start watching',
+        ads: 'audience.sync \u2192 \u201cstart the series\u201d acquisition campaign'
+      },
+      wrong: {
+        wa: 'she\u2019s 9 episodes in — this is season one copy',
+        email: 'she doesn\u2019t need new shows — she needs minute 38:12',
+        push: 'she already started — yesterday',
+        ads: 'spending acquisition budget on an existing viewer'
+      }
+    },
+    landed: {
+      seg: 'just landed \u00b7 weekend trip', event: 'booking.checked_in \u00b7 Meridian Air \u00b7 seat 14A',
+      live: {
+        wa: 'Welcome to the city, Noura — your lounge pass for Sunday\u2019s return is sorted, and the hotel knows you\u2019ve landed \u2192',
+        email: { from: 'Meridian Air \u00b7 your trip', subject: 'You\u2019ve landed: lounge pass + late checkout, on us' },
+        push: 'Landed safely — lounge pass for the return leg is ready',
+        ads: 'audience.sync \u2192 suppress \u201cbook this route\u201d \u00b7 add \u201cweekend experiences \u00b7 in-city\u201d \u2713'
+      },
+      stale: {
+        wa: 'Hi fan — great fares to top destinations this month \u2192',
+        email: { from: 'Meridian Air \u00b7 deals', subject: 'Flight deals you might like' },
+        push: 'Flight deals this month — book now',
+        ads: 'audience.sync \u2192 keep in \u201cbook this route\u201d prospecting'
+      },
+      wrong: {
+        wa: 'she just landed — selling her the flight she\u2019s already on',
+        email: 'deals for a trip she already took',
+        push: 'prospecting copy to a passenger mid-journey',
+        ads: 'advertising the route to someone standing in arrivals'
+      }
+    },
+    cart: {
+      seg: 'checkout abandoned \u00b7 1 h', event: 'checkout.exited \u00b7 limited jacket \u00b7 size M',
+      live: {
+        wa: 'Still thinking it over, Noura? The limited jacket in M is held in your cart — we\u2019ll keep it until midnight \u2192',
+        email: { from: 'The Brand \u00b7 your cart', subject: 'Your jacket is held until midnight (size M)' },
+        push: 'Cart held until midnight — the limited jacket, size M',
+        ads: 'audience.sync \u2192 \u201ccart holders \u00b7 24 h\u201d with the jacket creative \u2713'
+      },
+      stale: {
+        wa: 'Hi fan — check out the new collection \u2192',
+        email: { from: 'The Brand \u00b7 newsletter', subject: 'New arrivals just dropped' },
+        push: 'New arrivals just dropped',
+        ads: 'audience.sync \u2192 generic \u201cnew collection\u201d broad audience'
+      },
+      wrong: {
+        wa: 'the jacket is one tap from bought — this sends her browsing',
+        email: 'the cart email that should have fired didn\u2019t',
+        push: 'a nudge about nothing she did',
+        ads: 'broad spend instead of the one product she wanted'
+      }
+    },
+    quiet: {
+      seg: 'lapse risk \u00b7 30 days quiet', event: 'profile.trait \u2192 lapse_risk = high',
+      live: {
+        wa: 'We haven\u2019t seen you in a month, Noura — your Gold status is still yours, and this week it comes with a little extra \u2192',
+        email: { from: 'Membership \u00b7 loyalty desk', subject: 'Your Gold status misses you (so does your discount)' },
+        push: 'Your Gold perks are gathering dust — come back this week',
+        ads: 'audience.sync \u2192 \u201cwin-back \u00b7 high CLV\u201d \u00b7 exclude active fans \u2713'
+      },
+      stale: {
+        wa: 'Hi fan — don\u2019t forget to renew your membership!',
+        email: { from: 'The Newsletter', subject: 'This week\u2019s highlights' },
+        push: 'Don\u2019t forget to renew your membership',
+        ads: 'audience.sync \u2192 \u201call members\u201d newsletter retargeting'
+      },
+      wrong: {
+        wa: 'she renewed months ago — the export doesn\u2019t know',
+        email: 'a lapsing fan gets the same newsletter as a superfan',
+        push: 'renewal copy to a member in good standing',
+        ads: 'win-back money sprayed at everyone equally'
+      }
+    }
+  };
+
+  var state = { trigger: 'scan', mode: 'live', freq: 1, sending: false };
+  var consent = { wa: true, email: true, push: false, ads: true };
+
+  var fanSeg = $('actFanSeg'), fanChip = $('actFanChip'), fanLive = $('actFanLive');
+  var logEl = $('actLog'), freqEl = $('actFreq'), freqNote = $('actFreqNote'), sendBtn = $('actSend');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function card(ch) { return desk.querySelector('.act-ch[data-ch="' + ch + '"]'); }
+  function body(ch) { return $('actBody-' + ch); }
+  function stamp(ch) { return $('actStamp-' + ch); }
+  function stateEl(ch) { return $('actState-' + ch); }
+
+  function resetCard(ch) {
+    var c = card(ch);
+    c.classList.remove('is-sending', 'is-sent', 'is-stale', 'is-skipped', 'is-held', 'is-blocked');
+    stateEl(ch).textContent = 'idle';
+    stamp(ch).textContent = '';
+    var b = body(ch);
+    b.innerHTML = '';
+    b.appendChild(el('p', 'act-ch-idle', 'waiting for a moment\u2026'));
+  }
+
+  function buildMsg(ch, t, mode) {
+    var m = t[mode][ch];
+    var wrap;
+    if (ch === 'email') {
+      wrap = el('div', 'act-msg act-msg-email');
+      wrap.appendChild(el('span', null, 'FROM \u00b7 ' + m.from.toUpperCase()));
+      wrap.appendChild(el('b', null, m.subject));
+    } else if (ch === 'wa') {
+      wrap = el('div', 'act-msg act-msg-wa', m);
+    } else if (ch === 'push') {
+      wrap = el('div', 'act-msg act-msg-push', m);
+    } else {
+      wrap = el('div', 'act-msg act-msg-ads', m);
+    }
+    if (mode === 'stale') {
+      wrap.classList.add('is-wrong');
+      wrap.appendChild(el('span', 'act-wrong', '\u2717 ' + t.wrong[ch]));
+    }
+    return wrap;
+  }
+
+  function setStamp(ch, html) {
+    var s = stamp(ch);
+    s.innerHTML = '';
+    var parts = html.split('|');
+    for (var i = 0; i < parts.length; i++) {
+      if (i) s.appendChild(document.createElement('br'));
+      s.appendChild(document.createTextNode(parts[i]));
+    }
+  }
+
+  function dispatch() {
+    if (state.sending) return;
+    state.sending = true;
+    var t = TRIGGERS[state.trigger];
+    var mode = state.mode;
+    var sent = 0, skipped = [];
+    var heldByCap = state.freq >= 3 ? 'email' : null;
+    var done = 0;
+
+    for (var r = 0; r < ORDER.length; r++) resetCard(ORDER[r]);
+    fanSeg.textContent = mode === 'live' ? t.seg : 'segment as of 03:00 \u00b7 yesterday';
+
+    ORDER.forEach(function (ch, i) {
+      run(function () {
+        var c = card(ch);
+        if (!consent[ch]) {
+          c.classList.add('is-blocked');
+          run(function () {
+            c.classList.remove('is-sending');
+            c.classList.add('is-skipped');
+            stateEl(ch).textContent = 'skipped';
+            var b = body(ch); b.innerHTML = '';
+            b.appendChild(el('p', 'act-ch-idle', 'no ' + CH_NAME[ch].toLowerCase() + ' consent \u2014 the message never left the desk.'));
+            setStamp(ch, 'SKIPPED|NO CONSENT');
+            skipped.push(ch);
+            finish(ch);
+          }, 550);
+          c.classList.add('is-sending');
+          return;
+        }
+        if (ch === heldByCap) {
+          c.classList.add('is-held');
+          stateEl(ch).textContent = 'held';
+          var bh = body(ch); bh.innerHTML = '';
+          bh.appendChild(el('p', 'act-ch-idle', 'held by the weekly frequency cap (3/3) \u2014 scheduled for next week\u2019s window instead.'));
+          setStamp(ch, 'HELD|FREQUENCY CAP');
+          skipped.push(ch);
+          finish(ch);
+          return;
+        }
+        c.classList.add('is-sending');
+        run(function () {
+          c.classList.remove('is-sending');
+          c.classList.add(mode === 'live' ? 'is-sent' : 'is-stale');
+          stateEl(ch).textContent = 'sent';
+          var b = body(ch); b.innerHTML = '';
+          b.appendChild(buildMsg(ch, t, mode));
+          setStamp(ch, mode === 'live' ? 'SENT|21:14 \u00b7 LIVE PROFILE' : 'SENT|YESTERDAY\u2019S DATA');
+          sent++;
+          finish(ch);
+        }, 750);
+      }, i * 620);
+    });
+
+    function finish() {
+      if (++done < ORDER.length) return;
+      state.sending = false;
+      if (sent > 0 && state.freq < 3) state.freq++;
+      freqEl.textContent = state.freq;
+      freqNote.textContent = state.freq >= 3 ? '\u00b7 cap reached \u2014 lowest-priority channel held next dispatch' : '';
+      var line = (mode === 'live' ? '21:14:07' : '03:00 export') + ' \u00b7 ' + t.event + ' \u2192 ';
+      line += sent + ' sent';
+      if (skipped.length) {
+        var names = skipped.map(function (k) { return CH_NAME[k].toLowerCase(); }).join(', ');
+        line += ' \u00b7 ' + skipped.length + ' not sent (' + names + ')';
+      }
+      line += mode === 'live' ? ' \u2014 every word read from her live profile.' : ' \u2014 every word read from yesterday\u2019s export.';
+      logEl.textContent = line;
+    }
+  }
+
+  $('actTriggers').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.act-trigger') : null;
+    if (!btn) return;
+    var all = $('actTriggers').querySelectorAll('.act-trigger');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('is-active');
+    btn.classList.add('is-active');
+    state.trigger = btn.getAttribute('data-trigger');
+    fanSeg.textContent = TRIGGERS[state.trigger].seg;
+    for (var r = 0; r < ORDER.length; r++) resetCard(ORDER[r]);
+    logEl.textContent = '21:14:07 \u00b7 moment armed \u2014 dispatch when ready.';
+  });
+
+  $('actConsents').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.act-consent') : null;
+    if (!btn) return;
+    var ch = btn.getAttribute('data-ch');
+    consent[ch] = !consent[ch];
+    btn.classList.toggle('is-on', consent[ch]);
+    btn.setAttribute('aria-pressed', consent[ch] ? 'true' : 'false');
+  });
+
+  $('actMode').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.act-modebtn') : null;
+    if (!btn) return;
+    var all = $('actMode').querySelectorAll('.act-modebtn');
+    for (var i = 0; i < all.length; i++) all[i].classList.remove('is-active');
+    btn.classList.add('is-active');
+    state.mode = btn.getAttribute('data-mode');
+    var stale = state.mode === 'stale';
+    fanChip.classList.toggle('is-stale', stale);
+    fanLive.innerHTML = '';
+    var dot = el('i');
+    fanLive.appendChild(dot);
+    fanLive.appendChild(document.createTextNode(stale ? ' 03:00 export' : ' live'));
+    for (var r = 0; r < ORDER.length; r++) resetCard(ORDER[r]);
+    logEl.textContent = stale
+      ? '03:00 \u00b7 nightly export loaded \u2014 segments and consent as of last night.'
+      : '21:14:07 \u00b7 live profile reconnected \u2014 reads happen at send time.';
+  });
+
+  sendBtn.addEventListener('click', dispatch);
+})();
+</script>
+{% endraw %}

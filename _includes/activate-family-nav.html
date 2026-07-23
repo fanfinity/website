@@ -1,0 +1,107 @@
+{% assign activate_path = page.url | remove: '.html' %}
+<nav class="activate-family-nav" aria-label="Fanfinity Activate pages">
+  <div class="container-page">
+    <div class="activate-family-track">
+      <a href="{{ '/platform/activate' | relative_url }}"
+         class="activate-family-link activate-family-overview{% if activate_path == '/platform/activate' %} is-active{% endif %}"
+         {% if activate_path == '/platform/activate' %}aria-current="page"{% endif %}>
+        <span class="activate-family-index">00</span>
+        <span>Activate overview</span>
+      </a>
+      <a href="{{ '/platform/activate/audience-segmentation' | relative_url }}"
+         class="activate-family-link{% if activate_path == '/platform/activate/audience-segmentation' %} is-active{% endif %}"
+         {% if activate_path == '/platform/activate/audience-segmentation' %}aria-current="page"{% endif %}>
+        <span class="activate-family-index">01</span>
+        <span>Audience segmentation</span>
+      </a>
+      <a href="{{ '/platform/activate/journey-orchestration' | relative_url }}"
+         class="activate-family-link{% if activate_path == '/platform/activate/journey-orchestration' %} is-active{% endif %}"
+         {% if activate_path == '/platform/activate/journey-orchestration' %}aria-current="page"{% endif %}>
+        <span class="activate-family-index">02</span>
+        <span>Journey orchestration</span>
+      </a>
+      <a href="{{ '/platform/activate/omnichannel-messaging' | relative_url }}"
+         class="activate-family-link{% if activate_path == '/platform/activate/omnichannel-messaging' %} is-active{% endif %}"
+         {% if activate_path == '/platform/activate/omnichannel-messaging' %}aria-current="page"{% endif %}>
+        <span class="activate-family-index">03</span>
+        <span>Omnichannel messaging</span>
+      </a>
+      <a href="{{ '/platform/activate/ad-audiences' | relative_url }}"
+         class="activate-family-link{% if activate_path == '/platform/activate/ad-audiences' %} is-active{% endif %}"
+         {% if activate_path == '/platform/activate/ad-audiences' %}aria-current="page"{% endif %}>
+        <span class="activate-family-index">04</span>
+        <span>Ad audiences</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+.activate-family-nav {
+  position: relative;
+  z-index: 4;
+  background: #fdfcff;
+  border-bottom: 1px solid #e9e2f8;
+}
+.activate-family-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-left: 1px solid #e9e2f8;
+}
+.activate-family-link {
+  min-width: 0;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .7rem .8rem;
+  border-right: 1px solid #e9e2f8;
+  background: #fdfcff;
+  color: #54496e;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color .16s ease, color .16s ease;
+}
+.activate-family-link:hover {
+  background: #f4f0fb;
+  color: #2a1f45;
+}
+.activate-family-link.is-active {
+  background: #2a1f45;
+  color: #fff;
+}
+.activate-family-index {
+  flex: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  color: #9a93b5;
+}
+.activate-family-link.is-active .activate-family-index {
+  color: #cfc6ea;
+}
+.activate-family-link:focus-visible {
+  outline: 3px solid #d93b54;
+  outline-offset: -3px;
+}
+/* Activate content stays readable even if the shared reveal observer is delayed. */
+.activate-family-nav ~ section [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+@media (max-width: 760px) {
+  .activate-family-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .activate-family-overview {
+    grid-column: 1 / -1;
+  }
+  .activate-family-link {
+    min-height: 3.15rem;
+    padding: .62rem .7rem;
+    font-size: .72rem;
+  }
+}
+</style>
