@@ -1,0 +1,97 @@
+{% assign measure_path = page.url | remove: '.html' %}
+<nav class="measure-family-nav" aria-label="Fanfinity Measure pages">
+  <div class="container-page">
+    <div class="measure-family-track">
+      <a href="{{ '/platform/measure' | relative_url }}"
+         class="measure-family-link measure-family-overview{% if measure_path == '/platform/measure' %} is-active{% endif %}"
+         {% if measure_path == '/platform/measure' %}aria-current="page"{% endif %}>
+        <span class="measure-family-index">00</span>
+        <span>Measure overview</span>
+      </a>
+      <a href="{{ '/platform/measure/verified-reach' | relative_url }}"
+         class="measure-family-link{% if measure_path == '/platform/measure/verified-reach' %} is-active{% endif %}"
+         {% if measure_path == '/platform/measure/verified-reach' %}aria-current="page"{% endif %}>
+        <span class="measure-family-index">01</span>
+        <span>Verified reach</span>
+      </a>
+      <a href="{{ '/platform/measure/attribution' | relative_url }}"
+         class="measure-family-link{% if measure_path == '/platform/measure/attribution' %} is-active{% endif %}"
+         {% if measure_path == '/platform/measure/attribution' %}aria-current="page"{% endif %}>
+        <span class="measure-family-index">02</span>
+        <span>Attribution</span>
+      </a>
+      <a href="{{ '/platform/measure/sponsor-portal' | relative_url }}"
+         class="measure-family-link{% if measure_path == '/platform/measure/sponsor-portal' %} is-active{% endif %}"
+         {% if measure_path == '/platform/measure/sponsor-portal' %}aria-current="page"{% endif %}>
+        <span class="measure-family-index">03</span>
+        <span>Sponsor portal</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<style>
+.measure-family-nav {
+  position: relative;
+  z-index: 4;
+  background: #f7f8f3;
+  border-bottom: 1px solid #dce5dc;
+}
+.measure-family-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-left: 1px solid #dce5dc;
+}
+.measure-family-link {
+  min-width: 0;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .7rem .85rem;
+  border-right: 1px solid #dce5dc;
+  background: #f7f8f3;
+  color: #43584f;
+  font-size: .78rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: background-color .16s ease, color .16s ease;
+}
+.measure-family-link:hover {
+  background: #edf2eb;
+  color: #16332b;
+}
+.measure-family-link.is-active {
+  background: #16332b;
+  color: #f7f8f3;
+}
+.measure-family-index {
+  flex: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  color: #82928a;
+}
+.measure-family-link.is-active .measure-family-index {
+  color: #a8d9c8;
+}
+.measure-family-link:focus-visible {
+  outline: 3px solid #d93b54;
+  outline-offset: -3px;
+}
+.measure-family-nav ~ section [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+@media (max-width: 700px) {
+  .measure-family-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .measure-family-link {
+    min-height: 3.15rem;
+    padding: .62rem .7rem;
+    font-size: .72rem;
+  }
+}
+</style>

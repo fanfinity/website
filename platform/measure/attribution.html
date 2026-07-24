@@ -3,38 +3,472 @@ layout: page
 permalink: /platform/measure/attribution
 title: Attribution
 description: "Measure exposure-to-outcome deterministically with Fanfinity Measure."
+cta: false
 breadcrumb_parent: { title: Fanfinity Measure, url: /platform/measure }
 capabilities:
-  - { icon: arrow-right, title: "Exposure-to-outcome tracking",  body: "Track every fan's path from exposure (email, ad, push) to outcome (conversion, return visit, purchase, engagement). See which exposures led to which outcomes, deterministically." }
-  - { icon: activity,  title: "Deterministic, not probabilistic",  body: "Attribution is based on observed facts (you sent this email, the fan converted within this window), not statistical guesses. Explainable and auditable at the fan level." }
-  - { icon: bar,      title: "Multi-touch attribution",       body: "Credit multiple exposures that led to one outcome. Fan saw your email, then your ad, then converted, and both touchpoints get credit because both mattered." }
-  - { icon: trending, title: "Channel and campaign comparison",  body: "Compare attribution across channels, campaigns, and cohorts. See which messaging drives the most valuable outcomes and double down on what works." }
+  - { icon: arrow-right, title: "Exposure-to-outcome tracking", body: "Track every fan's path from exposure (email, ad, push) to outcome (conversion, return visit, purchase, engagement). See which exposures led to which outcomes, deterministically." }
+  - { icon: shield,    title: "Deterministic, not probabilistic", body: "Attribution is based on observed facts (you sent this email, the fan converted within this window), not statistical guesses. Explainable and auditable at the fan level." }
+  - { icon: chart,     title: "Multi-touch attribution",       body: "Credit multiple exposures that led to one outcome. Fan saw your email, then your ad, then converted, and both touchpoints get credit because both mattered." }
+  - { icon: scale,     title: "Channel and campaign comparison", body: "Compare attribution across channels, campaigns, and cohorts. See which messaging drives the most valuable outcomes and double down on what works." }
 benefits:
   - "Prove campaign ROI by showing which exposures led to which outcomes."
   - "Optimize spend by seeing which channels drive the most valuable conversions."
   - "Build sponsor trust by attributing outcomes to sponsor exposures deterministically."
   - "Reduce guesswork by using observed facts instead of statistical models for measurement."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Measure"
-   title="Prove what messaging drove results"
-   subtitle="Fanfinity Measure Attribution tracks exposures to outcomes deterministically. Fan saw your email, then saw an ad, then converted, and attribution shows both touchpoints and their influence on the result."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Measure"
-   secondary_url="/platform/measure"
-   icon="arrow-right" %}
 
-{% include feature-grid.html
-   heading="From touchpoint to outcome, transparently"
-   subheading="Every fan's journey from exposure to result is tracked deterministically. Email sent → ad shown → purchase made. Attribution shows which touchpoints influenced the outcome without guessing."
-   items=page.capabilities
-   columns=2 %}
+{% include measure-family-nav.html %}
 
-{% include feature-split.html
-   title="Deterministic measurement sponsors believe in"
-   body="Sponsors want to understand what drove results. Attribution answers that question using observed facts, not statistical estimates. Did the sponsor's campaign drive conversions? Attribution shows fans who saw the sponsor's content and then converted. That is hard data, not algorithms."
-   points=page.benefits
-   cta_text="See sponsor portal"
-   cta_url="/platform/measure/sponsor-portal"
-   icon="arrow-right" %}
+<!-- ================= HERO ================= -->
+<section class="at-hero">
+  <div class="container-page">
+    <div class="at-hero-grid">
+      <div class="at-hero-copy">
+        <h1 class="at-h1">Credit where <span class="at-accent">credit is due.</span></h1>
+        <p class="at-sub">Fanfinity Measure tracks exposures to outcomes deterministically. The fan saw your email, then your ad, then converted: attribution shows every touchpoint and its influence on the result. Observed facts, not statistical guesses.</p>
+        <div class="at-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform/measure' | relative_url }}" class="btn btn-secondary">Back to Fanfinity Measure</a>
+        </div>
+      </div>
+      <div class="at-hero-visual" aria-hidden="true">
+        <div class="at-journeycard">
+          <span class="at-journeycard-tab">ONE JOURNEY · five facts</span>
+          <div class="at-jc-chain">
+            <span class="at-jc-node" style="--c:#b8860b">Meta ad</span><i></i>
+            <span class="at-jc-node" style="--c:#2f5fb3">email</span><i></i>
+            <span class="at-jc-node" style="--c:#12805c">big screen</span><i></i>
+            <span class="at-jc-node" style="--c:#7c3aed">search</span><i></i>
+            <span class="at-jc-node at-jc-outcome">renewed ✓</span>
+          </div>
+          <div class="at-jc-credit"><span>deterministic credit</span><b>35 · 25 · 25 · 15</b></div>
+        </div>
+        <span class="at-stamp-hero">FULL JOURNEY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CENTERPIECE · THE LAST-CLICK LIE ================= -->
+<section class="at-play" id="atPlay">
+  <div class="container-page">
+    <div class="at-play-head" data-reveal>
+      <p class="at-eyebrow">The last-click lie</p>
+      <h2 class="at-h2">One purchase. <span class="at-accent">Four ways to miscount it.</span></h2>
+      <p class="at-lead">A fan renews on Sunday after a week of touchpoints. Who gets the credit? Flip between the classic attribution models and watch the same journey produce four different truths: then see what the deterministic record says. Simulated journeys; the miscounting is real.</p>
+    </div>
+
+    <div class="at-journeys" data-reveal id="atJourneys">
+      <button type="button" class="at-journeybtn is-active" data-journey="club"><span>JOURNEY 01 · THE CLUB</span><b>The renewal week</b></button>
+      <button type="button" class="at-journeybtn" data-journey="brand"><span>JOURNEY 02 · THE BRAND</span><b>Drop day</b></button>
+    </div>
+
+    <div class="at-lab" data-reveal>
+      <div class="at-strip" id="atStrip"></div>
+
+      <div class="at-models" id="atModels">
+        <span class="at-models-tag">CREDIT IT BY…</span>
+        <button type="button" class="at-model" data-model="last">LAST CLICK<span>the usual suspect</span></button>
+        <button type="button" class="at-model" data-model="first">FIRST CLICK<span>the opener takes all</span></button>
+        <button type="button" class="at-model" data-model="linear">LINEAR<span>everyone gets a quarter</span></button>
+        <button type="button" class="at-model is-active" data-model="det">DETERMINISTIC<span>the observed record</span></button>
+      </div>
+
+      <div class="at-credit">
+        <div class="at-credit-head"><span>WHO GETS THE CREDIT</span><b id="atModelNote">weighted by observed influence across all resolved journeys like hers</b></div>
+        <div class="at-bars" id="atBars"></div>
+        <p class="at-verdict" id="atVerdict"></p>
+      </div>
+
+      <p class="at-log" id="atLog" role="status" aria-live="polite">the deterministic record is up: every touchpoint that happened gets measured credit. Now let last click tell its lie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="at-capabilities">
+  <div class="container-page">
+    <div class="at-sec-head" data-reveal>
+      <h2 class="at-h2">From touchpoint to outcome, <span class="at-accent">transparently</span></h2>
+      <p class="at-lead">Every fan's journey from exposure to result is tracked deterministically. Email sent → ad shown → purchase made. Attribution shows which touchpoints influenced the outcome without guessing.</p>
+    </div>
+    <div class="at-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="at-cap" data-reveal>
+        <span class="at-cap-num">EXHIBIT 0{{ forloop.index }}</span>
+        <span class="at-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= AFFIDAVIT SPLIT ================= -->
+<section class="at-split">
+  <div class="container-page">
+    <div class="at-split-grid">
+      <div class="at-split-copy" data-reveal>
+        <h2 class="at-h2">Measurement sponsors <span class="at-accent">believe in</span></h2>
+        <p class="at-lead">Attribution answers "what drove results?" using observed facts, not statistical estimates. Did the sponsor's campaign drive conversions? Attribution shows fans who saw the sponsor's content and then converted. Hard data, not algorithms.</p>
+        <ul class="at-split-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/measure/sponsor-portal' | relative_url }}" class="btn btn-secondary">See sponsor portal</a>
+      </div>
+      <div class="at-split-visual" data-reveal aria-hidden="true">
+        <div class="at-affidavit">
+          <span class="at-affidavit-tab">THE AFFIDAVIT · sworn facts, not a model</span>
+          <div class="at-aff-row"><span>FACT 1</span><b>Tue 13:02 · Meta ad viewed · Fan #51136 ✓</b></div>
+          <div class="at-aff-row"><span>FACT 2</span><b>Thu 09:12 · email opened · same fan ✓</b></div>
+          <div class="at-aff-row"><span>FACT 3</span><b>Sat 20:58 · big-screen scan · same fan ✓</b></div>
+          <div class="at-aff-row"><span>FACT 4</span><b>Sun 18:20 · searched the club · same fan ✓</b></div>
+          <div class="at-aff-row at-aff-outcome"><span>OUTCOME</span><b>Sun 18:41 · renewed · same fan ✓</b></div>
+          <p class="at-aff-cap">Every line is an observed event on one resolved profile: auditable fan by fan, defensible in any sponsor meeting.</p>
+        </div>
+        <span class="at-stamp-aff">OBSERVED ✓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Stop defunding the channels that start journeys"
+   text="Book a walkthrough and we'll trace one real conversion on your fan graph: every touchpoint, in order, with credit your sponsors and your CFO can both audit." %}
+
+{% raw %}
+<style>
+/* ================= Attribution page: scoped styles (.at-) · case-file family ================= */
+.at-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #1e6e5c; display: flex; align-items: center; gap: .6rem; }
+.at-eyebrow::before { content: none; }
+.at-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.3rem); margin: 1rem 0 0; color: #23213a; }
+.at-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #23213a; }
+.at-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.at-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.at-sub, .at-lead { font-size: 1.08rem; line-height: 1.65; color: #4e4966; margin-top: 1.2rem; max-width: 34rem; }
+.at-sec-head .at-lead, .at-play-head .at-lead { margin-left: auto; margin-right: auto; }
+.at-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.at-hero-ctas .btn-secondary { background: transparent; border: 0; box-shadow: none; padding-inline: .2rem; color: #4e4966; }
+.at-hero-ctas .btn-secondary:hover { background: transparent; color: #23213a; }
+.at-sec-head, .at-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.at-sec-head .at-eyebrow, .at-play-head .at-eyebrow { justify-content: center; }
+
+/* --- hero --- */
+.at-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background: #f2f5f0; }
+@media (min-width: 768px) { .at-hero { min-height: calc(100svh - 10.5rem); display: flex; align-items: center; } }
+.at-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.at-hero-grid > *, .at-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .at-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.at-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1.2rem 0; }
+.at-journeycard { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; box-shadow: 0 7px 14px -12px rgba(35,33,58,.5); padding: 1.1rem 1.15rem; transform: rotate(-.8deg); }
+.at-journeycard-tab { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.at-jc-chain { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; margin-top: .7rem; }
+.at-jc-chain i { width: 1rem; height: 2px; background: #d93b54; flex: none; }
+.at-jc-node { font-family: ui-monospace, monospace; font-size: .58rem; font-weight: 700; color: var(--c, #23213a); background: #fff; border: 1.5px solid var(--c, #23213a); border-radius: 999px; padding: .22rem .5rem; }
+.at-jc-outcome { color: #0d5c40; border-color: #12805c; background: #effaf5; }
+.at-jc-credit { display: flex; justify-content: space-between; align-items: center; margin-top: .8rem; font-family: ui-monospace, monospace; font-size: .6rem; color: #8f8a76; }
+.at-jc-credit b { color: #23213a; }
+.at-stamp-hero { position: absolute; top: .2rem; right: 3%; transform: rotate(9deg); font-family: ui-monospace, monospace; font-size: .64rem; font-weight: 700; letter-spacing: .14em; color: #1e6e5c; border: 2.5px solid #1e6e5c; border-radius: .45rem; padding: .28rem .6rem; background: rgba(239,250,245,.92); }
+.at-stamp-aff { position: absolute; top: -.6rem; right: 5%; transform: rotate(8deg); font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; letter-spacing: .14em; color: #1e6e5c; border: 2px solid #1e6e5c; border-radius: .45rem; padding: .28rem .6rem; background: rgba(239,250,245,.92); }
+
+/* ================= CENTERPIECE · THE LAST-CLICK LIE ================= */
+.at-play { padding: 4.5rem 0 5rem; background: #f6f7f9; border-top: 1px solid #e3e5ea; border-bottom: 1px solid #e3e5ea; overflow-x: clip; }
+.at-journeys { display: grid; gap: .6rem; margin-bottom: 1.2rem; }
+@media (min-width: 640px) { .at-journeys { grid-template-columns: 1fr 1fr; } }
+.at-journeybtn { display: flex; flex-direction: column; gap: .2rem; align-items: flex-start; text-align: left; background: #fdfcf7; border: 2px solid #23213a; border-radius: .8rem; padding: .7rem .9rem; cursor: pointer; transition: background-color .16s, border-color .16s; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); }
+.at-journeybtn span { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.at-journeybtn b { font-size: .88rem; color: #23213a; }
+.at-journeybtn:hover { background: #f2f5f0; }
+.at-journeybtn.is-active { background: #23213a; box-shadow: none; }
+.at-journeybtn.is-active span { color: #7ee2c0; }
+.at-journeybtn.is-active b { color: #fdfcf7; }
+
+.at-lab { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.4rem; box-shadow: 0 7px 16px -13px rgba(35,33,58,.5); padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+
+/* the journey strip */
+.at-strip { display: flex; align-items: stretch; gap: .5rem; overflow-x: auto; padding-bottom: .3rem; }
+.at-touch { position: relative; flex: 1 0 9.5rem; display: flex; flex-direction: column; gap: .2rem; background: #fff; border: 2px solid #23213a; border-radius: .9rem; padding: .6rem .7rem; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); transition: opacity .3s, transform .3s; }
+.at-touch::after { content: "→"; position: absolute; right: -.55rem; top: 50%; transform: translateY(-50%); color: #d93b54; font-weight: 800; z-index: 1; }
+.at-touch:last-child::after { content: ""; }
+.at-touch-when { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .1em; color: #8f8a76; }
+.at-touch-what { font-weight: 700; font-size: .84rem; color: #23213a; }
+.at-touch-ch { font-family: ui-monospace, monospace; font-size: .56rem; font-weight: 700; color: var(--c); }
+.at-touch-outcome { background: #effaf5; border-color: #12805c; }
+.at-touch-outcome .at-touch-ch { color: #0d5c40; }
+.at-touch-stamp { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-8deg) scale(1.6); opacity: 0; font-family: ui-monospace, monospace; font-size: .52rem; font-weight: 700; letter-spacing: .1em; text-align: center; line-height: 1.4; padding: .25rem .45rem; border-radius: .35rem; pointer-events: none; transition: all .3s; }
+.at-touch.is-invisible .at-touch-stamp { opacity: 1; transform: translate(-50%,-50%) rotate(-8deg) scale(1); color: #8f8a76; border: 1.5px dashed #8f8a76; background: rgba(246,247,249,.95); }
+.at-touch.is-invisible > *:not(.at-touch-stamp) { opacity: .3; }
+.at-touch.is-fund .at-touch-stamp { opacity: 1; transform: translate(-50%,-50%) rotate(-8deg) scale(1); color: #0d5c40; border: 1.5px solid #12805c; background: rgba(239,250,245,.95); }
+
+/* models */
+.at-models { display: flex; align-items: stretch; gap: .5rem; flex-wrap: wrap; }
+.at-models-tag { flex-basis: 100%; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.at-model { flex: 1; min-width: 8rem; display: flex; flex-direction: column; gap: .1rem; align-items: flex-start; font-family: ui-monospace, monospace; font-size: .66rem; font-weight: 700; letter-spacing: .06em; color: #8f8a76; background: #fff; border: 1.5px dashed #d8d3c2; border-radius: .75rem; padding: .55rem .65rem; cursor: pointer; transition: all .16s; }
+.at-model span { font-weight: 400; font-size: .58rem; letter-spacing: 0; }
+.at-model[data-model="last"].is-active { color: #a82540; border: 1.5px solid #d93b54; background: #fdf0f2; }
+.at-model[data-model="first"].is-active { color: #8a6408; border: 1.5px solid #b8860b; background: #fdf6e3; }
+.at-model[data-model="linear"].is-active { color: #2f5fb3; border: 1.5px solid #2f5fb3; background: #eef3fd; }
+.at-model[data-model="det"].is-active { color: #0d5c40; border: 1.5px solid #12805c; background: #effaf5; }
+
+/* credit bars */
+.at-credit { background: #fff; border: 2px solid #23213a; border-radius: 1rem; padding: .9rem 1rem; }
+.at-credit-head { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; flex-wrap: wrap; margin-bottom: .7rem; }
+.at-credit-head span { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.at-credit-head b { font-family: ui-monospace, monospace; font-size: .58rem; font-weight: 400; color: #8f8a76; }
+.at-bars { display: flex; flex-direction: column; gap: .55rem; }
+.at-bar { display: grid; grid-template-columns: 7.5rem 1fr 3rem; align-items: center; gap: .6rem; }
+.at-bar-label { font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; color: var(--c); }
+.at-bar-track { height: 1.15rem; background: #f0ede4; border-radius: 999px; overflow: hidden; }
+.at-bar-track i { display: block; height: 100%; width: 0; background: var(--c); border-radius: 999px; transition: width .8s cubic-bezier(.2,.8,.2,1); }
+.at-bar-pct { font-family: ui-monospace, monospace; font-size: .72rem; font-weight: 700; color: #23213a; text-align: right; }
+.at-bar-pct.bump { display: inline-block; animation: at-bump .4s ease; }
+@keyframes at-bump { 40% { transform: scale(1.2); } }
+.at-verdict { margin-top: .75rem; font-family: ui-monospace, monospace; font-size: .68rem; line-height: 1.6; color: #4e4966; background: #fdfcf7; border: 1.5px dashed #d8d3c2; border-radius: .7rem; padding: .55rem .7rem; }
+.at-verdict b { color: #a82540; }
+.at-verdict.at-verdict-good b { color: #0d5c40; }
+.at-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #4e4966; background: #fff; border: 1.5px dashed #d8d3c2; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= CAPABILITIES ================= */
+.at-capabilities { padding: 4.5rem 0; background: #f6f7f9; }
+.at-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .at-cap-grid { grid-template-columns: 1fr 1fr; } }
+.at-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); transition: background-color .18s ease; }
+.at-cap:hover { background: #f2f5f0; }
+.at-cap-num { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .14em; font-weight: 700; color: #d93b54; }
+.at-cap-icon { display: inline-flex; align-items: center; justify-content: center; color: #1e6e5c; }
+.at-cap:hover .at-cap-icon { color: #0d5c40; }
+.at-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #23213a; margin: .2rem 0 0; }
+.at-cap p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= SPLIT ================= */
+.at-split { padding: 4.5rem 0; background: #f6f7f9; border-top: 1px solid #e3e5ea; }
+.at-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .at-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.at-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.at-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #4e4966; }
+.at-split-list svg { flex: none; color: #1e6e5c; margin-top: .2rem; }
+.at-split-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.2rem; }
+.at-affidavit { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; box-shadow: 0 7px 16px -13px rgba(35,33,58,.5); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .5rem; transform: rotate(-.6deg); }
+.at-affidavit-tab { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.at-aff-row { display: flex; align-items: center; gap: .6rem; font-family: ui-monospace, monospace; font-size: .64rem; background: #fff; border: 1px solid #e4e1d5; border-radius: .5rem; padding: .4rem .6rem; }
+.at-aff-row span { flex: none; color: #d93b54; font-weight: 700; font-size: .54rem; letter-spacing: .1em; }
+.at-aff-row b { color: #23213a; font-weight: 400; }
+.at-aff-outcome { background: #effaf5; border-color: #9fd9c2; }
+.at-aff-outcome span { color: #0d5c40; }
+.at-aff-outcome b { color: #0d5c40; font-weight: 700; }
+.at-aff-cap { font-size: .76rem; line-height: 1.5; color: #8f8a76; margin-top: .3rem; }
+
+@media (max-width: 640px) {
+  .at-bar { grid-template-columns: 5.6rem 1fr 2.6rem; }
+  .at-touch { flex-basis: 8.2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .at-bar-track i { transition: none; }
+  .at-bar-pct.bump { animation-duration: .01s !important; }
+}
+</style>
+
+<script>
+/* ================= Attribution page: last-click lie engine ================= */
+(function () {
+  var play = document.getElementById('atPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  var JOURNEYS = {
+    club: {
+      strip: [
+        { when: 'TUE 13:02', what: 'Meta ad viewed', ch: 'META · PAID', c: '#b8860b' },
+        { when: 'THU 09:12', what: 'renewal email opened', ch: 'EMAIL · OWNED', c: '#2f5fb3' },
+        { when: 'SAT 20:58', what: 'big-screen QR scanned', ch: 'STADIUM · OWNED', c: '#12805c' },
+        { when: 'SUN 18:20', what: 'searched the club', ch: 'GOOGLE · PAID', c: '#7c3aed' },
+        { when: 'SUN 18:41', what: 'membership renewed', ch: 'OUTCOME · $', c: '#0d5c40', outcome: true }
+      ],
+      bars: [
+        { label: 'Meta ad', c: '#b8860b' },
+        { label: 'Email', c: '#2f5fb3' },
+        { label: 'Big screen', c: '#12805c' },
+        { label: 'Google search', c: '#7c3aed' }
+      ],
+      models: {
+        last: { vals: [0, 0, 0, 100], note: 'Google takes 100%: the three touches that started it look like nothing',
+          verdict: { b: 'Google gets 100%.', rest: ' Meta, email, and the big screen read as zero: and next quarter they get defunded. That\u2019s the lie.' } },
+        first: { vals: [100, 0, 0, 0], note: 'the opener takes all: everything after gets zero',
+          verdict: { b: 'Meta gets 100%.', rest: ' Better: but the email that re-warmed her and the scan that sealed it still count for nothing.' } },
+        linear: { vals: [25, 25, 25, 25], note: 'everyone gets a quarter: politeness, not measurement',
+          verdict: { b: 'Everyone gets 25%.', rest: ' Fair-looking, wrong everywhere: it can\u2019t tell the opener from the closer.' } },
+        det: { vals: [35, 25, 25, 15], note: 'weighted by observed influence across all resolved journeys like hers',
+          verdict: { b: 'The observed record.', rest: ' Every touch that happened, weighted by what journeys like hers actually did: auditable fan by fan.', good: true } }
+      }
+    },
+    brand: {
+      strip: [
+        { when: 'FRI 19:22', what: 'Instagram ad viewed', ch: 'INSTAGRAM · PAID', c: '#c026d3' },
+        { when: 'SAT 09:00', what: 'drop reminder push', ch: 'PUSH · OWNED', c: '#7c3aed' },
+        { when: 'SAT 11:30', what: 'store QR scanned', ch: 'RETAIL · OWNED', c: '#12805c' },
+        { when: 'SAT 12:05', what: 'searched the jacket', ch: 'GOOGLE · PAID', c: '#b8860b' },
+        { when: 'SAT 12:11', what: 'jacket purchased', ch: 'OUTCOME · $', c: '#0d5c40', outcome: true }
+      ],
+      bars: [
+        { label: 'Instagram ad', c: '#c026d3' },
+        { label: 'Push', c: '#7c3aed' },
+        { label: 'Store QR', c: '#12805c' },
+        { label: 'Google search', c: '#b8860b' }
+      ],
+      models: {
+        last: { vals: [0, 0, 0, 100], note: 'Google takes 100%: the drop campaign reads as zero',
+          verdict: { b: 'Google gets 100%.', rest: ' The Instagram ad that started it and the store visit that proved it both vanish from the report.' } },
+        first: { vals: [100, 0, 0, 0], note: 'the opener takes all: everything after gets zero',
+          verdict: { b: 'Instagram gets 100%.', rest: ' The push that got her to the store and the QR that closed it read as nothing.' } },
+        linear: { vals: [25, 25, 25, 25], note: 'everyone gets a quarter: politeness, not measurement',
+          verdict: { b: 'Everyone gets 25%.', rest: ' The ad that sparked desire and the search that typed the card number: identical credit.' } },
+        det: { vals: [40, 20, 25, 15], note: 'weighted by observed influence across all resolved journeys like hers',
+          verdict: { b: 'The observed record.', rest: ' Instagram opens, push reminds, the store proves, Google closes: weighted by reality.', good: true } }
+      }
+    }
+  };
+
+  var state = { journey: 'club', model: 'det' };
+  var stripEl = $('atStrip'), barsEl = $('atBars'), noteEl = $('atModelNote');
+  var verdictEl = $('atVerdict'), logEl = $('atLog');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function bump(node) { node.classList.remove('bump'); void node.offsetWidth; node.classList.add('bump'); }
+
+  function setStamp(card, html) {
+    var s = card.querySelector('.at-touch-stamp');
+    if (!s) { s = el('span', 'at-touch-stamp'); card.appendChild(s); }
+    s.innerHTML = '';
+    var parts = html.split('|');
+    for (var i = 0; i < parts.length; i++) {
+      if (i) s.appendChild(document.createElement('br'));
+      s.appendChild(document.createTextNode(parts[i]));
+    }
+  }
+
+  function renderStrip() {
+    var j = JOURNEYS[state.journey];
+    stripEl.innerHTML = '';
+    j.strip.forEach(function (t, i) {
+      var card = el('div', 'at-touch' + (t.outcome ? ' at-touch-outcome' : ''));
+      card.setAttribute('data-i', i);
+      card.style.setProperty('--c', t.c);
+      card.appendChild(el('span', 'at-touch-when', t.when));
+      card.appendChild(el('span', 'at-touch-what', t.what));
+      card.appendChild(el('span', 'at-touch-ch', t.ch));
+      card.appendChild(el('span', 'at-touch-stamp', ''));
+      stripEl.appendChild(card);
+    });
+  }
+
+  function renderBars() {
+    var j = JOURNEYS[state.journey];
+    barsEl.innerHTML = '';
+    j.bars.forEach(function (b, i) {
+      var row = el('div', 'at-bar');
+      row.style.setProperty('--c', b.c);
+      row.appendChild(el('span', 'at-bar-label', b.label));
+      var track = el('div', 'at-bar-track');
+      var fill = el('i'); fill.setAttribute('id', 'atFill' + i);
+      track.appendChild(fill);
+      row.appendChild(track);
+      var pct = el('span', 'at-bar-pct', '0%');
+      pct.setAttribute('id', 'atPct' + i);
+      row.appendChild(pct);
+      barsEl.appendChild(row);
+    });
+  }
+
+  function setModel(modelKey) {
+    state.model = modelKey;
+    var j = JOURNEYS[state.journey];
+    var m = j.models[modelKey];
+    noteEl.textContent = m.note;
+    m.vals.forEach(function (v, i) {
+      var fill = $('atFill' + i), pct = $('atPct' + i);
+      if (fill) fill.style.width = v + '%';
+      if (pct) { pct.textContent = v + '%'; bump(pct); }
+    });
+    verdictEl.innerHTML = '';
+    verdictEl.appendChild(el('b', null, m.verdict.b));
+    verdictEl.appendChild(document.createTextNode(m.verdict.rest));
+    verdictEl.classList.toggle('at-verdict-good', !!m.verdict.good);
+
+    var cards = stripEl.children;
+    var lastIdx = j.strip.length - 2; /* last touchpoint before outcome */
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].classList.remove('is-invisible', 'is-fund');
+      if (modelKey === 'last' && i < lastIdx) {
+        cards[i].classList.add('is-invisible');
+        setStamp(cards[i], 'INVISIBLE|TO THIS MODEL');
+      } else if (modelKey === 'first' && i > 0 && i <= lastIdx) {
+        cards[i].classList.add('is-invisible');
+        setStamp(cards[i], 'ZERO CREDIT|HERE');
+      } else if (modelKey === 'det' && i === 0) {
+        cards[i].classList.add('is-fund');
+        setStamp(cards[i], 'THE OPENER|FUND THIS \u2713');
+      }
+    }
+
+    logEl.textContent = modelKey === 'last'
+      ? 'last click: only the final touch exists. Watch three touches disappear from the strip.'
+      : modelKey === 'first'
+        ? 'first click: the opener takes everything; the middle of the journey goes to zero.'
+        : modelKey === 'linear'
+          ? 'linear: polite, even, and wrong: every touch reads identical.'
+          : 'deterministic: the strip stays whole. Credit follows what actually happened.';
+  }
+
+  $('atModels').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.at-model') : null;
+    if (!btn) return;
+    var all = $('atModels').querySelectorAll('.at-model');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+    setModel(btn.getAttribute('data-model'));
+  });
+
+  $('atJourneys').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.at-journeybtn') : null;
+    if (!btn) return;
+    var all = $('atJourneys').querySelectorAll('.at-journeybtn');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+    state.journey = btn.getAttribute('data-journey');
+    renderStrip();
+    renderBars();
+    var models = $('atModels').querySelectorAll('.at-model');
+    for (var k = 0; k < models.length; k++) {
+      var isDet = models[k].getAttribute('data-model') === 'det';
+      models[k].classList.toggle('is-active', isDet);
+      models[k].setAttribute('aria-pressed', isDet ? 'true' : 'false');
+    }
+    setModel('det');
+    logEl.textContent = 'new journey, same deterministic record: now try lying to it with last click.';
+  });
+
+  Array.prototype.forEach.call($('atModels').querySelectorAll('.at-model'), function (btn) {
+    btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+  });
+  Array.prototype.forEach.call($('atJourneys').querySelectorAll('.at-journeybtn'), function (btn) {
+    btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+  });
+  renderStrip();
+  renderBars();
+  setModel('det');
+})();
+</script>
+{% endraw %}
