@@ -2,7 +2,8 @@
 layout: page
 permalink: /platform/deploy
 title: Deploy Anywhere
-description: "Run Fanfinity in your own cloud, on-premise, or fully managed, in-Kingdom or any region. Data residency is governed at the data layer, with no vendor copy of your fan base."
+description: "Run Fanfinity in your own cloud, on-premise, or fully managed, with Saudi fan data kept in-Kingdom. Data residency is governed at the data layer, with no vendor copy of your fan base."
+cta: false
 breadcrumb_parent: { title: Platform, url: /platform }
 models:
   - { icon: stack, title: "Your cloud (bring-your-own-cloud)", body: "Deploy Fanfinity inside your own cloud account or private network, in the region you require. The platform runs on infrastructure you already govern, so it inherits your security policy instead of asking you to trust a new one." }
@@ -20,9 +21,9 @@ fit_points:
   - "In-Kingdom data residency and PDPL consent governed at the data layer, not patched on top."
   - "Warehouse-composable: point it at your own analytical warehouse and take only the components you need."
 region_points:
-  - "Deploy in-Kingdom to keep fan data inside Saudi Arabia, or in any region your rules require."
+  - "Deploy in-Kingdom so Saudi fan data stays inside the Kingdom from ingestion onward."
   - "The same platform runs across major cloud providers and on-premise, residency is a choice, not a limitation."
-  - "In-region cloud availability keeps expanding across the Kingdom; on-premise and private-network deployments are the options we scope first."
+  - "In-Kingdom cloud availability keeps expanding across the Kingdom; on-premise and private-network deployments are the options we scope first."
   - "Because deployment is portable by design, moving regions is a configuration decision, not a re-platforming project."
 faqs:
   - q: "Where can Fanfinity actually run?"
@@ -34,46 +35,545 @@ faqs:
   - q: "Who operates the deployment, us or Fanfinity?"
     a: "Your call. Self-host and your IT team keeps full control over security, access, and residency, with the platform integrating into your existing stack. Choose managed and Fanfinity runs the infrastructure while the residency and consent guarantees stay in place."
 ---
-{% include hero.html
-   eyebrow="The platform"
-   title="Your cloud, your servers, or ours. Your call."
-   subtitle="Run Fanfinity in your own cloud, on-premise, or fully managed, in-Kingdom or any region. Residency and consent are governed at the data layer, so where your fan data lives is a decision you make, not one a vendor makes for you."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="For developers"
-   secondary_url="/developers"
-   image="/assets/img/platform-deploy.jpg"
-   image_alt="A close-up view of a server rack in a data center" %}
 
-{% include feature-grid.html
-   heading="Four ways to run it, one platform"
-   subheading="The same system runs in your cloud, on your servers, or fully managed, so residency, control, and speed are trade-offs you choose rather than accept. Deployment options are scoped per engagement."
-   items=page.models
-   columns=2 %}
+<!-- ================= HERO ================= -->
+<section class="dp-hero">
+  <div class="container-page">
+    <div class="dp-hero-grid">
+      <div class="dp-hero-copy">
+        <h1 class="dp-h1">Deploy on <span class="dp-accent">your terms.</span></h1>
+        <p class="dp-sub">Run Fanfinity in your own cloud, on-premise, or fully managed: with Saudi fan data kept in-Kingdom. Residency and consent are governed at the data layer, so the boundary is enforced before data is activated.</p>
+        <div class="dp-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/developers' | relative_url }}" class="btn btn-secondary">For developers</a>
+        </div>
+      </div>
+      <div class="dp-hero-visual" aria-hidden="true">
+        <div class="dp-minirack">
+          <div class="dp-minirack-rail"><span>FANFINITY · 4U</span><span class="dp-leds"><i></i><i></i><i></i><i></i></span></div>
+          <div class="dp-minirack-unit"><b>ID · resolve</b><span class="dp-leds"><i></i><i></i></span></div>
+          <div class="dp-minirack-unit"><b>ENGAGE · live</b><span class="dp-leds"><i></i><i></i></span></div>
+          <div class="dp-minirack-unit"><b>ACTIVATE · send</b><span class="dp-leds"><i></i><i></i></span></div>
+          <div class="dp-minirack-unit"><b>MEASURE · prove</b><span class="dp-leds"><i></i><i></i></span></div>
+          <div class="dp-minirack-rail"><span>REGION: your choice</span><span class="dp-okdot"></span></div>
+        </div>
+        <span class="dp-stamp-hero">SAME STACK<br>ANY ADDRESS</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-grid.html
-   heading="Setup starts from what you already run"
-   subheading="Point the platform at infrastructure you control, keep your own governance in place, and integrate the stack, security policy, and warehouse you already operate."
-   items=page.how
-   columns=2 %}
+<!-- ================= CENTERPIECE · THE RACK BUILDER ================= -->
+<section class="dp-play" id="dpPlay">
+  <div class="container-page">
+    <div class="dp-play-head" data-reveal>
+      <p class="dp-eyebrow">The rack builder</p>
+      <h2 class="dp-h2">One stack. <span class="dp-accent">Four addresses.</span></h2>
+      <p class="dp-lead">The platform is the same five units wherever it runs. Pick an address and watch the rack power up: then read the status panel: who operates it, who holds the keys, and whether a vendor copy of your fan base exists anywhere. Simulated rack; the trade-offs are real.</p>
+    </div>
 
-{% include feature-split.html
-   reverse=true
-   title="In-Kingdom, or wherever your rules require"
-   body="Where fan data lives is a first-class deployment choice. Keep it inside the Kingdom for PDPL, or in any region you operate in, and change it later without re-platforming."
-   points=page.region_points
-   cta_text="See in-Kingdom & residency"
-   cta_url="/platform/data-residency"
-   icon="scale" %}
+    <div class="dp-builder" data-reveal>
+      <div class="dp-models" id="dpModels">
+        <button type="button" class="dp-model is-active" data-model="cloud"><span>ADDRESS 01</span><b>Your cloud</b><i>your account · your region</i></button>
+        <button type="button" class="dp-model" data-model="onprem"><span>ADDRESS 02</span><b>On-premise</b><i>your servers · full control</i></button>
+        <button type="button" class="dp-model" data-model="managed"><span>ADDRESS 03</span><b>Fanfinity-managed</b><i>speed over infra work</i></button>
+        <button type="button" class="dp-model" data-model="hybrid"><span>ADDRESS 04</span><b>Hybrid</b><i>you draw the split</i></button>
+      </div>
 
-{% include feature-split.html
-   title="Sovereignty without the trade-offs"
-   body="Most platforms make you choose between control and convenience: keep data in-region and lose capability, or get capability and give up control. Fanfinity gives you the full loop on infrastructure you govern, in-Kingdom, on-prem, or any cloud."
-   points=page.fit_points
-   cta_text="See security & compliance"
-   cta_url="/platform/security"
-   icon="shield" %}
+      <div class="dp-stage">
+        <div class="dp-rack" id="dpRack">
+          <div class="dp-rack-rail"><span id="dpRackName">FANFINITY · YOUR CLOUD ACCOUNT</span><span class="dp-power" id="dpPower"><i></i>POWER</span></div>
+          <div class="dp-bays" id="dpBays">
+            <div class="dp-bay" data-unit="collect"><span class="dp-bay-name">COLLECT · events</span><span class="dp-bay-leds"><i></i><i></i><i></i></span></div>
+            <div class="dp-bay" data-unit="id"><span class="dp-bay-name">ID · resolve</span><span class="dp-bay-leds"><i></i><i></i><i></i></span></div>
+            <div class="dp-bay" data-unit="engage"><span class="dp-bay-name">ENGAGE · live</span><span class="dp-bay-leds"><i></i><i></i><i></i></span></div>
+            <div class="dp-bay" data-unit="activate"><span class="dp-bay-name">ACTIVATE · send</span><span class="dp-bay-leds"><i></i><i></i><i></i></span></div>
+            <div class="dp-bay" data-unit="measure"><span class="dp-bay-name">MEASURE · prove</span><span class="dp-bay-leds"><i></i><i></i><i></i></span></div>
+          </div>
+          <div class="dp-rack-rail dp-rack-region"><span>REGION</span><b id="dpRegion">in-Kingdom ✓ chosen up front</b></div>
+        </div>
 
-{% include faq.html
-   eyebrow="Deployment · common questions"
-   heading="How and where Fanfinity runs" %}
+        <div class="dp-hybrid" id="dpHybrid" hidden>
+          <span class="dp-hybrid-tag">DRAW THE SPLIT · tap a unit to move it</span>
+          <div class="dp-hybrid-cols">
+            <div class="dp-hybrid-col"><span class="dp-hybrid-head dp-hybrid-in">YOUR PERIMETER</span><div class="dp-hybrid-units" id="dpInside"></div></div>
+            <div class="dp-hybrid-col"><span class="dp-hybrid-head dp-hybrid-out">YOUR CLOUD CAPACITY</span><div class="dp-hybrid-units" id="dpOutside"></div></div>
+          </div>
+          <p class="dp-hybrid-note" id="dpHybridNote">regulated records stay inside; heavy processing uses capacity you already own.</p>
+        </div>
+
+        <div class="dp-status" id="dpStatus">
+          <div class="dp-status-head"><span>STATUS PANEL</span><b id="dpStatusModel">YOUR CLOUD</b></div>
+          <div class="dp-status-rows" id="dpStatusRows"></div>
+        </div>
+      </div>
+
+      <p class="dp-log" id="dpLog" role="status" aria-live="polite">rack at address 01: powered, all five units healthy, zero vendor copy detected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEPLOYMENT MODELS ================= -->
+<section class="dp-models-sec">
+  <div class="container-page">
+    <div class="dp-sec-head" data-reveal>
+      <h2 class="dp-h2">Four ways to run it, <span class="dp-accent">one platform</span></h2>
+      <p class="dp-lead">The same system runs in your cloud, on your servers, or fully managed: so residency, control, and speed are trade-offs you choose rather than accept. Deployment options are scoped per engagement.</p>
+    </div>
+    <div class="dp-model-grid">
+      {% for item in page.models %}
+      <div class="dp-model-card" data-reveal>
+        <span class="dp-model-num">MODEL 0{{ forloop.index }}</span>
+        <span class="dp-model-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW DEPLOYMENT WORKS ================= -->
+<section class="dp-how">
+  <div class="container-page">
+    <div class="dp-sec-head" data-reveal>
+      <h2 class="dp-h2">Setup starts from <span class="dp-accent">what you already run</span></h2>
+      <p class="dp-lead">Point the platform at infrastructure you control, keep your own governance in place, and integrate the stack, security policy, and warehouse you already operate.</p>
+    </div>
+    <ol class="dp-how-grid">
+      {% for item in page.how %}
+      <li class="dp-how-card" data-reveal>
+        <span class="dp-how-num">0{{ forloop.index }}</span>
+        <span class="dp-model-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ================= REGION & RESIDENCY ================= -->
+<section class="dp-region">
+  <div class="container-page">
+    <div class="dp-split-grid">
+      <div class="dp-split-copy" data-reveal>
+        <h2 class="dp-h2">In-Kingdom, or wherever <span class="dp-accent">your rules require</span></h2>
+        <p class="dp-lead">Where fan data lives is a first-class deployment constraint. Saudi fan data stays inside the Kingdom for PDPL: enforced at the data layer from ingestion through activation.</p>
+        <ul class="dp-split-list">
+          {% for p in page.region_points %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ p }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/data-residency' | relative_url }}" class="btn btn-secondary">See in-Kingdom &amp; residency</a>
+      </div>
+      <div class="dp-split-visual" data-reveal aria-hidden="true">
+        <div class="dp-rescard">
+          <div class="dp-rescard-head"><span>RESIDENCY LEDGER · from ingestion onward</span><span class="dp-okdot"></span></div>
+          <div class="dp-rescard-row"><span>ingestion</span><b>in-Kingdom ✓</b></div>
+          <div class="dp-rescard-row"><span>storage</span><b>in-Kingdom ✓</b></div>
+          <div class="dp-rescard-row"><span>processing</span><b>in-Kingdom ✓</b></div>
+          <div class="dp-rescard-row"><span>activation</span><b>in-Kingdom ✓</b></div>
+          <div class="dp-rescard-row dp-rescard-total"><span>vendor copy of your fan base</span><b>none · by design</b></div>
+          <p class="dp-rescard-cap">the boundary is enforced at the data layer: before data is activated, not after it left.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY IT MATTERS ================= -->
+<section class="dp-fit">
+  <div class="container-page">
+    <div class="dp-split-grid dp-split-rev">
+      <div class="dp-split-copy" data-reveal>
+        <h2 class="dp-h2">Sovereignty without <span class="dp-accent">the trade-offs</span></h2>
+        <p class="dp-lead">Most platforms make you choose between control and convenience: keep data in-Kingdom and lose capability, or get capability and give up control. Fanfinity gives you the full loop on infrastructure you govern.</p>
+        <ul class="dp-split-list">
+          {% for p in page.fit_points %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ p }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/security' | relative_url }}" class="btn btn-secondary">See security &amp; compliance</a>
+      </div>
+      <div class="dp-split-visual" data-reveal aria-hidden="true">
+        <div class="dp-trade">
+          <div class="dp-trade-row dp-trade-bad"><span>keep data in-Kingdom…</span><b>…lose capability ✗</b></div>
+          <div class="dp-trade-row dp-trade-bad"><span>get full capability…</span><b>…give up control ✗</b></div>
+          <div class="dp-trade-arrow">{% include icon.html name="arrow-right" class="h-4 w-4" %}</div>
+          <div class="dp-trade-row dp-trade-good"><span>the Fanfinity way</span><b>full loop · your infrastructure ✓</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="dp-faq">
+  <div class="container-page">
+    <div class="dp-sec-head" data-reveal>
+      <h2 class="dp-h2">How and where <span class="dp-accent">Fanfinity runs</span></h2>
+    </div>
+    <div class="dp-faq-list" data-reveal>
+      {% for f in page.faqs %}
+      <details class="dp-faq-item"{% if forloop.first %} open{% endif %}>
+        <summary><span>{{ f.q }}</span>{% include icon.html name="chevron-down" class="h-4 w-4" %}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Point us at infrastructure you govern"
+   text="Book a walkthrough with your infra lead in the room. We'll scope the deployment model: your cloud, on-prem, managed, or hybrid: and the residency boundary that goes with it." %}
+
+{% raw %}
+<style>
+/* ================= Deploy page: scoped styles (.dp-) · light "build plan", brand purple ================= */
+.dp-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #7c3aed; display: flex; align-items: center; gap: .6rem; }
+.dp-eyebrow::before { content: none; }
+.dp-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.5rem, 5.2vw, 4.2rem); margin: 1rem 0 0; color: #2b2145; }
+.dp-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #2b2145; }
+.dp-accent { position: relative; display: inline-block; color: #7c3aed; white-space: nowrap; }
+.dp-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%237c3aed' stroke-width='3' fill='none' stroke-linecap='round' opacity='.4'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.dp-sub, .dp-lead { font-size: 1.08rem; line-height: 1.65; color: #54496e; margin-top: 1.2rem; max-width: 34rem; }
+.dp-sec-head .dp-lead, .dp-play-head .dp-lead { margin-left: auto; margin-right: auto; }
+.dp-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.dp-hero-ctas .btn-secondary { background: transparent; border: 0; box-shadow: none; padding-inline: .2rem; color: #54496e; }
+.dp-hero-ctas .btn-secondary:hover { background: transparent; color: #2b2145; }
+.dp-sec-head, .dp-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.dp-sec-head .dp-eyebrow, .dp-play-head .dp-eyebrow { justify-content: center; }
+
+/* --- hero: quiet deployment-plan surface --- */
+.dp-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background: #f4f1fb; }
+@media (min-width: 768px) { .dp-hero { min-height: calc(100svh - 7rem); display: flex; align-items: center; } }
+.dp-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.dp-hero-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .dp-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.dp-hero-visual { position: relative; max-width: 24rem; margin: 0 auto; width: 100%; padding: 1.2rem 0; }
+.dp-hero-visual::before { content: ""; position: absolute; inset: -1.4rem; border: 2px dashed rgba(124,58,237,.3); border-radius: 1.6rem; pointer-events: none; }
+.dp-minirack { position: relative; background: #fff; border: 2px solid #2b2145; border-radius: .9rem; padding: .7rem .8rem; display: flex; flex-direction: column; gap: .45rem; box-shadow: 0 7px 14px -12px rgba(43,33,69,.5); transform: rotate(-.6deg); animation: dp-float 7s ease-in-out infinite; }
+@keyframes dp-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -5px; } }
+.dp-minirack-rail { display: flex; align-items: center; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .12em; color: #8b84a6; padding: .15rem .2rem; }
+.dp-minirack-unit { position: relative; display: flex; align-items: center; justify-content: space-between; background: #f7f5fd; border: 1.5px solid #d9cfef; border-radius: .5rem; padding: .55rem .7rem .55rem 1rem; }
+.dp-minirack-unit::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: .32rem; border-radius: .5rem 0 0 .5rem; background: var(--uc, #7c3aed); }
+.dp-minirack-unit:nth-of-type(2) { --uc: #7c3aed; }
+.dp-minirack-unit:nth-of-type(3) { --uc: #c026d3; }
+.dp-minirack-unit:nth-of-type(4) { --uc: #2f5fb3; }
+.dp-minirack-unit:nth-of-type(5) { --uc: #12805c; }
+.dp-minirack-unit b { font-family: ui-monospace, monospace; font-size: .66rem; letter-spacing: .06em; color: #2b2145; }
+.dp-leds { display: inline-flex; gap: .3rem; }
+.dp-leds i { width: .4rem; height: .4rem; border-radius: 999px; background: #0e9f6e; }
+.dp-leds i:nth-child(2) { background: #d97706; }
+.dp-okdot { width: .5rem; height: .5rem; border-radius: 999px; background: #0e9f6e; }
+.dp-stamp-hero { position: absolute; top: 0; right: 2%; transform: rotate(9deg); text-align: center; font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; letter-spacing: .14em; line-height: 1.6; color: #7c3aed; border: 2.5px solid #7c3aed; border-radius: .45rem; padding: .3rem .6rem; background: rgba(255,255,255,.94); }
+
+/* ================= CENTERPIECE · RACK BUILDER ================= */
+.dp-play { padding: 4.5rem 0 5rem; background: #faf8fe; border-top: 1px solid #e9e2f8; border-bottom: 1px solid #e9e2f8; overflow-x: clip; }
+.dp-models { display: grid; gap: .6rem; margin-bottom: 1.2rem; }
+@media (min-width: 760px) { .dp-models { grid-template-columns: repeat(4, 1fr); } }
+.dp-model { display: flex; flex-direction: column; gap: .15rem; align-items: flex-start; text-align: left; background: #fff; border: 2px solid #2b2145; border-radius: .8rem; padding: .7rem .85rem; cursor: pointer; transition: background-color .16s, border-color .16s; box-shadow: 0 6px 14px -12px rgba(43,33,69,.5); }
+.dp-model span { font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .14em; font-weight: 700; color: #7c3aed; }
+.dp-model b { font-size: .92rem; color: #2b2145; }
+.dp-model i { font-style: normal; font-family: ui-monospace, monospace; font-size: .58rem; color: #8b84a6; }
+.dp-model:hover { background: #f4efff; }
+.dp-model.is-active { border-color: #7c3aed; background: #f4efff; box-shadow: none; }
+
+.dp-stage { display: grid; gap: 1rem; }
+@media (min-width: 1024px) { .dp-stage { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: start; } .dp-status { position: sticky; top: 6rem; } }
+
+/* the rack · light cabinet */
+.dp-rack { background: #ece7f7; border: 2px solid #2b2145; border-radius: 1rem; padding: .9rem 1rem; box-shadow: 0 7px 16px -13px rgba(43,33,69,.55); position: relative; }
+.dp-rack::before, .dp-rack::after { content: ""; position: absolute; top: .6rem; width: .45rem; height: .45rem; border-radius: 999px; background: #d9cfef; box-shadow: inset 0 1px 2px rgba(43,33,69,.25); }
+.dp-rack::before { left: .6rem; }
+.dp-rack::after { right: .6rem; }
+.dp-rack-rail { display: flex; align-items: center; justify-content: space-between; gap: .6rem; font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .12em; color: #6b6486; padding: .3rem .8rem .55rem; }
+.dp-power { display: inline-flex; align-items: center; gap: .35rem; color: #0e9f6e; font-weight: 700; }
+.dp-power i { width: .45rem; height: .45rem; border-radius: 999px; background: #0e9f6e; }
+.dp-bays { display: flex; flex-direction: column; gap: .5rem; counter-reset: bay; }
+.dp-bay { position: relative; display: flex; align-items: center; justify-content: space-between; background: #fff; border: 1.5px solid #d9cfef; border-radius: .55rem; padding: .7rem .8rem .7rem 1.9rem; box-shadow: inset 0 -2px 0 rgba(43,33,69,.04); opacity: .35; transform: translateX(-.6rem); transition: all .5s cubic-bezier(.2,.9,.3,1); }
+.dp-bay::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: .36rem; border-radius: .55rem 0 0 .55rem; background: var(--uc, #7c3aed); }
+.dp-bay::after { counter-increment: bay; content: "U" counter(bay); position: absolute; left: .55rem; top: 50%; transform: translateY(-50%); font-family: ui-monospace, monospace; font-size: .5rem; font-weight: 700; letter-spacing: .04em; color: #8b84a6; }
+.dp-bay:nth-child(1) { --uc: #7c3aed; }
+.dp-bay:nth-child(2) { --uc: #c026d3; }
+.dp-bay:nth-child(3) { --uc: #2f5fb3; }
+.dp-bay:nth-child(4) { --uc: #d97706; }
+.dp-bay:nth-child(5) { --uc: #12805c; }
+.dp-rack.is-on .dp-bay { opacity: 1; transform: none; }
+.dp-rack.is-on .dp-bay:nth-child(1) { transition-delay: .05s; }
+.dp-rack.is-on .dp-bay:nth-child(2) { transition-delay: .15s; }
+.dp-rack.is-on .dp-bay:nth-child(3) { transition-delay: .25s; }
+.dp-rack.is-on .dp-bay:nth-child(4) { transition-delay: .35s; }
+.dp-rack.is-on .dp-bay:nth-child(5) { transition-delay: .45s; }
+.dp-bay-name { font-family: ui-monospace, monospace; font-size: .68rem; font-weight: 700; letter-spacing: .06em; color: #2b2145; padding-left: .55rem; }
+.dp-rack-region { border-top: 1.5px dashed #d9cfef; margin-top: .6rem; padding-top: .6rem; }
+.dp-rack-region b { color: #0e9f6e; }
+
+/* hybrid split */
+.dp-hybrid { background: #fff; border: 2px dashed #d9cfef; border-radius: 1rem; padding: .9rem 1rem; display: flex; flex-direction: column; gap: .7rem; }
+.dp-hybrid[hidden] { display: none; }
+.dp-hybrid-tag { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; font-weight: 700; color: #7c3aed; }
+.dp-hybrid-cols { display: grid; gap: .7rem; }
+@media (min-width: 640px) { .dp-hybrid-cols { grid-template-columns: 1fr 1fr; } }
+.dp-hybrid-col { display: flex; flex-direction: column; gap: .45rem; }
+.dp-hybrid-col:first-child .dp-hybrid-units { background: #f0faf5; border-color: #b9e2c8; }
+.dp-hybrid-col:last-child .dp-hybrid-units { background: #fdf8ec; border-color: #ecd9a8; }
+.dp-hybrid-head { font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .12em; font-weight: 700; }
+.dp-hybrid-in { color: #0e9f6e; }
+.dp-hybrid-out { color: #d97706; }
+.dp-hybrid-units { display: flex; flex-direction: column; gap: .4rem; min-height: 3rem; background: #faf8fe; border: 1.5px solid #e4dcf6; border-radius: .6rem; padding: .5rem; }
+.dp-hunit { font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; color: #2b2145; background: #fff; border: 1.5px solid #d9cfef; border-radius: .45rem; padding: .4rem .55rem; cursor: pointer; transition: all .18s; text-align: left; }
+.dp-hunit:hover { border-color: #7c3aed; background: #f4efff; }
+.dp-hybrid-note { font-family: ui-monospace, monospace; font-size: .58rem; line-height: 1.6; color: #8b84a6; }
+
+/* status panel · spec sheet */
+.dp-status { background: #fff; border: 2px solid #2b2145; border-radius: 1rem; padding: 1rem 1.05rem; box-shadow: 0 7px 16px -13px rgba(43,33,69,.5); }
+.dp-status-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding-bottom: .6rem; border-bottom: 1.5px dashed #e4dcf6; }
+.dp-status-head span { font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .14em; font-weight: 700; color: #8b84a6; }
+.dp-status-head b { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .1em; color: #7c3aed; }
+.dp-status-rows { display: flex; flex-direction: column; }
+.dp-srow { display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .45rem 0; border-bottom: 1px dashed #ece5f8; font-family: ui-monospace, monospace; }
+.dp-srow:last-child { border-bottom: none; }
+.dp-srow-k { font-size: .54rem; letter-spacing: .12em; color: #8b84a6; }
+.dp-srow-v { font-size: .62rem; font-weight: 700; color: #2b2145; text-align: right; background: #f7f5fd; border: 1.5px solid #e4dcf6; border-radius: .45rem; padding: .22rem .5rem; animation: dp-svin .4s ease; }
+.dp-srow-v.good { color: #0d5c40; background: #effaf5; border-color: #9fd9c2; }
+.dp-srow-v.warn { color: #8a5208; background: #fdf6e3; border-color: #e3cf96; }
+@keyframes dp-svin { from { opacity: 0; transform: translateX(6px); } }
+
+.dp-log { margin-top: 1rem; font-family: ui-monospace, monospace; font-size: .7rem; line-height: 1.6; color: #54496e; background: #fff; border: 1.5px solid #e4dcf6; border-left: .36rem solid #7c3aed; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= MODELS + HOW ================= */
+.dp-models-sec { padding: 4.5rem 0; background: #2b2145; border-top: 2px solid #7c3aed; }
+.dp-models-sec .dp-eyebrow { color: #b7aee6; }
+.dp-models-sec .dp-h2 { color: #fff; }
+.dp-models-sec .dp-lead { color: #c9c4e4; }
+.dp-models-sec .dp-accent { color: #b7aee6; }
+.dp-models-sec .dp-accent::after { background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23b7aee6' stroke-width='3' fill='none' stroke-linecap='round' opacity='.4'/%3E%3C/svg%3E") no-repeat center / 100% 100%; }
+.dp-how { padding: 4.5rem 0; background: #faf8fe; border-top: 1px solid #e9e2f8; }
+.dp-model-grid { display: grid; gap: 1rem; }
+@media (min-width: 768px) { .dp-model-grid { grid-template-columns: 1fr 1fr; } }
+.dp-how-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+@media (min-width: 768px) { .dp-how-grid { grid-template-columns: 1fr 1fr; } }
+.dp-model-card, .dp-how-card { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fff; border: 2px solid #2b2145; border-radius: 1rem; padding: 1.4rem 1.3rem 1.3rem; box-shadow: 0 6px 14px -12px rgba(43,33,69,.5); transition: background-color .18s ease; }
+.dp-model-card:hover, .dp-how-card:hover { background: #f4efff; }
+.dp-model-num, .dp-how-num { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; font-weight: 700; color: #7c3aed; }
+.dp-model-icon { display: inline-flex; align-items: center; justify-content: center; color: #7c3aed; }
+.dp-model-card:hover .dp-model-icon, .dp-how-card:hover .dp-model-icon { color: #5f24c9; }
+.dp-model-card h3, .dp-how-card h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.2rem; color: #2b2145; margin: .2rem 0 0; }
+.dp-model-card p, .dp-how-card p { font-size: .9rem; line-height: 1.6; color: #54496e; }
+
+/* ================= LIGHT SECTIONS ================= */
+.dp-region, .dp-fit, .dp-faq { padding: 4.5rem 0; background: #f8f6fd; }
+.dp-fit { background: #fff; border-top: 1px solid #ece7f8; }
+.dp-faq { border-top: 1px solid #ece7f8; }
+.dp-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+.dp-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .dp-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.dp-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.dp-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #54496e; }
+.dp-split-list svg { flex: none; color: #0e9f6e; margin-top: .2rem; }
+.dp-split-visual { position: relative; max-width: 27rem; margin: 0 auto; width: 100%; }
+
+/* residency ledger */
+.dp-rescard { background: #fff; border: 2px solid #2b2145; border-radius: 1.1rem; box-shadow: 0 7px 16px -13px rgba(43,33,69,.5); padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .55rem; }
+.dp-rescard-head { display: flex; align-items: center; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #7c3aed; padding-bottom: .5rem; border-bottom: 1.5px dashed #e4dcf6; }
+.dp-rescard-row { display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, monospace; font-size: .68rem; color: #54496e; background: #f7f5fd; border: 1.5px solid #e4dcf6; border-radius: .55rem; padding: .5rem .7rem; }
+.dp-rescard-row b { color: #0e9f6e; }
+.dp-rescard-total b { color: #7c3aed; }
+.dp-rescard-cap { font-family: ui-monospace, monospace; font-size: .58rem; line-height: 1.6; color: #8b84a6; }
+
+/* trade rows */
+.dp-trade { display: flex; flex-direction: column; gap: .6rem; }
+.dp-trade-row { display: flex; align-items: center; justify-content: space-between; gap: .7rem; background: #fff; border: 2px solid #2b2145; border-radius: .9rem; padding: .8rem 1rem; box-shadow: 0 6px 14px -12px rgba(43,33,69,.45); font-size: .86rem; color: #54496e; }
+.dp-trade-row b { font-family: ui-monospace, monospace; font-size: .68rem; white-space: nowrap; }
+.dp-trade-bad { border-style: dashed; border-color: #b3ab90; }
+.dp-trade-bad b { color: #a82540; }
+.dp-trade-good { background: #effaf5; border-color: #0e9f6e; }
+.dp-trade-good b { color: #0d5c40; }
+.dp-trade-arrow { align-self: center; color: #7c3aed; transform: rotate(90deg); }
+
+/* faq */
+.dp-faq-list { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: .7rem; }
+.dp-faq-item { background: #fff; border: 2px solid #2b2145; border-radius: .9rem; box-shadow: 0 5px 12px -11px rgba(43,33,69,.45); overflow: hidden; }
+.dp-faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: .8rem; cursor: pointer; padding: .9rem 1.1rem; font-weight: 700; font-size: .95rem; color: #2b2145; list-style: none; }
+.dp-faq-item summary::-webkit-details-marker { display: none; }
+.dp-faq-item summary svg { flex: none; color: #7c3aed; transition: transform .2s; }
+.dp-faq-item[open] summary svg { transform: rotate(180deg); }
+.dp-faq-item p { padding: 0 1.1rem 1rem; font-size: .9rem; line-height: 1.65; color: #54496e; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dp-leds i, .dp-power i, .dp-minirack { animation: none !important; }
+  .dp-bay { transition-duration: .01s !important; }
+  .dp-srow-v { animation-duration: .01s !important; }
+}
+.dp-hero ~ section [data-reveal] { opacity: 1 !important; transform: none !important; }
+</style>
+
+<script>
+/* ================= Deploy page: rack builder engine ================= */
+(function () {
+  var play = document.getElementById('dpPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var MODELS = {
+    cloud: {
+      rackName: 'FANFINITY · YOUR CLOUD ACCOUNT', statusTitle: 'YOUR CLOUD',
+      rows: [
+        ['OPERATOR', 'your team', ''],
+        ['KEYS HELD BY', 'you · your KMS', 'good'],
+        ['DATA LIVES', 'your account · your region', 'good'],
+        ['VENDOR COPY', 'none · by design', 'good'],
+        ['MONITORING', 'your tools', ''],
+        ['UPDATES', 'your schedule', '']
+      ],
+      log: 'rack at address 01: powered, all five units healthy, zero vendor copy detected.'
+    },
+    onprem: {
+      rackName: 'FANFINITY · YOUR PERIMETER', statusTitle: 'ON-PREMISE',
+      rows: [
+        ['OPERATOR', 'your team', ''],
+        ['PERIMETER', 'yours, fully', 'good'],
+        ['KEYS HELD BY', 'you · your KMS', 'good'],
+        ['VENDOR COPY', 'none · by design', 'good'],
+        ['FIT', 'Kubernetes · containers · bare metal', ''],
+        ['UPDATES', 'your change process', '']
+      ],
+      log: 'address 02: the whole stack behind your own perimeter. Maximum control, maximum responsibility.'
+    },
+    managed: {
+      rackName: 'FANFINITY · MANAGED (UNDER CONTRACT)', statusTitle: 'MANAGED',
+      rows: [
+        ['OPERATOR', 'Fanfinity · under contract', 'warn'],
+        ['KEYS HELD BY', 'per contract', 'warn'],
+        ['DATA LIVES', 'region you choose', 'good'],
+        ['RESIDENCY + CONSENT', 'intact · contractual', 'good'],
+        ['VENDOR COPY', 'none beyond contract', 'good'],
+        ['UPDATES', 'managed · your window', '']
+      ],
+      log: 'address 03: we run the machine, you keep the guarantees. Speed over infrastructure work.'
+    },
+    hybrid: {
+      rackName: 'FANFINITY · SPLIT BY DESIGN', statusTitle: 'HYBRID',
+      rows: [
+        ['OPERATOR', 'shared', 'warn'],
+        ['REGULATED RECORDS', 'inside your perimeter', 'good'],
+        ['HEAVY PROCESSING', 'your cloud capacity', 'good'],
+        ['VENDOR COPY', 'none · by design', 'good'],
+        ['THE SPLIT', 'yours to draw', '']
+      ],
+      log: 'address 04: the stack splits where you say it splits. Regulated inside, heavy lifting on your cloud.'
+    }
+  };
+
+  var UNIT_LABEL = { collect: 'COLLECT · events', id: 'ID · resolve', engage: 'ENGAGE · live', activate: 'ACTIVATE · send', measure: 'MEASURE · prove' };
+  var HYBRID_DEFAULT = { inside: ['collect', 'id'], outside: ['engage', 'activate', 'measure'] };
+  var hybridState = { inside: HYBRID_DEFAULT.inside.slice(), outside: HYBRID_DEFAULT.outside.slice() };
+
+  var rack = $('dpRack'), logEl = $('dpLog');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function powerCycle() {
+    rack.classList.remove('is-on');
+    void rack.offsetWidth;
+    rack.classList.add('is-on');
+  }
+
+  function renderStatus(key) {
+    var m = MODELS[key];
+    $('dpRackName').textContent = m.rackName;
+    $('dpStatusModel').textContent = m.statusTitle;
+    var rows = $('dpStatusRows');
+    rows.innerHTML = '';
+    m.rows.forEach(function (r, i) {
+      var row = el('div', 'dp-srow');
+      row.appendChild(el('span', 'dp-srow-k', r[0]));
+      var v = el('span', 'dp-srow-v' + (r[2] ? ' ' + r[2] : ''), r[1]);
+      v.style.animationDelay = (i * 70) + 'ms';
+      row.appendChild(v);
+      rows.appendChild(row);
+    });
+    logEl.textContent = m.log;
+  }
+
+  function hybridNote() {
+    var inside = hybridState.inside;
+    var regulatedIn = inside.indexOf('collect') >= 0 && inside.indexOf('id') >= 0;
+    var note = $('dpHybridNote');
+    if (regulatedIn) {
+      note.textContent = inside.length + ' unit' + (inside.length > 1 ? 's' : '') + ' inside · ' + hybridState.outside.length + ' outside: regulated records stay in your perimeter, heavy processing uses capacity you already own.';
+      note.style.color = '';
+    } else {
+      note.textContent = 'Boundary warning: with COLLECT or ID outside your perimeter, regulated records leave the boundary. Most teams keep those two inside.';
+      note.style.color = '#d97706';
+    }
+  }
+
+  function renderHybrid() {
+    var inEl = $('dpInside'), outEl = $('dpOutside');
+    inEl.innerHTML = ''; outEl.innerHTML = '';
+    hybridState.inside.forEach(function (u) {
+      var chip = el('button', 'dp-hunit', UNIT_LABEL[u]);
+      chip.setAttribute('data-unit', u);
+      chip.setAttribute('data-side', 'inside');
+      inEl.appendChild(chip);
+    });
+    hybridState.outside.forEach(function (u) {
+      var chip = el('button', 'dp-hunit', UNIT_LABEL[u]);
+      chip.setAttribute('data-unit', u);
+      chip.setAttribute('data-side', 'outside');
+      outEl.appendChild(chip);
+    });
+    hybridNote();
+  }
+
+  function renderModel(key) {
+    renderStatus(key);
+    $('dpHybrid').hidden = key !== 'hybrid';
+    if (key === 'hybrid') renderHybrid();
+    powerCycle();
+  }
+
+  $('dpModels').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.dp-model') : null;
+    if (!btn) return;
+    var all = $('dpModels').querySelectorAll('.dp-model');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+    renderModel(btn.getAttribute('data-model'));
+  });
+
+  Array.prototype.forEach.call($('dpModels').querySelectorAll('.dp-model'), function (btn) {
+    btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+  });
+
+  $('dpHybrid').addEventListener('click', function (e) {
+    var chip = e.target.closest ? e.target.closest('.dp-hunit') : null;
+    if (!chip) return;
+    var unit = chip.getAttribute('data-unit');
+    var side = chip.getAttribute('data-side');
+    var from = side === 'inside' ? hybridState.inside : hybridState.outside;
+    var to = side === 'inside' ? hybridState.outside : hybridState.inside;
+    var idx = from.indexOf(unit);
+    if (idx < 0) return;
+    from.splice(idx, 1);
+    to.push(unit);
+    renderHybrid();
+    logEl.textContent = UNIT_LABEL[unit] + ' moved ' + (side === 'inside' ? 'out to your cloud capacity' : 'inside your perimeter') + ': the split redraws instantly, no re-platforming.';
+  });
+
+  renderModel('cloud');
+  run(powerCycle, 350);
+})();
+</script>
+{% endraw %}

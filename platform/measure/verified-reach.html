@@ -3,38 +3,447 @@ layout: page
 permalink: /platform/measure/verified-reach
 title: Verified Reach
 description: "Measure real people, not impressions, with Fanfinity Measure."
+cta: false
 breadcrumb_parent: { title: Fanfinity Measure, url: /platform/measure }
 capabilities:
-  - { icon: check,    title: "Real people, not impressions",   body: "Count unique fans reached, not repeated impressions to the same person. One fan, one impression, one unit of value. No inflated reach numbers from bots or repeat views." }
-  - { icon: eye,      title: "Cross-channel reach",            body: "Measure total reach across messaging, web, app, and paid channels. One fan might see you on email and ads, so you count once and never double-count." }
-  - { icon: zap,      title: "In-platform vs external reach",  body: "See reach for campaigns you own (email, push, web) separately from reach on external platforms (paid ads, social). Understand owned vs rented audience value." }
-  - { icon: trending, title: "Reach over time",                body: "Track cumulative reach as campaigns run. See how many new fans are touched each day and whether reach plateaus or continues growing." }
+  - { icon: check,  title: "Real people, not impressions",   body: "Count unique fans reached, not repeated impressions to the same person. One fan, one impression, one unit of value. No inflated reach numbers from bots or repeat views." }
+  - { icon: repeat, title: "Cross-channel reach",            body: "Measure total reach across messaging, web, app, and paid channels. One fan might see you on email and ads, so you count once and never double-count." }
+  - { icon: bolt,   title: "In-platform vs external reach",  body: "See reach for campaigns you own (email, push, web) separately from reach on external platforms (paid ads, social). Understand owned vs rented audience value." }
+  - { icon: chart,  title: "Reach over time",                body: "Track cumulative reach as campaigns run. See how many new fans are touched each day and whether reach plateaus or continues growing." }
 benefits:
   - "Build sponsor trust with honest reach numbers that reflect real unique people, not inflated impression counts."
   - "Benchmark performance fairly by measuring the same way across channels and campaigns."
   - "Identify reach ceilings so you know when to expand to new channels or audiences."
   - "Prove value to sponsors with verified metrics instead of claims that can't be audited."
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Measure"
-   title="Reach that counts real fans"
-   subtitle="Fanfinity Measure Verified Reach counts unique fans reached across all channels, owned and paid, email to ads. One fan, one reach. Honest metrics that sponsors trust and can audit."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Back to Fanfinity Measure"
-   secondary_url="/platform/measure"
-   icon="check" %}
 
-{% include feature-grid.html
-   heading="From impressions to unique fans"
-   subheading="Fanfinity deduplicates fans across all channels and campaigns, so reach reflects unique people touched, not repeated impressions to the same person. Sponsors see real, verifiable numbers."
-   items=page.capabilities
-   columns=2 %}
+{% include measure-family-nav.html %}
 
-{% include feature-split.html
-   title="Honest metrics build sponsor confidence"
-   body="Sponsors want to know how many real fans they're reaching, not inflated impression counts. Verified Reach delivers transparent, auditable numbers. One fan touched = one reach, regardless of how many times they see your messages. That honesty builds trust."
-   points=page.benefits
-   cta_text="See attribution"
-   cta_url="/platform/measure/attribution"
-   icon="check" %}
+<!-- ================= HERO ================= -->
+<section class="vr-hero">
+  <div class="container-page">
+    <div class="vr-hero-grid">
+      <div class="vr-hero-copy">
+        <h1 class="vr-h1">One fan, <span class="vr-accent">one reach.</span></h1>
+        <p class="vr-sub">Fanfinity Measure counts unique fans reached across every channel, owned and paid, email to ads. Honest metrics that sponsors trust: and can audit.</p>
+        <div class="vr-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform/measure' | relative_url }}" class="btn btn-secondary">Back to Fanfinity Measure</a>
+        </div>
+      </div>
+      <div class="vr-hero-visual" aria-hidden="true">
+        <div class="vr-tally">
+          <span class="vr-tally-tab">THE WEEK IN SIGHTINGS · one fan</span>
+          <div class="vr-tally-rows">
+            <span class="vr-chip" style="--c:#2f5fb3">email · Mon 09:12</span>
+            <span class="vr-chip" style="--c:#7c3aed">app · Mon 21:40</span>
+            <span class="vr-chip" style="--c:#b8860b">Meta ad · Tue 13:02</span>
+            <span class="vr-chip" style="--c:#b8860b">Meta ad · Tue 18:44</span>
+            <span class="vr-chip" style="--c:#12805c">big screen · Sat 20:58</span>
+            <span class="vr-chip" style="--c:#2f5fb3">email · Sun 10:05</span>
+          </div>
+          <div class="vr-tally-merge">{% include icon.html name="arrow-right" class="h-4 w-4" %}</div>
+          <div class="vr-tally-person"><b>Noura · Fan #51136</b><span>verified reach · 1</span></div>
+        </div>
+        <span class="vr-stamp-hero">COUNTED ONCE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CENTERPIECE · THE COUNTING ROOM ================= -->
+<section class="vr-play" id="vrPlay">
+  <div class="container-page">
+    <div class="vr-play-head" data-reveal>
+      <p class="vr-eyebrow">The counting room</p>
+      <h2 class="vr-h2">24 sightings. <span class="vr-accent">6 people.</span></h2>
+      <p class="vr-lead">A week of campaign sightings lands in the raw log: every email open, ad view, app session, big-screen moment. Run the dedupe and watch them collapse into the people who were actually there. Then switch channels off and see who you only reach on rented land. Simulated week; the dedupe is the product.</p>
+    </div>
+
+    <div class="vr-room" data-reveal>
+      <div class="vr-topbar">
+        <div class="vr-toggles" id="vrToggles">
+          <span class="vr-toggles-tag">CHANNELS IN THE WEEK</span>
+          <button type="button" class="vr-toggle is-on" data-kind="owned" aria-pressed="true"><span class="vr-sw"></span>owned · email, app, push, WhatsApp, big screen</button>
+          <button type="button" class="vr-toggle is-on" data-kind="paid" aria-pressed="true"><span class="vr-sw"></span>paid · Meta, Google, TikTok ads</button>
+        </div>
+        <button type="button" class="vr-run" id="vrRun">Run the dedupe →</button>
+      </div>
+
+      <div class="vr-panels">
+        <div class="vr-panel vr-panel-raw">
+          <div class="vr-panel-head"><span>THE RAW LOG · sightings</span><b id="vrRawCount">24</b></div>
+          <div class="vr-sightings" id="vrSightings"></div>
+        </div>
+        <div class="vr-panel-arrow" aria-hidden="true">{% include icon.html name="arrow-right" class="h-5 w-5" %}</div>
+        <div class="vr-panel vr-panel-people">
+          <div class="vr-panel-head"><span>VERIFIED REACH · people</span><b id="vrPeopleCount">: </b></div>
+          <div class="vr-people" id="vrPeople"><p class="vr-people-empty" id="vrPeopleEmpty">sightings pile up on the left. Run the dedupe.</p></div>
+        </div>
+      </div>
+
+      <div class="vr-splitline" id="vrSplit" hidden>
+        <span class="vr-split-item vr-split-owned">OWNED LAND <b id="vrOwnCount">0</b> people</span>
+        <span class="vr-split-item vr-split-paid">PAID-ONLY <b id="vrPaidCount">0</b> people</span>
+        <span class="vr-split-item">SIGHTINGS COLLAPSED <b id="vrCollapsed">0</b> into <b id="vrInto">0</b></span>
+      </div>
+
+      <p class="vr-log" id="vrLog" role="status" aria-live="polite">the week is loaded: 24 sightings across owned and paid channels. Run the dedupe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="vr-capabilities">
+  <div class="container-page">
+    <div class="vr-sec-head" data-reveal>
+      <h2 class="vr-h2">From impressions to <span class="vr-accent">unique fans</span></h2>
+      <p class="vr-lead">Fanfinity deduplicates fans across all channels and campaigns, so reach reflects unique people touched: not repeated impressions to the same person. Sponsors see real, verifiable numbers.</p>
+    </div>
+    <div class="vr-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="vr-cap" data-reveal>
+        <span class="vr-cap-num">EXHIBIT 0{{ forloop.index }}</span>
+        <span class="vr-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIT TRAIL SPLIT ================= -->
+<section class="vr-split">
+  <div class="container-page">
+    <div class="vr-split-grid">
+      <div class="vr-split-copy" data-reveal>
+        <h2 class="vr-h2">Honest numbers build <span class="vr-accent">sponsor confidence</span></h2>
+        <p class="vr-lead">Sponsors want to know how many real fans they're reaching, not inflated impression counts. Verified Reach delivers transparent, auditable numbers: one fan touched is one reach, regardless of how many times they saw you.</p>
+        <ul class="vr-split-list">
+          {% for b in page.benefits %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ b }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/measure/attribution' | relative_url }}" class="btn btn-secondary">See attribution</a>
+      </div>
+      <div class="vr-split-visual" data-reveal aria-hidden="true">
+        <div class="vr-audit">
+          <span class="vr-audit-tab">AUDIT TRAIL · one fan, auditable</span>
+          <div class="vr-audit-row vr-audit-struck"><span>Mon 09:12 · email open</span><b>seen</b></div>
+          <div class="vr-audit-row vr-audit-struck"><span>Tue 13:02 · Meta ad view</span><b>seen</b></div>
+          <div class="vr-audit-row vr-audit-struck"><span>Tue 18:44 · Meta ad view</span><b>seen</b></div>
+          <div class="vr-audit-row vr-audit-struck"><span>Sat 20:58 · big screen scan</span><b>seen</b></div>
+          <div class="vr-audit-row vr-audit-struck"><span>Sun 10:05 · email open</span><b>seen</b></div>
+          <div class="vr-audit-total"><span>reach counted</span><b>1 · Noura ✓</b></div>
+          <p class="vr-audit-cap">Every sighting keeps its evidence: a sponsor can walk the trail from the number back to the moments.</p>
+        </div>
+        <span class="vr-stamp-audit">AUDITABLE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Report a reach number you can defend"
+   text="Book a walkthrough and we'll run the dedupe on a real campaign of yours: sightings in, verified people out, with the audit trail your sponsors will ask for." %}
+
+{% raw %}
+<style>
+/* ================= Verified Reach page: scoped styles (.vr-) · case-file family ================= */
+.vr-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #1e6e5c; display: flex; align-items: center; gap: .6rem; }
+.vr-eyebrow::before { content: none; }
+.vr-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.6rem, 5.4vw, 4.3rem); margin: 1rem 0 0; color: #23213a; }
+.vr-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #23213a; }
+.vr-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.vr-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.vr-sub, .vr-lead { font-size: 1.08rem; line-height: 1.65; color: #4e4966; margin-top: 1.2rem; max-width: 34rem; }
+.vr-sec-head .vr-lead, .vr-play-head .vr-lead { margin-left: auto; margin-right: auto; }
+.vr-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.vr-hero-ctas .btn-secondary { background: transparent; border: 0; box-shadow: none; padding-inline: .2rem; color: #4e4966; }
+.vr-hero-ctas .btn-secondary:hover { background: transparent; color: #23213a; }
+.vr-sec-head, .vr-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.vr-sec-head .vr-eyebrow, .vr-play-head .vr-eyebrow { justify-content: center; }
+
+/* --- hero --- */
+.vr-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background: #f2f5f0; }
+@media (min-width: 768px) { .vr-hero { min-height: calc(100svh - 10.5rem); display: flex; align-items: center; } }
+.vr-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.vr-hero-grid > *, .vr-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .vr-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.vr-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1.2rem 0; }
+.vr-tally { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; box-shadow: 0 7px 14px -12px rgba(35,33,58,.5); padding: 1.1rem 1.15rem; transform: rotate(-.8deg); }
+.vr-tally-tab { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.vr-tally-rows { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .7rem; }
+.vr-chip { font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; color: var(--c); background: #fff; border: 1.5px solid var(--c); border-radius: 999px; padding: .22rem .55rem; }
+.vr-tally-merge { display: flex; justify-content: center; padding: .45rem 0 .3rem; color: #d93b54; transform: rotate(90deg); }
+.vr-tally-person { display: flex; align-items: center; justify-content: space-between; gap: .6rem; background: #effaf5; border: 1.5px solid #9fd9c2; border-radius: .7rem; padding: .6rem .75rem; }
+.vr-tally-person b { font-size: .88rem; color: #0d5c40; }
+.vr-tally-person span { font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; color: #0d5c40; }
+.vr-stamp-hero { position: absolute; top: .2rem; right: 3%; transform: rotate(9deg); font-family: ui-monospace, monospace; font-size: .68rem; font-weight: 700; letter-spacing: .14em; color: #1e6e5c; border: 2.5px solid #1e6e5c; border-radius: .45rem; padding: .28rem .6rem; background: rgba(239,250,245,.92); }
+.vr-stamp-audit { position: absolute; top: -.6rem; right: 5%; transform: rotate(8deg); font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; letter-spacing: .14em; color: #1e6e5c; border: 2px solid #1e6e5c; border-radius: .45rem; padding: .28rem .6rem; background: rgba(239,250,245,.92); }
+
+/* ================= CENTERPIECE · THE COUNTING ROOM ================= */
+.vr-play { padding: 4.5rem 0 5rem; background: #f6f7f9; border-top: 1px solid #e3e5ea; border-bottom: 1px solid #e3e5ea; overflow-x: clip; }
+.vr-room { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.4rem; box-shadow: 0 7px 16px -13px rgba(35,33,58,.5); padding: 1.2rem; display: flex; flex-direction: column; gap: 1rem; }
+.vr-topbar { display: flex; align-items: center; gap: .8rem 1rem; flex-wrap: wrap; }
+.vr-toggles { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; flex: 1; min-width: 0; }
+.vr-toggles-tag { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; flex-basis: 100%; }
+.vr-toggle { display: inline-flex; align-items: center; gap: .45rem; font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; color: #8f8a76; background: #fff; border: 1.5px solid #d8d3c2; border-radius: 999px; padding: .35rem .7rem; cursor: pointer; transition: all .16s; }
+.vr-sw { position: relative; width: 1.6rem; height: .9rem; flex: none; border-radius: 999px; background: #e4e1d5; transition: background .2s; }
+.vr-sw::after { content: ""; position: absolute; top: .13rem; left: .13rem; width: .64rem; height: .64rem; border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgba(35,33,58,.3); transition: translate .2s; }
+.vr-toggle.is-on { color: #0d5c40; border-color: #9fd9c2; background: #effaf5; }
+.vr-toggle.is-on .vr-sw { background: #12805c; }
+.vr-toggle.is-on .vr-sw::after { translate: .7rem 0; }
+.vr-run { font-weight: 800; font-size: .92rem; color: #fdfcf7; background: #23213a; border-radius: .8rem; padding: .7rem 1.1rem; cursor: pointer; transition: all .18s; }
+.vr-run:hover:not(:disabled) { background: #d93b54; }
+.vr-run:disabled { opacity: .5; cursor: default; }
+
+/* panels */
+.vr-panels { display: grid; gap: .8rem; align-items: stretch; }
+@media (min-width: 900px) { .vr-panels { grid-template-columns: 1fr auto 1fr; } }
+.vr-panel-arrow { display: none; color: #d93b54; align-self: center; }
+@media (min-width: 900px) { .vr-panel-arrow { display: block; } }
+.vr-panel { border: 2px solid #23213a; border-radius: 1.1rem; padding: .9rem .95rem; display: flex; flex-direction: column; gap: .6rem; min-height: 15rem; }
+.vr-panel-raw { background: #fff; }
+.vr-panel-people { background: linear-gradient(150deg, #20443a, #16332b 75%, #122a24); border-color: #0e231d; }
+.vr-panel-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; }
+.vr-panel-head span { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.vr-panel-people .vr-panel-head span { color: #7ee2c0; }
+.vr-panel-head b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 1.5rem; color: #23213a; }
+.vr-panel-people .vr-panel-head b { color: #7ee2c0; }
+.vr-panel-head b.bump { display: inline-block; animation: vr-bump .4s ease; }
+@keyframes vr-bump { 40% { transform: scale(1.2); } }
+
+/* sightings */
+.vr-sightings { display: flex; flex-wrap: wrap; gap: .4rem; align-content: flex-start; }
+.vr-sighting { font-family: ui-monospace, monospace; font-size: .58rem; font-weight: 700; color: var(--c); background: #fff; border: 1.5px solid var(--c); border-radius: 999px; padding: .22rem .55rem; transition: all .3s; animation: vr-chipin .35s ease backwards; }
+@keyframes vr-chipin { from { opacity: 0; transform: scale(.7); } }
+.vr-sighting.is-off { opacity: .18; filter: grayscale(.8); border-style: dashed; }
+.vr-sighting.is-merging { opacity: 0; transform: scale(.3) translateY(-.6rem); }
+
+/* people cards */
+.vr-people { display: flex; flex-direction: column; gap: .5rem; }
+.vr-people-empty { font-family: ui-monospace, monospace; font-size: .64rem; color: rgba(253,252,247,.45); padding-top: 1.4rem; }
+.vr-person { display: flex; align-items: center; gap: .6rem; background: rgba(253,252,247,.09); border: 1.5px solid rgba(126,226,192,.4); border-radius: .8rem; padding: .5rem .65rem; animation: vr-personin .45s cubic-bezier(.2,1.2,.4,1) backwards; }
+@keyframes vr-personin { from { opacity: 0; transform: translateY(10px) scale(.85); } }
+.vr-person-av { display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; flex: none; border-radius: 999px; background: var(--c); color: #fff; font-weight: 700; font-size: .8rem; }
+.vr-person-meta { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.vr-person-meta b { font-size: .84rem; color: #fdfcf7; }
+.vr-person-meta span { font-family: ui-monospace, monospace; font-size: .56rem; color: rgba(253,252,247,.55); }
+.vr-person-count { font-family: ui-monospace, monospace; font-size: .62rem; font-weight: 700; color: #7ee2c0; white-space: nowrap; }
+.vr-person-kind { font-family: ui-monospace, monospace; font-size: .5rem; font-weight: 700; letter-spacing: .1em; border-radius: .35rem; padding: .14rem .4rem; }
+.vr-person-kind.owned { color: #0d5c40; background: #7ee2c0; }
+.vr-person-kind.paid { color: #8a6408; background: #fde68a; }
+
+/* splitline */
+.vr-splitline { display: flex; gap: .6rem; flex-wrap: wrap; }
+.vr-split-item { font-family: ui-monospace, monospace; font-size: .62rem; letter-spacing: .08em; color: #8f8a76; background: #fff; border: 1.5px solid #d8d3c2; border-radius: 999px; padding: .35rem .7rem; }
+.vr-split-item b { color: #23213a; }
+.vr-split-owned b { color: #0d5c40; }
+.vr-split-paid b { color: #8a6408; }
+
+.vr-log { font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #4e4966; background: #fff; border: 1.5px dashed #d8d3c2; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= CAPABILITIES ================= */
+.vr-capabilities { padding: 4.5rem 0; background: #f6f7f9; }
+.vr-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .vr-cap-grid { grid-template-columns: 1fr 1fr; } }
+.vr-cap { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); transition: background-color .18s ease; }
+.vr-cap:hover { background: #f2f5f0; }
+.vr-cap-num { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .14em; font-weight: 700; color: #d93b54; }
+.vr-cap-icon { display: inline-flex; align-items: center; justify-content: center; color: #1e6e5c; }
+.vr-cap:hover .vr-cap-icon { color: #0d5c40; }
+.vr-cap h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #23213a; margin: .2rem 0 0; }
+.vr-cap p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+
+/* ================= SPLIT ================= */
+.vr-split { padding: 4.5rem 0; background: #f6f7f9; border-top: 1px solid #e3e5ea; }
+.vr-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .vr-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.vr-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.vr-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #4e4966; }
+.vr-split-list svg { flex: none; color: #1e6e5c; margin-top: .2rem; }
+.vr-split-visual { position: relative; max-width: 26rem; margin: 0 auto; width: 100%; padding-top: 1.2rem; }
+.vr-audit { background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; box-shadow: 0 7px 16px -13px rgba(35,33,58,.5); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .5rem; transform: rotate(-.6deg); }
+.vr-audit-tab { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.vr-audit-row { display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, monospace; font-size: .66rem; color: #4e4966; background: #fff; border: 1px solid #e4e1d5; border-radius: .5rem; padding: .4rem .6rem; }
+.vr-audit-struck span { text-decoration: line-through; text-decoration-color: rgba(217,59,84,.6); }
+.vr-audit-row b { color: #8f8a76; font-size: .58rem; }
+.vr-audit-total { display: flex; justify-content: space-between; align-items: center; font-family: ui-monospace, monospace; font-size: .72rem; font-weight: 700; color: #0d5c40; background: #effaf5; border: 1.5px solid #9fd9c2; border-radius: .6rem; padding: .55rem .7rem; margin-top: .2rem; }
+.vr-audit-cap { font-size: .76rem; line-height: 1.5; color: #8f8a76; margin-top: .3rem; }
+
+@media (max-width: 480px) {
+  .vr-person { flex-wrap: wrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vr-sighting, .vr-person, .vr-panel-head b.bump { animation-duration: .01s !important; }
+  .vr-sighting.is-merging { transition-duration: .01s !important; }
+}
+</style>
+
+<script>
+/* ================= Verified Reach page: counting room engine ================= */
+(function () {
+  var play = document.getElementById('vrPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var FANS = {
+    noura: { name: 'Noura', id: '#51136', c: '#7c3aed' },
+    fahad: { name: 'Fahad', id: '#48211', c: '#d93b54' },
+    reem: { name: 'Reem', id: '#52093', c: '#c026d3' },
+    omar: { name: 'Omar', id: '#47560', c: '#6b6486' },
+    lina: { name: 'Lina', id: '#53318', c: '#0e7490' },
+    salman: { name: 'Salman', id: '#46612', c: '#8d6e63' }
+  };
+  var FAN_ORDER = ['noura', 'reem', 'lina', 'salman', 'fahad', 'omar'];
+
+  var SIGHTINGS = [
+    { fan: 'noura', ch: 'email · Mon 09:12', c: '#2f5fb3', kind: 'owned' },
+    { fan: 'noura', ch: 'app · Mon 21:40', c: '#7c3aed', kind: 'owned' },
+    { fan: 'noura', ch: 'Meta ad · Tue 13:02', c: '#b8860b', kind: 'paid' },
+    { fan: 'noura', ch: 'Meta ad · Tue 18:44', c: '#b8860b', kind: 'paid' },
+    { fan: 'noura', ch: 'big screen · Sat 20:58', c: '#12805c', kind: 'owned' },
+    { fan: 'noura', ch: 'email · Sun 10:05', c: '#2f5fb3', kind: 'owned' },
+    { fan: 'noura', ch: 'Meta ad · Sun 12:30', c: '#b8860b', kind: 'paid' },
+    { fan: 'noura', ch: 'WhatsApp · Sun 19:22', c: '#12805c', kind: 'owned' },
+    { fan: 'fahad', ch: 'Meta ad · Mon 14:02', c: '#b8860b', kind: 'paid' },
+    { fan: 'fahad', ch: 'TikTok ad · Wed 20:11', c: '#d93b54', kind: 'paid' },
+    { fan: 'fahad', ch: 'Meta ad · Fri 09:47', c: '#b8860b', kind: 'paid' },
+    { fan: 'reem', ch: 'email · Tue 08:30', c: '#2f5fb3', kind: 'owned' },
+    { fan: 'reem', ch: 'push · Thu 21:05', c: '#7c3aed', kind: 'owned' },
+    { fan: 'omar', ch: 'Google ad · Wed 11:18', c: '#12805c', kind: 'paid' },
+    { fan: 'omar', ch: 'Google ad · Sat 16:40', c: '#12805c', kind: 'paid' },
+    { fan: 'lina', ch: 'app · Mon 07:55', c: '#7c3aed', kind: 'owned' },
+    { fan: 'lina', ch: 'email · Tue 12:44', c: '#2f5fb3', kind: 'owned' },
+    { fan: 'lina', ch: 'push · Wed 18:02', c: '#7c3aed', kind: 'owned' },
+    { fan: 'lina', ch: 'app · Thu 22:31', c: '#7c3aed', kind: 'owned' },
+    { fan: 'lina', ch: 'TikTok ad · Fri 19:26', c: '#d93b54', kind: 'paid' },
+    { fan: 'lina', ch: 'push · Sun 11:48', c: '#7c3aed', kind: 'owned' },
+    { fan: 'salman', ch: 'WhatsApp · Tue 17:09', c: '#12805c', kind: 'owned' },
+    { fan: 'salman', ch: 'Meta ad · Thu 10:33', c: '#b8860b', kind: 'paid' },
+    { fan: 'salman', ch: 'WhatsApp · Sat 14:51', c: '#12805c', kind: 'owned' }
+  ];
+
+  var state = { owned: true, paid: true, deduped: false, running: false };
+  var sightingsEl = $('vrSightings'), peopleEl = $('vrPeople'), logEl = $('vrLog');
+  var rawEl = $('vrRawCount'), peopleCountEl = $('vrPeopleCount'), splitEl = $('vrSplit');
+  var ownEl = $('vrOwnCount'), paidEl = $('vrPaidCount'), colEl = $('vrCollapsed'), intoEl = $('vrInto');
+  var runBtn = $('vrRun');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function bump(node) { node.classList.remove('bump'); void node.offsetWidth; node.classList.add('bump'); }
+  function kindOn(kind) { return state[kind]; }
+
+  function visibleSightings() {
+    return SIGHTINGS.filter(function (s) { return kindOn(s.kind); });
+  }
+
+  function renderSightings() {
+    sightingsEl.innerHTML = '';
+    SIGHTINGS.forEach(function (s, i) {
+      var chip = el('span', 'vr-sighting', s.ch);
+      chip.style.setProperty('--c', s.c);
+      chip.style.animationDelay = (i * 35) + 'ms';
+      if (!kindOn(s.kind)) chip.classList.add('is-off');
+      sightingsEl.appendChild(chip);
+    });
+    rawEl.textContent = visibleSightings().length;
+    bump(rawEl);
+  }
+
+  function dedupe() {
+    if (state.running) return;
+    state.running = true;
+    runBtn.disabled = true;
+    var visible = visibleSightings();
+    var chips = sightingsEl.children;
+    var v = 0;
+    for (var i = 0; i < chips.length; i++) {
+      if (!chips[i].classList.contains('is-off')) {
+        (function (chip, d) {
+          run(function () { chip.classList.add('is-merging'); }, d);
+        })(chips[i], v * 45);
+        v++;
+      }
+    }
+
+    run(function () {
+      peopleEl.innerHTML = '';
+      var groups = {};
+      visible.forEach(function (s) {
+        if (!groups[s.fan]) groups[s.fan] = { n: 0, owned: 0, paid: 0 };
+        groups[s.fan].n++;
+        groups[s.fan][s.kind]++;
+      });
+      var people = FAN_ORDER.filter(function (f) { return groups[f]; });
+      var ownLand = people.filter(function (f) { return groups[f].owned > 0; }).length;
+      var paidOnly = people.length - ownLand;
+
+      people.forEach(function (f, i) {
+        var g = groups[f], fan = FANS[f];
+        var card = el('div', 'vr-person');
+        card.style.setProperty('--c', fan.c);
+        card.style.animationDelay = (i * 90) + 'ms';
+        card.appendChild(el('span', 'vr-person-av', fan.name.charAt(0)));
+        var meta = el('span', 'vr-person-meta');
+        meta.appendChild(el('b', null, fan.name + ' · Fan ' + fan.id));
+        meta.appendChild(el('span', null, g.n + ' sighting' + (g.n > 1 ? 's' : '') + ' across ' + (g.owned && g.paid ? 'owned + paid' : (g.owned ? 'owned' : 'paid')) + ' → 1 fan'));
+        card.appendChild(meta);
+        card.appendChild(el('span', 'vr-person-count', g.n + ' → 1'));
+        card.appendChild(el('span', 'vr-person-kind ' + (g.owned ? 'owned' : 'paid'), g.owned ? 'OWNED LAND' : 'PAID ONLY'));
+        peopleEl.appendChild(card);
+      });
+
+      peopleCountEl.textContent = people.length;
+      bump(peopleCountEl);
+      splitEl.hidden = false;
+      ownEl.textContent = ownLand;
+      paidEl.textContent = paidOnly;
+      colEl.textContent = visible.length;
+      intoEl.textContent = people.length;
+      state.deduped = true;
+      state.running = false;
+      runBtn.disabled = false;
+      runBtn.textContent = 'Re-run the dedupe';
+      logEl.textContent = visible.length + ' sightings collapse to ' + people.length + ' verified people: ' +
+        ownLand + ' reached on owned land, ' + paidOnly + ' exist only in paid. One fan, one reach.';
+    }, 700);
+  }
+
+  runBtn.addEventListener('click', function () {
+    if (state.deduped) {
+      var chips = sightingsEl.children;
+      for (var i = 0; i < chips.length; i++) chips[i].classList.remove('is-merging');
+      peopleEl.innerHTML = '';
+      state.deduped = false;
+    }
+    dedupe();
+  });
+
+  $('vrToggles').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.vr-toggle') : null;
+    if (!btn) return;
+    var kind = btn.getAttribute('data-kind');
+    state[kind] = !state[kind];
+    btn.classList.toggle('is-on', state[kind]);
+    btn.setAttribute('aria-pressed', state[kind] ? 'true' : 'false');
+    renderSightings();
+    if (state.deduped) {
+      state.deduped = false;
+      dedupe();
+      logEl.textContent = (state[kind] ? 'channels back on' : 'channels off') + ': the dedupe re-runs: who vanishes when a channel goes dark?';
+    } else {
+      logEl.textContent = (state[kind] ? 'channels back on' : 'channels off') + ': ' + visibleSightings().length + ' sightings remain in the week.';
+    }
+  });
+
+  renderSightings();
+})();
+</script>
+{% endraw %}

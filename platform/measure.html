@@ -3,6 +3,7 @@ layout: page
 permalink: /platform/measure
 title: Fanfinity Measure
 description: "Deterministic attribution and a sponsor portal: verified reach instead of impressions, exposure-to-outcome measurement, and premium first-party audiences you can monetize."
+cta: false
 breadcrumb_parent: { title: Platform, url: /platform }
 capabilities:
   - { icon: users,    title: "Verified reach", body: "Deduplicated, verified reach: real people resolved to profiles, not ad impressions counted twice. The number you report is one you can stand behind." }
@@ -22,55 +23,633 @@ enrich_points:
   - "Signals are enriched with the resolved profile before they leave your environment, so downstream platforms receive consistent identifiers instead of fragments."
   - "First-party matching recovers reach that browser-side tracking loses to privacy controls and blockers."
   - "Suppress fans who have already converted, so ad budget is spent on reach that can still move."
-  - "Enrichment runs on data you own, in-region, with consent enforced at the profile."
+  - "Enrichment runs on data you own, in-Kingdom, with consent enforced at the profile."
 availability:
   - { icon: chart,    title: "Data that is ready to use", body: "Because signals are validated, deduplicated, and resolved on the way in, the numbers you report on arrive reconciled and query-ready. Teams spend their time interpreting results, not reshaping raw event dumps before anyone can trust them." }
-  - { icon: stack,    title: "In a warehouse you own", body: "Resolved fan data lands in a columnar analytical warehouse you self-manage in-region. Business-intelligence, analytics, and data-science teams query the same governed data directly, so Measure is a view onto your owned data, not a separate silo to reconcile." }
+  - { icon: stack,    title: "In a warehouse you own", body: "Resolved fan data lands in a columnar analytical warehouse you self-manage in-Kingdom. Business-intelligence, analytics, and data-science teams query the same governed data directly, so Measure is a view onto your owned data, not a separate silo to reconcile." }
   - { icon: shield,   title: "Governed the whole way", body: "Reach and outcome numbers inherit the consent and residency rules that live on the profile. Measurement never becomes the place where governance quietly breaks, because the number and the compliance posture come from the same record." }
 ---
-{% include hero.html
-   eyebrow="Platform · Fanfinity Measure"
-   title="Prove the value."
-   subtitle="Fanfinity Measure answers the one question sponsors and partners actually ask: who saw it, and did it work? Verified reach, deterministic attribution, and a portal they can log into themselves."
-   cta_text="Book a Demo"
-   cta_url="/demo"
-   secondary_text="Explore the platform"
-   secondary_url="/platform"
-   image="/assets/img/platform-measure.jpg"
-   image_alt="A person working at a computer in a modern office" %}
 
-{% include feature-grid.html
-   heading="Verified reach, not impressions"
-   subheading="Every metric traces back to a resolved fan profile, so proof is deterministic, not estimated."
-   items=page.capabilities
-   columns=2 %}
+{% include measure-family-nav.html %}
 
-{% include feature-grid.html
-   heading="From resolved profile to a number you can defend"
-   subheading="Measure reads the same governed fan graph that powers identity and activation, so proof is a property of the platform rather than a reporting exercise bolted on at the end."
-   items=page.how
-   columns=3 %}
+<!-- ================= HERO ================= -->
+<section class="ms-hero">
+  <div class="container-page">
+    <div class="ms-hero-grid">
+      <div class="ms-hero-copy">
+        <h1 class="ms-h1">Prove the <span class="ms-accent">value.</span></h1>
+        <p class="ms-sub">Fanfinity Measure answers the one question sponsors and partners actually ask: who saw it, and did it work? Verified reach, deterministic attribution, and a portal they can log into themselves.</p>
+        <div class="ms-hero-ctas">
+          <a href="{{ '/demo' | relative_url }}" class="btn btn-primary">Book a Demo</a>
+          <a href="{{ '/platform' | relative_url }}" class="btn btn-secondary">Explore the platform</a>
+        </div>
+      </div>
+      <div class="ms-hero-visual" aria-hidden="true">
+        <div class="ms-casefile">
+          <span class="ms-casefile-tab">CASE FILE · SPONSOR PROOF</span>
+          <div class="ms-casefile-row"><span>claimed</span><b>2,140,000 impressions</b></div>
+          <div class="ms-casefile-row ms-casefile-verified"><span>verified</span><b>841,208 real fans ✓</b></div>
+          <div class="ms-casefile-string"><i></i><i></i><i></i></div>
+          <div class="ms-casefile-row"><span>exposure → outcome</span><b>12,408 renewals, same profile</b></div>
+        </div>
+        <span class="ms-stamp-hero">PROVEN</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include feature-split.html
-   title="Recover the reach browser tracking loses"
-   body="Client-side tracking drops signals to privacy controls and ad blockers, and ad-platform conversion APIs underperform when identifiers are missing or inconsistent. Measure enriches events with the resolved profile before they leave your environment, so downstream platforms receive clean, consistent identifiers instead of fragments."
-   points=page.enrich_points
-   cta_text="See how identity resolves"
-   cta_url="/platform/id"
-   icon="target" %}
+<!-- ================= CENTERPIECE · THE EVIDENCE BOARD ================= -->
+<section class="ms-play" id="msPlay">
+  <div class="container-page">
+    <div class="ms-play-head" data-reveal>
+      <p class="ms-eyebrow">The evidence board</p>
+      <h2 class="ms-h2">From a claim on a slide <span class="ms-accent">to a closed case.</span></h2>
+      <p class="ms-lead">Every sponsor report starts as a claim. Pick a case, then work it like an investigator: verify the reach down to real people, string the exposures to the outcomes, and read the verdict. Simulated campaign; the method is the product.</p>
+    </div>
 
-{% include feature-grid.html
-   heading="A number your data team can defend, too"
-   subheading="Proof is only credible if the underlying data is clean and owned. Measure reads consolidated, governed data from a warehouse you control, so the reported number and the analyst's number are the same number."
-   items=page.availability
-   columns=3 %}
+    <div class="ms-cases" data-reveal id="msCases">
+      <button type="button" class="ms-casebtn is-active" data-case="volt"><span>CASE 01 · THE CLUB</span><b>Volt Mobile · halftime activation</b></button>
+      <button type="button" class="ms-casebtn" data-case="meridian"><span>CASE 02 · THE FESTIVAL</span><b>Meridian Air · festival lounge</b></button>
+      <button type="button" class="ms-casebtn" data-case="roast"><span>CASE 03 · THE STREAM</span><b>Roast &amp; Co · finale night</b></button>
+    </div>
 
-{% include feature-split.html
-   reverse=true
-   title="Answer sponsors with names, not impressions"
-   body="Sponsorship keeps moving toward accountability. Measure lets you report on real, resolved fans and the outcomes they drove, which is the difference between selling exposure and proving it."
-   points=page.proof_points
-   cta_text="Activate the audience first"
-   cta_url="/platform/activate"
-   icon="chart" %}
+    <div class="ms-board" data-reveal>
+      <div class="ms-board-inner">
+        <!-- STEP 1 · VERIFY -->
+        <div class="ms-step" id="msStep1">
+          <div class="ms-claim">
+            <span class="ms-claim-tag">THE CLAIM · sponsor deck</span>
+            <div class="ms-claim-big" id="msClaim">2,140,000</div>
+            <span class="ms-claim-unit">impressions · counted every way possible</span>
+          </div>
+          <button type="button" class="ms-action" id="msVerify">① Verify the reach →</button>
+          <div class="ms-dedupe" id="msDedupe">
+            <div class="ms-dupe-row"><span class="ms-dupe-imps">×3 tickets app</span><i class="ms-dupe-arrow">→</i><span class="ms-dupe-person">1 fan · Noura</span></div>
+            <div class="ms-dupe-row"><span class="ms-dupe-imps">×2 big screen</span><i class="ms-dupe-arrow">→</i><span class="ms-dupe-person">same fan · Noura</span></div>
+            <div class="ms-dupe-row"><span class="ms-dupe-imps">×4 mobile web</span><i class="ms-dupe-arrow">→</i><span class="ms-dupe-person">same fan again</span></div>
+          </div>
+          <div class="ms-verdict-mini" id="msPeopleWrap">
+            <span class="ms-claim-tag">VERIFIED REACH</span>
+            <div class="ms-people" id="msPeople">841,208</div>
+            <span class="ms-claim-unit">real fans · deduplicated to the profile</span>
+            <span class="ms-stamp ms-stamp-verify" id="msStampVerify">VERIFIED</span>
+          </div>
+        </div>
 
+        <!-- STEP 2 · CONNECT -->
+        <div class="ms-step ms-step-strings" id="msStep2">
+          <span class="ms-claim-tag">THE EVIDENCE · exposure on the left, outcome on the right</span>
+          <div class="ms-strings-wrap">
+            <div class="ms-evidence" id="msEvidence">
+              <div class="ms-ev ms-ev-from" id="msFrom0"><b>saw the activation</b><span>verified exposure</span></div>
+              <div class="ms-ev ms-ev-from" id="msFrom1"><b>played along</b><span>verified exposure</span></div>
+            </div>
+            <svg class="ms-strings" id="msStrings" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div class="ms-evidence ms-evidence-right" id="msOutcomes">
+              <div class="ms-ev ms-ev-to" id="msTo0"><b>entered the competition</b><span id="msN0">96,412 fans</span></div>
+              <div class="ms-ev ms-ev-to" id="msTo1"><b>renewed · 7 days</b><span id="msN1">12,408 fans</span></div>
+              <div class="ms-ev ms-ev-to" id="msTo2"><b>bought the bundle · 14 days</b><span id="msN2">8,214 fans</span></div>
+            </div>
+          </div>
+          <button type="button" class="ms-action" id="msConnect" disabled>② String exposure to outcome →</button>
+          <p class="ms-string-note" id="msStringNote">deterministic joins: every string is the same resolved profile on both ends.</p>
+        </div>
+
+        <!-- STEP 3 · VERDICT -->
+        <div class="ms-step ms-step-verdict" id="msStep3">
+          <span class="ms-claim-tag">THE VERDICT · did it work?</span>
+          <div class="ms-verdict-bars">
+            <div class="ms-vbar"><span>exposed fans</span><div class="ms-vbar-track"><i id="msBarExposed"></i></div><b id="msBarExposedN">6.2%</b></div>
+            <div class="ms-vbar"><span>not exposed</span><div class="ms-vbar-track"><i id="msBarControl" class="ms-vbar-control"></i></div><b id="msBarControlN">2.1%</b></div>
+          </div>
+          <div class="ms-verdict-row">
+            <button type="button" class="ms-action" id="msVerdict" disabled>③ Read the verdict →</button>
+            <div class="ms-mult" id="msMult" hidden><b id="msMultN">×2.9</b><span>more likely to renew</span></div>
+          </div>
+          <span class="ms-stamp ms-stamp-proven" id="msStampProven">PROVEN</span>
+          <p class="ms-portal-note" id="msPortalNote" hidden>{% include icon.html name="identity" class="h-4 w-4" %} <span id="msPortalText">Volt Mobile watched this happen live in their sponsor portal: no PDF weeks later.</span></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="ms-log" id="msLog" role="status" aria-live="polite">case 01 is open: the claim is on the board. Verify it.</p>
+  </div>
+</section>
+
+<!-- ================= CAPABILITIES ================= -->
+<section class="ms-capabilities">
+  <div class="container-page">
+    <div class="ms-sec-head" data-reveal>
+      <h2 class="ms-h2">Verified reach, <span class="ms-accent">not impressions</span></h2>
+      <p class="ms-lead">Every metric traces back to a resolved fan profile, so proof is deterministic, not estimated.</p>
+    </div>
+    <div class="ms-cap-grid">
+      {% for item in page.capabilities %}
+      <div class="ms-cap" data-reveal>
+        <span class="ms-cap-num">EXHIBIT 0{{ forloop.index }}</span>
+        <span class="ms-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="ms-how">
+  <div class="container-page">
+    <div class="ms-sec-head" data-reveal>
+      <h2 class="ms-h2">From resolved profile to <span class="ms-accent">a number you can defend</span></h2>
+      <p class="ms-lead">Measure reads the same governed fan graph that powers identity and activation, so proof is a property of the platform: not a reporting exercise bolted on at the end.</p>
+    </div>
+    <ol class="ms-how-grid">
+      {% for item in page.how %}
+      <li class="ms-how-card" data-reveal>
+        <span class="ms-how-num">STEP 0{{ forloop.index }}</span>
+        <span class="ms-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ================= ENRICHED SIGNALS ================= -->
+<section class="ms-enrich">
+  <div class="container-page">
+    <div class="ms-split-grid">
+      <div class="ms-split-copy" data-reveal>
+        <h2 class="ms-h2">Recover the reach <span class="ms-accent">browser tracking loses</span></h2>
+        <p class="ms-lead">Client-side tracking drops signals to privacy controls and ad blockers, and ad-platform conversion APIs underperform when identifiers are missing or inconsistent. Measure enriches events with the resolved profile before they leave your environment, so downstream platforms receive clean, consistent identifiers instead of fragments.</p>
+        <ul class="ms-split-list">
+          {% for p in page.enrich_points %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ p }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/id' | relative_url }}" class="btn btn-secondary">See how identity resolves</a>
+      </div>
+      <div class="ms-split-visual" data-reveal aria-hidden="true">
+        <div class="ms-signal">
+          <div class="ms-signal-side">
+            <span class="ms-signal-tag">BROWSER PIXEL</span>
+            <div class="ms-signal-row ms-signal-lost"><span>view</span><b>✗ blocked</b></div>
+            <div class="ms-signal-row ms-signal-lost"><span>click</span><b>✗ no id</b></div>
+            <div class="ms-signal-row ms-signal-lost"><span>convert</span><b>✗ lost</b></div>
+            <span class="ms-signal-verdict ms-signal-verdict-bad">attribution: gone</span>
+          </div>
+          <div class="ms-signal-vs">vs</div>
+          <div class="ms-signal-side ms-signal-side-good">
+            <span class="ms-signal-tag">ENRICHED FIRST-PARTY</span>
+            <div class="ms-signal-row"><span>view</span><b>✓ fan #48211</b></div>
+            <div class="ms-signal-row"><span>click</span><b>✓ fan #48211</b></div>
+            <div class="ms-signal-row"><span>convert</span><b>✓ fan #48211</b></div>
+            <span class="ms-signal-verdict ms-signal-verdict-good">attribution: deterministic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DATA AVAILABILITY ================= -->
+<section class="ms-avail">
+  <div class="container-page">
+    <div class="ms-sec-head" data-reveal>
+      <h2 class="ms-h2">A number your data team <span class="ms-accent">can defend, too</span></h2>
+      <p class="ms-lead">Proof is only credible if the underlying data is clean and owned. Measure reads consolidated, governed data from a warehouse you control, so the reported number and the analyst's number are the same number.</p>
+    </div>
+    <div class="ms-avail-grid">
+      {% for item in page.availability %}
+      <div class="ms-cap ms-avail-card" data-reveal>
+        <span class="ms-cap-num">0{{ forloop.index }}</span>
+        <span class="ms-cap-icon">{% include icon.html name=item.icon class="h-5 w-5" %}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.body }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPONSORS ================= -->
+<section class="ms-sponsors">
+  <div class="container-page">
+    <div class="ms-split-grid">
+      <div class="ms-split-copy" data-reveal>
+        <h2 class="ms-h2">Answer sponsors with <span class="ms-accent">names, not impressions</span></h2>
+        <p class="ms-lead">Sponsorship keeps moving toward accountability. Measure lets you report on real, resolved fans and the outcomes they drove: the difference between selling exposure and proving it.</p>
+        <ul class="ms-split-list">
+          {% for p in page.proof_points %}
+          <li>{% include icon.html name="check" class="h-4 w-4" %} {{ p }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{{ '/platform/activate' | relative_url }}" class="btn btn-secondary">Activate the audience first</a>
+      </div>
+      <div class="ms-split-visual" data-reveal aria-hidden="true">
+        <div class="ms-portal">
+          <div class="ms-portal-head"><span>SPONSOR PORTAL · live</span><i class="ms-portal-dot"></i></div>
+          <div class="ms-portal-row"><span>verified reach</span><b>841,208</b></div>
+          <div class="ms-portal-row"><span>exposure → renewal</span><b>12,408</b></div>
+          <div class="ms-portal-row"><span>uplift vs control</span><b>×2.9</b></div>
+          <div class="ms-portal-foot">refreshes as fans act: the sponsor's number and yours are the same number.</div>
+        </div>
+        <span class="ms-stamp ms-stamp-portal">SELF-SERVE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include cta-band.html
+   heading="Bring us a number you have to defend"
+   text="Book a walkthrough with a real campaign in hand. We'll trace one exposure to one outcome on your own fan graph: and show the sponsor portal your partners would log into." %}
+
+{% raw %}
+<style>
+/* ================= Measure page: scoped styles (.ms-) · "evidence board / case file" ================= */
+.ms-eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: #1e6e5c; display: flex; align-items: center; gap: .6rem; }
+.ms-eyebrow::before { content: none; }
+.ms-h1 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; font-size: clamp(2.8rem, 5.8vw, 4.6rem); margin: 1rem 0 0; color: #23213a; }
+.ms-h2 { font-family: var(--font-heading, 'Bricolage Grotesque', ui-sans-serif, sans-serif); font-weight: 700; letter-spacing: -0.02em; line-height: 1.06; font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin: .9rem 0 0; color: #23213a; }
+.ms-accent { position: relative; display: inline-block; color: #d93b54; white-space: nowrap; }
+.ms-accent::after { content: ""; position: absolute; left: -2%; right: -2%; bottom: .02em; height: .22em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 30 3, 60 11, 118 5' stroke='%23d93b54' stroke-width='3' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E") no-repeat center / 100% 100%; pointer-events: none; }
+.ms-sub, .ms-lead { font-size: 1.08rem; line-height: 1.65; color: #4e4966; margin-top: 1.2rem; max-width: 34rem; }
+.ms-sec-head .ms-lead, .ms-play-head .ms-lead { margin-left: auto; margin-right: auto; }
+.ms-hero-ctas { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.ms-hero-ctas .btn-secondary { background: transparent; border: 0; box-shadow: none; padding-inline: .2rem; color: #4e4966; }
+.ms-hero-ctas .btn-secondary:hover { background: transparent; color: #23213a; }
+.ms-sec-head, .ms-play-head { text-align: center; max-width: 46rem; margin: 0 auto 2.8rem; }
+.ms-sec-head .ms-eyebrow, .ms-play-head .ms-eyebrow { justify-content: center; }
+
+/* --- hero: quiet evidence-paper surface --- */
+.ms-hero { position: relative; padding: 5.5rem 0 4.5rem; overflow-x: clip; background: #f2f5f0; }
+@media (min-width: 768px) { .ms-hero { min-height: calc(100svh - 10.5rem); display: flex; align-items: center; } }
+.ms-hero-grid { display: grid; gap: 3rem; align-items: center; }
+.ms-hero-grid > *, .ms-split-grid > * { min-width: 0; }
+@media (min-width: 1024px) { .ms-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.ms-hero-visual { position: relative; max-width: 25rem; margin: 0 auto; width: 100%; padding: 1.4rem 0; }
+.ms-casefile { background: #fdfcf7; border: 2px solid #23213a; border-radius: .6rem 1.2rem 1.2rem 1.2rem; box-shadow: 0 7px 14px -12px rgba(35,33,58,.5); padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .6rem; transform: rotate(-.8deg); position: relative; }
+.ms-casefile-tab { position: absolute; top: -1.05rem; left: -2px; font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .12em; font-weight: 700; color: #fdfcf7; background: #23213a; border-radius: .5rem .5rem 0 0; padding: .32rem .8rem; }
+.ms-casefile-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; background: #fff; border: 1.5px solid #e4e1d5; border-radius: .6rem; padding: .5rem .7rem; font-size: .8rem; color: #4e4966; }
+.ms-casefile-row span { font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .08em; color: #8f8a76; }
+.ms-casefile-row b { font-family: ui-monospace, monospace; font-size: .72rem; color: #23213a; }
+.ms-casefile-verified { border-color: #9fd9c2; background: #effaf5; }
+.ms-casefile-verified b { color: #0d5c40; }
+.ms-casefile-string { display: flex; justify-content: center; gap: 1.2rem; padding: .1rem 0; }
+.ms-casefile-string i { width: 0; height: 1rem; border-left: 2px solid #d93b54; transform: rotate(8deg); }
+.ms-stamp-hero { position: absolute; top: .2rem; right: 4%; transform: rotate(10deg); font-family: ui-monospace, monospace; font-size: .85rem; font-weight: 700; letter-spacing: .18em; color: #d93b54; border: 3px solid #d93b54; border-radius: .5rem; padding: .3rem .7rem; background: rgba(253,240,242,.92); }
+
+/* --- stamps --- */
+.ms-stamp { position: absolute; font-family: ui-monospace, monospace; font-weight: 700; letter-spacing: .14em; border-radius: .45rem; padding: .3rem .6rem; transform: rotate(-7deg) scale(1.9); opacity: 0; pointer-events: none; }
+.ms-stamp-verify { right: .9rem; bottom: .9rem; font-size: .62rem; color: #0d5c40; border: 2px solid #12805c; background: rgba(239,250,245,.94); }
+.ms-step.is-done .ms-stamp-verify, .ms-step.is-done .ms-stamp-proven { animation: ms-stamp .5s cubic-bezier(.2,1.5,.4,1) forwards; }
+.ms-stamp-proven { right: 1rem; top: .8rem; font-size: .8rem; color: #d93b54; border: 2.5px solid #d93b54; background: rgba(253,240,242,.94); }
+@keyframes ms-stamp { to { opacity: 1; transform: rotate(-7deg) scale(1); } }
+.ms-stamp-portal { position: absolute; top: -.6rem; right: 5%; transform: rotate(8deg); font-size: .62rem; color: #1e6e5c; border: 2px solid #1e6e5c; background: rgba(239,250,245,.92); opacity: 1; scale: 1; }
+
+/* ================= CENTERPIECE · THE EVIDENCE BOARD ================= */
+.ms-play { padding: 4.5rem 0 5rem; background: #f6f7f9; border-top: 1px solid #e3e5ea; border-bottom: 1px solid #e3e5ea; overflow-x: clip; }
+.ms-cases { display: grid; gap: .6rem; margin-bottom: 1.2rem; }
+@media (min-width: 700px) { .ms-cases { grid-template-columns: repeat(3, 1fr); } }
+.ms-casebtn { display: flex; flex-direction: column; gap: .2rem; align-items: flex-start; text-align: left; background: #fdfcf7; border: 2px solid #23213a; border-radius: .8rem; padding: .7rem .9rem; cursor: pointer; transition: background-color .16s, border-color .16s; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); }
+.ms-casebtn span { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; font-weight: 700; color: #1e6e5c; }
+.ms-casebtn b { font-size: .88rem; color: #23213a; }
+.ms-casebtn:hover { background: #f2f5f0; }
+.ms-casebtn.is-active { background: #23213a; box-shadow: none; }
+.ms-casebtn.is-active span { color: #7ee2c0; }
+.ms-casebtn.is-active b { color: #fdfcf7; }
+
+.ms-board { background: linear-gradient(150deg, #20443a, #16332b 70%, #122a24); border: 2px solid #0e231d; border-radius: 1.4rem; box-shadow: 0 8px 18px -15px rgba(18,35,29,.8), inset 0 0 0 6px rgba(253,252,247,.06); padding: 1.2rem; }
+.ms-board-inner { display: grid; gap: 1rem; }
+@media (min-width: 1024px) { .ms-board-inner { grid-template-columns: 1fr 1.25fr 1fr; gap: 1.2rem; } }
+.ms-step { position: relative; background: rgba(253,252,247,.06); border: 1.5px dashed rgba(253,252,247,.25); border-radius: 1.1rem; padding: 1rem 1.05rem; display: flex; flex-direction: column; gap: .8rem; transition: all .3s; }
+.ms-step.is-done { border-style: solid; border-color: rgba(126,226,192,.5); background: rgba(253,252,247,.09); }
+.ms-claim-tag { font-family: ui-monospace, monospace; font-size: .54rem; letter-spacing: .14em; font-weight: 700; color: #7ee2c0; }
+.ms-claim-big { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 2.6rem; line-height: 1; color: #fdfcf7; text-decoration: line-through; text-decoration-color: rgba(217,59,84,.85); text-decoration-thickness: 3px; }
+.ms-claim-big.is-verified { text-decoration: none; }
+.ms-claim-unit { font-family: ui-monospace, monospace; font-size: .58rem; color: rgba(253,252,247,.55); }
+.ms-action { align-self: flex-start; font-weight: 800; font-size: .86rem; color: #16332b; background: #7ee2c0; border-radius: .75rem; padding: .6rem .95rem; cursor: pointer; transition: background-color .16s, color .16s; box-shadow: 0 4px 9px -8px rgba(0,0,0,.7); }
+.ms-action:hover:not(:disabled) { background: #a5f0d8; }
+.ms-action:disabled { opacity: .4; cursor: default; }
+.ms-dedupe { display: none; flex-direction: column; gap: .35rem; }
+.ms-step.is-verifying .ms-dedupe { display: flex; }
+.ms-dupe-row { display: flex; align-items: center; gap: .5rem; font-family: ui-monospace, monospace; font-size: .62rem; opacity: 0; animation: ms-dupein .5s ease forwards; }
+.ms-dupe-row:nth-child(2) { animation-delay: .3s; }
+.ms-dupe-row:nth-child(3) { animation-delay: .6s; }
+@keyframes ms-dupein { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+.ms-dupe-imps { color: rgba(253,252,247,.55); text-decoration: line-through; text-decoration-color: rgba(217,59,84,.7); }
+.ms-dupe-arrow { color: #d93b54; font-style: normal; }
+.ms-dupe-person { color: #7ee2c0; font-weight: 700; }
+.ms-verdict-mini { position: relative; display: none; flex-direction: column; gap: .2rem; background: rgba(253,252,247,.08); border: 1.5px solid rgba(126,226,192,.4); border-radius: .8rem; padding: .7rem .8rem; }
+.ms-step.is-done .ms-verdict-mini { display: flex; animation: ms-dupein .5s ease; }
+.ms-people { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 800; font-size: 2.3rem; line-height: 1; color: #7ee2c0; }
+.ms-people.rolling { animation: ms-roll .12s linear infinite; }
+@keyframes ms-roll { 50% { opacity: .4; transform: translateY(2px); } }
+
+/* strings */
+.ms-strings-wrap { position: relative; display: flex; justify-content: space-between; gap: .8rem; min-height: 12rem; }
+.ms-evidence { display: flex; flex-direction: column; gap: .6rem; justify-content: space-around; z-index: 1; }
+.ms-ev { background: #fdfcf7; border: 1.5px solid #23213a; border-radius: .6rem; padding: .5rem .65rem; box-shadow: 0 4px 9px -8px rgba(0,0,0,.75); max-width: 11rem; position: relative; }
+.ms-ev::before { content: ""; position: absolute; top: -.4rem; left: 50%; transform: translateX(-50%); width: .55rem; height: .55rem; border-radius: 999px; background: #d93b54; box-shadow: 0 1px 2px rgba(0,0,0,.4); }
+.ms-ev b { display: block; font-size: .74rem; color: #23213a; }
+.ms-ev span { font-family: ui-monospace, monospace; font-size: .54rem; color: #8f8a76; }
+.ms-ev-to span { color: #1e6e5c; font-weight: 700; }
+.ms-strings { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.ms-string-path { fill: none; stroke: #d93b54; stroke-width: 2px; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.ms-string-note { font-family: ui-monospace, monospace; font-size: .58rem; color: rgba(253,252,247,.5); }
+.ms-step-strings .ms-action { align-self: flex-start; }
+
+/* verdict */
+.ms-verdict-bars { display: flex; flex-direction: column; gap: .6rem; }
+.ms-vbar { display: grid; grid-template-columns: 6.4rem 1fr auto; align-items: center; gap: .55rem; }
+.ms-vbar > span { font-family: ui-monospace, monospace; font-size: .56rem; letter-spacing: .08em; color: rgba(253,252,247,.65); }
+.ms-vbar-track { height: 1.1rem; background: rgba(253,252,247,.1); border-radius: 999px; overflow: hidden; }
+.ms-vbar-track i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #7ee2c0, #1e6e5c); border-radius: 999px; transition: width 1s cubic-bezier(.2,.8,.2,1); }
+.ms-vbar-track i.ms-vbar-control { background: rgba(253,252,247,.4); }
+.ms-vbar b { font-family: ui-monospace, monospace; font-size: .72rem; color: #fdfcf7; }
+.ms-verdict-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.ms-mult[hidden], .ms-portal-note[hidden] { display: none; }
+.ms-mult { display: flex; align-items: baseline; gap: .45rem; }
+.ms-mult b { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-size: 2rem; color: #d93b54; }
+.ms-mult span { font-family: ui-monospace, monospace; font-size: .58rem; color: rgba(253,252,247,.6); }
+.ms-portal-note { display: flex; align-items: flex-start; gap: .45rem; font-family: ui-monospace, monospace; font-size: .6rem; line-height: 1.6; color: #7ee2c0; }
+.ms-portal-note svg { flex: none; margin-top: .1rem; }
+.ms-log { margin-top: 1rem; font-family: ui-monospace, monospace; font-size: .72rem; line-height: 1.6; color: #4e4966; background: #fdfcf7; border: 1.5px dashed #d8d3c2; border-radius: .8rem; padding: .6rem .8rem; }
+
+/* ================= SECTIONS ================= */
+.ms-capabilities { padding: 4.5rem 0; background: #f6f7f9; }
+.ms-how { padding: 4.5rem 0; background: #23213a; border-top: 2px solid #16332b; }
+.ms-how .ms-eyebrow { color: #7ee2c0; }
+.ms-how .ms-h2 { color: #fff; }
+.ms-how .ms-lead { color: #c9c4e4; }
+.ms-enrich { padding: 4.5rem 0; background: #f6f7f9; }
+.ms-avail { padding: 4.5rem 0; background: #eef0f3; border-top: 1px solid #e3e5ea; }
+.ms-sponsors { padding: 4.5rem 0; background: #f6f7f9; border-top: 1px solid #e3e5ea; }
+
+.ms-cap-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 768px) { .ms-cap-grid { grid-template-columns: 1fr 1fr; } }
+.ms-avail-grid { display: grid; gap: 1.1rem; }
+@media (min-width: 1024px) { .ms-avail-grid { grid-template-columns: repeat(3, 1fr); } }
+.ms-how-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+@media (min-width: 1024px) { .ms-how-grid { grid-template-columns: repeat(3, 1fr); } }
+.ms-cap, .ms-how-card { position: relative; display: flex; flex-direction: column; gap: .55rem; background: #fdfcf7; border: 2px solid #23213a; border-radius: 1.1rem; padding: 1.5rem 1.4rem 1.4rem; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); transition: background-color .18s ease; }
+.ms-cap:hover { background: #f2f5f0; }
+.ms-how-card:hover { background: rgba(253,252,247,.09); }
+.ms-how-card { background: rgba(253,252,247,.05); border-color: rgba(253,252,247,.3); box-shadow: none; }
+.ms-cap-num, .ms-how-num { font-family: ui-monospace, monospace; font-size: .6rem; letter-spacing: .14em; font-weight: 700; color: #d93b54; }
+.ms-how-num { color: #7ee2c0; }
+.ms-cap-icon { display: inline-flex; align-items: center; justify-content: center; color: #1e6e5c; }
+.ms-cap:hover .ms-cap-icon { color: #0d5c40; }
+.ms-how-card .ms-cap-icon { color: #7ee2c0; }
+.ms-cap h3, .ms-how-card h3 { font-family: var(--font-heading, 'Bricolage Grotesque', sans-serif); font-weight: 700; font-size: 1.22rem; color: #23213a; margin: .2rem 0 0; }
+.ms-how-card h3 { color: #fdfcf7; }
+.ms-cap p, .ms-how-card p { font-size: .9rem; line-height: 1.6; color: #5a5378; }
+.ms-how-card p { color: #c9c4e4; }
+
+/* splits */
+.ms-split-grid { display: grid; gap: 2.4rem; align-items: center; }
+@media (min-width: 1024px) { .ms-split-grid { grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; } }
+.ms-split-list { list-style: none; margin: 1.4rem 0 1.8rem; padding: 0; display: flex; flex-direction: column; gap: .7rem; }
+.ms-split-list li { display: flex; gap: .6rem; align-items: flex-start; font-size: .95rem; line-height: 1.55; color: #4e4966; }
+.ms-split-list svg { flex: none; color: #1e6e5c; margin-top: .2rem; }
+.ms-split-visual { position: relative; max-width: 27rem; margin: 0 auto; width: 100%; padding-top: 1.2rem; }
+
+/* signal compare */
+.ms-signal { display: flex; gap: .7rem; align-items: stretch; }
+.ms-signal-side { flex: 1; min-width: 0; background: #fdfcf7; border: 2px solid #23213a; border-radius: 1rem; padding: .9rem .85rem; display: flex; flex-direction: column; gap: .45rem; box-shadow: 0 6px 14px -12px rgba(35,33,58,.5); }
+.ms-signal-tag { font-family: ui-monospace, monospace; font-size: .52rem; letter-spacing: .12em; font-weight: 700; color: #8f8a76; }
+.ms-signal-side-good .ms-signal-tag { color: #1e6e5c; }
+.ms-signal-row { display: flex; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .62rem; color: #4e4966; background: #fff; border: 1px solid #e4e1d5; border-radius: .45rem; padding: .3rem .5rem; }
+.ms-signal-row b { color: #0d5c40; }
+.ms-signal-lost b { color: #a82540; }
+.ms-signal-verdict { margin-top: .2rem; font-family: ui-monospace, monospace; font-size: .58rem; font-weight: 700; text-align: center; }
+.ms-signal-verdict-bad { color: #a82540; }
+.ms-signal-verdict-good { color: #0d5c40; }
+.ms-signal-vs { align-self: center; font-family: ui-monospace, monospace; font-size: .6rem; font-weight: 700; color: #8f8a76; }
+
+/* portal visual */
+.ms-portal { background: #16332b; border: 2px solid #0e231d; border-radius: 1.1rem; box-shadow: 0 7px 16px -13px rgba(18,35,29,.8); padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: .55rem; }
+.ms-portal-head { display: flex; align-items: center; justify-content: space-between; font-family: ui-monospace, monospace; font-size: .58rem; letter-spacing: .14em; font-weight: 700; color: #7ee2c0; }
+.ms-portal-dot { width: .5rem; height: .5rem; border-radius: 999px; background: #4ade80; }
+.ms-portal-row { display: flex; justify-content: space-between; align-items: center; background: rgba(253,252,247,.07); border: 1px solid rgba(253,252,247,.14); border-radius: .6rem; padding: .5rem .7rem; font-size: .76rem; color: rgba(253,252,247,.75); }
+.ms-portal-row b { font-family: ui-monospace, monospace; font-size: .78rem; color: #7ee2c0; }
+.ms-portal-foot { font-family: ui-monospace, monospace; font-size: .56rem; line-height: 1.6; color: rgba(253,252,247,.45); }
+
+@media (max-width: 640px) {
+  .ms-vbar { grid-template-columns: 5rem 1fr auto; }
+  .ms-claim-big { font-size: 2.1rem; }
+  .ms-signal { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ms-step.is-done .ms-stamp-verify, .ms-step.is-done .ms-stamp-proven, .ms-dupe-row, .ms-step.is-done .ms-verdict-mini, .ms-cardin { animation-duration: .01s !important; }
+  .ms-vbar-track i { transition: none; }
+  .ms-portal-dot { animation: none !important; }
+}
+</style>
+
+<script>
+/* ================= Measure page: evidence board engine ================= */
+(function () {
+  var play = document.getElementById('msPlay');
+  if (!play) return;
+  function $(id) { return document.getElementById(id); }
+  var RM = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var timers = [];
+  function run(fn, ms) { timers.push(window.setTimeout(fn, RM ? 0 : ms)); }
+
+  var CASES = {
+    volt: {
+      claim: '2,140,000', people: '841,208',
+      from: ['saw the halftime activation', 'played the predictor'],
+      chains: [
+        { from: 0, to: 'entered the competition', n: '96,412 fans' },
+        { from: 1, to: 'renewed · 7 days', n: '12,408 fans' },
+        { from: 0, to: 'bought the bundle · 14 days', n: '8,214 fans' }
+      ],
+      exposed: 62, exposedN: '6.2%', control: 21, controlN: '2.1%', mult: '×2.9', multText: 'more likely to renew',
+      portal: 'Volt Mobile watched this happen live in their sponsor portal: no PDF weeks later.',
+      claimUnit: 'impressions · counted every way possible'
+    },
+    meridian: {
+      claim: '1,380,000', people: '512,776',
+      from: ['visited the festival lounge', 'scanned the boarding-pass wall'],
+      chains: [
+        { from: 0, to: 'installed the app', n: '61,208 fans' },
+        { from: 1, to: 'booked a flight · 30 d', n: '4,102 fans' },
+        { from: 0, to: 'returned next edition', n: '9,870 fans' }
+      ],
+      exposed: 54, exposedN: '5.4%', control: 22, controlN: '2.2%', mult: '×2.5', multText: 'more likely to book',
+      portal: 'Meridian Air checks lounge ROI from their own dashboard, live.',
+      claimUnit: 'impressions · clips, screens, and hashtags'
+    },
+    roast: {
+      claim: '960,000', people: '388,520',
+      from: ['saw the finale-night cup', 'scanned the cup QR'],
+      chains: [
+        { from: 0, to: 'watched the finale', n: '88,204 fans' },
+        { from: 1, to: 'started a trial', n: '9,870 fans' },
+        { from: 1, to: 'still subscribed · 60 d', n: '6,655 fans' }
+      ],
+      exposed: 71, exposedN: '7.1%', control: 23, controlN: '2.3%', mult: '×3.1', multText: 'more likely to subscribe',
+      portal: 'Roast & Co renews on a number they can see, not a deck they were sent.',
+      claimUnit: 'impressions · cups, QR scans, and pre-rolls'
+    }
+  };
+
+  var state = { case: 'volt', step: 0 };
+  var logEl = $('msLog');
+
+  function el(tag, cls, text) { var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+
+  function renderCase() {
+    var c = CASES[state.case];
+    state.step = 0;
+    ['msStep1', 'msStep2', 'msStep3'].forEach(function (id) {
+      $(id).classList.remove('is-done', 'is-verifying');
+    });
+    var claim = $('msClaim');
+    claim.textContent = c.claim;
+    claim.classList.remove('is-verified');
+    claim.nextElementSibling && (claim.nextElementSibling.textContent = c.claimUnit);
+    var froms = [$('msFrom0'), $('msFrom1')];
+    froms.forEach(function (f, i) {
+      f.querySelector('b').textContent = c.from[i];
+    });
+    c.chains.forEach(function (ch, i) {
+      var to = $('msTo' + i);
+      to.querySelector('b').textContent = ch.to;
+      to.querySelector('span').textContent = '···';
+    });
+    $('msStrings').innerHTML = '';
+    $('msBarExposed').style.width = '0';
+    $('msBarControl').style.width = '0';
+    $('msBarExposedN').textContent = c.exposedN;
+    $('msBarControlN').textContent = c.controlN;
+    $('msMult').hidden = true;
+    $('msPortalNote').hidden = true;
+    $('msPortalText').textContent = c.portal;
+    $('msVerify').disabled = false;
+    $('msConnect').disabled = true;
+    $('msVerdict').disabled = true;
+    logEl.textContent = 'case is open: the claim is on the board. Verify it.';
+  }
+
+  /* ① verify: impressions roll down to deduplicated people */
+  $('msVerify').addEventListener('click', function () {
+    if (state.step !== 0) return;
+    state.step = 1;
+    var c = CASES[state.case];
+    $('msVerify').disabled = true;
+    $('msStep1').classList.add('is-verifying');
+    var peopleEl = $('msPeople');
+    var wrap = $('msStep1');
+    var target = parseInt(c.people.replace(/\D/g, ''), 10);
+    var ticks = 12, t = 0;
+    peopleEl.classList.add('rolling');
+    function roll() {
+      t++;
+      if (t < ticks) {
+        var fake = Math.round(target * (0.55 + Math.random() * 0.5));
+        peopleEl.textContent = fake.toLocaleString('en-US');
+        run(roll, 70);
+      } else {
+        peopleEl.textContent = c.people;
+        peopleEl.classList.remove('rolling');
+        $('msClaim').classList.add('is-verified');
+        wrap.classList.add('is-done');
+        $('msConnect').disabled = false;
+        logEl.textContent = c.claim + ' impressions collapse to ' + c.people + ' verified fans: same fan, counted once, however many screens they used.';
+      }
+    }
+    run(roll, 70);
+  });
+
+  /* ② connect: red strings from exposure to outcome */
+  $('msConnect').addEventListener('click', function () {
+    if (state.step !== 1) return;
+    state.step = 2;
+    var c = CASES[state.case];
+    $('msConnect').disabled = true;
+    var svg = $('msStrings');
+    var wrap = svg.parentNode;
+    var wr = wrap.getBoundingClientRect();
+
+    function coords(card) {
+      var r = card.getBoundingClientRect();
+      if (wr.width) {
+        return { x: ((r.left + r.width / 2 - wr.left) / wr.width) * 100, y: ((r.top + r.height / 2 - wr.top) / wr.height) * 100 };
+      }
+      return null;
+    }
+
+    c.chains.forEach(function (ch, i) {
+      run(function () {
+        var fromEl = $('msFrom' + ch.from), toEl = $('msTo' + i);
+        var a = coords(fromEl), b = coords(toEl);
+        if (!a || !b) {
+          a = { x: 14, y: 25 + ch.from * 40 };
+          b = { x: 86, y: 18 + i * 30 };
+        }
+        var fromSide = a.x < 50;
+        var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        var x1 = fromSide ? a.x + 9 : a.x - 9, x2 = fromSide ? b.x - 9 : b.x + 9;
+        p.setAttribute('d', 'M' + x1 + ' ' + a.y + ' C ' + (x1 + 22) + ' ' + a.y + ', ' + (x2 - 22) + ' ' + b.y + ', ' + x2 + ' ' + b.y);
+        p.setAttribute('class', 'ms-string-path');
+        p.style.strokeDasharray = '300';
+        p.style.strokeDashoffset = '300';
+        svg.appendChild(p);
+        run(function () { p.style.strokeDashoffset = '0'; p.style.transition = 'stroke-dashoffset 1s ease'; }, 40);
+        var countEl = toEl.querySelector('span');
+        countEl.textContent = ch.n + ' ✓';
+        $('msStep2').classList.add('is-done');
+        if (i === c.chains.length - 1) {
+          $('msVerdict').disabled = false;
+          logEl.textContent = c.chains.length + ' strings drawn: every one is the same resolved profile on both ends. Read the verdict.';
+        }
+      }, i * 500);
+    });
+  });
+
+  /* ③ verdict: bars + stamp */
+  $('msVerdict').addEventListener('click', function () {
+    if (state.step !== 2) return;
+    state.step = 3;
+    var c = CASES[state.case];
+    $('msVerdict').disabled = true;
+    run(function () {
+      $('msBarExposed').style.width = c.exposed + '%';
+      $('msBarControl').style.width = c.control + '%';
+    }, 60);
+    run(function () {
+      $('msMultN').textContent = c.mult;
+      $('msMult').hidden = false;
+      $('msStep3').classList.add('is-done');
+      $('msPortalNote').hidden = false;
+      logEl.textContent = 'exposed fans: ' + c.exposedN + ' · control: ' + c.controlN + ' · ' + c.mult + ' ' + c.multText + '. Case closed: and the sponsor watched it live.';
+    }, 950);
+  });
+
+  /* case switching */
+  $('msCases').addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('.ms-casebtn') : null;
+    if (!btn) return;
+    var all = $('msCases').querySelectorAll('.ms-casebtn');
+    for (var i = 0; i < all.length; i++) {
+      all[i].classList.remove('is-active');
+      all[i].setAttribute('aria-pressed', 'false');
+    }
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-pressed', 'true');
+    state.case = btn.getAttribute('data-case');
+    renderCase();
+  });
+
+  Array.prototype.forEach.call($('msCases').querySelectorAll('.ms-casebtn'), function (btn) {
+    btn.setAttribute('aria-pressed', btn.classList.contains('is-active') ? 'true' : 'false');
+  });
+  renderCase();
+})();
+</script>
+{% endraw %}
